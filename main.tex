@@ -1,10 +1,6 @@
-\documentclass[12pt,twoside]{report} %  twoside: printing on both sides
+\documentclass[12pt,twoside]{report} %  twoside: printing on both sides of the page
 \usepackage{mypackages}
 \usepackage{listofsymbols}
-
-\usepackage[intoc]{nomencl}
-\renewcommand{\nomname}{List of Symbols}
-\makenomenclature
 
 \begin{document}
 \frontmatter
@@ -34,10 +30,6 @@
 \input{head/symbols.sub}
 \listofsymbols
 \addcontentsline{toc}{chapter}{List of symbols}
-
-%\nomenclature{\(\symE\)}{Speed of light in a vacuum}
-%\nomenclature{\(h\)}{Planck constant}
-%\printnomenclature
 
 \tableofcontents
 
