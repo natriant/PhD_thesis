@@ -1,0 +1,63 @@
+\ProvidesPackage{mypackages}
+
+\usepackage[a4paper,inner=40mm, outer=25mm, top=25mm,bottom=25mm]{geometry} % according to Liverpool guidelines par.9 https://www.liverpool.ac.uk/media/livacuk/tqsd/code-of-practice-on-assessment/annex-7.1-PGR-CoP.pdf
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{hyperref}
+\usepackage{fourier} %type style
+
+\usepackage{amsmath}  % improve math presentation
+%-------------------------------
+% Header and Footer
+%-------------------------------
+
+
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt} 
+\fancyhead[LE]{\textbf{\nouppercase{\leftmark}}}
+\fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+%\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+
+% For bibliography
+\usepackage[backend=biber, style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+
+%-----------------------
+% Make frontmatter, mainmatter and backmatter for report document. https://tex.stackexchange.com/questions/154646/is-there-an-easy-way-to-get-the-frontmatter-mainmatter-and-backmatter-in-a-l
+% -----------------------
+
+
+\makeatletter
+
+\newcommand\frontmatter{%
+    \cleardoublepage
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+   }
+\makeatother
+
+% Redefine \cleardouble page (for the blank pages)
+\makeatletter
+\renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}%
+\thispagestyle{empty}%
+\newpage%
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+    

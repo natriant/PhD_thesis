@@ -1,0 +1,80 @@
+\documentclass[12pt,twoside]{report} %  twoside: printing on both sides
+\usepackage{mypackages}
+\usepackage{listofsymbols}
+
+\usepackage[intoc]{nomencl}
+\renewcommand{\nomname}{List of Symbols}
+\makenomenclature
+
+\begin{document}
+\frontmatter
+% The front matter
+\title{
+{Noise studies with Crab Cavities in the SPS for the HL-LHC project}\\
+{\includegraphics{UoL.jpeg}} \\
+{\large Thesis submitted in accordance with the requirements of the University of Liverpool for the degree of Doctor in Philosophy \\ by}
+}
+\author{ Natalia Triantafyllou}
+\date{Day Month Year}
+\maketitle
+\newpage
+
+% Abstract
+\input{head/abstract}
+\input{head/acknowledgments}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+
+\newpage
+
+\thispagestyle{plain} % removing headings from this specific page
+\input{head/symbols.sub}
+\listofsymbols
+\addcontentsline{toc}{chapter}{List of symbols}
+
+%\nomenclature{\(\symE\)}{Speed of light in a vacuum}
+%\nomenclature{\(h\)}{Planck constant}
+%\printnomenclature
+
+\tableofcontents
+
+\mainmatter
+
+% The main body
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Basics of accelerator beam dynamics}
+\input{chapters/chapter02}
+
+\chapter{Theory of Crab Cavity noise induced emittance growth}
+\input{chapters/chapter03}
+
+\chapter{First experimental campaign in the SPS}
+\input{chapters/chapter04}
+
+\chapter{Investigation of the discrepancy}
+\input{chapters/chapter05}
+
+\chapter{Simple model of describing the decoherence suppression from impedance}
+\input{chapters/chapter06}
+
+\chapter{Application and impact for HL-LHC}
+\input{chapters/chapter07}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+% The end matter
+\appendix
+\chapter{Appendix Title}
+\input{chapters/appendix}
+
+\backmatter
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}

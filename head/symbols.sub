@@ -1,0 +1,5 @@
+\opensymdef
+\newsym[Energy]{symE}{E}
+\newsym[Mass]{symm}{m}
+\newsym[Speed of light]{symc}{c}
+\closesymdef
