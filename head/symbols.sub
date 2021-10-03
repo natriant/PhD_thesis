@@ -2,4 +2,9 @@
 \newsym[Energy]{symE}{E}
 \newsym[Mass]{symm}{m}
 \newsym[Speed of light]{symc}{c}
+\newsym[Revolution frequency]{frev}{f_{rev}}
+\newsym[RF voltage]{VRF}{V_{RF}}
+\newsym[RF frequency]{fRF}{f_{RF}}
+\newsym[CC voltage]{VCC}{V_{CC}}
+\newsym[CC frequency]{fCC}{f_{CC}}
 \closesymdef
