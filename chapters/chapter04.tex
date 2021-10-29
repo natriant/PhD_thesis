@@ -1,10 +1,51 @@
-In 2018, two prototype Crab Cavities (CCs) were installed in the SPS to be tested for the first time with proton beams. One of the operational issues that needed to be addressed concerned the expected emittance growth due to noise in their RF control system. A theoretical model had already been developed
-and validated by tracking simulations~\cite{PhysRevSTAB.18.101001}. Based on those studies a dedicated experiment was performed to benchmark the models with experimental data and to confirm the analytical predictions. In particular, the idea was to inject various noise levels in the CC RF system and record
- the emittance evolution. In this chapter, the measurement results from the experiment are presented and discussed. This chapter is adapted from the the studies published in Ref.~\cite{Triantafyllou}
+\vspace*{1mm}
+In 2018, two prototype Crab Cavities (CCs) were installed in the SPS to be tested for the first time with proton beams. One of the operational issues that needed to be addressed concerned the expected emittance growth due to noise in their RF control system. A theoretical model that describes this emittance growth had already been developed and validated by tracking simulations~\cite{PhysRevSTAB.18.101001}. Based on those studies a dedicated experiment was performed to benchmark the models with experimental data and to confirm the analytical predictions. In particular, the idea was to inject various noise levels in the CC RF system and record the emittance evolution. In this chapter, the experimental procedure, the measurement methods and results are presented and discussed.
+ 
+The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the operational setup for the SPS CC tests and discusses the main diagnostic deployed for the derivation of the CC voltage.
+
+blah blah ... describe sections and subsections after they are completed.
+
+\section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
+
+For the SPS tests two prototype CCs of the Double Quorter Wave (DQW) type were fabricated by CERN and were assembled into the same cryomodule~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone and was placed on a mobile transfer table~\cite{Garlaschè:2648553}. The table moved with high precision and without breaking the vaccum the cryomodule in the beam line for the CC tests and out of it for the usual SPS operation.
+
+Thw two CCs installed in SPS are intended for the LHC and thus they operate at its acceleration frequency at 400\,MHz. However, in the SPS the main RF system operates at 200\,MHz. In order to make sure that the beam will experience the same effect from the CC  each turn the SPS main RF has to be re-phased such as it becomes synchronous with the CC signal. The CC tests in 2018 were conducted at the injection energy of 26\,GeV and at 270\,GeV. In the first case the synchronisation took place shortly after the injection. In the second case the CCs were switched off during the energy ramp to 270\,GeV. At the end of the ramp the cavities were switched on and the synchronisation took place shortly after.
+
+
+\subsection{Measurement of the Crab Cavity voltage}
+
+
+As a part of the first experimental campaign a comparison of the available diagnostic devices for measuring the CC voltage was performed~\cite{Carver:2696108}. It was shown that the headtail monitor [Ref] should be used as the primary diagnostic device %because it is a beam based diagnostic and it provides direct measurements of the intra-bunch offset from the CC kick. 
+
+
+What is it? Explain breifly and find ref
+Where is the measurement based? Closed orbit.
+
+What is needed --> unsynchronised
+
+The effect of the CC on the beam was measured 
+
+Voltage measurement with HT monitor. blah balah. why was it chosen over the other instruments.
+
+\section{Experimental procedure}
+
+\subsection{Machine and beam configuration}
+\subsection{Measurement methods}
+ What do we measure and how? emittance (show plot ws)
+ bunch length ABWLM --> we take the measurement directly from the resposnible tema
+ --> show also from the instrument that we saw the unstable bunches.
+
+ \section{Experimental resutls}
+ \subsection{Overview}
+ - bunches 2, 3 and 4 unstable
+ \subsection{Comparison with the theory}
+
+ \newpage 
+ This chapter is adapted from the the studies published in Ref.~\cite{Triantafyllou}
 
  \section{Experimental Setup} % from IPAC paper
 
-Several experimental studies have been performed (2010-2017) to identify the optimal conditions for the emittance growth studies with CCs in the SPS~\cite{Calaga:1451286, Antoniou:2649815}. Based on these preparatory studies, the measurements in the SPS were performed with four low intensity ($\sim 3 \cdot 10^{10}$\, ppb) bunches at 270\,GeV. To minimise the emittance growth from other sources~\cite{Antoniou:2649815} the first order chromaticity, $Q^\prime$, of the machine was corrected to small positive values ($\sim$\,1-2) in both the horizontal and the vertical planes. During the measurements the Landau octupoles were switched off. It should be note, though, that a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Only one CC was used, providing a vertical kick to the beam. Even though the emittance growth is a single bunch effect four bunches were used to reduce the statistical uncertainty of the measurements. The distance between the bunhces was 524 ns. An overview of the relevant SPS parameters during the experiment is given in Table~\ref{tab:SPS_MD_params}. 
+Several experimental studies have been performed (2010-2017) to identify the optimal conditions for the emittance growth studies with CCs in the SPS~\cite{Calaga:1451286, Antoniou:2649815}. Based on these preparatory studies, the measurements in the SPS were performed with four low intensity ($\sim 3 \cdot 10^{10}$\, ppb) bunches at 270\,GeV. To minimise the emittance growth from other sources~\cite{Antoniou:2649815} the first order chromaticity, $Q^\prime$, of the machine was corrected to small positive values ($\sim$\,1-2) in both the horizontal and the vertical planes. During the measurements the Landau octupoles were switched off. It should be note, though, that a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Only one CC was used, providing a vertical kick to the beam. The transverse feedback system was switched off. Even though the emittance growth is a single bunch effect four bunches were used to reduce the statistical uncertainty of the measurements. The distance between the bunhces was 524 ns. An overview of the relevant SPS parameters during the experiment is given in Table~\ref{tab:SPS_MD_params}. 
 
 
 \begin{table}[!hbt]
@@ -27,3 +68,5 @@ Several experimental studies have been performed (2010-2017) to identify the opt
  \end{table}
 
  \subsection{Injected RF noise} 
+
+ In order to characterize the CC noise induced emittance growth, controlled noise was injected into their LLRF system and the evolution of the bunch was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10 KHz, overlapping and primarily exciting the fisrt betatron sideband at $\sim 8$ kHz. The phase noise was always dominant. 
