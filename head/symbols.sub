@@ -5,6 +5,7 @@
 \newsym[Revolution frequency]{frev}{f_{rev}}
 \newsym[RF voltage]{VRF}{V_{RF}}
 \newsym[RF frequency]{fRF}{f_{RF}}
+\newsym[Crab Cavity]{CC}{\mathrm{CC}}
 \newsym[CC voltage]{VCC}{V_{CC}}
-\newsym[CC frequency]{fCC}{f_{CC}}
+\newsym[$CC$ frequency]{fCC}{f_{CC}}
 \closesymdef

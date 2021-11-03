@@ -1,8 +1,9 @@
 \newcommand{\symEinclude}{yes}
 \newcommand{\symminclude}{no}
 \newcommand{\symcinclude}{no}
-\newcommand{\frevinclude}{yes}
-\newcommand{\VRFinclude}{yes}
-\newcommand{\fRFinclude}{yes}
-\newcommand{\VCCinclude}{yes}
+\newcommand{\frevinclude}{no}
+\newcommand{\VRFinclude}{no}
+\newcommand{\fRFinclude}{no}
+\newcommand{\CCinclude}{yes}
+\newcommand{\VCCinclude}{no}
 \newcommand{\fCCinclude}{yes}
