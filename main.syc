@@ -5,5 +5,9 @@
 \newcommand{\VRFinclude}{no}
 \newcommand{\fRFinclude}{no}
 \newcommand{\CCinclude}{yes}
-\newcommand{\VCCinclude}{no}
+\newcommand{\VCCinclude}{yes}
 \newcommand{\fCCinclude}{yes}
+\newcommand{\phiCCinclude}{no}
+\newcommand{\Qxinclude}{no}
+\newcommand{\Qyinclude}{yes}
+\newcommand{\sinclude}{yes}

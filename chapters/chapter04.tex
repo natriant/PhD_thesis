@@ -5,6 +5,10 @@ The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes t
 
 blah blah ... describe sections and subsections after they are completed.
 
+blah blah ... describe sections and subsections after they are completed.
+
+blah blah ... describe sections and subsections after they are completed.
+
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
 For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type were fabricated by CERN and were assembled into the same cryomodule~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone and was placed on a mobile transfer table~\cite{Garlaschè:2648553}. The table moved with high precision and without breaking the vaccum the cryomodule in the beam line for the $\CC$ tests and out of it for the usual SPS operation. For the emittance growth measurements only one of these $\CC$s was used and its main optics and desgin parameters are listed in Table~\ref{tab:SPS_CCs}. 
@@ -16,7 +20,7 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
        \toprule
        \textbf{Parameters} & \textbf{Values}\\
        crabbing plane & vertical \\
-       s-location & 6313.32\,m \\
+       $\s$-location & 6313.32\,m \\
       $\fCC$  & 400\,MHz   \\ 
       $\beta_{x, \CC}$ & 30.31\,m \\
       $\beta_{y, \CC}$ & 73.82\,m \\
@@ -37,12 +41,12 @@ Another issue of concern was the fact that the $\CC$ operate at the fixed freque
 In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For the emittance growth measurements which were performed at 270\,GeV the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
 
 \subsection{Crab Cavity voltage callibration}
-The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained.
+The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis.
 
 \normalsize{\textbf{The Heat-Tail monitor}}\\
-A standard beam position monitor (BPM) measures the bunch centroid position in the transverse planes at every passage of the beam. The HT monitor is a high bandwidth version of a standard BPM and can measure the transverse offset within the bunch. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler~\cite{Jones:987561}. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
+A standard beam position monitor (BPM) measures the bunch centroid position in the transverse planes at every passage of the beam. The HT monitor is a high bandwidth version of a standard BPM and can measure the transverse offset within the bunch, which makes it ideal for the measurement of the crabbing. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler~\cite{Jones:987561}. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
 
-Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns_2D} show some example signals obtained from the HT monitor. In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} illustrates the signal acquired over a single turn of the bunch around SPS. It should be noted here, that the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Figure~\ref{fig:HT_example_acq_multTurns} illustrates the signals acquired over several turns \textcolor{red}{while Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows the 2D representation. Color?? wait for Hannes question}. In the 2D representation the blue color corresponds to the reflected signal. In the specific example a clear periodic oscillation of the vertical $\Delta$ signal is observed. This is a result of the main RF system not being synchronous with the CC frequency. 
+Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns_2D} show some example signals obtained from the HT monitor. In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} illustrates the signal acquired over a single turn of the bunch around SPS. It should be noted here, that the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Figure~\ref{fig:HT_example_acq_multTurns} illustrates the signals acquired over several turns \textcolor{red}{while Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows the 2D representation. Color?? wait for Hannes answer}. In the 2D representation the blue color corresponds to the reflected signal. In the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
 
 
 \begin{figure}[!h]
@@ -68,7 +72,17 @@ Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns
 \end{figure}
 
 
+\normalsize{\textbf{Voltage callibration}}\\
+The $\CC$ voltage callibration was performed by calcualting the kick required to reconstruct the intra-bunch offset measurements from the HT monitor. The formula for computing the vertical orbit shift from a kick $\theta$ at $N$ locations is given by~\cite{Carver:2696108, Chao:1490001}:
 
+\begin{equation}
+   \Delta y_i  = \frac{\sqrt{\beta_{yi}}}{2 \sin(\pi \Qy)} \sum_{j=1}^{N} \theta_j \sqrt{\beta_{yj}} \cos(\pi \Qy - \mid \psi_{yi} - \psi_{yj} \mid),
+\end{equation}
+
+where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC) $ is the voltage that a particle experiences while passing the $\CC$ .
+- CC phase? == 0 . pou na top grapso
+- The optic information for the ht monitor and the CC are needed.  (mipos na balo edo ta beta functions tou CC)
+- The method was develoepd at cern and is shown here for completness of the theses
 
 
 \newpage
@@ -77,9 +91,6 @@ Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns
 
 What is needed --> unsynchronised
 
-The effect of the CC on the beam was measured 
-
-Voltage measurement with HT monitor. blah balah. why was it chosen over the other instruments.
 
 \section{Experimental procedure}
 

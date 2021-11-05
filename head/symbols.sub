@@ -8,4 +8,8 @@
 \newsym[Crab Cavity]{CC}{\mathrm{CC}}
 \newsym[CC voltage]{VCC}{V_{CC}}
 \newsym[$CC$ frequency]{fCC}{f_{CC}}
+\newsym[$CC$ phase]{phiCC}{\phi_{CC}}
+\newsym[Horizontal tune]{Qx}{Q_{x}}
+\newsym[Vertical tune]{Qy}{Q_{y}}
+\newsym[Location around the ring ??]{s}{s}
 \closesymdef
