@@ -37,18 +37,43 @@ Another issue of concern was the fact that the $\CC$ operate at the fixed freque
 In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For the emittance growth measurements which were performed at 270\,GeV the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
 
 \subsection{Crab Cavity voltage callibration}
+The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained.
+
+\normalsize{\textbf{The Heat-Tail monitor}}\\
+A standard beam position monitor (BPM) measures the bunch centroid position in the transverse planes at every passage of the beam. The HT monitor is a high bandwidth version of a standard BPM and can measure the transverse offset within the bunch. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler~\cite{Jones:987561}. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
+
+Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns_2D} show some example signals obtained from the HT monitor. In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} illustrates the signal acquired over a single turn of the bunch around SPS. It should be noted here, that the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Figure~\ref{fig:HT_example_acq_multTurns} illustrates the signals acquired over several turns \textcolor{red}{while Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows the 2D representation. Color?? wait for Hannes question}. In the 2D representation the blue color corresponds to the reflected signal. In the specific example a clear periodic oscillation of the vertical $\Delta$ signal is observed. This is a result of the main RF system not being synchronous with the CC frequency. 
+
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_114730_exampleAcq_4thesis_turn3000.png}
+       \caption{Example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired in a single SPS revolution.}
+       \label{fig:HT_example_acq_singleTurn}
+\end{figure}
+
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_114730exampleAcq_4thesis_turnsStart0_Stop6000_step100.png}
+       \caption{Example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired over several SPS revolutions. The color code indicates the different turns around the machine.}
+       \label{fig:HT_example_acq_multTurns}
+\end{figure}
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_114730.png}
+       \caption{2D representation of example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired over several SPS revolutions.}
+       \label{fig:HT_example_acq_multTurns_2D}
+\end{figure}
+
+
 
 
 
 \newpage
 
 
-
-As a part of the first experimental campaign a comparison of the available diagnostic devices for measuring the CC voltage was performed~\cite{Carver:2696108}. It was shown that the headtail monitor [Ref] should be used as the primary diagnostic device %because it is a beam based diagnostic and it provides direct measurements of the intra-bunch offset from the CC kick. 
-
-
-What is it? Explain breifly and find ref
-Where is the measurement based? Closed orbit.
 
 What is needed --> unsynchronised
 
