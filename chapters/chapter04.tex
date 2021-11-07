@@ -75,6 +75,25 @@ Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns
        \label{fig:HT_example_acq_multTurns_2D}
 \end{figure}
 
+\normalsize{\textbf{Heat-Tail monitor baseline removal}}\\
+One issue of concern at that point was the baseline correction of the $\Delta$ HT monitor measurements~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
+Normally, this baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system. This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
+
+Therefore, for the SPS experiemtns the following method was developed.
+
+Therefore, in the SPS experiments the correction was done by taking a reference measurement with the $\CC$ unsynchronised. 
+
+
+
+bale 2D plot me CCs synchronised and in phase. 
+kai meta measurement removal beasline.
+
+- Baseline removal. 
+
+
+
+
+
 
 \normalsize{\textbf{Voltage callibration}}\\
 The $\CC$ voltage callibration was performed by calcualting the kick required to reconstruct the intra-bunch offset measurements from the HT monitor. The formula for computing the vertical orbit shift from a kick $\theta$ at $N$ locations is given by~\cite{Carver:2696108, Chao:1490001}:
@@ -85,18 +104,6 @@ The $\CC$ voltage callibration was performed by calcualting the kick required to
 
 where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing the $\CC$. 
 
-One issue of concern at that point was the baseline correction of the $\Delta$ HT monitor measurements~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
-Normally, this baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system which resulted in a static intra-bunch position offset. That signal of interest would also be removed along with the baseline using the method described above. 
-
-
-
-HT monitor measurement has a
-“baseline” which is superimposed on the
-signal
-
-
-
-- Baseline removal. 
 
 
 
