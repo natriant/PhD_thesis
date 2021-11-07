@@ -7,7 +7,7 @@
 \newcommand{\CCinclude}{yes}
 \newcommand{\VCCinclude}{yes}
 \newcommand{\fCCinclude}{yes}
-\newcommand{\phiCCinclude}{no}
+\newcommand{\phiCCinclude}{yes}
 \newcommand{\Qxinclude}{no}
 \newcommand{\Qyinclude}{yes}
 \newcommand{\sinclude}{yes}

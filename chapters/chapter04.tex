@@ -15,15 +15,19 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 
 \begin{table}[!hbt]
    \centering
-   \caption{CC parameters for the SPS emittance growth tests}
+   \caption{CC parameters during the SPS emittance growth tests}
    \begin{tabular}{lc}
        \toprule
        \textbf{Parameters} & \textbf{Values}\\
+       \bottomrule
        crabbing plane & vertical \\
        $\s$-location & 6313.32\,m \\
       $\fCC$  & 400\,MHz   \\ 
-      $\beta_{x, \CC}$ & 30.31\,m \\
-      $\beta_{y, \CC}$ & 73.82\,m \\
+      $\phiCC$  & 0\,deg   \\ 
+      \bottomrule
+      $\beta_{x, \CC}$, $\beta_{y, \CC}$  & 30.31\,m,  73.82\,m \\
+      $\alpha_{x, \CC}$, $\alpha_{y, \CC}$  & tbf \,m,  tbf \,m \\
+      $D{x, \CC}$, $D_{y, \CC}$  & tbf \,m,  0 \,m \\     
       \bottomrule
    \end{tabular}
    \label{tab:SPS_CCs}
@@ -79,10 +83,32 @@ The $\CC$ voltage callibration was performed by calcualting the kick required to
    \Delta y_i  = \frac{\sqrt{\beta_{yi}}}{2 \sin(\pi \Qy)} \sum_{j=1}^{N} \theta_j \sqrt{\beta_{yj}} \cos(\pi \Qy - \mid \psi_{yi} - \psi_{yj} \mid),
 \end{equation}
 
-where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC) $ is the voltage that a particle experiences while passing the $\CC$ .
-- CC phase? == 0 . pou na top grapso
+where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing the $\CC$. 
+
+One issue of concern at that point was the baseline correction of the $\Delta$ HT monitor measurements~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
+Normally, this baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system which resulted in a static intra-bunch position offset. That signal of interest would also be removed along with the baseline using the method described above. 
+
+
+
+HT monitor measurement has a
+“baseline” which is superimposed on the
+signal
+
+
+
+- Baseline removal. 
+
+
+
+Therefore, the beta function at the 
+
+
 - The optic information for the ht monitor and the CC are needed.  (mipos na balo edo ta beta functions tou CC)
-- The method was develoepd at cern and is shown here for completness of the theses
+
+ty. Therefore in order
+to recalculate the kick at the CCs from an offset measurement at an observation point, one only needs information of
+the beta-functions and the vertical betatron phases at both
+the CCs and the location of the diagnostic device.
 
 
 \newpage
