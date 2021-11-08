@@ -57,14 +57,14 @@ A standard beam position monitor (BPM) measures the bunch centroid position in t
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_114730_exampleAcq_4thesis_turn3000.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_135105_exampleAcq_4thesis_turn3000.png}
        \caption{Raw example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired in a single SPS revolution.}
        \label{fig:HT_example_acq_singleTurn}
 \end{figure}
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_114730exampleAcq_4thesis_turnsStart0_Stop6000_step100.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_135105exampleAcq_4thesis_turnsStart0_Stop6000_step100.png}
        \caption{Example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired over several SPS revolutions. The color code indicates the different turns around the machine.}
        \label{fig:HT_example_acq_multTurns}
 \end{figure}
@@ -72,12 +72,12 @@ A standard beam position monitor (BPM) measures the bunch centroid position in t
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_114730_colorbar.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_135105_colorbar.png}
        \caption{2D representation of example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired over several SPS revolutions.}
        \label{fig:HT_example_acq_multTurns_2D}
 \end{figure}
 
-In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} and Fig.~\ref{fig:HT_example_acq_multTurns} illustrate the signal acquired over a single and multiple turns of the bunch around SPS respectively. The part of the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Moreover, Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows a 2D representation of the HT monitor reading. In the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
+In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} and Fig.~\ref{fig:HT_example_acq_multTurns} illustrate the signal acquired over a single and multiple turns of the bunch around SPS respectively. The part of the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Moreover, Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows a 2D representation of the HT monitor reading. It is worth mentioning already that in the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
 
 
 \normalsize{\textbf{Heat-Tail monitor baseline removal}}\\
@@ -89,37 +89,49 @@ Therefore, in the SPS experiments a reference measurement had first to be made w
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_114730_baseline_correction.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction.png}
        \caption{HT monitor baseline correction for the SPS CC tests.}
        \label{fig:HT_baseline_correction}
 \end{figure}
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_114730_baseline_correction_onlyDelta.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_onlyDelta.png}
        \caption{HT acquistions before and after the sunchronisation of the SPS main RF with the CC.}
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
+
 \normalsize{\textbf{Headtail monitor callibration}}\\
-In order to have the mean intra-bunch offset ($\Delta$) signal in units of \,mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is computed by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2017. %(T. Levens, private communication)
-Figure ... shows the intra bunch offset from the CC kick in mm and after the baseline correction. The reflected part of the signal is discarted here.
+In order to have the mean intra-bunch offset ($\Delta$) signal in units of mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is provided by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2017. %(T. Levens, private communication)
+Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. The reflected part of the signal is discarted here and only the crabbing is shown. 
+
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_mm.png}
+       \caption{Intra-bunch offset from the CC kick expressed in \,mm after the removal of the baseline.}
+       \label{fig:HT_baseline_correction_crabbing_mm}
+\end{figure}
+
  
 
-
+\newpage
 
 
 \normalsize{\textbf{Voltage callibration}}\\
-The $\CC$ voltage callibration was performed by calcualting the kick required to reconstruct the intra-bunch offset measurements from the HT monitor. The formula for computing the vertical orbit shift (in meters) from the $\CC$ kick at the HT monitor location $i$ from the $\CC$ kick $\theta$ at the location $j$ is given by~\cite{Carver:2696108, Chao:1490001}:
+Finally, the $\CC$ voltage was callibrated by calcualting the kick required to reconstruct the measured intra-bunch offset. The formula for computing the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location is obtained from Chao's Eq.... in Ref.~\cite{Chao:1490001} and is given by:
 
-\begin{equation}
-   \Delta y_i  = \frac{\sqrt{\beta_{yi}}}{2 \sin(\pi \Qy)} \theta_j \sqrt{\beta_{yj}} \cos(\pi \Qy - \mid \psi_{yi} - \psi_{yj} \mid),
+\begin{equation}\label{eq:CC_orbit_shift_Chao}
+   \Delta y_{,HT} = \frac{\sqrt{\beta_{y, HT}}}{2 \sin(\pi \Qy)} \theta \sqrt{\beta_{y, CC}} \cos(\pi \Qy - \mid \psi_{y, HT} - \psi_{y, CC} \mid),
 \end{equation}
 
-where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing the $\CC$. 
+where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The indeces HT and CC indicate the optic parameters at the location of the HT monitor and CC respectively. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing through the $\CC$. 
 
-By removing the baseline, callibrating the HT output in mm, and using the corresponding optics 
+The $\CC$ voltage, computed by solving Eq.~\ref{eq:CC_orbit_shift_Chao} after removing the baseline from the intra-bucnh offset and expressing it in mm is shown in Fig. .. The corresponding optic parameters are listed in Table...
 
+
+Caption of figure, mention that it was 26 GeV at phase 0
 \normalsize{\textbf{Reconstruction of crabbing}}\\
 For completntess
 
