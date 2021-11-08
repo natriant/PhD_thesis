@@ -111,21 +111,12 @@ In order to have the intra-bunch offset ($\Delta$) signal in units of \,mm the $
 
 
 
-bale 2D plot me CCs synchronised and in phase. 
-kai meta measurement removal beasline.
-
-- Baseline removal. 
-
-
-
-
-
 
 \normalsize{\textbf{Voltage callibration}}\\
-The $\CC$ voltage callibration was performed by calcualting the kick required to reconstruct the intra-bunch offset measurements from the HT monitor. The formula for computing the vertical orbit shift from a kick $\theta$ at $N$ locations is given by~\cite{Carver:2696108, Chao:1490001}:
+The $\CC$ voltage callibration was performed by calcualting the kick required to reconstruct the intra-bunch offset measurements from the HT monitor. The formula for computing the vertical orbit shift at the HT monitor location $i$ from the $\CC$ kick $\theta$ at the location $j$ is given by~\cite{Carver:2696108, Chao:1490001}:
 
 \begin{equation}
-   \Delta y_i  = \frac{\sqrt{\beta_{yi}}}{2 \sin(\pi \Qy)} \sum_{j=1}^{N} \theta_j \sqrt{\beta_{yj}} \cos(\pi \Qy - \mid \psi_{yi} - \psi_{yj} \mid),
+   \Delta y_i  = \frac{\sqrt{\beta_{yi}}}{2 \sin(\pi \Qy)} \theta_j \sqrt{\beta_{yj}} \cos(\pi \Qy - \mid \psi_{yi} - \psi_{yj} \mid),
 \end{equation}
 
 where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing the $\CC$. 
