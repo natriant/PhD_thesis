@@ -33,8 +33,6 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
    \label{tab:SPS_CCs}
 \end{table}
 
-
-
 \large{\textbf{Operational considerations}}
 
 \normalsize{\textbf{Energy ramp}}\\
@@ -48,24 +46,22 @@ In order to make sure that the beam will experience the same effect from the $\C
 The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis.
 
 \normalsize{\textbf{The Heat-Tail monitor}}\\
-A standard beam position monitor (BPM) measures the bunch centroid position in the transverse planes at every passage of the beam. The HT monitor is a high bandwidth version of a standard BPM and can measure the transverse offset within the bunch, which makes it ideal for the measurement of the crabbing. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358}. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
+A standard beam position monitor (BPM) measures the bunch centroid position in the transverse planes at every passage of the beam. The HT monitor is a high bandwidth version of a standard BPM and can measure the transverse offset within the bunch, which makes it ideal for the measurement of the crabbing. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358}. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. Example signlas obtained from the HT monitor are displayed in Fig.~\ref{fig:HT_example_acq_singleTurn}-~\ref{fig:HT_example_acq_multTurns_2D}.
 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/SPS_HT_monitor_diagram_modified.png}
-       \caption{Diagram of the SPS HT monitor~\cite{Levens:2313358}}
+       \caption{Diagram of the SPS HT monitor~\cite{Levens:2313358}.}
        \label{fig:SPS_HT_diagram}
 \end{figure}
 
 
-
-Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns_2D} show some example signals obtained from the HT monitor. In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} illustrates the signal acquired over a single turn of the bunch around SPS. It should be noted here, that the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Figure~\ref{fig:HT_example_acq_multTurns} illustrates the signals acquired over several turns \textcolor{red}{while Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows the 2D representation. Color?? wait for Hannes answer}. In the 2D representation the blue color corresponds to the reflected signal. In the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
-
+In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} and Fig.~\ref{fig:HT_example_acq_multTurns} illustrate the signal acquired over a single and multiple turns of the bunch around SPS respectively. The part of the signal after $\sim$ 9\,ns is just the reflected pulse of the bunch signal from the opposite end of the stripline. Moreover, Fig.~\ref{fig:HT_example_acq_multTurns_2D} shows a 2D representation of the HT monitor reading. In the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_114730_exampleAcq_4thesis_turn3000.png}
-       \caption{Example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired in a single SPS revolution.}
+       \caption{Raw example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired in a single SPS revolution.}
        \label{fig:HT_example_acq_singleTurn}
 \end{figure}
 
@@ -77,27 +73,41 @@ Figures~\ref{fig:HT_example_acq_singleTurn} - ~\ref{fig:HT_example_acq_multTurns
        \label{fig:HT_example_acq_multTurns}
 \end{figure}
 
+
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_114730.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_114730_colorbar.png}
        \caption{2D representation of example $\Delta$ and $\Sigma$ signals obtained from the HT monitor for a window of 25\,ns, acquired over several SPS revolutions.}
        \label{fig:HT_example_acq_multTurns_2D}
 \end{figure}
 
+\newpage
 \normalsize{\textbf{Heat-Tail monitor baseline removal}}\\
-One issue of concern at that point was the baseline correction of the HT monitor measurements due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
-Normally, this baseline is removed by computing the mean of the signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system. This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
+One issue of concern at that point was the correction of the $\Delta$ signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
+Normally, the baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system. This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
 
 
-Therefore, in the SPS experiments a reference measurement had to be made with the $\CC$ unsynchronised. The mean of the signals over this reference period yielded the baseline which then was subtracted from the signals acquired after the synchronisation (Fig). The datasets before and after synchronisation are clearly detectable in the HT monitor vertical $\Delta$ reading as displayed in Fig. ...
+Therefore, in the SPS experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily detectable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_114730_baseline_correction.png}
+       \caption{HT monitor baseline correction for the SPS CC tests.}
+       \label{fig:HT_baseline_correction}
+\end{figure}
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_114730_baseline_correction_onlyDelta.png}
+       \caption{HT acquistions before and after the sunchronisation of the SPS main RF with the CC.}
+       \label{fig:HT_baseline_correction_measurements_2D}
+\end{figure}
 
 
+In order to have the intra-bunch offset ($\Delta$) signal in units of \,mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is computed by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2017. %(T. Levens, private communication) 
+ 
 
 
-
-
-
-the correction was done by taking a reference measurement with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was computed and then
 
 
 
