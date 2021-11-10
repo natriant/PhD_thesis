@@ -1,38 +1,47 @@
 \vspace*{1mm}
-In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. This chapter discusses some of the first experimental results with $\CC$s in SPS and describes the operational setup and the developed measurement methods. The methods and procedures presented were developed at CERN. They are analyzed here for the completness of the thesis and for the better understadning of the work discussed in the following chapters.
+In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. This chapter provides an insight into the operational setup, the applied measurement methods and the first experimental results from the $\CC$s tests in SPS. These methods and procedures were developed at CERN and they are presented here as they are essential for the understadning of the work discussed in the following chapters.
 
 
-The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the operational setup for the SPS $\CC$ tests and discusses the main diagnostic deployed for the derivation of the $\CC$ voltage.
-
-blah blah ... describe sections and subsections after they are completed.
-
-blah blah ... describe sections and subsections after they are completed.
-
-blah blah ... describe sections and subsections after they are completed.
+The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The Head-Tail (HT) monitor, the main diagnostic device deployed for measurement of the crabbing, is presented in Section~\ref{sec:CC_SPS_setup}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
-For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type were fabricated by CERN and were assembled into the same cryomodule~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone and was placed on a mobile transfer table~\cite{Garlaschè:2648553}. The table moved with high precision and without breaking the vaccum the cryomodule in the beam line for the $\CC$ tests and out of it for the usual SPS operation. For the emittance growth measurements only one of these $\CC$s was used and its main optics and desgin parameters are listed in Table~\ref{tab:SPS_CCs}. 
+For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type were fabricated by CERN and were assembled into the same cryomodule which is shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone, Fig.~\ref{fig:CC_SPS_LSS6}, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved with high precision and without breaking the vaccum the cryomodule in the beam line for the $\CC$ tests and out of it for the usual SPS operation. The main parameters for the $\CC$ experiments in SPS are shown in Table~\ref{tab:SPS_CC_main}
+
+
+\begin{figure}[h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/CC_cryomodule.png}
+       \caption{Cut of the CC cryomodule~\cite{Zanoni:2017}.}
+       \label{fig:DQW_cryomodule}
+\end{figure}
+
+\begin{figure}[h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/CC_location_SPS_LSS6.png}
+       \caption{Installation of the cryomodule in the SPS-LSS6 zone~\cite{Calaga:2649807}.}
+       \label{fig:CC_SPS_LSS6}
+\end{figure}
 
 \begin{table}[!hbt]
    \centering
-   \caption{SPS CC parameters}
-   \begin{tabular}{lc}
+   \caption{Parametes for the SPS CC tests}
+   \begin{tabular}{lcc}
        \toprule
-       \textbf{Parameters} & \textbf{Values}\\
+       \textbf{Parameters} & \textbf{Units} & \textbf{Values}\\
        \bottomrule
-       crabbing plane & vertical \\
-       $\s$-location, CC1 & 6312.72\,m \\
-       $\s$-location, CC2 & 6313.32\,m \\
-      $\fCC$  & 400\,MHz   \\ 
-      $\phiCC$  & 0\,deg   \\ 
-      \bottomrule
-      $\beta_{x, \CC}$, $\beta_{y, \CC}$  & 30.31\,m,  73.82\,m \\
-      $\alpha_{x, \CC}$, $\alpha_{y, \CC}$  & tbf \,m,  tbf \,m \\
-      $D{x, \CC}$, $D_{y, \CC}$  & tbf \,m,  0 \,m \\     
+       Energy & [GeV] & 26, 270 \\
+       Main RF frequency & [MHz] & 200 \\
+       $\Qx$ / $\Qy$  & [-] & 26.13 / 26.18 \\
+       crabbing plane & [-] & vertical \\ 
+       $\s$-location, CC1 / CC2 & [m] & 6312.72 / 6313.32 \\ 
+      $f_{CC1}$ / $f_{CC2}$ & [MHz]  & 400/ 400  \\ 
+      $\beta_{x, CC2}$ / $\beta_{y, CC2}$  & [m] & 30.31 / 73.82 \\
+      $\alpha_{x, CC2}$ / $\alpha_{y, CC2}$  & [m] & - / - \\
+      $D_{x, CC2}$ / $D_{y, CC2}$  & [m] & - / - \\
       \bottomrule
    \end{tabular}
-   \label{tab:SPS_CCs}
+   \label{tab:SPS_CC_main}
 \end{table}
 
 \large{\textbf{Operational considerations}}

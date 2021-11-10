@@ -8,6 +8,6 @@
 \printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{viii}
 \printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{viii}
 \printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{viii}
-\printsymline{Q_{x}}{Q_{x}}{Qx}{Horizontal tune}{viii}
-\printsymline{Q_{y}}{Q_{y}}{Qy}{Vertical tune}{viii}
+\printsymline{\mathrm{Q_{x}}}{\mathrm{Q_{x}}}{Qx}{Horizontal tune}{viii}
+\printsymline{\mathrm{Q_{y}}}{\mathrm{Q_{y}}}{Qy}{Vertical tune}{viii}
 \printsymline{s}{s}{s}{Location around the ring ??}{viii}
