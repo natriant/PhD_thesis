@@ -2,7 +2,7 @@
 In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. This chapter provides an insight into the operational setup, the applied measurement methods and the first experimental results from the $\CC$s tests in SPS. These methods and procedures were developed at CERN and they are presented here as they are essential for the understadning of the work discussed in the following chapters.
 
 
-The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The Head-Tail (HT) monitor, the main diagnostic device deployed for measurement of the crabbing, is presented in Section~\ref{sec:CC_SPS_setup}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
+The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The use of the Head-Tail (HT) monitor as the main diagnostic devic for measurement of the crabbing is presented in Section~\ref{sec:CC_SPS_setup}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
@@ -24,34 +24,49 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 \end{figure}
 
 \begin{table}[!hbt]
-   \centering
+	\centering
    \caption{Parametes for the SPS CC tests}
-   \begin{tabular}{lcc}
-       \toprule
-       \textbf{Parameters} & \textbf{Units} & \textbf{Values}\\
-       \bottomrule
-       Energy & [GeV] & 26, 270 \\
-       Main RF frequency & [MHz] & 200 \\
-       $\Qx$ / $\Qy$  & [-] & 26.13 / 26.18 \\
-       crabbing plane & [-] & vertical \\ 
-       $\s$-location, CC1 / CC2 & [m] & 6312.72 / 6313.32 \\ 
-      $f_{CC1}$ / $f_{CC2}$ & [MHz]  & 400/ 400  \\ 
-      $\beta_{x, CC2}$ / $\beta_{y, CC2}$  & [m] & 30.31 / 73.82 \\
-      $\alpha_{x, CC2}$ / $\alpha_{y, CC2}$  & [m] & - / - \\
-      $D_{x, CC2}$ / $D_{y, CC2}$  & [m] & - / - \\
-      \bottomrule
-   \end{tabular}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
+		&&&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameters}} &
+		\multicolumn{2}{c}{\textbf{Units}} &
+		\multicolumn{2}{c}{\textbf{Values}} \\
+		\bottomrule
+      \multicolumn{2}{l}{$\symE$} & \multicolumn{2}{c}{[GeV]} & \multicolumn{2}{c}{26, 270} \\
+      \multicolumn{2}{l}{Main RF frequency} & \multicolumn{2}{c}{[MHz]} & \multicolumn{2}{c}{200} \\
+      \multicolumn{2}{l}{$\Qx$ / $\Qy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{26.13 / 26.18 } \\
+      \arrayrulecolor{black!30}\midrule
+      \multicolumn{2}{l}{} & 	\multicolumn{2}{c}{} & \multicolumn{1}{c}{\textbf{CC1}} & \multicolumn{1}{c}{\textbf{CC2}} \\
+      \midrule
+      \multicolumn{2}{l}{crabbing plane} & \multicolumn{2}{c}{[-]} & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
+      
+      \multicolumn{2}{l}{s-location} & \multicolumn{2}{c}{[m]} & \multicolumn{1}{c}{6312.72} & \multicolumn{1}{c}{6313.32} \\
+
+      \multicolumn{2}{l}{$\fCC$} & \multicolumn{2}{c}{[MHz]} & \multicolumn{1}{c}{400} & \multicolumn{1}{c}{400} \\
+
+      \multicolumn{2}{l}{$\beta_{x, CC}$ / $\beta_{y, CC}$} & \multicolumn{2}{c}{[m]} & \multicolumn{1}{c}{29.24 / 76.07} & \multicolumn{1}{c}{30.31 / 73.82} \\
+
+      \multicolumn{2}{l}{$\alpha_{x, CC}$ / $\alpha_{y, CC}$} & \multicolumn{2}{c}{[m]} & \multicolumn{1}{c}{-0.88 / 1.9} & \multicolumn{1}{c}{-0.91 / 1.86} \\
+
+      \multicolumn{2}{l}{$D_{x, CC}$ / $D_{y, CC}$} & \multicolumn{2}{c}{[m]} & \multicolumn{1}{c}{-0.48 / 0} & \multicolumn{1}{c}{-0.5 / 0} \\
+      \arrayrulecolor{black}\bottomrule
+ 
+	\end{tabu}
    \label{tab:SPS_CC_main}
 \end{table}
 
-\large{\textbf{Operational considerations}}
+
+\large{\textbf{Operational considerations}}\\
+\normalsize{For the beam tests with the $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.}
+
 
 \normalsize{\textbf{Energy ramp}}\\
 SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation. Therefore, it was established the energy ramp has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the operational scenario also for the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
 Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz.
-In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For the emittance growth measurements which were performed at 270\,GeV the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
+In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For the emittance growth measurements which were performed at 270\,GeV the synchronisation took place at the end of the ramp shortly after the cavity was switched on.~\cite{BE_seminar}
 
 \subsection{Crab Cavity voltage callibration}
 The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis. All experiemental data presented in this subsection belong to the same set of measurements unless it is stated otherwise. They were performed on ... ay 26 GeV for as the crabbing is stronger and the effect more visible for better understadning. In the last part the results from the 270 geV will also be shown. 

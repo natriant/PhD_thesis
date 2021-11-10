@@ -1,5 +1,5 @@
 \opensymdef
-\newsym[Energy]{symE}{E}
+\newsym[Energy]{symE}{E_b}
 \newsym[Mass]{symm}{m}
 \newsym[Speed of light]{symc}{c}
 \newsym[Revolution frequency]{frev}{f_{rev}}
