@@ -10,4 +10,6 @@
 \printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{viii}
 \printsymline{\mathrm{Q_{x}}}{\mathrm{Q_{x}}}{Qx}{Horizontal tune}{viii}
 \printsymline{\mathrm{Q_{y}}}{\mathrm{Q_{y}}}{Qy}{Vertical tune}{viii}
+\printsymline{\mathrm{\psi _{x}}}{\mathrm{\psi _{x}}}{psix}{Horizontal phase advance}{viii}
+\printsymline{\mathrm{\psi _{y}}}{\mathrm{\psi _{y}}}{psiy}{Vetical phase advance}{viii}
 \printsymline{s}{s}{s}{Location around the ring ??}{viii}

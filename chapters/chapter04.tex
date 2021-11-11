@@ -1,8 +1,8 @@
 \vspace*{1mm}
-In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. This chapter provides an insight into the operational setup, the applied measurement methods and the first experimental results from the $\CC$s tests in SPS. These methods and procedures were developed at CERN and they are presented here as they are essential for the understadning of the work discussed in the following chapters.
+In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. A series of dedicated machine developemnt studies was carried out in order to validate their working principle and answer various beam dynamic questions. This chapter provides a comprehesive insight into the operational setup, the applied measurement methods and some of the first experimental with $\CC$s in the SPS. These methods and procedures were developed at CERN and they are presented here as they are essential for the understadning of the work discussed in the following chapters.
 
 
-The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The use of the Head-Tail (HT) monitor as the main diagnostic devic for measurement of the crabbing is presented in Section~\ref{sec:CC_SPS_setup}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
+The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The use of the Head-Tail (HT) monitor as the main diagnostic device for measurement of the crabbing is presented in Section~\ref{sec:HT_info}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
@@ -36,12 +36,15 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
       \multicolumn{2}{l}{$\symE$} & \multicolumn{2}{c}{[GeV]} & \multicolumn{2}{c}{26, 270} \\
       \multicolumn{2}{l}{Main RF frequency} & \multicolumn{2}{c}{[MHz]} & \multicolumn{2}{c}{200} \\
       \multicolumn{2}{l}{$\Qx$ / $\Qy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{26.13 / 26.18 } \\
-      \arrayrulecolor{black!30}\midrule
+      %\arrayrulecolor{black!30}\midrule
+      \midrule
       \multicolumn{2}{l}{} & 	\multicolumn{2}{c}{} & \multicolumn{1}{c}{\textbf{CC1}} & \multicolumn{1}{c}{\textbf{CC2}} \\
       \midrule
       \multicolumn{2}{l}{crabbing plane} & \multicolumn{2}{c}{[-]} & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
       
       \multicolumn{2}{l}{s-location} & \multicolumn{2}{c}{[m]} & \multicolumn{1}{c}{6312.72} & \multicolumn{1}{c}{6313.32} \\
+
+      \multicolumn{2}{l}{$\VCC$, \footnotesize{MAX}} & \multicolumn{2}{c}{[MV]} & \multicolumn{1}{c}{4.3} & \multicolumn{1}{c}{4.3} \\
 
       \multicolumn{2}{l}{$\fCC$} & \multicolumn{2}{c}{[MHz]} & \multicolumn{1}{c}{400} & \multicolumn{1}{c}{400} \\
 
@@ -57,19 +60,25 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 \end{table}
 
 
-\large{\textbf{Operational considerations}}\\
-\normalsize{For the beam tests with the $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.}
+%\large{\textbf{Operational considerations}}\\
+\subsection{Operational considerations}
+
+For the beam tests with the $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
 
 
 \normalsize{\textbf{Energy ramp}}\\
-SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar}. Therefore, it was established the energy ramp has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the operational scenario also for the HL-LHC.
+SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar}. Therefore, it was established the energy ramp has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the approach also for the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
 Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz.
-In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For the emittance growth measurements which were performed at 270\,GeV the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
+In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For studies at 270\,GeV, like the emittance growth measurements, the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
 
-\subsection{Crab Cavity voltage callibration}
-The Head-Tail (HT) monitor was the main diagnostic device used for the measurement of the $\CC$ voltage in the experiment. In the first part of this section some basic information on the instrument and its usage will be discussed. Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis. All experiemental data presented in this subsection belong to the same set of measurements unless it is stated otherwise. They were performed on ... ay 26 GeV for as the crabbing is stronger and the effect more visible for better understadning. In the last part the results from the 270 geV will also be shown. 
+
+\section{Diagnostics: The Head-Tail monitor}\label{sec:HT_info}
+
+The HT monitor was the main diagnostic device in the SPS $\CC$ tests. It was deployed for the measurement of the crabbing and the callibration of the $\CC$ voltage. In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s will be discussed and then the callibration of the monitor will also be briefly explained. Last, the measurement of the $\CC$ voltage and the reconstuction of the crabbing will be presented. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC$ for simplicity. This energy option was chosen as the effect of $\CC$ kick is stronger and thus more visible than in higher energies.
+
+
 
 \normalsize{\textbf{The Heat-Tail monitor}}\\
 \begin{figure}[h]
@@ -108,8 +117,10 @@ In particular, Fig.~\ref{fig:HT_example_acq_singleTurn} and Fig.~\ref{fig:HT_exa
 
 \normalsize{\textbf{Heat-Tail monitor baseline removal}}\\
 One issue of concern at that point was the correction of the $\Delta$ signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}.  %present due to both the beam orbit offset in the head-tail pick-up and non-linearities of the hybrids, needs to be removed. https://accelconf.web.cern.ch/ibic2016/papers/thal02.pdf
-Normally, the baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, as already discussed, for the emittance growth measurements the $\CC$ was well synchronised with the main RF system. This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
+Normally, the baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, in the presence of the $\CC$s this method would also remove the crabbing signal, the static intra-bunch position offset induced by the $\CC$ kick when the latter is well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup})).
 
+
+%However, as already discussed, for the emittance growth measurements the  This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
 
 Therefore, in the SPS experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily detectable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
@@ -140,40 +151,50 @@ Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset
        \label{fig:HT_baseline_correction_crabbing_mm}
 \end{figure}
 
- 
+ \section{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
 
-\newpage
+ This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor measurements. The calibration was performed by calculating the kick required to reconstruct the measured intra-bunch offset using Eq.~\eqref{eq:CC_orbit_shift_Chao}. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Chaos' Eq... in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
 
-
-\normalsize{\textbf{Voltage callibration}}\\
-Finally, the $\CC$ voltage was callibrated by calcualting the kick required to reconstruct the measured intra-bunch offset. The formula for computing the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location is obtained from Chao's Eq.... in Ref.~\cite{Chao:1490001} and is given by:
 
 \begin{equation}\label{eq:CC_orbit_shift_Chao}
    \Delta y_{,HT} = \frac{\sqrt{\beta_{y, HT}}}{2 \sin(\pi \Qy)} \theta \sqrt{\beta_{y, CC}} \cos(\pi \Qy - \mid \psi_{y, HT} - \psi_{y, CC} \mid),
 \end{equation}
 
-where $\beta$ is the beta function, $Q$ is the tune, and $\psi$ is the phase advance in tune units. The same applies for the horizontal plane. The indeces HT and CC indicate the optic parameters at the location of the HT monitor and CC respectively. The deflection from the $\CC$ can be written as $\theta_j = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V(t) = \VCC \sin(2 \pi \fCC t) $ is the voltage that a particle experiences while passing through the $\CC$. 
+where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\psiy$ is the phase advance in tune units. The same applies for the horizontal plane. The indeces HT and CC indicate the optic parameters at the location of the HT monitor and CC respectively.
+
+The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
+
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm. Figure ... illustrates the cavity voltage computed from the HT signals discussed in Section~\ref{sec:HT_info}. The corresponding optic parameters are listed in Table...
+
 
 \begin{table}[!hbt]
-   \centering
-   \caption{Optic parameters required for the voltage callibration}
-   \begin{tabular}{lc}
-       \toprule
-       \textbf{Parameters} & \textbf{Values}\\
-       \bottomrule
-       $\beta_{y, HT}$  & 73.82\,m \\
-       $\beta_{y, \CC}$  & 73.82\,m \\
-       $\alpha_{x, \CC}$, $\alpha_{y, \CC}$  & tbf \,m,  tbf \,m \\
-       $D{x, \CC}$, $D_{y, \CC}$  & tbf \,m,  0 \,m \\     
+	\centering
+   \caption{Optic parameters at the CC1 and HT monitor in SPS}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
+		&&&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameters}} &
+		\multicolumn{2}{c}{\textbf{Units}} &
+		\multicolumn{2}{c}{\textbf{Values}} \\
+		\bottomrule
+      \multicolumn{2}{l}{$\beta_{y, HT}$} & \multicolumn{2}{c}{[m]} & \multicolumn{2}{c}{49.19} \\
+      \multicolumn{2}{l}{$\psi_{y, HT}$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{15.68} \\
+      \multicolumn{2}{l}{$\beta_{y, CC1}$} & \multicolumn{2}{c}{[m]} & \multicolumn{2}{c}{76.07} \\
+      \multicolumn{2}{l}{$\psi_{y, CC1}$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{23.9} \\
       \bottomrule
-   \end{tabular}
-   \label{tab:SPS_HT_Vcc}
+ 
+	\end{tabu}
+   \label{tab:SPS_HT_CC}
 \end{table}
+
 
 The $\CC$ voltage, computed by solving Eq.~\ref{eq:CC_orbit_shift_Chao} after removing the baseline from the intra-bucnh offset and expressing it in mm is shown in Fig. .. The corresponding optic parameters are listed in Table...
 
 
 Caption of figure, mention that it was 26 GeV at phase 0
+
+
+Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis. All experiemental data presented in this subsection belong to the same set of measurements unless it is stated otherwise. They were performed on ... ay 26 GeV for as the crabbing is stronger and the effect more visible for better understadning. In the last part the results from the 270 geV will also be shown. 
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
 For completntess

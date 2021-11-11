@@ -11,5 +11,7 @@
 \newsym[$CC$ phase]{phiCC}{\phi_{CC}}
 \newsym[Horizontal tune]{Qx}{\mathrm{Q_{x}}}
 \newsym[Vertical tune]{Qy}{\mathrm{Q_{y}}}
+\newsym[Horizontal phase advance]{psix}{\mathrm{\psi_{x}}}
+\newsym[Vetical phase advance]{psiy}{\mathrm{\psi_{y}}}
 \newsym[Location around the ring ??]{s}{s}
 \closesymdef
