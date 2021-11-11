@@ -147,7 +147,7 @@ Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_mm.png}
-       \caption{Intra-bunch offset from the CC kick expressed in \,mm after the removal of the baseline.}
+       \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
        \label{fig:HT_baseline_correction_crabbing_mm}
 \end{figure}
 
@@ -164,12 +164,21 @@ where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\psiy$ is the phas
 
 The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
 
-It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm. Figure ... illustrates the cavity voltage computed from the HT signals discussed in Section~\ref{sec:HT_info}. The corresponding optic parameters are listed in Table...
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals discussed in Section~\ref{sec:HT_info}. Note that the x-axis here doesn't correspond to the 25\,ns as previously but to the bunch length with $t=0$ at zero crossing. The corresponding optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
+
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_VCC__20180530_135105_after_baseline_correction_mm.png}
+       \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
+       \label{fig:VCC_from_HT_monitor_measurement}
+\end{figure}
+
 
 
 \begin{table}[!hbt]
 	\centering
-   \caption{Optic parameters at the CC1 and HT monitor in SPS}
+   \caption{Parameters for computing the CC voltage from the example HT monitor measurements discussed in this chapter}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
 		&&&&& \\[-6mm]
 		\toprule \toprule
@@ -177,87 +186,23 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 		\multicolumn{2}{c}{\textbf{Units}} &
 		\multicolumn{2}{c}{\textbf{Values}} \\
 		\bottomrule
-      \multicolumn{2}{l}{$\beta_{y, HT}$} & \multicolumn{2}{c}{[m]} & \multicolumn{2}{c}{49.19} \\
-      \multicolumn{2}{l}{$\psi_{y, HT}$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{15.68} \\
-      \multicolumn{2}{l}{$\beta_{y, CC1}$} & \multicolumn{2}{c}{[m]} & \multicolumn{2}{c}{76.07} \\
-      \multicolumn{2}{l}{$\psi_{y, CC1}$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{23.9} \\
+      \multicolumn{2}{l}{$\beta_{y, HT}$ / $\beta_{y, CC1}$}& \multicolumn{2}{c}{[m]} & \multicolumn{2}{c}{49.19 / 76.07} \\
+      \multicolumn{2}{l}{$\psi_{y, HT}$ / $\psi_{y, CC1}$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{15.68 / 23.9} \\
+      \multicolumn{2}{l}{$\Qy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{26.13} \\
+      \multicolumn{2}{l}{$\symE$} & \multicolumn{2}{c}{[GeV]} & \multicolumn{2}{c}{26} \\
       \bottomrule
- 
 	\end{tabu}
    \label{tab:SPS_HT_CC}
 \end{table}
 
 
-The $\CC$ voltage, computed by solving Eq.~\ref{eq:CC_orbit_shift_Chao} after removing the baseline from the intra-bucnh offset and expressing it in mm is shown in Fig. .. The corresponding optic parameters are listed in Table...
 
+\section{Reconstruction of crabbing}\label{sec:Crabbing_reconstruction}
 
-Caption of figure, mention that it was 26 GeV at phase 0
+Physicall illustration of crabbing. 
+Assuming gaussian transverse distribution. Approximation
 
+Reconstruction of crabbing
 
-Subsequently the method used for the voltage callibration from its reading will be explained. This method was developed at CERN and is described here for completness of the thesis. All experiemental data presented in this subsection belong to the same set of measurements unless it is stated otherwise. They were performed on ... ay 26 GeV for as the crabbing is stronger and the effect more visible for better understadning. In the last part the results from the 270 geV will also be shown. 
+\section{Conclusions}
 
-\normalsize{\textbf{Reconstruction of crabbing}}\\
-For completntess
-
-
-Therefore, the beta function at the 
-
-
-- The optic information for the ht monitor and the CC are needed.  (mipos na balo edo ta beta functions tou CC)
-
-ty. Therefore in order
-to recalculate the kick at the CCs from an offset measurement at an observation point, one only needs information of
-the beta-functions and the vertical betatron phases at both
-the CCs and the location of the diagnostic device.
-
-
-\newpage
-
-
-
-What is needed --> unsynchronised
-
-
-\section{Experimental procedure}
-
-\subsection{Machine and beam configuration}
-\subsection{Measurement methods}
- What do we measure and how? emittance (show plot ws)
- bunch length ABWLM --> we take the measurement directly from the resposnible tema
- --> show also from the instrument that we saw the unstable bunches.
-
- \section{Experimental resutls}
- \subsection{Overview}
- - bunches 2, 3 and 4 unstable
- \subsection{Comparison with the theory}
-
- \newpage 
- This chapter is adapted from the the studies published in Ref.~\cite{Triantafyllou}
-
- \section{Experimental Setup} % from IPAC paper
-
-Several experimental studies have been performed (2010-2017) to identify the optimal conditions for the emittance growth studies with CCs in the SPS~\cite{Calaga:1451286, Antoniou:2649815}. Based on these preparatory studies, the measurements in the SPS were performed with four low intensity ($\sim 3 \cdot 10^{10}$\, ppb) bunches at 270\,GeV. To minimise the emittance growth from other sources~\cite{Antoniou:2649815} the first order chromaticity, $Q^\prime$, of the machine was corrected to small positive values ($\sim$\,1-2) in both the horizontal and the vertical planes. During the measurements the Landau octupoles were switched off. It should be note, though, that a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Only one CC was used, providing a vertical kick to the beam. The transverse feedback system was switched off. Even though the emittance growth is a single bunch effect four bunches were used to reduce the statistical uncertainty of the measurements. The distance between the bunhces was 524 ns. An overview of the relevant SPS parameters during the experiment is given in Table%~\ref{tab:SPS_MD_params}. 
-
-
-%\begin{table}[!hbt]
-%    \centering
-%    \caption{SPS parameters during the 2018 MD studies.}
-%    \begin{tabular}{lc}
-%        \toprule
-%        \textbf{Parameters} & \textbf{Values}\\
-%       \midrule
-%           $E_b$  & 270\,GeV   \\ %[3pt]
-%           $\frev$  & 43.375\,kHz  \\ %[3pt]
-%           $\nu_x, \nu_y$    & 26.13, 26.18  \\ %[3pt]
-%            $\nu_s$ & 0.0051   \\
-%            $\VRF$, $\fRF$ & 5\,MV, 200\,MHz \\
-%            $\beta_{x, \text{CC}}$, $\beta_{y,\text{CC}}$ &  30.31\,m, 73.82\,m \\
-%            $\VCC$, $\fCC$ & 1\,MV, 400\,MHz \\
-%       \bottomrule
-%    \end{tabular}
-%    \label{tab:SPS_MD_params}
-% \end{table}
-
- \subsection{Injected RF noise} 
-
- In order to characterize the CC noise induced emittance growth, controlled noise was injected into their LLRF system and the evolution of the bunch was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10 KHz, overlapping and primarily exciting the fisrt betatron sideband at $\sim 8$ kHz. The phase noise was always dominant. 
