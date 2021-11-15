@@ -1,8 +1,8 @@
+
 \vspace*{1mm}
-In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. A series of dedicated machine developemnt studies was carried out in order to validate their working principle and answer various beam dynamic questions. This chapter provides a comprehesive insight into the operational setup, the applied measurement methods and some of the first experimental with $\CC$s in the SPS. These methods and procedures were developed at CERN and they are presented here as they are essential for the understadning of the work discussed in the following chapters.
+In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. A series of dedicated machine developemnt studies was carried out in order to validate their working principle and answer various beam dynamic questions. The objective of this chapter is to provide an overview of the operational setup and to describe the instrumentation and the methods deployed for the measurement of the first crabbing with proton beams. These methods and procedures were developed at CERN and they are essential for the understadning of the work discussed in the following chapters.
 
-
-The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The use of the Head-Tail (HT) monitor as the main diagnostic device for measurement of the crabbing is presented in Section~\ref{sec:HT_info}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections .. and .. respectively.
+The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. The use of the Head-Tail (HT) monitor as the main diagnostic device for measurement of the crabbing is presented in Section~\ref{sec:HT_info}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections~\ref{sec:Vcc_calibration} and~\ref{sec:Crabbing_reconstruction} respectively. test
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
@@ -67,11 +67,11 @@ For the beam tests with the $\CC$s in the SPS the approach regarding the energy 
 
 
 \normalsize{\textbf{Energy ramp}}\\
-SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar}. Therefore, it was established the energy ramp has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the approach also for the HL-LHC.
+SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the approach also for the HL-LHC~\cite{Rama_Paris_presentation}.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
 Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz.
-In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For studies at 270\,GeV, like the emittance growth measurements, the synchronisation took place at the end of the ramp shortly after the cavity was switched on.
+In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For studies at 270\,GeV, like the emittance growth measurements, the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
 
 
 \section{Diagnostics: The Head-Tail monitor}\label{sec:HT_info}
@@ -120,9 +120,7 @@ One issue of concern at that point was the correction of the $\Delta$ signal  ba
 Normally, the baseline is removed by computing the mean of the $\Delta$ signals over all turns and then subtracting this mean from the signal of each turn. However, in the presence of the $\CC$s this method would also remove the crabbing signal, the static intra-bunch position offset induced by the $\CC$ kick when the latter is well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup})).
 
 
-%However, as already discussed, for the emittance growth measurements the  This resulted in a static intra-bunch position offset which is the signal of interest. By removing the baseline with the method described above the signal of intereset would also be removed.
-
-Therefore, in the SPS experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily detectable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
+Therefore, in the SPS experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
 \begin{figure}[!h]
    \centering         
@@ -140,8 +138,7 @@ Therefore, in the SPS experiments a reference measurement had first to be made w
 
 
 \normalsize{\textbf{Headtail monitor callibration}}\\
-In order to have the mean intra-bunch offset ($\Delta$) signal in units of mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is provided by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2017. %(T. Levens, private communication)
-Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. The reflected part of the signal is discarted here and only the crabbing is shown. 
+In order to have the mean intra-bunch offset ($\Delta$) signal in units of mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is provided by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. The reflected part of the signal is discarted here and only the crabbing is shown. 
 
 
 \begin{figure}[!h]
@@ -150,6 +147,17 @@ Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset
        \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
        \label{fig:HT_baseline_correction_crabbing_mm}
 \end{figure}
+
+\normalsize{\textbf{Reconstruction of crabbing}}\\
+
+
+- Take the measured profile in z
+- 
+Assuming a trasnverse gaussian distribution and modulating the longitudinal coordinates with the intra-bunch offset measured with the HT monitrore on
+
+- normalised to the maxmimum number of particles over all the longitudinal slices
+- x longitudinal slices for 0.1 ns each
+
 
  \section{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
 
@@ -164,13 +172,13 @@ where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\psiy$ is the phas
 
 The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
 
-It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals discussed in Section~\ref{sec:HT_info}. Note that the x-axis here doesn't correspond to the 25\,ns as previously but to the bunch length with $t=0$ at zero crossing. The corresponding optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm as discussed in Section~\ref{sec:HT_info}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this Chapet. Note that the x-axis here doesn't correspond to the 25\,ns slot of the HT acquisition as previously but to the bunch length with $t=0$ at zero crossing. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
 
 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_VCC__20180530_135105_after_baseline_correction_mm.png}
-       \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
+       \caption{CC voltage measurement from the HT monitor.}
        \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
 
@@ -199,6 +207,16 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 
 \section{Reconstruction of crabbing}\label{sec:Crabbing_reconstruction}
 
+In this section, the method developed in 2018 to plot a physicall illustration of the crabbing will be described. %This reconstruction of the beam crabbing was a very useful tool for the understadning of the $\CC$ operation and the beam dynamics Ass
+Assuming a gaussian transverse profile and modulation the longitudinal coordinates with the intra-bunch offset measured with the HT monitor
+%with $\sigma$ computed from the optics at the WS location. 
+As discussed in the previous section, the crab cavity voltage can be computed from the HT monitor signal. 
+
+Last, the HT monitor was also used to create a physicall illustration of the crabbing and is shown in this section. 
+
+- Assumes transverse gaussian distribution --> sigma from the emittance the beta gamma and the optics at the location of the WS.
+
+
 Physicall illustration of crabbing. 
 Assuming gaussian transverse distribution. Approximation
 
@@ -206,3 +224,5 @@ Reconstruction of crabbing
 
 \section{Conclusions}
 
+
+% crab cavity voltage. important for the noise induced emittance growth
