@@ -59,6 +59,7 @@
 \thispagestyle{empty}%
 \newpage%
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
 \makeatother
     
 
@@ -81,3 +82,13 @@
 \usepackage{tabu} % customizing tabu (for multicolumns)
 \usepackage[table]{xcolor} % midrule color
 \usepackage{booktabs} % midrule color
+
+% Chapter - title settings
+
+%\newcommand\YUGE{\fontsize{40}{40}\selectfont}
+
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\LARGE\bfseries}

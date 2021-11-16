@@ -1,5 +1,4 @@
-
-\vspace*{1mm}
+\vspace*{-1mm}
 In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be tested for the first time with proton beams. A series of dedicated machine developemnt studies was carried out in order to validate their working principle and answer various beam dynamic questions. One of the operational issues that needed to be addressed concerned the expected emittance growth due to noise in their RF system, which is the main subject this thesis. As mentioned in Chapt... a theoretical model had already been developed and validated by trackig simulations~\cite{PhysRevSTAB.18.101001}. As a part of the first experiemental campaign with $\CC$s in SPS a dedicated experiment was conducted to benchmark these models with experimental data and confirm the analytical predictions. The objective of this chapter is to provide an overview of the general machine setup for the $\CC$ experiements and introduce the instruments and methods used for measuring the beam parameters of interest for the emittance growth studies.
 
 
@@ -79,9 +78,9 @@ In order to make sure that the beam will experience the same effect from the $\C
 
 
 \section{The Head-Tail monitor}\label{sec:HT_info}
-The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct evaluation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic is explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
+The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct evaluation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
- In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s and the method for the illustrating the crabbing will be discussed. Last, the callibration of the $\CC$ voltage is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. This energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
+ In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. This energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
 
 
 
@@ -142,7 +141,7 @@ Therefore, for the $\CC$ experiments a reference measurement had first to be mad
 
 
 \normalsize{\textbf{Headtail monitor callibration}}\\
-In order to convert the mean intra-bunch offset ($\Delta$) signal in units of mm the $\Delta$ acquisitions need to be divided by the $\Sigma$ signal and by a normalisation factor which is provided by the callibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. Here only the crabbing part is shown and the rest of the signal is discarted.
+As it can be seen from Fig.~\ref{fig:HT_example_acq_singleTurn}- Fig.\ref{fig:HT_baseline_correction_measurements_2D} the raw HT data are given in arbitrary units. In order for the crabbing signal, $\langle \Delta \rangle$, to be meaningful it needs to be expressed in mm. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. Here only the crabbing part  of the signal is shown while the rest is discarted.
 
 
 \begin{figure}[!h]
@@ -154,6 +153,13 @@ In order to convert the mean intra-bunch offset ($\Delta$) signal in units of mm
 
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
+The method developed at CERN in 2018 for reconstructing the crabbing from the HT monitor measurements and plotting a physical illustration of it is described here. This technique was extensivley used throught the experimental campaign with $\CC$s as it gives a straightforward estimation of the applied $\CC$ kick, as it can be clearly seen in Fig..
+
+
+
+
+e reconstruction of crabbing with this method
+
 
 - Take the measured profile in z
 - 
