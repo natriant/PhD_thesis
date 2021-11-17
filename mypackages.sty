@@ -16,8 +16,13 @@
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
 \fancyhf{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \setlength{\headheight}{15pt} 
-\fancyhead[LE]{\textbf{\nouppercase{\leftmark}}}
+%\fancyhead[LE]{\textbf{\nouppercase{\leftmark}}}
+%\fancyhead[LE]{\textbf{\nouppercase{\newlinetospace{{\leftmark}}\quad\thechapter}}}
+\fancyhead[LE]{\textbf{\nouppercase{\thechapter. \leftmark }}}
+
 \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
 %\fancyfoot[CE,CO]{\leftmark}
 \fancyfoot[LE,RO]{\thepage}
