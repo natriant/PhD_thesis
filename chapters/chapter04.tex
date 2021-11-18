@@ -80,11 +80,11 @@ In order to make sure that the beam will experience the same effect from the $\C
 \section{The Head-Tail monitor}\label{sec:HT_info}
 The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
- In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. This energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
+ In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
 
 
 
-\normalsize{\textbf{The Heat-Tail monitor}}\\
+\normalsize{\textbf{General information}}\\
 \begin{figure}[h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/SPS_HT_monitor_diagram_modified.png}
@@ -94,6 +94,8 @@ The HT monitor was the main diagnostic device deployed for the callibration of t
 The HT monitor is a high bandwidth version of a standard beam position monitor but it can measure the transverse offset within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
 
 The raw signals from the HT monitor require a specific post processing procedure, which is described in Ref.~\cite{Levens:2313358}, in order to give useful information. Figure~\ref{fig:HT_example_signals} shows some example signals obtained from the HT monitor after the basic post procesing is applied. Moreover, Fig.~\ref{fig:HT_example_signals_2D} shows a 2D representation of the HT monitor reading. It is worth noting here that in the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
+
+% COMMENT: The Ref.~\cite{Levens:2313358} refers to the LHC HT monitor but the same applies for SPS as it is the same device.
 
 
 \begin{figure}[!h]
@@ -105,65 +107,52 @@ The raw signals from the HT monitor require a specific post processing procedure
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_135105_colorbar_new_version.png}
+   \includegraphics[width=0.9\textwidth]{images/Ch4/HT_2D__20180530_135105_colorbar_new_version.png}
        \caption{2D representation of example $\Delta$ and $\Sigma$ signals with respect to the longitudinal position within the bunch obtained from the HT monitor over several SPS revolutions.}
        \label{fig:HT_example_signals_2D}
 \end{figure}
 
 
+\subsection{Post processing in the presence of Crab Cavities}\label{subsec:HT_post_process_CC}
+To obtain useful information from the HT monitor signal in the presence of the $\CC$s there are a few steps that differ from the standard post processing procedure and they are desribed below.
 
 \normalsize{\textbf{Heat-Tail monitor baseline correction}}\\
-One issue of concern at that point was the correction of the $\Delta$ signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}. During the normal post processing, the correction is achieved by computing the mean of the $\Delta$ signals over all turns and then subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method.
+One issue of concern is the correction of the $\Delta$ signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}. During the normal post processing, the correction is achieved by computing the mean of the $\Delta$ signals over all turns and then subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method.
 
 Therefore, for the $\CC$ experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
+
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_new_version.png}
+   \includegraphics[width=0.65\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_new_version.png}
        \caption{HT monitor baseline correction for the SPS CC tests.}
        \label{fig:HT_baseline_correction}
 \end{figure}
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_2D__20180530_135105_before_after_sunchronisation_new_version.png}
+   \includegraphics[width=0.7\textwidth]{images/Ch4/HT_2D__20180530_135105_before_after_sunchronisation_new_version.png}
        \caption{HT acquistions before and after the sunchronisation of the SPS main RF with the CC.}
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
 
 \normalsize{\textbf{Headtail monitor callibration}}\\
-The last step, to make the HT acquisitions meaningful is to convert the measured intra bunch offset, $\langle \Delta \rangle$, from arbitrary units to mm. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. Here only the 
+The last step, to make the HT acquisitions meaningful is to convert the measured intra bunch offset, $\langle \Delta \rangle$, from arbitrary units to mm. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. 
 
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_mm.png}
+   \includegraphics[width=0.65\textwidth]{images/Ch4/HT_corrected__20180530_135105_baseline_correction_new_version.png}
        \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
        \label{fig:HT_baseline_correction_crabbing_mm}
 \end{figure}
 
 
-\normalsize{\textbf{Reconstruction of crabbing}}\\
-The method developed at CERN in 2018 for reconstructing the crabbing from the HT monitor measurements and plotting a physical illustration of it is described here. This technique was extensivley used throught the experimental campaign with $\CC$s as it gives a straightforward estimation of the applied $\CC$ kick, as it can be clearly seen in Fig..
 
 
-
-
-e reconstruction of crabbing with this method
-
-
-- Take the measured profile in z
-- 
-Assuming a trasnverse gaussian distribution and modulating the longitudinal coordinates with the intra-bunch offset measured with the HT monitrore on
-
-- normalised to the maxmimum number of particles over all the longitudinal slices
-- x longitudinal slices for 0.1 ns each
-
-
- \section{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
-
- This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor measurements. The calibration was performed by calculating the kick required to reconstruct the measured intra-bunch offset using Eq.~\eqref{eq:CC_orbit_shift_Chao}. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Chaos' Eq... in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
+ \subsection{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
+ This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor signal. The calibration was performed by calculating the kick required to reconstruct the measured intra-bunch offset using Eq.~\eqref{eq:CC_orbit_shift_Chao}. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Chaos' Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
 
 
 \begin{equation}\label{eq:CC_orbit_shift_Chao}
@@ -174,15 +163,14 @@ where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\psiy$ is the phas
 
 The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
 
-It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm as discussed in Section~\ref{sec:HT_info}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this Chapet. Note that the x-axis here doesn't correspond to the 25\,ns slot of the HT acquisition as previously but to the bunch length with $t=0$ at zero crossing. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
-
-
 \begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/HT_VCC__20180530_135105_after_baseline_correction_mm.png}
-       \caption{CC voltage measurement from the HT monitor.}
-       \label{fig:VCC_from_HT_monitor_measurement}
+\centering         
+\includegraphics[width=0.65\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105.png}
+    \caption{CC voltage calibration from the HT monitor.}
+    \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
+
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it in mm as discussed in Section~\ref{subsec:HT_post_process_CC}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this section. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
 
 
 
@@ -205,24 +193,23 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
    \label{tab:SPS_HT_CC}
 \end{table}
 
+\normalsize{\textbf{Reconstruction of crabbing}}\\
+The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are paresented here. This technique was developed at CERN in 2018 and it was extensivley used throught the experimental campaign with $\CC$s as alongside the calibrated voltage it gives a straightforward estimation of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. \\ \\
+To obtain this physical illustration of the effect of the CC kick on the beam one needs to modualte the measured longitudinal profile, $\langle \Sigma \rangle$, with the measured intra-bunch offset (e.g. Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}). For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more details in the following section). The color code is normalised to the maximum intensity within the bunch.
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch4/HT_crabVoltage__20180530_135105_crabbing_only.png}
+       \caption{Illustration of the crabbing from the HT monitor signal.}
+       \label{fig:crabbing_reconstruction_HT_monitor}
+\end{figure}
+   
 
 
-\section{Reconstruction of crabbing}\label{sec:Crabbing_reconstruction}
 
-In this section, the method developed in 2018 to plot a physicall illustration of the crabbing will be described. %This reconstruction of the beam crabbing was a very useful tool for the understadning of the $\CC$ operation and the beam dynamics Ass
-Assuming a gaussian transverse profile and modulation the longitudinal coordinates with the intra-bunch offset measured with the HT monitor
-%with $\sigma$ computed from the optics at the WS location. 
-As discussed in the previous section, the crab cavity voltage can be computed from the HT monitor signal. 
+\section{The Wire Scanner}
 
-Last, the HT monitor was also used to create a physicall illustration of the crabbing and is shown in this section. 
-
-- Assumes transverse gaussian distribution --> sigma from the emittance the beta gamma and the optics at the location of the WS.
-
-
-Physicall illustration of crabbing. 
-Assuming gaussian transverse distribution. Approximation
-
-Reconstruction of crabbing
+\section{The mountain range or whatever was used for the bunch lenght measurement}
 
 \section{Conclusions}
 
