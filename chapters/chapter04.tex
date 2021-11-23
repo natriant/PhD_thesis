@@ -77,7 +77,7 @@ Another issue of concern was the fact that the $\CC$ operate at the fixed freque
 In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For studies at 270\,GeV, like the emittance growth measurements, the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
 
 
-\section{The Head-Tail monitor}\label{sec:HT_info}
+\section{SPS Head-Tail monitor}\label{sec:HT_info}
 The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
  In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
@@ -207,43 +207,53 @@ To obtain this physical illustration of the effect of the CC kick on the beam on
 
 
 
-\section{The Wire Scanners}
+\section{SPS Wire Scanners}
 
-The SPS is equpped with rotating beam wire scanners (WS)~\cite{BOSSER1985475, Berrig:1972478} to measure the transverse beam emittance. The working prinicple is the following: a thin wire rapidly moves across the beam and a shower of secondary particles is generated, which is then detected by a system of scintillator and photomultuplier, as sketeched in Fig.~\ref{fig:SPS_WS_ROT}. 
-
-Hence, the WS signal consists of the measured light intensity with respect to the wire position. As the wire crosses the beam over multiple turns the transverse beam profile is obtained. It is worth noting that in every passage of the beam from the WS two scans are performed with the wire moving in the forward direction (IN scan) and then backwords (OUT scan)~\cite{Dehning:895164}. An example of the WS profiles is shown in Fig.~\ref{fig:WS_example_H_profile}
+The SPS is equpped with rotating beam wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. The working prinicple is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. Their signal is then detected by a system of scinitllator/photomultiplier outside of the beam pipe. By measuring the wire position and the photomultiplier current at it over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile} (left).
 
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch4/WS_sketch.png}
+   \includegraphics[width=0.8\textwidth]{images/Ch4/Wire_scanner.png}
        \caption{Sketch of the SPS rotational wire scanners~\cite{Berrig:1972478}}
        \label{fig:SPS_WS_ROT}
 \end{figure}
+
+In general, emittance increased is expected during each wire scan, due to Coulomb multiple scattering, which has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
+
+
+
 
 
 \begin{figure}
    \centering
    \begin{subfigure}{.5\textwidth}
      \centering
-     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.51637.H_IN scan_13Oct21_17:11:19.png}
+     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw.png}
    \end{subfigure}%
    \begin{subfigure}{.5\textwidth}
      \centering
-     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.51637.H_OUT scan_13Oct21_17:11:19.png}
+     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
    \end{subfigure}
    \caption{A figure with two subfigures}
-   \label{fig:WS_example_H_profile}
+   \label{fig:WS_example_V_profile}
    \end{figure}
 
    \normalsize{\textbf{Measuring transverse beam emittance}}\\
 
+
+
+   
+   uring the MD the evolution of the horizontal emittance
+was recorded with a rotational wire-scanner (519H) while
+the vertical emittance evolution was recorded with a rota
 
 tes tets tes 
 
    - which one will be used in the experiment and why? (past studies showed they are not destructive)
    - How to Obtain emittance from porifile: Gaussian 4p fit
    - Dispersion for H plane. (for the 2018 was very small not taken into account)
+   - In out scan
 
 \section{The mountain range or whatever was used for the bunch lenght measurement}
 
