@@ -250,29 +250,29 @@ The general formula for computing the normalised beam emittance from the beam si
 
 \begin{equation}\label{eq:emittance_from_WS}
    \centering
-   \epsilon_{x,y} = \frac{\sigma_{x,y}^2}{\beta_{x,y, WS}} \betarel \gammarel
+   \epsilon = \frac{\sigma^2}{\beta_{WS}} \betarel \gammarel
 \end{equation}
 
 The beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively.
 
-The uncertainty of the computed emittance, $\Delta \epsilon$, at a dispersion free region, depends only on the uncertainty of the measured beam size, $\Delta \sigma$, as:
+Considering that the relativistic parameters and the beta fucntion are free of error, the uncertainty of the computed emittance, $\Delta \epsilon$, at a dispersion free region, depends only on the uncertainty of the measured beam size, $\Delta \sigma$, as:
 
 \begin{equation}\label{eq:emittance_from_WS_uncertainty}
    \centering
-   \frac{\Delta \epsilon_{x,y}}{\epsilon_{x,y}} = \sqrt{\left(2\frac{\Delta \sigma_{x,y}}{\sigma_{x,y}} \right)^2} = 2\frac{\Delta \sigma_{x,y}}{\sigma_{x,y}},
+   \frac{\Delta \epsilon}{\epsilon} = \sqrt{\left(2\frac{\Delta \sigma}{\sigma} \right)^2} = 2\frac{\Delta \sigma}{\sigma},
 \end{equation}
 
-where the relativistic parameters and the beta fucntion are considered free of error
 
 \normalsize{\textbf{Further considerations}}\\
-   For each measurement the beam profile is scanned twice as the wire passes
-   through the beam with an in and out scan. In this thesis only the average beam size
-   85
-   7. Transverse Beam Size Measurement
-   obtained from in and out scan is used for the emittance calculations and the error
-   from averaging is included in the resul
+It is worth noting here, that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam at the forward direction (IN scan) and then backwords (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar (add order of difference). In this thesis, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , will be used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
 
-Some emittance increase is expected during each wire scan, due to Coulomb multiple scattering, which has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
+\begin{equation}\label{eq:avg+emittance_from_WS_uncertainty}
+   \Delta \epsilon_{avg} = \sqrt{\Delta \epsilon_1 ^2 + \Delta \epsilon_2 ^2},
+\end{equation}
+where $\Delta \epsilon_1$ is the standard deviation of the $\epsilon_{IN}$ and $\epsilon_{OUT}$ and $\Delta \epsilon_2=\sqrt{\langle \Delta \epsilon_{IN}, \Delta \epsilon_{OUT}\rangle}$.
+
+
+Finally, some emittance increase is expected during each wire scan, due to Coulomb multiple scattering, which has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 
 \section{The mountain range or whatever was used for the bunch lenght measurement}
 
