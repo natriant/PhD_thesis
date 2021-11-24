@@ -5,7 +5,7 @@ In 2018, two prototype Crab Cavities ($\CC$s) were installed in the SPS to be te
 The chapter is stractured as follows: Section~\ref{sec:CC_SPS_setup} describes the installation of the $\CC$s in the SPS and the experimental machine configuration. According to the theroetical model we need to measure the crab cavity voltatge, the emttance and the bunch lenth.
 
 
-The use of the Head-Tail (HT) monitor as the main diagnostic device for measurement of the crabbing is presented in Section~\ref{sec:HT_info}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections~\ref{sec:Vcc_calibration} and~\ref{sec:Crabbing_reconstruction} respectively. test
+The use of the Head-Tail (HT) monitor as the main diagnostic device for measurement of the crabbing is presented in Section~\ref{sec:HT_info}. Last, the analysis of the HT measurements for the callibration of the $\CC$ voltage and the reconstruction of the crabbing are discussed in Sections~\ref{sec:Vcc_calibration} and respectively. test
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
@@ -209,7 +209,9 @@ To obtain this physical illustration of the effect of the CC kick on the beam on
 
 \section{SPS Wire Scanners}
 
-The SPS is equpped with rotating beam wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. The working prinicple is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. Their signal is then detected by a system of scinitllator/photomultiplier outside of the beam pipe. By measuring the wire position and the photomultiplier current at it over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile} (left).
+The SPS is equpped with beam wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with rotational WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
+
+The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. Their signal is then detected by a system of scintillator/photomultiplier (PM) outside of the beam pipe. By measuring the wire position and the PM current at it over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile} (left).
 
 
 \begin{figure}[!h]
@@ -219,13 +221,18 @@ The SPS is equpped with rotating beam wire scanners (WS) to measure the transver
        \label{fig:SPS_WS_ROT}
 \end{figure}
 
-In general, emittance increased is expected during each wire scan, due to Coulomb multiple scattering, which has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
+
+\normalsize{\textbf{Fitting of transverse profiles}}\\
+To obtain the beam size, $\sigma$, the transvserse profiles from each scan are fitted with a four parameter Gauss function:
+
+\begin{equation}\label{eq:4p_gauss}
+   f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma^2}},
+\end{equation}
+
+where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation.
 
 
-
-
-
-\begin{figure}
+\begin{figure}[!h]
    \centering
    \begin{subfigure}{.5\textwidth}
      \centering
@@ -235,25 +242,28 @@ In general, emittance increased is expected during each wire scan, due to Coulom
      \centering
      \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
    \end{subfigure}
-   \caption{A figure with two subfigures}
+   \caption{ Vertical beam profile obtained from the BWS.41677.V instrument. The measuremed data points (light blue) are fitted with a four parameter Gaussian (orange) to obtain the beam size. The calculated emittance is also shown.}
    \label{fig:WS_example_V_profile}
-   \end{figure}
+\end{figure}
 
-   \normalsize{\textbf{Measuring transverse beam emittance}}\\
+The general formula for computing the normalised beam emittance from the beam size, $\sigma$ is described in Eq.~\ref{eq:emit_from_beam_size}. However, in the 2018 SPS operational configuration the dispersion was small in the WS location and thus its contribution to the beam size was found to be negligible \footnote{add footnote here blah bl;ah}. In that case, the normalised emittance can be calculated  from the beam size ($\sigma$), the beta fucntion at the WS location ($\beta_{WS}$) and the relativistic parameters ($\betarel, \gammarel$) as follows:
+
+\begin{equation}\label{eq:emittance_from_WS}
+   \epsilon_{x,y} = \frac{\sigma_{x,y}^2}{\beta_{x,y, WS}} \betarel \gammarel
+\end{equation}
+
+The beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively.
 
 
+\normalsize{\textbf{Considerations}}\\
+   For each measurement the beam profile is scanned twice as the wire passes
+   through the beam with an in and out scan. In this thesis only the average beam size
+   85
+   7. Transverse Beam Size Measurement
+   obtained from in and out scan is used for the emittance calculations and the error
+   from averaging is included in the resul
 
-   
-   uring the MD the evolution of the horizontal emittance
-was recorded with a rotational wire-scanner (519H) while
-the vertical emittance evolution was recorded with a rota
-
-tes tets tes 
-
-   - which one will be used in the experiment and why? (past studies showed they are not destructive)
-   - How to Obtain emittance from porifile: Gaussian 4p fit
-   - Dispersion for H plane. (for the 2018 was very small not taken into account)
-   - In out scan
+Some emittance increase is expected during each wire scan, due to Coulomb multiple scattering, which has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 
 \section{The mountain range or whatever was used for the bunch lenght measurement}
 

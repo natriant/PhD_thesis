@@ -13,3 +13,5 @@
 \printsymline{\mathrm{\psi _{x}}}{\mathrm{\psi _{x}}}{psix}{Horizontal phase advance}{viii}
 \printsymline{\mathrm{\psi _{y}}}{\mathrm{\psi _{y}}}{psiy}{Vetical phase advance}{viii}
 \printsymline{s}{s}{s}{Location around the ring ??}{viii}
+\printsymline{\beta}{\beta}{betarel}{Relativistic beta}{viii}
+\printsymline{\gamma}{\gamma}{gammarel}{Relativistic gamma (Lorenz factor)}{viii}

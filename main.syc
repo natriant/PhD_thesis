@@ -13,3 +13,5 @@
 \newcommand{\psixinclude}{no}
 \newcommand{\psiyinclude}{yes}
 \newcommand{\sinclude}{no}
+\newcommand{\betarelinclude}{yes}
+\newcommand{\gammarelinclude}{yes}

@@ -14,4 +14,6 @@
 \newsym[Horizontal phase advance]{psix}{\mathrm{\psi_{x}}}
 \newsym[Vetical phase advance]{psiy}{\mathrm{\psi_{y}}}
 \newsym[Location around the ring ??]{s}{s}
+\newsym[Relativistic beta]{betarel}{\beta}
+\newsym[Relativistic gamma (Lorenz factor)]{gammarel}{\gamma}
 \closesymdef
