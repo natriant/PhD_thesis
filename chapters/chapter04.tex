@@ -1,53 +1,48 @@
 \vspace*{-1mm}
 The theoretical model for the transverse emittance growth caused by amplitude and phase noise in a CC was introduced in Chapter~\ref{Ch:CC_noise_theory}. In 2018, a dedicated experiment was conducted in the SPS to benchmark these models with experimental data and confirm the analytical predictions. Here, the machine setup, the beam configuration and the instrumentation used for the emittance growth studies with $\CC$s in the SPS are presented.
 
+
+\begin{sloppypar} % to fix \hbox too wide
 The chapter is structured as follows: Section~\ref{sec:SPS_setup}
-describes the experimental machine configuration. Thereafter, Section~\ref{sec:CC_SPS_setup} elaborates on the installation and the operation of the CCs in the SPS. In Sections~\ref{sec:HT_info}-~\ref{sec:WallCurrentMonitor} the instruments used for the parameters of interest (see Chapter~\ref{Ch:CC_noise_theory}, Eq....) i.e. $\CC$ voltage, emittance and bunch length are discussed, including the post processing methods where it was performed by myself.
+describes the experimental machine configuration. Thereafter, Section~\ref{sec:CC_SPS_setup} elaborates on the installation and the operation of the CCs in the SPS. In Sections~\ref{sec:HT_info}-~\ref{sec:WallCurrentMonitor} the instruments used for the parameters of interest (see Chapter~\ref{Ch:CC_noise_theory}, Eq....) i.e. $\CC$ voltage, emittance and bunch length are discussed, including the post processing methods where it was performed by the author.
+\end{sloppypar}
+
 
 \section{Machine and beam configuration}\label{sec:SPS_setup}
-In view of the $\CC$ operation in HL-LHC where the beam will stay in the machine for sevral hours, special cycles were setup in the SPS for the emittance growth studies. They are called \enquote{coast} beam cycles with  bunched beams and during them the bunches circulate in the machine at constant energy for long periods up to a few hours.
+For studying the long-term emittance evolution special cycles were set up in the SPS which are called "coast" beam cycles with bunched beams. During them, bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similarly to the HL-LHC case.
 
-Due to the limited available time in SPS for $\CC$ tests during 2018, the optimal machine and beam parameters for the coast cycles were identified in advance during an extensive preparatory campaign which was carried out over the years 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}.
+To make sure that the SPS machine can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out over the years 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the natural emittance growth that was observed in the machine (without noise), as it needed to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. From these studies, it was concluded that the optimal coast setup should be at 270\,GeV, with low chromaticity and bunches of low intensity. The main machine and beam parameters of the experiment of 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. It should be noted that there are no available  measurements of chromaticity from the day of the experiment, however it was ensured that it remained below 1. Furthermore, as the natural emittance growth was found to be a single bunch effect four bunches were used instead of just in order to improve the statistics. 
 
-The main issue was to define the beam energy where the studies should take place over the range of 26 GeV to 450 GeV. CC kick stronger for lower energies. 
-Problem natural emittance growth in SPS. Single bunche effect (thus we can have 4 bunches for higher statistics), dependnece on chromaticity --> we need low chroma. depend on intensity (?) --> low intensity 3e10 ppb. dependence on energy to minimise it we need higher energy. Coast can be achieved at max 270 GEV/c ??.
+% Do I need to add more details? If yes: the emittance growth smaller for higher energies, low chroma and low intensities. No dependence on betatron tune. Also it is a single bunch effect.
 
-
-
-The issue of major concern was found to be the natural emittance growth observed in both transverse planes in the SPS (without the $\CC$s) as it needed to be well understood in order to be seperated from the $\CC$ noise induced emittance growth. 
-
-
-
-
-
-
-. One issue of major concern was the natural emittance growth in the SPS machine (without the CCs). The residual emittance growth was found to be less significant for higher energies and low chromaticity values. Therefore, in order to disentangled  from the CC noise induced emittance growth. 
-
-270 GeV higher energy in coast
-
-
-
-a special machine configuration was set up called 'coast' beam cycles with bunched beam. 
-Long time conservative
-
-
-The available time for testing the CC noise induced emittance growth was very limited. Therefore, a number of thorogh preparatory have been performed in advance Ref[...]
-
-One of the major concerns was the natural emittance growth observed in SPS in coast. The reason is not yet well understood. However, it was identified that is minimum for higher energies. Now the higher energy that the SPS can operate in coast is 270 GeV. Thus, the emittance growth experiemtns were performed at 270 GeV
-
-
-
-
-A number of preparatory studies have been perforemd the years before 2018, in order to define the optimal machine configuration for the experimental study of the CC noise induced emittance growth.
-
-- Energy
-- chromaticity. Dependence of natural emittance growth to chromaticity. It was kept minimum. Measurements not available but we will consider small value ~ 1.
-- To simplify the study the octupoles were switched OFF. For the model to apply we need a tune spread from amplitude detuning. THe octupoles were switched off as the resitudal non lineariteis Ref to micheles paper result to a sufficient tune spread of $10^-4$.
-- 4 bunches for better statistics
+\begin{table}[!hbt]
+	\centering
+   \caption{Main machine and beam parameters for the emittance growth studies with CCs in SPS in 2018}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
+		&&&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameters}} &
+		\multicolumn{2}{c}{\textbf{Units}} &
+		\multicolumn{2}{c}{\textbf{Values}} \\
+		\bottomrule
+      \multicolumn{2}{l}{$\symE$} & \multicolumn{2}{c}{[GeV]} & \multicolumn{2}{c}{270} \\
+      \multicolumn{2}{l}{$\frev$} & \multicolumn{2}{c}{[kHz]} & \multicolumn{2}{c}{43.375} \\
+      \multicolumn{2}{l}{$\Nb$} & \multicolumn{2}{c}{[p/b]} & \multicolumn{2}{c}{3 $\times 10^{10}$} \\
+      \multicolumn{2}{l}{bunches} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{4} \\
+      \multicolumn{2}{l}{bunch spacing} & \multicolumn{2}{c}{[ns]} & \multicolumn{2}{c}{25} \\
+      \multicolumn{2}{l}{$\fRF$ / $\VRF$} & \multicolumn{2}{c}{[MHz] / [MV]} & \multicolumn{2}{c}{200 / 3.8} \\
+      \multicolumn{2}{l}{$\Qx$ / $\Qy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{$\Qpx$ / $\Qpy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{ $\sim$ 1.0 / $\sim$ 1.0} \\
+      \multicolumn{2}{l}{$\Qs$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{0.0051} \\
+      
+      \bottomrule
+	\end{tabu}
+   \label{tab:machine_beam_param_2018}
+\end{table}
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
-For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type were fabricated by CERN and were assembled into the same cryomodule which is shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone, Fig.~\ref{fig:CC_SPS_LSS6}, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved with high precision and without breaking the vaccum the cryomodule in the beam line for the $\CC$ tests and out of it for the usual SPS operation. The main parameters for the $\CC$ experiments in SPS are shown in Table~\ref{tab:SPS_CC_main}
+For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled into the same cryomodule which is shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone, Fig.~\ref{fig:CC_SPS_LSS6}, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved with high precision and without breaking the vacuum the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s experiments are shown in Table~\ref{tab:SPS_CC_main} for completeness.
 
 
 \begin{figure}[h]
@@ -66,7 +61,7 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 
 \begin{table}[!hbt]
 	\centering
-   \caption{Main parameters for the emittance growth studies with CCs in SPS in 2018}
+   \caption{Crab cavities parameters for the emittance growth studies with CCs in SPS in 2018}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
 		&&&&& \\[-6mm]
 		\toprule \toprule
@@ -74,11 +69,6 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 		\multicolumn{2}{c}{\textbf{Units}} &
 		\multicolumn{2}{c}{\textbf{Values}} \\
 		\bottomrule
-      \multicolumn{2}{l}{$\symE$} & \multicolumn{2}{c}{[GeV]} & \multicolumn{2}{c}{26, 270} \\
-      \multicolumn{2}{l}{Main RF frequency} & \multicolumn{2}{c}{[MHz]} & \multicolumn{2}{c}{200} \\
-      \multicolumn{2}{l}{$\Qx$ / $\Qy$} & \multicolumn{2}{c}{[-]} & \multicolumn{2}{c}{26.13 / 26.18 } \\
-      %\arrayrulecolor{black!30}\midrule
-      \midrule
       \multicolumn{2}{l}{} & 	\multicolumn{2}{c}{} & \multicolumn{1}{c}{\textbf{CC1}} & \multicolumn{1}{c}{\textbf{CC2}} \\
       \midrule
       \multicolumn{2}{l}{crabbing plane} & \multicolumn{2}{c}{[-]} & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
@@ -104,21 +94,22 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type wer
 %\large{\textbf{Operational considerations}}\\
 \subsection{Operational considerations}
 
-For the beam tests with the $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
+For the beam tests with the $\CC$ in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
 
 
 \normalsize{\textbf{Energy ramp}}\\
-SPS recieves the beam at 26\,GeV. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It should be noted here that this will be the approach also for the HL-LHC.
+SPS recieves the proton beam at 26\,GeV from the PS. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used for in the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
-Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz.
-In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. For studies at 270\,GeV, like the emittance growth measurements, the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
+Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz (see Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}).
+In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp to the coast energy and shortly after the cavity was switched on~\cite{BE_seminar}.
+%  For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. 
 
 
 \section{SPS Head-Tail monitor}\label{sec:HT_info}
 The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
- In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen as the effect of $\CC$ kick on the beam is stronger and thus more visible than in higher energies.
+ In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen to provide a better explanation of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
 
 
 
@@ -312,9 +303,8 @@ where $\Delta \epsilon_1$ is the standard deviation of the $\epsilon_{IN}$ and $
 
 Finally, some emittance increase is expected during each wire scan, due to Coulomb multiple scattering. This effect has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 
-\section{ABWLM}\label{sec:ABWLM}
+\section{ABWLM and wall current monitor}\label{sec:ABWLM_WallCurrentMonitor}
 
-\section{Wall current monitor}\label{sec:WallCurrentMonitor}
 
 \section{Conclusions}
 
