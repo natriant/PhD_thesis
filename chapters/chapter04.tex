@@ -1,20 +1,20 @@
 \vspace*{-1mm}
-The theoretical model for the transverse emittance growth caused by amplitude and phase noise in a CC was introduced in Chapter~\ref{Ch:CC_noise_theory}. In 2018, a dedicated experiment was conducted in the SPS to benchmark these models with experimental data and confirm the analytical predictions. Here, the machine setup, the beam configuration and the instrumentation used for the emittance growth studies with $\CC$s in the SPS are presented.
+The theoretical model for the transverse emittance growth caused by amplitude and phase noise in a CC was introduced in Chapter~\ref{Ch:CC_noise_theory}. In 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In this chapter, the machine setup, the beam configuration and the instrumentation used for the emittance growth studies with $\CC$s in the SPS are presented.
 
 
 \begin{sloppypar} % to fix \hbox too wide
 The chapter is structured as follows: Section~\ref{sec:SPS_setup}
-describes the experimental machine configuration. Thereafter, Section~\ref{sec:CC_SPS_setup} elaborates on the installation and the operation of the CCs in the SPS. In Sections~\ref{sec:HT_info}-~\ref{sec:ABWLM_WallCurrentMonitor} the instruments used for the parameters of interest (see Chapter~\ref{Ch:CC_noise_theory}, Eq....) i.e. $\CC$ voltage, emittance and bunch length are discussed, including the post processing methods where it was performed by the author.
+describes the experimental machine configuration. Thereafter, Section~\ref{sec:CC_SPS_setup} elaborates on the installation and the operational aspects of the CCs in the SPS. In Sections~\ref{sec:HT_info}-~\ref{sec:ABWLM_WallCurrentMonitor} the instruments used for the parameters of interest (see Chapter~\ref{Ch:CC_noise_theory}, Eq....) i.e. $\CC$ voltage, emittance and bunch length are discussed, including the post processing methods where it was performed by the author.
 \end{sloppypar}
 
 
 \section{Machine and beam configuration}\label{sec:SPS_setup}
-For studying the long-term emittance evolution special cycles were set up in the SPS which are called "coast" beam cycles with bunched beams. During them, bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similarly to the HL-LHC case.
+For studying the long-term emittance evolution special cycles were set up in the SPS which are called "coast" beam cycles with bunched beams. During them, the bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similarly to the HL-LHC case.
 
-To make sure that the SPS machine can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out over the years 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the natural emittance growth that was observed in the machine (without noise), as it needed to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. From these studies, it was concluded that the optimal coast setup should be at 270\,GeV, with low chromaticity and bunches of low intensity. No measurements of chromaticity are availble from the day of the experiment, however it was ensured that it was corrected to small positive values. Furthermore, as the natural emittance growth was found to be a single bunch effect four bunches were used to reduce the statistical uncertainty of the measurements. 
+To make sure that the SPS machine can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out over the years 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the natural emittance growth that was observed in the machine (without noise), as it needed to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. From these studies, it was concluded that the optimal coast setup is at 270\,GeV, with low chromaticity and bunches of low intensity. Moreover, as the natural emittance growth was found to be a single bunch effect four bunches were used to reduce the statistical uncertainty of the measurements. 
 
 
-During the measurements the Landau octupoles were switched off. It should be note, though, that a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Last, the transverse feedback system was switched off. The main machine and beam parameters of the experiment of 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. 
+During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Last, the transverse feedback system was switched off. The main machine and beam parameters of the experiment of 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. It should be noted, that no measurements of chromaticity are availble from the day of the experiment. However it was ensured that it was corrected to small positive values. 
 
 % Do I need to add more details? If yes: the emittance growth smaller for higher energies, low chroma and low intensities. No dependence on betatron tune. Also it is a single bunch effect.
 
@@ -45,7 +45,7 @@ During the measurements the Landau octupoles were switched off. It should be not
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
-For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled into the same cryomodule which is shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone, Fig.~\ref{fig:CC_SPS_LSS6}, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved with high precision and without breaking the vacuum the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s experiments are shown in Table~\ref{tab:SPS_CC_main} for completeness.
+For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled into the same cryomodule which is shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone, Fig.~\ref{fig:CC_SPS_LSS6}, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved with high precision and without breaking the vacuum the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness.
 
 
 \begin{figure}[h]
@@ -64,7 +64,7 @@ For the SPS tests two prototype $\CC$s of the Double Quorter Wave (DQW) type, $\
 
 \begin{table}[!hbt]
 	\centering
-   \caption{Crab cavities parameters for the emittance growth studies with CCs in SPS in 2018}
+   \caption{Crab cavities parameters for the emittance growth studies in SPS in 2018}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[c,m] }
 		&&&&& \\[-6mm]
 		\toprule \toprule
@@ -102,7 +102,7 @@ For the beam tests with the $\CC$ in the SPS the approach regarding the energy r
 
 
 \normalsize{\textbf{Energy ramp}}\\
-SPS recieves the proton beam at 26\,GeV from the PS. It was observed that if the ramp to higher energies was performed with the $\CC$ on, the beam was lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used for in the HL-LHC.
+SPS recieves the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used for in the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
 Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz (see Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}).
@@ -111,7 +111,7 @@ In order to make sure that the beam will experience the same effect from the $\C
 
 
 \section{SPS Head-Tail monitor}\label{sec:HT_info}
-The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool in the time of the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
+The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
  In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen to provide a better explanation of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
 
@@ -242,7 +242,7 @@ To obtain this physical illustration of the effect of the CC kick on the beam on
 
 \section{SPS Wire Scanners}
 
-The SPS is equpped with beam wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with rotational WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
+The SPS is equpped with wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with rotational WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
 
 The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. Their signal is then detected by a system of scintillator/photomultiplier (PM) outside of the beam pipe. By measuring the wire position and the PM current at it over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile} (left).
 
@@ -286,7 +286,7 @@ The general formula for computing the normalised beam emittance from the beam si
    \epsilon = \frac{\sigma^2}{\beta_{WS}} \betarel \gammarel
 \end{equation}
 
-The beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively.
+The beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively, while $\betarel \gammarel$ equals 287.8 for the studies at 270\,GeV.
 
 Considering that the relativistic parameters and the beta fucntion are free of error, the uncertainty of the computed emittance, $\Delta \epsilon$, at a dispersion free region, depends only on the uncertainty of the measured beam size, $\Delta \sigma$, as:
 
@@ -297,7 +297,7 @@ Considering that the relativistic parameters and the beta fucntion are free of e
 
 
 \normalsize{\textbf{Further considerations}}\\
-It is worth noting here, that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam at the forward direction (IN scan) and then backwords (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar (add order of difference). In this thesis, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , will be used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
+It is worth noting here, that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam at the forward direction (IN scan) and then backwords (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar (add order of difference). In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
 
 \begin{equation}\label{eq:avg+emittance_from_WS_uncertainty}
    \Delta \epsilon_{avg} = \sqrt{\Delta \epsilon_1 ^2 + \Delta \epsilon_2 ^2},
