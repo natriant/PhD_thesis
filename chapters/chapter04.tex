@@ -170,7 +170,6 @@ Therefore, for the $\CC$ experiments a reference measurement had first to be mad
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
-
 \normalsize{\textbf{Head-Tail monitor callibration}}\\
 The last step to make the HT acquisitions meaningful is to convert the measured intra bunch offset, $\langle \Delta \rangle$, from arbitrary units to millimeters. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the CC kick in millimeters and after the baseline correction. 
 
@@ -178,24 +177,22 @@ The last step to make the HT acquisitions meaningful is to convert the measured 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.65\textwidth]{images/Ch4/HT_corrected__20180530_135105_baseline_correction_new_version.png}
-       \caption{Intra-bunch offset from the CC kick expressed in mm after the removal of the baseline.}
+       \caption{Intra-bunch offset from the CC kick expressed in millimeters after the removal of the baseline.}
        \label{fig:HT_baseline_correction_crabbing_mm}
 \end{figure}
 
 
-
-
  \subsection{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
- This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor signal. The calibration was performed by calculating the kick required to reconstruct the measured intra-bunch offset using Eq.~\eqref{eq:CC_orbit_shift_Chao}. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Chaos' Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
+ This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor signal. The calibration was performed by using Eq.~\eqref{eq:CC_orbit_shift_Chao} to calculate the kick required to reconstruct the measured intra-bunch offset. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
 
 
 \begin{equation}\label{eq:CC_orbit_shift_Chao}
    \Delta y_{,HT} = \frac{\sqrt{\beta_{y, HT}}}{2 \sin(\pi \Qy)} \theta \sqrt{\beta_{y, CC}} \cos(\pi \Qy - \mid \psi_{y, HT} - \psi_{y, CC} \mid),
 \end{equation}
 
-where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\psiy$ is the phase advance in tune units. The same applies for the horizontal plane. The indeces HT and CC indicate the optic parameters at the location of the HT monitor and CC respectively.
+where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\mid \psi_{y, HT} - \psi_{y, CC} \mid$ between the $\CC$ and the HT monitor in tune units. The same applies for the horizontal plane. The subscripts HT and CC indicate quanities at the location of the HT monitor and CC respectively.
 
-The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where q is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
+The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where $q$ is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$, at every time $t$ with $t=0$ corresponding to the crossing from the $CC$ center. Computing the maximum of $V_{CC}(t)$ gives the cavity voltage, $\VCC$. 
 
 \begin{figure}[!h]
 \centering         

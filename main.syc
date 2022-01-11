@@ -12,7 +12,7 @@
 \newcommand{\Qyinclude}{yes}
 \newcommand{\Qsinclude}{yes}
 \newcommand{\psixinclude}{no}
-\newcommand{\psiyinclude}{yes}
+\newcommand{\psiyinclude}{no}
 \newcommand{\sinclude}{no}
 \newcommand{\betarelinclude}{yes}
 \newcommand{\gammarelinclude}{yes}

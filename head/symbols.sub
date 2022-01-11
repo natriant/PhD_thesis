@@ -9,15 +9,15 @@
 \newsym[CC voltage]{VCC}{V_{CC}}
 \newsym[$CC$ frequency]{fCC}{f_{CC}}
 \newsym[$CC$ phase]{phiCC}{\phi_{CC}}
-\newsym[Horizontal tune]{Qx}{\mathrm{Q_{x}}}
-\newsym[Vertical tune]{Qy}{\mathrm{Q_{y}}}
+\newsym[Horizontal tune]{Qx}{Q_{x}}
+\newsym[Vertical tune]{Qy}{Q_{y}}
 \newsym[Synchrotron tune]{Qs}{\mathrm{Q_{s}}}
-\newsym[Horizontal phase advance]{psix}{\mathrm{\psi_{x}}}
-\newsym[Vetical phase advance]{psiy}{\mathrm{\psi_{y}}}
+\newsym[Horizontal phase advance]{psix}{\psi_{x}}
+\newsym[Vetical phase advance]{psiy}{\psi_{y}}
 \newsym[Location around the ring ??]{s}{s}
 \newsym[Relativistic beta]{betarel}{\beta}
 \newsym[Relativistic gamma (Lorenz factor)]{gammarel}{\gamma}
 \newsym[Bunch intensity i.e. number of particles (here protons)]{Nb}{N_b}
-\newsym[Horizontal first order chromaticity]{Qpx}{\mathrm{Q^\prime_{x}}}
-\newsym[Vertical first order chromaticity]{Qpy}{\mathrm{Q^\prime_{y}}}
+\newsym[Horizontal first order chromaticity]{Qpx}{Q^\prime_{x}}
+\newsym[Vertical first order chromaticity]{Qpy}{Q^\prime_{y}}
 \closesymdef
