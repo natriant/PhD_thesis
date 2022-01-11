@@ -1,21 +1,21 @@
-\printsymline{E_b}{E_b}{symE}{Energy}{viii}
-\printsymline{m}{m}{symm}{Mass}{viii}
-\printsymline{c}{c}{symc}{Speed of light}{viii}
-\printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{viii}
-\printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{viii}
-\printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{viii}
-\printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{viii}
-\printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{viii}
-\printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{viii}
-\printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{viii}
-\printsymline{\mathrm{Q_{x}}}{\mathrm{Q_{x}}}{Qx}{Horizontal tune}{viii}
-\printsymline{\mathrm{Q_{y}}}{\mathrm{Q_{y}}}{Qy}{Vertical tune}{viii}
-\printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{viii}
-\printsymline{\mathrm{\psi _{x}}}{\mathrm{\psi _{x}}}{psix}{Horizontal phase advance}{viii}
-\printsymline{\mathrm{\psi _{y}}}{\mathrm{\psi _{y}}}{psiy}{Vetical phase advance}{viii}
-\printsymline{s}{s}{s}{Location around the ring ??}{viii}
-\printsymline{\beta}{\beta}{betarel}{Relativistic beta}{viii}
-\printsymline{\gamma}{\gamma}{gammarel}{Relativistic gamma (Lorenz factor)}{viii}
-\printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{viii}
-\printsymline{\mathrm{Q^\prime _{x}}}{\mathrm{Q^\prime _{x}}}{Qpx}{Horizontal first order chromaticity}{viii}
-\printsymline{\mathrm{Q^\prime _{y}}}{\mathrm{Q^\prime _{y}}}{Qpy}{Vertical first order chromaticity}{viii}
+\printsymline{E_b}{E_b}{symE}{Energy}{ix}
+\printsymline{m}{m}{symm}{Mass}{ix}
+\printsymline{c}{c}{symc}{Speed of light}{ix}
+\printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{ix}
+\printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{ix}
+\printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{ix}
+\printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{ix}
+\printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{ix}
+\printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{ix}
+\printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{ix}
+\printsymline{\mathrm{Q_{x}}}{\mathrm{Q_{x}}}{Qx}{Horizontal tune}{ix}
+\printsymline{\mathrm{Q_{y}}}{\mathrm{Q_{y}}}{Qy}{Vertical tune}{ix}
+\printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{ix}
+\printsymline{\mathrm{\psi _{x}}}{\mathrm{\psi _{x}}}{psix}{Horizontal phase advance}{ix}
+\printsymline{\mathrm{\psi _{y}}}{\mathrm{\psi _{y}}}{psiy}{Vetical phase advance}{ix}
+\printsymline{s}{s}{s}{Location around the ring ??}{ix}
+\printsymline{\beta}{\beta}{betarel}{Relativistic beta}{ix}
+\printsymline{\gamma}{\gamma}{gammarel}{Relativistic gamma (Lorenz factor)}{ix}
+\printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{ix}
+\printsymline{\mathrm{Q^\prime _{x}}}{\mathrm{Q^\prime _{x}}}{Qpx}{Horizontal first order chromaticity}{ix}
+\printsymline{\mathrm{Q^\prime _{y}}}{\mathrm{Q^\prime _{y}}}{Qpy}{Vertical first order chromaticity}{ix}
