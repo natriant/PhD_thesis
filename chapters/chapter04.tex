@@ -123,9 +123,9 @@ The Head-Tail (HT) monitor was the main diagnostic device deployed for the calib
        \caption{Diagram of the SPS HT monitor~\cite{Levens:2313358}.}
        \label{fig:SPS_HT_diagram}
 \end{figure}
-The HT monitor is a high bandwidth version of a standard beam position monitor. The high bandwidth means that the monitor can measure the transverse offset within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
+The HT monitor is a high bandwidth version of a standard beam position monitor. The high bandwidth means that the monitor can measure the transverse offset within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum ($\Sigma$) and the  difference ($\Delta$) of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The sum signal is the longitudinal line density while the difference signal corresponds to the intra-bunch offset. 
 
-The raw signals from the HT monitor require a specific post processing procedure, which is described in Ref.~\cite{Levens:2313358}, in order to give useful information. Figure~\ref{fig:HT_example_signals} shows some example signals obtained from the HT monitor after the basic post procesing is applied. Moreover, Fig.~\ref{fig:HT_example_signals_2D} shows a 2D representation of the HT monitor reading. It is worth noting here that in the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
+The raw signals from the HT monitor require a specific post-processing procedure, which is described in Ref.~\cite{Levens:2313358}, in order to give useful information. Figure~\ref{fig:HT_example_signals} shows some example signals obtained from the HT monitor after the basic post-processing is applied. Moreover, Fig.~\ref{fig:HT_example_signals_2D} shows a 2D representation of the HT monitor reading. It is worth noting here that in the specific example shows a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
 
 % COMMENT: The Ref.~\cite{Levens:2313358} refers to the LHC HT monitor but the same applies for SPS as it is the same device.
 
@@ -133,7 +133,7 @@ The raw signals from the HT monitor require a specific post processing procedure
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_135105exampleAcq_4thesis_turnsStart0_Stop6000_step100_new.png}
-       \caption{Example $\Delta$ and $\Sigma$ signals from the HT monitor with respect to the longitudinal position within the bunch over several SPS revolutions, after the basic post processing (Ref.~\cite{Levens:2313358}) but before the baseline correction. The different colors indicate the signals from different turns.}
+       \caption{Example difference and sum signals (top and bottom plots, respectively) from the HT monitor with respect to the longitudinal position within the bunch over several SPS revolutions, after the basic post processing (Ref.~\cite{Levens:2313358}) but before the baseline correction. The different colors indicate the signals from different turns.}
        \label{fig:HT_example_signals}
 \end{figure}
 
@@ -149,7 +149,7 @@ The raw signals from the HT monitor require a specific post processing procedure
 To obtain useful information from the HT monitor signal in the presence of the $\CC$s there are a few steps that differ from the standard post processing procedure and they are desribed below.
 
 \normalsize{\textbf{Heat-Tail monitor baseline correction}}\\
-One issue of concern is the correction of the $\Delta$ signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}. During the normal post processing, the correction is achieved by computing the mean of the $\Delta$ signals over all turns and then subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method.
+One issue of concern is the correction of the difference signal  baseline due to orbit offsets and non-linearities of the instrument~\cite{Levens:2313358}. During the normal post processing, the correction is achieved by computing the mean of the difference signals over all turns and then subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method.
 
 Therefore, for the $\CC$ experiments a reference measurement had first to be made with the $\CC$ unsynchronised. The mean of the $\Delta$ signal over this reference period was the baseline which then was subtracted from the $\Delta$ signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
@@ -164,13 +164,13 @@ Therefore, for the $\CC$ experiments a reference measurement had first to be mad
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_2D__20180530_135105_before_after_sunchronisation_new_version.png}
-       \caption{HT acquistions before and after the sunchronisation of the SPS main RF with the CC.}
+       \caption{HT acquistions before and after the synchronisation of the SPS main RF with the CC.}
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
 
-\normalsize{\textbf{Headtail monitor callibration}}\\
-The last step, to make the HT acquisitions meaningful is to convert the measured intra bunch offset, $\langle \Delta \rangle$, from arbitrary units to mm. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra bunch offset from the CC kick in mm and after the baseline correction. 
+\normalsize{\textbf{Head-Tail monitor callibration}}\\
+The last step to make the HT acquisitions meaningful is to convert the measured intra bunch offset, $\langle \Delta \rangle$, from arbitrary units to millimeters. The scaling is achieved by division with the $\langle \Sigma \rangle$ signal and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the CC kick in mm and after the baseline correction. 
 
 
 \begin{figure}[!h]
