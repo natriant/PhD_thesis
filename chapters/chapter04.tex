@@ -48,8 +48,6 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
 , which is used for the extraction of the beam to the LHC, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness.
 
 
- %The table moved with high precision and without breaking the vacuum the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation. 
-
 \begin{figure}[h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/CC_cryomodule.png}
@@ -77,7 +75,7 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
       \midrule
       \multicolumn{2}{l}{crabbing plane}  & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
       
-      \multicolumn{2}{l}{s-location}  & \multicolumn{1}{c}{6312.72 m} & \multicolumn{1}{c}{6313.32 m} \\
+      \multicolumn{2}{l}{s-location }  & \multicolumn{1}{c}{6312.72 m} & \multicolumn{1}{c}{6313.32 m} \\
 
       \multicolumn{2}{l}{$\VCC$}  & \multicolumn{1}{c}{0 MV} & \multicolumn{1}{c}{1 MV} \\
 
@@ -103,18 +101,18 @@ For the beam tests with the $\CC$ in the SPS the approach regarding the energy r
 
 
 \normalsize{\textbf{Energy ramp}}\\
-SPS recieves the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used for in the HL-LHC.
+SPS recieves the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
 Another issue of concern was the fact that the $\CC$ operate at the fixed frequency of 400\,MHz while the SPS main RF system operates at 200\,MHz (see Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}).
-In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased such as it becomes synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp to the coast energy and shortly after the cavity was switched on~\cite{BE_seminar}.
+In order to make sure that the beam will experience the same effect from the $\CC$ each turn the SPS main RF has to be re-phased so that it becomes synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp to the coast energy and shortly after the cavity was switched on~\cite{BE_seminar}.
 %  For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. 
 
 
 \section{SPS Head-Tail monitor}\label{sec:HT_info}
-The HT monitor was the main diagnostic device deployed for the callibration of the $\CC$ voltage. Additionally, it was used for the measurement and the physical illustration of the crabbing. This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
+The Head-Tail (HT) monitor was the main diagnostic device deployed for the calibration of the $\CC$ voltage. Additionally, it was used for the measurement and physical illustration of the crabbing. This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. The HT monitor was originally designed for measuring chromaticity and transverse isntabilities. Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
- In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$s. Last, the callibration of the $\CC$ voltage from the HT data is described. The experiemental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy option was chosen to provide a better explanation of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
+ In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$ will be discussed. Last, the calibration of the $\CC$ voltage from the HT data is described. The experimental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at $\phiCC=0$ for simplicity. That energy of 26\,GeV was chosen to provide a better understanding of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
 
 
 
@@ -125,7 +123,7 @@ The HT monitor was the main diagnostic device deployed for the callibration of t
        \caption{Diagram of the SPS HT monitor~\cite{Levens:2313358}.}
        \label{fig:SPS_HT_diagram}
 \end{figure}
-The HT monitor is a high bandwidth version of a standard beam position monitor but it can measure the transverse offset within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
+The HT monitor is a high bandwidth version of a standard beam position monitor. The high bandwidth means that the monitor can measure the transverse offset within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum $\Sigma$ and the  difference $\Delta$ of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The $\Sigma$ signal is the longitudinal line density while the $\Delta$ signal corresponds to the intra-bunch offset. 
 
 The raw signals from the HT monitor require a specific post processing procedure, which is described in Ref.~\cite{Levens:2313358}, in order to give useful information. Figure~\ref{fig:HT_example_signals} shows some example signals obtained from the HT monitor after the basic post procesing is applied. Moreover, Fig.~\ref{fig:HT_example_signals_2D} shows a 2D representation of the HT monitor reading. It is worth noting here that in the specific example a clear periodic oscillation of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the main RF system not being synchronous with the  $\CC$  frequency. 
 
