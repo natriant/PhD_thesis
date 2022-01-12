@@ -266,19 +266,6 @@ To obtain the beam size, $\sigma$, the transverse profiles from each scan are fi
 where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the one standard deviation error on $\sigma$ which is computed from the square root of the diagonal elements of the covariant matrix.
 %https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
 
-%\begin{figure}[!h]
-%   \centering
-%   \begin{subfigure}{.5\textwidth}
-%     \centering
-%     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw.png}
-%   \end{subfigure}%
-%   \begin{subfigure}{.5\textwidth}
-%     \centering
-%     \includegraphics[width=1.0\linewidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
-%   \end{subfigure}
-%   \caption{ Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter Gaussian (orange) to obtain the beam size. The calculated emittance is also shown.}
-%   \label{fig:WS_example_V_profile}
-%\end{figure}
 
 \begin{figure}[!h]
    \centering         
@@ -310,12 +297,12 @@ Assuming that the relativistic parameters and the beta fucntion are free of erro
 
 
 \normalsize{\textbf{Further considerations}}\\
-It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
+It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm\mathrm{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_\mathrm{avg}$, is computed as:
 
 \begin{equation}\label{eq:avg+emittance_from_WS_uncertainty}
    \Delta \epsilon_{avg} = \sqrt{\Delta \epsilon_1 ^2 + \Delta \epsilon_2 ^2},
 \end{equation}
-where $\Delta \epsilon_1$ is the standard deviation of the $\epsilon_{IN}$ and $\epsilon_{OUT}$ and $\Delta \epsilon_2=\sqrt{\langle \Delta \epsilon_{IN}, \Delta \epsilon_{OUT}\rangle}$.
+where $\Delta \epsilon_1$ is the standard deviation of the $\epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT}$ and $\Delta \epsilon_2=\sqrt{\langle \Delta \epsilon_\mathrm{IN}, \Delta \epsilon_\mathrm{OUT}\rangle}$.
 
 
 Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
@@ -323,7 +310,7 @@ Finally, some emittance increase is expected during each wire scan, due to multi
 \section{ABWLM and Wall Current monitor}\label{sec:ABWLM_WallCurrentMonitor}
 
 \begin{sloppypar}
-The bunch length was measured with two different instruments the ABWLM (A for RF, Beam, Wideband, Longitudinal, Measurement)~\cite{ABWLM} and the Wall Current monitor~\cite{Papotti:1124099}. The ABWLM measures the longitudinal profiles from which the bunch length is computed by performing a gaussian fit. The Wall Current monitor acquirest not just the longitudinal profiles but also the longitudinal beam position relative to the monitor. The bunch length is estimated from the full width half maximum of the profiles assuming a gaussian distribution. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author.
+The bunch length was measured with two different instruments the ABWLM (A for RF, Beam, Wideband, Longitudinal, Measurement)~\cite{ABWLM} and the Wall Current monitor~\cite{Papotti:1124099}. The ABWLM measures the longitudinal profiles from which the bunch length is computed by performing a gaussian fit. The Wall Current monitor acquirest not just the longitudinal profiles but also the longitudinal beam position relative to the monitor i.e. the beam arrival with respect to the reference. The bunch length is estimated by computing the full width half maximum of the profiles and then using it to estimate the sigma of a gaussian distribution. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author.
 \end{sloppypar}
 
 
