@@ -201,7 +201,7 @@ The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, w
     \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
 
-It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it to millimeters as discussed in Section~\ref{subsec:HT_post_process_CC}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this section. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it to millimeters as discussed in Section~\ref{subsec:HT_post_process_CC}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this section. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}.
 
 \begin{table}[!hbt]
 	\centering
@@ -213,9 +213,9 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 		\multicolumn{2}{c}{\textbf{Values}} \\
 		\bottomrule
       \multicolumn{2}{l}{Beta function at the HT monitor, $\beta_{y, HT}$}& \multicolumn{2}{c}{49.19\,m} \\
-      \multicolumn{2}{l}{Phase advance between the start of the lattice and the HT monitor, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68} \\
+      \multicolumn{2}{l}{Phase advance between the start of the lattice and the HT monitor, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Beta function at the $\CC$1, $\beta_{y, CC1}$}& \multicolumn{2}{c}{76.07\,m} \\
-      \multicolumn{2}{l}{Phase advance between the start of the lattice and $\CC$1, $\psi_{y, CC1}$} & \multicolumn{2}{c}{23.9} \\
+      \multicolumn{2}{l}{Phase advance between the start of the lattice and $\CC$1, $\psi_{y, CC1}$} & \multicolumn{2}{c}{23.9 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Vertical betatron tune, $\Qy$} & \multicolumn{2}{c}{26.13} \\
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{26\,GeV} \\
       \bottomrule
@@ -224,14 +224,17 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 \end{table}
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
-The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are presented here. This technique was developed at CERN in 2018 and it was extensivley used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. \\ 
+Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. \\ 
 
-To obtain this physical illustration of the effect of the CC kick on the beam one needs to modualte the measured longitudinal profile, $\langle \Sigma \rangle$, with the measured intra-bunch offset (an example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}). For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
+%The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are presented here. 
+%This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. 
+
+To obtain this schematic representation, which is practically a density plot, of the effect of the CC kick on the beam one needs to multiply the measured longitudinal profile, $\langle \Sigma \rangle$, with the measured intra-bunch offset (an example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}). For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_crabVoltage__20180530_135105_crabbing_only.png}
-       \caption{Illustration of the crabbing from the HT monitor signal.}
+       \caption{Illustration of the crabbing from the HT monitor signal. CC voltage and sum signal (longitudinal line density) measured from the HT monitor (top) together with the density plot (bottom) which visualises the effect of the CC kick in the beam.}
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
