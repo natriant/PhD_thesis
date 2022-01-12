@@ -225,7 +225,7 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 \normalsize{\textbf{Reconstruction of crabbing}}\\
 The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are presented here. This technique was developed at CERN in 2018 and it was extensivley used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. \\ 
 
-To obtain this physical illustration of the effect of the CC kick on the beam one needs to modualte the measured longitudinal profile, $\langle \Sigma \rangle$, with the measured intra-bunch offset (an example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}). For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code is normalised to the maximum intensity within the bunch.
+To obtain this physical illustration of the effect of the CC kick on the beam one needs to modualte the measured longitudinal profile, $\langle \Sigma \rangle$, with the measured intra-bunch offset (an example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}). For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
 
 \begin{figure}[!h]
    \centering         
@@ -237,9 +237,9 @@ To obtain this physical illustration of the effect of the CC kick on the beam on
 
 
 
-\section{SPS wire scanners}
+\section{SPS Wire Scanners}
 
-The SPS is equipped with wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
+The SPS is equipped with Wire Scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
 
 The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is then detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the PM current as a function of wire position over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile}.
 
@@ -294,7 +294,7 @@ The general formula for computing the normalised beam emittance from the beam si
 where $\sigma$ is the beam size, $\beta_{WS}$ the beta function at the WS location and $\betarel, \gammarel$ the relativistic parameters.
 
 
-Note that, in the 2018 SPS operational configuration, the dispersion was small in the WSs location and thus its contribution to the beam size was considered to be negligible \footnote{The dispersion at BWS.51995.H location in 2018 was $D_x$= -15\,mm. At 270\,GeV, $\delta$ is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is foreseen at the order of $\mathrm{10^{-11}}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible}. For the $\CC$ studies at 270\,GeV beam energy, the 
+Note that, in the 2018 SPS operational configuration, the dispersion was small in the WSs location and thus its contribution to the beam size was considered to be negligible \footnote{The dispersion at BWS.51995.H location in 2018 was $D_x$= -15\,mm. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is foreseen at the order of $\mathrm{10^{-11}}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible}. For the $\CC$ studies at 270\,GeV beam energy, the 
 beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively, while $\betarel \gammarel$ equals 287.8.
 
 Assuming that the relativistic parameters and the beta fucntion are free of error, the uncertainty of the computed emittance, $\Delta \epsilon$, at a dispersion free region, depends only on the uncertainty of the measured beam size, $\Delta \sigma$, as:
@@ -306,7 +306,7 @@ Assuming that the relativistic parameters and the beta fucntion are free of erro
 
 
 \normalsize{\textbf{Further considerations}}\\
-It is worth noting here, that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam at the forward direction (IN scan) and then backwords (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar (add order of difference). In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
+It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_{IN} \pm \Delta \epsilon_{IN}$ and $\epsilon_{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_{avg} = \langle \epsilon_{IN}, \epsilon_{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_{avg}$, is computed as:
 
 \begin{equation}\label{eq:avg+emittance_from_WS_uncertainty}
    \Delta \epsilon_{avg} = \sqrt{\Delta \epsilon_1 ^2 + \Delta \epsilon_2 ^2},
@@ -314,12 +314,12 @@ It is worth noting here, that during each measurement with the WS the beam profi
 where $\Delta \epsilon_1$ is the standard deviation of the $\epsilon_{IN}$ and $\epsilon_{OUT}$ and $\Delta \epsilon_2=\sqrt{\langle \Delta \epsilon_{IN}, \Delta \epsilon_{OUT}\rangle}$.
 
 
-Finally, some emittance increase is expected during each wire scan, due to Coulomb multiple scattering. This effect has been extensivley studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
+Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 
-\section{ABWLM and wall current monitor}\label{sec:ABWLM_WallCurrentMonitor}
+\section{ABWLM and Wall Current monitor}\label{sec:ABWLM_WallCurrentMonitor}
 
 \begin{sloppypar}
-The bunch length was measured with two different instruments the ABWLM~\cite{ABWLM} and the wall current monitor~\cite{Papotti:1124099}. The ABWLM measures the longitudinal profiles from which the bunch lngth is computed by performing a gaussian fit. The wall cuurent monitor acquirest also the longitudinal profiles but also the beam position relative to the monitor. The bunch length is estimated from the full width half maximum of the profiles assuming a gaussian distribution. No further details on the operation of these isntruments are discussed here as the offline analysis was not performed by the author.
+The bunch length was measured with two different instruments the ABWLM (A for RF, Beam, Wideband, Longitudinal, Measurement)~\cite{ABWLM} and the Wall Current monitor~\cite{Papotti:1124099}. The ABWLM measures the longitudinal profiles from which the bunch length is computed by performing a gaussian fit. The Wall Current monitor acquirest not just the longitudinal profiles but also the longitudinal beam position relative to the monitor. The bunch length is estimated from the full width half maximum of the profiles assuming a gaussian distribution. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author.
 \end{sloppypar}
 
 
