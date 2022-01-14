@@ -19,7 +19,7 @@ The beam and machine conditions for the emittance growth studies were discussed 
 
 
 \normalsize{\textbf{Injected RF noise}}\\
- In order to characterize the CC noise induced emittance growth, artificial noise was injected into their LLRF system and the bunch evolution was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. Figure~\ref{fig:example_PN_and_AN} dsiplays two example measurements of phase (left) and amplitude (right) noise acquired during the experiment with a sepctrum analyzer E5052B~\cite{E5052B_insight}. 
+ In order to characterize the CC noise induced emittance growth, controlled noise was injected into their LLRF system and the bunch evolution was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. Figure~\ref{fig:example_PN_and_AN} dsiplays two example measurements of phase (left) and amplitude (right) noise acquired during the experiment with a sepctrum analyzer E5052B~\cite{E5052B_insight}. 
 
  % Loaction for creating the figure: /cernbox/2020/injected_noise_MD5_2018
  \begin{figure}[!ht]
@@ -44,15 +44,13 @@ The beam and machine conditions for the emittance growth studies were discussed 
 
 \begin{sloppypar} % to fix \hbox too wide
 This spectrum analyzer provides a single sideband measurement (SSB), which is expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. Its relation with the power spectral densities (PSDs) introduced in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} are given by $S_\Delta = 2\mathcal{L}(f)$~\cite{IEEE:4797525}, with $S_{\Delta A}$ in 1/Hz and $S_{\Delta\phi}$ in rad$^2$/Hz. A detailed discussion on the noise power measurements and their relation to the mathimatical defintion of the PSD is given in Chapter [tba].
-\end{sloppypar} % to fix \hbox too wide
- 
+
+As already mentioned above the injected noise was a combination of both phase and amplitude noise. Therefore, in order to make a meaningful comparison between the different noise levels the concept of effective phase noise is introduced. This is the phase noise level that would lead to
+the same emittance growth as that from both phase and
+amplitude noise. The noise levels mentioned in this Chapter correspond to the calculated effective phase noise.
+% should I slightly change this paragraph? Too much copy paste from IPAC or it's ok?
+\end{sloppypar} 
 
 
-
- After the examples mention the need for introducing the effective phase noise. (Do I need extra details?)
- 
-
- - effective noise
- - Comparison to the theroeical --> mention further explanation is provided ip 
 
  \section{Comparison with the theory}\label{sec:MD2018_vs_theory}
