@@ -19,9 +19,32 @@ The beam and machine conditions for the emittance growth studies were discussed 
 
 
 \normalsize{\textbf{Injected RF noise}}\\
- In order to characterize the CC noise induced emittance growth, artificial noise was injected into their LLRF system and the bunch evolution was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10 kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$ kHz. The phase noise was always dominant. 
+ In order to characterize the CC noise induced emittance growth, artificial noise was injected into their LLRF system and the bunch evolution was recorded for about 20-40 minutes. The injected noise was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. Figure~\ref{fig:example_PN_and_AN} dsiplays two example measurements of phase (left) and amplitude (right) noise acquired during the experiment with a sepctrum analyzer E5052B~\cite{E5052B_insight}. This instrument provides a SSB neasurements.
+
+ % Loaction for creating the figure: /cernbox/2020/injected_noise_MD5_2018
+ \begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch5/Measured_spectrum_MD5_Coast1-Setting2-PN.csv_no_psd.png}
+        %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch5/Measured_spectrum_MD5_Coast1-Setting2-AN.csv_no_psd.png}
+        %\caption{Discrete Fourier transform}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Example phase (left) and amplitude (right) noise spectra measured with a spectrum analyzer E5052B during the emittance growth studies with CCs in SPS. The noise spread-out up to 10\,kHz (grey dashed line) exciting the first betatron sideband at $\sim$8\,kHz (green dashed line). The spikes seen in the right side of the spectrum appear at multiples of the revolution frequency and are a result of the bunch crossing.} % bunch passage
+     \label{fig:example_PN_and_AN}
+\end{figure}
+
+
+ After the examples mention the need for introducing the effective phase noise. (Do I need extra details?)
  
- - Show 1 examples of AN and 1 of position, measured with a spectrum analyzer [Ref]
 
  - effective noise
  - Comparison to the theroeical --> mention further explanation is provided ip 
