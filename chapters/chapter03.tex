@@ -1,0 +1,15 @@
+For a uniform noise spectrum across the betatron tune distribution, the emittance growth resulting from amplitude noise can be estimated from:
+\begin{equation}\label{eq:dey_an}
+    \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! \sum_{k=-\infty}^{+\infty} S_{\Delta A}[(k \pm \bar{\nu}_b \pm \bar{\nu}_s)\frev].
+\end{equation}
+For phase noise, the emittance growth can be estimated from:
+\begin{equation}\label{eq:dey_pn}
+    \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
+\end{equation}
+ In these formulae, $\betaCC$ is the beta function at the location of the CC, $\VCC$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\bar{\nu}_b$ and $\bar{\nu}_s$ the mean of the betatron and synchrotron tune distribution. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD)~\cite{b_papoulis1991probability} of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands. %In SI units, $S_{\Delta A}$ and $S_{\Delta \phi}$ are measured in Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. 
+ $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
+\begin{align}
+C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
+C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
+\end{align}
+with $\sigma_{\phi}$ the rms bunch length (in radians) with respect to the CC frequency $\fCC$, and $I_n(x)$ the modified Bessel function of the first kind. 

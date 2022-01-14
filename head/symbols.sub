@@ -9,6 +9,7 @@
 \newsym[CC voltage]{VCC}{V_{CC}}
 \newsym[$CC$ frequency]{fCC}{f_{CC}}
 \newsym[$CC$ phase]{phiCC}{\phi_{CC}}
+\newsym[Beta function at the $CC$]{betaCC}{\beta_{CC}}
 \newsym[Horizontal tune]{Qx}{Q_{x}}
 \newsym[Vertical tune]{Qy}{Q_{y}}
 \newsym[Synchrotron tune]{Qs}{\mathrm{Q_{s}}}

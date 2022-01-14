@@ -8,6 +8,7 @@
 \printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{ix}
 \printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{ix}
 \printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{ix}
+\printsymline{\beta_{CC}}{\beta_{CC}}{betaCC}{Beta function at the $CC$}{ix}
 \printsymline{Q_{x}}{Q_{x}}{Qx}{Horizontal tune}{ix}
 \printsymline{Q_{y}}{Q_{y}}{Qy}{Vertical tune}{ix}
 \printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{ix}

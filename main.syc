@@ -8,6 +8,7 @@
 \newcommand{\VCCinclude}{yes}
 \newcommand{\fCCinclude}{yes}
 \newcommand{\phiCCinclude}{yes}
+\newcommand{\betaCCinclude}{yes}
 \newcommand{\Qxinclude}{yes}
 \newcommand{\Qyinclude}{yes}
 \newcommand{\Qsinclude}{yes}
