@@ -1,17 +1,47 @@
 \vspace*{-1mm}
-The beam and machine conditions for the emittance growth studies were discussed extensively in Chapter~\ref{Ch:2018_setup} and are listed in Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}. In principle the measurements were performed with four bunches at 270\,GeV with low intensity (3 $\times \mathrm{10^{10}}$ ppb) with linear chromaticity corrected to $\sim$ 1. Only $\CC2$ was used, provided a vertical kick on the beam. In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into its LLRF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). Three "coasts", with the same settings, were carried out, since a new beam was injected every time the quality of the beam was seen to be degraded e.g.  very large emittance values. 
+The beam and machine conditions for the emittance growth studies were discussed extensively in Chapter~\ref{Ch:2018_setup} and are listed in Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}. In principle the measurements were performed with four bunches at 270\,GeV with low intensity (3 $\times \mathrm{10^{10}}$ ppb) with linear chromaticity corrected to $\sim$ 1. Only $\CC2$ was used, provided a vertical kick on the beam. In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into its LLRF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). Three "coasts", with the same settings, were carried out, since a new beam was injected every time the quality of the beam was seen to be degraded e.g.  very large beam size.
 
 In this Chapter the measurements that were performed during the experiment and their analysis are presented. In Section~\ref{sec:CC_voltage_meas2018} the calibration of the $\CC$ voltage is displayed. Section~\ref{sec:noise_meas2018} elaborates on the injected noise and the acquistions of the power spectrum. Thereafter, in Section~\ref{sec:EmitGrowth_measurements} the measured emittance growth, which is the paramter of primary interest, is discussed. Furthermore, the measurements of the bunch length are examined in Section~\ref{sec:bunch_length_measurements_2018} while the intensity evolution is shown in Section~\ref{sec:intensity_measurements_2018} for completness. Section~\ref{sec:meas_2018_vs_theory} compares the measured emittance growth rates with the predictions of the theoretical model introduced in Chapter~\ref{Ch:CC_noise_theory}. Finally, Section~\ref{sec:MD2018_summary} summarizes the main experimental findings.
 
 
 \section{CC voltage}\label{sec:CC_voltage_meas2018}
-A reference measurement of the CC voltage was made before going into coast and is displayed in Fig ... . 
+
+The measurements of the emittance growth started around $\sim$ 10:30 and lasted till $\sim$ 17:00. The targeted $\CC$ voltage was 1\, MV. A reference measurement for the voltage calibration was made with the HT monitor before the start of the noise injection and the emittance growth measurements while a second one took place at $\sim$ 13:50 between the first and the seond "coast". The calibrated voltage (see Section~\ref{subsec:HT_post_process_CC}) from these HT acquisitions is shown in Fig left and and right respectively.
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch5/HT_crabVoltage__20180905_094640_crabbing_only.png}
+        \caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        \label{fig:signal_and_DFT_example_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch5/HT_crabVoltage__20180905_135033_crabbing_only.png}
+        \caption{Discrete Fourier transform}
+        \label{fig:signal_and_DFT_example_b}
+    \end{subfigure}
+    \hfill
+     \caption{Example of a signal sampled at discrete time intervals, and the corresponding discrete Fourier transform.}
+     \label{fig:signal_and_DFT_example}
+\end{figure}
+
+
+
+
+At can be seen that the signals are assymetric. Especially the first one. From the peak to peak amplitude Vcc is estimated at 0.76 MV at the first acquisition and 0.97 at the second. (We may exclude the first one as its too far from the actual coast? also in the meanwhile we had to damp the beam as some cavites (not the CC tripped)). 
+
+For the comparison with the theory (section).. and the simulations with the realistic machine conditions (ch... with impedance), the average of these two measuremnts will be used. The uncertainty of the measurement is their (standard deviation + the unceratinties from the individual computations)
+
+- Crabbin much less visible due to larger energy.
+
+- We assumed that the CC settings didnt change throught the coast.
+- The experts appear to be confident that the voltage was 1 MV.
+
 
 - Unfortunately not many measurements are available. The closer to the start of the coast is at 9:46 which is actually from the previous coast. we asssume tha the setting remain the same.
-a) Is 9:46 a good acquisition? it is too much in the past. 
-b) max or peak to peak / 2.
-c) I need to choose one for the parameteric studies and then I may perform a sensitivity study using the theoretical model.
-d) also then you slightly need to update the plot in chapter 4. 
 
 
 - For the analysis here it is assumed that the voltage remained unchanged through the experiment. 
