@@ -40,7 +40,7 @@ The $\CC$ voltage is estimated, from the peak to peak amplitude, at 0.76\,MV and
  The injected noise was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. Figure~\ref{fig:example_PN_and_AN} dsiplays two example measurements of phase (left) and amplitude (right) noise acquired during the experiment with a sepctrum analyzer E5052B~\cite{E5052B_insight}. 
 \end{sloppypar} 
 
- % Loaction for creating the figure: /cernbox/2020/injected_noise_MD5_2018
+ % Loaction for creating the figure: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd
  \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
@@ -61,6 +61,15 @@ The $\CC$ voltage is estimated, from the peak to peak amplitude, at 0.76\,MV and
      \label{fig:example_PN_and_AN}
 \end{figure}
 
+As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth rate depends on the noise power on the betatron for phase noise and on the synchrobetatron sidebands for amplitude noise. 
+
+
+
+
+
+\textcolor{red}{Add here a table with all the levels measured PN, mean stds. Explain average and std +- 500 Hz.}.
+
+
 \begin{sloppypar} % to fix \hbox too wide
 This spectrum analyzer provides a single sideband measurement (SSB), which is expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. Its relation with the power spectral densities (PSDs) introduced in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} are given by $S_\Delta = 2\mathcal{L}(f)$~\cite{IEEE:4797525}, with $S_{\Delta A}$ in 1/Hz and $S_{\Delta\phi}$ in rad$^2$/Hz. A detailed discussion on the noise power measurements and their relation to the mathimatical defintion of the PSD is given in Chapter [tba].
 
@@ -70,12 +79,32 @@ amplitude noise. The noise levels mentioned in this chapter correspond to the ca
 % should I slightly change this paragraph? Too much copy paste from IPAC or it's ok?
 \end{sloppypar} 
 
+
+
 \section{Emittance growth measurements}\label{sec:EmitGrowth_measurements}
 
-An overview of the emittance growth measurments is shown in Fig ... for both horizontal (top) and vertical (bottom) plane. The three different "coasts" are easily distinguishable with the dashed black lines while the evolution of the beam during the different noise settings is shown with the grey vertical lines.
+An overview of the emittance growth measurments is shown in Fig ... for both horizontal (top) and vertical (bottom) plane. The three "coasts" are distinguishable with the black dashed vertical lines. For each "coast" a nea beam was injected with the same targeted initial conditions. The different levels of injected noise are displayed in the plot (bottom) while the moments at which the noise level changed are shown with the grey dashed vertical lines. These noise levels correspond to the average of the effective phase noise over the four bunches
+
+
+
+Seven different noise levels were studied
+
+The measurements for characterizing the $\CC$ noise induced emittance growth lasted ~ 7 hours. The emittance evolution was recordered for seven different noise levels. 
+
+Seven different noise levels were i
+
+
+As already mentioned the measurements for studying the emittance growth started aroung
+The emittance evolution for the seven dif
+
+The three different "coasts" are easily distinguishable with the dashed black lines while the evolution of the beam during the different noise settings is shown with the grey vertical lines. The 4 colors correspons to the four different bunches. 
+
+What shold be observed is the following: ...
 
 % Figures for emit growth evolution MD 2018: SWAN_projects/CC_MDs_2018/myAnalysis_2020/for_thesis/average_MD5_overview_5Sep2018_emitBU_PlotOverview_Vertical_OpenRatesFromPickle_for_thesis.ipynb
 
+
+- For the AN we are interested in fb+-qs. however we consider its flat and we keep the value of fb. Nevetherless the impact from the AN should be very small.
 
 MD emittance growth overview. 
     - average from IN and OUT. As mentioned in CH4. vs time and vs noise level for all bunches. Not yet comparison with the theory. Probably you need to re-run this to make correctly the error propagation. 
