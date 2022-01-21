@@ -140,7 +140,7 @@ The raw signals from the HT monitor require a specific post-processing procedure
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.9\textwidth]{images/Ch4/HT_2D__20180530_135105_colorbar_new_version.png}
-       \caption{2D representation of example $\Delta$ and $\Sigma$ signals with respect to the longitudinal position within the bunch obtained from the HT monitor over several SPS revolutions.}
+       \caption{2D representation of example difference and sum signals with respect to the longitudinal position within the bunch obtained from the HT monitor over several SPS revolutions.}
        \label{fig:HT_example_signals_2D}
 \end{figure}
 
@@ -152,7 +152,7 @@ To obtain useful information from the HT monitor signal in the presence of the $
 The HT monitor measurement has a baseline on the difference signal which needs to be removed. The baseline is a result of orbit offsets and non-linearities of the instrument and is constant from turn to turn~\cite{Levens:2313358}. Therefore, during the normal post processing procedure (without $\CC$s), the baseline is computed as the mean of the difference signals over all turns and then the correction is achieved by subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method. Because of technical limitations it was not feasible to switch off the $\CC$ for those kind of measurements. Thus, the following technique was used. 
 % CC effect average out over time
 
-For the $\CC$ experiments a reference measurement had first to be made with the $\CC$ not being synchronous with the main RF system. The basilne was computed as the mean of the difference signal over this reference period and subsequently it was subtracted from the difference signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
+For the $\CC$ experiments a reference measurement had first to be made with the $\CC$ not being synchronous with the main RF system. The baseline was computed as the mean of the difference signal over this reference period and subsequently it was subtracted from the difference signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
 
 \begin{figure}[!h]
@@ -216,7 +216,7 @@ It should be noted here that the reconstructed $
 		&&& \\[-6mm]
 		\toprule \toprule
 		\multicolumn{2}{l}{\textbf{Parameter}} &
-		\multicolumn{2}{c}{\textbf{Values}} \\
+		\multicolumn{2}{c}{\textbf{Value}} \\
 		\bottomrule
       \multicolumn{2}{l}{Beta function at the HT monitor, $\beta_{y, HT}$}& \multicolumn{2}{c}{49.19\,m} \\
       \multicolumn{2}{l}{Phase advance between the start$^{\ast}$ of the lattice and the HT monitor, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
