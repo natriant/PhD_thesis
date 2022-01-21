@@ -41,27 +41,26 @@ During the experiment the Landau octupoles were switched off. Nevetherless, a re
 
 \section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
 
-For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. The cryomodule was installed in the SPS-LSS6 zone %(Fig.~\ref{fig:CC_SPS_LSS6}), 
-, which is used for the extraction of the beam to the LHC, and was placed on a mobile transfer table~\cite{Calaga:2649807}. The table moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness. 
+For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its istallation For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness. In case someone wants to repeat the study, the location of the $\CC$s along the SPS ring is also indicated.
 
 \begin{figure}[h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/CC_cryomodule.png}
-       \caption{Cut of the CC cryomodule~\cite{Zanoni:2017}. At its core there are the two DQW cavities, which are illustrated with light green color.}
+       \caption{Cross section view of the CC cryomodule~\cite{Zanoni:2017}. It has a total length of 3\,m~\cite{Baudrenghien:1520896} and at its core there are the two DQW cavities, which are illustrated with light green color.}
        \label{fig:DQW_cryomodule}
 \end{figure}
+% Couldn't find information on height, weight etc. Any idead where to look for spces?
 
-%\begin{figure}[h]
-%  \centering         
-%   \includegraphics[width=0.8\textwidth]{images/Ch4/CC_location_SPS_LSS6.png}
-%       \caption{Installation of the cryomodule in the SPS-LSS6 zone~\cite{Calaga:2649807}.}
-%       \label{fig:CC_SPS_LSS6}
-%\end{figure}
+% Photos from the cryomodule installation day: 1. https://home.cern/news/news/engineering/crabs-settled-tunnel (maybe good to show the scale?)
+% 2. https://science.osti.gov/-/media/np/pdf/research/NP-Accel-RD-PI-Meeting/2019/Wu_2019FOA_PImeeting_crabcavity_Rev9.pdf?la=en&hash=B29283EDB3C704EC3EFD9DA23CA8DEA22076C88B
+
 
 \begin{table}[!hbt]
-	\centering
+   \begin{minipage}{\textwidth}
+   %\centering
+   \begin{centering}
    \caption{Crab cavities parameters for the emittance growth studies in SPS in 2018.}
-	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] }
+   \begin{tabu} to \textwidth {X[c,0.1m] X[c,m] X[0.5c,m] X[0.5c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
 		\multicolumn{2}{l}{\textbf{Parameter}} &
@@ -71,7 +70,7 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
       \midrule
       \multicolumn{2}{l}{crabbing plane}  & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
       
-      \multicolumn{2}{l}{s-location}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
+      \multicolumn{2}{l}{s-location$^{\ast}$}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
 
       \multicolumn{2}{l}{$\CC$ voltage, $\VCC$}  & \multicolumn{1}{c}{0\,MV} & \multicolumn{1}{c}{$\sim$ 1\,MV} \\
 
@@ -83,10 +82,12 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
 
       \multicolumn{2}{l}{Horizontal / Vertical dispersion, $D_{x, CC}$ / $D_{y, CC}$} & \multicolumn{1}{c}{-0.48\,m / 0\,m}  & \multicolumn{1}{c}{-0.5\,m / 0\,m} \\
       \arrayrulecolor{black}\bottomrule
- 
 	\end{tabu}
    \label{tab:SPS_CC_main}
+   \end{centering} \footnotesize{$^\ast$ The s-location is reffered to the location of the elements along the SPS ring with respect to the start of the lattice i.e. element BEGI.10010.}
+   \end{minipage}
 \end{table}
+% BEGI.10010  is the start of the SPS lattice --> https://layout.cern.ch/reports/mad?fileType=STANDARD&machineId=2180065&versionId=34464591 (access with sshuttle)
 
 % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
 
