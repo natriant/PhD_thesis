@@ -84,10 +84,11 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
       \arrayrulecolor{black}\bottomrule
 	\end{tabu}
    \label{tab:SPS_CC_main}
-   \end{centering} \footnotesize{$^\ast$ The s-location is reffered to the location of the elements along the SPS ring with respect to the start of the lattice i.e. element BEGI.10010.}
+   \end{centering} \footnotesize{$^\ast$ The s-location is reffered to the location of the elements along the SPS ring with respect to the start of the lattice i.e. element QF.10010 which is a focusing quadrupole.}
    \end{minipage}
 \end{table}
-% BEGI.10010  is the start of the SPS lattice --> https://layout.cern.ch/reports/mad?fileType=STANDARD&machineId=2180065&versionId=34464591 (access with sshuttle)
+% QF.10010  is the start of the SPS lattice --> https://layout.cern.ch/reports/mad?fileType=STANDARD&machineId=2180065&versionId=34464591 (access with sshuttle)
+% The actual start of the lattice at 0 m is: %BEGI.10010. which is a marker (not a real element).
 
 % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
 
@@ -129,7 +130,6 @@ As already mentioned, the HT monitor is a high bandwidth version of a standard b
 The raw signals from the HT monitor require a specific post-processing procedure, which is described in Ref.~\cite{Levens:2313358}, in order to give useful information. Figure~\ref{fig:HT_example_signals} shows some example signals obtained from the HT monitor after the basic post-processing is applied. Moreover, Fig.~\ref{fig:HT_example_signals_2D} shows a 2D representation of the HT monitor reading. It is worth noting here that in the specific example a clear modulating pattern in time of the vertical intra-bunch offset (vertical $\Delta$) signal is observed. This is a result of the phase slip between the $\CC$ and the main RF system because they are not yet synchronised. 
 % COMMENT: The Ref.~\cite{Levens:2313358} refers to the LHC HT monitor but the same applies for SPS as it is the same device.
 
-
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_135105exampleAcq_4thesis_turnsStart0_Stop6000_step100_new.png}
@@ -150,6 +150,7 @@ To obtain useful information from the HT monitor signal in the presence of the $
 
 \normalsize{\textbf{Head-Tail monitor baseline correction}}\\
 The HT monitor measurement has a baseline on the difference signal which needs to be removed. The baseline is a result of orbit offsets and non-linearities of the instrument and is constant from turn to turn~\cite{Levens:2313358}. Therefore, during the normal post processing procedure (without $\CC$s), the baseline is computed as the mean of the difference signals over all turns and then the correction is achieved by subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method. Because of technical limitations it was not feasible to switch off the $\CC$ for those kind of measurements. Thus, the following technique was used. 
+% CC effect average out over time
 
 For the $\CC$ experiments a reference measurement had first to be made with the $\CC$ not being synchronous with the main RF system. The basilne was computed as the mean of the difference signal over this reference period and subsequently it was subtracted from the difference signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
@@ -208,23 +209,26 @@ It should be noted here that the reconstructed $
 
 
 \begin{table}[!hbt]
-	\centering
+	\begin{minipage}{\textwidth}
+   \begin{centering}
    \caption{Parameters for computing the CC voltage from the example HT monitor measurements discussed in this chapter.}
-	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] }
+	\begin{tabu} to \textwidth {X[c,m] X[0.01c,m] X[0.01c,m] X[0.01c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
 		\multicolumn{2}{l}{\textbf{Parameter}} &
 		\multicolumn{2}{c}{\textbf{Values}} \\
 		\bottomrule
       \multicolumn{2}{l}{Beta function at the HT monitor, $\beta_{y, HT}$}& \multicolumn{2}{c}{49.19\,m} \\
-      \multicolumn{2}{l}{Phase advance between the start of the lattice and the HT monitor, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
+      \multicolumn{2}{l}{Phase advance between the start$^{\ast}$ of the lattice and the HT monitor, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Beta function at the $\CC$1, $\beta_{y, CC1}$}& \multicolumn{2}{c}{76.07\,m} \\
-      \multicolumn{2}{l}{Phase advance between the start of the lattice and $\CC$1, $\psi_{y, CC1}$} & \multicolumn{2}{c}{23.9 $\times$ 2$\mathrm{\pi}$} \\
+      \multicolumn{2}{l}{Phase advance between the start$^{\ast}$ of the lattice and $\CC$1, $\psi_{y, CC1}$} & \multicolumn{2}{c}{23.9 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Vertical betatron tune, $\Qy$} & \multicolumn{2}{c}{26.13} \\
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{26\,GeV} \\
       \bottomrule
 	\end{tabu}
    \label{tab:SPS_HT_CC}
+   \end{centering} \footnotesize{$^\ast$ The start of the lattice is considered the element QF.10010 which is a focusing quadrupole.}
+   \end{minipage}
 \end{table}
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
