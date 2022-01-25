@@ -238,7 +238,7 @@ It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconst
    \end{figure}
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
-Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. \\ 
+Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
 
 %The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are presented here. 
 %This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. 
@@ -252,8 +252,6 @@ To obtain this schematic representation, which is practically a density plot, of
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
-
-
 
 \section{SPS Wire Scanners}
 
@@ -276,9 +274,8 @@ To obtain the beam size, $\sigma$, the transverse profiles from each scan are fi
    f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma^2}},
 \end{equation}
 
-where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the one standard deviation error on $\sigma$ which is computed from the square root of the diagonal elements of the covariant matrix.
+where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the error on the standard deviation, $\sigma$, which is computed from the square root of the diagonal elements of the covariant matrix.
 %https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
-
 
 
 % Location where the figure was produced: /eos/user/n/natriant/2020/WS_analysis
@@ -290,14 +287,13 @@ where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is 
 \end{figure}
    
 
-
 The general formula for computing the normalised beam emittance from the beam size, $\sigma$ is given by:
 \begin{equation}\label{eq:emittance_from_WS}
    \centering
    \epsilon = \frac{\sigma^2}{\beta_{WS}} \betarel \gammarel ,
 \end{equation}
 
-where $\sigma$ is the beam size, $\beta_{WS}$ the beta function at the WS location and $\betarel, \gammarel$ the relativistic parameters.
+where $\sigma$ is the rms beam size, $\beta_{WS}$ the beta function at the WS location and $\betarel, \gammarel$ the relativistic parameters.
 
 
 Note that, in the 2018 SPS operational configuration, the dispersion was small in the WSs location and thus its contribution to the beam size was considered to be negligible \footnote{The dispersion at BWS.51995.H location in 2018 was $D_x$= -15\,mm. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is foreseen at the order of $\mathrm{10^{-11}}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible}. For the $\CC$ studies at 270\,GeV beam energy, the 
@@ -312,14 +308,19 @@ Assuming that the relativistic parameters and the beta fucntion are free of erro
 
 
 \normalsize{\textbf{Further considerations}}\\
-It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm\mathrm{OUT} \pm \Delta \epsilon_{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$ , is used. The uncertainty on the averaged emittance, $\Delta \epsilon_\mathrm{avg}$, is computed as:
-
-\begin{equation}\label{eq:avg+emittance_from_WS_uncertainty}
-   \Delta \epsilon_\mathrm{avg} = \sqrt{\Delta \epsilon_1 ^2 + \Delta \epsilon_2 ^2},
+It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT} \pm \Delta \epsilon_\mathrm{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$ , is used. The uncertainty in the average, $\Delta \epsilon_\mathrm{avg, 1}$, is given by: 
+\begin{equation}\label{eq:uncertainty_mean_ws}
+   \Delta \epsilon_\mathrm{avg, 1} = \frac{\mid \epsilon_\mathrm{IN} - \epsilon_\mathrm{OUT} \mid}{2 \sqrt{2}}.
 \end{equation}
+The propagated uncertainty from the measurement errors, $\Delta \epsilon_\mathrm{IN}$ and $\Delta \epsilon_\mathrm{OUT}$, is given by:
+\begin{equation}\label{eq:propagated_uncertainty_ws}
+   \Delta \epsilon_\mathrm{avg, 2} = \frac{1}{2}\sqrt{ \Delta \epsilon_\mathrm{IN}^2 + \Delta \epsilon_\mathrm{OUT}^2}.
+\end{equation}
+Considering that $\Delta \epsilon_\mathrm{avg, 1}$ and $\Delta \epsilon_\mathrm{avg, 2}$ are independent, the combined uncertainty in the average, $\Delta \epsilon_\mathrm{avg}$, is given by
 
-where $\Delta \epsilon_1$ is the standard deviation (SD) of the $\epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT}$ and $\Delta \epsilon_2=\frac{1}{2}\sqrt{ \Delta \epsilon_\mathrm{IN}^2 + \Delta \epsilon_\mathrm{OUT}^2}$.
-
+\begin{equation}\label{eq:combined_uncertainty_ws}
+   \Delta \epsilon_\mathrm{avg} = \sqrt{\Delta \epsilon_\mathrm{avg, 1} ^2 + \Delta \epsilon_\mathrm{avg, 2} ^2}.
+\end{equation}
 
 Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be small. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 
