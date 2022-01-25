@@ -198,7 +198,7 @@ The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, w
 \begin{figure}[!h]
 \centering         
 \includegraphics[width=0.65\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105.png}
-    \caption{CC voltage calibration from the HT monitor. The measured CC voltage, considered as half the peak to peak amplitude of the signal, is 0.96\,MV.}
+    \caption{CC voltage calibration from the HT monitor.}
     \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
 
@@ -233,15 +233,12 @@ It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconst
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.65\textwidth]{images/Ch4/Vcc_amplitude_uncertainty.pdf}
-       \caption{Illustration of the CC amplitude voltage, $V_{CC}$, defined as half the peak to peak amplitude, $V_{CC, p-p}$ (blue) and of its uncertainty, $\Delta V_{CC}$, defined as the offset needed for the signal to be zero-centered.}
+       \caption{Illustration of the CC amplitude voltage, $V_{CC}$, defined as half the peak to peak amplitude, $V_{CC, p-p}$ (blue) and of its uncertainty, $\Delta V_{CC}$, defined as the offset needed for the signal to be zero-centered. Here, $V_{CC}$=0.96\,MV and $\Delta V_{CC}$=0.15\,MV.}
        \label{fig:VCC_amplitude_and_uncertainty}
    \end{figure}
 
 \normalsize{\textbf{Reconstruction of crabbing}}\\
 Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
-
-%The reconstruction of the crabbing from the HT monitor measurements and the physical illustration of it are presented here. 
-%This made it a very useful tool during the experiments as it provided a direct validation of the effect of the $\CC$ kick on the beam. 
 
 To obtain this schematic representation, which is practically a density plot, of the effect of the CC kick on the beam one needs to multiply the measured longitudinal profile, mean of the sum signals acquired after the synchronisation, with the measured intra-bunch offset, mean of the differene signals acquired after the synchronisation. An example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}. For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
 
@@ -308,7 +305,7 @@ Assuming that the relativistic parameters and the beta fucntion are free of erro
 
 
 \normalsize{\textbf{Further considerations}}\\
-It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT} \pm \Delta \epsilon_\mathrm{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$ , is used. The uncertainty in the average, $\Delta \epsilon_\mathrm{avg, 1}$, is given by: 
+It is worth noting here that during each measurement with the WS the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT} \pm \Delta \epsilon_\mathrm{OUT}$ ,were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$ , is used. The uncertainty in the average, $\Delta \epsilon_\mathrm{avg, 1}$, is given by (see Appendix ...): 
 \begin{equation}\label{eq:uncertainty_mean_ws}
    \Delta \epsilon_\mathrm{avg, 1} = \frac{\mid \epsilon_\mathrm{IN} - \epsilon_\mathrm{OUT} \mid}{2 \sqrt{2}}.
 \end{equation}
