@@ -41,16 +41,23 @@ As already mentioned above, the targetd $\CC$ voltage was 1\,MV. Nevetherless, b
      \label{fig:VCC_MD5_2018} 
 \end{figure}
 
+\begin{sloppypar}
+The amplitude of the $\CC$ voltage was measured to be 0.75\,$\pm$\,0.37\,MV and 0.96\,$\pm$\,0.04\,MV from the first and the second acquisition respectively. In the following analysis the averaged $\CC$ voltage from the two scans, $V_{CC, \mathrm{avg}}$ = 0.86\,$\pm$\,0.2\,MV , will be used. The uncertainty  $\Delta V_{CC, \mathrm{avg}}$ = 0.2\,MV .. is computed as follows. 
 
-The amplitude of the $\CC$ voltage was measured to be 0.75 $\pm$ 0.37\,MV and 0.96 $\pm$ 0.04\,MV from the first and the second acquisition respectively.
+First, the uncertainty in the average, $\Delta V_{CC, \mathrm{avg1}}$, is estimated by (see Appendix ...): 
+\end{sloppypar}
+\begin{equation}\label{eq:uncertainty_mean_ws}
+    \Delta V_{CC, \mathrm{avg1}} = \frac{\mid 0.75 - 0.96 \mid}{2 \sqrt{2}}=0.074\mathrm{\ MV}.
+\end{equation}
+Then the propagated uncertainty from the measurement errors, 0.37\,MV and 0.04\,MV, is estimated by:
+\begin{equation}\label{eq:propagated_uncertainty_ws}
+    \Delta V_{CC, \mathrm{avg2}} = \frac{1}{2}\sqrt{ 0.37^2 + 0.04^2} = 0.19\mathrm{\ MV}.
+\end{equation}
+Considering that $\Delta V_{CC, \mathrm{avg1}}$ and $\Delta V_{CC, \mathrm{avg2}}$ are independent, the combined uncertainty in the average, $\Delta V_{CC, \mathrm{avg}}$, is given by:
 
-
-
-Those beam based measurement of the $\CC$ voltage showed an amplitude of     
-The amplitude of the $\CC$ voltage was measured to be $V_{CC, 1}$ = 0.74 $\pm$ 0.38\,MV and $V_{CC, 2}$ = 0.74
-
-
-from the peak to peak amplitude, at 0.76\,MV and 0.97\,MV from the first and second acquisition respectively. For the direct comparison of the measured growth rates with measuremnts and simulations (section.. ) and Ch... the average of the two available measurements is used, $\VCC$ = 0.865\,MV. This consideration is based on the assumption that the $\CC$ settings remained unchanged during the experiment. Uncertainty on Vcc
+\begin{equation}\label{eq:combined_uncertainty_ws}
+    \Delta V_{CC, \mathrm{avg}} = \sqrt{\Delta V_{CC, \mathrm{avg1}} ^2 + \Delta V_{CC, \mathrm{avg2}} ^2}=0.2\mathrm{\ MV}.
+\end{equation}
 
 
 \section{Injected RF noise}\label{sec:noise_meas2018}
