@@ -265,17 +265,16 @@ The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly
 
 
 \normalsize{\textbf{Fitting of transverse profiles}}\\
-To obtain the beam size, $\sigma$, the transverse profiles from each scan are fitted with a four-parameter gaussian function:
+To obtain the beam size, $\sigma$, the standard procedure of fitting measured data to a model is followed~\cite{gaus_fit_least_squares}. In particular, the transverse profiles from each scan are fitted with the following four-parameter gaussian function:
 
 \begin{equation}\label{eq:4p_gauss}
    f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma^2}},
 \end{equation}
 
-where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. A non-linear least square minimization is used to fit the gaussian function to the measured data and obtain the optimal values for the parameters ($A, k, \mu, \sigma$).
+where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. A non-linear least square minimization is used to fit the gaussian function to the measured data and obtain the optimal values for the parameters ($A, k, \mu, \sigma$). The standard error of the parameters' estimates is given by the square root of the diagonal of their covariance matrix.~\cite{gaus_fit_least_squares}. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the standard error of the $\sigma$ parameter. The optimal parameters' values and their covariance matrix are computed here using the $\mathrm{scipy.curve \_ fit}$ \cite{scipy_curve_fit} function of Python programming language. 
 
+% Curve fitting explanation: https://www.youtube.com/watch?v=Jl-Ye38qkRc&ab_channel=BrantCarlson
 
-The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the error on the standard deviation, $\sigma$, which is computed from the square root of the diagonal elements of the covariant matrix.
-%https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
 
 
 % Location where the figure was produced: /eos/user/n/natriant/2020/WS_analysis
