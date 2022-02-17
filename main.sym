@@ -15,6 +15,8 @@
 \printsymline{\psi_{x}}{\psi_{x}}{psix}{Horizontal phase advance}{ix}
 \printsymline{\psi_{y}}{\psi_{y}}{psiy}{Vetical phase advance}{ix}
 \printsymline{s}{s}{s}{Location around the ring ??}{ix}
+\printsymline{D_x}{D_x}{Dx}{Horizontal dispersion function}{ix}
+\printsymline{D_y}{D_y}{Dy}{Vertical dispersion function}{ix}
 \printsymline{\beta}{\beta}{betarel}{Relativistic beta}{ix}
 \printsymline{\gamma}{\gamma}{gammarel}{Relativistic gamma (Lorenz factor)}{ix}
 \printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{ix}

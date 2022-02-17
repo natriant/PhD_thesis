@@ -16,6 +16,8 @@
 \newsym[Horizontal phase advance]{psix}{\psi_{x}}
 \newsym[Vetical phase advance]{psiy}{\psi_{y}}
 \newsym[Location around the ring ??]{s}{s}
+\newsym[Horizontal dispersion function]{Dx}{D_x}
+\newsym[Vertical dispersion function]{Dy}{D_y}
 \newsym[Relativistic beta]{betarel}{\beta}
 \newsym[Relativistic gamma (Lorenz factor)]{gammarel}{\gamma}
 \newsym[Bunch intensity i.e. number of particles (here protons)]{Nb}{N_b}
