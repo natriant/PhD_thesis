@@ -1,47 +1,12 @@
 \vspace*{-1mm}
-The theoretical model for the transverse emittance growth caused by amplitude and phase noise in a CC was introduced in Chapter~\ref{Ch:CC_noise_theory}. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In this chapter, the machine setup, the beam configuration and the instrumentation used for the emittance growth studies with $\CC$s in the SPS are presented.
 
+In 2018 the $\CC$ technology was tested with proton beams in the SPS for the first time. In this chapter, the installation and the calibration of the $\CC$s in the SPS are presented along with the first demonstration of crabbing of proton beams. The objective is to provide a full understanding of the operational aspects of the $\CC$s in the SPS and the measurement of the $\CC$ voltage which is one of the most crucial parameters for the emittance growth studies (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). 
 
-\begin{sloppypar} % to fix \hbox too wide
-The chapter is structured as follows: Section~\ref{sec:SPS_setup}
-describes the experimental machine configuration. Thereafter, Section~\ref{sec:CC_SPS_setup} elaborates on the installation and the operational aspects of the CCs in the SPS. In Sections~\ref{sec:HT_info}-~\ref{sec:ABWLM_WallCurrentMonitor} the instruments used for the parameters of interest (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn})  i.e. $\CC$ voltage, emittance and bunch length are discussed, including the post processing methods where it was performed by the author. The results of the experiment are presented separately in Chapter~\ref{Ch:2018_analyisis}.
-\end{sloppypar}
+The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS.
 
-
-\section{Machine and beam configuration}\label{sec:SPS_setup}
-For studying the long-term emittance evolution a special mode of operation was set up in the SPS which is called "coast" (in other machines, it is referred to as storage ring mode) with bunched beams. In this mode, the bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similar to the HL-LHC case.
-
-To make sure that the SPS can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out through 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the emittance growth that was observed in the machine from other sources than injected noise and will be referred to as the natural emittance growth in this thesis. The natural emittance growth needs to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. From these studies, it was concluded that the optimal coast setup is at high energies, with low chromaticity and bunches of low intensity as it minimises the natural emittance growth~\cite{Antoniou:2649815}. The highest energy for which the SPS could operate in "coast" was 270\,GeV and thus the experiments were performed at this energy. That limitation was introduced due to the rms power deposited in its magnets when operating at high energy for long period of time. Moreover, as the natural emittance growth was found to be a single bunch effect four bunches were used. That choice was made to reduce the statistical uncertainty of the measurements but not to increase the beam intensity.
-
-During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Last, the transverse feedback system was switched off. The main machine and beam parameters used in the experiment of 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. It should be noted, that no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. 
-
-\begin{table}[!hbt]
-	\centering
-   \caption{Main machine and beam parameters for the emittance growth studies with CCs in SPS in 2018.}
-	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
-		&&& \\[-6mm]
-		\toprule \toprule
-		\multicolumn{2}{l}{\textbf{Parameter}} &
-		\multicolumn{2}{c}{\textbf{Value}} \\
-		\bottomrule
-      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
-      \multicolumn{2}{l}{Revolution frequency, $\frev$}  & \multicolumn{2}{c}{43.375\,kHz} \\
-      \multicolumn{2}{l}{Number of proton per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b} \\
-      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{4} \\
-      \multicolumn{2}{l}{Bunch spacing}  & \multicolumn{2}{c}{524\,ns} \\
-      \multicolumn{2}{l}{Main RF frequency, $\fRF$}  & \multicolumn{2}{c}{200.39\,MHz} \\ %200.3945
-      \multicolumn{2}{l}{Main RF voltage, $\VRF$}  & \multicolumn{2}{c}{3.8\,MV} \\
-      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 1.0 / $\sim$ 1.0} \\
-      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051} \\
-      \bottomrule
-	\end{tabu}
-   \label{tab:machine_beam_param_2018}
-\end{table}
-
-\section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
-
-For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its istallation For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness. In case someone wants to repeat the study, the location of the $\CC$s along the SPS ring is also indicated.
+\section{Installation in the SPS}\label{sec:cc_sps_installation}
+For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type
+, which will be reffered to as $\CC$1 and $\CC2$ throught this thesis, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum.
 
 \begin{figure}[h]
    \centering         
@@ -55,11 +20,13 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
 % 2. https://science.osti.gov/-/media/np/pdf/research/NP-Accel-RD-PI-Meeting/2019/Wu_2019FOA_PImeeting_crabcavity_Rev9.pdf?la=en&hash=B29283EDB3C704EC3EFD9DA23CA8DEA22076C88B
 
 
+In case someone wants to repeat the study, the location of the $\CC$s along the SPS ring is also indicated.
+
 \begin{table}[!hbt]
    \begin{minipage}{\textwidth}
    %\centering
    \begin{centering}
-   \caption{Crab cavities parameters for the emittance growth studies in SPS in 2018.}
+   \caption{Crab cavities design parameters for the SPS tests in 2018.}
    \begin{tabu} to \textwidth {X[c,0.1m] X[c,m] X[0.5c,m] X[0.5c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
@@ -72,7 +39,7 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\
       
       \multicolumn{2}{l}{s-location$^{\ast}$}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
 
-      \multicolumn{2}{l}{$\CC$ voltage, $\VCC$}  & \multicolumn{1}{c}{0\,MV} & \multicolumn{1}{c}{$\sim$ 1\,MV} \\
+      \multicolumn{2}{l}{$\CC$ voltage, $\VCC$}  & \multicolumn{1}{c}{$\leq$ 3.4\,MV} & \multicolumn{1}{c}{$\sim$ $\leq$ 3.4\,MV} \\
 
       \multicolumn{2}{l}{$\CC$ frequency, $\fCC$}  & \multicolumn{1}{c}{400.78\,MHz} & \multicolumn{1}{c}{400.78\,MHz} \\ %400.789
 
