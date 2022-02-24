@@ -4,7 +4,7 @@ In 2018 the $\CC$ technology was tested with proton beams in the SPS for the fir
 
 The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS.
 
-\section{Installation in the SPS}\label{sec:cc_sps_installation}
+\section{Crab cavities installation in the SPS}\label{sec:cc_sps_installation}
 For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type
 , which will be reffered to as $\CC$1 and $\CC2$ throught this thesis, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum.
 
@@ -19,8 +19,7 @@ For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type
 % Photos from the cryomodule installation day: 1. https://home.cern/news/news/engineering/crabs-settled-tunnel (maybe good to show the scale?)
 % 2. https://science.osti.gov/-/media/np/pdf/research/NP-Accel-RD-PI-Meeting/2019/Wu_2019FOA_PImeeting_crabcavity_Rev9.pdf?la=en&hash=B29283EDB3C704EC3EFD9DA23CA8DEA22076C88B
 
-
-In case someone wants to repeat the study, the location of the $\CC$s along the SPS ring is also indicated.
+The main $\CC$ parameters are listed in Table~\ref{tab:SPS_CC_main}. Their location along the SPS ring is also indicated, in case someone would like to repeat the analysis described in this thesis.
 
 \begin{table}[!hbt]
    \begin{minipage}{\textwidth}
@@ -59,15 +58,15 @@ In case someone wants to repeat the study, the location of the $\CC$s along the 
 
 % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
 
-\subsection{Operational considerations}
+\section{Operational considerations}
 
-For the beam tests with the $\CC$ in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
+For the beam tests with $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
 
 \normalsize{\textbf{Energy ramp}}\\
 SPS recieves the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
-It was important to ensure that during the "coast" the beam will epxeriene the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at 200\,MHz needed to be synchronous with the $\CC$ operating at 400\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency and phase, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency (see values at Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}) and were re-phased so that they become synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp to the coast energy and shortly after the cavity was switched on~\cite{BE_seminar}.
+It was important to ensure that during the "coast" the beam will epxeriene the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at 200\,MHz needed to be synchronous with the $\CC$ operating at 400\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency and phase, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency and were re-phased so that they become synchronous with the crabbing signal. For the studies at higher energies the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
 
 % Steps for synchronisation: 1) SPS main RF was set at the exact half of the main RF. 2) The phase was adjusted. 3) The frequency needed to be re-adjusted slightly again such is it becomes the exact half of it.
 % Nice explanation of the synchronisatio: https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.062001
