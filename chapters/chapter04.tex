@@ -193,7 +193,7 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
    \end{minipage}
 \end{table}
 
-\normalsize{\textbf{Demonstration of crabbing}}\\
+\subsection{Demonstration of crabbing with proton beams}\label{subsec:crabbing_demonstration_density_plot}
 Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
 
 To obtain this schematic representation, which is practically a density plot, of the effect of the CC kick on the beam one needs to multiply the measured longitudinal profile, mean of the sum signals acquired after the synchronisation, with the measured intra-bunch offset, mean of the differene signals acquired after the synchronisation. An example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}. For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
@@ -201,10 +201,14 @@ To obtain this schematic representation, which is practically a density plot, of
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_crabVoltage__20180530_135105_crabbing_only.png}
-       \caption{Illustration of the crabbing from the HT monitor signal. CC voltage and sum signal (longitudinal line density) measured from the HT monitor (top) together with the density plot (bottom) which visualises the effect of the CC kick in the beam.}
+       \caption{Demonstration of the crabbing from the HT monitor signal. CC voltage and sum signal (longitudinal line density) measured from the HT monitor (top) together with the density plot (bottom) which visualises the effect of the CC kick in the beam.}
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
+% The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
+
+\section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
+
 
 \normalsize{\textbf{Estimation of the amplitude and the uncertainty of the measurement}}\\
 It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset is not a systematic error as it is not in the same direction and has a different value for each measurement. In this case, the amplitude of the signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal. The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
@@ -217,9 +221,6 @@ It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconst
    \end{figure}
 
 
-% The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
-
-\section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
 \subsection{Dependence of the crab cavity voltage and offset on the phase}
 Dependence studies 
 Phase scan
