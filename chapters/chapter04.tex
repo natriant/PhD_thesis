@@ -135,7 +135,7 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
-\normalsize{\textbf{Head-Tail monitor scaling to millimeters}}\\
+\normalsize{\textbf{Head-Tail monitor scaling}}\\
 The last step to make the HT acquisitions meaningful is to convert the measured intra bunch offset, mean of the difference signals after the $\CC$ - main RF synchronisation and after the baseline correction, from arbitrary units to millimeters. The scaling is achieved by division with the mean of the sum signals after the synchronisation and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the $\CC$ kick in millimeters and after the baseline correction. 
 
 
@@ -147,9 +147,8 @@ The last step to make the HT acquisitions meaningful is to convert the measured 
 \end{figure}
 
 
- \subsection{Crab Cavity voltage calibration}\label{sec:Vcc_calibration}
- This section discusses the beam based measurement of the $\CC$ voltage from the HT monitor signal. The calibration was performed by using Eq.~\eqref{eq:CC_orbit_shift_Chao} to calculate the kick required to reconstruct the measured intra-bunch offset. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
-
+ \subsection{Crab Cavity voltage reconstruction}\label{sec:Vcc_calibration}
+ This section discusses the reconstruction of the $\CC$ voltage from the HT monitor signal. First, Eq.~\eqref{eq:CC_orbit_shift_Chao} was used to calculate the $\CC$ kick, $\theta$, required to reconstruct the measured intra-bunch offset. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
 
 \begin{equation}\label{eq:CC_orbit_shift_Chao}
    \Delta y_{,HT} = \frac{\sqrt{\beta_{y, HT}}}{2 \sin(\pi \Qy)} \theta \sqrt{\beta_{y, CC}} \cos(\pi \Qy - \mid \psi_{y, HT} - \psi_{y, CC} \mid),
@@ -157,14 +156,14 @@ The last step to make the HT acquisitions meaningful is to convert the measured 
 
 where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\mid \psi_{y, HT} - \psi_{y, CC} \mid$ between the $\CC$ and the HT monitor in tune units. The same applies for the horizontal plane. The subscripts HT and CC indicate quanities at the location of the HT monitor and CC respectively.
 
-The deflection from the $\CC$ is written as $\theta = - \frac{q V(t)}{\symE}$, where $q$ is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. In the context where the HT monitor measures the signal as a function of time, $t$, the voltage in the above formula is expressed accordingly as $V_{CC}(t)$, where $t=0$ the center of the bunch.
+The $\CC$ voltage is then reconstructed from the $\CC$ kick which is written as $\theta = - \frac{q V_{CC}(t)}{\symE}$, where $q$ is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. In the context where the HT monitor measures the signal as a function of time, $t$, the voltage in the above formula is expressed accordingly as $V_{CC}(t)$, where $t=0$ the center of the bunch.
 
 % 1. locally PhD_projects/CC_MD_2021_summary/HT_monitor/2018_HT_monitor
 % 2. lxplus: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor
 \begin{figure}[!h]
 \centering         
 \includegraphics[width=0.65\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105.png}
-    \caption{CC voltage calibration from the HT monitor.}
+    \caption{CC voltage reconstruction from the HT monitor.}
     \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
 
@@ -193,6 +192,9 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
    \end{centering} \footnotesize{$^\ast$ The start of the lattice is considered the element QF.10010 which is a focusing quadrupole.}
    \end{minipage}
 \end{table}
+
+
+Up to here ok
 
 \normalsize{\textbf{Estimation of the amplitude and the uncertainty of the measurement}}\\
 It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset is not a systematic error as it is not in the same direction and has a different value for each measurement. In this case, the amplitude of the signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal. The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
