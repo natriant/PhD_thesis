@@ -2,10 +2,10 @@
 
 In 2018 the $\CC$ technology was tested with proton beams in the SPS for the first time. In this chapter, the setup and the calibration of the $\CC$s in the SPS are presented along with the demonstration of the first crabbings of proton beams. The objective is to provide a full understanding of the operational aspects of the $\CC$s in the SPS and the measurement of the $\CC$ voltage which is one of the most crucial parameters for the emittance growth studies (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). 
 
-The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS. Thereafter, Section~\ref{sec:CC_operational_considerations} elaborates on details for their operation in the SPS machine. In Section~\ref{sec:HT_info} the use of the Head-Tail (HT) monitor as the main diagnostic in the $\CC$ tests is duscussed focusing on the reconstruction of the $\CC$ voltage from its reading. Last, Section~\ref{sec:CC_voltage_meas} provides a characterisation of the measured signal and defines the measured voltage amplitude and its uncertainty.
+The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS. Thereafter, Section~\ref{sec:CC_operational_considerations} elaborates on details for their operation in the SPS machine. In Section~\ref{sec:HT_info}, the use of the Head-Tail (HT) monitor as the main diagnostic in the $\CC$ tests is discussed, focusing on the reconstruction of the $\CC$ voltage from its reading. Last, Section~\ref{sec:CC_voltage_meas} provides a characterisation of the beam based $\CC$ voltage measurement and defines the voltage amplitude and its uncertainty.
 
 
-\section{Crab Cavities installation in the SPS}\label{sec:cc_sps_installation}
+\section{Crab Cavities' installation in the SPS}\label{sec:cc_sps_installation}
 For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type
 , which will be reffered to as $\CC$1 and $\CC2$ throught this thesis, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum.
 
@@ -83,7 +83,7 @@ The SPS is equipped with a high bandwidth pick-up of approximately 2\,GHz allowi
  In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$ will be discussed. Last, the calibration of the $\CC$ voltage from the HT data is described and the visualisation of the crabbing is displayed. The experimental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at phase $\phiCC=0$ for simplicity. That energy of 26\,GeV was chosen to provide a better understanding of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
 
 
-\normalsize{\textbf{General information}}\\
+\subsection{General infortmation}\label{subsec:HT_general_info}
 As already mentioned, the HT monitor is a high bandwidth version of a standard beam position monitor, which means that it can measure the transverse displacement within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum ($\Sigma$) and the  difference ($\Delta$) of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The sum signal is the longitudinal line density while the difference signal corresponds to the intra-bunch offset. The system operates at time scale where the signals are given as a function of the position within the bunch.
 
 \begin{figure}[h]% Edit figure in: Goodle Docs/Doctoral/2022/Thesis/Ch4
@@ -209,11 +209,15 @@ To obtain this schematic representation, which is practically a density plot, of
 % The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
 
 \section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
-This section gives the definitions of the amplitude of the measured signal of the $\CC$ voltage and its uncertainty. Additionally, their dependence on the $\CC$ phase is discussed.
+This section gives the definitions of the amplitude of the beam based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
 
 \subsection{Estimation of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
 
-It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset is not a systematic error as it is not in the same direction and has a different value for each measurement. In this case, the amplitude of the signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal. The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
+It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset seems to be a result of calibration issue of the HT monitor as it didn't change for measurements with the same $\CC$ and beam conditions. 
+
+In this case, the amplitude of the measured signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal.
+
+The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero and thus is a systematic uncertainty. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
 
 \begin{figure}[!h]
    \centering         
