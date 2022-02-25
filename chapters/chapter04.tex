@@ -2,7 +2,8 @@
 
 In 2018 the $\CC$ technology was tested with proton beams in the SPS for the first time. In this chapter, the setup and the calibration of the $\CC$s in the SPS are presented along with the demonstration of the first crabbings of proton beams. The objective is to provide a full understanding of the operational aspects of the $\CC$s in the SPS and the measurement of the $\CC$ voltage which is one of the most crucial parameters for the emittance growth studies (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). 
 
-The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS.
+The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS. Thereafter, Section~\ref{sec:CC_operational_considerations} elaborates on details for their operation in the SPS machine. In Section~\ref{sec:HT_info} the use of the Head-Tail (HT) monitor as the main diagnostic in the $\CC$ tests is duscussed focusing on the reconstruction of the $\CC$ voltage from its reading. Last, Section~\ref{sec:CC_voltage_meas} provides a characterisation of the measured signal and defines the measured voltage amplitude and its uncertainty.
+
 
 \section{Crab Cavities installation in the SPS}\label{sec:cc_sps_installation}
 For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type
@@ -58,7 +59,7 @@ The main $\CC$s parameters are listed in Table~\ref{tab:SPS_CC_main}. Their loca
 
 % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
 
-\section{Operational considerations}
+\section{Operational considerations}\label{sec:CC_operational_considerations}
 
 For the beam tests with $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
 
@@ -210,7 +211,8 @@ To obtain this schematic representation, which is practically a density plot, of
 \section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
 This section gives the definitions of the amplitude of the measured signal of the $\CC$ voltage and its uncertainty. Additionally, their dependence on the $\CC$ phase is discussed.
 
-\normalsize{\textbf{Estimation of the amplitude and the uncertainty of the measurement}}\\
+\subsection{Estimation of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
+
 It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset is not a systematic error as it is not in the same direction and has a different value for each measurement. In this case, the amplitude of the signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal. The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
 
 \begin{figure}[!h]
