@@ -1,6 +1,6 @@
 \vspace*{-1mm}
 
-In 2018 the $\CC$ technology was tested with proton beams in the SPS for the first time. In this chapter, the setup and the calibration of the $\CC$s in the SPS are presented along with the demonstration of the first crabbings of proton beams. The objective is to provide a full understanding of the operational aspects of the $\CC$s in the SPS and the measurement of the $\CC$ voltage which is one of the most crucial parameters for the emittance growth studies (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). 
+In 2018 the $\CC$ technology was tested with proton beams in the SPS for the first time. In this chapter, the setup and the calibration of the $\CC$s in the SPS are presented along with the demonstration of the first crabbings of proton beams. The objective is to provide a full understanding of the operational aspects of the $\CC$s in the SPS and explain the measurement of the $\CC$ voltage which is one of the most crucial parameters for the emittance growth studies (see Chapter~\ref{Ch:CC_noise_theory}, Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). 
 
 The chapter is structured as follows: Section~\ref{sec:cc_sps_installation} describes the installation of the $\CC$ system in the SPS. Thereafter, Section~\ref{sec:CC_operational_considerations} elaborates on details for their operation in the SPS machine. In Section~\ref{sec:HT_info}, the use of the Head-Tail (HT) monitor as the main diagnostic in the $\CC$ tests is discussed, focusing on the reconstruction of the $\CC$ voltage from its reading. Last, Section~\ref{sec:CC_voltage_meas} provides a characterisation of the beam based $\CC$ voltage measurement and defines the voltage amplitude and its uncertainty.
 
@@ -116,7 +116,7 @@ The raw signals from the HT monitor require a specific post-processing procedure
 To obtain useful information from the HT monitor signal in the presence of the $\CC$s there are a few steps that differ from the standard post processing procedure and they are desribed below.
 
 \normalsize{\textbf{Head-Tail monitor baseline correction}}\\
-The HT monitor measurement has a baseline on the difference signal which needs to be removed. The baseline is a result of orbit offsets and non-linearities of the instrument and is constant from turn to turn~\cite{Levens:2313358}. Therefore, during the normal post processing procedure (without $\CC$s), the baseline is computed as the mean of the difference signals over all turns and then the correction is achieved by subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_SPS_setup}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method. Because of technical limitations it was not feasible to switch off the $\CC$ for those kind of measurements. Thus, the following technique was used. 
+The HT monitor measurement has a baseline on the difference signal which needs to be removed. The baseline is a result of orbit offsets and non-linearities of the instrument and is constant from turn to turn~\cite{Levens:2313358}. Therefore, during the normal post processing procedure (without $\CC$s), the baseline is computed as the mean of the difference signals over all turns and then the correction is achieved by subtracting this static offset from the signal of each turn. However, in the SPS tests, where the $\CC$s are well synchronised with the main RF system (Section~\ref{sec:CC_operational_considerations}), the crabbing signal is also a static intra-bunch position offset and thus would also be removed with the usual method. Because of technical limitations it was not feasible to switch off the $\CC$ for those kind of measurements. Thus, the following technique was used. 
 % CC effect average out over time
 
 For the $\CC$ experiments a reference measurement had first to be made with the $\CC$ not being synchronous with the main RF system. The baseline was computed as the mean of the difference signals over this reference period and subsequently it was subtracted from the average of the difference signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
@@ -237,19 +237,11 @@ The impact of the $\CC$ phase on the voltage experienced by the beam and on the 
 
 
 
-
-Comparing the measurements
-
-it becomes clear that the $\CC$ phase has an important impact on the voltage experienced by the beam and on the uncertainty of its measurement. In particular, ...
-
-The phase is obtained from a sinusoidal fit. Show example of sinusoidal fit (after the removal of the offset). From the same data as above.
-
-A non linear mean square minimisation (error, is as big as the phase itself. what should I comment on it?)
-
 Plots (maybe also with horizontal error on the measured phase?):
 Amplitude vs phase
 Phase offset 
 
 
 
-
+For completeness?
+Why do you present this study here? useful for future calibration.

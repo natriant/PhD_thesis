@@ -39,51 +39,6 @@ During the experiment the Landau octupoles were switched off. Nevetherless, a re
    \label{tab:machine_beam_param_2018}
 \end{table}
 
-\section{Crab Cavities in the SPS}\label{sec:CC_SPS_setup}
-
-For the SPS tests two prototype $\CC$s of the Double Quarter Wave (DQW) type, $\CC$1 and $\CC2$, were fabricated by CERN and were assembled in the same cryomodule, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}. For its istallation For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum. For the noise induced emittance growth studies only $\CC$2 was used. Nevertheless, the parameters for both $\CC$s are shown in Table~\ref{tab:SPS_CC_main} for completeness. In case someone wants to repeat the study, the location of the $\CC$s along the SPS ring is also indicated.
-
-\begin{figure}[h]
-   \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/CC_cryomodule.png}
-       \caption{Cross section view of the CC cryomodule~\cite{Zanoni:2017}. It has a total length of 3\,m~\cite{Baudrenghien:1520896} and at its core there are the two DQW cavities, which are illustrated with light green color.}
-       \label{fig:DQW_cryomodule}
-\end{figure}
-% Couldn't find information on height, weight etc. Any idead where to look for spces?
-
-% Photos from the cryomodule installation day: 1. https://home.cern/news/news/engineering/crabs-settled-tunnel (maybe good to show the scale?)
-% 2. https://science.osti.gov/-/media/np/pdf/research/NP-Accel-RD-PI-Meeting/2019/Wu_2019FOA_PImeeting_crabcavity_Rev9.pdf?la=en&hash=B29283EDB3C704EC3EFD9DA23CA8DEA22076C88B
-
-% QF.10010  is the start of the SPS lattice --> https://layout.cern.ch/reports/mad?fileType=STANDARD&machineId=2180065&versionId=34464591 (access with sshuttle)
-% The actual start of the lattice at 0 m is: %BEGI.10010. which is a marker (not a real element).
-
-% Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
-
-\subsection{Operational considerations}
-
-For the beam tests with the $\CC$ in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
-
-\normalsize{\textbf{Energy ramp}}\\
-SPS recieves the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{Rama_Paris_persentation}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
-
-\normalsize{\textbf{Crab Cavity - main RF synchronisation}}\\
-It was important to ensure that during the "coast" the beam will epxeriene the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at 200\,MHz needed to be synchronous with the $\CC$ operating at 400\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency and phase, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency (see values at Tables~\ref{tab:machine_beam_param_2018} and~\ref{tab:SPS_CC_main}) and were re-phased so that they become synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp to the coast energy and shortly after the cavity was switched on~\cite{BE_seminar}.
-
-% Steps for synchronisation: 1) SPS main RF was set at the exact half of the main RF. 2) The phase was adjusted. 3) The frequency needed to be re-adjusted slightly again such is it becomes the exact half of it.
-% Nice explanation of the synchronisatio: https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.062001
-% For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. 
-
-
-\normalsize{\textbf{Estimation of the amplitude and the uncertainty of the measurement}}\\
-It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset is not a systematic error as it is not in the same direction and has a different value for each measurement. In this case, the amplitude of the signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal. The uncertainty in the amplitude is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, the uncertainty, $\Delta \VCC$, is defined as half the sum of the maximum positive and negative peaks of the signal. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
-
-
-
-\normalsize{\textbf{Reconstruction of crabbing}}\\
-Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection {\color{red}in the transverse plane}. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throught the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
-
-To obtain this schematic representation, which is practically a density plot, of the effect of the CC kick on the beam one needs to multiply the measured longitudinal profile, mean of the sum signals acquired after the synchronisation, with the measured intra-bunch offset, mean of the differene signals acquired after the synchronisation. An example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}. For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
-
 
 \section{SPS Wire Scanners}\label{sec:sps_ws}
 The SPS is equipped with Wire Scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
