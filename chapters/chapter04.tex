@@ -111,7 +111,6 @@ The raw signals from the HT monitor require a specific post-processing procedure
        \label{fig:HT_example_signals_2D}
 \end{figure}
 
-
 \subsection{Post processing in the presence of Crab Cavities}\label{subsec:HT_post_process_CC}
 To obtain useful information from the HT monitor signal in the presence of the $\CC$s there are a few steps that differ from the standard post processing procedure and they are desribed below.
 
@@ -206,14 +205,14 @@ To obtain this schematic representation, which is practically a density plot, of
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
-% The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
+% The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan/
 
 \section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
 This section gives the definitions of the amplitude of the beam based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
 
-\subsection{Estimation of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
+\subsection{Definitions of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
 
-It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset seems to be a result of calibration issue of the HT monitor as it didn't change for measurements with the same $\CC$ and beam conditions. 
+It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset seems to be a result of a calibration issue of the HT monitor as it didn't change for measurements with the same $\CC$ and beam conditions. 
 
 In this case, the amplitude of the measured signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal.
 
@@ -232,16 +231,23 @@ The uncertainty in the amplitude, $\Delta \VCC$, is defined as the offset that n
 
 \subsection{Dependence of the crab cavity voltage and offset on the phase}
 
-The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The results are summarised in Fig .. . The phase is extracted from a sinusoidal fit on the reconstracted $\CC$ votlage from the HT monitor reading after the offset is removed (Fig..). Clearly the, with increasing phase ...
+The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The results are summarised in Fig .. . The phase is extracted from a sinusoidal fit on the reconstructed $\CC$ voltage from the HT monitor reading after the offset is removed (Fig..).
+
+
+The error bars on the voltage values (Fig a) correspond to the uncertainty of the measurement, $\Delta V_{CC}$, which is caluclated as described in Section~\ref{subsec:def_amplt_uncertainty}.
 
 
 
 
-Plots (maybe also with horizontal error on the measured phase?):
+Clearly the, with increasing phase ...
+
+
+ePlots (maybe also with horizontal error on the measured phase?):
 Amplitude vs phase
 Phase offset 
 
 
 
-For completeness?
+
 Why do you present this study here? useful for future calibration.
+For completeness? as you say in the introduction of the section?

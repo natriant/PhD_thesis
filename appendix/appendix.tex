@@ -1,2 +1,47 @@
 For the uncertainty in the mean:
 https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
+
+
+\section{Least squares fitting}\label{app:non_linear_fitting}
+In sciences many quantities can not be measured directly, but can be inferred from measured data by fitting a model function to them. Common examples of model functions are the gaussian, the polynomial or the sinusoidal function. The fitting procedure followed in this thesis is called "least squares" and is described below based on Ref []
+
+Suppose that we have $N$ data points ($x_{i}, y_{i}$) and that $y=f(x,\alpha, \beta)$ is the model function that describes the relationship between the points. The objective of the fit is to determine the optimal parameters $\alpha, \beta$ such as the model function describes best the data points. This is done by minimising the $\chi^2$ statistics with respect to $\alpha$ and $\beta$:
+\begin{equation}\label{eq:chi_square}
+    \chi^2 = \sum_{i=1}^{N}[y_{i}-f(x_{i},\alpha, \beta)]^2,
+\end{equation}
+
+where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the exepcted value from the model. In other words, $\chi^2$ is a measure of deviation between the measurement and the expected result and thus its minimisation results to the best fit.
+
+
+
+from the data points. The process to obtain $\alpha$ and $\beta$ is to minimise the following expression with respect to $\alpha, \beta$.
+
+
+1. chi square expression
+2. chi square is a measure of deviation between the measurement and the expected value. The smaller the chi square the better the fit.
+
+
+
+The best fit is obtained
+
+In order to find the best fit, 
+
+
+Why do we fit the measured data?
+
+The fitting procedure of a data set in this thesis follows the widely used method of least squares. 
+
+
+
+\normalsize{\textbf{Error of the fit}}\\
+The method of least squares is a widel
+
+This Section describes the procedure that is followed in this thesis to fit the measured data to a model. 
+
+
+
+In this thesis, the standard procedure of fitting measured data to a model is followed~\cite{gaus_fit_least_squares}. 
+This scection describes the procedure followed in t
+
+
+the fitting procedure
