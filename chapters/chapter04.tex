@@ -211,12 +211,21 @@ To obtain this schematic representation, which is practically a density plot, of
 This section gives the definitions of the amplitude of the beam based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
 
 \subsection{Definitions of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
+The voltage amplitude, $\VCC$, is obtained from a sinusoidal fit on the reconstructed voltage, $\VCC (t)$ from the HT monitor reading. The standard procedure of least squares (cf Appendix eee) is followed. In particular, $\VCC (t)$ is fitted with the folllowing four-parameter model function which also provides the $\CC$ phase, frequency and voltage offset:
+\begin{equation}
+   f(x) = k + V_{CC}\sin{(2\pi \fCC x + \phiCC)},
+\end{equation}
 
-It is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero. This voltage offset seems to be a result of a calibration issue of the HT monitor as it didn't change for measurements with the same $\CC$ and beam conditions. 
+where $k$ is the voltage offset, $\VCC$ the amplitude of the $\CC$ voltage, $\fCC$ the $\CC$ frequency and $\phiCC$ the $\CC$ phase. The offset parameter is added to the model function as it is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero.
 
-In this case, the amplitude of the measured signal is defined as half the peak to peak amplitude, $\VCC = V_{CC, p-p}/2$. Note that the peak to peak amplitude, $V_{CC, p-p}$, is the difference between the maximum positive and negative peaks of the signal.
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed. First the voltage amplitude, $\VCC$, should be always positive. Additionally, the $\CC$ frequency is imposed to be around 400\, MHz according to the operational value. Last, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Subsequently, only the part of the signal for which the corresponding normalised sum signal is above 0.4 is used for the fit. 
 
-The uncertainty in the amplitude, $\Delta \VCC$, is defined as the offset that needs to be added or subtracted to the signal, such as it is centered around zero. In other words, it is defined as half the sum of the maximum positive and negative peaks of the signal. It should be noted that this is a systematic uncertainty. Figure~\ref{fig:VCC_amplitude_and_uncertainty} shows the peak to peak amplitude, $V_{CC, p-p}$, the amplitude of the signal, $\VCC$, and the uncertainty, $\Delta \VCC$, for the reconstructed $\CC$ voltage, $\VCC(t)$.
+Fig .. shows the fit's result of the reconstructed signal analysed in the previous section. As indicated on the top of the plot, the red solid line corresponds to the reconstructed $\CC$ voltage, while the blue solid line corresponds to the result of the sinusoidal fit. It can be seen that only the part of the signal for which the normalised sum signal (black dashed line) is above 0.4 is used. Finally the blue dashed line shows the result of the fit after the voltage offset is subtracted, such as it is centered around zero. The parameter values obtained from the fit are given in the legend. Last, the desnity plot is also shown at the bottom of the figure for a complete visualisation of the crabbing. 
+
+
+
+
+
 
 %- The uncertainty on the Vcc measurement is a systematic uncertainty not statistical/random (like the one I proposed). - What is the value of the CC voltage seeing by the beam during the measurement. What is the uncertainty of the CC voltage seeing by the beam. Is dominated by the systematic error. - Offset, calibration issue with the HT monitor. Limitation of what the instrument can do. -Uncertainty Vcc ~ 10% - - Systematic and random.
 
