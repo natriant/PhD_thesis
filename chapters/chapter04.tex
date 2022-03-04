@@ -80,10 +80,10 @@ It was important to ensure that during the "coast" the beam will epxeriene the s
 
 The SPS is equipped with a high bandwidth pick-up of approximately 2\,GHz allowing to resolve the intra-bunch motion. This instrument is called Head-Tail (HT) monitor and was originally designed for measuring chromaticity and transverse isntabilities. However, in the SPS $\CC$ tests, the HT monitor was the main diagnostic device deployed for the demonstration of the crabbing and the measurement of the $\CC$ voltage (explained in details in Section~\ref{sec:CC_voltage_meas}). Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completness of the thesis.
 
- In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$ will be discussed. Last, the calibration of the $\CC$ voltage from the HT data is described and the visualisation of the crabbing is displayed. The experimental data presented in this section were acquired at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at phase $\phiCC=0$ for simplicity. That energy of 26\,GeV was chosen to provide a better understanding of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
+ In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$ will be discussed. Last, the calibration of the $\CC$ voltage from the HT data is described and the visualisation of the crabbing is displayed. The experimental data presented in this section were acquired, on May 30, 2018 (time-stamp: 13:51:05), at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at phase $\phiCC=0$ for simplicity. That energy of 26\,GeV was chosen to provide a better understanding of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than in higher energies.
 
 
-\subsection{General infortmation}\label{subsec:HT_general_info}
+\subsection{General information}\label{subsec:HT_general_info}
 As already mentioned, the HT monitor is a high bandwidth version of a standard beam position monitor, which means that it can measure the transverse displacement within the bunch. This makes it ideal for the measurement of the intra-bunch offset caused from the $\CC$ kick. Its reading consists of the sum ($\Sigma$) and the  difference ($\Delta$) of the electrode signals of a straight stripline coupler (Fig.~\ref{fig:SPS_HT_diagram})~\cite{Jones:987561, Levens:2313358} over a defined acquisition period. The sum signal is the longitudinal line density while the difference signal corresponds to the intra-bunch offset. The system operates at time scale where the signals are given as a function of the position within the bunch.
 
 \begin{figure}[h]% Edit figure in: Goodle Docs/Doctoral/2022/Thesis/Ch4
@@ -231,10 +231,14 @@ The uncertainty in the amplitude, $\Delta \VCC$, is defined as the offset that n
 
 \subsection{Dependence of the crab cavity voltage and offset on the phase}
 
-The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The results are summarised in Fig .. . The phase is extracted from a sinusoidal fit on the reconstructed $\CC$ voltage from the HT monitor reading after the offset is removed (Fig..).
+The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The results are summarised in Fig .. . The phase is extracted from a sinusoidal fit on the reconstructed $\CC$ voltage from the HT monitor reading after the offset is removed (Fig..). The standars procedure of least square fitting is followed.
+
+- Also show forumla
 
 
 The error bars on the voltage values (Fig a) correspond to the uncertainty of the measurement, $\Delta V_{CC}$, which is caluclated as described in Section~\ref{subsec:def_amplt_uncertainty}.
+
+The error bars on the phase indicate the error of the fit (see Appendix~\ref{non_linear_fitting}).
 
 
 
