@@ -211,56 +211,54 @@ To obtain this schematic representation, which is practically a density plot, of
 This section gives the definitions of the amplitude of the beam based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
 
 \subsection{Definitions of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
-The voltage amplitude, $\VCC$, is obtained from a sinusoidal fit on the reconstructed voltage, $\VCC (t)$ from the HT monitor reading. The standard procedure of least squares (cf Appendix eee) is followed. In particular, $\VCC (t)$ is fitted with the folllowing four-parameter model function which also provides the $\CC$ phase, frequency and voltage offset:
-\begin{equation}
+The voltage amplitude, $\VCC$, is obtained from a sinusoidal fit on the reconstructed voltage, $\VCC (t)$, from the HT monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $\VCC (t)$ is fitted with the folllowing four-parameter model function which also provides the $\CC$ phase, frequency and voltage offset:
+\begin{equation}\label{eq:sin_fit_cc}
    f(x) = k + V_{CC}\sin{(2\pi \fCC x + \phiCC)},
 \end{equation}
 
 where $k$ is the voltage offset, $\VCC$ the amplitude of the $\CC$ voltage, $\fCC$ the $\CC$ frequency and $\phiCC$ the $\CC$ phase. The offset parameter is added to the model function as it is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero.
 
-In order to obtain results that correspond to the experimental conditions the following constraints are imposed. First the voltage amplitude, $\VCC$, should be always positive. Additionally, the $\CC$ frequency is imposed to be around 400\, MHz according to the operational value. Last, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Subsequently, only the part of the signal for which the corresponding normalised sum signal is above 0.4 is used for the fit. 
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, should be always positive. Additionally, the $\CC$ frequency is imposed to be close to 400\, MHz according to the operational value. Last, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Subsequently, only the part of the signal for which the corresponding normalised sum signal is above 0.4 is used for the fit. 
 
-Fig .. shows the fit's result of the reconstructed signal analysed in the previous section. As indicated on the top of the plot, the red solid line corresponds to the reconstructed $\CC$ voltage, while the blue solid line corresponds to the result of the sinusoidal fit. It can be seen that only the part of the signal for which the normalised sum signal (black dashed line) is above 0.4 is used. Finally the blue dashed line shows the result of the fit after the voltage offset is subtracted, such as it is centered around zero. The parameter values obtained from the fit are given in the legend. Last, the desnity plot is also shown at the bottom of the figure for a complete visualisation of the crabbing. 
+Fig.~\ref{fig:crabbing_sin_fit} shows the fit's result of the same signal that was analysed in the previous section. As indicated on the top of the plot, the red solid line corresponds to the reconstructed $\CC$ voltage, while the blue solid line corresponds to the result of the sinusoidal fit. It can be seen that only the part of the signal for which the normalised sum signal (black dashed line) is above 0.4 is used. Finally the blue dashed line shows the result of the fit after the voltage offset is subtracted, such as it is centered around zero. The parameter values obtained from the fit are given in the legend. Last, the desnity plot is also shown at the bottom of the figure for a complete visualisation of the crabbing. 
 
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105_sin_fit.png}
+       \caption{Demonstration of the sinusoidal fit on the HT monitor reading in order to obtain the CC parameters. A four-parameter sinusoidal fit is performed using Eq.~\eqref{eq:sin_fit_cc} in order to obtain the amplitude, $V_{CC}$, the frequency, $f_{CC}$, the phase, $\phi_{CC}$, and the voltage offset, $k$. The fit results, are given in the yellow box.}
+       \label{fig:crabbing_sin_fit}
+\end{figure}
 
-
-
+In this thesis, the uncertainty on the measured voltage amplitude, $\Delta V_{CC}$ is defined as the absolut value of the voltage offset, $k$, instead of the error of the fit on the voltage amplitude. This is beacuse, the voltage offset depicts better the uncertainty of the voltage seen by the beam, $\VCC$. Therefore, for the analyzed example here the $\CC$ voltage was measured to be $\VCC$ = 0.97 MV and its uncertainty $\Delta V_{CC}$ = 0.13 MV. 
 
 
 %- The uncertainty on the Vcc measurement is a systematic uncertainty not statistical/random (like the one I proposed). - What is the value of the CC voltage seeing by the beam during the measurement. What is the uncertainty of the CC voltage seeing by the beam. Is dominated by the systematic error. - Offset, calibration issue with the HT monitor. Limitation of what the instrument can do. -Uncertainty Vcc ~ 10% - - Systematic and random.
 
 
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.65\textwidth]{images/Ch4/Vcc_amplitude_uncertainty.pdf}
-       \caption{Illustration of the CC amplitude voltage, $V_{CC}$, defined as half the peak to peak amplitude, $V_{CC, p-p}$ (blue), and of its uncertainty, $\Delta V_{CC}$, defined as the offset needed for the signal to be zero-centered. Here, $V_{CC}$=0.96\,MV and $\Delta V_{CC}$=0.15\,MV.}
-       \label{fig:VCC_amplitude_and_uncertainty}
-   \end{figure}
-
-
 \subsection{Dependence of the crab cavity voltage and offset on the phase}
 
-The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The results are summarised in Fig .. . The phase is extracted from a sinusoidal fit on the reconstructed $\CC$ voltage from the HT monitor reading after the offset is removed (Fig..). The standars procedure of least square fitting is followed.
+The impact of the $\CC$ phase on the voltage experienced by the beam and on the uncertainty of its measurement was also studied experimentally. The study was performed on May 30, 2018, at the SPS injection enegy of 26\,GeV for a range of different settings of the phase of CC1. The results are summarised in Fig.~\ref{fig:phase_scan_CC1}.
 
-- Also show forumla
+\begin{figure}[!ht]
+   \centering
+   \begin{subfigure}[t]{0.45\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{images/Ch4/Vcc_vs_phase.png}
+       %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+       %\label{fig:signal_and_DFT_example_a}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[t]{0.45\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{images/Ch4/DeltaVcc_vs_phase.png}
+       %\caption{Discrete Fourier transform}
+       %\label{fig:phase_scan_CC1}
+   \end{subfigure}
+   \hfill
+    \caption{Phase scan with CC1 at 26\, GeV. The sensitivity of the measured CC voltage (left) and its uncertainty (right) on the phase is studied. The error bars of the voltage, $V_{CC}$, indicate the uncertainty, $\Delta V_{CC}$. The error bars of the uncertainty, $\Delta V_{CC}$, and the phase, $\phi_{CC}$, correspond to the error of the fit parameter (see Appendix~\ref{app:non_linear_fitting}) No clear dependence is observed for either of the parameters.
+    }
+    \label{fig:phase_scan_CC1}
+\end{figure}
 
-
-The error bars on the voltage values (Fig a) correspond to the uncertainty of the measurement, $\Delta V_{CC}$, which is caluclated as described in Section~\ref{subsec:def_amplt_uncertainty}.
-
-The error bars on the phase indicate the error of the fit (see Appendix~\ref{non_linear_fitting}).
-
-
-
-
-Clearly the, with increasing phase ...
-
-
-ePlots (maybe also with horizontal error on the measured phase?):
-Amplitude vs phase
-Phase offset 
-
-
-
-
-Why do you present this study here? useful for future calibration.
-For completeness? as you say in the introduction of the section?
+The error bars of the uncertainty, $\Delta V_{CC}$ (left), and the phase, $\phi_{CC}$ (right), correspond to the error of the fit parameter (see Appendix~\ref{app:non_linear_fitting}). It should be noted that the error bars on the 
+phase values are smaller than the markers and are hence not visible in the plots. This phase scan doesn't reveal any clear dependence on the phase.
