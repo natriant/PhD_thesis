@@ -26,3 +26,72 @@ The standard deviation of the fit results, $\sigma \alpha, \sigma \beta$ is esti
 In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \beta$, are defined as the standard deviation of the corresponding optimal parameters, $\sigma_{\alpha}$ and  $\sigma_{\beta}$ respectively.
 
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
+
+
+\section{Detuning with amplitude}\label{app:detuning_with_amplitude}
+- The linear detuning is given by the folloiwng formula, for octupole components
+- write for detuning coefficients in the numerocultere
+- check sondre's thesis
+
+The detuning with amplitude is computed by:
+
+\begin{equation}\label{eq:x_amplDetuning}
+    \Delta Q_x = 2(\alpha_{xx}J_x + \alpha_{xy}J_y)
+\end{equation}
+
+\begin{equation}\label{eq:y_amplDetuning}
+    \Delta Q_y = 2(\alpha_{yy}J_y + \alpha_{yx}J_x)
+\end{equation}
+where $\alpha_{yy}$, $\alpha_{xx}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m.
+
+
+\normalsize{\textbf{Rms detuning with amplitude}}\\
+
+From the definition of variance, the variance of the vertical amplitude detuning is given by:
+
+\begin{equation}\label{eq:var_amplDetuning}
+    \begin{split}
+        \mathrm{Var}(\Delta Q_y) = &~\langle \Delta Q_y ^2 \rangle - \langle \Delta Q_y \rangle ^2 \\
+        = &~\langle 2^2 (\alpha_{yy} J_y + \alpha_{yx}J_x)^2 \rangle - \langle 2(\alpha_{yy}J_y + \alpha_{yx}J_x) \rangle^2 \\
+        = &~2^2 \left [ \langle (\alpha_{yy} J_y + \alpha_{yx}J_x)^2 \rangle - \langle \alpha_{yy}J_y + \alpha_{yx}J_x \rangle^2 \right ] \\
+         = &~2^2 \left [  \langle (\alpha_{yy} J_y)^2 + 2\alpha_{yy}\alpha_{yx}J_yJ_x + (\alpha_{yx} J_x)^2  \rangle - (\langle \alpha_{yy}J_y \rangle + \langle \alpha_{yx}J_x \rangle )^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + 2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - 2\alpha_{yy} \alpha_{yx} \langle J_y \rangle \langle J_x \rangle - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + \cancel{2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle} + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - \cancel{2\alpha_{yy} \alpha_{yx} \langle J_y J_x \rangle} - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2(\langle J_y^2\rangle - \langle J_y \rangle^2 ) + \alpha_{yx}^2(\langle J_x^2\rangle - \langle J_x \rangle^2 ) \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 Var(J_y) + \alpha_{yx}^2 Var(J_x) \right ]
+    \end{split}
+\end{equation}
+
+By the definition of root mean square (rms), for the vertical amplitude detuning is written:
+
+\begin{equation}\label{rms_amplitude_detuning}
+    \begin{split}
+    \Delta Q^{rms}_y = &~\sqrt{\mathrm{Var}(\Delta Q_y)}=\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
+    =&~2 \sqrt{\alpha_{yy}^2 (J^{rms}_y)^2 + \alpha_{yx}^2 (J^{rms}_x)^2 }\\
+    =&~2 \sqrt{\left [\alpha_{yy} (J^{rms}_y)\right ]^2 + \left [ \alpha_{yx} (J^{rms}_x) \right ]^2 }
+    \end{split}
+\end{equation}
+
+\textbf{Note 1:} In Eq.~\ref{eq:var_amplDetuning} the following properties are used:
+
+The mean of the sum of two variables $X$ and $Y$ is equal to the sum of their means, ie:
+\begin{equation}\label{eq:mean_of_sum_property}
+    \langle X+Y \rangle = \langle X \rangle + \langle Y \rangle
+\end{equation}
+
+If $X$ and $Y$ are independent the mean of their product equals:
+\begin{equation}\label{eq:mean_of_product_property}
+    \langle X \cdot Y \rangle = \langle X \rangle \cdot  \langle Y \rangle
+\end{equation}
+
+It should be mentioned that only the initial actions $J_x$ and $J_y$ are actually independent. The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
+
+\textbf{Note 2:}
+\begin{itemize}
+    \item $\langle X \rangle$ is consistent with the numpy.mean(X)~\cite{numpy_mean} function of the Python programming language.
+    \item $X^{rms}$ is consistent with the numpy.std(X)~\cite{numpy_std} function of the Python programming language. 
+\end{itemize}
+
+
+
+\normalsize{\textbf{Rms detuning with amplitude from the SPS multiple errors}}\\
