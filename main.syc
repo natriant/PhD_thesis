@@ -22,3 +22,8 @@
 \newcommand{\Nbinclude}{yes}
 \newcommand{\Qpxinclude}{yes}
 \newcommand{\Qpyinclude}{yes}
+\newcommand{\sigmatinclude}{yes}
+\newcommand{\emitxinclude}{yes}
+\newcommand{\emityinclude}{yes}
+\newcommand{\Dqxrmsinclude}{yes}
+\newcommand{\Dqyrmsinclude}{yes}

@@ -22,3 +22,8 @@
 \printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{x}
 \printsymline{Q^\prime _{x}}{Q^\prime _{x}}{Qpx}{Horizontal first order chromaticity}{x}
 \printsymline{Q^\prime _{y}}{Q^\prime _{y}}{Qpy}{Vertical first order chromaticity}{x}
+\printsymline{\sigma_t}{\sigma_t}{sigmat}{Rms bunch length}{x}
+\printsymline{\epsilon_{x}}{\epsilon_{x}}{emitx}{Horizontal normalised emittance of the beam}{x}
+\printsymline{\epsilon_{y}}{\epsilon_{y}}{emity}{Vertical normalised emittance of the beam}{x}
+\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{x}
+\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{Dqyrms}{Betatron vertical rms tune spread}{x}

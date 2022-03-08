@@ -6,23 +6,29 @@ Section ... describes the machine setup and the beam configuration for the emitt
 
 
 \section{Experimental configuration and procedure}\label{sec:exp_setup_2018}
-This section gives an overview of the experimental setup and the procedure that was followed. First, it briefly discusses the preparatory studies that were performed during 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}, explaining the choice of the intensity and energy values for which the emittance growth measurements were conducted. Furthermore, it presents in detail the rest of the beam and machine conditions during the experiment.
+This section gives an overview of the experimental setup and the procedure that was followed. First, it briefly discusses the preparatory studies that were performed during 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}, explaining the choice of the intensity and energy values for which the emittance growth measurements were conducted. Furthermore, it presents in detail the rest of the beam and machine conditions during the experiment. Last, the experimental procedure is explained.
 
-\normalsize{\textbf{Preparatory experimental studies}}\\
+%\normalsize{\textbf{Preparatory experimental studies}}\\
+\subsection{Preparatory experimental studies}
 For studying the long-term emittance evolution a special mode of operation was set up in the SPS which is called "coast" (in other machines, it is referred to as storage ring mode) with bunched beams. In this mode, the bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similar to the HL-LHC case. \setlength{\parskip}{2ex} %set it manually here, as for some reason it was not displayed properly in the pdf.
 
 To make sure that the SPS can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out through 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the emittance growth that was observed in the machine from other sources than injected noise and will be referred to as the natural emittance growth in this thesis. The natural emittance growth needs to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. 
 
 From these studies, it was concluded that the optimal coast setup is at high energies, with low chromaticity and bunches of low intensity as it minimises the natural emittance growth~\cite{Antoniou:2649815}. The highest energy for which the SPS could operate in "coast" was 270\,GeV and thus the experiments were performed at this energy. That limitation was introduced due to the rms power deposited in its magnets when operating at high energy for long period of time. Moreover, as the natural emittance growth was found to be a single bunch effect four bunches were used. That choice was made to reduce the statistical uncertainty of the measurements but not to increase the beam intensity.
 
-\normalsize{\textbf{Machine and beam configuration}}\\
-During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. Last, the transverse feedback system was switched off. No measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. 
+%\normalsize{\textbf{Machine and beam configuration}}\\
+\subsection{Machine and beam configuration}
+During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The transverse feedback system was also switched off. Unfortunately, no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values.
 
-The main machine and beam parameters used in the experiment of 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. It should be noted, that 
+Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV with zero phase offset, $\phiCC=0$. These values were validated with the HT monitor (post-processing procedure desribed in Chapter~\ref{Ch:CC_set_up}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available whcih is displayed in Fig. ... It is clear that the measured values of voltage amplitude and phase are very close to the requested ones.
+
+
+The main machine and beam parameters used for the emittance growth measurements in 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. 
 
 
 \begin{table}[!hbt]
-	\centering
+	\begin{minipage}{\textwidth}
+      \begin{centering}
    \caption{Main machine and beam parameters for the emittance growth studies with CCs in SPS in 2018.}
 	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
 		&&& \\[-6mm]
@@ -32,18 +38,52 @@ The main machine and beam parameters used in the experiment of 2018 are listed i
 		\bottomrule
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
       \multicolumn{2}{l}{Revolution frequency, $\frev$}  & \multicolumn{2}{c}{43.375\,kHz} \\
-      \multicolumn{2}{l}{Number of proton per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b} \\
-      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{4} \\
-      \multicolumn{2}{l}{Bunch spacing}  & \multicolumn{2}{c}{524\,ns} \\
       \multicolumn{2}{l}{Main RF frequency, $\fRF$}  & \multicolumn{2}{c}{200.39\,MHz} \\ %200.3945
       \multicolumn{2}{l}{Main RF voltage, $\VRF$}  & \multicolumn{2}{c}{3.8\,MV} \\
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
       \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 1.0 / $\sim$ 1.0} \\
       \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051} \\
+      \multicolumn{2}{l}{$\CC 2$ voltage / phase / frequency, $\VCC$ / $\phiCC$ / $\fCC$}  & \multicolumn{2}{c}{1\,MV / 0\, rad / 400.78\,MHz} \\
+      \multicolumn{2}{l}{Number of proton per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{4} \\
+      \multicolumn{2}{l}{Bunch spacing}  & \multicolumn{2}{c}{524\,ns} \\
+      \multicolumn{2}{l}{Rms bunch length, $\sigmat$}  & \multicolumn{2}{c}{1.8 \,ns$^\ast$}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,ns / 2\,ns$^\ast$}\\
+      \multicolumn{2}{l}{Horizontal / Vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{2\,ns / 2\,ns$^\dagger$}\\
       \bottomrule
 	\end{tabu}
    \label{tab:machine_beam_param_2018}
+   \end{centering} \footnotesize{$^\ast$ The value correspond to the requested intial value at the start of each coast. The measured evolution of the parameter through the experiment is presented in the Sections~\ref{sec:emit_growth_meas_2018} and~\ref{sec:bunch_length_intensity_meas_2018}.}
+   \end{minipage}
 \end{table}
+
+
+%\normalsize{\textbf{Experimental procedure}}\\
+\subsection{Experimental procedure}
+
+
+dose pasa gia to injected noise below.
+
+- change of coast when emittance reaches big. See Section 6.1.
+
+\section{Injected RF noise}\label{sec:injected_RF_noise}
+
+Before showing the emittance growth results, the injected RF noise is showed.
+
+
+\section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
+
+
+\section{Bunch length and intensity measurements}\label{sec:bunch_length_intensity_meas_2018}
+
+\section{Comparison of measured emittance growth with the theory}\label{sec:meas_2018_vs_theory}
+
+Comparison of bunch 1 with theory. Discrepancy of a factor 4.
+
+\section{Conclusions and outlook}\label{sec:MD2018_summary}
+
+
+
 
 
 \section{SPS Wire Scanners}\label{sec:sps_ws}

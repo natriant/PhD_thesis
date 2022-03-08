@@ -23,4 +23,9 @@
 \newsym[Bunch intensity i.e. number of particles (here protons)]{Nb}{N_b}
 \newsym[Horizontal first order chromaticity]{Qpx}{Q^\prime_{x}}
 \newsym[Vertical first order chromaticity]{Qpy}{Q^\prime_{y}}
+\newsym[Rms bunch length]{sigmat}{\sigma_t}
+\newsym[Horizontal normalised emittance of the beam]{emitx}{\epsilon_{x}}
+\newsym[Vertical normalised emittance of the beam]{emity}{\epsilon_{y}}
+\newsym[Betatron horizontal rms tune spread]{Dqxrms}{\Delta\: \!Q^{rms}_{x}}
+\newsym[Betatron vertical rms tune spread]{Dqyrms}{\Delta\: \!Q^{rms}_{y}}
 \closesymdef
