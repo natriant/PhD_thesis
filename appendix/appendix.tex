@@ -11,12 +11,12 @@ For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean o
 \begin{equation}\label{eq:mean_def}
     \langle x \rangle = \frac{1}{N} \sum_{i=1}^{N} x_i.
 \end{equation}
-% python --> numpy.mean
+% compatible with numpy.mean --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 
 
 \normalsize{\textbf{Root mean square}}\\
 An alternative to the arithmetic mean is the root mean square (rms), which for the set of $N$ numbers is defined as:
-\begin{equation}\label{eq:mean_def}
+\begin{equation}\label{eq:rms_def}
     x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}.
 \end{equation}
 
@@ -25,10 +25,13 @@ In other words it is the square root of the arithmetic mean of the squares of th
 \subsection{Measuring the spread}
 \normalsize{\textbf{Variance}}\\
 For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance is written as $\mathrm{Var}(x)$ and is defined as:
-
-
-
+\begin{equation}\label{eq:var_def}
+    \mathrm{Var}(x) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2.
+\end{equation}
 % compatible with numpy.var --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
+
+
+
 
 
 \subsection{Covariance}
