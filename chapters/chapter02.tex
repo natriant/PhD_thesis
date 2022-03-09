@@ -1,6 +1,20 @@
 \vspace*{-1mm}
 
-For a gaussian beam distribution the normalised beam emittance is defined as:
+\section{Emittance}
+
+\textbf{Defintion 1}: The statistical emittance is expressed in terms of the beam distribution: % Wolski Eq. (4.101)
+
+\begin{equation}\label{eq:statistical_definition_emit}
+    \epsilon_x^{\mathrm{geom}} = \sqrt{\langle x^2 \rangle - \langle px^2 \rangle - \langle x px \rangle^2}.
+\end{equation}
+This is the geometric emittance. 
+\begin{equation}\label{eq:emit_geom_norm_relation}
+    \epsilon_x = \epsilon_x^{\mathrm{geom}} \betarel \gammarel.
+\end{equation}
+
+
+\textbf{Defintion 2}:
+For a gaussian beam distribution the normalised beam emittance it applies:
 \begin{equation}\label{eq:emit_from_beam_size}
     \epsilon_{x} = \frac{\sigma_x(s)^2 - \delta^2 D_x^2(s)}{\beta_x(s)} \betarel \gammarel
 \end{equation}
@@ -8,11 +22,29 @@ For a gaussian beam distribution the normalised beam emittance is defined as:
 where $\sigma_x(s)$ is the beam size, $\beta_x(s)$ is the beta function, $D_x(s)$ is the dispersion fat a specific location s along the accelerator, $\delta=\Delta p/p0$ is the momentum spread and $\betarel, \gammarel$ the relativistic parameters. Similar expression is valid for the vertical plane, with the difference that there is no dispersion.
 
 
-% Is it necessary?
-\normalsize{\textbf{Standard deviation}}\\
-The standard deviation (SD) is a measure of the spread of a set of values. It is defined as follows:
-\begin{equation}
-    \sigma = \sqrt{\frac{\sum{(x_i-\mu)^2}}{N}},
+\section{Action angle variables}
+The action for the x-plane is:
+
+\begin{equation}\label{eq:action}
+    J_x = \frac{1}{2}(x_n^2 +xp^2_n) 
+\end{equation}
+where 
+\begin{equation}\label{normalised_y}
+    x_n = \frac{x}{\sqrt{\beta_x}}, \ \ xp_n = \frac{\alpha_x x}{\sqrt{\beta_x}} + \sqrt{\beta_x}xp
+\end{equation}
+the normalised coordinates and $\alpha_y, \beta_y$ the twiss parameters. 
+The same applies for the y-plane. 
+
+
+The statistical geometric emittance equals the average of the actions distribution:
+\begin{equation}\label{eq:geom_emit_actions}
+    \epsilon_x^{\mathrm{geom}} = \langle J_x \rangle
 \end{equation}
 
-where $\sigma$ is the standard deviation $N$ is the size of the set, $x_i$ each value of the set and $\mu$ the mean of the set.
+The distribution of actions is an exponential distribution (further explanation needed?). Therefore, its mean equals its standard deviation. (this property is used in the appendix for the computation of the rms tune spread.)
+
+From Eq.~\eqref{eq:action} we write:
+\begin{equation}
+    e^{-J/\epsilon} = e^{(-x^2/2\epsilon - px^2/2\epsilon)}
+\end{equation}
+From this equation it can be seen that the actions follow an exponential distribution. 
