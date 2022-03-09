@@ -1,6 +1,32 @@
 For the uncertainty in the mean:
 https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
 
+\section{Statistics definitions}\label{app:statistics_definitions}
+This appendix, introduces the basic terminology of statistical analysis and gives the definitions that are used in this thesis. The definitions follow the book by R. J. Barlow~\cite{lvp.b313005720130101} where one can find a more detailed description.
+
+\subsection{Averages}
+\normalsize{\textbf{Arithmetic mean}}\\
+For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean or just mean of the value of $x$ is:
+
+\begin{equation}\label{eq:mean_def}
+    \langle x \rangle = \frac{1}{N} \sum_{i=1}^{N} x_i.
+\end{equation}
+
+\normalsize{\textbf{Root mean square}}\\
+An alternative to the arithmetic mean is the root mean square (rms), which for the set of $N$ numbers is defined as:
+\begin{equation}\label{eq:mean_def}
+    x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}.
+\end{equation}
+
+In other words it is the square root of the arithmetic mean of the squares of the data set values. It is common in physics and in sciences in general to used the rms value instead of the arithmetic mean when it comes to distributions or when the random variables have both positive and negative values.
+
+\subsection{measurement of the spread}
+\normalsize{\textbf{Variance}}\\
+
+
+- mention also covarince.
+
+
 
 \section{Least squares fitting}\label{app:non_linear_fitting}
 In sciences, many quantities can not be measured directly but can be inferred from measured data by fitting a model function to them. Common model functions are the Gaussian, polynomial, or sinusoidal. The fitting procedure followed in this thesis is called "least squares" and is described below based on Ref.~\cite{least_square_minimisation}.
