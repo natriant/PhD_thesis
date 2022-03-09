@@ -24,13 +24,19 @@ In other words it is the square root of the arithmetic mean of the squares of th
 
 \subsection{Measuring the spread}
 \normalsize{\textbf{Variance}}\\
-For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance is written as $\mathrm{Var}(x)$ and is defined as:
+For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance, $\mathrm{Var}(x)$, is defined as:
 \begin{equation}\label{eq:var_def}
     \mathrm{Var}(x) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2.
 \end{equation}
 % compatible with numpy.var --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 
+\normalsize{\textbf{Standard deviation}}\\
+The square root of the variance is the standard deviation (std):
+\begin{equation}\label{eq:std_def}
+    \sigma_x = \sqrt{\mathrm{Var}(x)} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2}.
+\end{equation}
 
+The spread in a data set is usually expressed with the standard deviation instead of the variance, as the standard deviation has the same units with the variable $x$.
 
 
 
