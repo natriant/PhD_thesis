@@ -120,11 +120,13 @@ By the definition of root mean square (rms), for the vertical amplitude detuning
 \begin{equation}\label{rms_amplitude_detuning}
     \begin{split}
     \Delta Q^{rms}_y = &~\sqrt{\mathrm{Var}(\Delta Q_y)}=\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
-    =&~2 \sqrt{\alpha_{yy}^2 (J^{rms}_y)^2 + \alpha_{yx}^2 (J^{rms}_x)^2 }\\
-    =&~2 \sqrt{\left [\alpha_{yy} (J^{rms}_y)\right ]^2 + \left [ \alpha_{yx} (J^{rms}_x) \right ]^2 }
+    =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
+    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 } \\
+    =&~2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }
     \end{split}
 \end{equation}
 
+where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
 \textbf{Note 1:} In Eq.~\ref{eq:var_amplDetuning} the following properties are used:
 
 The mean of the sum of two variables $X$ and $Y$ is equal to the sum of their means, ie:

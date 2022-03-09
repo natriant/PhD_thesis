@@ -1,5 +1,7 @@
 \printsymline{E_b}{E_b}{symE}{Energy}{x}
 \printsymline{m}{m}{symm}{Mass}{x}
+\printsymline{J_x}{J_x}{Jx}{Horizontal particle action}{x}
+\printsymline{J_y}{J_y}{Jy}{Vertical particle action}{x}
 \printsymline{c}{c}{symc}{Speed of light}{x}
 \printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{x}
 \printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{x}

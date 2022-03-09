@@ -1,5 +1,7 @@
 \newcommand{\symEinclude}{yes}
 \newcommand{\symminclude}{no}
+\newcommand{\Jxinclude}{yes}
+\newcommand{\Jyinclude}{yes}
 \newcommand{\symcinclude}{no}
 \newcommand{\frevinclude}{yes}
 \newcommand{\VRFinclude}{yes}
