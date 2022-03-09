@@ -25,10 +25,14 @@ In other words it is the square root of the arithmetic mean of the squares of th
 \subsection{Measuring the spread}
 \normalsize{\textbf{Variance}}\\
 For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance, $\mathrm{Var}(x)$, is defined as:
-\begin{equation}\label{eq:var_def}
+\begin{equation}\label{eq:var_def_1}
     \mathrm{Var}(x) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2.
 \end{equation}
 % compatible with numpy.var, tested at: /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
+This formula, can be written in a simpler way as follows (see Ref.~\cite{lvp.b313005720130101} p.24-25):
+\begin{equation}\label{eq:var_def_2}
+    \mathrm{Var}(x) = \langle x^2 \rangle - \langle x \rangle^2.
+\end{equation}
 
 \normalsize{\textbf{Standard deviation}}\\
 The square root of the variance is the standard deviation (std):
@@ -40,19 +44,15 @@ The spread in a data set is usually expressed with the standard deviation instea
 
 When the mean of the data set is zero the standard deviation equals the root mean square.
 
-\subsection{More than one variables - Covariance}
+\subsection{Data sets with more than one variables - Covariance}
 In the case that each element of the data set consists of a pair of variables, $\{(x_1, y_1),$ $(x_2, y_2), (x_2, y_2), ...(x_N, y_N)\}$ the covarinace expresses the extend to which $x$ and $y$ tend to vary together. The covariance between $x$ and $y$ is defined as:
-
 \begin{equation}\label{eq:cov_def}
     \mathrm{Cov}(x, y) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle) (y_i-\langle y \rangle).
 \end{equation}
-
 It can be seen that the covariance of variable $x$ with itslef equals the variance. In particular, it is written:
-
 \begin{equation}\label{eq:std_var_cov_relationship}
     \mathrm{Cov}(x, x) = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2} = \mathrm{Var}(x) = \sigma_x^2.
 \end{equation}
-
 
 \section{Least squares fitting}\label{app:non_linear_fitting}
 In sciences, many quantities can not be measured directly but can be inferred from measured data by fitting a model function to them. Common model functions are the Gaussian, polynomial, or sinusoidal. The fitting procedure followed in this thesis is called "least squares" and is described below based on Ref.~\cite{least_square_minimisation}.
@@ -61,20 +61,17 @@ Suppose that we have $N$ data points ($x_{i}, y_{i}$) and that $y=f(x,\alpha, \b
 \begin{equation}\label{eq:chi_square}
     \chi^2 = \sum_{i=1}^{N}[y_{i}-f(x_{i},\alpha, \beta)]^2,
 \end{equation}
-
 where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the expected value from the model. In other words, $\chi^2$ is a measure of deviation between the measurement and the expected result, and thus its minimisation results in the best fit i.e.\ to the optimal parameters $\alpha, \beta$.
 
 
 \normalsize{\textbf{Error of the fit}}\\
 The standard deviation of the fit results, $\sigma \alpha, \sigma \beta$ is estimated by the square root of the diagonal of their covariant matrix:
-
 \begin{equation}\label{eq:cov_matrix_fit_results}
     \begin{pmatrix}
         \sigma_{\alpha}^2 & \mathrm{Cov(\alpha, \beta)}\\
         \mathrm{Cov(\beta, \alpha)} & \sigma_{\beta}^2
         \end{pmatrix}
 \end{equation}
-
 In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \beta$, are defined as the standard deviation of the corresponding optimal parameters, $\sigma_{\alpha}$ and  $\sigma_{\beta}$ respectively.
 
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
