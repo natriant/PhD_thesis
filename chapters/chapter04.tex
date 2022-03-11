@@ -211,25 +211,26 @@ To obtain this schematic representation, which is practically a density plot, of
 This section gives the definitions of the amplitude of the beam-based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
 
 \subsection{Definitions of the amplitude and the uncertainty of the measurement}\label{subsec:def_amplt_uncertainty}
-The voltage amplitude, $\VCC$, is obtained from a sinusoidal fit on the reconstructed voltage, $\VCC (t)$, from the HT monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $\VCC (t)$ is fitted with the folllowing four-parameter model function which also provides the $\CC$ phase, frequency and voltage offset:
+The voltage amplitude, $\VCC$, is obtained from a sinusoidal fit on the reconstructed voltage, $\VCC (t)$, from the HT monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $\VCC (t)$ is fitted with the folllowing three-parameter ($\VCC$, $\phiCC$, $k$) model function which also provides the $\CC$ phase and voltage offset:
 \begin{equation}\label{eq:sin_fit_cc}
-   f(x) = k + V_{CC}\sin{(2\pi \fCC x + \phiCC)},
+   f(x) = V_{CC}\sin{(2\pi \fCC x + \phiCC)} + k ,
 \end{equation}
 
-where $k$ is the voltage offset, $\VCC$ the amplitude of the $\CC$ voltage, $\fCC$ the $\CC$ frequency and $\phiCC$ the $\CC$ phase. The offset parameter is added to the model function as it is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero.
+where $\VCC$ is the amplitude of the $\CC$ voltage, $\phiCC$ the $\CC$ phase and
+$k$ the voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is well known and in particular it equals, $\fCC$=400.78\,MHz. The offset parameter is added to the model function as it is clear from Fig.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor} that the reconstructed $\CC$ voltage, $\VCC(t)$, is not centered around zero.
 
-In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, should be always positive. Additionally, the $\CC$ frequency is imposed to be close to 400\, MHz according to the operational value. Last, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Subsequently, only the part of the signal for which the corresponding normalised sum signal is above 0.4 is used for the fit. 
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Subsequently, only the part of the signal for which the corresponding normalised sum signal is above 0.4 is used for the fit. 
 
 Fig.~\ref{fig:crabbing_sin_fit_MD2} shows the fit's result of the same signal that was analysed in the previous section. As indicated on the top of the plot, the red solid line corresponds to the reconstructed $\CC$ voltage, while the blue solid line corresponds to the result of the sinusoidal fit. It can be seen that only the part of the signal for which the normalised sum signal (black dashed line) is above 0.4 is used. Finally the blue dashed line shows the result of the fit after the voltage offset is subtracted, such as it is centered around zero. The parameter values obtained from the fit are given in the legend. Last, the desnity plot is also shown at the bottom of the figure for a complete visualisation of the crabbing. 
 
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105_sin_fit.png}
+   \includegraphics[width=0.7\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105_sin_fit_fixed_freq.png}
        \caption{Demonstration of the sinusoidal fit on the HT monitor reading in order to obtain the CC parameters. A four-parameter sinusoidal fit is performed using Eq.~\eqref{eq:sin_fit_cc} in order to obtain the amplitude, $V_{CC}$, the frequency, $f_{CC}$, the phase, $\phi_{CC}$, and the voltage offset, $k$. The fit results, are given in the yellow box.}
        \label{fig:crabbing_sin_fit_MD2}
 \end{figure}
 
-In this thesis, the uncertainty on the measured voltage amplitude, $\Delta V_{CC}$ is defined as the absolut value of the voltage offset, $k$, instead of the error of the fit on the voltage amplitude. This is beacuse, the voltage offset depicts better the uncertainty of the voltage seen by the beam, $\VCC$. Therefore, for the analyzed example here the $\CC$ voltage was measured to be $\VCC$ = 0.97 MV and its uncertainty $\Delta V_{CC}$ = 0.13 MV. 
+In this thesis, the uncertainty on the measured voltage amplitude, $\Delta V_{CC}$ is defined as the absolut value of the voltage offset, $k$, instead of the error of the fit on the voltage amplitude. This is beacuse, the voltage offset depicts better the uncertainty of the voltage seen by the beam, $\VCC$. Therefore, for the analyzed example here the $\CC$ voltage was measured to be $\VCC$ = 0.98\,MV and its uncertainty $\Delta V_{CC}$ = 0.12\,MV. 
 
 
 %- The uncertainty on the Vcc measurement is a systematic uncertainty not statistical/random (like the one I proposed). - What is the value of the CC voltage seeing by the beam during the measurement. What is the uncertainty of the CC voltage seeing by the beam. Is dominated by the systematic error. - Offset, calibration issue with the HT monitor. Limitation of what the instrument can do. -Uncertainty Vcc ~ 10% - - Systematic and random.
@@ -255,13 +256,14 @@ The impact of the $\CC$ phase on the voltage experienced by the beam and on the 
        %\label{fig:phase_scan_CC1}
    \end{subfigure}
    \hfill
-    \caption{Phase scan with CC1 at 26\, GeV. The sensitivity of the measured CC voltage (left) and its uncertainty (right) on the phase is studied. The error bars of the voltage, $V_{CC}$, indicate the uncertainty, $\Delta V_{CC}$. The error bars of the uncertainty, $\Delta V_{CC}$, and the phase, $\phi_{CC}$, correspond to the error of the fit parameter (see Appendix~\ref{app:non_linear_fitting}) No clear dependence is observed for either of the parameters.
+    \caption{Phase scan with CC1 at 26\, GeV. The sensitivity of the measured CC voltage (left) and its uncertainty (right) on the phase is studied. The error bars of the voltage, $V_{CC}$, indicate the uncertainty, $\Delta V_{CC}$. The error bars of the uncertainty, $\Delta V_{CC}$, and the phase, $\phi_{CC}$, correspond to the error of the fit parameter (see Appendix~\ref{app:non_linear_fitting}).
     }
     \label{fig:phase_scan_CC1}
 \end{figure}
 
 The error bars of the voltage, $V_{CC}$, indicate the uncertainty, $\Delta V_{CC}$. The error bars of the uncertainty, $\Delta V_{CC}$ (left), and the phase, $\phi_{CC}$ (right), correspond to the error of the fit parameter (see Appendix~\ref{app:non_linear_fitting}). It should be noted that the error bars on the 
-phase values are smaller than the markers and are hence not visible in the plots. This phase scan doesn't reveal any clear dependence on the phase.
+phase values are smaller than the markers and are hence not visible in the plots. 
 
+The phase scan doesn't reveal any dependence of the meaured voltage, $\VCC$, on the phase, as expected. However, there is a variation of the voltage offset, $\Delta \VCC$, with the phase. The origin of this, which seems to be a systematic effect, is not yet understood and will be addressed in the future to fully characterise the behavior of the beam in the presence of a phase offset in the $\CC$. It should be pointed out that the impact of this effect on the interpreting the $\CC$ noise induced emittance growth measurements is limited and thus it will not be a matter of concern for this thesis. 
 
 % Scripts for phase scan: 1. Post process: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan/phase_scan/Vcc_iterate_h5_all_sin_fit_selected_with_offset.py, 2. Plot /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan/phase_scan/plot_Vcc_offset_vs_phase_for_Ch4_thesis.py
