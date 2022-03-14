@@ -7,22 +7,21 @@ This appendix, introduces the basic terminology of statistical analysis and give
 \subsection{Averages}
 \normalsize{\textbf{Arithmetic mean}}\\
 For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean or just mean of the value of $x$ is:
-
 \begin{equation}\label{eq:mean_def}
     \langle x \rangle = \frac{1}{N} \sum_{i=1}^{N} x_i.
 \end{equation}
 % compatible with numpy.mean --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 
-
 \normalsize{\textbf{Root mean square}}\\
-An alternative to the arithmetic mean is the root mean square (rms), which for the set of $N$ numbers is defined as:
+In the classical definition of mathematics, the root mean square (rms) is an alternative to the arithmetic mean and is defined as:
 \begin{equation}\label{eq:rms_def}
-    x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}.
+    x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}=\langle x^2 \rangle.
 \end{equation}
+%In other words it is the square root of the arithmetic mean of the squares of the data set values. It is common in physics and in sciences in general to used the rms value instead of the arithmetic mean when it comes to distributions or when the random variables have both positive and negative values.
+However, it is common in physics and in sciences in general for the term rms to correspond to what is actually defined as standard deviation (see details Appendix~\ref{app:meas_spread}). This convention, is also followed in this thesis.
 
-In other words it is the square root of the arithmetic mean of the squares of the data set values. It is common in physics and in sciences in general to used the rms value instead of the arithmetic mean when it comes to distributions or when the random variables have both positive and negative values.
 
-\subsection{Measuring the spread}
+\subsection{Measuring the spread}\label{app:meas_spread}
 \normalsize{\textbf{Variance}}\\
 For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance, $\mathrm{Var}(x)$, is defined as:
 \begin{equation}\label{eq:var_def_1}
@@ -36,13 +35,19 @@ This formula, can be written in a simpler way as follows (see Ref.~\cite{lvp.b31
 
 \normalsize{\textbf{Standard deviation}}\\
 The square root of the variance is the standard deviation (std):
-\begin{equation}\label{eq:std_def}
-    \sigma_x = \sqrt{\mathrm{Var}(x)} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2}.
+\begin{equation}\label{eq:std_def_1}
+    \sigma_x = \sqrt{\mathrm{Var}(x)} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2},
+\end{equation}
+or as follows from Eq.~\eqref{eq:var_def_2}:
+\begin{equation}\label{eq:std_def_2}
+    \sigma_x = \sqrt{\langle x^2 \rangle - \langle x \rangle^2}.
 \end{equation}
 % compatible with numpy.std, tested at /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 The spread in a data set is usually expressed with the standard deviation instead of the variance, as the standard deviation has the same units with the variable $x$.
 
-When the mean of the data set is zero the standard deviation equals the root mean square.
+In this thesis, the standard deviation will be
+
+%When the mean of the data set is zero the standard deviation equals the root mean square.
 
 \normalsize{\textbf{Full width half maximum}}\\
 An alternative measure of the spread is the full width half maximum (FWHM).
@@ -99,9 +104,7 @@ where $\alpha_{yy}$, $\alpha_{xx}$ and $\alpha_{xy}=\alpha_{yx}$ are the detunin
 
 
 \normalsize{\textbf{Rms detuning with amplitude}}\\
-
 From the definition of variance, the variance of the vertical amplitude detuning is given by:
-
 \begin{equation}\label{eq:var_amplDetuning}
     \begin{split}
         \mathrm{Var}(\Delta Q_y) = &~\langle \Delta Q_y ^2 \rangle - \langle \Delta Q_y \rangle ^2 \\
