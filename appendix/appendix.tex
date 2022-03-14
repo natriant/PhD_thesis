@@ -13,7 +13,7 @@ For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean o
 % compatible with numpy.mean --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 
 \normalsize{\textbf{Root mean square}}\\
-In the classical definition of mathematics, the root mean square (rms) is an alternative to the arithmetic mean and is defined as:
+In the classical definition in mathematics, the root mean square (rms) is an alternative to the arithmetic mean and is defined as:
 \begin{equation}\label{eq:rms_def}
     x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}=\langle x^2 \rangle.
 \end{equation}
@@ -114,11 +114,11 @@ From the definition of variance, the variance of the vertical amplitude detuning
     \end{split}
 \end{equation}
 
-By the definition of root mean square (rms), for the vertical amplitude detuning is written:
-
+According to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
 \begin{equation}\label{rms_amplitude_detuning}
     \begin{split}
-    \Delta Q^{rms}_y = &~\sqrt{\mathrm{Var}(\Delta Q_y)}=\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
+    \Delta Q^{rms}_y =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
+    =&~\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
     =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
     =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 } \\
     =&~2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }
