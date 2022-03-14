@@ -30,4 +30,7 @@
 \newsym[Vertical normalised emittance of the beam]{emity}{\epsilon_{y}}
 \newsym[Betatron horizontal rms tune spread]{Dqxrms}{\Delta\: \!Q^{rms}_{x}}
 \newsym[Betatron vertical rms tune spread]{Dqyrms}{\Delta\: \!Q^{rms}_{y}}
+\newsym[Horizontal detuning coefficient]{axx}{\alpha_{xx}}
+\newsym[Vertical detuning coefficient]{ayy}{\alpha_{yy}}
+\newsym[Cross-detuning coefficients]{axy}{\alpha_{xy}=\alpha_{yx}}
 \closesymdef

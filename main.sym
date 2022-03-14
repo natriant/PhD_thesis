@@ -29,3 +29,6 @@
 \printsymline{\epsilon_{y}}{\epsilon_{y}}{emity}{Vertical normalised emittance of the beam}{x}
 \printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{x}
 \printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{Dqyrms}{Betatron vertical rms tune spread}{x}
+\printsymline{\alpha_{xx}}{\alpha_{xx}}{axx}{Horizontal detuning coefficient}{x}
+\printsymline{\alpha_{yy}}{\alpha_{yy}}{ayy}{Vertical detuning coefficient}{x}
+\printsymline{\alpha_{xy}=\alpha _{yx}}{\alpha_{xy}=\alpha _{yx}}{axy}{Cross-detuning coefficients}{x}

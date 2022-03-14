@@ -29,3 +29,6 @@
 \newcommand{\emityinclude}{yes}
 \newcommand{\Dqxrmsinclude}{yes}
 \newcommand{\Dqyrmsinclude}{yes}
+\newcommand{\axxinclude}{yes}
+\newcommand{\ayyinclude}{yes}
+\newcommand{\axyinclude}{yes}
