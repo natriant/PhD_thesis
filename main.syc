@@ -27,6 +27,8 @@
 \newcommand{\sigmatinclude}{yes}
 \newcommand{\emitxinclude}{yes}
 \newcommand{\emityinclude}{yes}
+\newcommand{\emitxgeominclude}{yes}
+\newcommand{\emitygeominclude}{yes}
 \newcommand{\Dqxrmsinclude}{yes}
 \newcommand{\Dqyrmsinclude}{yes}
 \newcommand{\axxinclude}{yes}

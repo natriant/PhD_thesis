@@ -27,6 +27,8 @@
 \printsymline{\sigma_t}{\sigma_t}{sigmat}{Rms bunch length}{x}
 \printsymline{\epsilon_{x}}{\epsilon_{x}}{emitx}{Horizontal normalised emittance of the beam}{x}
 \printsymline{\epsilon_{y}}{\epsilon_{y}}{emity}{Vertical normalised emittance of the beam}{x}
+\printsymline{\epsilon_x^{geom}}{\epsilon_x^{geom}}{emitxgeom}{Horizontal geometric emittance of the beam}{x}
+\printsymline{\epsilon_y^{geom}}{\epsilon_y^{geom}}{emitygeom}{Vertical geometric emittance of the beam}{x}
 \printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{x}
 \printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{Dqyrms}{Betatron vertical rms tune spread}{x}
 \printsymline{\alpha_{xx}}{\alpha_{xx}}{axx}{Horizontal detuning coefficient}{x}

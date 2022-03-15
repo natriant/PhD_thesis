@@ -143,13 +143,18 @@ Now, according to the definitions introduced in Appendix~\ref{app:statistics_def
 
 where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
 
-The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see~\ref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
+The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see Eq.~\eqref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
 \begin{equation}\label{eq:rms_amplitute_detuning_2}
     \Delta Q^{rms}_y = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
 \end{equation}
 
+Following Eq.~\eqref{eq:geom_emit_actions}, the rms tune spread from amplitude detuning can be also written as:
+\begin{equation}\label{eq:rms_amplitute_detuning_3}
+    \Delta Q^{rms}_y = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
+\end{equation}
 
-It should be mentioned that only the initial actions $J_x$ and $J_y$ are actually independent. The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
+\textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are actually independent. The actions later in time, are coupled due to the non-linear
+of the lattice. %The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
 
 
 %\textbf{Note 2:}

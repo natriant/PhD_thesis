@@ -28,6 +28,8 @@
 \newsym[Rms bunch length]{sigmat}{\sigma_t}
 \newsym[Horizontal normalised emittance of the beam]{emitx}{\epsilon_{x}}
 \newsym[Vertical normalised emittance of the beam]{emity}{\epsilon_{y}}
+\newsym[Horizontal geometric emittance of the beam]{emitxgeom}{\epsilon_x^{geom}} 
+\newsym[Vertical geometric emittance of the beam]{emitygeom}{\epsilon_y^{geom}} 
 \newsym[Betatron horizontal rms tune spread]{Dqxrms}{\Delta\: \!Q^{rms}_{x}}
 \newsym[Betatron vertical rms tune spread]{Dqyrms}{\Delta\: \!Q^{rms}_{y}}
 \newsym[Horizontal detuning coefficient]{axx}{\alpha_{xx}}
