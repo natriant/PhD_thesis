@@ -134,7 +134,7 @@ In the development of Eq.~\ref{eq:var_amplDetuning} the properties of the mean d
 Now, according to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
 \begin{equation}\label{eq:rms_amplitude_detuning_1}
     \begin{split}
-    \Delta Q^{rms}_y =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
+    \Dqyrms =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
     =&~\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
     =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
     =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 }
@@ -145,18 +145,22 @@ where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the 
 
 The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see Eq.~\eqref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
 \begin{equation}\label{eq:rms_amplitute_detuning_2}
-    \Delta Q^{rms}_y = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
+    \Dqyrms = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
 \end{equation}
 
 Following Eq.~\eqref{eq:geom_emit_actions}, the rms tune spread from amplitude detuning can be also written as:
 \begin{equation}\label{eq:rms_amplitute_detuning_3}
-    \Delta Q^{rms}_y = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
+    \Dqyrms = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
 \end{equation}
+
+Equivalently, the horizontal rms tune spread from amplitude detuning is given by:
+\begin{equation}\label{eq:rms_amplitute_detuning_3_x}
+    \Dqxrms = 2 \sqrt{(\alpha_{xx} \emitxgeom )^2 + ( \alpha_{yx} \emitygeom)^2 }.
+\end{equation}
+
 
 \textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are actually independent. The actions later in time, are coupled due to the non-linear
 of the lattice. %The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
-
-
 %\textbf{Note 2:}
 %\begin{itemize}
 %    \item $\langle X \rangle$ is consistent with the numpy.mean(X)~\cite{numpy_mean} function of the Python programming language.
