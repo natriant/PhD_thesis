@@ -1,7 +1,7 @@
 For the uncertainty in the mean:
 https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
 
-\section{Statistics definitions}\label{app:statistics_definitions}
+\section{Definitions of statistical analysis}\label{app:statistics_definitions}
 This appendix, introduces the basic terminology of statistical analysis and gives the definitions that are used in this thesis. The definitions follow the book by R. J. Barlow~\cite{lvp.b313005720130101} where one can find a more detailed insight.
 
 \subsection{Averages}
@@ -11,6 +11,20 @@ For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean o
     \langle x \rangle = \frac{1}{N} \sum_{i=1}^{N} x_i.
 \end{equation}
 % compatible with numpy.mean --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
+
+Below, two properties of the arithmetic mean are discussed as they are used in this thesis.
+\begin{itemize}
+    \item The mean of the sum of two variables $x$ and $y$ is equal to the sum of their means, ie:
+    \begin{equation}\label{eq:mean_of_sum_property}
+        \langle x+y \rangle = \langle x \rangle + \langle y \rangle
+    \end{equation}
+    \item If $x$ and $y$ are independent the mean of their product equals:
+    \begin{equation}\label{eq:mean_of_product_property}
+        \langle x \cdot y \rangle = \langle x \rangle \cdot  \langle y \rangle
+    \end{equation}
+\end{itemize}
+
+
 
 \normalsize{\textbf{Root mean square}}\\
 In the classical definition in mathematics, the root mean square (rms) is an alternative to the arithmetic mean and is defined as:
@@ -114,6 +128,9 @@ From the definition of variance, the variance of the vertical amplitude detuning
     \end{split}
 \end{equation}
 
+In the development of Eq.~\ref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
+
+
 According to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
 \begin{equation}\label{rms_amplitude_detuning}
     \begin{split}
@@ -126,17 +143,6 @@ According to the definitions introduced in Appendix~\ref{app:statistics_definiti
 \end{equation}
 
 where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
-\textbf{Note 1:} In Eq.~\ref{eq:var_amplDetuning} the following properties are used:
-
-The mean of the sum of two variables $X$ and $Y$ is equal to the sum of their means, ie:
-\begin{equation}\label{eq:mean_of_sum_property}
-    \langle X+Y \rangle = \langle X \rangle + \langle Y \rangle
-\end{equation}
-
-If $X$ and $Y$ are independent the mean of their product equals:
-\begin{equation}\label{eq:mean_of_product_property}
-    \langle X \cdot Y \rangle = \langle X \rangle \cdot  \langle Y \rangle
-\end{equation}
 
 Add property of the exponential distribution, that the standard deviation and the mean are equal.
 
