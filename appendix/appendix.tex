@@ -110,7 +110,7 @@ The detuning with amplitude is computed by:
 \begin{equation}\label{eq:y_amplDetuning}
     \Delta Q_y = 2(\ayy \Jy + \alpha_{yx} \Jx)
 \end{equation}
-where $\ayy$, $\axx$ and $\axy$ are the detuning coefficients with units [1/m].
+where $\ayy$, $\axx$ and $\axy$ are the detuning coefficients with units [1/m] and $\Jx$, $\Jy$ the action variables.
 
 
 \normalsize{\textbf{Rms detuning with amplitude}}\\
@@ -131,29 +131,32 @@ From the definition of variance, the variance of the vertical amplitude detuning
 In the development of Eq.~\ref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
 
 
-According to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
-\begin{equation}\label{rms_amplitude_detuning}
+Now, according to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
+\begin{equation}\label{eq:rms_amplitude_detuning_1}
     \begin{split}
     \Delta Q^{rms}_y =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
     =&~\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
     =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
-    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 } \\
-    =&~2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }
+    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 }
     \end{split}
 \end{equation}
 
 where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
 
-Add property of the exponential distribution, that the standard deviation and the mean are equal.
+The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see~\ref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
+\begin{equation}\label{eq:rms_amplitute_detuning_2}
+    \Delta Q^{rms}_y = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
+\end{equation}
+
 
 It should be mentioned that only the initial actions $J_x$ and $J_y$ are actually independent. The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
 
-\textbf{Note 2:}
-\begin{itemize}
-    \item $\langle X \rangle$ is consistent with the numpy.mean(X)~\cite{numpy_mean} function of the Python programming language.
-    \item $X^{rms}$ is consistent with the numpy.std(X)~\cite{numpy_std} function of the Python programming language. 
-\end{itemize}
 
+%\textbf{Note 2:}
+%\begin{itemize}
+%    \item $\langle X \rangle$ is consistent with the numpy.mean(X)~\cite{numpy_mean} function of the Python programming language.
+%    \item $X^{rms}$ is consistent with the numpy.std(X)~\cite{numpy_std} function of the Python programming language. 
+%\end{itemize}
 
 
 \normalsize{\textbf{Rms detuning with amplitude from the SPS multiple errors}}\\
