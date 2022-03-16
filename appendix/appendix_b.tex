@@ -2,7 +2,7 @@
 
 This appenidx discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
 
-\section{Continuous-time analysis}
+\section{Continuous-time analysis}\label{app:continuous_time_analysis}
 \subsubsection*{Fourier transform} %\hfill \break
 A physical process (or signal or time series) can be described in the time domain by a continuous function of time, e.g.~$y(t)$, or else in the frequency domain, where the process is specified by giving its amplitude $\fourierxform{y}$ as a function of frequency, e.g.~$\fourierxform{y}(f)$ with $f \in \left(-\infty, +\infty \right )$. In other words, $y(t)$ and $\fourierxform{y}(f)$ are essentially different representations of the same function.  In general, $\fourierxform{y}(f)$ can be a complex quantity, with the complex argument giving the phase of the component at the frequency $f$.
 
@@ -44,3 +44,67 @@ From Eq.~(\ref{eq:Sxx_definition}) and Eq.~(\ref{eq:cross_correlation_theorem}) 
 S_{yy}(f) = \mid \fourierxform{y}(f) \mid ^2,
 \end{equation}
 with  $f \in \left(-\infty, +\infty \right )$.
+
+\section{Discrete-time analysis}\label{app:discrete_time_analysis}
+
+\subsubsection*{Discrete-time signals} %\hfill \break
+% the following paragraph is from here: https://sceweb.sce.uhcl.edu/harman/ceng5431/2015WEB/Chap11tlhDFT.pdf
+Figure~\ref{fig:sampling_of_continuous_signal} shows a part of a continuous signal $y(t)$. As already mentioned, for the measurements and the computational analysis, signals (or time series) sampled at a finite number of points are considered. Such signals are called discrete-time signals and in most cases they are sampled at equal points in time. For example, in Figure~\ref{fig:sampling_of_continuous_signal}, it is assumed that the continuous signal, $y(t)$, is sampled at intervals $\Delta t$ creating a set of $N$ points. The length in time between the first and final sample is $T_\mathrm{sample}=\frac{N-1}{N}T$, where $T = N\Delta t$. %One can see that the continuous signal is not only sampled but also truncated.
+
+
+\begin{figure}[!ht]
+     \centering         
+     \includegraphics[width=0.5\textwidth]{./images/app_B/approximation_of_signal_by_sampling_v2.png}
+         \caption{Sampling of the continuous signal $y(t)$ at a finite number of points $N$. The sampled signal is the discrete-time signal $y(n\Delta t)$ with $\Delta t$ the sampling interval and  $n$ an integer such that $n \in \left[0,N-1 \right ]$.}
+         \label{fig:sampling_of_continuous_signal}
+\end{figure}
+
+\subsubsection*{Discrete Fourier transform} %\hfill \break %\label{subsec:DFT}
+Let us consider a discrete-time signal, $y_n$ which is sampled at $N$ consecutive samples, $y_n = y(n \Delta t)$, with $n \in \left[0,N-1 \right ]$ such that $\Delta t$ is the sampling interval. For later convenience, we assume that $N$ is an odd integer. As a first step, we note that the integral of Eq.~(\ref{eq:fft_definition}) can be represented by a discrete sum in the limit that $\Delta t \to 0$:
+\begin{equation}\label{eq:dft_proof}
+\fourierxform{y}(f) = \int_{-\infty}^{\infty} y(t) e^{-2\pi \imagunit f t} dt =
+\lim_{\Delta t \to 0}
+\sum_{n=-\infty}^\infty y(n\Delta t) e^{-2\pi \imagunit f n \Delta t} \Delta t.
+%= \Delta t \sum_{n=0}^{N-1} y(n\Delta t) e^{\frac{-j 2\pi k n}{N}},
+\end{equation}
+%where $f_k=k/(N\Delta t)$ and $k \in \left[-\frac{N-1}{2},+\frac{N-1}{2} \right ]$ (for odd $N$) or  $k \in \left[-\frac{N}{2},+\frac{N}{2} \right ]$ (for even $N$), and $k$ being an integer.
+
+Based on the expression for the summation in Eq.~(\ref{eq:dft_proof}), we define the discrete Fourier transform as follows:
+\begin{equation}\label{eq:DFT_definiton}
+\fourierxform{y}_k= \sum_{n=0}^{N-1} y(n\Delta t) e^{-2\pi \imagunit \frac{k n}{N}}.
+\end{equation}
+Here, the index $k$ is an integer in the range $-\frac{N-1}{2}$ to $\frac{N-1}{2}$.
+Each component $\fourierxform{y}_k$ of the discrete Fourier transform is related to the component $\fourierxform{y}(f)$ of the continuous Fourier transform of $y(t)$, for $f = k/T$, in the limit $\Delta t \to 0$ and $N \to \infty$ (and where it is assumed that $y(t) = 0$ for $t < 0$ and for $t > T$).
+
+It should be noted that the discrete Fourier transform is calculated only at integer values of $k$, and therefore for $N$ samples the discrete Fourier transform will consist of $N$ numbers. The components of the discrete Fourier transform are calculated at frequencies $f_k$ that are integer multiples of $\Delta f = 1/T = f_s/N$, with $f_s = 1/\Delta t$ the sampling frequency. In that case, $f_k \in \left[-\frac{N-1}{2T},\frac{N-1}{2T} \right]$. An example of a discrete Fourier transform is shown in Fig.~\ref{fig:signal_and_DFT_example}.
+%/Delta_f is the resolution frequency
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/simple_signal_1freq_example.png}
+        \caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        \label{fig:signal_and_DFT_example_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/simple_signal_1freq_fft_example.png}
+        \caption{Discrete Fourier transform}
+        \label{fig:signal_and_DFT_example_b}
+    \end{subfigure}
+    \hfill
+     \caption{Example of a signal sampled at discrete time intervals, and the corresponding discrete Fourier transform.}
+     \label{fig:signal_and_DFT_example}
+\end{figure}
+
+The inverse discrete Fourier transform is defined as:
+\begin{equation}\label{eq:iDFT_definiton}
+ y_n =  y(n\Delta t) = \frac{1}{N} \sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} \fourierxform{y}_k e^{2\pi \imagunit \frac{k n}{N}},
+\end{equation}
+where $n \in \left[0,N-1 \right ]$ and where $n$ and $k$ are both integers.
+
+The definitions given in Eq.~(\ref{eq:DFT_definiton}) and Eq.~(\ref{eq:iDFT_definiton}) are consistent with those used in numpy, in the numpy.fft function \cite{numpy_fft} package of the Python programming language. 
+
+\subsubsection*{Power spectral density} % \hfill \break
+Following Eq.~(\ref{eq:Sxx_definition_v2}) the power spectral density of a discrete-time signal should be estimated as follows:
