@@ -1,4 +1,46 @@
+% overleaf document: measured noise spectrum2 simulations with some small modifications.
+
 This appenidx discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
 
+\section{Continuous-time analysis}
+\subsubsection*{Fourier transform} %\hfill \break
+A physical process (or signal or time series) can be described in the time domain by a continuous function of time, e.g.~$y(t)$, or else in the frequency domain, where the process is specified by giving its amplitude $\fourierxform{y}$ as a function of frequency, e.g.~$\fourierxform{y}(f)$ with $f \in \left(-\infty, +\infty \right )$. In other words, $y(t)$ and $\fourierxform{y}(f)$ are essentially different representations of the same function.  In general, $\fourierxform{y}(f)$ can be a complex quantity, with the complex argument giving the phase of the component at the frequency $f$.
 
-Add overlief.
+One can switch between these two representations using the Fourier transform method. In this thesis the Fourier transform of a time series $y(t)$, which will be denoted in this document by $\fourierxform{y}$, is defined as~\cite{a_numerical_recipies}: %eq.12.0.1
+
+\begin{equation}\label{eq:fft_definition}
+\fourierxform{y}(f) = \int_{-\infty}^{\infty} y(t) e^{-2\pi \imagunit t f} dt,
+\end{equation}
+where $f$ stands for any real number. 
+If the time is measured in seconds the frequency, $f$, is measured in hertz. 
+
+The inverse Fourier transform, which is used to re-create the signal from its spectrum, is defined as:
+\begin{equation}\label{eq:ifft_definition}
+y(t) = \int_{-\infty}^{\infty} \fourierxform{y}(f) e^{2\pi \imagunit t f} df.
+\end{equation}
+
+\subsubsection*{Power spectral density and total power} %\hfill \break
+The power spectral density, $S_{yy}(f)$, of a signal (or a time series), $y(t)$, will be used extensively in this thesis: it describes the distribution of the power in a signal between its frequency components, and is defined as the Fourier transform of the autocorrelation function, $R_{yy}(t)$~\cite{b_papoulis1991probability}: % Eq.10-14 p. 338
+
+\begin{equation}\label{eq:Sxx_definition}
+    S_{yy}(f) = \fourierxform{R}_{yy}(f) =  \int_{-\infty}^{\infty} R_{yy}(\tau)e^{-2\pi \imagunit \tau f} d\tau.
+\end{equation}
+
+The continuous autocorrelation $R_{yy}(\tau)$ is defined as the continuous cross-correlation integral of $y(t)$ with itself, at lag $\tau$~\cite{FFT_and_applications}:
+\begin{equation}\label{eq:Rxx_definition}
+    R_{yy}(\tau) = (y \ast y)(\tau) = \int_{-\infty}^{\infty} \bar{y}(t) y(t+\tau) dt,
+\end{equation}
+where $\ast$ denotes the convolution operation and $\bar{y}(t)$ represents the complex conjugate of $y(t)$.
+
+% cross (lagged) correlation
+According to the cross-correlation theorem \cite{FFT_and_applications}:
+\begin{equation}\label{eq:cross_correlation_theorem}
+\fourierxform{R}_{yy}(f) = \bar{\fourierxform{y}}(f) \fourierxform{y}(f) = \mid \fourierxform{y}(f) \mid ^2,
+\end{equation}
+where $\fourierxform{y}(f)$ is the Fourier transform of the signal as defined in Eq.~(\ref{eq:fft_definition}).
+
+From Eq.~(\ref{eq:Sxx_definition}) and Eq.~(\ref{eq:cross_correlation_theorem}) the power spectral density of a signal $y(t)$ can be simply written as the square of its Fourier transform:
+\begin{equation}\label{eq:Sxx_definition_v2}
+S_{yy}(f) = \mid \fourierxform{y}(f) \mid ^2,
+\end{equation}
+with  $f \in \left(-\infty, +\infty \right )$.
