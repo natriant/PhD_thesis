@@ -169,6 +169,14 @@ of the lattice. %The actions later in time, even though they are considered inde
 
 
 \normalsize{\textbf{Rms betatron tune spread from the SPS multiple errors at 270\,GeV}}\\
-Here the rms betatron tune spread from the SPS multipole components in the SPS dipole magnets is calculated for beam energy of 270\,GeV. Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} the corresponding detuning coefficients are obtained with MAD-X. In particular, $\axx$ = 148.391\,1/m, $\axy$ = $-$402.906\,1/m, $\ayy$ = $-$48.7\,1/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+Here the rms betatron tune spread from the SPS multipole components in the SPS dipole magnets is calculated for beam energy of 270\,GeV. Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} the corresponding detuning coefficients are obtained with MAD-X. In particular, $\axx$ = 148.39\,1/m, $\axy$ = $-$402.91\,1/m, $\ayy$ = $-$48.7\,1/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
 
-The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\emitx = \emity$ = 2
+The tune spread here is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\emitx = \emity$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:emit_geom_norm_relation} it can be seen that these values corresponds to geometric emittances of $\emitxgeom=\emitygeom$ = 6.95\,nm.
+By inserting these values of detuning coefficients and geometric emittances in Eq.. Eq.. the rms tune spread is found to be:
+
+
+
+in horizontal and vertical plane respectvily.
+
+% compute detuning coefficients: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/match_octupoles_new_SPS_seq_after_LS2/job001_cmpt_ayy_axx_for_klod_klof.py
+% compute rms tune spread: /eos/user/n/natriant/Project_thesis/material/Ch5: Experimental studies 2018/cmpt_DQxy_rms_nominal_SPS_270GeV.ipynb
