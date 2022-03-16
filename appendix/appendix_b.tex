@@ -1,4 +1,4 @@
-% overleaf document: measured noise spectrum2 simulations with some small modifications.
+% overleaf document: measured noise spectrum2 simulations with some small modifications. Also use passive voice instead of "we". 
 
 This appenidx discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
 
@@ -108,3 +108,139 @@ The definitions given in Eq.~(\ref{eq:DFT_definiton}) and Eq.~(\ref{eq:iDFT_defi
 
 \subsubsection*{Power spectral density} % \hfill \break
 Following Eq.~(\ref{eq:Sxx_definition_v2}) the power spectral density of a discrete-time signal should be estimated as follows:
+
+\begin{equation}\label{eq:Sxx_definition_discrete_not_normalised}
+    S_{yy}(f_k) = A \mid \fourierxform{y}_k(f_k) \mid ^2,
+\end{equation}
+where $f_k \in \left[-\frac{N-1}{2T},\frac{N-1}{2T} \right]$. $A$ is a normalisation constant which is introduced in order to obtain the correct amplitudes at each frequency and thus the correct noise power. There are several different conventions for the choice of this normalization. In this thesis, the following normalization is considered (see more details in the dedicated paragraph at the end of this section):
+\begin{equation}\label{eq:Sxx_definition_discrete_normalized}
+    S_{yy}(f_k) = \frac{1}{N^2 \Delta f} \mid \fourierxform{y}_k(f_k) \mid ^2,
+\end{equation}
+where  $\Delta f = 1/T$ the frequency resolution and $N$ the number of samples.
+    
+\begin{figure}[!ht]
+    \centering         
+    \includegraphics[width=0.5\textwidth]{./images/app_B/simple_signal_1freq_psd_example.png}
+        \caption{Power spectrum of $y=\sin(2 \pi f t),\ f = $50\,Hz.}
+        \label{fig:psd_example_two_sided}
+\end{figure}
+
+Figure~\ref{fig:psd_example_two_sided} shows an example power spectrum of the time-domain signal shown in Fig.~\ref{fig:signal_and_DFT_example}a. It can be seen that the spectrum that results from the analysis above is two-sided, which means that it has both positive and negative frequencies. It is also symmetric around the DC component ($f = $0\,Hz), which is actually a property of a real signal. 
+
+The power spectral density is expressed in terms of the square of the amplitude of the signal per unit frequency. For example, for a signal defined in units of voltage, V, (e.g. from an oscillator) the units are $\mathrm{V^2/Hz}$.
+
+\subsubsection*{Conversion of a two-sided power spectrum to a single-sided power spectrum} %\hfill \break
+% From https://www.sjsu.edu/people/burford.furman/docs/me120/FFT_tutorial_NI.pdf. Rephrase
+As already mentioned, the frequency spectrum of a real signal is symmetric around the DC component and therefore the information contained in the negative frequency is redundant. For this reason, most of the instruments used in experiments to display a frequency analysis show just the positive part of the spectrum (single-sided spectrum).  
+
+In order to convert from a two-sided spectrum to a single-sided spectrum, the negative part of the spectrum is discarded, and the amplitudes of the positive frequency components (excluding the DC component, so for $f > 0$) are multiplied by a factor 2:
+\begin{equation}\label{eq:two-sided_2_single-sided}
+        G_{yy}(f_k) = \left\{\begin{matrix}
+  0, & f_k < 0 \\ 
+    S_{yy}(f_k), & f_k=0  \\
+     2 S_{yy}(f_k), & f_k > 0 
+    \end{matrix}\right.
+\end{equation}
+where $S_{yy}(f_k)$ is the two-sided spectrum and $G_{yy}(f_k)$ the single-sided spectrum. Figure~\ref{fig:psd_example_single_sided} illustrates the single-sided spectrum of the signal shown in Fig.~\ref{fig:signal_and_DFT_example_a}.
+
+\begin{figure}[!ht]
+    \centering         
+    \includegraphics[width=0.5\textwidth]{./images/app_B/simple_signal_1freq_psd_single_sided_example.png}
+        \caption{Single-sided power spectrum of the signal shown in Fig.~\ref{fig:signal_and_DFT_example}(a).}
+        \label{fig:psd_example_single_sided}
+\end{figure}
+
+\subsubsection*{Normalisation factor for the power spectral density of a discrete-time signal}\label{appendix_dft_normalisation}
+This paragraph, discusses the choice of the normalisation factor $A=1/(N^2 \Delta f)$ for the power spectral density of a discrete-time signal defined in Eq.~\eqref{eq:Sxx_definition_discrete_not_normalised}:
+\begin{equation}
+S_{yy}(f_k) = A \mid \fourierxform{y}_k(f_k) \mid ^2.
+\end{equation}
+
+Consider the example of a discrete-time series $y_n = y(n\Delta t)$ where $n$ is an integer such that $n \in [0, N-1]$. $y_n$ represents a sequence of successive points equally spaced in time, drawn from a normal distribution with known standard deviation $\sigma$ and zero mean, $\mu=0$. The variance of this collection of $N$ equally spaced values is given by:
+\begin{equation}\label{eq:variance}
+    \sigma^2 = \frac{1}{N}\sum_{n=0}^{N-1} \left | y_n \right |^2.
+\end{equation}
+According to Parseval's theorem~\cite{FFT_and_applications}, the variance can be written as:
+%p.112
+\begin{equation}\label{eq:variance_2}
+    \sigma^2 = \frac{1}{N^2}\sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} \left | \fourierxform{y}_k \right |^2,
+\end{equation}
+where $\fourierxform{y}_k$ is the discrete Fourier transform of $y_n$.
+
+Using Eq.~(\ref{eq:Sxx_definition}), the autocorrelation function $R_{yy}(\tau)$ for a continuous-time signal can be found from the inverse Fourier transform of $S_{yy}(f)$:
+\begin{equation}\label{eq:autocorrelation_ivnerse}
+R_{yy}(\tau) = \int_{-\infty}^{\infty} \bar{y}(t) y(t+\tau) \, dt = \int_{-\infty}^{\infty} S_{yy}(f) e^{2\pi \imagunit t f} \, df.
+\end{equation}
+For zero lag, this becomes:
+\begin{equation}\label{eq:autocorrelation_zero_lag}
+R_{yy}(0) = \int_{-\infty}^{\infty} S_{yy}(f) \, df = \sigma^2.
+\end{equation}
+This expresses the fact that the autocorrelation of a zero-mean stochastic process (such as $y_n$) is equal to the variance. It should be noted here that this integration over the spectral components yields the total power of the process.
+
+For a discrete-time signal, we require that the power spectral density $S_{yy}(f_k)$ corresponds to the power spectral density for the continuous-time signal. In that case, Eq.~\eqref{eq:autocorrelation_zero_lag}
+becomes:
+\begin{equation}\label{eq:autocorrelation_zero_lag_discrete}
+\sigma^2 =  \sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} S_{yy}(f_k) \Delta f.
+\end{equation}
+
+From Eq.~(\ref{eq:variance_2}) and Eq.~(\ref{eq:autocorrelation_zero_lag_discrete}) this leads to:
+\begin{equation}\label{eq:normalisation_test}
+ \frac{1}{N^2}\sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} \left | \fourierxform{y}_k \right |^2 =  \sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} S_{yy}(f_k) \Delta f,
+\end{equation} %\Rightarrow \\
+and hence:
+\begin{equation}
+  \sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} \frac{\left | \fourierxform{y}_k \right |^2}{N^2 \Delta f} =  \sum_{k=-\frac{N-1}{2}}^{\frac{N-1}{2}} S_{yy}(f_k).
+\end{equation}
+Therefore, to satisfy the requirement that the power spectral density for the discrete-time signal corresponds to that for the continuous-time signal, we define the power spectral density for a discrete-time signal:
+\begin{equation}
+    S_{yy}(f_k) = \frac{\left | \fourierxform{y}_k \right |^2}{N^2 \Delta f}.
+\end{equation}
+Hence, the normalisation factor in Eq.~\eqref{eq:Sxx_definition_discrete_not_normalised} is chosen to be:
+\begin{equation}
+    A=\frac{1}{N^2 \Delta f}.
+\end{equation}
+
+
+\section{Measuring amplitude and phase noise}\label{subsec:Measure_noise}
+
+Amplitude and phase modulation are two of the main types of noise in the output signal of an oscillator. The instantaneous output voltage of an ideal oscillator can be expressed as:
+\begin{equation}
+    V(t) = V_0 \sin(2\pi f_0 t),
+\end{equation}
+where $V_0$ is the nominal peak voltage amplitude and $f_0$ the nominal frequency. 
+
+However, in practice, small inaccuracies will introduce amplitude and phase modulations. These modulations are included in the above signal by adding stochastic processes, represented by $\phi(t)$ and $\epsilon (t)$, as follows:
+\begin{equation}\label{eq:Oscillator_PN_AN}
+    \begin{split}
+    V(t) = &~(V_0+\epsilon(t)) \sin(2\pi f_0 t + \phi(t)), \\
+    = &~\left( 1+\frac{\epsilon(t)}{V_0} \right) V_0 \sin(2\pi f_0 t + \phi(t)), \\ =  &~(1+\alpha(t)) V_0 \sin(2\pi f_0 t + \phi(t)),
+    \end{split}
+\end{equation}
+where $\phi(t)$ is the deviation from the nominal phase $2\pi f_0 t$, $\epsilon(t)$ is the deviation from the nominal amplitude and $\alpha(t)=\epsilon(t)/V_0$ is the normalised amplitude deviation.  An example of a signal with phase and amplitude noise is shown in Fig.~\ref{fig:AN_PN_example}. 
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/oscillator_example_AN.png}
+        \caption{Amplitude noise}
+        \label{fig:AN_PN_example_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45 \textwidth}
+        \centering
+        \includegraphics[width=1 \textwidth]{./images/app_B/oscillator_example_PN.png}
+        \caption{Phase noise}
+        \label{fig:AN_PN_example_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/oscillator_example_AN_PN.png}
+        \caption{Amplitude and phase noise}
+        \label{fig:AN_PN_example_c}
+    \end{subfigure}
+    \hfill
+    \caption{Instantaneous voltage of an oscillator in the presence of (a) amplitude noise, (b) phase noise, and (c) both amplitude and phase noise.}
+    \label{fig:AN_PN_example}
+\end{figure}
