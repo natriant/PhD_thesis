@@ -202,8 +202,7 @@ Hence, the normalisation factor in Eq.~\eqref{eq:Sxx_definition_discrete_not_nor
 \end{equation}
 
 
-\section{Measuring amplitude and phase noise}\label{subsec:Measure_noise}
-
+\section{Measuring amplitude and phase noise}\label{app:Measured_noise}
 Amplitude and phase modulation are two of the main types of noise in the output signal of an oscillator. The instantaneous output voltage of an ideal oscillator can be expressed as:
 \begin{equation}
     V(t) = V_0 \sin(2\pi f_0 t),
@@ -263,7 +262,6 @@ However, instruments used in experiments do not usually display directly the sin
 where $f_k$ ranges from 0 over the positive part of the spectrum. It should be emphasised that here $\mathcal{L}$ is two-sided, as defined in~\cite{IEEE:4797525}, though it is considered that the instrument displays only the positive frequencies.
 
 \section{Applying a measured noise spectrum in numerical simulations} 
-
 The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used for numerical simulations. 
 %%%%%%%%%%
 \subsection{Crab cavity noise in numerical simulations}
@@ -294,7 +292,7 @@ In the following, the steps required to generate the discrete time series $\alph
     \begin{equation}
         \fourierxform{\phi}_n(f_k) = = \left\{\begin{matrix}
    \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | \overline{e^{\imagunit\theta (\mid f_k \mid)}}, & f_k \in \left [-\frac{f_s}{2}, -\Delta f_s \right] \\ 
-   \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | = 0, & f_k=0  \\
+    \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | = 0, & f_k=0  \\
    \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | e^{\imagunit\theta (\mid f_k \mid)}, & f_k \in \left [+ \Delta f_s, + \frac{f_s}{2} \right]  
     \end{matrix}\right.
     \end{equation}
@@ -310,7 +308,7 @@ In the following, the steps required to generate the discrete time series $\alph
     \centering
     \begin{subfigure}[t]{0.42\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_10logL.png}
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy.png}
         \caption{Phase noise spectrum measured with a spectrum analyzer E5052B, in units dBc/Hz.}
         \label{fig:coast1_setting2_a}
     \end{subfigure}
@@ -324,7 +322,7 @@ In the following, the steps required to generate the discrete time series $\alph
     \hfill
     \begin{subfigure}[t]{0.42\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_linear_interpolant.png}
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_linear_interpolation.png}
         \caption{Linear interpolation of the measured noise spectrum. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
         }
         \label{fig:coast1_setting2_c}
@@ -360,7 +358,6 @@ In the following, the steps required to generate the discrete time series $\alph
 
 
 \subsection{Validation of the time series reconstruction}
-
 This section describes the benchmarks that were carried out to ensure that the method described in section \ref{subsec:generatin_noise_kicks} produces a valid time series for a set of noise kicks, for a given power spectrum. 
 
 \subsubsection*{Comparison of measured and reconstructed power spectrum} %\hfill \break
@@ -406,6 +403,6 @@ Figures~\ref{fig:emitGrowth_AN} and~\ref{fig:emitGrowth_PN} show the emittance g
          \label{fig:emitGrowth_AN_and_PN}
      \end{subfigure}
      \hfill
-     \caption{Comparison between emittance growth found from simulations in PyHEADTAIL and emittance growth expected from an analytical model~\cite{CC-Mastoridis-Baudrenghien}.  The emittance growth is driven by amplitude and phase noise, with kicks in the simulations generated from a measured power spectrum.}
+     \caption{Comparison between emittance growth found from simulations in PyHEADTAIL and emittance growth expected from an analytical model~\cite{PhysRevSTAB.18.101001}.  The emittance growth is driven by amplitude and phase noise, with kicks in the simulations generated from a measured power spectrum.}
      \label{fig:emitGrowth_AN_PN_example}
 \end{figure}
