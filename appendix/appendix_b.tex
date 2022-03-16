@@ -1,4 +1,5 @@
 % overleaf document: measured noise spectrum2 simulations with some small modifications. Also use passive voice instead of "we". 
+%% plots are produced: cernbox/Project_thesis/scripts_for_simple_figures_plots. and for Fig.6 /eos/user/n/natriant/pyheadtail_data/9July2021
 
 This appenidx discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
 
@@ -243,4 +244,168 @@ where $\phi(t)$ is the deviation from the nominal phase $2\pi f_0 t$, $\epsilon(
     \hfill
     \caption{Instantaneous voltage of an oscillator in the presence of (a) amplitude noise, (b) phase noise, and (c) both amplitude and phase noise.}
     \label{fig:AN_PN_example}
+\end{figure}
+
+Following the IEEE~\cite{IEEE:4797525} conventions, the amplitude and phase modulation are measured by one-sided spectral densities, $G_{yy}(f)$. From Eq.~(\ref{eq:Sxx_definition_discrete_normalized}) and Eq.~(\ref{eq:two-sided_2_single-sided}), the amount of amplitude noise can be expressed as:
+\begin{equation}\label{eq:AN_measure}
+    G_\alpha(f_k) = 2 S_A(f_k)=\frac{2}{N^2 \Delta f} \left (  \frac{\mid\fourierxform{\epsilon}(f_k)\mid}{V_0} \right ) ^2=\frac{2}{N^2\Delta f } \mid \fourierxform{\alpha}(f_k) \mid ^2,
+\end{equation}
+and the amount of phase noise can be expressed:
+\begin{equation}\label{eq:PN_measure}
+    G_\phi(f_k) = 2 S_\phi(f_k)=\frac{2}{N^2 \Delta f} \mid \fourierxform{\phi}(f_k) \mid ^2,
+\end{equation}
+where $f_k$ lies in a range of positive frequencies and $\fourierxform{\alpha}(f_k)$ and $\fourierxform{\phi}(f_k)$ are the discrete Fourier transforms of the modulation signals $\alpha(t)$ and $\phi(t)$ respectively. The units of the $G_\alpha(f_k)$ are V$^2$/Hz and the units of $G_\phi(f_k)$ are rad$^2$/Hz.
+
+However, instruments used in experiments do not usually display directly the single-sided spectral density $G_{yy}$. Instead, the quantity $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] is shown, with~\cite{IEEE:4797525}:
+\begin{equation}\label{eq:L_to_G}
+    \mathcal{L}(f_k) = G_{yy}(f_k)/2,
+\end{equation}
+where $f_k$ ranges from 0 over the positive part of the spectrum. It should be emphasised that here $\mathcal{L}$ is two-sided, as defined in~\cite{IEEE:4797525}, though it is considered that the instrument displays only the positive frequencies.
+
+\section{Applying a measured noise spectrum in numerical simulations} 
+
+The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used for numerical simulations. 
+%%%%%%%%%%
+\subsection{Crab cavity noise in numerical simulations}
+As follows from the discussion in section~\ref{subsec:Measure_noise}, phase and amplitude noise can be represented by discrete time series $\phi_n = \phi(n\Delta t)$ and  $\alpha = \alpha(n\Delta t)$ respectively, so that the crab cavity (CC) instantaneous voltage is given by:
+\begin{equation}\label{eq:CC_PN_AN}
+    \VCC (n \Delta t) =  V_0(1+\alpha(n \Delta t)) \sin{(2\pi f_0 n \Delta t + \phi(n \Delta t)},
+\end{equation}
+where $V_0$ and $f_0$ are the nominal crab cavity voltage and frequency respectively, $n \in \left [1, N-1 \right ]$ and $N$ is the number of samples.
+
+In numerical simulations, $N$ is taken to be equal to the number of turns in the simulation. The total time simulated is $T=N \Delta t$, where $\Delta t$ is the sampling interval. Since the phase and amplitude noise are sequences of noise kicks which are applied to the CC voltage every turn, $\Delta t$ is equal to the time needed for one turn around the machine. For the SPS, with a revolution frequency $\frev = $43.38 kHz, $\Delta t=1/f_s = 1/\frev \approx$ 23 $\mathrm{\mu s}$. 
+%%%%%%%%%%%
+\subsection{Measured noise spectrum}
+In the experiment performed in 2018, the amplitude and phase noise levels were measured with a spectrum analyser E5052B~\cite{E5052B_insight} and are expressed in terms of the quantity $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] (see section \ref{subsec:Measure_noise}). Figure~\ref{fig:coast1_setting2_a} shows an example of a phase noise spectrum acquired during the experiment, and which extends from 1 kHz to 10 MHz. The spectral lines observed at high frequencies correspond to harmonics of the revolution frequency. 
+
+\subsection{Generating time series}\label{subsec:generatin_noise_kicks}
+In the following, the steps required to generate the discrete time series $\alpha_n$ and $\phi_n$ from the measured noise spectrum are discussed. The procedure involves converting the measured noise power to the two-sided power spectral density $S_\phi(f_k)$ and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. In detail, the steps are as follows:
+
+\begin{enumerate}
+    \item Convert the measured noise power $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] to $G_\phi(f_k)$\,[$\mathrm{rad^2}$/Hz] using Eq.~(\ref{eq:L_to_G}) (Fig.~\ref{fig:coast1_setting2_b}).
+    \item Re-sample the noise spectrum. The measured noise power values are equally spaced in frequency on a logarithmic scale. A linear interpolation is needed such that they are equally spaced on a linear scale, every $\Delta f = f_s/N$. As already mentioned, since the beam encounters the crab cavities once each turn, $f_s=f_{rev}(=43.38$ kHz for the SPS). To this end, the linear interpolation extends up to $f_s/2$ as illustrated in Fig.~\ref{fig:coast1_setting2_c}. In our simulations, $N=10^5$ turns are used.
+    \item Create the positive spectral components of the two-sided power spectrum, $S_\phi$, using Eq.~(\ref{eq:two-sided_2_single-sided}) for $f_k>0$. The result is shown in Fig.~\ref{fig:coast1_setting2_d}.
+    \item Compute the amplitude of the spectral components of the Fourier transform, $\left | \fourierxform{\phi}_n(f_k) \right | $ according to Eq.~(\ref{eq:Sxx_definition_discrete_normalized}). It should be noted, however, that this computation is done only for the positive part of the spectrum. Fig.~\ref{fig:coast1_setting2_e} depicts the result of this computation. 
+    \item Generate the phase information for each positive spectral component. By definition the power spectral density does not contain any information about the phase of the frequency components. Therefore, one should generate this information by giving a random phase $\theta(f_k)$ obtained from uniform distribution between 0 and $2\pi$.
+    \item Construct a one-sided frequency domain signal, $\fourierxform{\phi}_n^\mathrm{os}(f_k) =\left| \fourierxform{\phi}_n(f_k) \right| e^{\imagunit \theta(f_k)}$.  Once again this computation is done only for the positive spectral components, with $f_k \in \left[\Delta f,+\frac{f_s}{2} \right ]$.
+    \item Construct the two-sided Fourier transform spectrum. First, create the negative components of the Fourier transform by taking the complex conjugate of the positive components. Furthermore, the information for the zero frequency component (DC) is missing from the measured spectrum, since this extends from  1 kHz to 10 MHz. In order to do the conversion correctly, the zero frequency term is set to 0, so that $\fourierxform{y}_n(0)=0$. The two-sided Fourier transform is then given by:
+    
+
+    \begin{equation}
+        \fourierxform{\phi}_n(f_k) = = \left\{\begin{matrix}
+   \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | \overline{e^{\imagunit\theta (\mid f_k \mid)}}, & f_k \in \left [-\frac{f_s}{2}, -\Delta f_s \right] \\ 
+   \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | = 0, & f_k=0  \\
+   \left | \fourierxform{\phi}_n^\mathrm{os}(f_k) \right | e^{\imagunit\theta (\mid f_k \mid)}, & f_k \in \left [+ \Delta f_s, + \frac{f_s}{2} \right]  
+    \end{matrix}\right.
+    \end{equation}
+
+    It is clear that $\fourierxform{\phi}_n(f_k)$ has both positive and negative frequencies and the magnitude is symmetric in $f_k$.
+    
+    \item Finally, apply the inverse Fourier transform, Eq.~(\ref{eq:iDFT_definiton}), to $\fourierxform{\phi}_n(f_k)$. The  output  is  a  random  discrete  time  series of $N$ values sampled every $\Delta t = 1/f_s=1/f_{rev}$. In other words, $\phi_n$ forms the sequence of noise kicks that will act on the particles in the beam on each turn in the simulations.
+
+\end{enumerate} 
+
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.42\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_10logL.png}
+        \caption{Phase noise spectrum measured with a spectrum analyzer E5052B, in units dBc/Hz.}
+        \label{fig:coast1_setting2_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.42\textwidth}
+        \centering
+        \includegraphics[width=1 \textwidth]{./images/app_B/coast1_setting2_Gyy.png}
+        \caption{Measured phase noise spectrum in  units rad$^2$/Hz.}
+        \label{fig:coast1_setting2_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.42\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_linear_interpolant.png}
+        \caption{Linear interpolation of the measured noise spectrum. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
+        }
+        \label{fig:coast1_setting2_c}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.42\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_2_Syy.png}
+        \caption{Positive spectral components of the two-sided power spectrum $S_\phi$.}
+        \label{fig:coast1_setting2_d}
+    \end{subfigure}
+    \hfill
+    \centering
+    \begin{subfigure}[t]{0.42\textwidth}
+        %\hspace{3.5cm} % manually move the figure to the center. But caption doesn't move
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_yn_fft.png}
+        \caption{Amplitudes of the spectral components of the Fourier transform. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
+        }
+        \label{fig:coast1_setting2_e}
+    \end{subfigure}
+    \hfill
+    %\begin{subfigure}[b]{0.45\textwidth}
+    %    \centering
+    %    \includegraphics[width=1\textwidth]{coast1_setting2_generated_phase_noise_kicks.png}
+    %    \caption{Sequence of phase noise kicks generated from the measured power spectrum of Fig.~\ref{fig:coast1_setting2_a}}
+    %    \label{fig:coast1_setting2_f}
+    %\end{subfigure}
+    %\hfill
+    \hfill
+    \caption{Steps required to generate the sequence of noise kicks to be applied in the simulations from the measured noise spectrum.}
+    \label{fig:noise_kick_generation}
+\end{figure}
+
+
+\subsection{Validation of the time series reconstruction}
+
+This section describes the benchmarks that were carried out to ensure that the method described in section \ref{subsec:generatin_noise_kicks} produces a valid time series for a set of noise kicks, for a given power spectrum. 
+
+\subsubsection*{Comparison of measured and reconstructed power spectrum} %\hfill \break
+Figure \ref{fig:generate_noise_kicks_sanity_check_1} shows the results of the first benchmark, comparing the measured power spectral density with the power spectral density computed from the generated time series $\phi_n$. The two power spectra appear to be consistent with each other, which supports the validity of the method described above for generating the sequence of noise kicks from a given power spectrum. 
+
+\begin{figure}[!ht]
+     \centering         
+     \includegraphics[width=0.5\textwidth]{./images/app_B/coast1_setting2_Syy_original_vs_reconstructed_sanity_check.png}
+         \caption{Power spectral density computed from the time series $\phi_n$ produced from a measured power spectrum (black), compared with the original measured power spectrum (green).}
+         \label{fig:generate_noise_kicks_sanity_check_1}
+\end{figure} 
+
+\subsubsection*{PyHEADTAIL simulations} %\hfill \break
+Another way to validate the method for producing a sequence of noise kicks from a measured power spectrum is to perform numerical simulations using the generated noise kicks, and compare the resulting emittance growth with the predictions form an analytical model~\cite{PhysRevSTAB.18.101001}.
+
+In the simulations, which were performed with PyHEADTAIL, the beam was tracked for $10^5$ turns which corresponds to about 2.5\,s in the SPS. A kick representing the effect of the crab cavities was applied on each turn. The noise kicks that the beam encounters every turn at the CC location were generated from the phase and amplitude noise spectra of from Coast1-Setting2 of 2018 (Fig.~\ref{fig:example_PN_and_AN_coast1_setting2}). 
+
+It should be noted, however, that the sequence of noise kicks includes a random factor through the set of random phases $\theta(f_k)$. To reduce the uncertainty in the results, multiple simulation runs were conducted. The set of random phases was regenerated randomly for each of 10 runs with a different seed each time. For each run, the initial bunch distribution was also regenerated randomly 3 times. The mean and the standard deviation of the emittance values obtained from the tracking were computed over all trials. The emittance growth rate was computed by performing a linear fit to the mean of the emittance values.
+
+Figures~\ref{fig:emitGrowth_AN} and~\ref{fig:emitGrowth_PN} show the emittance growth for the case of amplitude noise and phase noise respectively. The emittance evolution in the presence of both types of noise is also illustrated in Fig.~\ref{fig:emitGrowth_AN_and_PN}. The simulated emittance growth rates show very good agreement with the predictions from the analytical model. The results again support the validity of the method for generating a sequence of noise kicks from a measured noise power spectrum, described in section \ref{subsec:generatin_noise_kicks}.
+
+
+\begin{figure}[!ht]
+     \centering
+     \begin{subfigure}[t]{0.45\textwidth}
+         \centering
+         \includegraphics[width=1\textwidth]{./images/app_B/emitGrowth_eyEvolution_sps_270GeV_WakesOFF_ayy1500_QpxQpy1_Nb5e5_IPACvalues_coast1_setting2_AN.png}
+         \caption{Emittance growth in the presence of amplitude noise.}
+         \label{fig:emitGrowth_AN}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.45 \textwidth}
+         \centering
+         \includegraphics[width=1 \textwidth]{./images/app_B/emitGrowth_eyEvolution_sps_270GeV_WakesOFF_ayy1500_QpxQpy1_Nb5e5_IPACvalues_coast1_setting2_PN.png}
+         \caption{Emittance growth in the presence of phase noise.}
+         \label{fig:emitGrowth_PN}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.45\textwidth}
+         \centering
+         \includegraphics[width=1\textwidth]{./images/app_B/emitGrowth_eyEvolution_sps_270GeV_WakesOFF_ayy1500_QpxQpy1_Nb5e5_IPACvalues_coast1_setting2_AN_PN.png}
+        \caption{Emittance growth in the presence of both amplitude and phase noise.}
+         \label{fig:emitGrowth_AN_and_PN}
+     \end{subfigure}
+     \hfill
+     \caption{Comparison between emittance growth found from simulations in PyHEADTAIL and emittance growth expected from an analytical model~\cite{CC-Mastoridis-Baudrenghien}.  The emittance growth is driven by amplitude and phase noise, with kicks in the simulations generated from a measured power spectrum.}
+     \label{fig:emitGrowth_AN_PN_example}
 \end{figure}
