@@ -1,7 +1,4 @@
-For the uncertainty in the mean:
-https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
-
-\section{Definitions of statistical analysis}\label{app:statistics_definitions}
+\section{Basic terminology}\label{app:statistics_definitions}
 This appendix, introduces the basic terminology of statistical analysis and gives the definitions that are used in this thesis. The definitions follow the book by R. J. Barlow~\cite{lvp.b313005720130101} where one can find a more detailed insight.
 
 \subsection{Averages}
@@ -23,7 +20,6 @@ Below, two properties of the arithmetic mean are discussed as they are used in t
         \langle x \cdot y \rangle = \langle x \rangle \cdot  \langle y \rangle
     \end{equation}
 \end{itemize}
-
 
 
 \normalsize{\textbf{Root mean square}}\\
@@ -96,6 +92,11 @@ The standard deviation of the fit results, $\sigma_\alpha, \sigma_\beta$, is est
 In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \beta$, are defined as the standard deviation, $\sigma_{\alpha}$ and  $\sigma_{\beta}$, of the corresponding optimal parameters.
 
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
+
+\section{Propagation of uncertainty}
+For the uncertainty in the mean:
+https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
+
 
 
 \section{Detuning with amplitude}\label{app:detuning_with_amplitude}
