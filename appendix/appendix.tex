@@ -86,14 +86,14 @@ where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the expected va
 
 
 \normalsize{\textbf{Error of the fit}}\\
-The standard deviation of the fit results, $\sigma \alpha, \sigma \beta$ is estimated by the square root of the diagonal of their covariant matrix:
+The standard deviation of the fit results, $\sigma_\alpha, \sigma_\beta$, is estimated by the square root of the diagonal of their covariant matrix:
 \begin{equation}\label{eq:cov_matrix_fit_results}
     \begin{pmatrix}
         \sigma_{\alpha}^2 & \mathrm{Cov(\alpha, \beta)}\\
         \mathrm{Cov(\beta, \alpha)} & \sigma_{\beta}^2
         \end{pmatrix}
 \end{equation}
-In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \beta$, are defined as the standard deviation of the corresponding optimal parameters, $\sigma_{\alpha}$ and  $\sigma_{\beta}$ respectively.
+In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \beta$, are defined as the standard deviation, $\sigma_{\alpha}$ and  $\sigma_{\beta}$, of the corresponding optimal parameters.
 
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
 

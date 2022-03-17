@@ -70,7 +70,7 @@ The experiment took place on September 5, 2018, and was given a total time windo
 %The dedicated experiment to study the emittance growth induced by noise in the $\CC$ RF sytsem took place on September 5, 2018, and was given a total time window of about 16 hours (start:$\sim$10:30, end:$\sim$17:00).
 
 \section{Injected RF noise}\label{sec:injected_RF_noise}
-The noise in the $\CC$ RF system was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. The relation between the measrued noise levels and the PSDs in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} is given by $S_\Delta = 2\mathcal{L}(f)$, with $S_{\Delta A}$ in\,1/Hz and $S_{\Delta \phi}$ in $\mathrm{rad^2/Hz}$. This relation is extensivly discussed in Appendix~\ref{ch:app_B} and specifically in~\ref{app:Measured_noise}}. Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment.
+The noise injected in the $\CC$ RF system was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. The relation between the measrued noise levels and the PSDs in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} is given by $S_\Delta = 2\mathcal{L}(f)$, with $S_{\Delta A}$ in\,1/Hz and $S_{\Delta \phi}$ in $\mathrm{rad^2/Hz}$. This relation is extensivly discussed in Appendix~\ref{ch:app_B} and specifically in~\ref{app:Measured_noise}}. Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment.
 
  % Loaction for creating the figure: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd
  \begin{figure}[!ht]
@@ -104,7 +104,7 @@ The emittance growth measurements were performed with seven different noise leve
 % The resulted pickle file can be found at: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/output
 \begin{table}[!hbt]
 	\centering
-   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies in 2018. The listed values correspond to the average PSD values over a frequency range of $\pm$ 500\,Hz around the first betatron sideband, $f_b$.}
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2018. The listed values correspond to the average PSD values over a frequency range of $\pm$ 500\,Hz around the first betatron sideband, $f_b$.}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] }
 		&&& \\[-6mm]
 		\toprule \toprule
@@ -132,11 +132,40 @@ The emittance growth measurements were performed with seven different noise leve
    \label{tab:noise_settings_2018}
 \end{table}
 
-
-
-
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
+This section presents the transverse emittance growth measurments with $\CC$ RF noise. It discusses first the measurement of the beam emittance with the SPS Wire Scanners (WS) and then it provides an overview of the emittance growth measurements for the four bunches over all the different noise settings.
 
+\subsection{SPS Wire Scanners}\label{subsec:sps_ws}
+The SPS is equipped with Wire Scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
+
+The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is then detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the PM current as a function of wire position over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile}.
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch4/Wire_scanner.png}
+       \caption{Sketch of the SPS rotational wire scanners~\cite{Berrig:1972478}. The wire moves across the proton beam generating secondary particles which are then detecting by a scintillator and a photomultiplier. From the measured photomultiplier current the beam profile is reconstructed.}
+       \label{fig:SPS_WS_ROT}
+\end{figure}
+
+\normalsize{\textbf{Fitting of transverse profiles}}\\
+Assuming gaussian beams and for $u=x,y$ being the index that respectively corresponds to the horizontal and vertical plane, the rms beam size, $\sigma_u$, is obtained following the standard procedure of least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following four-parameter ($A, k, \mu, \sigma_u$) gaussian function:
+\begin{equation}\label{eq:4p_gauss}
+   f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma_u^2}},
+\end{equation}
+where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma_u$ its standard deviation. The uncertainty of the measured rms beam size, $\Delta \sigma_u$, is defined as the error of the fit of the $\sigma_u$ parameter (see Appendix~\ref{app:non_linear_fitting}).
+
+%T A non-linear least square minimization is used to fit the gaussian function to the measured data and obtain the optimal values for the parameters ($A, k, \mu, \sigma_u$).he standard error of the parameters' estimates is given by the square root of the diagonal of their covariance matrix.~\cite{gaus_fit_least_squares}. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the standard error of the $\sigma$ parameter. The optimal parameters' values and their covariance matrix are computed here using the $\mathrm{scipy.curve \_ fit}$ \cite{scipy_curve_fit} function of Python programming language. 
+% Curve fitting explanation: https://www.youtube.com/watch?v=Jl-Ye38qkRc&ab_channel=BrantCarlson
+
+An example of the beam profile measured from the SPS WS at a specific time is shown in Fig.~\ref{fig:WS_example_V_profile} (light blue dots) along with the gaussian fit (orange line).
+% Location where the figure was produced: /eos/user/n/natriant/2020/WS_analysis
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.6\textwidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
+       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
+       \label{fig:WS_example_V_profile}
+\end{figure}
+   
 
 \section{Bunch length and intensity measurements}\label{sec:bunch_length_intensity_meas_2018}
 
@@ -151,38 +180,10 @@ Comparison of bunch 1 with theory. Discrepancy of a factor 4.
 
 
 
-\section{SPS Wire Scanners}\label{sec:sps_ws}
-The SPS is equipped with Wire Scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
-
-The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is then detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the PM current as a function of wire position over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile}.
-
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.8\textwidth]{images/Ch4/Wire_scanner.png}
-       \caption{Sketch of the SPS rotational wire scanners~\cite{Berrig:1972478}. The wire moves across the proton beam generating secondary particles which are then detecting by a scintillator and a photomultiplier. From the measured photomultiplier current the beam profile is reconstructed.}
-       \label{fig:SPS_WS_ROT}
-\end{figure}
+\section{SPS Wire Scanners}\label{subsec:sps_ws}
 
 
-\normalsize{\textbf{Fitting of transverse profiles}}\\
-To obtain the beam size, $\sigma$, the standard procedure of fitting measured data to a model is followed~\cite{gaus_fit_least_squares}. In particular, the transverse profiles from each scan are fitted with the following four-parameter gaussian function:
 
-\begin{equation}\label{eq:4p_gauss}
-   f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma^2}},
-\end{equation}
-
-where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the Gaussian distribution and $\sigma$ its standard deviation. A non-linear least square minimization is used to fit the gaussian function to the measured data and obtain the optimal values for the parameters ($A, k, \mu, \sigma$). The standard error of the parameters' estimates is given by the square root of the diagonal of their covariance matrix.~\cite{gaus_fit_least_squares}. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the standard error of the $\sigma$ parameter. The optimal parameters' values and their covariance matrix are computed here using the $\mathrm{scipy.curve \_ fit}$ \cite{scipy_curve_fit} function of Python programming language. 
-% Curve fitting explanation: https://www.youtube.com/watch?v=Jl-Ye38qkRc&ab_channel=BrantCarlson
-
-
-% Location where the figure was produced: /eos/user/n/natriant/2020/WS_analysis
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.6\textwidth]{images/Ch4/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
-       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter Gaussian (orange) to obtain the beam size. The calculated emittance is also shown.}
-       \label{fig:WS_example_V_profile}
-\end{figure}
-   
 
 The general formula for computing the normalised beam emittance from the beam size, $\sigma$ is given by:
 \begin{equation}\label{eq:emittance_from_WS}
