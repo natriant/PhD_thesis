@@ -97,13 +97,43 @@ The noise in the $\CC$ RF system was a mixture of amplitude and phase noise up t
 As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth depends on the noise power at the beteatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). Therefore, the noise power values of interest for this thesis are the ones at the first betatron $f_b = 0.18 \times \frev$ = 7.82\,kHz and at the synchrobetatron sidebands at $f_b \pm \Qs \times \frev  = f_b \pm  \sim 220$\,kHz. 
 
 
-However, it can be clearly seen from Fig.~\ref{fig:example_PN_and_AN_coast1_setting2} that the measured noise spectra are noisy: random changes in amplitude are observed from point to point within the signal. To this end, the PSD value at the first betatron sideband, $f_b$, is determined as the average of the PSD values over a frequency range of $\pm$ 500\,Hz around it. The spread of the values is also determined as the standard deviation over that range. In the following, it is assumed for simplicity that the PSD at the synchrobetatron sidebands equals the PSD at $f_b$ as they lie very close to each other. At this point, it should be mentioned that the validity of these assumptions was tested with numerical simulations including th measured spectra (Chapter~\ref{Ch:investigating_discrepancy}).
+However, it can be clearly seen from Fig.~\ref{fig:example_PN_and_AN_coast1_setting2} that the measured noise spectra are noisy: random changes in amplitude are observed from point to point within the signal. To this end, the PSD value at the first betatron sideband, $f_b$, is determined as the average of the PSD values over a frequency range of $\pm$ 500\,Hz around it. The spread of the values is also determined as the standard deviation over that range. In the following, it is assumed for simplicity that the PSD at the synchrobetatron sidebands equals the PSD at the first betaton sideband as they lie very close to each other. At this point, it should be mentioned that the validity of these assumptions was tested with numerical simulations including th measured spectra (Chapter~\ref{Ch:investigating_discrepancy}).
+
+The emittance growth measurements were performed with seven different noise levels which are listed in Table~\ref{tab:noise_settings_2018}. 
+% Script for computing the values: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/job001_cmpt_psd_at_fb.ipynb
+% The resulted pickle file can be found at: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/output
+\begin{table}[!hbt]
+	\centering
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies in 2018. The listed values correspond to the average PSD values over a frequency range of $\pm$ 500\,Hz around the first betatron sideband, $f_b$.}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] }
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{} &
+		\multicolumn{2}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$ \textbf{[dBc/Hz]}} \\
+		\bottomrule
+      \multicolumn{2}{l}{} & 	\multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} \\
+      \midrule
+      \multicolumn{2}{l}{Coast1-Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} \\
+      
+      \multicolumn{2}{l}{Coast1-Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} \\
+
+      \multicolumn{2}{l}{Coast2-Setting1}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} \\
+
+      \multicolumn{2}{l}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} \\ 
+
+      \multicolumn{2}{l}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} \\
+
+      \multicolumn{2}{l}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} \\
+
+      \multicolumn{2}{l}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} \\
+      \arrayrulecolor{black}\bottomrule
+ 
+	\end{tabu}
+   \label{tab:noise_settings_2018}
+\end{table}
 
 
 
-
-
-Emittance growth measurements were performed with six different noise levels which are listed in Table ... The concept of 
 
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
 
@@ -113,6 +143,7 @@ Emittance growth measurements were performed with six different noise levels whi
 \section{Comparison of measured emittance growth with the theory}\label{sec:meas_2018_vs_theory}
 
 Comparison of bunch 1 with theory. Discrepancy of a factor 4.
+6/7 noise settings as the first noise level was found to be below the noise floor (check themis mail).
 
 \section{Conclusions and outlook}\label{sec:MD2018_summary}
 
