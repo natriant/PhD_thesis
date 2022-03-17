@@ -70,10 +70,36 @@ The experiment took place on September 5, 2018, and was given a total time windo
 %The dedicated experiment to study the emittance growth induced by noise in the $\CC$ RF sytsem took place on September 5, 2018, and was given a total time window of about 16 hours (start:$\sim$10:30, end:$\sim$17:00).
 
 \section{Injected RF noise}\label{sec:injected_RF_noise}
-The noise in the $\CC$ RF system was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. The relation between the measrued noise levels and the PSDs in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} is given by $S_\Delta = 2\mathcal{L}(f)$, with $S_{\Delta A}$ in\,1/Hz and $S_{\Delta \phi}$ in $\mathrm{rad^2/Hz}$. This relation is extensivly discussed in Appendix~\ref{ch:app_B} and specifically in~\ref{app:Measured_noise}}.
+The noise in the $\CC$ RF system was a mixture of amplitude and phase noise up to 10\,kHz, overlapping and primarily exciting the first betatron sideband at $\sim 8$\,kHz. The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. The relation between the measrued noise levels and the PSDs in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} is given by $S_\Delta = 2\mathcal{L}(f)$, with $S_{\Delta A}$ in\,1/Hz and $S_{\Delta \phi}$ in $\mathrm{rad^2/Hz}$. This relation is extensivly discussed in Appendix~\ref{ch:app_B} and specifically in~\ref{app:Measured_noise}}. Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment.
+
+ % Loaction for creating the figure: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd
+ \begin{figure}[!ht]
+   \centering
+   \begin{subfigure}[t]{0.45\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{images/Ch5/Measured_spectrum_MD5_Coast1-Setting2-AN.csv_no_psd.png}
+       %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+       %\label{fig:add_label_here}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[t]{0.45\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{images/Ch5/Measured_spectrum_MD5_Coast1-Setting2-PN.csv_no_psd.png}
+       %\caption{Discrete Fourier transform}
+       %\label{fig:add_label_here}
+   \end{subfigure}
+   \hfill
+    \caption{Example amplitude (left) and phase (right) noise spectra measured with a spectrum analyzer E5052B~\cite{E5052B_insight} during the emittance growth studies with CCs in SPS. The noise spreads-out up to 10\,kHz (grey dashed line) overlapping the first betatron sideband at $\sim$8\,kHz (green dashed line). The spikes at high frequencies correspond to the harmonics of the revolution frequency and are a result of the bunch crossing.} % bunch passage
+    \label{fig:example_PN_and_AN_coast1_setting2}
+\end{figure}
+
+\subsubsection*{PSD values of interest}
+As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth depends on the noise power at the beteatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). Therefore, the noise power values of interest for this thesis are the ones at the first betatron $f_b = 0.18 \times \frev$ = 7.82\,kHz and at the synchrobetatron sidebands at $f_b \pm \Qs \times \frev  = f_b \pm  \sim 220$\,kHz. 
 
 
-An example measurement of amplitude (left) and phase (right) noise acquired during the experiment are displayed in Figure \dots
+However, it can be clearly seen from Fig.~\ref{fig:example_PN_and_AN_coast1_setting2} that the measured noise spectra are noisy: random changes in amplitude are observed from point to point within the signal. To this end, the PSD value at the first betatron sideband, $f_b$, is determined as the average of the PSD values over a frequency range of $\pm$ 500\,Hz around it. The spread of the values is also determined as the standard deviation over that range. In the following, it is assumed for simplicity that the PSD at the synchrobetatron sidebands equals the PSD at $f_b$ as they lie very close to each other. At this point, it should be mentioned that the validity of these assumptions was tested with numerical simulations including th measured spectra (Chapter~\ref{Ch:investigating_discrepancy}).
+
+
 
 
 
