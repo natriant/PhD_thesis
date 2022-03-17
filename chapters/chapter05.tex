@@ -166,6 +166,17 @@ An example of the beam profile measured from the SPS WS at a specific time is sh
        \label{fig:WS_example_V_profile}
 \end{figure}
    
+\normalsize{\textbf{Computing the normalised beam emittance}}\\
+The formula for computing the normalised beam emittance from the beam size, $\sigma_u$ is given by:
+\begin{equation}\label{eq:emittance_from_WS}
+   \centering
+   \epsilon_u = \frac{\sigma_u^2}{\beta_{u, WS}} \betarel \gammarel ,
+\end{equation}
+
+where $\sigma$ is the rms beam size, $\beta_{WS}$ the beta function at the WS location and $\betarel, \gammarel$ the relativistic parameters. Note that $u=x,y$ is the index that respectively corresponds to the horizontal and vertical plan.
+
+For the computation of the emittane values from the $\CC$ experiment of 2018, the following points should be considered. First, in the 2018 SPS operational configuration, the dispersion was small at the WSs location and thus its contribution to the beam size was considered to be negligible \footnote{The dispersion at BWS.51995.H location in 2018 was $\Dx$= -15\,mm. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is expected at the order of $\mathrm{10^{-6} \ \mu m}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible. \color{red}{The measured $\Dx, \Dy$ were found to be very small and thus their contribution is also considered negligible. The plan is to perform some measurments in 2022 to get a feeling of their values at the location of the wire scanners}}. Moreover, for the studies at 270\,GeV beam energy, $\betarel \gammarel$ equals 287.8 and the beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively. Last, the uncertainty on the beta functions at the location of the WS, $\Delta \beta_{u, WS}$, is 5$\%$ in both planes, which represents the rms beta-beating in the SPS~\cite{SPS-beta-beating-Rogelio}.
+% Computations from dispersive contribution: /eos/user/n/natriant/Project_thesis/material/Ch4: 1st experimental campaign in SPS/dispersive_contribution_in_the_emittance.pdf
 
 \section{Bunch length and intensity measurements}\label{sec:bunch_length_intensity_meas_2018}
 
@@ -184,18 +195,6 @@ Comparison of bunch 1 with theory. Discrepancy of a factor 4.
 
 
 
-
-The general formula for computing the normalised beam emittance from the beam size, $\sigma$ is given by:
-\begin{equation}\label{eq:emittance_from_WS}
-   \centering
-   \epsilon = \frac{\sigma^2}{\beta_{WS}} \betarel \gammarel ,
-\end{equation}
-
-where $\sigma$ is the rms beam size, $\beta_{WS}$ the beta function at the WS location and $\betarel, \gammarel$ the relativistic parameters.
-
-
-Note that, in the 2018 SPS operational configuration, the dispersion was small at the WSs location and thus its contribution to the beam size was considered to be negligible \footnote{The dispersion at BWS.51995.H location in 2018 was $\Dx$= -15\,mm. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is expected at the order of $\mathrm{10^{-6} \ \mu m}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible. \color{red}{The measured $\Dx, \Dy$ were found to be very small and thus their contribution is also considered negligible. The plan is to perform some measurments in 2022 to get a feeling of their values at the location of the wire scanners}}. For the $\CC$ studies at 270\,GeV beam energy, $\betarel \gammarel$ equals 287.8 and the beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical WS respectively. The uncertainty on the beta functions at the location of the WS, $\Delta \beta_{WS}$, is 5$\%$ in both planes, which represents the rms beta-beating in the SPS~\cite{SPS-beta-beating-Rogelio}.
-% Computations from dispersive contribution: /eos/user/n/natriant/Project_thesis/material/Ch4: 1st experimental campaign in SPS/dispersive_contribution_in_the_emittance.pdf
 
 Assuming that the relativistic parameters are free of error, the uncertainty of the computed emittance, $\Delta \epsilon$, depends on the uncertainty of the measured beam size, $\Delta \sigma$ and of the beta function at the location of the WS, $\Delta \beta_{WS}$, as follows:
 
