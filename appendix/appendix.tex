@@ -80,6 +80,11 @@ Suppose that we have $N$ data points ($x_{i}, y_{i}$) and that $y=f(x,\alpha, \b
 \end{equation}
 where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the expected value from the model. In other words, $\chi^2$ is a measure of deviation between the measurement and the expected result, and thus its minimisation results in the best fit i.e.\ to the optimal parameters $\alpha, \beta$.
 
+\normalsize{\textbf{Weighted least squares fitting}}\\
+Suppose that we have $N$ data points ($x_i, y_i \pm \Delta y_i $), where $ \Delta y_i$ is the uncertaintyof $y_i$ y, and that $y=f(x,\alpha, \beta)$ is the model function that describes the relationship between the points. To define the optimal parameters $\alpha, \beta$ taking into account the imapct of the uncertainty $\Delta y_i$, Eq.~\eqref{eq:chi_square} is written as:
+\begin{equation}\label{eq:chi_square_weights}
+    \chi^2 = \sum_{i=1}^{N}\frac{[y_{i}-f(x_{i},\alpha, \beta)]^2}{\Delta y_i^2}
+\end{equation}
 
 \normalsize{\textbf{Error of the fit}}\\
 The standard deviation of the fit results, $\sigma_\alpha, \sigma_\beta$, is estimated by the square root of the diagonal of their covariant matrix:
@@ -93,11 +98,7 @@ In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \be
 
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
 
-\normalsize{\textbf{Weighted least squares fitting}}\\
-Suppose that we have $N$ data points ($x_i, y_i \pm \Delta y_i $), where $ \Delta y_i$ is the uncertaintyof $y_i$ y, and that $y=f(x,\alpha, \beta)$ is the model function that describes the relationship between the points. To define the optimal parameters $\alpha, \beta$ taking into account the imapct of the uncertainty $\Delta y_i$, Eq.~\eqref{eq:chi_square} is written as:
-\begin{equation}\label{eq:chi_square_weights}
-    \chi^2 = \sum_{i=1}^{N}\frac{[y_{i}-f(x_{i},\alpha, \beta)]^2}{\Delta y_i^2},
-\end{equation}
+
 
 \section{Propagation of uncertainty}
 For the uncertainty in the mean:
