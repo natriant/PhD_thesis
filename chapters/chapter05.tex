@@ -9,7 +9,7 @@ Section ... describes the machine setup and the beam configuration for the emitt
 This section gives an overview of the experimental setup and the procedure that was followed. First, it briefly discusses the preparatory studies that were performed during 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}, explaining the choice of the intensity and energy values for which the emittance growth measurements were conducted. Furthermore, it presents in detail the rest of the beam and machine conditions during the experiment. Last, the experimental procedure is explained.
 
 %\normalsize{\textbf{Preparatory experimental studies}}\\
-\subsection{Preparatory experimental studies}
+\subsection{Preparatory experimental studies}\label{sec:preparatory_studies_for_2018_MD}
 For studying the long-term emittance evolution a special mode of operation was set up in the SPS which is called "coast" (in other machines, it is referred to as storage ring mode) with bunched beams. In this mode, the bunches circulate in the machine at constant energy for long periods, from a few minutes up to several hours, similar to the HL-LHC case.\setlength{\parskip}{2ex} %set it manually here, as for some reason it was not displayed properly in the pdf.
 
 To make sure that the SPS can be used as a testbed for the emittance growth studies with $\CC$s an extensive preparatory campaign was carried out through 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}. The primary concern was the emittance growth that was observed in the machine from other sources than injected noise and will be referred to as the natural emittance growth in this thesis. The natural emittance growth needs to be well characterized and be kept sufficiently small in order to distinguish and understand the contribution from the $\CC$ noise. 
@@ -230,11 +230,11 @@ where $t$ is the time in seconds, $d\epsilon_u /dt$ the growth rate in meters pe
 \subsubsection*{First observations and comments}
 Figure~\ref{fig:MD5_overview_x_y} demonstrates a clear emittance growth in the vertical plane which is expected due to the vertical $\CC$. However, the $\CC$ noise is observed to induce growth also in the horizontal emittance as a result of residual coupling in the machine. Thus, the total emittance growth given by $d\epsilon_x/dt + d\epsilon_y/dt$ should be considered in the following. That was confirmed by PyHEADTAIL simulations~\cite{Baudrenghien_HL-LHC19v6} in the presence of $\CC$ RF noise and transverse coupling. 
 
-Furthermore, the phase and amplitude noise levels for $Coast1-Setting1$ were found to be below noise floor of the instrument and this the data from that case will not be included in the following. % e-mail from Themis (27/April/2021. I think the noise floor was -120 dBc/Hz. Not sure. If that sentence is not enough we need to check
+%Option A)Furthermore, the phase and amplitude noise levels for $Coast1-Setting1$ were found to be below noise floor of the instrument and this the data from that case will not be included in the following. % e-mail from Themis (27/April/2021. I think the noise floor was -120 dBc/Hz. Not sure. If that sentence is not enough we need to check
 
+Furthermore, the phase and amplitude noise levels for Coast$1$-Setting$1$ were found to be below noise floor of the instrument. Therefore, the transverse emittance growth observed during that case is a result of other sources (natural emittance growth, see Section~\ref{sec:preparatory_studies_for_2018_MD} ) and will be considered as the backgorund growth rate in the analysis below. \textcolor{blue}{Is this apporach ok? instead of using 0.45 and 0.55 um/h for the y and x planes respectively.}
 
 \subsubsection*{Summary plot}
-As already mentioned, the phase noise was a mixture of phase and amplitude noise with the phase noise always being dominant. % For the effective phase noise 
 
 Figure .. provides a more clear view of the measruments presented in Fig... It displays the measured emittance growth rates for each one of the four bunches for the 
 
