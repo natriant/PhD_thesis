@@ -100,9 +100,19 @@ The values of the optimal parameters and their covariance matrix are computed in
 
 
 
-\section{Propagation of uncertainty}
-For the uncertainty in the mean:
-https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
+\section{Propagation of uncertainty}\label{app:uncertainty_propagation}
+Suppose that $y$ is related to $N$ independent variables $\{x_1, x_2, ..., x_N\}$ with the folloiwng function:
+\begin{equation}
+    y=f(x_1, x_2, .. x_N).
+\end{equation}
+If $\{\Delta x_1, \Delta x_2, ..., \Delta x_N\}$ the uncertainties of $\{x_1, x_2, ..., x_N\}$ respectively, the uncertainty of $y$, is given by~\cite{lvp.b313005720130101}:
+\begin{equation}\label{eq:uncertainty_propagation}
+    \Delta y = \sqrt{\left ( \frac{\partial f}{\partial x_1} \Delta x_1  \right )^2 + \left ( \frac{\partial f}{\partial x_2} \Delta x_2  \right )^2 + \dots + \left ( \frac{\partial f}{\partial x_N} \Delta x_N  \right )^2}
+\end{equation}
+
+
+%For the uncertainty in the mean:
+%https://www.physics.upenn.edu/sites/default/files/Managing%20Errors%20and%20Uncertainty.pdf
 
 
 
