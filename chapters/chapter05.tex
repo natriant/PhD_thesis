@@ -109,36 +109,6 @@ For the calulcation of the effective phase noise the averaged bunch length for e
 % The resulted pickle file can be found at: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/output
 % Effective phase noise: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/job002_cmpt_effective_PN.ipynb
 % Analytical calculations of the effective phase noise and its uncertainty: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/notes_on_computing_effective_pn_psd_and_uncertainties.pdf
-\begin{table}[!hbt]
-	\centering
-   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2018. The listed values correspond to the average PSD values over a frequency range of $\pm$ 500\,Hz around the first betatron sideband, $f_b$.}
-	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m]}
-		&&& \\[-6mm]
-		\toprule \toprule
-		\multicolumn{2}{l}{} &
-		\multicolumn{2}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$ \textbf{[dBc/Hz]}} \\
-		\bottomrule
-      \multicolumn{2}{l}{} & 	\multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} \\
-      \midrule
-      \multicolumn{2}{l}{Coast1-Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} \\
-      
-      \multicolumn{2}{l}{Coast1-Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} \\
-
-      \multicolumn{2}{l}{Coast2-Setting1}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} \\
-
-      \multicolumn{2}{l}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} \\ 
-
-      \multicolumn{2}{l}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} \\
-
-      \multicolumn{2}{l}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} \\
-
-      \multicolumn{2}{l}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} \\
-      \arrayrulecolor{black}\bottomrule
- 
-	\end{tabu}
-   \label{tab:noise_settings_2018}
-\end{table}
-
 
 \begin{table}[!hbt]
 	\centering
@@ -151,40 +121,24 @@ For the calulcation of the effective phase noise the averaged bunch length for e
 		\bottomrule
       \multicolumn{1}{l}{} & 	\multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} & 	\multicolumn{1}{c}{\textbf{Effective phase noise}} \\
       \midrule
-      \multicolumn{1}{l}{Coast1-Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} \\
+      \multicolumn{1}{l}{Coast1-Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} & \multicolumn{1}{c}{-121.8 $\pm$ 0.5} \\
       
-      \multicolumn{1}{l}{Coast1-Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} \\
+      \multicolumn{1}{l}{Coast1-Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} & \multicolumn{1}{c}{-101.3 $\pm$ 0.8} \\
 
-      \multicolumn{1}{l}{Coast2-Setting1}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} \\
+      \multicolumn{1}{l}{Coast2-Setting1}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} & \multicolumn{1}{c}{-114.6 $\pm$ 0.7} \\
 
-      \multicolumn{1}{l}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} \\ 
+      \multicolumn{1}{l}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} & \multicolumn{1}{c}{-110.2 $\pm$ 0.5} \\ 
 
-      \multicolumn{1}{l}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} \\
+      \multicolumn{1}{l}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} & \multicolumn{1}{c}{-110.1 $\pm$ 0.8} \\
 
-      \multicolumn{1}{l}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} \\
+      \multicolumn{1}{l}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} & \multicolumn{1}{c}{-105.8 $\pm$ 0.3}\\
 
-      \multicolumn{1}{l}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} \\
+      \multicolumn{1}{l}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} & \multicolumn{1}{c}{-100.6 $\pm$ 0.6} \\
       \arrayrulecolor{black}\bottomrule
- 
 	\end{tabu}
    \label{tab:noise_settings_2018}
 \end{table}
 
-
-
-\begin{table}[ht]
-   \caption{Multi-column table}
-   \begin{center}
-   \begin{tabular}{lccc}
-       \hline
-       \multicolumn{1}{c}{} & \multicolumn{3}{c}{test } \\
-       \toprule
-       Y&X&X&X\\
-       \hline
-   \end{tabular}
-   \end{center}
-   \label{tab:multicol}
-   \end{table}
 
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
 This section presents the transverse emittance growth measurments with $\CC$ RF noise. It discusses first the measurement of the beam emittance with the SPS Wire Scanners (WS) and then it provides an overview of the emittance growth measurements for the four bunches over all the different noise settings.
