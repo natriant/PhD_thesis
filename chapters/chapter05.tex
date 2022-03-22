@@ -207,10 +207,10 @@ Considering that $\Delta \epsilon_\mathrm{avg, 1}$ and $\Delta \epsilon_\mathrm{
    \Delta \epsilon_\mathrm{avg} = \sqrt{\Delta \epsilon_\mathrm{avg, 1} ^2 + \Delta \epsilon_\mathrm{avg, 2} ^2}.
 \end{equation}
 
-Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be between 0.0-0.2$\%$ per scan in both transverse planes. However, a conservative number of scans were carried, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
+Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in Ref.~\cite{Roncarolo:1481835}. For the rotational SPS WS and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the WS is expected to be between 0.0-0.2$\%$ per scan in both transverse planes. However, a conservative number of scans were carried out, $\sim$ 20 scans per bunch and per plane during $\sim$ 1 hour, in order to minimise the contribution from this effect.
 % Table 5.1 0.0% for 450 GeV, 0.2% for 26 GeV
 
-\subsection{Experimental results}
+\subsection{Experimental results}\label{sec:MD5_overview}
 In this section, an overview of the emittance growth measurements is presented. Figure~\ref{fig:MD5_overview_x_y} displays the bunch by bunch transverse emittance evolution throught the total duration of the experiment. The three different coasts are distinguished in this plot with the blue dashed vertical lines. The values of the effective phase noise are also displayed (see Table~\ref{tab:noise_settings_2018}), while the moments when the noise level changed are shown with the grey vertical lines. The four different colors (blue, orange, red, green) correspond to the four different bunches. For the bunches the notation "bunch $N$" will be used, where $N=\{1,2,3,4\}$ according to their position in the bunch train. The errorbars of the emittance values correspond to the uncertainty computed using Eq.~\ref{eq:combined_uncertainty_ws}. However, as they are very small comparing to the scale of the plots they are barely visible. Last, the emittance growth rates, $d\epsilon_u /dt$, for each setting and for each bunch are displayed at the bottom of each plot along with their uncertainties. The growth rates are obtained following the standard procedure of weighted least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following polynomial:
 % fit with numpy polyfit
 \begin{equation}\label{eq:polynimial_for_linear_fit}
@@ -251,13 +251,22 @@ An attempt to understand these observations will be made in the following sectio
 \section{Bunch length and intensity measurements}\label{sec:bunch_length_intensity_meas_2018}
 The measurements of the bunch length and intensity that took place in parallel with the emittance growth measurements are presented in this section. The goal is to get a more complete insight of the experimental conditions and possibly explain the different emittance growth rates observed for the four bunches which was discussed in the previous section. Initially, a short introduction on the instrumenst used for the measurements is provided. After that, the evolution of the longitudinal plane and of the intensity is analaysed and discussed.
 
-\section{ABWLM and Wall Current Monitor}\label{sec:ABWLM_WallCurrentMonitor}
-The bunch length was measured with two different instruments the ABWLM (A for RF, B for Beam, W for Wideband, L for Longitudinal, M for Measurement)~\cite{ABWLM} and the Wall Current Monitor~\cite{Papotti:1124099}. Both ABWLM and Wall Current monitor acquire the longitudinal bunch profiles. In the ABWLM case the bunch length is obtained by performing a gaussian fit on the acquired profiles. Only the calculated bunch length values are available but not the profiles themselves. For the case of the Wall Current Monitor the bunch length is estimated by computing the full width half maximum of the profiles and then using it to estimate the sigma of a gaussian distribution. Both the longitudinal profiles and the calculated bunch lengths are available. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author.
+\subsection{ABWLM and Wall Current Monitor}\label{sec:ABWLM_WallCurrentMonitor}
+The bunch length was measured with two different instruments the ABWLM (A for RF, B for Beam, W for Wideband, L for Longitudinal, M for Measurement)~\cite{ABWLM} and the Wall Current Monitor~\cite{Papotti:1124099}. Both ABWLM and Wall Current Monitor acquire the longitudinal bunch profiles, while ABWLM is much faster than the Wall Current Monitor. %I concluded this from the data. If I need to give specific values I will remove it.
+In the ABWLM case the bunch length is obtained by performing a gaussian fit on the acquired profiles. Only the calculated bunch length values are available but not the profiles themselves. For the case of the Wall Current Monitor the bunch length is estimated by computing the full width half maximum of the profiles and then using it to estimate the sigma of a gaussian distribution. Both the longitudinal profiles and the calculated bunch lengths are available. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author.
 
 \textcolor{blue}{How is the intensity calculated?}
 
+\subsection{Bunch length measurements}\label{subsec:bunch_length_meas_2018}
+The bunch length measurements acquired with the ABWLM are shown in Fig.. The two upper plots contains the transverse emittance evolution as discussed in Section~\ref{sec:MD5_overview} for easier comparison of the beam evolution in the transverse and longitudinal planes. The lower plot displays the 
 
-\subsection{Bunch length evolution and longitudinal profiles}\label{subsec:bunch_length_meas}
+% dont mention about the scaling with the wall current monitor
+
+
+\subsection{Measurements of the longitunal profiles}\label{subsec:long_profiles_meas_2018}
+
+\subsection{Measurements of the intensity}\label{subsec:intensity_2018_meas}
+
 
 \section{Comparison of measured emittance growth with the theory}\label{sec:meas_2018_vs_theory}
 
