@@ -253,7 +253,7 @@ The measurements of the bunch length and intensity that took place in parallel w
 
 \subsection{ABWLM and Wall Current Monitor}\label{sec:ABWLM_WallCurrentMonitor}
 The bunch length was measured with two different instruments the ABWLM (A for RF, B for Beam, W for Wideband, L for Longitudinal, M for Measurement)~\cite{ABWLM} and the Wall Current Monitor~\cite{Papotti:1124099}. Both ABWLM and Wall Current Monitor acquire the longitudinal bunch profiles, while ABWLM is much faster than the Wall Current Monitor. %I concluded this from the data. If I need to give specific values I will remove it.
-In the ABWLM case the bunch length is obtained by performing a gaussian fit on the acquired profiles. Only the calculated bunch length values are available but not the profiles themselves. For the case of the Wall Current Monitor the bunch length is estimated by computing the full width half maximum of the profiles and then using it to estimate the sigma of a gaussian distribution. The longitudinal profiles and the calculated bunch lengths are available for each acquisition. Furthermore, the Wall Current Monitor provides additional information on the relative bunch position with respect to the center of the rf bucket, which will also be used in tha following analysis. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author. % bunch position not very clear.
+In the ABWLM case the bunch length is obtained by performing a gaussian fit on the acquired profiles. Only the calculated bunch length values are available but not the profiles themselves. For the case of the Wall Current Monitor the bunch length is estimated by computing the full width half maximum of the profiles and then using it to estimate the sigma of a gaussian distribution. The longitudinal profiles and the calculated bunch lengths are available for each acquisition. Furthermore, the Wall Current Monitor provides additional information on the relative bunch position with respect to the center of the RF bucket, which will also be used in tha following analysis. No further details on the operation of these instruments are discussed here as the offline analysis was not performed by the author. % bunch position not very clear.
 % longitudinal profiles for the ABLWM don't exist.
 
 
@@ -272,16 +272,48 @@ The bunch length measurements that took place during the $\CC$ noise induced emi
 \end{sidewaysfigure}
 % dont mention about the scaling with the wall current monitor, subtracted offset: -0.18 ns.
 
-Four main observations can be made. First, the plot demonstrates a very good agreement between the ABLWM and the Wall Current monitor. Second, an approximately bunch length increase of $\sim$9\,$\%$/h is observed for bunch 1 in all the three coasts. This rate, which is computed from the ABWLM data, is similar to the blow-up observed in the SPS coast MDs without external noise~\cite{Alekou_CC_coast_prep_2016}. Third, the bunch length increase for the last three bunches (2, 3 and 4) is larger compared to bunch 1. However, bunches 2, 3 and 4 seem to be longitudinally unstable as the sudden jumps appear in their bunch length evolution. Last, no correlation is observed between the bunch length evolution and the change of noise level. In order to validate that the bunches 2, 3 and 4 are unstable the longitudinal profiles acquired with the Wall Current Monitor are studied in the next paragraph. 
+Four main observations can be made. First, the plot demonstrates a very good agreement between the ABLWM and the Wall Current monitor. Second, an approximately bunch length increase of $\sim$9\,$\%$/h is observed for bunch 1 in all the three coasts. This rate, which is computed from the ABWLM data, is similar to the blow-up observed in the SPS coast MDs without external noise~\cite{Alekou_CC_coast_prep_2016}. Third, the bunch length increase for the last three bunches (2, 3, and 4) is larger compared to bunch 1. However, bunches 2, 3, and 4 seem to be longitudinally unstable as the sudden jumps appear in their bunch length evolution. Last, no correlation is observed between the bunch length evolution and the change of noise level. In order to validate that bunches 2, 3, and 4 are unstable ,the longitudinal profiles acquired with the Wall Current Monitor are studied in the next paragraph. 
 %cmpt bunch length increase for bunch 1 in units of %/h.
 
 \subsection{Longitunal profile measurements}\label{subsec:long_profiles_meas_2018}
-Two example longitudinal profile acquisitions from the Wall Current Monitor are discussed here as they can provide a further insight on the sudden jumps observed in the bunch length values for bunches 2, 3 and 4. The selected acquisitions correspond to the moments where the sudden jumps are performed in the second and third coast and are shown in Fig . . 
+Two example longitudinal profile acquisitions from the Wall Current Monitor are discussed here as they can provide further insight on the sudden jumps observed in the bunch length values for bunches 2, 3, and 4. The selected acquisitions correspond to the moments where the sudden jumps are performed in the second and third coast and are shown in Fig~\ref{fig:long_profiles_and_rel_bunch_position_2018}. The relative bunch position with respect to the center of the RF bucket of each bunch is also illustrated in the bottom plots of Fig.~\ref{fig:long_profiles_and_rel_bunch_position_2018} for completeness. 
 
 
+\begin{figure}[!ht]
+   \centering
+   \begin{subfigure}[t]{0.42\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{./images/Ch5/bunchProfiles_MD_115.png}
+       %\caption{Phase noise spectrum measured with a spectrum analyzer E5052B, in units dBc/Hz.}
+       %\label{fig:coast1_setting2_a}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[t]{0.42\textwidth}
+       \centering
+       \includegraphics[width=1 \textwidth]{./images/Ch5/bunchProfiles_MD_126.png}
+       %\caption{Measured phase noise spectrum in  units rad$^2$/Hz.}
+       %\label{fig:coast1_setting2_b}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[t]{0.42\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{./images/Ch5/bunchPosition_MD_115.png}
+       %\caption{Linear interpolation of the measured noise spectrum. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
+       
+       %\label{fig:coast1_setting2_c}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[t]{0.42\textwidth}
+       \centering
+       \includegraphics[width=1\textwidth]{./images/Ch5/bunchPosition_MD_126.png}
+       %\caption{Positive spectral components of the two-sided power spectrum $S_\phi$.}
+       %\label{fig:coast1_setting2_d}
+   \end{subfigure}
+   \hfill
+   \caption{Longitudinal profiles (top) and relative bunch position with respect to the center of the RF bucket (bottom) acquired with the Wall Current Monitor. The acquisitions correspond to the times when the sudden jumps in the bunch length evolution are observed (see Fig.~\ref{fig:MD5_overview_x_y_sigma_t})}
+   \label{fig:long_profiles_and_rel_bunch_position_2018}
+\end{figure}
 
-
-The longitudinal profile acquisitions from the Wall Current Monitor are discussed here. To complete the insight in the longitudinal plane the measurements of the relative bunch position with respect to the center of the bunch are also presented. 
 
 \subsection{Intensity measurements}\label{subsec:intensity_2018_meas}
 
