@@ -232,7 +232,7 @@ Figure~\ref{fig:MD5_overview_x_y} demonstrates a clear emittance growth in the v
 
 %Option A)Furthermore, the phase and amplitude noise levels for $Coast1-Setting1$ were found to be below noise floor of the instrument and this the data from that case will not be included in the following. % e-mail from Themis (27/April/2021. I think the noise floor was -120 dBc/Hz. Not sure. If that sentence is not enough we need to check
 
-Furthermore, both the phase and amplitude noise levels for Coast$1$-Setting$1$ were found to be below noise floor of the instrument. Therefore, the transverse emittance growth observed during that case is a result of other sources (natural emittance growth, see Section~\ref{sec:preparatory_studies_for_2018_MD} ) and will be considered as the backgorund growth rate in the analysis below. \textcolor{blue}{Is this apporach ok? instead of using 0.45 and 0.55 um/h for the y and x planes respectively.}
+Furthermore, both the phase and amplitude noise levels for Coast$1$-Setting$1$ were found to be below noise floor of the instrument. Therefore, the transverse emittance growth observed during that case is a result of other sources (natural emittance growth, see Section~\ref{sec:preparatory_studies_for_2018_MD} ) and will be considered as the background growth rate in the analysis below. \textcolor{blue}{Is this apporach ok? instead of using 0.45 and 0.55 um/h for the y and x planes respectively.}
 
 \subsubsection*{Summary plot}
 Figure~\ref{fig:MD5_summary_plot} provides a clearer view of the measruments presented in Fig.~\ref{fig:MD5_overview_x_y}. It displays the measured emittance growth rates for each one of the four bunches for the different levels of injected noise. The horizontal error bars correspond to the uncertainty of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) while the veritcal ones correspond to the uncertainty of the total transverse emittance growth calculated from the uncertainties of the horizontal and vertical growth rates following the standard procedure of the propagation of the uncertainty (Appendix~\ref{app:uncertainty_propagation}).
@@ -271,8 +271,9 @@ The bunch length measurements that took place during the $\CC$ noise induced emi
    \label{fig:MD5_overview_x_y_sigma_t}
 \end{sidewaysfigure}
 % dont mention about the scaling with the wall current monitor, subtracted offset: -0.18 ns.
+% UPDATE 24March:20222. The scaling factor is actually 1/1.11 but I am not gonna correct it now. Is more or less the same. However, if you update the plot again, fix it. 
 
-Four main observations can be made. First, the plot demonstrates a very good agreement between the ABLWM and the Wall Current monitor. Second, an approximately bunch length increase of $\sim$9\,$\%$/h is observed for bunch 1 (blue) in all the three coasts. This rate, which is computed from the ABWLM data, is similar to the blow-up observed in the SPS coast studies without external noise~\cite{Alekou_CC_coast_prep_2016}. Third, the bunch length increase for the last three bunches (2, 3, and 4) is larger compared to bunch 1. However, bunches 2, 3, and 4 seem to be longitudinally unstable as sudden jumps appear in their bunch length evolution and this could explain the faster bunch length increase. Last, no correlation is observed between the bunch length evolution and the change of noise level. In order to validate that bunches 2, 3, and 4 are unstable ,the longitudinal profiles acquired with the Wall Current Monitor are studied in the next paragraph. 
+Four main observations can be made. First, the plot demonstrates a very good agreement between the ABLWM and the Wall Current monitor. Second, an approximately bunch length increase of $\sim$9\,$\%$/h is observed for bunch 1 (blue) in all the three coasts. This rate, which is computed from the ABWLM data, is similar to the blow-up observed in the SPS for similar machine conditions~\cite{Alekou_CC_coast_prep_2016}. Third, the bunch length increase for the last three bunches (2, 3, and 4) is larger compared to bunch 1. However, bunches 2, 3, and 4 seem to be longitudinally unstable as sudden jumps appear in their bunch length evolution and this could explain the faster bunch length increase. Last, no correlation is observed between the bunch length evolution and the change of noise level. In order to validate that bunches 2, 3, and 4 are unstable ,the longitudinal profiles acquired with the Wall Current Monitor are studied in the next paragraph. 
 %cmpt bunch length increase for bunch 1 in units of %/h.
 
 \subsection{Longitunal profile measurements}\label{subsec:long_profiles_meas_2018}
@@ -324,13 +325,9 @@ reason, the following analysis is focused only on bunch 1,
 which was not affected by the instability. However, in the next paragraph the intensity measurements for all the four bunches are exceptionally illustrated.
 
 \subsection{Intensity measurements}\label{subsec:intensity_2018_meas}
-The bunch by bunch intensity measurements that were performed along the experiment with induced $\CC$ noise are displayed in Fig.~\ref{fig:MD5_overview_intensity}. In particular the intensity values normalised with the intial value are shown for each bunch. The four different bunches are inficated with the four different colors. The acquisitions from both the ABWLM and the Wall Current Monitor are shown with the small and bigger markers respectively.
+The bunch by bunch intensity measurements that were performed along the experiment with artificial $\CC$ noise are displayed in Fig.~\ref{fig:MD5_overview_intensity}. In particular the intensity values normalised with the intial value are shown for each bunch. The four different bunches are indicated with the four different colors. The acquisitions from both the ABWLM and the Wall Current Monitor are illustrated with the small and bigger markers respectively.
 
-The following observations can be made. First, there is very good agreement between the measruments from the ABLWM and the Wall Current Monitor. Second, losses of $\sim$2-4\,$\%$/h, computed from the ABLWM acquisitions, are observed for bunch 1 (blue) in all the three coasts. This rate is even smaller of what was observed in the SPS in coast studies without external noise ($\sim$10\,$\%$/h)~\cite{Alekou_CC_coast_prep_2016}.
-
-\subsection{Longitunal profile measurements}\label{subsec:long_profiles_meas_2018}
-More significant losses are observed for the longitudinally unstable bunches (bunch 2,3, and 4). However, this is not of concern as the last three bunches will not be included in the following analysis as discussed in the previous paragraph (~\ref{subsec:long_profiles_meas_2018}).
-
+The following observations can be made. First, there is very good agreement between the measruments from the ABLWM and the Wall Current Monitor. Second, losses of $\sim$2-4\,$\%$/h, computed from the ABLWM acquisitions, are observed for bunch 1 (blue) in all the three coasts. This rate is even smaller of what was observed in the SPS in coast studies without external noise ($\sim$10\,$\%$/h)~\cite{Alekou_CC_coast_prep_2016}. Last, more significant losses are observed for the longitudinally unstable bunches (bunch 2,3, and 4). However, this is not of concern as the last three bunches will not be included in the following analysis as discussed in the previous paragraph (~\ref{subsec:long_profiles_meas_2018}).
 
 \begin{sidewaysfigure}
    \centering
@@ -342,10 +339,38 @@ More significant losses are observed for the longitudinally unstable bunches (bu
 % ABWLM data: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/output/abwlm_bunch_intensity.pkl
 % Wall Current Monitor data: /eos/user/n/natriant/2018/CC_MD_2018_summary/Wall_Current_Monitor/pickled_data_from_2018
 
-\section{Comparison of measured emittance growth with the theory}\label{sec:meas_2018_vs_theory}
+\section{Comparison of measured transverse emittance growth with the theoretical predictions}\label{sec:meas_2018_vs_theory}
+This section, focuses on the main objective of the experiment which was the comparison of the measured transverse emittance growth with the expected values as computed from the theoretical model discussed in Chapter~\ref{Ch:CC_noise_theory}. As already discussed (Section~\ref{subsec:long_profiles_meas_2018}), the comparison considers only bunch 1 as the other three bunches were found to be longitudinally unstable.
 
-Comparison of bunch 1 with theory. Discrepancy of a factor 4.
-6/7 noise settings as the first noise level was found to be below the noise floor (check themis mail).
+Figure .. compares the the measured (blue dots) and the theoretically calculated (black crosses) emittance growth rates of bunch 1 for the different noise levels. For the comparison, the background growth rate from other sources (measured during Coast$1$-Setting$1$, as discussed in Section~\ref{sec:emit_growth_meas_2018}) is subtracted from the measured values. In particular the background growth was measured 0.6\,$\mathrm{\mu m}$/h and 0.44\,$\mathrm{\mu m}$/h for the horizontal and veritcal plane respectively.
+
+The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.375\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table .. . 
+
+
+- Say about all error bars.
+
+- Should I mention the error bars in the table??? ugly.
+
+% The theoretically rates are computed with the following script: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job001_cmpt_theoretical_emit_growth_MD5_2018.ipynb
+% Should I also show error propagation?
+
+% path to script to plot it: 
+
+
+
+
+
+
+
+It is evident that the
+theory systematically overestimates the measured growth
+rates.
+
+
+- table with psds for bunch 1 (effective phase noise), average bunch length, measured growth vs calculated (like in IPAC).
+
+- subtract backgorund growth rate (coast1 setting 1). mention values for bunch 1
+
 
 \section{Conclusions and outlook}\label{sec:MD2018_summary}
 
