@@ -240,7 +240,7 @@ Figure~\ref{fig:MD5_summary_plot} provides a clearer view of the measruments pre
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.6\textwidth]{images/Ch5/MD5_summary_plot_no_backg_subtraction.png}
-       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
+       \caption{Summary plot of the emittance growth study with CC noise in 2018. The transverse emittance growth rate, for the four bunches, is shown as a function of the different levels of applied noise.}
        \label{fig:MD5_summary_plot}
 \end{figure}
 
@@ -346,46 +346,28 @@ Figure~\ref{fig:MD5_bunch1_theory_vs_meas} compares the the measured (blue) and 
 
 The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.37\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table .. . 
 
-The horizontal error bars, for both measured and calculated growths, correspond to the uncertainty of the effective phase noise values (see Table~\ref{tab:noise_settings_2018}). The vertical error bars for the measured growth are defined as the error of the linear fit on the emittance values (see Section~\ref{sec:emit_growth_meas_2018}).
+The horizontal error bars, for both measured and calculated growths, correspond to the uncertainty of the effective phase noise values (see Table~\ref{tab:noise_settings_2018}). The vertical error bars for the measured growth are defined as the error of the linear fit on the emittance values (see Section~\ref{sec:emit_growth_meas_2018}). The veritcal error bars on the theoretically calculated rates are computed following the standard procedure of propagation of the uncertainty. It should be mentioned here that only the uncertainties on the effective phase noise ($\sim$ 13\% on average for bunch 1) are included in the error propagation. The beam energy and the revolution frequency are assumed to be free of error, while the uncertainties of the rest of the parameters: bunch length, $\CC$ votlage and beta function ($\sim 2 \%, \ 0.01 \%$, and $5 \%$ respectively) are not included as they are much smaller than those of the noise.
 
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.6\textwidth]{images/Ch5/MD5_summary_bunch1_backg_subtracted_vs_theory.png}
-       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
-       \label{fig:MD5_bunch1_theory_vs_meas}
-\end{figure}
-
-
-- The uncertainty on the average bunch length values is ~ 2 percent
-- The uncertainty on the beta function is 5 percent due to beta beating
-- in the voltage is 0.01 percent. 
-- The other paramters are free of error
 
 % 1. Compute % uncertainty on the bunch length: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/job0006_cmpt_averaged_bunch_length_and_uncertainty_for_each_setting_save2pickle.ipynb
 % 2. Uncertainty on the beta function is 5% from beta beating. 
 % 3. Compute uncertainty on the PSD --> in rad^2/Hz NOT in dBc/Hz as this is the form that it enters the Eq.(3.2).
 % 4. Uncertainty on the V_CC is 0.01/0.98*100 = 0.01%
-% 3. Compute the theoretically growth rates: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job001_cmpt_theoretical_emit_growth_MD5_2018.ipynb
+% 5. Compute the theoretically growth rates: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job001_cmpt_theoretical_emit_growth_MD5_2018.ipynb
+% Compute the unertainty on the theoretical growth rates: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job003_cmpt_uncertainty_on_theoretical_emit_grwoth_MD_2018.ipynb and the computation is done accordind to the notes in the measured_psd directory. In general the procedure is the same with computing the uncertainty of the measured effective noise.
 
 
-- Say about all error bars.
-
-- Should I mention the error bars in the table??? ugly.
-
-
-% Should I also show error propagation?
-
-% path to script to plot it: 
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.6\textwidth]{images/Ch5/MD5_summary_bunch1_backg_subtracted_vs_theory.png}
+       \caption{Summary plot of the emittance growth study with CC noise in 2018 focused on bunch 1 only. The measured emittance growth rate (blue) and the expected growths from the theoretical model (black) are shown as a function of the different levels of applied noise.}
+       \label{fig:MD5_bunch1_theory_vs_meas}
+\end{figure}
 
 
+From Fig.~\ref{fig:MD5_bunch1_theory_vs_meas} it is evident that the theory systematically overestimates the measured growth rates. The averaged discrepancy over all noise levels is a factor of 4: numerical values are given in Table ..
 
 
-
-
-
-It is evident that the
-theory systematically overestimates the measured growth
-rates.
 
 
 - table with psds for bunch 1 (effective phase noise), average bunch length, measured growth vs calculated (like in IPAC).
