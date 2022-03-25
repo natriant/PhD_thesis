@@ -345,7 +345,7 @@ This section, focuses on the main objective of the experiment which was the comp
 Figure~\ref{fig:MD5_bunch1_theory_vs_meas} compares the the measured (blue) and the theoretically calculated (black) emittance growth rates of bunch 1 for the different noise levels. For the comparison, the background growth rate from other sources (measured during Coast$1$-Setting$1$, as discussed in Section~\ref{sec:emit_growth_meas_2018}) is subtracted from the measured values. In particular the background growth was measured 0.6\,$\mathrm{\mu m}$/h and 0.44\,$\mathrm{\mu m}$/h for the horizontal and veritcal plane respectively. One should keep in mind that background subtraction has practically no impact for high noise levels. Instead, it is significant for small noise levels.
 
 
-The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.37\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table .. . 
+The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.37\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table~\ref{tab:MD5_bunch1_results}.
 
 The horizontal error bars, for both measured and calculated growths, correspond to the uncertainty of the effective phase noise values (see Table~\ref{tab:noise_settings_2018}). The vertical error bars for the measured growth are defined as the error of the linear fit on the emittance values (see Section~\ref{sec:emit_growth_meas_2018}). The veritcal error bars on the theoretically calculated rates are computed following the standard procedure of propagation of the uncertainty. It should be mentioned here that only the uncertainties on the effective phase noise ($\sim$ 13\% on average for bunch 1) are included in the error propagation. The beam energy and the revolution frequency are assumed to be free of error, while the uncertainties of the rest of the parameters: bunch length, $\CC$ votlage and beta function ($\sim 2 \%, \ 0.01 \%$, and $5 \%$ respectively) are not included as they are much smaller than those of the noise.
 
@@ -366,7 +366,10 @@ The horizontal error bars, for both measured and calculated growths, correspond 
 \end{figure}
 
 
-From Fig.~\ref{fig:MD5_bunch1_theory_vs_meas} it becomes evident that the theory systematically overestimates the measured growth rates. The averaged discrepancy over all noise levels is a factor of 3: numerical values are given in Table ..
+From Fig.~\ref{fig:MD5_bunch1_theory_vs_meas} it becomes evident that the theory systematically overestimates the measured growth rates. The averaged discrepancy over all noise levels is a factor of 4: numerical values are given in Table~\ref{tab:MD5_bunch1_results}.
+
+% Compute average bunch length: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/job0006_cmpt_averaged_bunch_length_and_uncertainty_for_each_setting_save2pickle.ipynb
+% Find measured and calculated growth rates: /eos/user/n/natriant/2018/CC_MD_2018_summary/emitGrowth_ws/job006_plot_bunch_1_theory_vs_measurements.ipynb
 
 \begin{table}[!hbt]
 	\centering
@@ -379,19 +382,17 @@ From Fig.~\ref{fig:MD5_bunch1_theory_vs_meas} it becomes evident that the theory
 		%\bottomrule
       \multicolumn{1}{c}{\textbf{[dBc/Hz]}} & \multicolumn{1}{c}{\textbf{[rad]}} & \multicolumn{1}{c}{\textbf{Measured}} & 	\multicolumn{1}{c}{\textbf{Calculated}} \\
       \midrule
-      \multicolumn{1}{c}{Coast1-Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} & \multicolumn{1}{c}{-121.8 $\pm$ 0.5} \\
+      \multicolumn{1}{c}{-114.6}  & \multicolumn{1}{c}{1.05} & \multicolumn{1}{c}{0.44} & \multicolumn{1}{c}{1.9} \\
       
-      \multicolumn{1}{c}{Coast1-Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} & \multicolumn{1}{c}{-101.3 $\pm$ 0.8} \\
+      \multicolumn{1}{c}{-110.2}  & \multicolumn{1}{c}{1.10} & \multicolumn{1}{c}{1.18} & \multicolumn{1}{c}{5.10} \\
 
-      \multicolumn{1}{c}{Coast2-Setting1}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} & \multicolumn{1}{c}{-114.6 $\pm$ 0.7} \\
+      \multicolumn{1}{c}{-110.1}  & \multicolumn{1}{c}{1.03} & \multicolumn{1}{c}{1.28} & \multicolumn{1}{c}{5.38} \\
 
-      \multicolumn{1}{c}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} & \multicolumn{1}{c}{-110.2 $\pm$ 0.5} \\ 
+      \multicolumn{1}{c}{-105.8}  & \multicolumn{1}{c}{1.06} & \multicolumn{1}{c}{2.28} & \multicolumn{1}{c}{14.50} \\ 
 
-      \multicolumn{1}{c}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} & \multicolumn{1}{c}{-110.1 $\pm$ 0.8} \\
+      \multicolumn{1}{c}{-101.3}  & \multicolumn{1}{c}{1.08} & \multicolumn{1}{c}{17.81} & \multicolumn{1}{c}{40.55} \\
 
-      \multicolumn{1}{c}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} & \multicolumn{1}{c}{-105.8 $\pm$ 0.3}\\
-
-      \multicolumn{1}{c}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} & \multicolumn{1}{c}{-100.6 $\pm$ 0.6} \\
+      \multicolumn{1}{c}{-100.6} & \multicolumn{1}{c}{1.09} & \multicolumn{1}{c}{47.42} & \multicolumn{1}{c}{9.26}\\
       \arrayrulecolor{black}\bottomrule
 	\end{tabu}
    \label{tab:MD5_bunch1_results}
