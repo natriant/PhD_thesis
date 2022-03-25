@@ -342,16 +342,37 @@ The following observations can be made. First, there is very good agreement betw
 \section{Comparison of measured transverse emittance growth with the theoretical predictions}\label{sec:meas_2018_vs_theory}
 This section, focuses on the main objective of the experiment which was the comparison of the measured transverse emittance growth with the expected values as computed from the theoretical model discussed in Chapter~\ref{Ch:CC_noise_theory}. As already discussed (Section~\ref{subsec:long_profiles_meas_2018}), the comparison considers only bunch 1 as the other three bunches were found to be longitudinally unstable.
 
-Figure .. compares the the measured (blue dots) and the theoretically calculated (black crosses) emittance growth rates of bunch 1 for the different noise levels. For the comparison, the background growth rate from other sources (measured during Coast$1$-Setting$1$, as discussed in Section~\ref{sec:emit_growth_meas_2018}) is subtracted from the measured values. In particular the background growth was measured 0.6\,$\mathrm{\mu m}$/h and 0.44\,$\mathrm{\mu m}$/h for the horizontal and veritcal plane respectively.
+Figure~\ref{fig:MD5_bunch1_theory_vs_meas} compares the the measured (blue) and the theoretically calculated (black) emittance growth rates of bunch 1 for the different noise levels. For the comparison, the background growth rate from other sources (measured during Coast$1$-Setting$1$, as discussed in Section~\ref{sec:emit_growth_meas_2018}) is subtracted from the measured values. In particular the background growth was measured 0.6\,$\mathrm{\mu m}$/h and 0.44\,$\mathrm{\mu m}$/h for the horizontal and veritcal plane respectively.
 
-The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.375\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table .. . 
+The expected emittance growth due to $\CC$ noise was estimate for all noise settings using Eq.~\eqref{eq:dey_pn}. The growth was computed for the beam energy of 270\,GeV, considering the veritcal beta function at the location of the $\CC$2 of 73.82\,m and the revolution frequency of SPS which is 43.37\,kHz. For each setting, the measured noise PSDs (i.e. effective phase noise) and the average bunch length over each observation window were used in the calculation. These values are listed in the first two columns of Table .. . 
+
+The horizontal error bars, for both measured and calculated growths, correspond to the uncertainty of the effective phase noise values (see Table~\ref{tab:noise_settings_2018}). The vertical error bars for the measured growth are defined as the error of the linear fit on the emittance values (see Section~\ref{sec:emit_growth_meas_2018}).
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.6\textwidth]{images/Ch5/MD5_summary_bunch1_backg_subtracted_vs_theory.png}
+       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
+       \label{fig:MD5_bunch1_theory_vs_meas}
+\end{figure}
+
+
+- The uncertainty on the average bunch length values is ~ 2 percent
+- The uncertainty on the beta function is 5 percent due to beta beating
+- in the voltage is 0.01 percent. 
+- The other paramters are free of error
+
+% 1. Compute % uncertainty on the bunch length: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/job0006_cmpt_averaged_bunch_length_and_uncertainty_for_each_setting_save2pickle.ipynb
+% 2. Uncertainty on the beta function is 5% from beta beating. 
+% 3. Compute uncertainty on the PSD --> in rad^2/Hz NOT in dBc/Hz as this is the form that it enters the Eq.(3.2).
+% 4. Uncertainty on the V_CC is 0.01/0.98*100 = 0.01%
+% 3. Compute the theoretically growth rates: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job001_cmpt_theoretical_emit_growth_MD5_2018.ipynb
 
 
 - Say about all error bars.
 
 - Should I mention the error bars in the table??? ugly.
 
-% The theoretically rates are computed with the following script: /eos/user/n/natriant/2018/CC_MD_2018_summary/cmpt_emit_growth_theoretical_model/job001_cmpt_theoretical_emit_growth_MD5_2018.ipynb
+
 % Should I also show error propagation?
 
 % path to script to plot it: 
