@@ -75,5 +75,7 @@ Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and
 The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\emitx = \emity$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:emit_geom_norm_relation} it can be seen that these values corresponds to geometric emittances of $\emitxgeom=\emitygeom$ = 6.95\,nm.
 By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 2.02 \times 10^{-5}$ and $\Dqyrms = 2.17 \times 10^{-5}$, in the horizontal and vertical planes respectively.
 
+% The tune spread from space charge is stronger. However, the emittance growth studies require tune spread from detuning with amplitude. Not other sources. That's why here only the detuning with amplitude is considered.
+
 % compute detuning coefficients: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/match_octupoles_new_SPS_seq_after_LS2/job001_cmpt_ayy_axx_for_klod_klof.py
 % compute rms tune spread: /eos/user/n/natriant/Project_thesis/material/Ch5: Experimental studies 2018/cmpt_DQxy_rms_nominal_SPS_270GeV.ipynb
