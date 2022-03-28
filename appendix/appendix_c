@@ -1,0 +1,79 @@
+
+\section{Detuning with amplitude}\label{app:detuning_with_amplitude}
+- The linear detuning is given by the folloiwng formula, for octupole components
+
+The detuning with amplitude is computed by:
+\begin{equation}\label{eq:x_amplDetuning}
+    \Delta Q_x = 2(\axx \Jx + \alpha_{xy} \Jy)
+\end{equation}
+\begin{equation}\label{eq:y_amplDetuning}
+    \Delta Q_y = 2(\ayy \Jy + \alpha_{yx} \Jx)
+\end{equation}
+where $\ayy$, $\axx$ and $\axy$ are the detuning coefficients with units [1/m] and $\Jx$, $\Jy$ the action variables.
+
+
+\normalsize{\textbf{Rms detuning with amplitude}}\\
+From the definition of variance, the variance of the vertical amplitude detuning is given by:
+\begin{equation}\label{eq:var_amplDetuning}
+    \begin{split}
+        \mathrm{Var}(\Delta Q_y) = &~\langle \Delta Q_y ^2 \rangle - \langle \Delta Q_y \rangle ^2 \\
+        = &~\langle 2^2 (\alpha_{yy} J_y + \alpha_{yx}J_x)^2 \rangle - \langle 2(\alpha_{yy}J_y + \alpha_{yx}J_x) \rangle^2 \\
+        = &~2^2 \left [ \langle (\alpha_{yy} J_y + \alpha_{yx}J_x)^2 \rangle - \langle \alpha_{yy}J_y + \alpha_{yx}J_x \rangle^2 \right ] \\
+         = &~2^2 \left [  \langle (\alpha_{yy} J_y)^2 + 2\alpha_{yy}\alpha_{yx}J_yJ_x + (\alpha_{yx} J_x)^2  \rangle - (\langle \alpha_{yy}J_y \rangle + \langle \alpha_{yx}J_x \rangle )^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + 2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - 2\alpha_{yy} \alpha_{yx} \langle J_y \rangle \langle J_x \rangle - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + \cancel{2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle} + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - \cancel{2\alpha_{yy} \alpha_{yx} \langle J_y J_x \rangle} - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2(\langle J_y^2\rangle - \langle J_y \rangle^2 ) + \alpha_{yx}^2(\langle J_x^2\rangle - \langle J_x \rangle^2 ) \right ]\\
+         =&~2^2\left [ \alpha_{yy}^2 Var(J_y) + \alpha_{yx}^2 Var(J_x) \right ]
+    \end{split}
+\end{equation}
+
+In the development of Eq.~\ref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
+
+
+Now, according to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
+\begin{equation}\label{eq:rms_amplitude_detuning_1}
+    \begin{split}
+    \Dqyrms =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
+    =&~\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
+    =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
+    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 }
+    \end{split}
+\end{equation}
+
+where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
+
+The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see Eq.~\eqref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
+\begin{equation}\label{eq:rms_amplitute_detuning_2}
+    \Dqyrms = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
+\end{equation}
+
+Following Eq.~\eqref{eq:geom_emit_actions}, the rms tune spread from amplitude detuning can be also written as:
+\begin{equation}\label{eq:rms_amplitute_detuning_3}
+    \Dqyrms = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
+\end{equation}
+
+Equivalently, the horizontal rms tune spread from amplitude detuning is given by:
+\begin{equation}\label{eq:rms_amplitute_detuning_3_x}
+    \Dqxrms = 2 \sqrt{(\alpha_{xx} \emitxgeom )^2 + ( \alpha_{yx} \emitygeom)^2 }.
+\end{equation}
+
+
+\textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are actually independent. The actions later in time, are coupled due to the non-linear
+of the lattice. %The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
+%\textbf{Note 2:}
+%\begin{itemize}
+%    \item $\langle X \rangle$ is consistent with the numpy.mean(X)~\cite{numpy_mean} function of the Python programming language.
+%    \item $X^{rms}$ is consistent with the numpy.std(X)~\cite{numpy_std} function of the Python programming language. 
+%\end{itemize}
+
+
+\normalsize{\textbf{Rms betatron tune spread in the SPS at 270\,GeV}}\\
+In this thesis, the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. This is a result of the SPS multiple components in the main dipole magnets (see Section~\ref{subsec:SPS_optics_model}). However, experimental studies~\cite{Bartosik:2207443} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be reproduced in simulations by switching on the Landau octupole families with strengths $\klof=\klod=1$\,1/m$^4$.
+
+Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,1/m$^4$ the corresponding detuning coefficients are obtained with MAD-X. In particular, $\axx$ = 923.45\,1/m, $\axy$ = $-$1122.451\,1/m, $\ayy$ = 705.15\,1/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+
+The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\emitx = \emity$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:emit_geom_norm_relation} it can be seen that these values corresponds to geometric emittances of $\emitxgeom=\emitygeom$ = 6.95\,nm.
+By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 2.02 \times 10^{-5}$ and $\Dqyrms = 2.17 \times 10^{-5}$, in the horizontal and vertical planes respectively.
+
+% compute detuning coefficients: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/match_octupoles_new_SPS_seq_after_LS2/job001_cmpt_ayy_axx_for_klod_klof.py
+% compute rms tune spread: /eos/user/n/natriant/Project_thesis/material/Ch5: Experimental studies 2018/cmpt_DQxy_rms_nominal_SPS_270GeV.ipynb

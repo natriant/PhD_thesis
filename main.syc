@@ -34,3 +34,5 @@
 \newcommand{\axxinclude}{yes}
 \newcommand{\ayyinclude}{yes}
 \newcommand{\axyinclude}{yes}
+\newcommand{\klofinclude}{yes}
+\newcommand{\klodinclude}{yes}

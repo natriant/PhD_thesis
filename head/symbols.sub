@@ -35,4 +35,8 @@
 \newsym[Horizontal detuning coefficient]{axx}{\alpha_{xx}}
 \newsym[Vertical detuning coefficient]{ayy}{\alpha_{yy}}
 \newsym[Cross-detuning coefficients]{axy}{\alpha_{xy}=\alpha_{yx}}
+\newsym[LHC Software Architecture (LSA) trim editor knobs
+for SPS Landau octupoles, LOF family]{klof}{k_{LOF}}
+\newsym[LHC Software Architecture (LSA) trim editor knobs
+for SPS Landau octupoles, LOD family]{klod}{k_{LOD}}
 \closesymdef
