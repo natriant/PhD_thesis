@@ -106,7 +106,8 @@ The raw signals from the HT monitor require a specific post-processing procedure
        \caption{Example difference and sum signals (top and bottom plots, respectively) from the HT monitor, in time scale, with respect to the longitudinal position within the bunch over several SPS revolutions, after the basic post processing~\cite{Levens:2313358} but before the baseline correction. The different colors indicate the signals from different turns (every 100 turns). } % mention every how many turns you plot, shows an indication of how fast is the instrument.
        \label{fig:HT_example_signals}
 \end{figure}
-% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc.ipynb
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc_standard_post_processing_Ch4_3_1.ipynb
+
 
 \begin{figure}[!h]
    \centering         
@@ -114,6 +115,7 @@ The raw signals from the HT monitor require a specific post-processing procedure
        \caption{2D representation of example difference and sum signals with respect to the longitudinal position within the bunch obtained from the HT monitor over several SPS revolutions.}
        \label{fig:HT_example_signals_2D}
 \end{figure}
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc_standard_post_processing_Ch4_3_1.ipynb
 
 \subsection{Post processing in the presence of Crab Cavities}\label{subsec:HT_post_process_CC}
 To obtain useful information from the HT monitor signal in the presence of the $\CC$s there are a few steps that differ from the standard post processing procedure and they are desribed below.
@@ -124,7 +126,7 @@ The HT monitor measurement has a baseline on the difference signal which needs t
 
 For the $\CC$ experiments a reference measurement had first to be made with the $\CC$ not being synchronous with the main RF system. The baseline was computed as the mean of the difference signals over this reference period and subsequently it was subtracted from the average of the difference signals acquired after the synchronisation (Fig~\ref{fig:HT_baseline_correction}). The datasets before and after synchronisation are easily distinguishable in the 2D HT monitor reading as displayed in Fig.~\ref{fig:HT_baseline_correction_measurements_2D}
 
-
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.65\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_new_version_CC_post_processing.png}
@@ -132,6 +134,7 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
        \label{fig:HT_baseline_correction}
 \end{figure}
 
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_2D__20180530_135105_before_after_sunchronisation_new_version_CC_post_processing.png}
@@ -139,12 +142,12 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
        \label{fig:HT_baseline_correction_measurements_2D}
 \end{figure}
 
-At this point, it should be mentioned that the baseline (blue dashed line in Fig.~\ref{fig:HT_baseline_correction}) appears to vary with position within the bunch. The origin for this is not yet understood and will have to be addressed in the future to fully understand .... However, here is our working assumption ...
+%At this point, it should be mentioned that the baseline (blue dashed line in Fig.~\ref{fig:HT_baseline_correction}) appears to vary with position within the bunch. The origin for this is not yet understood and will have to be addressed in the future to fully understand .... However, here is our working assumption ...
 
 \normalsize{\textbf{Head-Tail monitor scaling}}\\
 The last step to make the HT acquisitions meaningful is to convert the measured intra bunch offset (the mean of the difference signals following phase synchronisation and baseline correction) from arbitrary units to millimeters. The scaling is achieved by dividing by the mean of the sum signals (which is a function of the position along the bunch and is calculated for each point individually over many turns) after the synchronisation and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the $\CC$ kick in millimeters and after the baseline correction. 
 
-
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.65\textwidth]{images/Ch4/HT_corrected__20180530_135105_baseline_correction_new_version_CC_post_processing.png}
@@ -165,7 +168,7 @@ where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\mid \psi_{y, HT} 
 The $\CC$ voltage is then reconstructed from the $\CC$ kick which is written as $\theta = - \frac{q V_{CC}(t)}{\symE}$, where $q$ is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. In the context where the HT monitor measures the signal as a function of time, $t$, the voltage in the above formula is expressed accordingly as $V_{CC}(t)$, where $t=0$ the center of the bunch.
 
 % 1. locally PhD_projects/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
-% 2. lxplus: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
 \centering         
 \includegraphics[width=0.65\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105_CC_post_processing.png}
@@ -204,6 +207,7 @@ Additionally, the measurements from the HT monitor were used for reconstructing 
 
 To obtain this schematic representation, which in practice is a density plot showing the effect of the $\CC$ kick on the beam, one needs to multiply the measured longitudinal profile (the mean of the sum signals acquired after phase synchronisation) with the measured intra-bunch offset, mean of the difference signals acquired after the synchronisation. An example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}. For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
 
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_crabVoltage__20180530_135105_crabbing_only_CC_post_processing.png}
@@ -211,7 +215,6 @@ To obtain this schematic representation, which in practice is a density plot sho
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
-% The analysis of the HT signals in this section is done with the following script: cernbox/2021/CC_MD_2021_summary/HT_monitor/2018_HT_monitor/MD2_phase_scan/
 
 \section{Characterisation of measured Crab Cavity voltage}\label{sec:CC_voltage_meas}
 This section gives the definitions of the amplitude of the beam-based measurement of the $\CC$ voltage and its uncertainty that will be used in this thesis. Additionally, their dependence on the $\CC$ phase is discussed for completeness.
@@ -229,6 +232,7 @@ In order to obtain results that correspond to the experimental conditions the fo
 
 Fig.~\ref{fig:crabbing_sin_fit_MD2} shows the result of the fit for the same signal that was analysed in the previous section. As indicated on the top of the plot, the red solid line corresponds to the reconstructed $\CC$ voltage, while the blue solid line corresponds to the result of the sinusoidal fit. It can be seen that only the part of the signal for which the normalised sum signal (black dashed line) is above 0.4 is used. Finally the blue dashed line shows the result of the fit after the voltage offset is subtracted, so that is centered around zero. The parameter values obtained from the fit are given in the legend. Last, the density plot is also shown at the bottom of the figure for a complete visualisation of the crabbing. 
 
+% /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_VCC_callibration_20180530_135105_sin_fit_fixed_freq_CC_post_processing.png}
