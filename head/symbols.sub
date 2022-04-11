@@ -26,8 +26,8 @@
 \newsym[Horizontal first order chromaticity]{Qpx}{Q^\prime_{x}}
 \newsym[Vertical first order chromaticity]{Qpy}{Q^\prime_{y}}
 \newsym[Rms bunch length]{sigmat}{\sigma_t}
-\newsym[Horizontal normalised emittance of the beam]{emitx}{\epsilon_{x}}
-\newsym[Vertical normalised emittance of the beam]{emity}{\epsilon_{y}}
+\newsym[Horizontal normalised emittance of the beam]{emitx}{\epsilon^n_{x}}
+\newsym[Vertical normalised emittance of the beam]{emity}{\epsilon^n_{y}}
 \newsym[Horizontal geometric emittance of the beam]{emitxgeom}{\epsilon_x^{geom}} 
 \newsym[Vertical geometric emittance of the beam]{emitygeom}{\epsilon_y^{geom}} 
 \newsym[Betatron horizontal rms tune spread]{Dqxrms}{\Delta\: \!Q^{rms}_{x}}

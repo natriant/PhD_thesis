@@ -25,8 +25,8 @@
 \printsymline{Q^\prime _{x}}{Q^\prime _{x}}{Qpx}{Horizontal first order chromaticity}{xi}
 \printsymline{Q^\prime _{y}}{Q^\prime _{y}}{Qpy}{Vertical first order chromaticity}{xi}
 \printsymline{\sigma_t}{\sigma_t}{sigmat}{Rms bunch length}{xi}
-\printsymline{\epsilon_{x}}{\epsilon_{x}}{emitx}{Horizontal normalised emittance of the beam}{xi}
-\printsymline{\epsilon_{y}}{\epsilon_{y}}{emity}{Vertical normalised emittance of the beam}{xi}
+\printsymline{\epsilon^n_{x}}{\epsilon^n_{x}}{emitx}{Horizontal normalised emittance of the beam}{xi}
+\printsymline{\epsilon^n_{y}}{\epsilon^n_{y}}{emity}{Vertical normalised emittance of the beam}{xi}
 \printsymline{\epsilon_x^{geom}}{\epsilon_x^{geom}}{emitxgeom}{Horizontal geometric emittance of the beam}{xi}
 \printsymline{\epsilon_y^{geom}}{\epsilon_y^{geom}}{emitygeom}{Vertical geometric emittance of the beam}{xi}
 \printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{xi}
