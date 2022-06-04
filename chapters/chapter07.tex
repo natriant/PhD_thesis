@@ -12,10 +12,10 @@ The structure of this chapter is as follows:
 
 \section{SPS transverse impedance model}
 The PyHEADTAIL studies presented in this chapter are performed including the detailed transverse impedance model of the SPS machine~\cite{sps_impedance_model_git}. This model has been developed through a combination of theoretical computations, electromagentic simulations and was benchmarked with beam-based measurements~\cite{Salvant:1274254, Zannini:1561199, Salvant:1271349, Zannini:2141779}. 
-It includes the contributions from all the individual elements in the SPS lattice i.e. the resistive wall, the indirect space charge, the kickers, the RF cavities (200\,MHz and 800\,MHz), the step transitions and the horizontal and vertical beam position monitors~\cite{Zannini:2141779}. 
+It includes the contributions from all the individual elements in the SPS lattice i.e. the resistive wall, the indirect space charge, the kickers, the RF cavities (200\,MHz and 800\,MHz), the step transitions and the horizontal and vertical beam position monitors~\cite{Zannini:2141779}. The model needs to represent the global impedance of the full machine. Thus, the total impednace is obtained by summing up the impedance of each element weighted with the beta function at its location and by dividing the sum by the average beta function of the SPS. For the Q26 optics the average horizontal and vertical beta functions are 42.09\,m and 42.01\,m respectively.
 %https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf
 % The Wall contribution included both the resistive wall and the indirect SC.
-The transverese imepedance of SPS is displayed in Fig. The dipolar and quadrupolar components are plotted seperately.
+Figure~\ref{ref:sps_impedance_model_H_V} shows the complete transverse impedance model of the SPS machine with the disentangled dipole (blue) and quadrupole (orange) terms to be plotted seperetaly. 
 
 
 \begin{figure}[!ht]
