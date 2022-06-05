@@ -56,10 +56,18 @@ From this equation it can be seen that the actions follow an exponential distrib
 he terms dipolar and quadrupolar have been chosen as the dipolar wake function acts on the test proton like a dipole magnet (the kick is the same whatever its transverse location), whereas the quadrupolar term acts like a quadrupole magnet (the kick increases linearly with the transverse offset of the test particle). Benoits thesis p.44
 
 
-\section{Simulation codes}\label{sec:simualtion_codes}
-In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are single particle tracking librarites that simulate the particle motion in the 6D phase space $(x, px_x, y, p_y, z, \delta)$. The first code performs macroparticles tracking between interaction points around a circular accelerator while the second one uses the detailed optics model of the machine.
+\section{Tracking simulation codes}\label{sec:simualtion_codes}
+In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are macroparticle tracking libraries that simulate the particle motion in the 6D phase space $(x, p_x, y, p_y, z, \delta)$. The first code performs tracking between interaction points around a circular accelerator with the use of trasnfer matrices while the second one uses the detailed optics model of the machine.
 
 \subsection{PyHEADTAIL}\label{subsec:pyheadtail}
 
+PyHEADTAIL~\cite{pyheadtail_repository, pyheadtail_schenk} is an open-source 6D macroparticle tracking code which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements.
+% https://indico.cern.ch/event/930271/contributions/3910265/attachments/2066139/3467770/30June2020_Simulations_emit_growthCC_RFnoise.pdf  
+In PyHEADTAIL a particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, p_x, y, p_y)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis  $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
+
+For the SPS experimental conditions described in this thesis $10^{5}-5\cdot 10^{5}$
+
+
 \subsection{Sixtracklib}\label{subsec:sixtracklib}
 %Introduction to sixtrackib: https://indico.cern.ch/event/833895/contributions/3577803/attachments/1927226/3190636/intro_sixtracklib.pdf
+% https://inspirehep.net/files/6273430c727ace3796a92d069f651ade
