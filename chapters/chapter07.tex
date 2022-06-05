@@ -15,9 +15,9 @@ The PyHEADTAIL studies presented in this chapter are performed including the det
 It includes the contributions from all the individual elements in the SPS lattice i.e. the resistive wall, the indirect space charge, the kickers, the RF cavities (200\,MHz and 800\,MHz), the step transitions and the horizontal and vertical beam position monitors~\cite{Zannini:2141779}. The model needs to represent the global impedance of the full machine. Thus, the total impednace is obtained by summing up the impedance of each element weighted with the beta function at its location and by dividing the sum by the average beta function of the SPS. For the Q26 optics the average horizontal and vertical beta functions are 42.09\,m and 42.01\,m respectively.
 %https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf
 % The Wall contribution included both the resistive wall and the indirect SC.
-Figure~\ref{fig:sps_impedance_model_H_V} shows the complete transverse impedance model of the SPS machine with the disentangled dipole (blue) and quadrupole (orange) terms to be plotted seperetaly. 
+Figure~\ref{fig:sps_impedance_model_H_V} shows the complete transverse impedance model of the SPS machine with the disentangled dipolar (blue) and quadrupolar (orange) terms to be plotted seperetaly. 
 
-
+% Plot figures: /eos/user/n/natriant/Project_thesis/plot_wakefields_impedances_SPS
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
@@ -43,14 +43,34 @@ For a clearer picture, it is worth mentioning that at low freqencies (up to $\si
 
 \subsection{Including the imepdance model in PyHEADTAIL simulations}
 
-In order to include the impedance effects in particle tracking simulations the real-values wakefields~\cite{sps_impedance_model_git} in time domain are used. As described in Section~\ref{sec:wakefields_theory} this corresponds to the inverse Fourier transformation of the complex-valued impedance in frequency domain. The wakefunctions (dipolar and quadrupolar term) for both transverse planes are read in PyHEADTAIL from tables. 
-% more details in the procedure in the thesis of Benoit
+In order to include the impedance effects in particle tracking simulations the real-values wakefields~\cite{sps_impedance_model_git} in time domain are used. As described in Section~\ref{sec:wakefields_theory} this corresponds to the inverse Fourier transformation of the complex-valued impedance in frequency domain. % more details in this procedure in the thesis of Benoit.
+ The total transverse dipolar (blue) and quadrupolar (orange) wake functions for both planes of the SPS are plotted in Fig~\ref{fig:sps_wakefunctions_model_H_V}.
 
+% Plot figures: /eos/user/n/natriant/Project_thesis/plot_wakefields_impedances_SPS
+ \begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Q26_complete_SPS_model_wakefunctions_H_plane.png}
+        %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Q26_complete_SPS_model_wakefunctions_V_plane.png}
+        %\caption{Discrete Fourier transform}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Horizontal (left) and vertical (right) wakefunctions of the SPS.} % bunch passage
+     \label{fig:sps_wakefunctions_model_H_V}
+ \end{figure}
 
 input in tables in headtail
 % slide 9 https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf
 
-
+PyHEADTAIL imports the wakefunctions (dipolar and quadrupolar term) for both transverse planes as tables.
 The PyHEADTAIL assumes a constant average beta function around the machine.
 
 
