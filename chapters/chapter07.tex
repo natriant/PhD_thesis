@@ -43,6 +43,9 @@ For a clearer picture, it is worth mentioning that at low freqencies (up to $\si
 
 \subsection{Including the imepdance model in PyHEADTAIL simulations}
 
+To simulate the impedance in 
+In PyHEADTAIL the impedance is implemented in time domain i
+
 In order to include the impedance effects in particle tracking simulations the real-values wakefields~\cite{sps_impedance_model_git} in time domain are used. As described in Section~\ref{sec:wakefields_theory} this corresponds to the inverse Fourier transformation of the complex-valued impedance in frequency domain. % more details in this procedure in the thesis of Benoit.
  The total transverse dipolar (blue) and quadrupolar (orange) wake functions for both planes of the SPS are plotted in Fig~\ref{fig:sps_wakefunctions_model_H_V}.
 
@@ -67,13 +70,15 @@ In order to include the impedance effects in particle tracking simulations the r
      \label{fig:sps_wakefunctions_model_H_V}
  \end{figure}
 
-input in tables in headtail
+
 % slide 9 https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf
 
 PyHEADTAIL imports the wakefunctions (dipolar and quadrupolar term) for both transverse planes as tables.
 The PyHEADTAIL assumes a constant average beta function around the machine.
 
 We consider the wakes decay after one turn
+
+Find a reference to refer to and thendescribe breifly here 1-2 sentences.Michael Scenk
 
 \subsection{Coherent tune shift with intensity}
 
