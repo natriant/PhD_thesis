@@ -57,15 +57,22 @@ he terms dipolar and quadrupolar have been chosen as the dipolar wake function a
 
 
 \section{Tracking simulation codes}\label{sec:simualtion_codes}
-In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are macroparticle tracking libraries that simulate the particle motion in the 6D phase space $(x, p_x, y, p_y, z, \delta)$. The first code performs tracking between interaction points around a circular accelerator with the use of trasnfer matrices while the second one uses the detailed optics model of the machine.
+In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are macroparticle tracking libraries that simulate the particle motion in the six-dimensional (6D) phase space $(x, p_x, y, p_y, z, \delta)$. The first code performs tracking between interaction points around a circular accelerator with the use of trasnfer matrices while the second one uses the detailed optics model of the machine.
 
 \subsection{PyHEADTAIL}\label{subsec:pyheadtail}
 
-PyHEADTAIL~\cite{pyheadtail_repository, pyheadtail_schenk} is an open-source 6D macroparticle tracking code which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements.
+PyHEADTAIL~\cite{pyheadtail_repository, pyheadtail_manual_adrian} is an open-source 6D macroparticle tracking code which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements.
 % https://indico.cern.ch/event/930271/contributions/3910265/attachments/2066139/3467770/30June2020_Simulations_emit_growthCC_RFnoise.pdf  
-In PyHEADTAIL a particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, p_x, y, p_y)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis  $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
+The following paragraphs provide a brief overview of the basic modules of PyHEADTAIL and of the procedure to build and run the simulation according to the detailed description in Refs.~\cite{pyheadtail_schenk, Schenk:2665819}.
 
-For the SPS experimental conditions described in this thesis $10^{5}-5\cdot 10^{5}$
+To begin, a particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, p_x, y, p_y)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis  $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
+
+
+
+The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point. At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment. The matrices can include detuning feutures from chromaticity and amplitude detuning as a change of phase advance of each macroparticle. Last, the tracking in logitudinal plane is performed with linear or non-linear synchrotron motion. In this thesis, a linear longitudinal one-turn map is used represented by a Courant-Snyder trasnfer matrix and using only the linear first order slippage factor.
+%https://github.com/PyCOMPLETE/PyHEADTAIL/blob/master/PyHEADTAIL/trackers/longitudinal_tracking.py
+
+
 
 
 \subsection{Sixtracklib}\label{subsec:sixtracklib}
