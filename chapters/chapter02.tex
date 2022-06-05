@@ -21,6 +21,8 @@ For a gaussian beam distribution the normalised beam emittance it applies:
 
 where $\sigma_x(s)$ is the beam size, $\beta_x(s)$ is the beta function, $D_x(s)$ is the dispersion fat a specific location s along the accelerator, $\delta=\Delta p/p0$ is the momentum spread and $\betarel, \gammarel$ the relativistic parameters. Similar expression is valid for the vertical plane, with the difference that there is no dispersion.
 
+\section{Transfer maps}
+Need to mention them briefly as you refer to them at the PyHEADTAIL section.
 
 \section{Action angle variables}
 The action for the x-plane is:
@@ -67,12 +69,16 @@ The following paragraphs provide a brief overview of the basic modules of PyHEAD
 
 To begin, a particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, p_x, y, p_y)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis  $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
 
+The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point. At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment. The matrices can include detuning feutures from chromaticity and amplitude detuning as a change of phase advance of each macroparticle. Last, the tracking in logitudinal plane is performed with linear or non-linear synchrotron motion. In this thesis, a linear longitudinal one-turn map is used represented by a Courant-Snyder trasnfer matrix and using only the linear first order slippage factor. %Last sentence from (LinearMap): https://github.com/PyCOMPLETE/PyHEADTAIL/blob/master/PyHEADTAIL/trackers/longitudinal_tracking.py
+During the tracking the bunch data are available at the end of the last segment every turn. Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of the accelerator model and the tracking procedure.
+% Graph is created app.diagrams.net and is saved in goodle dirve.
 
-
-The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point. At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment. The matrices can include detuning feutures from chromaticity and amplitude detuning as a change of phase advance of each macroparticle. Last, the tracking in logitudinal plane is performed with linear or non-linear synchrotron motion. In this thesis, a linear longitudinal one-turn map is used represented by a Courant-Snyder trasnfer matrix and using only the linear first order slippage factor.
-%https://github.com/PyCOMPLETE/PyHEADTAIL/blob/master/PyHEADTAIL/trackers/longitudinal_tracking.py
-
-
+\begin{figure}[!h]
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/accelerator_model_graph_pyheadtail.png}
+        \caption{Graphic represantation of the accelerator model and tracking procedure in PyHEADTAIL (inspered by the graphs in Refs.~\cite{pyheadtail_schenk, inproceedings_ibs_pyheadtail}). In this example the ring is splitted in four segments. The blue points correspond to the interaction points while the curved arrow shows the direction of the beam during the tracking.}
+        \label{fig:pyheadtail_accelerator_model}
+ \end{figure}
 
 
 \subsection{Sixtracklib}\label{subsec:sixtracklib}
