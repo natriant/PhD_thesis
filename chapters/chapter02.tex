@@ -24,6 +24,7 @@ where $\sigma_x(s)$ is the beam size, $\beta_x(s)$ is the beta function, $D_x(s)
 \section{Transfer maps}
 Need to mention them briefly as you refer to them at the PyHEADTAIL section.
 
+% Courant snyder formalism of longitudinal dynamics: https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.094001
 \section{Action angle variables}
 The action for the x-plane is:
 
@@ -63,14 +64,31 @@ In this section the two tracking simulation codes used in this thesis to study t
 
 \subsection{PyHEADTAIL}\label{subsec:pyheadtail}
 
-PyHEADTAIL~\cite{pyheadtail_repository, pyheadtail_manual_adrian} is an open-source 6D macroparticle tracking code which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements.
+PyHEADTAIL~\cite{pyheadtail_repository} is an open-source 6D macroparticle tracking code, developed at CERN, which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements. 
 % https://indico.cern.ch/event/930271/contributions/3910265/attachments/2066139/3467770/30June2020_Simulations_emit_growthCC_RFnoise.pdf  
-The following paragraphs provide a brief overview of the basic modules of PyHEADTAIL and of the procedure to build and run the simulation according to the detailed description in Refs.~\cite{pyheadtail_schenk, Schenk:2665819}.
+Details on its implementation and its features can be find in Refs.~\cite{pyheadtail_manual_adrian, pyheadtail_schenk}. Below the main steps of a simulation are listed:
 
-To begin, a particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, p_x, y, p_y)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis  $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
+% Thesis david: https://cds.cern.ch/record/2707064/files/CERN-THESIS-2019-272.pdf (p.45) and for the transverse matrix.
 
-The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point. At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment. The matrices can include detuning feutures from chromaticity and amplitude detuning as a change of phase advance of each macroparticle. Last, the tracking in logitudinal plane is performed with linear or non-linear synchrotron motion. In this thesis, a linear longitudinal one-turn map is used represented by a Courant-Snyder trasnfer matrix and using only the linear first order slippage factor. %Last sentence from (LinearMap): https://github.com/PyCOMPLETE/PyHEADTAIL/blob/master/PyHEADTAIL/trackers/longitudinal_tracking.py
-During the tracking the bunch data are available at the end of the last segment every turn. Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of the accelerator model and the tracking procedure.
+\begin{enumerate}
+    \item \textbf{Machine initialisation:} The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point (IP). At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields.
+    \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
+    \item \textbf{Transverse tracking}: In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment \textcolor{red}{[Reference to transverse map in section above.]} For example the linear map from IP0 to IP1 is given by:
+        \begin{equation}
+            x=y
+        \end{equation}
+    \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle and they are included in the linear map of the transverse tracking mentioned in the previous step. For example, the change of the phase advance for a macroparticle $i$ from 
+    \item \textbf{Longitudinal tracking:}  The tracking in the logitudinal plane is performed with linear or non-linear synchrotron motion using the equations of motion \textcolor{red}{(Hills equation write here)}.
+    \item \textbf{Impedance effects:}
+    \item \textbf{Data acquisition:} The updated bunch coordinates after each turn are available at IP0 for post processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulation presented in this thesis. 
+    
+\end{enumerate}
+
+
+ Last, the tracking in logitudinal plane is performed with linear or non-linear synchrotron motion. In this thesis, a linear longitudinal one-turn map is used represented by a Courant-Snyder trasnfer matrix and using only the linear first order slippage factor. %Last sentence from (LinearMap): https://github.com/PyCOMPLETE/PyHEADTAIL/blob/master/PyHEADTAIL/trackers/longitudinal_tracking.py
+%or longutidanl equations of motion: slide 37 https://www2.kek.jp/accl/legacy/seminar/file/PyHEADTAIL_PyECLOUD_2.pdf
+
+Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of the accelerator model and the tracking procedure.
 % Graph is created app.diagrams.net and is saved in goodle dirve.
 
 \begin{figure}[!h]
@@ -79,6 +97,15 @@ During the tracking the bunch data are available at the end of the last segment 
         \caption{Graphic represantation of the accelerator model and tracking procedure in PyHEADTAIL (inspered by the graphs in Refs.~\cite{pyheadtail_schenk, inproceedings_ibs_pyheadtail}). In this example the ring is splitted in four segments. The blue points correspond to the interaction points while the curved arrow shows the direction of the beam during the tracking.}
         \label{fig:pyheadtail_accelerator_model}
  \end{figure}
+
+ The impedance effect in PyHEADTAIL simulations is typically implemented as a single wakefield kick per turn at one of the interaction points. Therefore, the wakefield kicks must represent the total imepdance of the full machine..
+ 
+ implemented as wakefield kicks (in time domain) on the particles at one of the interaction points. The wakefield kick is applied in one location of the ring and it represents the total imepdance of the full machine. 
+
+ Wakefields can be read from tables or computd from resonator models. here they are imported from table form the sps impedance model (more in \dots)
+
+ -slices
+ - considers average beta function
 
 
 \subsection{Sixtracklib}\label{subsec:sixtracklib}
