@@ -77,7 +77,7 @@ Details on its implementation and its features can be find in Refs.~\cite{pyhead
     \begin{equation}
         \binom{x_i}{x_i^\prime}_{\mathrm{IP0}} = M \binom{x_i}{x_i^\prime}_{\mathrm{IP1}},
     \end{equation}
-    where $i=1, ..., N$ with N being the macroparticles number and the matrix $M$ is given by:
+    where $i=1, ..., N$ with N being the number of macroparticles and the matrix $M$ is given by:
     \begin{equation}\label{eq:linear_transfer_map}
         M = \begin{pmatrix}
             \sqrt{\beta_{x, \mathrm{IP0}}} & 0 \\ 
@@ -90,18 +90,20 @@ Details on its implementation and its features can be find in Refs.~\cite{pyhead
                     -\frac{\alpha_{x, IP1}}{\sqrt{\beta_{x, IP1}}} & \frac{1}{\sqrt{\beta_{x, IP1}}}
                     \end{pmatrix} 
     \end{equation}
-    where $\alpha_{x, \mathrm{IP0/IP1}}$ and $\beta{x, \mathrm{IP0/IP1}}$ are the optic paramters at the interaction points IP0 and IP1 respectively and $\Delta \mu_{x, \mathrm{IP0 \to IP1 }}$ the phase advance from IP0 to IP1. As smooth approximation is used, the phase advance equals: 
+    where $\alpha_{x, \mathrm{IP0/IP1}}$ and $\beta{x, \mathrm{IP0/IP1}}$ are the optics paramters at the interaction points IP0 and IP1 respectively and $\Delta \mu_{x, \mathrm{IP0 \to IP1 }}$ the phase advance from IP0 to IP1. As smooth approximation is used, the phase advance equals: 
     \begin{equation}\label{eq:phase_advance_smooth_approximation}
         \Delta \mu_{x, \mathrm{IP0 \to IP1 }} = Q_x \frac{L}{C},
     \end{equation}
     where $Q_x$ is the horizontal betatron tune, $C$ the machine circumference and $L$ the length of the corresponding segment. It should be noted that if no detuning source is added (see next step) the matrix $M$ is the same for all particles.
-    \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle as follows:
-    \begin{equation}
-        \Delta
+    \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle as follows (example for the horizontal plane):
+    \begin{equation}\label{eq:change_phase_advance_detunign}
+        \Delta \mu_{x, i \mathrm{IP0 \to IP1 }} = \Delta \mu_{x, \mathrm{IP0 \to IP1 }} + (\xi^{1}_x \delta_i + \alpha_{xx}J_{x, i} + \alpha_{xy}J_{y,i}) \frac{\Delta \mu_{x, \mathrm{IP0 \to IP1 }}}{2\pi Q_x}, 
     \end{equation}
+    where $i=1, ..., N$ with N being the number of macroparticles, $\Delta \mu_{x, \mathrm{IP0 \to IP1 }}$ is the phase advance for all macroparticles defined in the previous step, $\xi_x^{1}$ the horizontal chromaticity of first order normalised to the tune $\alpha_{xx}$ and $\alpha_{xy}$ are the detuning coefficients, while $J_x$ and $J_y$ are the horizontal and vertical actions of the macroparticle. Therefore, in the presence of detuning the elements of the $M$ matrix are different for every particle.
+
+    \item \textbf{Longitudinal tracking:}  In PyHEADTAIL the longitudinal particle dynamics are described with the longitudinal equations of motion (ref to eq earlier.) % slide 37: https://www2.kek.jp/accl/legacy/seminar/file/PyHEADTAIL_PyECLOUD_2.pdf 
+    The longitudinal coordinates are advanced once per turn after solving numerically the equations of motion~\cite{pyheadtail_schenk}. The motion can be linear or not (non-linear RF system). The studies presented in this thesis use the linear longitudinal tracking.
     
-     and they are included in the linear matrix $M$ of the transverse tracking mentioned in the previous step. For example, the change of the phase advance for a macroparticle $i$ from 
-    \item \textbf{Longitudinal tracking:}  The tracking in the logitudinal plane is performed with linear or non-linear synchrotron motion using the equations of motion \textcolor{red}{(Hills equation write here)}.
     \item \textbf{Impedance effects:}
     \item \textbf{Data acquisition:} The updated bunch coordinates after each turn are available at IP0 for post processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulation presented in this thesis. 
     

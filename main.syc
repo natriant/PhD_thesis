@@ -36,3 +36,4 @@
 \newcommand{\axyinclude}{yes}
 \newcommand{\klofinclude}{yes}
 \newcommand{\klodinclude}{yes}
+\newcommand{\chromaxiinclude}{no}

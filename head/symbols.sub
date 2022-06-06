@@ -39,4 +39,5 @@
 for SPS Landau octupoles, LOF family]{klof}{k_{LOF}}
 \newsym[LHC Software Architecture (LSA) trim editor knobs
 for SPS Landau octupoles, LOD family]{klod}{k_{LOD}}
+\newsym[Horizontal chromaticity of order n normalised to the tune]{chromaxi}{\xi^{n}_x}
 \closesymdef
