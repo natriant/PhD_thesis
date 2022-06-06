@@ -66,18 +66,41 @@ In this section the two tracking simulation codes used in this thesis to study t
 
 PyHEADTAIL~\cite{pyheadtail_repository} is an open-source 6D macroparticle tracking code, developed at CERN, which was originally designed to study collective effects in circular machines and to be easily extrensible with custom elements. 
 % https://indico.cern.ch/event/930271/contributions/3910265/attachments/2066139/3467770/30June2020_Simulations_emit_growthCC_RFnoise.pdf  
-Details on its implementation and its features can be find in Refs.~\cite{pyheadtail_manual_adrian, pyheadtail_schenk}. Below the main steps of a simulation are listed:
+Details on its implementation and its features can be find in Refs.~\cite{pyheadtail_manual_adrian, pyheadtail_schenk}. Below the main steps of a simulation are listed: % according to the interest of this thesis.
 
 % Thesis david: https://cds.cern.ch/record/2707064/files/CERN-THESIS-2019-272.pdf (p.45) and for the transverse matrix.
 
 \begin{enumerate}
-    \item \textbf{Machine initialisation:} The accelerator ring is represented by an one-turn map splitted into a number of segments of equal length, after each of which there is an interaction point (IP). At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields.
-    \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise.
-    \item \textbf{Transverse tracking}: In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the respective segment \textcolor{red}{[Reference to transverse map in section above.]} For example the linear map from IP0 to IP1 is given by:
-        \begin{equation}
-            x=y
-        \end{equation}
-    \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle and they are included in the linear map of the transverse tracking mentioned in the previous step. For example, the change of the phase advance for a macroparticle $i$ from 
+    \item \textbf{Machine initialisation:} The accelerator ring is splitted into a number of segments of equal length, after each of which there is an interaction point (IP). At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. The machine parameters, such as the circumference, the betatron and synchrotron tunes and the optics at the interaction points are defined. It should be noted that PyHEADTAIL uses smooth approximation which means that only a few segments are defined per turn. % which results to a very  rough optics model.
+    \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate represantation of the bunch, unless it is stated otherwise. There are various distributions available. In this thesis the simulations are performed using a Gaussian distribution in transverse and longitudinal planes.
+    \item \textbf{Transverse tracking}: In the transverse plane, the macroparticles are transported from one interaction point to another by linear transfer matrices which take into account the optics parameters at the beginning and the end of the corresponding segment. For example, in the horizontal plane the transport of each macroparticle from IP1 to IP2 along the ring is given by:
+    \begin{equation}
+        \binom{x_i}{x_i^\prime}_{\mathrm{IP0}} = M \binom{x_i}{x_i^\prime}_{\mathrm{IP1}},
+    \end{equation}
+    where $i=1, ..., N$ with N being the macroparticles number and the matrix $M$ is given by:
+    \begin{equation}\label{eq:linear_transfer_map}
+        M = \begin{pmatrix}
+            \sqrt{\beta_{x, \mathrm{IP0}}} & 0 \\ 
+            -\frac{\alpha_{x, \mathrm{IP0}}}{\sqrt{\beta_{x,  \mathrm{IP0} }}} & \frac{1}{\sqrt{\beta_{x, \mathrm{IP0}}}}
+            \end{pmatrix} \begin{pmatrix}
+                \cos(\Delta \mu_{x, \mathrm{IP0 \to IP1 }}) & \sin(\Delta \mu_{x, \mathrm{IP0 \to IP1 }})\\
+                 - \sin(\Delta \mu_{x, \mathrm{IP0 \to IP1 }})  &\cos(\Delta \mu_{x, \mathrm{IP0 \to IP1 } }) 
+                \end{pmatrix}  \begin{pmatrix}
+                    \sqrt{\beta_{x, IP1}} & 0 \\ 
+                    -\frac{\alpha_{x, IP1}}{\sqrt{\beta_{x, IP1}}} & \frac{1}{\sqrt{\beta_{x, IP1}}}
+                    \end{pmatrix} 
+    \end{equation}
+    where $\alpha_{x, \mathrm{IP0/IP1}}$ and $\beta{x, \mathrm{IP0/IP1}}$ are the optic paramters at the interaction points IP0 and IP1 respectively and $\Delta \mu_{x, \mathrm{IP0 \to IP1 }}$ the phase advance from IP0 to IP1. As smooth approximation is used, the phase advance equals: 
+    \begin{equation}\label{eq:phase_advance_smooth_approximation}
+        \Delta \mu_{x, \mathrm{IP0 \to IP1 }} = Q_x \frac{L}{C},
+    \end{equation}
+    where $Q_x$ is the horizontal betatron tune, $C$ the machine circumference and $L$ the length of the corresponding segment. It should be noted that if no detuning source is added (see next step) the matrix $M$ is the same for all particles.
+    \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle as follows:
+    \begin{equation}
+        \Delta
+    \end{equation}
+    
+     and they are included in the linear matrix $M$ of the transverse tracking mentioned in the previous step. For example, the change of the phase advance for a macroparticle $i$ from 
     \item \textbf{Longitudinal tracking:}  The tracking in the logitudinal plane is performed with linear or non-linear synchrotron motion using the equations of motion \textcolor{red}{(Hills equation write here)}.
     \item \textbf{Impedance effects:}
     \item \textbf{Data acquisition:} The updated bunch coordinates after each turn are available at IP0 for post processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulation presented in this thesis. 
