@@ -83,21 +83,7 @@ One of the properties which is also used for checking the correct implemetation 
 
 \section{Simulations setup}
 
-In this section, the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise is described. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the lsited parameters are very similar to the experimental conditions during the emittance growth measurmentes of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
-
-
-\normalsize{\textbf{Crab Cavity RF noise levels}}\\
-\normalsize{\textbf{Amplitude detuning}}\\
-\normalsize{\textbf{Parameters particularly for simulations without imepdance effects}}\\
-\normalsize{\textbf{Parameters particularly for simulations with imepdance effects}}\\
-
-
-The parameters used for the simulations were
-
-imulations used the SPS design parameters and the beam conditions as in the experiment of 2018.
-
-Table with parameters, including macroparticles number + slices + average beta funtion for convinience.
-
+This section describes the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the listed parameters were chosen to be very close to the experimental conditions during the emittance growth measurements of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
 
 
 \begin{table}[!hbt]
@@ -131,6 +117,33 @@ Table with parameters, including macroparticles number + slices + average beta f
    \end{minipage}
 \end{table}
 
+\normalsize{\textbf{Crab Cavity RF noise levels}}\\
+For the simulation studies presented in this chapter, the phase and amplitude noise are modeled as random kicks on the particles' momentum according to the work of T. Mastoridis and P. Baudrenghien in Ref~\cite{PhysRevSTAB.18.101001}, as follows:
+\begin{equation}
+    \mathrm{\textbf{Phase \ noise:}} \ y^\prime_{i,1} = y^\prime_{i, 0} + A \cos{\left ( \frac{2\pi \fCC}{c \betarel}z_i \right )},
+\end{equation}
+
+\begin{equation}
+    \mathrm{\textbf{Amplitude \ noise:}} \ y^\prime_{i, 1} = y^\prime_{i, 0} + A \sin{\left ( \frac{2\pi \fCC}{c \betarel}z_i \right )},
+\end{equation}
+
+where $i=1...N$ with being $N$ the number of macroparticles used in the simulation,  $\fCC$ is the $\CC$ frequency in Hz, $c$ is the speed of light in m/s, $\betarel$ the relativistic beta and $z_i$ the longitudinal position of each particle in m. The factor $A=\VCC$
+%slide 5: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
+
+
+
+
+
+\normalsize{\textbf{Amplitude detuning}}\\
+\normalsize{\textbf{Parameters particularly for simulations without imepdance effects}}\\
+\normalsize{\textbf{Parameters particularly for simulations with imepdance effects}}\\
+
+
+The parameters used for the simulations were
+
+imulations used the SPS design parameters and the beam conditions as in the experiment of 2018.
+
+Table with parameters, including macroparticles number + slices + average beta funtion for convinience.
 
 
 

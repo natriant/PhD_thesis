@@ -20,8 +20,8 @@
 \newsym[Location around the ring ??]{s}{s}
 \newsym[Horizontal dispersion function]{Dx}{D_x}
 \newsym[Vertical dispersion function]{Dy}{D_y}
-\newsym[Relativistic beta]{betarel}{\beta}
-\newsym[Relativistic gamma (Lorenz factor)]{gammarel}{\gamma}
+\newsym[Relativistic beta]{betarel}{\beta_0}
+\newsym[Relativistic gamma (Lorenz factor)]{gammarel}{\gamma_0}
 \newsym[Bunch intensity i.e. number of particles (here protons)]{Nb}{N_b}
 \newsym[Horizontal first order chromaticity]{Qpx}{Q^\prime_{x}}
 \newsym[Vertical first order chromaticity]{Qpy}{Q^\prime_{y}}
