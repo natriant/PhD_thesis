@@ -3,7 +3,7 @@ During the dedicated experiment that took place in the SPS
 in 2018 with the CCs, the measured emittance
 growth was found to be a factor four (on average) lower than
 expected from the theory (see Section~\ref{sec:meas_2018_vs_theory}). The reason for this discrepancy remained unresolved for some time, as detailed follow-up studies (see Chapter~\ref{Ch:investigating_discrepancy}) investigated and excluded a number of possible explanations for the discrepancy.
-It was recently found, that the beam transverse impedance, which is not included in the theory~\cite{PhysRevSTAB.18.101001} used for the comparison with the measurements may impact the noise-induced emittance growth and explain the experimental observations. Here, the damping mechanism from the beam transverse impedance is investigated and discussed with detailed PyHEADTAIL simulations.
+It was recently found, that the beam transverse impedance, which is not included in the theory~\cite{PhysRevSTAB.18.101001} used for the comparison with the measurements may impact the noise-induced emittance growth and explain the experimental observations. Here, the damping mechanism from the beam transverse impedance is investigated as observed in detailed PyHEADTAIL simulations.
 
 The structure of this chapter is as follows:
 
@@ -37,10 +37,9 @@ Figure~\ref{fig:sps_impedance_model_H_V} shows the complete transverse impedance
      \caption{Horizontal (left) and vertical (right) impedance model of the SPS. The model is available in the public gitlab repository of Ref.~\cite{sps_impedance_model_git}.} % bunch passage
      \label{fig:sps_impedance_model_H_V}
  \end{figure}
- The contributions from the wall, the kickers and the step transitions are visible at the low freqencies (up to $\sim$ 0.4\,GHz). The impedance of the RF cavities and the beam position monitors (BPMs) corresponds results to the peaks observed between $\sim$ 0.4-1\,GHz. 
-%https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf
 
-%For a clearer picture, it is worth mentioning that at low freqencies (up to $\sim$ 0.4\,GHz) the impedance is mainly from the wall the kickers and the step transitions. The peaks between $\sim$ 0.4-1\,GHz appear due to the RF cavities and the beam position monitors.
+ The contributions from the wall, the kickers and the step transitions are visible at the low freqencies (up to $\sim$ 0.4\,GHz). The impedance of the RF cavities and the beam position monitors (BPMs) corresponds results to the peaks observed between $\sim$ 0.4-1\,GHz. 
+%https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf %For a clearer picture, it is worth mentioning that at low freqencies (up to $\sim$ 0.4\,GHz) the impedance is mainly from the wall the kickers and the step transitions. The peaks between $\sim$ 0.4-1\,GHz appear due to the RF cavities and the beam position monitors.
 %https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf
 
 \normalsize{\textbf{Wake functions}}\\
@@ -72,10 +71,30 @@ As already discussed in Section~\ref{subsec:pyheadtail}, in order to include the
 
 % Carlo Zaninni thesis: s, it is important to have an accurate description of the wake at a distance z significantly smaller than the RMS bunch-length, which means that the impedance calculation needs to be accurate up to very high frequency (depending on the accelerator we consider, from a few GHz to the range of THz). 
 
-\subsection{Coherent tune shift with intensity}
+\subsection{Coherent tune shift with intensity and growth rate}
+- growth rate of mode 0
+- shift of mode 0
+One of the properties which is also used for checking the correct implemetation of the model. which as we will say later on is relevant to the suppression mechanism is the coherent tune shift with 
+
+- model benchmarked but not as thorough for ... not gor single bunhces at that low intensity?
+
+- we figured out
 
 
 \section{Simulations setup}
+
+In this section, the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise is described. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the lsited parameters are very similar to the experimental conditions during the emittance growth measurmentes of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
+
+
+\normalsize{\textbf{Crab Cavity RF noise levels}}\\
+\normalsize{\textbf{Amplitude detuning}}\\
+\normalsize{\textbf{Parameters particularly for simulations without imepdance effects}}\\
+\normalsize{\textbf{Parameters particularly for simulations with imepdance effects}}\\
+
+
+The parameters used for the simulations were
+
+imulations used the SPS design parameters and the beam conditions as in the experiment of 2018.
 
 Table with parameters, including macroparticles number + slices + average beta funtion for convinience.
 
@@ -84,7 +103,7 @@ Table with parameters, including macroparticles number + slices + average beta f
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
       \begin{centering}
-   \caption{Machine and beam parameters used for simulating the emittance evolution due to CC RF noise in the presence of transverse beam impedance with PyHEADTAIL code.}
+   \caption{Relevant machine and beam parameters used to study the impact of the beam transverse impedance on the emittance evolution due to CC RF noise with the PyHEADTAIL code.}
 	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
@@ -116,4 +135,7 @@ Table with parameters, including macroparticles number + slices + average beta f
 
 
 
-\section{First observations of emittance growth suppression from impedance}
+\section{First observations of emittance growth suppression by the impedance}
+
+
+\section{Characterisation of the emittance growth suppression by the impedance}
