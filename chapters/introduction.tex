@@ -38,16 +38,16 @@ The beams used by the LHC, are produced and gradually accelerated by the injecto
 
 \section{High-Luminosity LHC project and Crab Cavities}
 %LHC is the flagship of the CERN accelerator complex and is the at the cutting edge of the accelerator and high energy physics research with almost ten thousand scientists working for and with it. In order to extend its discovery potential LHC will undergo a major upgrade in the coming years. 
-
+% Hl-lhc book: p.2 hl-lhc is the top priority of the european strategy of particle physics. 
 High-Luminosity LHC (HL-LHC)~\cite{HL_LHC_yellow_report, Brning2015} is the upgrade of the LHC machine which will extend its potential for discoveries. In particular, it aims to increase its instantaneous luminosity by a factor of 5 beyond the current values and the integrated luminosity by a factor of 10. 
 
 The luminosity, along with the energy, is a key parameter defining the performance of a collider as it is a measure of the collisions rate. The instantaneous luminosity is expressed as~\cite{luminosity}:
 
 \begin{equation}\label{eq:luminosity_inst}
-    \mathcal{L} = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+(\frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\alpha}{2})^2}},
+    \mathcal{L} = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+(\frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\theta_c}{2})^2}},
 \end{equation}
 
-where $\frev$ is the revolution freuency of the machine, $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the bunch intensity, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\alpha$ is the full crossing angle between the colliding beams.
+where $\frev$ is the revolution freuency of the machine, $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the bunch intensity, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\theta_c$ is the full crossing angle between the colliding beams.
 
 The integrated luminosity, is the one that ultimately defines the performance of the machine as it provides the total number of recorderd events. It depends both on the instantaneous luminosty and on the machine availability. The integrated luminosity, is expressed as~\cite{HL_LHC_yellow_report}:
 \begin{equation}\label{eq:integrated_luminosity}
@@ -57,8 +57,12 @@ The integrated luminosity, is the one that ultimately defines the performance of
 where $\mathcal{L}$ the instantaneous luminosity as defined in Eq.~\eqref{eq:luminosity_inst}.
 % for more details and specific values check sofias thesis.
 
-In order to achieve the target values for the Hl-lhC many new technilogies will be used. One of th ekey components is the crab cavities.
-For hl-lhc:
+
+
+\normalsize{\textbf{Crab Cavities}}\\
+HL-LHC will employ a number of innovative technologies to achieve its luminosity goals. Crab Cavity (CCs) is one of the key componenets of the project as they will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
+
+
 
 Why do we need hl-lhc.
 %https://slideplayer.com/slide/8611970/ slide 3
