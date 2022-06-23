@@ -41,39 +41,23 @@ The beams used by the LHC, are produced and gradually accelerated by the injecto
 
 High-Luminosity LHC (HL-LHC)~\cite{HL_LHC_yellow_report, Brning2015} is the upgrade of the LHC machine which will extend its potential for discoveries. In particular, it aims to increase its instantaneous luminosity by a factor of 5 beyond the current values and the integrated luminosity by a factor of 10. 
 
-The luminosity, along with the energy, is a key parameter defining the performance of a collider as it is a measure of the collisions rate and is expressed as~\cite{luminosity}:
+The luminosity, along with the energy, is a key parameter defining the performance of a collider as it is a measure of the collisions rate. The instantaneous luminosity is expressed as~\cite{luminosity}:
 
-\begin{equation}
+\begin{equation}\label{eq:luminosity_inst}
     \mathcal{L} = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+(\frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\alpha}{2})^2}},
 \end{equation}
 
-where $\frev$ is the revolution freuency of the machine, $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the bunch intensity, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\alpha$ is the full crossing anlge.
+where $\frev$ is the revolution freuency of the machine, $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the bunch intensity, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\alpha$ is the full crossing angle between the colliding beams.
 
+The integrated luminosity, is the one that ultimately defines the performance of the machine as it provides the total number of recorderd events. It depends both on the instantaneous luminosty and on the machine availability. The integrated luminosity, is expressed as~\cite{HL_LHC_yellow_report}:
+\begin{equation}\label{eq:integrated_luminosity}
+    \mathcal{L}_I \equiv \int_{\Delta t} \mathcal{L} dt,
+\end{equation}
 
+where $\mathcal{L}$ the instantaneous luminosity as defined in Eq.~\eqref{eq:luminosity_inst}.
+% for more details and specific values check sofias thesis.
 
-
-
-Reminder: Luministy formula ... is the collisions rates. 
-instantaneoud vs integrated..
-
-
-
-
-
-which aims to increase it instantaneous luminosity by a factor of 5 and the integrated 
-
-
-Beyond the discovery of the Higgs boson (2012) LHC has the potential 
-
-
-Beyond the discovery of Higgs, 
-It is undergoing continuous imporovements for energy and lumnisity.
-
-
-After the discovery of higgs continuous changes ... many 
-
-continuous importvements for energy and luminosity.
-
+In order to achieve the target values for the Hl-lhC many new technilogies will be used. One of th ekey components is the crab cavities.
 For hl-lhc:
 
 Why do we need hl-lhc.
