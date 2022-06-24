@@ -75,22 +75,43 @@ Crab Cavity is an RF cavity which provides a transverse, sinusoidal like, kick t
 
 
 % Local vs global CC scheme: https://slideplayer.com/slide/10896302/ 
-The CCs will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, four CCs will be installed on each side of the interaction points (two for each ring). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) boxes. 
+The CCs will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, four CCs will be installed on each side of the interaction points (two for each ring). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. 
 
-\begin{figure}[!h] % at the directory of ipac22
+\begin{figure}[!h] % made at diagrams.net saved at google docs
     \centering         
     \includegraphics[width=0.8\textwidth]{images/introduction/LHC_layout_CCs.png}
         \caption{Layout of the LHC and the SPS where the CC location at either sides of ATLAS (red) and CMS (orange) is marked.  The layout can be found in Ref.~\cite{LHC_SPS_layout} and was modified inspired by Ref.~\cite{LHC_SPS_layout_v2}.}
         \label{fig:LHC_layout_CCs}
  \end{figure}
 
-In this configuration, the bunches recieve the transverse deflection from the first pair of CCs just before reaching the interaction point. This results to a rotation of the bunch, which mitigates the crossing angle and restores the head-on collisions. The deflection, is cancelled once the bunches reach the second pair of CCs which are symmetrically installed at the opposite side of the interaction point. The bunch crossing in the presence of the CCs is illustrated in Fig...
+In this configuration, the bunches recieve the transverse deflection from the first pair of CCs just before reaching the interaction point. This results to a rotation of the bunch, which mitigates the crossing angle and restores the head-on collisions. The deflection, is cancelled once the bunches reach the second pair of CCs which are symmetrically installed at the opposite side of the interaction point. The collision of the bunches in the presence of the CCs is illustrated in Fig.~\ref{fig:crossing_with_and_without_CCs}~\cite{Verdú-Andrés:2263119}.
 
 
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/introduction/no_crab_crossing.png}
+        \caption{Without CCs}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/introduction/crab_crossing.png}
+        \caption{With CCs}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Blue and red colors indicate the two different bunches.} % bunch passage
+     \label{fig:crossing_with_and_without_CCs}
+ \end{figure}
 
 
 % 90 deg between CCs and IP. https://cds.cern.ch/record/2263119/files/10.1016_j.nuclphysbps.2015.09.025.pdf
-In such scheme, with CCs at either side of the interaction points, is called local crabbing scheme. It was chosen due to ... 
+
+
+The above scheme, with CCs at either side of the interaction points, is called local crabbing scheme. It was chosen due to ... 
 
 
 will receive a transverse kick shortly before arriving at the
