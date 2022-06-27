@@ -61,7 +61,8 @@ where $\mathcal{L}$ is the instantaneous luminosity as defined in Eq.~\eqref{eq:
 
 HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{34} \ \mathrm{cm^{-2} s^{-1}}$ and an increase on the integrated luminosity from 300 $\mathrm{fb^{-1}}$ to 3000 $\mathrm{fb^{-1}}$. % Source: https://accelconf.web.cern.ch/ipac2019/papers/mopgw095.pdf
 
-\normalsize{\textbf{Crab Cavities}}\\
+%\normalsize{\textbf{Crab Cavities}}\\
+\subsection{Crab Cavities}\label{subsec:CC_intro}
 To achieve its luminosity goals, HL-LHC will employ numerous innovative technologies. Crab Cavity technology (will be denoted as $\CC$ in this thesis)~\cite{Calaga:2673544} is one of the key componenets of the project as it will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
 
 Crab Cavity is an RF cavity which provides a transverse, sinusoidal like, kick to the particles depending on their longitudinal position within the bunch. A graphic visualisation of the kick is shown in the Fig.~\ref{fig:cc_simple_kick}. It can be seen that the head (leading part) and the tail (trailing part) of the bunch recieve opposite deflection while the particles at the center remain unaffected.
@@ -107,28 +108,35 @@ In this configuration, the bunches recieve the transverse deflection from the fi
 
 
 % Local vs global CC scheme: https://slideplayer.com/slide/10896302/ 
-The above scheme, with $\CC$s before and after the interaction point, is called the local crabbing scheme. An alternative scheme, named the global crabbing scheme, was also under discussion in the first stages of the project. In such as scheme, the closed orbit distortion that is caused by the fact that the head and the tail of the bunch are kicked in opposite directions propagates in the ring, resulting in transverse bunch oscillations.~\cite{Brning2015}. This scheme is cost-efficient compared to the local scheme as it only requires two CCs. However, it introduces significant constraints on the betatron phase advance between the interaction points and the CCs. The constraints are enhanced by the fact that the crossing in ATLAS takes place in the vertical plane while in CMS in the horizontal. To this end, the local CC scheme was chosen for the HL-LHC configuration.
+The above scheme, with $\CC$s before and after the interaction point, is called the local crabbing scheme. An alternative scheme, named the global crabbing scheme, was also under discussion in the first stages of the project. In such as scheme, the closed orbit distortion that is caused by the fact that the head and the tail of the bunch are kicked in opposite directions propagates in the ring, resulting in transverse bunch oscillations.~\cite{Brning2015}. This scheme is cost-efficient compared to the local scheme as it only requires two CCs. However, it introduces significant constraints on the betatron phase advance between the interaction points and the CCs. The constraints are enhanced by the fact that the bunch crossing in ATLAS takes place in the vertical plane while in CMS in the horizontal. To this end, the local CC scheme was chosen for the HL-LHC configuration. % uncrabbing.
 %HL-LHC book p.138: The transverse kick introduced by this cavity, different  for  the  head  and  the  tail  of  each  bunch,  is  equivalent  to  a  closed  orbit  distortion, i.e. head and tail would follow their individual closed orbit around the ring, their tilt wobbling around the unperturbed closed orbit of the bunch center.
 
+% short summary about KEKB in sylivias paper: https://cds.cern.ch/record/2263119/files/10.1016_j.nuclphysbps.2015.09.025.pdf
+The CCs have been succesfully used in KEKB collider $e^{+} - e^{-}$) in Japan, during 2007-2010, with lepton beams~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}. %(electrosn, positrons). 
+However, they 
 
 
 
 
+
+
+
+1. References to some technical specifications for both CC types. \\
+
+2. Noise, reference to noise studies ... to kek. mention why they are different.\\
+
+3. Reference to kek. CCs have already been used succesfully in KEK in japan with leptons to achieve record luminosity values.\\
+
+4. That's why we need to test them in the SPS. reference more details in ch4
 Two main difference, with kekb global scheme and leptons
 
 
-Therefore, the bunch rotates and the head-on collisions are restored compensating (partially, up to which percent) the crossing angle, and thus the corresponding luminosity reduction. This is illustrated in Fig... At the left, 
 
 
 
-- Reference with specifications for hl-lhc for the two types. In the sps tests, that type ... was used.
 
 
-
-CCs have already been used succesfully in KEK in japan with leptons to achieve record luminosity values.
-
-
-Concerns about the CCs, noise in their RF system. Wich will results in loss of luminsotiy. mention constraints with references. 
+Concerns about the CCs, noise in their RF system. Wich will results in loss of luminsotiy. mention constraints with references. Luis medina thesis reference.
 
 \section{Motivation, objectives and thesis outline}
 
