@@ -1,10 +1,29 @@
-The definitions and notations used throughout this thesis are based on the book of A. Wolksi in Ref.~\cite{wolski2014} unless it is stated otherwise. In this chapter, the basic concepts of accelerator beam physics that are essential for understanding the studies are introduced. The focus is put on the concepts for synchrotrons with proton beams. Additionally, in the last section, the tracking simulation codes used in this work are described.
+The definitions and notations used throughout this thesis are based on the book of A. Wolksi in Ref.~\cite{wolski2014} unless it is stated otherwise. In this chapter, the basic concepts of accelerator beam physics that are essential for understanding the studies presented here are introduced. The focus is put on the concepts for synchrotrons with proton beams. Additionally, in the last section, the tracking simulation codes used in this work are described.
 
 
-What is a synchrotron?
+% Details p.11 Michael schenk
+Synchrotrons are cuircular accelerators where the accelerating particles follow a fixed closed-loop path. In a synchrotron electric fields accelerate tha particles while magnetic fields steer and focus them. The magnetic fields are not constant but they vary according to the particles' energy, allowing acceleration and operation in very high (relativistic) energies. The LHC and SPS machines at CERN are synchrotrons.  
 
+
+
+What is a synchrotron? No interaction between bunches. First part no interaction betewen particles. and the collective effects: impedance.
+
+% section splitting accordin to Wolski.
 \section{Single-particle beam dynamics}
 
+First principles --> Lorentz force
+\subsection{Linear dynamics}
+\subsection{Non-linear dynamics}
+
+\section{Collective effects}
+\subsection{Beam transverse impedance}
+
+\section{Optics models of accelerators}
+% or optics design
+\subsection*{MADX}
+Table with parameters for sps lattice, eg average beta function, tune etc. circumference, Q20 and Q26.
+
+presentation AUTH?
 
 
 See sondre's thesis for inspiration on the structure.
@@ -18,6 +37,7 @@ See sondre's thesis for inspiration on the structure.
  The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
 
  \normalsize{\textbf{SPS non-linear model}\\
+\textcolor{red}{Move this section to chapter 6.}
 The nominal SPS model includes only the nonlinear fields produced by the chromatic sextupoles. However, one of the most important sources of non-linearities in SPS are the odd multipole components of its main dipole magnets. For some of the studies presented in this thesis their impact on the beam dynamics must be studied and therefore they should be included in the nominal model. 
 
 % APR Chapter 3.1
