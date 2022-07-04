@@ -65,10 +65,10 @@ HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{
 % Source v2: https://accelconf.web.cern.ch/ipac2019/papers/mopgw095.pdf
 
 %\normalsize{\textbf{Crab Cavities}}\\
-\subsection{Crab Cavities}\label{subsec:CC_intro}
-To achieve its luminosity goals, HL-LHC will employ numerous innovative technologies. Crab Cavity technology (will be denoted as $\CC$ in this thesis)~\cite{Calaga:2673544} is one of the key componenets of the project as it will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
+\subsection{Crab cavities}\label{subsec:CC_intro}
+To achieve its luminosity goals, HL-LHC will employ numerous innovative technologies. Crab cavity technology (will be denoted as $\CC$ in this thesis)~\cite{Calaga:2673544} is one of the key componenets of the project as it will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
 
-Crab Cavity is an RF cavity which provides a transverse, sinusoidal like, kick to the particles depending on their longitudinal position within the bunch. A graphic visualisation of the kick is shown in the Fig.~\ref{fig:cc_simple_kick}. It can be seen that the head (leading part) and the tail (trailing part) of the bunch recieve opposite deflection while the particles at the center remain unaffected.
+A crab cavity is an RF cavity which provides a transverse, sinusoidal like, kick to the particles depending on their longitudinal position within the bunch. A graphical visualisation of the kick is shown in Fig.~\ref{fig:cc_simple_kick}. It can be seen that the head (leading part) and the tail (trailing part) of the bunch receive opposite deflection while the particles at the center remain unaffected.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
@@ -77,16 +77,16 @@ Crab Cavity is an RF cavity which provides a transverse, sinusoidal like, kick t
         \label{fig:cc_simple_kick}
  \end{figure}
 
-The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, four $\CC$s will be installed on each side of the interaction points (two for each ring). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. 
+The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, four $\CC$s will be installed on each side of the interaction points (two for each ring). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. The reason why two $\CC$s are needed in each ring on each side of the IP is discussed in the following paragraphs (local vs global scheme).
 
 \begin{figure}[!h] % made at diagrams.net saved at google docs
     \centering         
     \includegraphics[width=0.8\textwidth]{images/introduction/LHC_layout_CCs.png}
-        \caption{Layout of the LHC and the SPS. The CC location for the HL-LHC configuration is marked. Two CCs (one per ring) will be installed at each side of ATLAS (red) and CMS (orange). Two protoype CCs were also installed in the SPS (magenta) in 2018, to be tested before their installation in LHC. The layout can be found in Ref.~\cite{LHC_SPS_layout} and was modified inspired by Ref.~\cite{LHC_SPS_layout_v2}.}
+        \caption{Layout of the LHC and the SPS. The CC location for the HL-LHC configuration is marked. Two CCs (one per ring) will be installed on each side of ATLAS (red) and CMS (orange). Two protoype CCs were also installed in the SPS (magenta) in 2018, to be tested before their installation in LHC. The layout can be found in Ref.~\cite{LHC_SPS_layout} and was modified inspired by Ref.~\cite{LHC_SPS_layout_v2}.}
         \label{fig:LHC_layout_CCs}
  \end{figure}
 
-In this configuration, the bunches recieve the transverse deflection from the first pair of $\CC$s just before reaching the interaction point. This results to a rotation of the bunch, which mitigates the crossing angle and restores the head-on collisions. The deflection, is cancelled once the bunches reach the second pair of $\CC$s which are symmetrically installed at the opposite side of the interaction point. The collision of the bunches in the presence of the $\CC$s is illustrated in Fig.~\ref{fig:crossing_with_and_without_CCs}~\cite{Verdú-Andrés:2263119}.
+In this configuration, the bunches receive the transverse deflection from the first pair of $\CC$s just before reaching the interaction point. This results in a rotation of the bunch, which mitigates the crossing angle and restores the head-on collisions. The deflection is cancelled once the bunches reach the second pair of $\CC$s which are symmetrically placed at the opposite side of the interaction point. The collision of the bunches in the presence of the $\CC$s is illustrated in Fig.~\ref{fig:crossing_with_and_without_CCs}~\cite{Verdú-Andrés:2263119}.
 % 90 deg between CCs and IP. https://cds.cern.ch/record/2263119/files/10.1016_j.nuclphysbps.2015.09.025.pdf
 
 \begin{figure}[!ht]
@@ -105,25 +105,26 @@ In this configuration, the bunches recieve the transverse deflection from the fi
         %\label{fig:add_label_here}
     \end{subfigure}
     \hfill
-     \caption{Collision with and without the use of CCs~\cite{Verdú-Andrés:2263119}. CCs restore the overlap between the bunches recovering the luminosity reduction cauased by the crossing angle, $\theta_c$. The blue and red colors indicate the two different bunches.} 
+     \caption{Collision with and without the use of CCs~\cite{Verdú-Andrés:2263119}. CCs restore the overlap between the bunches recovering the luminosity reduction caused by the crossing angle, $\theta_c$. The blue and red colors indicate indicate two bunches in the different rings.} 
      \label{fig:crossing_with_and_without_CCs}
  \end{figure}
 
 
 % Local vs global CC scheme: https://slideplayer.com/slide/10896302/ 
-The above scheme, with $\CC$s before and after the interaction point, is called the local crabbing scheme. An alternative scheme, named the global crabbing scheme, was also under discussion in the first stages of the project. In such as scheme, the closed orbit distortion that is caused by the fact that the head and the tail of the bunch are kicked in opposite directions propagates in the ring, resulting in transverse bunch oscillations.~\cite{Brning2015}. This scheme is cost-efficient compared to the local scheme as it only requires two CCs. However, it introduces significant constraints on the betatron phase advance between the interaction points and the CCs. The constraints are enhanced by the fact that the bunch crossing in ATLAS takes place in the vertical plane while in CMS in the horizontal. To this end, the local CC scheme was chosen for the HL-LHC configuration. % uncrabbing.
+The above scheme, with $\CC$s before and after the interaction point, is called the local crabbing scheme. An alternative scheme, named the global crabbing scheme, was also under discussion in the first stages of the project. In such as scheme, the closed orbit distortion that is caused by the fact that the head and the tail of the bunch are kicked in opposite directions propagates in the ring, resulting in transverse bunch oscillations~\cite{Brning2015}. This scheme is cost-efficient compared to the local scheme as it only requires two CCs. However, it introduces significant constraints on the betatron phase advance between the interaction points and the CCs. The constraints are enhanced by the fact that the bunch crossing in ATLAS takes place in the vertical plane while in CMS in the horizontal. To this end, the local CC scheme was chosen for the HL-LHC configuration. % uncrabbing.
 %HL-LHC book p.138: The transverse kick introduced by this cavity, different  for  the  head  and  the  tail  of  each  bunch,  is  equivalent  to  a  closed  orbit  distortion, i.e. head and tail would follow their individual closed orbit around the ring, their tilt wobbling around the unperturbed closed orbit of the bunch center.
 
-In order to accomodate the crossing in both transverse planes two $\CC$ desings have been developed: the Double-Quarter Wave (DQW) and the RF dipole (RFD), which provide vertical and horizontal deflection respectively. Information on their design can be found in Refs.~\cite{Zanoni:2288282, DeSilva:2288607, Xiao:1992565, Verdú-Andrés:2113440}
+In order to accommodate the crossing in both transverse planes two $\CC$ designs have been developed: the Double-Quarter Wave (DQW) and the RF dipole (RFD), which provide vertical and horizontal deflection respectively. Information on their design can be found in Refs.~\cite{Zanoni:2288282, DeSilva:2288607, Xiao:1992565, Verdú-Andrés:2113440}
 
 % short summary about KEKB in sylivias paper: https://cds.cern.ch/record/2263119/files/10.1016_j.nuclphysbps.2015.09.025.pdf
-The $\CC$s have already been successfully used in KEKB collider in Japan, during 2007-2010, with lepton beams ($e^{+} - e^{-}$)~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}. However, there are significant differences in the beam dynamics in the presence of $\CC$s in leptons and hadrons (HL-LHC case). One of the most crucial points is the impact of errors (e.g. RF noise) which leads to beam degradation~\cite{Calaga:2773279, Alekou:2696109}. This is not an issue of concern for lepton beams as they nevertheless experience beam-size damping due to synchrotron radiation. For proton beams, the synchrotron radiation damping is much weaker meaning that the beam degradation can lead to emittance growth which eventually can result in loss of luminosity.
+The $\CC$s have already been successfully used in the KEKB collider in Japan, during 2007-2010, with lepton beams ($e^{+} - e^{-}$)~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}. However, there are significant differences in the beam dynamics in the presence of $\CC$s in leptons and hadrons (HL-LHC case). One of the most crucial points is the impact of errors (e.g. RF noise) which leads to beam degradation~\cite{Calaga:2773279, Alekou:2696109}. This is not an issue of concern for lepton beams as they nevertheless experience emittance damping due to synchrotron radiation. For proton beams, the synchrotron radiation damping is much weaker meaning that the beam degradation can lead to emittance growth which eventually can result in loss of luminosity. % Andy's comment: "emittance damping" would be better than "beam-size damping". 
+
 % other crabbing errors: phase and amplitude rf noise, wakefields (Calaga)
 % other difference between letptons and protons (protons: much longer bunches)
 
 % Potential questions to answer for the CC test.
 %https://indico.cern.ch/event/800428/attachments/1804664/2945632/CrabCavity_BE_Seminar.pdf
-As the $\CC$s have never been used with protons before, two prototype superconducting $\CC$s were installed in the SPS (Fig.~\ref{fig:LHC_layout_CCs}, magenta markers) to be tested, validate their operation with proton beams and address potential issues before their installation in LHC. SPS consists of an ideal test bed for these studies as it allows testing for the closest conditions to the LHC than any other machine (proton beams, storage ring mode, second-highest beam energy after LHC). The two $\CC$s that were installed in SPS~\cite{Zanoni:2017} were identical, fabricated at CERN and of the DQW type (like the ones that will be used in ATLAS interaction point).
+As the $\CC$s have never been used with protons before, two prototype superconducting $\CC$s were installed in the SPS (Fig.~\ref{fig:LHC_layout_CCs}, magenta markers) to test the technical systems, to validate their operation with proton beams and to identify and address potential issues before their installation in LHC. The SPS  provides an ideal test bed for these studies as it allows testing under conditions that are closer to those in HL-LHC than any other machine. In particular, the SPS operates with proton beams, can run in storage-ring mode, and in terms of the energy reach is second only to LHC. The two $\CC$s that were installed in SPS~\cite{Zanoni:2017} were identical, fabricated at CERN and of the DQW type (like the ones that will be used in ATLAS interaction point in HL-LHC).
 
 
 \section{Motivation, objectives and thesis outline}
