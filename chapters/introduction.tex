@@ -29,7 +29,8 @@ The beams used by the LHC are produced and gradually accelerated by the injector
  % sps history: https://be-dep-op-sps.web.cern.ch/history
  The majority of the research described in this thesis was conducted for the Super Proton Synchrotron (SPS). Thus, some additional information about this machine is provided here. The SPS (shown with light blue color in Fig.~\ref{fig:cern_accelerator_complex}) was first commissioned in 1967 and has a circumference of 6.9\,km. It used to operate as a proton-antiproton collider ($\mathrm{Sp\bar{p}S}$) and later on as an injector for the Large Electron Positron collider (LEP) while it also provided beams for fixed-target experiments (e.g. in the North Area). Even though the SPS can accelerate various particle types (protons, antiprotons, electrons, and heavy ions) the following information will concern its operation with proton beams which is the topic of the research presented in this thesis.
 
- Currently, the SPS is the second biggest accelerator at CERN and it can accelerate protons from 26\,GeV up to 450\,GeV. Due to its past use as a collider, it can also operate as a storage ring. This operational mode is called "coast" and was used for the majority of the experimental studies presented in this thesis. During coast, the bunches circulate in the machine for long periods at constant energy. The highest energy at which SPS can operate in coast is 270\,GeV. 
+ Currently, the SPS is the second biggest accelerator at CERN and it can accelerate protons from 26\,GeV up to 450\,GeV. Due to its past use as a collider, it can also operate as a storage ring. This operational mode is called "coast" and was used for the majority of the experimental studies presented in this thesis. During coast, the bunches circulate in the machine for long periods at constant energy. The highest energy at which SPS can operate in coast is 270\,GeV due to limited cooling of the magnets to transfer away the heating when operating at high energy and consequently at large currents for long periods.
+
 
  %After that they are injected in the LHC. Hoewever, as it used to be a collider it can operate as a storage ring, it is called coast (des ti exeis grapsei.) and will be used for the studies in this thesis.
  
@@ -59,8 +60,10 @@ where $\mathcal{L}$ is the instantaneous luminosity as defined in Eq.~\eqref{eq:
 % for more details and specific values check sofias thesis.
 % and: https://accelconf.web.cern.ch/ipac2015/papers/thxb2.pdf
 
-HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{34} \ \mathrm{cm^{-2} s^{-1}}$ and an increase on the integrated luminosity from 300 $\mathrm{fb^{-1}}$ to 3000 $\mathrm{fb^{-1}}$ over its lifetime of 10-12 years~\cite{Brunning_Rossi}. 
+HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{34} \ \mathrm{cm^{-2} s^{-1}}$ and an increase on the integrated luminosity from 300 $\mathrm{fb^{-1}}$ to 3000 $\mathrm{fb^{-1}}$ over its lifetime of 10-12 years and considering 160 days of operation per year~\cite{Brunning_Rossi}. % 160 days. p.. 80 in the reference
 % The integrated luminosity for both lhc and hl-lhc is over 10-12 years.
+
+% 160 days of physics events per year:https://cds.cern.ch/record/2031207/files/198-201_Fessia.pdf
 
 % Source v2: https://accelconf.web.cern.ch/ipac2019/papers/mopgw095.pdf
 
@@ -77,7 +80,7 @@ A crab cavity is an RF cavity which provides a transverse, sinusoidal like, kick
         \label{fig:cc_simple_kick}
  \end{figure}
 
-The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, four $\CC$s will be installed on each side of the interaction points (two for each ring). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. The reason why two $\CC$s are needed in each ring on each side of the IP is discussed in the following paragraphs (local vs global scheme).
+The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, two $\CC$s will be installed on each ring and on each side of the interaction points (eight in total). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. The reason why two $\CC$s are needed in each ring on each side of the IP is discussed in the following paragraphs (local vs global scheme).
 
 \begin{figure}[!h] % made at diagrams.net saved at google docs
     \centering         
@@ -129,7 +132,13 @@ As the $\CC$s have never been used with protons before, two prototype supercondu
 
 \section{Motivation, objectives and thesis outline}
 
-As mentioned above, one of the main concerns regarding the $\CC$ operation with protons is the emittance growth due to noise in their RF system as it leads to luminosity loss. For the HL-LHC, the target values regarding the luminosity loss and emittance growth are very tight. In particular the maximum allowed luminosity loss due to $\CC$ RF noise induced emittance growth is targeted at just 1$\%$ which corresponds to an $\CC$ RF noise induced emittance growth of 2 $\mathrm{\%/h}$~\cite{MedinaMedrano:2301928, CC_lumi_limits_philippe, CC_lumi_limits_ilias}. To this end, a good understanding and characterization of the emittance growth mechanism is crucial for the HL-LHC project.
+As mentioned above, one of the main concerns regarding the $\CC$ operation with protons is the emittance growth due to noise in their RF system as it leads to luminosity loss. For the HL-LHC, the target values regarding the luminosity loss and emittance growth are very tight. In particular the maximum allowed luminosity loss due to $\CC$ RF noise induced emittance growth is targeted at just 1$\%$, during a physics fill, which corresponds to an $\CC$ RF noise induced emittance growth of 2 $\mathrm{\%/h}$~\cite{MedinaMedrano:2301928, CC_lumi_limits_philippe, CC_lumi_limits_ilias}. To this end, a good understanding and characterization of the emittance growth mechanism is crucial for the HL-LHC project.
+
+
+A physics fill is the time period during which the beams are successfully injected in the LHC at the desired conditions, are accelerated at the desired eneegy, are kept in the machine for consectuive collisions. After some hours, due to beam degradtion the beams are damped and a new fill is prepared. A fill in the HL-LHC and lasts a couple of hours.  
+(i.e. the beams have successfully been injected according to the desired filling scheme
+
+Phyiscs fill 5-20 hours depending on the scheme that will be used.
 
 This thesis focuses on understanding, characterising and evaluating the mechanism of $\CC$ RF noise-induced emittance growth including numerical and experimental studies. The studies presented in this thesis were conducted for the SPS machine since it has proton crabbing operational experience and allows direct comparison of predictions from models and experimental data. It should be emphasised that the CC tests in SPS constitute the first experimental beam dynamics studies with $\CC$s and proton beams. The results and the understanding obtained from this research are essential for the HL-LHC, in order to predict the long-term emittance and to define limits on the acceptable noise levels for the $\CC$s.
 %and for the design of the crab cavity HL-LHC Low-Level RF system.
