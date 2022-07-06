@@ -36,40 +36,31 @@ Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(
 
  At any point $s$ along the reference trajectory each particle is represented by the following 6-dimensional vector $(x, x^{\prime}, y, y^{\prime}, z, \delta)$ where:
 
- \begin{equation}\label{eq:x_prime}
-     x^\prime = \frac{dx}{ds} = \frac{dx}{dt}\frac{dt}{ds} = \frac{v_x}{v_z} =  \frac{p_x}{p_z} \approx \frac{p_x}{p_0}
- \end{equation}
+ \begin{subequations}\label{eq:particle_coordinates}
+    \begin{equation}
+        x^\prime = \frac{dx}{ds} = \frac{dx}{dt}\frac{dt}{ds} = \frac{v_x}{v_z} =  \frac{p_x}{p_z} \approx \frac{p_x}{p_0},
+    \end{equation}    
+    \begin{equation}
+        y^\prime = \frac{dy}{ds} = \frac{dy}{dt}\frac{dt}{ds} = \frac{v_y}{v_z} =  \frac{p_y}{p_z} 	\approx \frac{p_y}{p_0},
+    \end{equation} 
+    \begin{equation}
+        \delta = \frac{\Delta p}{p_0} = \frac{p-p_0}{p_0},
+    \end{equation}
+\end{subequations}
 
- \begin{equation}\label{eq:y_prime}
-    y^\prime = \frac{dy}{ds} = \frac{dy}{dt}\frac{dt}{ds} = \frac{v_y}{v_z} =  \frac{p_y}{p_z} 	\approx \frac{p_y}{p_0}
-\end{equation}
+where $p_0$ is the momentum of the reference particle which is given by: $p_0 = \gammarel m_0 v_0$, where $m_0$ is the proton rest mass and $\gammarel = \frac{1}{\sqrt{1-\beta^2}}$ is the relativistic gamma or Lorentz factor, where $\beta=v_0/c$ the relativistic $\beta$. In the In the ultra-relativistic regime which is the case in the studies presented in this thesis, $\beta=1$.
 
-\begin{equation}\label{eq:z}
-    z = 
-\end{equation}
+It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. The co-ordinates and the momentum of the reference particle are ($x=y=z=0$) and ($p_x=p_y=0, p_z=p_0$) respectively.
 
-\begin{equation}\label{eq:delta}
-    \delta 
-\end{equation}
 
 The motion of the particles is separated in the transverse and longitudinal planes. In the transverse plane, $(\mathbf{e_x, e_y})$, the motion is orthogonal to the reference trajectory. For any given location $s$ the horizontal $x$ and the vertical $y$ position of a particle are expressed relative to the reference trajectory. In the longitudinal plane, $(\mathbf{e_s})$, the motion is tangential to the reference trajectory. The variable $z$ indicates the longitudinal position of the particle at any given location $s$ along the ring. % Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
 
-
-
-
-and $p_0$ is the momentum of the reference or synchronous particle: the one that travels on the reference trajectory. Its coordinates are ($x=y=z=0$) and its momentum is ($p_x=p_y=0, p_z=p_0$) with $p_0 = \gammarel m_0 v_0$. $\gammarel = \frac{1}{\sqrt{1-\beta^2}}$ is the relativistic gamma or Lorentz factor
 
 The following will mainly focus on the transverse dynamics.
 
 
 All the other particles perform betatron oscillations which are described with the hill equation
 
-
-
- Not needed
- The distance along the reference trajectory is parameterised by the independent variable $s$. At any point along the reference trajectory, the transverse position of a particle is specified by Cartesian co-ordinates in a plane perpendicular to the reference trajectory.
-
- %https://en.wikipedia.org/wiki/Unit_vector. Curvilinear system. Xavier's thesis Fig.2.1
 
 
 \section{Single-particle beam dynamics}
