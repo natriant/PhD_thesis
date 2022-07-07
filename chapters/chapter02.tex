@@ -21,9 +21,9 @@ The sequence of the various electromagnetic elements around the accelerator ring
 The particle that follows this trajectory is called the reference particle and has a momentum $p_0$, an energy $E_0$, and a velocity $v_0$. This particle is often called the synchronous particle as it always passes from the center of the RF cavities (assuming constant speed and no losses). %https://indico.cern.ch/event/22574/contributions/475143/attachments/371243/516589/IntroductionToAccelerators.pdf slide 36
 
 \textbf{Co-ordinate system}\\
-However, the individual particles do not follow the reference trajectory: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the particles of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
+However, the individual particles do not follow the reference trajectory: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
 
-The variable $s$ denotes the distance along the reference trajectory. In accelerator physics, $s$ is usually chosen as the independent variable instead of time.  %why? p.19 https://www.bnl.gov/isd/documents/74289.pdf
+The variable $s$ denotes the distance along the reference trajectory. In accelerator physics, $s$ is usually chosen as the independent variable instead of time, $t$.  %why? p.19 https://www.bnl.gov/isd/documents/74289.pdf
 Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(s), z(s))$ give the horizontal, vertical, and longitudinal position of the particle with respect to the origin of the orthogonal moving system $\Sigma$. In the following paragraphs, the dependence of the co-ordinates on the position $s$ along the ring is omitted when possible to facilitate the notation (e.g. x(s) will be denoted as x).
 
 \begin{figure}[!h] % at the directory of ipac22
@@ -52,15 +52,12 @@ where $p_0$ is the momentum of the reference particle which is given by: $p_0 = 
 
 It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. The co-ordinates and the momentum of the reference particle are ($x=y=z=0$) and ($p_x=p_y=0, p_z=p_0$) respectively.
 
-The motion of the particles is separated in the transverse and longitudinal planes. In the transverse plane the motion is orthogonal to the reference trajectory and its co-ordinates are $(x, x^\prime, y, y^\prime)$. In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$.
+The motion of the particles is separated in the transverse and longitudinal planes. In the transverse plane the motion is orthogonal to the reference trajectory and its co-ordinates are $(x, x^\prime, y, y^\prime)$. In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
 
-\textbf{Further comments}\\
-\begin{itemize}[noitemsep]
-    %\itemsep-3.5em 
-    
-    \item In the ultra-relativistic regime, the transverse momentum/ of a particle is very smalle comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which simplifies Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
+\textbf{Further comments}
+\begin{itemize}[noitemsep, topsep=-8pt]  %topsep to remove the space after the "Further comments"
+    \item In the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
     \item For the discussion on the transverse beam dynamics in the following section, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
-    \item In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
 \end{itemize}
 % z = s-u0*t
 
