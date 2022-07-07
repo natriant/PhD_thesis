@@ -64,24 +64,14 @@ The motion of the particles is separated in the transverse and longitudinal plan
 \section{Single-particle beam dynamics}
 In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics.
 
-As already discussed, the motion of the charged particles inside a circular accelerator is controlled with magnetic fields. In principle, the effect of the magnets can be described with two-dimensional multipole fields, acting in the horizontal and vertical plane. Details on the three-dimensional fields can be found in Ref.~\cite{wolski2014} however, they will not be used for the studies presented here as they are not needed. % Ch. 1.3
+As already discussed, the motion of the charged particles inside a circular accelerator is controlled with magnetic fields. In principle, the effect of the magnets can be described with two-dimensional multipole fields, acting in the horizontal and vertical plane \footnote{Discriptions with three-dimensional fields also exist (details can be found in Ref.~\cite{wolski2014}), however they are not needed for the studies presented in this thesis which will use two-dimensional fields.}. % 3-dimensional fields: Ch. 1.3
 
 The magnetic field around the beam can be expressed with a multipole expansion as follows~\cite{wolski2014}: 
-\begin{equation}\label{eq:mult_expansion}
-    B_y + i B_x = C_n (x+i y)^{n-1},
-\end{equation}
-where $C_n$ is a complex constant and $n$ shows the order of the field component.
+\begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
+    B_y + i B_x = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
+\end{equation} % superposition
+where $n$ indicates the order of the field component: $n$=1 for a dipole, $n$=2 for quadrupole, $n$=3 for sextupole, $n$=4 for octupole etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. In particular, $b_n$ and $\alpha_n$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2$) multipole respectively. The multipole strength is expressed in units of $\mathrm{T/m^{n-1}}$.
 
-% details on Cn in Eq.2.2 in michael schen thesis
-where n denotes the order of the field componen
-
-l. Furthermore,
-static magnets designed for accelerators aim for purely transverse magnetic fields and their effect in
-the longitudinal direction is hence negligible [compare Eq. (2.1)]. The magnetic fields can be expressed
-through a multipole expansio
-
-- magnets act in transverse plane.
-- inthe horizonatl we assume ..
 
 
 Particles oscillate around the reference trajectory. betatron oscillations.
