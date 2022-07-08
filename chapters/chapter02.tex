@@ -77,11 +77,31 @@ The description of two-dimensional magnetic fields in accelerator physics is dis
 where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing (chromticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $\alpha_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
 % Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 
+At this point is appropriate to introduce the concept of beam rigidity, $B_0 \rho$.  Assuming a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, a proton follows a circular path which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centrifugal force, as follows:
+\begin{equation}\label{eq:beam_rigidity_v1}
+    e v_0 B_0 \frac{\gammarel m_p v_0^2}{\rho}
+\end{equation}
 
-The magnetic fields, are used to steer (dipoles) and focus (quadrupoles) and apply corrections (sextupoles, octupoles and higher order multipoles) at the motion of the beam.
+
+a charged particle moves in circles 
 
 
-Just to remind that the basic function 
+
+
+Most often in accelerator physics the strength of the mulitipole components is quoted normalised to what is called beam rigidity 
+
+
+
+
+- what is rigiditi
+- what is B0 and rho. 
+- shows how the particles resist bending at higher ebenergy
+- B0 is the main dipolar field strength whi is used as reference. 
+
+
+
+multipole fields are quated 
+
 
 
 Usually the multipole fields are normalised with what is called magneti rigidity. Brho. explain what is Brho.
@@ -97,16 +117,16 @@ Normalised strength? with magnetic rgiditi? what are the units?
 
 rigidity T m
 
+\textbf{Transvserse motion}\\
+In the transverse plane the motion is orthogonal to the reference trajectory and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics in the following section, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 
 Particles oscillate around the reference trajectory. betatron oscillations.
 
 Hill's equations not hamiltonians.
-\subsection{Transvserse motion}
 
-In the transverse plane the motion is orthogonal to the reference trajectory and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics in the following section, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
-\subsection{Longitudinal motion}
+\textbf{Longitudinal motion}\\
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
 
 \subsection{Linear dynamics}
