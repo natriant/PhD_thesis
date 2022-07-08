@@ -74,31 +74,17 @@ The description of two-dimensional magnetic fields in accelerator physics is dis
 \begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
     B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
 \end{equation} % principle of superposition 
+where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing (chromticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $\alpha_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
+% Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 
 
+The magnetic fields, are used to steer (dipoles) and focus (quadrupoles) and apply corrections (sextupoles, octupoles and higher order multipoles) at the motion of the beam.
 
 
+Just to remind that the basic function 
 
 
-The following equatio  
-
-
-% very usefull link.
-
-The two-dimensional field is expressed as a complex fields
-
-In order to express the two-dimensional field in the $(x,y)$ coordinates used for the description of the particles trajectory as shown   
-
-
-
-The magnetic field around the beam can be expressed with a multipole expansion as follows~\cite{wolski2014}: 
-\begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
-    B_y + i B_x = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
-\end{equation} % principle of superposition 
-where $n$ indicates the order of the field component: $n$=1 for a dipole, $n$=2 for quadrupole, $n$=3 for sextupole, $n$=4 for octupole etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n$ and $\alpha_n$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
-
-Usually, the multipole strengths 
-
+Usually the multipole fields are normalised with what is called magneti rigidity. Brho. explain what is Brho.
 
 . In accelerator physics, the multipole strengths
 are often normalised to e/p0, by convention, and denoted respectively by kn = bn p0/e and k
