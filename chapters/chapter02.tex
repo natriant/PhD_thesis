@@ -22,15 +22,17 @@ The particle that follows this trajectory is called the reference particle and h
 For a proton, the reference momentum is given by: $p_0 = \gammarel m_0 v_0$, where $m_p$ is the proton rest mass.
 
 \textbf{Mangetic rigidity}\\
-At this point it is appropriate to introduce the concept of magnetic rigidity, $B_0 \rho$, which is often used in accelerators as a normalisation factor and it is a measure of how the charged particles resist bending by a dipolar magnetic field. Assuming that a proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, it would follow a circular path of radius $\rho$ which is is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centripetal force, as follows:
+At this point, it is appropriate to introduce the concept of magnetic rigidity, $B_0 \rho$, which is often used in accelerators as a normalisation factor and is a measure of how the charged particles resist bending by a dipolar magnetic field. Assuming that a proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, it would follow a circular path of radius $\rho$ which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centripetal force, as follows:
 
-\begin{equation}
+\begin{equation}\label{eq:Brho}
     e v_0 B_0 = \frac{\gammarel m_p v_0^2}{\rho} \Rightarrow B_0 \rho = \frac{\gamma_0 m_p v_0}{e} \Rightarrow B_0 \rho = \frac{p_0}{e},
 \end{equation}
 where $e$ and $m_p$ are the charge and rest mass of a proton respectively, $p_0$ is the reference momentum, and $\gammarel = \frac{1}{\sqrt{1-\beta^2}}$ is the relativistic gamma or Lorentz factor, where $\beta=v_0/c$ is the relativistic $\beta$. In the ultra-relativistic regime which is the case in the studies presented in this thesis, $\beta=1$.
 % IMPORTANT!!! -->  v_0 = v_z. You explain this in the next paragraph.
 
 If the particle momentum is given in $\mathrm{GeV /c}$ (usuall units in high energy accelerators) then the unit of magnetic rigidity is $\mathrm{T \cdot m}$. 
+
+%- https://uspas.fnal.gov/materials/12MSU/xverse_dynamics.pdf
 
 \textbf{Co-ordinate system}\\
 However, the individual particles do not follow the reference trajectory: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
@@ -90,37 +92,11 @@ The description of two-dimensional magnetic fields in accelerator physics is dis
 where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing (chromticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $\alpha_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
 % Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 
-At this point is appropriate to introduce the concept of beam rigidity, $B_0 \rho$.  Assuming a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, a proton follows a circular path which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centrifugal force, as follows:
-\begin{equation}\label{eq:beam_rigidity_v1}
-    e v_0 B_0 = \frac{\gammarel m_p v_0^2}{\rho}
+Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
+\begin{equation}\label{eq:kn}
+    k_n = \frac{b_n}{B_0 \rho},
 \end{equation}
-
-- write beam rigiditi where you mention reference particle. is th orbit accorsing to the field.
-
-- what is rigiditi
-- what is B0 and rho. 
-- shows how the particles resist bending at higher ebenergy
-- B0 is the main dipolar field strength whi is used as reference. 
-- rho is the bending radius
-%- https://uspas.fnal.gov/materials/12MSU/xverse_dynamics.pdf
-- metrolab
-
-multipole fields are quated 
-
-
-
-Usually the multipole fields are normalised with what is called magneti rigidity. Brho. explain what is Brho.
-
-. In accelerator physics, the multipole strengths
-are often normalised to e/p0, by convention, and denoted respectively by kn = bn p0/e and k
-(s)
-n =
-an p0/e for the normal and the skew multipole.
-
-In accelerator phyisc
-Normalised strength? with magnetic rgiditi? what are the units?
-
-rigidity T m
+in untis of  $\mathrm{T/m^{n}}$. This is the convention that will be used in this thesis.
 
 \textbf{Transvserse motion}\\
 In the transverse plane the motion is orthogonal to the reference trajectory and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics in the following section, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
