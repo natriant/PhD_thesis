@@ -154,22 +154,23 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
 \begin{equation}\label{eq:linear_transfer_matrix}
     \begin{split}
     M_u (s_1 |  s_0) &= \begin{pmatrix}
-        \sqrt{\frac{\beta_{u,1}}{\beta_{u,0}}} (\cos{\psi}+\alpha_{u,0} \sin{\psi_u}) & \sqrt{\beta_{u,0}\beta_{u,1}}\sin{\psi_u} \\ 
-         - \frac{1+\alpha_{u,0} \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \sin{\psi_u}+ \frac{\alpha_{u,0} - \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \cos{\psi_u} & \sqrt{\frac{\beta_{u,0}}{\beta_{u,1}}} (\cos{\psi_u}+\alpha_{u,1} \sin{\psi_u})
+        \sqrt{\frac{\beta_{u,1}}{\beta_{u,0}}} (\cos{\Delta \psi_u}+\alpha_{u,0} \sin{\Delta \psi_u}) & \sqrt{\beta_{u,0}\beta_{u,1}}\sin{\Delta \psi_u} \\ 
+         - \frac{1+\alpha_{u,0} \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \sin{\Delta \psi_u}+ \frac{\alpha_{u,0} - \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \cos{\Delta \psi_u} & \sqrt{\frac{\beta_{u,0}}{\beta_{u,1}}} (\cos{\Delta \psi_u}+\alpha_{u,1} \sin{\Delta \psi_u})
         \end{pmatrix} \\ 
         &=\begin{pmatrix}
             \sqrt{\beta_{u,1}} & 0 \\
             -\frac{\alpha_{u,1}}{\sqrt{\beta_{u,1}}}& \frac{1}{\beta_{u,1}}
             \end{pmatrix} \begin{pmatrix}
-            \cos{\psi_u} & \sin{\psi_u} \\
-            -\sin{\psi_u}& \cos{\psi_u}
+            \cos{\Delta \psi_u} & \sin{\Delta \psi_u} \\
+            -\sin{\Delta \psi_u}& \cos{\Delta \psi_u}
             \end{pmatrix} \begin{pmatrix}
             \frac{1}{\sqrt{\beta_{u,0}}} & 0 \\
-            \frac{\alpha_{u,0}}{\sqrt{\beta_{u,0}}}& \sqrt{\beta_{u,0}},
-            \end{pmatrix}
+            \frac{\alpha_{u,0}}{\sqrt{\beta_{u,0}}} & \sqrt{\beta_{u,0}}
+            \end{pmatrix},
     \end{split}
 \end{equation}
 
+where 
 \textbf{Non-linear dynamics}\\
 
 
