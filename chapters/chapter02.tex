@@ -67,7 +67,10 @@ where $p_0$ is the momentum of the reference particle as defined in the previous
 
 It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. The co-ordinates and the momentum of the reference particle are ($x=y=z=0$) and ($p_x=p_y=0, p_z=p_0$) respectively.
 
-Furthermore, the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
+Furthermore, if the direction of motion of the particle has a small angle with the reference trajectory, the paraxial approximation is valid: $p_x, p_y \ll p_z = p_0$ which means that $x^\prime \approx p_x$ and  $y^\prime \approx p_y$. This approximation is valis for the studies presented in this thesis. \textcolor{red}{$p_0=1$? not clear to me} % ultra relativistic regime, is not mentioned at wolski's book. I wrote it for the p_ 0= 1. but i am not sure.
+% p.149 wolski and p.12 Michael schenk
+
+%Initial I have written: Furthermore, the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
 
 To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
 
@@ -96,7 +99,7 @@ Usually, in accelerator physics the values of the multipole strengths are quoted
 \begin{equation}\label{eq:kn}
     k_n = \frac{b_n}{B_0 \rho},
 \end{equation}
-in untis of  $\mathrm{T/m^{n}}$. This is the convention that will be used in this thesis.
+and is expressed in untis of  $\mathrm{T/m^{n}}$. This is the convention that will be used in this thesis.
 
 \subsection{Transvserse motion}
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
@@ -104,28 +107,40 @@ In the transverse plane the motion is orthogonal to the reference trajectory (se
 \textbf{Linear dynamics}\\
 Here the transverse motion of a particle moving the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now the discussion is limited only in dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics.
 
+As mentioned above, the particles (but the reference one) transversely  oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}:
+% also sofia's thesis Eq.(2.37)
 
-periodic sequence of multipoles and quarupoels
-
-\begin{equation}\label{eq:Hill_eq_1}
-    \frac{d^2 u}{ds^2} +K_u(s) u(s) = \delta_D (u-x)\frac{1}{\rho(s)\frac{\delta p}{p}}, \ u=x \ \mathrm{or} \ y,
+\begin{equation}\label{eq:transverse_eq_x}
+    x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_0 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
 \end{equation}
-where:
 
- \begin{equation}\label{eq:Hill_eq_2}
+\begin{equation}\label{eq:transverse_eq_y}
+    y^{\prime \prime} = \frac{B_y}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
+\end{equation}
+
+where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
+
+For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator, named the Hill's equation:
+
+\begin{equation}\label{eq:Hills_equation_1}
+    u^{\prime \prime}(s) + K_u(s) u(s) = 0,
+\end{equation}
+
+where $u=(x,y)$ and:
+
+ \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
         \frac{1}{\rho(s)}+k(s), & u=x \\
         -k(s), & u=y 
     \end{dcases}
 \end{equation}
 
+It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (un-coupled).
 
-As already mentioned above, the particles, but the reference particle, oscillate around the reference trajectory.
+\textbf{Matrix formalism}\\
+The solutions of the Hill's equation can be expressed in form of matrix
 
 
-Particles oscillate around the reference trajectory. betatron oscillations.
-
-Hill's equations not hamiltonians.\\
 \textbf{Non-linear dynamics}\\
 
 
