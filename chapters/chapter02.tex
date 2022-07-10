@@ -135,21 +135,40 @@ where $u=(x,y)$ and:
     \end{dcases}
 \end{equation}
 
-It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (un-coupled).
+It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
 
-\textbf{Matrix formalism}\\
+\textbf{Matrix formalism and Courant-Snyder parameters}\\
 The solutions of the Hill's equation can be expressed using matrix formalism as: 
 \begin{equation}\label{eq:matrix_formalism_intro}
    \begin{pmatrix}
     u\\ 
     u^\prime
-    \end{pmatrix}_{s} = M_u (s |  s_0) \begin{pmatrix}
+    \end{pmatrix}_{s_1} = M_u (s_1 |  s_0) \begin{pmatrix}
     u\\ 
     u^\prime
     \end{pmatrix}_{s_0},
 \end{equation}
 
-where $u=(x,y)$ and $M$ is the transfer matrix from the position $s_0$ to the $s$.
+where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u (s_1 |  s_0)$, equals to~\cite{Lee:1425444}: %Eq.(2.42) lee
+
+\begin{equation}\label{eq:linear_transfer_matrix}
+    \begin{split}
+    M_u (s_1 |  s_0) &= \begin{pmatrix}
+        \sqrt{\frac{\beta_{u,1}}{\beta_{u,0}}} (\cos{\psi}+\alpha_{u,0} \sin{\psi_u}) & \sqrt{\beta_{u,0}\beta_{u,1}}\sin{\psi_u} \\ 
+         - \frac{1+\alpha_{u,0} \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \sin{\psi_u}+ \frac{\alpha_{u,0} - \alpha_{u,1}}{\sqrt{\beta_{u,0} \beta_{u,1}}} \cos{\psi_u} & \sqrt{\frac{\beta_{u,0}}{\beta_{u,1}}} (\cos{\psi_u}+\alpha_{u,1} \sin{\psi_u})
+        \end{pmatrix} \\ 
+        &=\begin{pmatrix}
+            \sqrt{\beta_{u,1}} & 0 \\
+            -\frac{\alpha_{u,1}}{\sqrt{\beta_{u,1}}}& \frac{1}{\beta_{u,1}}
+            \end{pmatrix} \begin{pmatrix}
+            \cos{\psi_u} & \sin{\psi_u} \\
+            -\sin{\psi_u}& \cos{\psi_u}
+            \end{pmatrix} \begin{pmatrix}
+            \frac{1}{\sqrt{\beta_{u,0}}} & 0 \\
+            \frac{\alpha_{u,0}}{\sqrt{\beta_{u,0}}}& \sqrt{\beta_{u,0}},
+            \end{pmatrix}
+    \end{split}
+\end{equation}
 
 \textbf{Non-linear dynamics}\\
 
