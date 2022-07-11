@@ -120,7 +120,7 @@ As mentioned above, the particles (but the reference one) transversely  oscillat
 
 where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator, named the Hill's equation:
+For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator, named the Hill's equation~\cite{Lee:1425444}:
 
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
@@ -136,6 +136,12 @@ where $u=(x,y)$ and:
 \end{equation}
 
 It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
+
+As $K_u(s)$ is a periodic function, the general solution of Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
+
+\begin{equation}\label{eq:Floquets_solutions}
+    u(s) = a_u w(s)e^{i psi_u (s)}, \ u(s)^{\star} = a_u w(s)e^{-i psi_u (s)},
+\end{equation}
 
 \textbf{Matrix formalism and Courant-Snyder parameters}\\
 The solutions of the Hill's equation can be expressed using matrix formalism as: 
