@@ -140,21 +140,41 @@ It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that t
 As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
 
 \begin{equation}\label{eq:Floquets_solutions}
-    u(s) = a_u w(s)e^{i psi_u (s)}, \ u^{\star}(s) = a_u w(s)e^{-i psi_u (s)},
+    u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
 \end{equation}
 
-where $\alpha_u$ is a constant, and $u(s)$ and $w(s)$ are the amplitude and phase functions and $u^{\star}(s)$ is the complex conjugate of $u(s)$. $K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), Thesis Michael Schenk Eq.(2.10).
- 
-\begin{equation}\label{eq:amplitude_phase_functions}
-    w^{\prime \prime} + K_u(s) w(s) -\frac{1}{w(s)^3} = 0, \ \psi^{\prime}_u(s) = \frac{1}{w(s)^2}.
+where $\alpha_u$ is a constant, and $u(s)$ and $w(s)$ are the amplitude and phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
+$K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), Thesis Michael Schenk Eq.(2.10).
+%For the application in the beam dynamics only the real solutions are considered. Is it the same with K being real valued? % p.250 widerman
+\begin{equation}\label{eq:phase_functions}
+    w^{\prime \prime}_u + K_u(s) w(s) -\frac{1}{w_u(s)^3} = 0, 
 \end{equation}
+where:
+\begin{equation}\label{eq:phase_function}
+    \psi^{\prime}_u(s) = \frac{1}{w_u(s)^2} \Rightarrow \psi_u(s) = \int_{s_0}^{s} \frac{ds}{w_u(s)^2}
+\end{equation}
+% Regarding the above, see also Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
 
-The above equations are called the betatron envelope and phase equations.
+The above equations are called the betatron envelope and phase equations. At this point it is appropriate to introduce the betatron or twiss or Courant-Snyder parameters:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
 
+
+\begin{subequations}\label{eq:twiss_func}
+    \begin{equation}
+        \beta_u(s) = w_u(s)^2,
+    \end{equation}    
+    \begin{equation}
+       \alpha_u(s) = -\frac{1}{2} \beta^{\prime}_u(s),
+    \end{equation} 
+    \begin{equation}
+       \gamma_u(s) = \frac{1+\alpha_u(s)^2}{\beta_u(s)},
+    \end{equation}
+\end{subequations}
+
+with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
 
 \textbf{Matrix formalism and Courant-Snyder parameters}\\
-The solutions of the Hill's equation can be expressed using matrix formalism as: 
+The solutions of the Hill's equation can be also descrived using a matrix formalism as: 
 \begin{equation}\label{eq:matrix_formalism_intro}
    \begin{pmatrix}
     u\\ 
