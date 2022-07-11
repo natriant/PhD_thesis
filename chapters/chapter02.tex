@@ -27,7 +27,7 @@ At this point, it is appropriate to introduce the concept of magnetic rigidity, 
 \begin{equation}\label{eq:Brho}
     e v_0 B_0 = \frac{\gammarel m_p v_0^2}{\rho} \Rightarrow B_0 \rho = \frac{\gamma_0 m_p v_0}{e} \Rightarrow B_0 \rho = \frac{p_0}{e},
 \end{equation}
-where $e$ and $m_p$ are the charge and rest mass of a proton respectively, $p_0$ is the reference momentum, and $\gammarel = \frac{1}{\sqrt{1-\beta^2}}$ is the relativistic gamma or Lorentz factor, where $\beta=v_0/c$ is the relativistic $\beta$. In the ultra-relativistic regime which is the case in the studies presented in this thesis, $\beta=1$.
+where $e$ and $m_p$ are the charge and rest mass of a proton respectively, $p_0$ is the reference momentum, and $\gammarel = \frac{1}{\sqrt{1-\beta^2}}$ is the relativistic gamma or Lorentz factor, where $\betarel=v_0/c$ is the relativistic $\beta$ with $c$ being the speed of light. In the ultra-relativistic regime which is the case in the studies presented in this thesis, $\betarel=1$.
 % IMPORTANT!!! -->  v_0 = v_z. You explain this in the next paragraph.
 
 If the particle momentum is given in $\mathrm{GeV /c}$ (usuall units in high energy accelerators) then the unit of magnetic rigidity is $\mathrm{T \cdot m}$. 
@@ -60,9 +60,13 @@ Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(
     \begin{equation}
         \delta = \frac{\Delta p}{p_0} = \frac{p-p_0}{p_0},
     \end{equation}
+    \begin{equation}
+        z = \betarel c (t_0 -t),
+    \end{equation}
 \end{subequations}
 
-where $p_0$ is the momentum of the reference particle as defined in the previous paragraph.
+where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativistic $\beta$ as defined in the previous paragraph, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same locaiton.  In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
+
 %is the momentum of the reference particle which is given by: $p_0 = \gammarel m_0 v_0$, where $m_0$ is the proton rest mass and
 
 It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. The co-ordinates and the momentum of the reference particle are ($x=y=z=0$) and ($p_x=p_y=0, p_z=p_0$) respectively.
@@ -72,8 +76,7 @@ Furthermore, if the direction of motion of the particle has a small angle with t
 
 %Initial I have written: Furthermore, the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
 
-To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
-
+To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively.
 
 %\textbf{Further comments}
 %\begin{itemize}[noitemsep, topsep=-8pt]  %topsep to remove the space after the %"Further comments"
@@ -158,8 +161,6 @@ where:
 The above equations are called the betatron envelope and phase equations.
 
 At this point it is appropriate to introduce the betatron or twiss or Courant-Snyder parameters:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
-
-
 \begin{subequations}\label{eq:twiss_func}
     \begin{equation}
         \beta_u(s) = w_u(s)^2,
@@ -171,10 +172,9 @@ At this point it is appropriate to introduce the betatron or twiss or Courant-Sn
        \gamma_u(s) = \frac{1+\alpha_u(s)^2}{\beta_u(s)},
     \end{equation}
 \end{subequations}
-
 with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
-\textbf{Courant-Snyder parameters and matrix formalism}\\
+\textbf{Matrix formalism}\\
 % w and psi are also solutions. now we write it in matrix notation
 Knowing the lattice (element per element structure of the accelerator) the solutions $w_u(s)$ and $\psi_u(s)$ of the Hill's equation can be also described using a matrix formalism as follows:
 
@@ -208,24 +208,25 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
             \end{pmatrix},
     \end{split}
 \end{equation}
+where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
 
-where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$.
+\textbf{Action angle variables and phase space ellips}
 
-The Courant-Snyder parameters are also known as Twiss parameters.
-
-Lee p.49: beta is the betatron amplitue function, while alpha is related to the slope of the betatron ampltiude function.
-
-
-\textbf{Non-linear dynamics}\\
+\textbf{Emittance}
+\subsubsection{Non-linear dynamics}
 
 
 \subsection{Longitudinal motion}
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
 
+\textbf{Chromaticity}\\
+
+\textbf{Detuning with transverse amplitude}\\
 
 \section{Collective effects}
 \subsection{Beam transverse impedance}
 
+\subsection{Active feedback?}
 \section{Optics models of accelerators}
 % or optics design
 \subsection*{MADX}
@@ -272,13 +273,7 @@ The values of the multipole components up to seventh order obtained from this me
 
 \textbf{random multiple errros? } Like in APR.Ch.3.2.2.
 
-\section{Luminosity}
 
-
-    $\mathcal{L} = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+(\frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\alpha}{2})^2}} $
-
-
-% From: https://indico.cern.ch/event/634251/contributions/2566349/attachments/1447935/2231509/impact-crossing-angle.pdf
 \section{Emittance}
 
 \textbf{Defintion 1}: The statistical emittance is expressed in terms of the beam distribution: % Wolski Eq. (4.101)
