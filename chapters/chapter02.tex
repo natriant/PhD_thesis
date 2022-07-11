@@ -78,12 +78,6 @@ Furthermore, if the direction of motion of the particle has a small angle with t
 
 To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively.
 
-%\textbf{Further comments}
-%\begin{itemize}[noitemsep, topsep=-8pt]  %topsep to remove the space after the %"Further comments"
-%    \item In the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
-%    \item 
-%\end{itemize}
-% z = s-u0*t
 
 \section{Single-particle beam dynamics}
 In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics.
@@ -211,6 +205,13 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
 where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
 
 \textbf{Action angle variables and phase space ellips}
+
+\begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/PhaseSpaceEllipse.png}
+        \caption{The figure is a courtesy of A. Wolski~\cite{Wolski:1982424}}
+        \label{fig:phase_space_ellipse}
+ \end{figure}
 
 \textbf{Emittance}
 \subsubsection{Non-linear dynamics}
