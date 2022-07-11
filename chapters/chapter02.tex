@@ -137,11 +137,21 @@ where $u=(x,y)$ and:
 
 It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
 
-As $K_u(s)$ is a periodic function, the general solution of Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
+As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
 
 \begin{equation}\label{eq:Floquets_solutions}
-    u(s) = a_u w(s)e^{i psi_u (s)}, \ u(s)^{\star} = a_u w(s)e^{-i psi_u (s)},
+    u(s) = a_u w(s)e^{i psi_u (s)}, \ u^{\star}(s) = a_u w(s)e^{-i psi_u (s)},
 \end{equation}
+
+where $\alpha_u$ is a constant, and $u(s)$ and $w(s)$ are the amplitude and phase functions and $u^{\star}(s)$ is the complex conjugate of $u(s)$. $K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), Thesis Michael Schenk Eq.(2.10).
+ 
+\begin{equation}\label{eq:amplitude_phase_functions}
+    w^{\prime \prime} + K_u(s) w(s) -\frac{1}{w(s)^3} = 0, \ \psi^{\prime}_u(s) = \frac{1}{w(s)^2}.
+\end{equation}
+
+The above equations are called the betatron envelope and phase equations.
+
+
 
 \textbf{Matrix formalism and Courant-Snyder parameters}\\
 The solutions of the Hill's equation can be expressed using matrix formalism as: 
