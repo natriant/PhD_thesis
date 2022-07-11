@@ -168,6 +168,15 @@ At this point it is appropriate to introduce the betatron or twiss or Courant-Sn
 \end{subequations}
 with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
+Another important quantity in accelerator physics is the betatron tune or just tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine devided by $2/pi$:
+
+\begin{equation}\label{eq:betatron_tune}
+    Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
+\end{equation}
+
+where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine.
+
+
 \textbf{Matrix formalism}\\
 % w and psi are also solutions. now we write it in matrix notation
 Knowing the lattice (element per element structure of the accelerator) the solutions $w_u(s)$ and $\psi_u(s)$ of the Hill's equation can be also described using a matrix formalism as follows:
@@ -204,12 +213,15 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
 \end{equation}
 where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
 
-\textbf{Action angle variables and phase space ellips}
+\textbf{Action angle variables and phase space ellipse}
+
+- Solutions 
+- action angle variables
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/PhaseSpaceEllipse.png}
-        \caption{The figure is a courtesy of A. Wolski~\cite{Wolski:1982424}}
+        \caption{The figure is a courtesy of A. Wolski~\cite{Wolski:1982424}.}
         \label{fig:phase_space_ellipse}
  \end{figure}
 
@@ -225,7 +237,7 @@ In the longitudinal plane the motion is tangential to the reference trajectory a
 \textbf{Detuning with transverse amplitude}\\
 
 \section{Collective effects}
-\subsection{Beam transverse impedance}
+\subsection{Impedance and wakefields}
 
 \subsection{Active feedback?}
 \section{Optics models of accelerators}
