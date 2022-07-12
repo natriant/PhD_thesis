@@ -214,7 +214,7 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
 where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The convinient transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
 
 \textbf{Action angle variables and phase space ellipse}\\
-The solution of equation of motion (see Eq.~\eqref{eq:Hills_equation_1}) can alternatively be expressed in action-angle co-ordinates $(J_u, \psi_u)$ as follows:
+The solution of equation of motion (Eq.~\eqref{eq:Hills_equation_1}) can alternatively be expressed in action-angle co-ordinates $(J_u, \psi_u)$ as follows:
 \begin{equation}\label{eq:position_action_anlge}
     u(s) = \sqrt{2 \beta_u(s) J_u} \cos{(\psi_u(s))}.
 \end{equation} 
@@ -227,16 +227,19 @@ where $\beta_u(s), \alpha_u(s)$ the twiss parameters as defined in Eq.~\eqref{eq
 
 The action, $J_u$ is an invariant of the motion and can be written in terms of the twiss parameters as: % A. Wolski p.137
 \begin{equation}\label{eq:action_definition}
-    J_u = \frac{1}{2} (\gamma_u u^2 + 2 \alpha_u u u^\prime + \beta_u u^{\prime 2})
+    J_u = \frac{1}{2} (\gamma_u u^2 + 2 \alpha_u u u^\prime + \beta_u u^{\prime 2}) = \mathrm{constant}.
 \end{equation}
 
+The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/phase_space_ellipse.png}
-        \caption{Phase space ellipse in a periodic machine lattice. The dependence on the $s$ parameter has been omitted here.}
+        \caption{Phase space co-ordinates $(u, u^\prime)$ turn by turn, for a particle moving along the ring but at a given position $s$ which is characterised by the following twiss parameters $[\alpha_u(s), \beta_u(s), \gamma_u(s)]$. For the plotting, the dependence on the $s$ parameter has been omitted.}
         \label{fig:phase_space_ellipse}
  \end{figure}
+
+
 
 \textbf{Emittance}
 \subsubsection{Non-linear dynamics}
