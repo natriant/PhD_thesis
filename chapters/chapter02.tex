@@ -117,7 +117,7 @@ As mentioned above, the particles (but the reference one) transversely  oscillat
 
 where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator, named the Hill's equation~\cite{Lee:1425444}:
+For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named the Hill's equation~\cite{Lee:1425444}:
 
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
@@ -140,7 +140,7 @@ As $K_u(s)$ is a periodic function, the two independent solutions of the second 
     u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
 \end{equation}
 
-where $\alpha_u$ is a constant, and $u(s)$ and $w(s)$ are the amplitude and phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
+where $\alpha_u$ is a constant, and $w(s)$ and $\psi(s)$ are the amplitude and betatron phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
 $K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), Thesis Michael Schenk Eq.(2.10).
 %For the application in the beam dynamics only the real solutions are considered. Is it the same with K being real valued? % p.250 widerman
 \begin{equation}\label{eq:phase_functions}
@@ -150,7 +150,7 @@ where:
 \begin{equation}\label{eq:phase_function}
     \psi^{\prime}_u(s) = \frac{1}{w_u(s)^2} \Rightarrow \psi_u(s) = \int_{s_0}^{s} \frac{ds}{w_u(s)^2}
 \end{equation}
-% Regarding the above, see also Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
+% If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
 
 The above equations are called the betatron envelope and phase equations.
 
@@ -211,12 +211,25 @@ where $u=(x,y)$. The transfer matrix from the position $s_0$ to the $s_1$, $M_u 
             \end{pmatrix},
     \end{split}
 \end{equation}
-where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
+where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Courant-Snyder parameters at the location $s_i$, where $i=(0,1)$. The convinient transfer matrix apporoach will be extrensively used throught this thesis to study the motion of the particles in the accelerator lattice.
 
-\textbf{Action angle variables and phase space ellipse}
+\textbf{Action angle variables and phase space ellipse}\\
+The solution of equation of motion (see Eq.~\eqref{eq:Hills_equation_1}) can alternatively be expressed in action-angle co-ordinates $(J_u, \psi_u)$ as follows:
+\begin{equation}\label{eq:position_action_anlge}
+    u(s) = \sqrt{2 \beta_u(s) J_u} \cos{(\psi_u(s))}.
+\end{equation} 
+By differantion the divergence $u^\prime$ is written as:
+\begin{equation}\label{eq:divergence_action_anlge}
+    u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s))}+\alpha_u(s)\cos{(\psi_u(s))}),
+\end{equation} 
 
-- Solutions 
-- action angle variables
+where $\beta_u(s), \alpha_u(s)$ the twiss parameters as defined in Eq.~\eqref{eq:twiss_func}, $\psi_u(s)$ the betatron phase as defined in Eq.~\eqref{eq:phase_function} and $J_u$ is an integration constant which is defined by the initial conditions. % D. Amoriom p. 12
+
+The action, $J_u$ is an invariant of the motion and can be written in terms of the twiss parameters as: % A. Wolski p.137
+\begin{equation}\label{eq:action_definition}
+    J_u = \frac{1}{2} (\gamma_u u^2 + 2 \alpha_u u u^\prime + \beta_u u^{\prime 2})
+\end{equation}
+
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
