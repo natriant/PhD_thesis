@@ -239,12 +239,12 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
         \label{fig:phase_space_ellipse}
  \end{figure}
 
-\textbf{Emittance}\\
+\textbf{Transvserse emittance}\\
 Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $x^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
 \begin{equation}\label{eq:statistical_average_position}
     \langle u^2 \rangle = 2 \beta_u \langle J_u \cos^2{\psi_u} \rangle.
 \end{equation}
-Assuming, that the angle and aciton variables are uncorrelated and that the angle variables are uniformly distributed: % angles uniformly distributed from (0,2pi)
+Assuming, that the angle and action variables are uncorrelated and that the angle variables are uniformly distributed: % angles uniformly distributed from (0,2pi)
 \begin{equation}\label{eq:mean_u_zerp}
     \langle u \rangle = 0,
 \end{equation}
@@ -252,13 +252,27 @@ and then Eq.~\eqref{eq:statistical_average_position} becomes:
 \begin{equation}\label{eq:emittance_definition_1}
     \langle u^2 \rangle = \beta_u \epsilon_u,
 \end{equation}
-where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch.
+where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch. Considering the same assumption Eq.~\eqref{eq:position_action_anlge} and  Eq.~\eqref{eq:divergence_action_anlge} results to:
+
+\begin{equation}\label{eq:u_uprime_eq_1}
+    \langle u u^\prime \rangle = - \alpha_u \epsilon_u,
+\end{equation}
+
+\begin{equation}\label{eq:u_uprime_eq_2}
+    \langle u^{\prime 2} \rangle = \gamma_u \epsilon_u.
+\end{equation}
+
+
+
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.9\textwidth]{images/Ch2/transverse_phase_space_emittance.png}
-        \caption{The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}}
+        \caption{The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}.}
         \label{fig:phase_space_emittance}
  \end{figure}
+
+
+
 
 Figure .. shows the phase space of a gaussian bunch.
 
