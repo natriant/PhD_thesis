@@ -230,7 +230,7 @@ The action, $J_u$ is an invariant of the motion and can be written in terms of t
     J_u = \frac{1}{2} (\gamma_u u^2 + 2 \alpha_u u u^\prime + \beta_u u^{\prime 2}) = \mathrm{constant}.
 \end{equation}
 
-The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
+The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$ i.e. their individual initial conditions. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
@@ -239,16 +239,46 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
         \label{fig:phase_space_ellipse}
  \end{figure}
 
-\textbf{Emittance}
-\subsubsection{Non-linear dynamics}
+\textbf{Emittance}\\
+Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $x^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
+\begin{equation}\label{eq:statistical_average_position}
+    \langle u^2 \rangle = 2 \beta_u \langle J_u \cos^2{\psi_u} \rangle.
+\end{equation}
+Assuming, that the angle and aciton variables are uncorrelated and that the angle variables are uniformly distributed: % angles uniformly distributed from (0,2pi)
+\begin{equation}\label{eq:mean_u_zerp}
+    \langle u \rangle = 0,
+\end{equation}
+and then Eq.~\eqref{eq:statistical_average_position} becomes:
+\begin{equation}\label{eq:emittance_definition_1}
+    \langle u^2 \rangle = \beta_u \epsilon_u,
+\end{equation}
+where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch.
+\begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.9\textwidth]{images/Ch2/transverse_phase_space_emittance.png}
+        \caption{The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}}
+        \label{fig:phase_space_emittance}
+ \end{figure}
 
+Figure .. shows the phase space of a gaussian bunch.
+
+The statistical average 
+
+
+In the simulations studies presented in this thesis, the emittance is obtained through the statistical definition described by Eq. ..
+In experimental studies, the emittance is obtained from fitting the gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
+
+\textbf{Off-momentum particles}
+
+\subsubsection{Non-linear dynamics}
+\textbf{Chromaticity}\\
+
+\textbf{Detuning with transverse amplitude}\\
 
 \subsection{Longitudinal motion}
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
 
-\textbf{Chromaticity}\\
 
-\textbf{Detuning with transverse amplitude}\\
 
 \section{Collective effects}
 \subsection{Impedance and wakefields}
