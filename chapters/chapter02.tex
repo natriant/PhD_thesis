@@ -295,14 +295,53 @@ According to Liouville’s theorem~\cite{wolski2014}, considering that there are
 \begin{equation}\label{eq:normalised_emittance}
     \epsilon_u = \beta_0 \gamma_0 \epsilon^{\mathrm{geom}}_u
 \end{equation}
-The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term emittance will refer to the rms normalsied emittance.
+The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
 
-Finally, it is worth mentioning, that despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\ref{eq:Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (more theoretical details in Chapter~\ref{Ch:CC_noise_theory})
-%In the simulations studies presented in this thesis, the emittance is obtained through the statistical definition described by Eq. ..In experimental studies, the emittance is obtained from fitting the Gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
+It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. The results from the two methods are compatible.
 
-\textbf{Off-momentum particles}\\
-Up to now, the discussion was limited to on-momentum particles $\delta=0$ i.e. their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. For reference, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}-10^{-3}$.
+Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
 
+\textbf{Off-momentum effects - dispersion}\\
+Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. For reference, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
+
+The off-momentum particles experience different forces than the reference particle when passing through the magnetic fields in an accelerator. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
+
+Particles with $\delta < 0$ ($\delta>0$) are deflected stronger (less) by the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum spread $\delta$. This dependence of the closed orbit on the momentum offset of the particle is called dispersion.
+
+\begin{figure}[!h] % 
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/closed_orbit_dispersion.png}
+        \caption{The closed orbit and the betatron oscillations around it in the presence of dispersion~\cite{Holzer_summer_students_introduction}}
+        \label{fig:closed_orbit_Dx}
+ \end{figure}
+
+The equation of motion for the off-momentum particles is:
+\begin{equation}
+    x^{\prime \prime}(s) + K_x(s)x(s) = \frac{1}{\rho(s)} \delta,
+\end{equation}
+with the following solution:
+\begin{equation}
+    x(s) = x_H(s) + D_x(s)\delta,
+\end{equation}
+where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_action_anlge} and $D_x(s)$ is the dispersion function which can be expressed as:
+\begin{equation}\label{eq:dispersion_function}
+    D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)}.
+\end{equation}
+%Its solution is the sum of the solutions of homogeneous (for $\delta=0$) and of the inhomogeneous ($\delta \neq 0$) equation:
+%\begin{equation}
+%    x(s) = x_H(s) + x_I(s) = x_H(s) + D_x(s)\delta,
+%\end{equation}
+
+% which is defined as:
+%\begin{equation}\label{eq:dispersion_function}
+%   D_x(s) = \frac{x_I(s)}{\delta}
+%\end{equation}
+The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered.
+
+
+
+
+Chromatic phenomena in the next subsection.
 
 
 \subsubsection{Non-linear dynamics}
