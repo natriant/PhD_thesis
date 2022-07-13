@@ -327,6 +327,7 @@ where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_actio
 \begin{equation}\label{eq:dispersion_function}
     D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)}.
 \end{equation}
+
 %Its solution is the sum of the solutions of homogeneous (for $\delta=0$) and of the inhomogeneous ($\delta \neq 0$) equation:
 %\begin{equation}
 %    x(s) = x_H(s) + x_I(s) = x_H(s) + D_x(s)\delta,
@@ -336,10 +337,28 @@ where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_actio
 %\begin{equation}\label{eq:dispersion_function}
 %   D_x(s) = \frac{x_I(s)}{\delta}
 %\end{equation}
-The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered.
 
+The dispersive contribution can be added to the transfer matrix introduced in Eq.~\eqref{eq:matrix_formalism_intro} as follows:
+\begin{equation}\label{eq:matrix_formalism_dispersion}
+    \begin{pmatrix}
+     x\\ 
+     x^\prime
+     \end{pmatrix}_{s_1} = M_x (s_1 |  s_0) \begin{pmatrix}
+     x\\ 
+     x^\prime
+     \end{pmatrix}_{s_0} + \delta \begin{pmatrix}
+        D_x\\ 
+        D_x^\prime
+        \end{pmatrix}_{s_0}.
+ \end{equation}
+%The transfer matrix $M$ can be re-written such as it inclyyded, alide 14 in presentation v2 below:
 
+% 1. Definition of D: https://yannis.web.cern.ch/teaching/transverse.pdf
+% 2. Definition of D prime: https://indico.cern.ch/event/847209/contributions/3558973/attachments/1932901/3201996/AccPhys_Lect7_MomEff.pdf
 
+ From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered.
+ 
+ At this points it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. \textcolor{red}{The vertical dispersion in the SPS machine is measured to be... Ask Hannes}.
 
 Chromatic phenomena in the next subsection.
 
