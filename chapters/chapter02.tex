@@ -254,16 +254,16 @@ and then Eq.~\eqref{eq:statistical_average_position} becomes:
 \end{equation}
 where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch. Considering the same assumption Eq.~\eqref{eq:position_action_anlge} and  Eq.~\eqref{eq:divergence_action_anlge} results to:
 \begin{equation}\label{eq:u_uprime_eq_1}
-    \langle u u^\prime \rangle = - \alpha_u \epsilon_u,
+    \langle u u^\prime \rangle = - \alpha_u \epsilon^{\mathrm{geom}}_u,
 \end{equation}
 \begin{equation}\label{eq:u_uprime_eq_2}
-    \langle u^{\prime 2} \rangle = \gamma_u \epsilon_u.
+    \langle u^{\prime 2} \rangle = \gamma_u \epsilon^{\mathrm{geom}}_u.
 \end{equation}
 
 Combining the above equations, the geometric emittance is expressed in terms of the particles' distribution as:
 
 \begin{equation}\label{eq:geometric_emittance_v2}
-    \epsilon_u = \sqrt{\langle u^2 \rangle \langle u^{\prime 2} \rangle- \langle u u^{\prime}\rangle ^2}
+    \epsilon^{\mathrm{geom}}_u = \sqrt{\langle u^2 \rangle \langle u^{\prime 2} \rangle- \langle u u^{\prime}\rangle ^2}
 \end{equation}
 
 which, for $\langle u \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covariance or Sigma matrix of the particles' distribution (Eq~\eqref{eq:Sigma_matrix}):
@@ -280,36 +280,30 @@ which, for $\langle u \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covari
 
 The square root of the top-left element of the Sigma matrix, $\sigma_u$, is defined as the rms beam size and is also a variable that is used extensively in accelerator physics. The definition of rms and of others of the statistical analysis can be found in Appendix~\ref{ch:app_A}.
 
-Figure~\ref{fig:phase_space_emittance} provides a visualisation of the concepts of emittance and rms beam size. It shows the phase space of a transverse Gaussian bunch along with the histograms of the $u$ (top) and $u^\prime$ (right) variables at a particular point $s$ along the ring. Each particle follows each individual ellipse (of diffrent size but of the same orientation) dependending on its initial conditions. 
+Figure~\ref{fig:phase_space_emittance} provides a visualisation of the concepts of emittance and rms beam size. It shows the phase space of a transverse Gaussian bunch along with the histograms of the $u$ (top) and $u^\prime$ (right) variables at a particular point $s$ along the ring. Each particle follows its individual ellipse (of different sizes but with the same orientation) depending on its initial conditions. The rms beam size, $\sigma_u$, and the rms normalised momentum spread, $\sigma_{u^\prime}$, are shown in the top and right histograms of Fig.\ref{fig:phase_space_emittance} with the blue vertical lines. This corresponds to the area of the ellipse enclosed in the blue line in the phase space plot and equals the rms or geometric emittance, $\epsilon^{\mathrm{geom}}_u$ , as defined in Eq.~\eqref{eq:geometric_emittance_v2}.
 
-The rms beam size, $\sigma_u$, and the rms normalised momentum spread, $\sigma_{u^\prime}$, are shown in the top and right histograms of Fig.\ref{fig:phase_space_emittance} with the blue vertical lines. This corresponds to the area of the ellipse enclosed in the blue line in the phase space plot and is the rms or geometric emtitance as defined in Eq.~\eqref{eq:geometric_emittance_v2}.
-
-\begin{figure}[!h] % at the directory of ipac22
+\begin{figure}[!h] 
     \centering         
     \includegraphics[width=0.9\textwidth]{images/Ch2/transverse_phase_space_emittance.png}
         \caption{Transverse phase space of a Gaussian bunch. The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}.}
         \label{fig:phase_space_emittance}
  \end{figure}
 
+It should be noted, that there are also other conventions to define the emittance such as the 90$\%$ emittance (green lines in Fig.~\ref{fig:phase_space_emittance}) or the 3-sigma emittance (yellow lines in Fig.~\ref{fig:phase_space_emittance}). However, here the term geometric emittance will refer to the rms geometric emittance.
 
+According to Liouville’s theorem~\cite{wolski2014}, considering that there are no interactions between the particles and that the energy of the beam is not changing, the geometric emittance remains constant and therefore is an invariant of bunch motion (similarly to the action $J_u$ for the single-particle motion). The geometric emittance does not remain constant during acceleration, instead the normalised emittance is defined as:
+\begin{equation}\label{eq:normalised_emittance}
+    \epsilon_u = \beta_0 \gamma_0 \epsilon^{\mathrm{geom}}_u
+\end{equation}
+The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term emittance will refer to the rms normalsied emittance.
 
-Throughout this thesis the term emittance will refere to the rms emittance.
-
-only the rms emittance will be use.d
-
-
-It should be noted that for the above the transverse motion is considered uncoupled.
-
-
-
-
-
-Figure .. shows the phase space of a Gaussian bunch.
+Finally, it is worth mentioning, that despite the  Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\ref{eq:Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emittion, filamentation due to non-linearities of the machine, space charge and noise effects. This studies in this thesis focus on the emittance growth due to noise effects (more theoretical details in Chapter~\ref{Ch:CC_noise_theory})
 
 
 
-In the simulations studies presented in this thesis, the emittance is obtained through the statistical definition described by Eq. ..
-In experimental studies, the emittance is obtained from fitting the Gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
+
+
+%In the simulations studies presented in this thesis, the emittance is obtained through the statistical definition described by Eq. ..In experimental studies, the emittance is obtained from fitting the Gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
 
 \textbf{Off-momentum particles}
 
