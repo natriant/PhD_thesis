@@ -253,34 +253,54 @@ and then Eq.~\eqref{eq:statistical_average_position} becomes:
     \langle u^2 \rangle = \beta_u \epsilon_u,
 \end{equation}
 where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch. Considering the same assumption Eq.~\eqref{eq:position_action_anlge} and  Eq.~\eqref{eq:divergence_action_anlge} results to:
-
 \begin{equation}\label{eq:u_uprime_eq_1}
     \langle u u^\prime \rangle = - \alpha_u \epsilon_u,
 \end{equation}
-
 \begin{equation}\label{eq:u_uprime_eq_2}
     \langle u^{\prime 2} \rangle = \gamma_u \epsilon_u.
 \end{equation}
 
+Combining the above equations, the geometric emittance is expressed in terms of the particles' distribution as:
 
+\begin{equation}\label{eq:geometric_emittance_v2}
+    \epsilon_u = \sqrt{\langle u^2 \rangle \langle u^{\prime 2} \rangle- \langle u u^{\prime}\rangle ^2}
+\end{equation}
+
+which, for $\langle u \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covariance or Sigma matrix of the particles' distribution (Eq~\eqref{eq:Sigma_matrix}):
+
+\begin{equation}\label{eq:Sigma_matrix}
+    \Sigma = \begin{pmatrix}
+        \langle u^2 \rangle & \langle u u^\prime \rangle \\ 
+        \langle u u^\prime \rangle & \langle u^{\prime 2} \rangle 
+        \end{pmatrix}  = \begin{pmatrix}
+            \sigma_u^2 & \langle u u^\prime \rangle \\ 
+            \langle u u^\prime \rangle & \sigma_{u^{\prime 2}} 
+            \end{pmatrix} 
+\end{equation}
+
+
+Figure~\ref{fig:phase_space_emittance} provides a visualisation of the transverse phase space of a Gaussian bunch and of the concept of the emittance.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.9\textwidth]{images/Ch2/transverse_phase_space_emittance.png}
-        \caption{The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}.}
+        \caption{Transverse phase space of a Gaussian bunch. The figure is a courtesy of Tirsi Prebibaj~\cite{tirsi_thesis_presentation}.}
         \label{fig:phase_space_emittance}
  \end{figure}
 
 
+It should be noted that for the above the transverse motion is considered uncoupled.
 
 
-Figure .. shows the phase space of a gaussian bunch.
 
-The statistical average 
+
+
+Figure .. shows the phase space of a Gaussian bunch.
+
 
 
 In the simulations studies presented in this thesis, the emittance is obtained through the statistical definition described by Eq. ..
-In experimental studies, the emittance is obtained from fitting the gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
+In experimental studies, the emittance is obtained from fitting the Gaussian profiles due to the output of the instruments used for the emittance measurements. (more on chapter 5).
 
 \textbf{Off-momentum particles}
 
@@ -359,7 +379,7 @@ This is the geometric emittance.
 
 
 \textbf{Defintion 2}:
-For a gaussian beam distribution the normalised beam emittance it applies:
+For a Gaussian beam distribution the normalised beam emittance it applies:
 \begin{equation}\label{eq:emit_from_beam_size}
     \epsilon_{x} = \frac{\sigma_x(s)^2 - \delta^2 D_x^2(s)}{\beta_x(s)} \betarel \gammarel
 \end{equation}
@@ -497,3 +517,6 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
 \subsection{Sixtracklib}\label{subsec:sixtracklib}
 %Introduction to sixtrackib: https://indico.cern.ch/event/833895/contributions/3577803/attachments/1927226/3190636/intro_sixtracklib.pdf
 % https://inspirehep.net/files/6273430c727ace3796a92d069f651ade
+
+
+Check a presentation from kostas.

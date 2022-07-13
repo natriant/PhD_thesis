@@ -71,6 +71,24 @@ It can be seen that the covariance of variable $x$ with itslef equals the varian
     \mathrm{Cov}(x, x) = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2} = \mathrm{Var}(x) = \sigma_x^2.
 \end{equation}
 
+\textbf{Covariance matrix}\\
+The covariance as defined above is only calculated between two variables. To express the covariance values of each pair of variables, the covariance matrix or Sigma matrix is introduced as follows and is:
+
+\begin{equation}\label{eq:Sigma_matrix}
+    \Sigma = \begin{pmatrix}
+        \mathrm{Cov}(x,x) & \mathrm{Cov}(x,y) \\ 
+        \mathrm{Cov}(y,x) & \mathrm{Cov}(y,y) 
+        \end{pmatrix}  = \begin{pmatrix}
+            \sigma_x^2 & \mathrm{Cov}(x,y) \\ 
+            \mathrm{Cov}(y,x) & \sigma_y^2 
+            \end{pmatrix}
+\end{equation}
+
+as the covariance between the same variables equals to the variance (Eq.~\eqref{eq:std_var_cov_relationship}).
+
+If the data set is a distribution the covariance matrix is a parameter of the distribution.
+
+
 \section{Least squares fitting}\label{app:non_linear_fitting}
 In sciences, many quantities can not be measured directly but can be inferred from measured data by fitting a model function to them. Common model functions are the Gaussian, polynomial, or sinusoidal. The fitting procedure followed in this thesis is called "least squares" and is described below based on Ref.~\cite{least_square_minimisation}.
 
