@@ -132,15 +132,15 @@ where $u=(x,y)$ and:
 
 with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
 
-As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
-
-\begin{equation}\label{eq:Floquets_solutions}
-    u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
+Equation~\eqref{eq:Hills_equation_1} looks like the second-order differential equation of an harmonic oscillator, but the constant $K_u$ depends on the variable $s$. For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of the Hill's equations is:
+\begin{equation}\label{eq:Hills_solution}
+    u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
 \end{equation}
+where $A$ and $\psi_{u,0}$ the integration constants and $w(s)$ and $\psi_u(s)$ are the amplitude and betatron phase functions, which are periodic functions with the same periodicity as $K_u$.
 
-where $\alpha_u$ is a constant, and $w(s)$ and $\psi(s)$ are the amplitude and betatron phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
-$K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), Thesis Michael Schenk Eq.(2.10).
-%For the application in the beam dynamics only the real solutions are considered. Is it the same with K being real valued? % p.250 widerman
+By inserting Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1} and after performing a series of computations which are shown in detail in Appendix~\ref{app:betatron_equations_solutions} it is found that the amplitude and phase functions fulfill the following equations: 
+%Combination slide 27-28 of yiannis notes:  https://yannis.web.cern.ch/teaching/transverse.pdf and federicos thesis (p.11): https://cds.cern.ch/record/1481835/files/CERN-THESIS-2005-082.pdf
+
 \begin{equation}\label{eq:phase_functions}
     w^{\prime \prime}_u + K_u(s) w(s) -\frac{1}{w_u(s)^3} = 0, 
 \end{equation}
@@ -148,11 +148,10 @@ where:
 \begin{equation}\label{eq:phase_function}
     \psi^{\prime}_u(s) = \frac{1}{w_u(s)^2} \Rightarrow \psi_u(s) = \int_{s_0}^{s} \frac{ds}{w_u(s)^2}
 \end{equation}
-% If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
-
 The above equations are called the betatron envelope and phase equations.
 
-At this point it is appropriate to introduce the betatron or twiss or Courant-Snyder parameters:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
+\textbf{Courant-Snyder parameters}\\
+At this point it is appropriate to introduce the betatron or twiss or Courant-Snyder or twiss parameters:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
 \begin{subequations}\label{eq:twiss_func}
     \begin{equation}
         \beta_u(s) = w_u(s)^2,
@@ -166,13 +165,28 @@ At this point it is appropriate to introduce the betatron or twiss or Courant-Sn
 \end{subequations}
 with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
+
+%As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~\cite{Lee:1425444}):
+
+%\begin{equation}\label{eq:Floquets_solutions}
+%    u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
+%\end{equation}
+
+%where $\alpha_u$ is a constant, and $w(s)$ and $\psi(s)$ are the amplitude and betatron phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
+%$K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), % p.250 widerman
+
+% If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
+
+\textbf{Betatron tune}\\
 Another important quantity in accelerator physics is the betatron tune or just tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine devided by $2\pi$:
 
 \begin{equation}\label{eq:betatron_tune}
     Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
 \end{equation}
 
-where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The transverse tunes of the reference particle are called as the working point of the machine. 
+where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
+
+The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle define what is called the working point of the machine. 
 
 
 \textbf{Matrix formalism}\\

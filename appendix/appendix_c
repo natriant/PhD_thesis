@@ -1,4 +1,48 @@
 
+\section{Solutions of betatron equations}\label{app:betatron_equations_solutions}
+
+The calculations here are performed according to the discsussion in Ref.~\cite{Roncarolo:1481835} and Ref.~\cite{yannis_teaching}.
+
+By inserting Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1} it results to: % from federicos thesis
+\begin{equation}\label{eq:betatron_1}
+    u^\prime = A w^\prime(s)\cos{(\psi_u(s)+\psi_{u,0})} + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}]\psi^\prime(s)
+\end{equation}
+which becomes:
+\begin{equation}\label{eq:betatron_2}
+    \begin{split}
+    u^{\prime \prime}(s)= A w^{\prime \prime} \cos{(\psi_u(s)+\psi_{u,0})} + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
+    + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
+    + A w(s)[-\cos{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime 2}(s) + \\
+    + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime \prime}(s) + \\
+    + A \{ \cos{(\psi_u(s)+\psi_{u,0})} [w^{\prime \prime} - w(s)\psi_u^{\prime \prime}(s)] + \\
+    - \sin{(\psi_u(s)+\psi_{u,0})} [2w^\prime(s)\psi^\prime(s)+w(s) \psi_u^{\prime \prime}(s)] \}
+    \end{split}
+\end{equation}
+Now, inserting $u(s)$ and $u^{\prime \prime}(s)$ in Eq.~\eqref{eq:Hills_solution} gives:
+\begin{equation}\label{eq:betatron_3}
+    \begin{split}
+   u^{\prime \prime}(s)+K_u(s)u(s)=  [w^{\prime \prime}(s)w(s) \psi_u^{\prime 2(s)} + K(s)w(s)]\cos{(\psi_u(s)+\psi_{u,0})}+\\
+   ~ - [2w^{\prime(s)}\psi_u^{\prime}+w(s)\psi_u^{\prime \prime}(s)] \sin{(\psi_u(s)+\psi_{u,0})} = 0.
+    \end{split}
+\end{equation}
+
+In the above equation, for the functions $w(s)$ and $\psi_u(s)$ to not depend in a particular motion they must not vary with $\psi_{u,0}$~\cite{Roncarolo:1481835}. To fulfill this requirement the coefficients of sine and cosine must vanish individually. 
+
+Multiplying with $w(s)$ the coefficient of sine gives:
+\begin{equation}\label{eq:betatron_4}
+    2w(s)w^\prime(s)\psi_u^\prime(s) + w^2(s)
+\psi^{\prime \prime}_u(s) = [w^2(s)\psi^\prime_u(s)]^\prime = 0,
+\end{equation}
+which by integration is written as:
+\begin{equation}\label{eq:betatron_5}
+    \psi_u(s) = \oint_C \frac{ds}{w^2(s)}
+\end{equation}
+
+Replacing $\psi^\prime_u(s)$ in th coefficient of cosine gives:
+\begin{equation}\label{eq:betatron_6}
+   w^3(s)(w^{\prime \prime}(s)+K_u(s)w(s)) = 1.
+\end{equation}
+
 \section{Detuning with amplitude}\label{app:detuning_with_amplitude}
 - The linear detuning is given by the folloiwng formula, for octupole components
 
