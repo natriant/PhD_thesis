@@ -65,19 +65,17 @@ Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(
     \end{equation}
 \end{subequations}
 
-where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativistic $\beta$ as defined in the previous paragraph, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same locaiton.  In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point.
+where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativistic $\beta$ as defined in the previous paragraph, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same locaiton. It can be seen, that $\delta$ is the relative momentum offset from the reference particle. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point. Last, in the ultra-relativistic regime the momentum of the particles in the $\mathbf{e_z}$ direction is much larger than the transvserse ones and almost equals the reference momentum: $p_x, p_y \ll p_z = p_0$. This is why, the $x^\prime$ and $y^\prime$ are basically the normalised momentum with the reference one, $p_0$.
+
+%Furthermore, if the direction of motion of the particle has a small angle with the reference trajectory, the paraxial approximation is valid: $p_x, p_y \ll p_z = p_0$ which means that $x^\prime \approx p_x$ and  $y^\prime \approx p_y$. This approximation is valis for the studies presented in this thesis. \textcolor{red}{$p_0=1$? not clear to me} % ultra relativistic regime, is not mentioned at wolski's book. I wrote it for the p_ 0= 1. but i am not sure.
+% p.149 wolski and p.12 Michael schenk
 
 %is the momentum of the reference particle which is given by: $p_0 = \gammarel m_0 v_0$, where $m_0$ is the proton rest mass and
-
-It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. The co-ordinates and the momentum of the reference particle are ($x=y=z=0$) and ($p_x=p_y=0, p_z=p_0$) respectively.
-
-Furthermore, if the direction of motion of the particle has a small angle with the reference trajectory, the paraxial approximation is valid: $p_x, p_y \ll p_z = p_0$ which means that $x^\prime \approx p_x$ and  $y^\prime \approx p_y$. This approximation is valis for the studies presented in this thesis. \textcolor{red}{$p_0=1$? not clear to me} % ultra relativistic regime, is not mentioned at wolski's book. I wrote it for the p_ 0= 1. but i am not sure.
-% p.149 wolski and p.12 Michael schenk
+%It can be seen that $x^\prime$ and $y^\prime$ are basically the normalised momenta with the reference momentum $p_0$ and $\delta$ is the relative momentum offset from the reference particle. 
 
 %Initial I have written: Furthermore, the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
 
-To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively.
-
+To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. As an example the co-ordinates of the reference particle are $(x=0, x^\prime=0, y=0, y^\prime = 0, z=0, \delta=0 \ (p_z=p_0))$.
 
 \section{Single-particle beam dynamics}
 In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics.
@@ -174,7 +172,7 @@ Another important quantity in accelerator physics is the betatron tune or just t
     Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
 \end{equation}
 
-where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine.
+where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The transverse tunes of the reference particle are called as the working point of the machine. 
 
 
 \textbf{Matrix formalism}\\
@@ -363,11 +361,17 @@ The dispersive contribution can be added to the transfer matrix introduced in Eq
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next subsubsection which focuses on non-linear beam dynamics.
 
 \subsubsection{Non-linear dynamics}
-Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as: imperfections in the magnets field and alignment, particles' momentum spread and higer order magnets (sextupoles, octupoles etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics.
+Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited in the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
+We define the chromaticity as the variation of the betatron tune Q with the relative momentume deviation delta.
 
+Chromaticity is the variation of the transverse tunes due to momentum spread 
 
+Chromaticity is equivalent to a gradient
+error arising from the momentum deviations of the particles. T
+
+. In particular, particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles. % due to their larger magnetic rigidity. The situation is inverse for particles with δ < 0. Source: thesis michael schenk.
 
 
 This creates the need for higher-order magnets with nonlinear transfer
