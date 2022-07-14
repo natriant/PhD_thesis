@@ -35,7 +35,7 @@ If the particle momentum is given in $\mathrm{GeV /c}$ (usuall units in high ene
 %- https://uspas.fnal.gov/materials/12MSU/xverse_dynamics.pdf
 
 \textbf{Co-ordinate system}\\
-However, the individual particles do not follow the reference trajectory: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
+However, the individual particles do not follow the reference trajectory due to small deviations in their initial conditions: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
 
 The variable $s$ denotes the distance along the reference trajectory. In accelerator physics, $s$ is usually chosen as the independent variable instead of time, $t$.  %why? p.19 https://www.bnl.gov/isd/documents/74289.pdf
 Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(s), z(s))$ give the horizontal, vertical, and longitudinal position of the particle with respect to the origin of the orthogonal moving system $\Sigma$. In the following paragraphs, the dependence of the co-ordinates on the position $s$ along the ring is omitted when possible to facilitate the notation (e.g. x(s) will be denoted as x).
@@ -100,7 +100,7 @@ and is expressed in untis of  $\mathrm{T/m^{n}}$. This is the convention that wi
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 \subsubsection{Linear dynamics}
-Here the transverse motion of a particle moving the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now the discussion is limited only in dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics.
+Here the transverse motion of a particle moving the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now the discussion is limited only in dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
 As mentioned above, the particles (but the reference one) transversely  oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}:
 % also sofia's thesis Eq.(2.37)
@@ -125,12 +125,12 @@ where $u=(x,y)$ and:
 
  \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
-        \frac{1}{\rho(s)}+k(s), & u=x \\
-        -k(s), & u=y 
+        \frac{1}{\rho(s)}+k_1(s), & u=x \\
+        -k_1(s), & u=y 
     \end{dcases}
 \end{equation}
 
-It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
+with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
 
 As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~~\cite{Lee:1425444}):
 
