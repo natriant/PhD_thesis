@@ -314,7 +314,7 @@ It is worth commenting here, that for the simulation studies presented in this t
 Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
 
 \textbf{Off-momentum effects - dispersion}\\
-Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. For reference, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
+Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. As an example, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
 
 The off-momentum particles experience different forces than the reference particle when passing through the magnetic fields in an accelerator. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
 
@@ -368,9 +368,9 @@ The dispersive contribution can be added to the transfer matrix introduced in Eq
 % 1. Definition of D: https://yannis.web.cern.ch/teaching/transverse.pdf
 % 2. Definition of D prime: https://indico.cern.ch/event/847209/contributions/3558973/attachments/1932901/3201996/AccPhys_Lect7_MomEff.pdf
 
- From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. For reference, the rms vertical dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
+ From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. As an example, the rms vertical dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
  
- At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
+ At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
 
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next subsubsection which focuses on non-linear beam dynamics.
 
@@ -378,21 +378,18 @@ Additionally, the off-momentum particles receive different focusing due to gradi
 Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited in the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
-We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentume deviation delta:
-\begin{equation}
-    Q_u = Q
+We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentume deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity is: % M. Schenk p.49
+
+\begin{equation}\label{eq:chromatic_tune_shift_up_to_order_m}
+   \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{n} \delta^n, 
 \end{equation}
+where:
+\begin{equation}\label{eq:chroma_up_to_order_m}
+    Q_u^{n} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
+ \end{equation}
+denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. 
 
-Chromaticity is the variation of the transverse tunes due to momentum spread 
-
-Chromaticity is equivalent to a gradient
-error arising from the momentum deviations of the particles. T
-
-. In particular, particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles. % due to their larger magnetic rigidity. The situation is inverse for particles with δ < 0. Source: thesis michael schenk.
-
-
-This creates the need for higher-order magnets with nonlinear transfer
-maps.
+Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity od a machine and achieve the desired values for its operation.
 
 \textbf{Detuning with transverse amplitude}\\
 
