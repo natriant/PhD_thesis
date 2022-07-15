@@ -309,7 +309,17 @@ According to Liouville’s theorem~\cite{wolski2014}, considering that there are
 \end{equation}
 The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
 
-It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. The results from the two methods are compatible.
+It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained form Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:emit_geom_norm_relation}:
+
+% For a Gaussian beam distribution the normalised beam emittance it applies:
+\begin{equation}\label{eq:emit_from_beam_size}
+    \epsilon_{u} = \frac{\sigma_u(s)^2}{\beta_u(s)} \beta_0 \gamma_0,
+\end{equation}
+
+where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, at specific location $s$ along the accelerator and $\beta_0, \gamma_0$ are the relativistic parameters. 
+
+The emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic paramters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
+
 
 Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
 
@@ -394,16 +404,11 @@ denotes the chromaticity of order $n$. The studies in this thesis, are limited t
 Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
 \textbf{Octupoles and detuning with amplitude}\\
-Octupole magnets are usually used to increase the transvserse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles oscillatorty motion. The topic of resonances is out of the scope of this thesis, however more details can be found in Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{add footnote here}.
+Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope for this thesis, however more details can be found in Ref.~\cite{Rumolo:1982422}.}.
 
+In the SPS and LHC rings, the octupoles are installed in families in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
-
-(footnote to briefley explain, they are not an issue in this thesis.) instability effects (maybe also a reference or footnote). At CERN the octupole magnets in SPS and LHC are called “Landau octupoles” are installed to
-produce a dedicated betatron frequency spread that provides Landau damping [7]. (need to re-write). Landau octupoles are used in routine operation to generate
-amplitude dependent detuning and stabilise the beam. They are in families in order to avoid resonance excitation.
-Check equations at the enf of this chapter.
-
-formulas for detuning from transverse amplitude.
+The betatron tune spread that is introduced by the octupoles is 
 
 \subsection{Longitudinal motion}
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
@@ -411,7 +416,7 @@ In the longitudinal plane the motion is tangential to the reference trajectory a
 
 
 \section{Collective effects}
-\subsection{Impedance and wakefields}
+\subsection{Impedance and wakefields}\label{subsec:wakefields}
 
 \subsection{Active feedback?}
 \section{Optics models of accelerators}
