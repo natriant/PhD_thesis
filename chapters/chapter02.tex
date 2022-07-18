@@ -77,6 +77,8 @@ where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativ
 
 To summarize, the motion of the particles is separated in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. As an example the co-ordinates of the reference particle are $(x=0, x^\prime=0, y=0, y^\prime = 0, z=0, \delta=0 \ (p_z=p_0))$.
 
+Last, $(x, y, z)$ are expressed in meters, $(x^\prime, y^\prime)$ in radians while $\delta$ is dimensionless.
+
 \section{Single-particle beam dynamics}
 In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics.
 
@@ -165,7 +167,10 @@ At this point it is appropriate to introduce the betatron or twiss or Courant-Sn
 \end{subequations}
 with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
-
+The betatron phase advance from Eq.~\eqref{eq:phase_function} can be re-written using the beta twiss function as:
+\begin{equation}\label{eq:phase_advance_definition_with_twiss}
+    \psi_u(s)= \int_{s_0}^{s} \frac{ds}{\beta_u(s)}.
+\end{equation}
 %As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~\cite{Lee:1425444}):
 
 %\begin{equation}\label{eq:Floquets_solutions}
@@ -179,15 +184,12 @@ with $\beta^{\prime}_u(s) = d\beta_u(s)/ds$.
 
 \textbf{Betatron tune}\\
 Another important quantity in accelerator physics is the betatron tune or just tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine devided by $2\pi$:
-
 \begin{equation}\label{eq:betatron_tune}
     Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
 \end{equation}
-
 where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
 
 The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
-
 
 \textbf{Matrix formalism}\\
 % w and psi are also solutions. now we write it in matrix notation
@@ -234,7 +236,6 @@ By differantion the divergence $u^\prime$ is written as:
 \begin{equation}\label{eq:divergence_action_anlge}
     u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s))}+\alpha_u(s)\cos{(\psi_u(s))}),
 \end{equation} 
-
 where $\beta_u(s), \alpha_u(s)$ the twiss parameters as defined in Eq.~\eqref{eq:twiss_func}, $\psi_u(s)$ the betatron phase as defined in Eq.~\eqref{eq:phase_function} and $J_u$ is an integration constant which is defined by the initial conditions. % D. Amoriom p. 12
 
 The action, $J_u$ is an invariant of the motion and can be written in terms of the twiss parameters as: % A. Wolski p.137
@@ -250,6 +251,36 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
         \caption{Phase space co-ordinates $(u, u^\prime)$ turn by turn, for a particle moving along the ring but at a particular position $s$ which is characterised by the following twiss parameters $[\alpha_u(s), \beta_u(s), \gamma_u(s)]$. For the plotting, the dependence on the $s$ parameter has been omitted.}
         \label{fig:phase_space_ellipse}
  \end{figure}
+
+ \textbf{Normalised phase space}\\
+ Often in accelerator physics it is useful to transform the transverse phase space ellipse to a normalised phase space circle, where the motion is equivalent with the one of the harmonic oscillator. % Wiedemman p.235 
+ In the normalised phase space the co-ordinates $(u, u^\prime)$ are normalised with the twiss parameters $(\alpha_u, \beta_u)$ for the particular location $s$ around the ring, as follows~\cite{Wiedemann:1083415}: % widerman p.235, eq.8.92-8.93
+ \begin{equation}\label{eq:normalised_coordinates_un}
+     u_N(\phi) = \frac{u(s)}{\sqrt{\beta_u(s)}},
+ \end{equation}
+\begin{equation}\label{eq:normalised_coordinates_un_prime}
+     u^\prime_N(\phi) = \frac{d u_N}{d \phi} = \sqrt{\beta_u(s)} u^\prime(s) + \frac{\alpha_u(s)}{\beta_u(s)}u(s),
+ \end{equation}
+ % The normalised transformation can also be found in Yiannis notes in the link below: https://yannis.web.cern.ch/teaching/transverse.pdf
+where $\phi = \frac{\psi_u}{Q_u}$. It can be seen that the indipendent variable in the normalised co-ordinates is the phase advance (normalised with the betatron tune), $\phi$, instead of the location $s$ along the ring. % p.12 in the following link: https://cds.cern.ch/record/409584/files/thesis-99-070_Chapter1.pdf
+Both of the normalised co-ordinates, $(u_N, u_N^\prime)$ are expressed in units of $m^{1/2}$.
+
+Combining Eq.~\eqref{eq:action_definition}, Eq.~\eqref{eq:twiss_func}, Eq.~\eqref{eq:normalised_coordinates_un} and Eq.~\eqref{eq:normalised_coordinates_un_prime} the action variable can also be written as:
+\begin{equation}\label{eq:action_normalised_coordinates}
+    J_u = \frac{1}{2} (u_N^2+u_N^{\prime 2}).
+\end{equation}
+% Plotting in p.4 of: http://www.toddsatogata.net/2013-USPAS/2013-01-23-NonlinearDynamicsNotes.pdf
+The phase space in normalised co-ordinates is shown in Fig.~\ref{fig:phase_space_circle_normalised}.
+\begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/phase_space_normalised.png}
+        \caption{Normalised phase space for a particle moving along the accelerator but for a particular position $s$. }
+        \label{fig:phase_space_circle_normalised}
+ \end{figure}
+ 
+  %Federicos thesis 2.3.1 and sondre eq. 2.21a
+ 
+ 
 
 \textbf{Transvserse emittance}\\
 Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
@@ -313,7 +344,7 @@ According to Liouville’s theorem~\cite{wolski2014}, considering that there are
 \end{equation}
 The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
 
-It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained form Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:emit_geom_norm_relation}:
+It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained form Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:normalised_emittance}:
 
 % For a Gaussian beam distribution the normalised beam emittance it applies:
 \begin{equation}\label{eq:emit_from_beam_size}
@@ -325,16 +356,6 @@ where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, at 
 It should be highlighted that the emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic parameters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
 
 Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
-
-\textbf{Normalised phase space}\\
-Often in accelerator physics it is useful to transform the transverse phase space ellipse to a normalised phase space circle, where the co-ordinates are normalised with the twiss parameters for the particular location $s$ around the ring.
-
-normalised emittance of the initial beam distribution, $\epsilon_{u,0}$.
-
-
-
- Federicos thesis 2.3.1 and sondre eq. 2.21a
-
 
 \textbf{Off-momentum effects - dispersion}\\
 Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. As an example, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
