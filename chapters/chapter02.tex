@@ -239,7 +239,7 @@ where $\beta_u(s), \alpha_u(s)$ the twiss parameters as defined in Eq.~\eqref{eq
 
 The action, $J_u$ is an invariant of the motion and can be written in terms of the twiss parameters as: % A. Wolski p.137
 \begin{equation}\label{eq:action_definition}
-    J_u = \frac{1}{2} (\gamma_u u^2 + 2 \alpha_u u u^\prime + \beta_u u^{\prime 2}) = \mathrm{constant}.
+    J_u = \frac{1}{2} (\gamma_u(s) u^2(s) + 2 \alpha_u(s) u(s) u(s)^\prime + \beta_u(s) u^{\prime 2}(s)) = \mathrm{constant}.
 \end{equation}
 
 The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$ i.e. their individual initial conditions. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
@@ -252,41 +252,45 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
  \end{figure}
 
 \textbf{Transvserse emittance}\\
-Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $x^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
+Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
 \begin{equation}\label{eq:statistical_average_position}
-    \langle u^2 \rangle = 2 \beta_u \langle J_u \cos^2{\psi_u} \rangle.
+    \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \cos^2{\psi_u(s)} \rangle.
 \end{equation}
 Assuming, that the angle and action variables are uncorrelated and that the angle variables are uniformly distributed: % angles uniformly distributed from (0,2pi)
 \begin{equation}\label{eq:mean_u_zerp}
-    \langle u \rangle = 0,
+    \langle u(s) \rangle = 0,
 \end{equation}
 and then Eq.~\eqref{eq:statistical_average_position} becomes:
 \begin{equation}\label{eq:emittance_definition_1}
-    \langle u^2 \rangle = \beta_u \epsilon_u,
+    \langle u^2(s) \rangle = \beta_u(s) \epsilon_u,
 \end{equation}
-where $\epsilon_u=\langle J_u \rangle$ is the geometric emittance of the bunch. Considering the same assumption Eq.~\eqref{eq:position_action_anlge} and  Eq.~\eqref{eq:divergence_action_anlge} results to:
+where
+\begin{equation}\label{eq:geom_emittance_action}
+    \epsilon_u=\langle J_u \rangle
+\end{equation}
+is the geometric emittance of the bunch. Considering the same assumption Eq.~\eqref{eq:position_action_anlge} and  Eq.~\eqref{eq:divergence_action_anlge} results to:
 \begin{equation}\label{eq:u_uprime_eq_1}
-    \langle u u^\prime \rangle = - \alpha_u \epsilon^{\mathrm{geom}}_u,
+    \langle u(s) u^\prime(s) \rangle = - \alpha_u(s) \epsilon^{\mathrm{geom}}_u,
 \end{equation}
 \begin{equation}\label{eq:u_uprime_eq_2}
-    \langle u^{\prime 2} \rangle = \gamma_u \epsilon^{\mathrm{geom}}_u.
+    \langle u^{\prime 2}(s) \rangle = \gamma_u(s) \epsilon^{\mathrm{geom}}_u.
 \end{equation}
 
 Combining the above equations, the geometric emittance is expressed in terms of the particles' distribution as:
 
 \begin{equation}\label{eq:geometric_emittance_v2}
-    \epsilon^{\mathrm{geom}}_u = \sqrt{\langle u^2 \rangle \langle u^{\prime 2} \rangle- \langle u u^{\prime}\rangle ^2}
+    \epsilon^{\mathrm{geom}}_u = \sqrt{\langle u^2(s) \rangle \langle u^{\prime 2}(s) \rangle- \langle u (s)u^{\prime}(s) \rangle ^2}
 \end{equation}
 
-which, for $\langle u \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covariance or Sigma matrix of the particles' distribution (Eq~\eqref{eq:Sigma_matrix}):
+which, for $\langle u(s) \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covariance or Sigma matrix of the particles' distribution (Eq~\eqref{eq:Sigma_matrix}):
 
 \begin{equation}\label{eq:Sigma_matrix}
     \Sigma = \begin{pmatrix}
-        \langle u^2 \rangle & \langle u u^\prime \rangle \\ 
-        \langle u u^\prime \rangle & \langle u^{\prime 2} \rangle 
+        \langle u^2(s) \rangle & \langle u(s) u^\prime(s) \rangle \\ 
+        \langle u(s) u^\prime(s) \rangle & \langle u^{\prime 2}(s) \rangle 
         \end{pmatrix}  = \begin{pmatrix}
-            \sigma_u^2 & \langle u u^\prime \rangle \\ 
-            \langle u u^\prime \rangle & \sigma_{u^{\prime 2}} 
+            \sigma_u^2(s) & \langle u(s) u^\prime(s) \rangle \\ 
+            \langle u(s) u^\prime(s) \rangle & \sigma_{u^{\prime 2}(s)} 
             \end{pmatrix} 
 \end{equation}
 
@@ -318,10 +322,19 @@ It is worth commenting here, that for the simulation studies presented in this t
 
 where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, at specific location $s$ along the accelerator and $\beta_0, \gamma_0$ are the relativistic parameters. 
 
-The emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic paramters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
-
+It should be highlighted that the emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic parameters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
 
 Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
+
+\textbf{Normalised phase space}\\
+Often in accelerator physics it is useful to transform the transverse phase space ellipse to a normalised phase space circle, where the co-ordinates are normalised with the twiss parameters for the particular location $s$ around the ring.
+
+normalised emittance of the initial beam distribution, $\epsilon_{u,0}$.
+
+
+
+ Federicos thesis 2.3.1 and sondre eq. 2.21a
+
 
 \textbf{Off-momentum effects - dispersion}\\
 Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. As an example, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
@@ -382,6 +395,12 @@ The dispersive contribution can be added to the transfer matrix introduced in Eq
  
  At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
 
+Finally, in the presence of dispersion the normalised beam emittance (Eq.~\eqref{eq:emit_from_beam_size}) becomes:
+\begin{equation}\label{eq:emit_from_beam_size_Du}
+    \epsilon_{u} = \frac{\sigma_u(s)^2 - \delta^2 D_u^2(s)}{\beta_u(s)} \beta_0 \gamma_0,
+\end{equation}
+where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters.
+
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next subsubsection which focuses on non-linear beam dynamics.
 
 \subsubsection{Non-linear dynamics}
@@ -403,12 +422,14 @@ denotes the chromaticity of order $n$. The studies in this thesis, are limited t
 
 Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
+The chromaticity like the tune is a property of the machine lattice. % the chromaticity is one number
+
 \textbf{Octupoles and detuning with amplitude}\\
 Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope for this thesis, however more details can be found in Ref.~\cite{Rumolo:1982422}.}.
 
-In the SPS and LHC rings, the octupoles are installed in families in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
+In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
-The betatron tune spread that is introduced by the octupoles is 
+The betatron tune spread that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the normalised actions (sondre)
 
 \subsection{Longitudinal motion}
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
@@ -464,28 +485,6 @@ The values of the multipole components up to seventh order obtained from this me
 
 
 \textbf{random multiple errros? } Like in APR.Ch.3.2.2.
-
-
-\section{Emittance}
-
-\textbf{Defintion 1}: The statistical emittance is expressed in terms of the beam distribution: % Wolski Eq. (4.101)
-
-\begin{equation}\label{eq:statistical_definition_emit}
-    \epsilon_x^{\mathrm{geom}} = \sqrt{\langle x^2 \rangle - \langle px^2 \rangle - \langle x px \rangle^2}.
-\end{equation}
-This is the geometric emittance. 
-\begin{equation}\label{eq:emit_geom_norm_relation}
-    \epsilon_x = \epsilon_x^{\mathrm{geom}} \betarel \gammarel.
-\end{equation}
-
-
-\textbf{Defintion 2}:
-For a Gaussian beam distribution the normalised beam emittance it applies:
-\begin{equation}\label{eq:emit_from_beam_size}
-    \epsilon_{x} = \frac{\sigma_x(s)^2 - \delta^2 D_x^2(s)}{\beta_x(s)} \betarel \gammarel
-\end{equation}
-
-where $\sigma_x(s)$ is the beam size, $\beta_x(s)$ is the beta function, $D_x(s)$ is the dispersion fat a specific location s along the accelerator, $\delta=\Delta p/p0$ is the momentum spread and $\betarel, \gammarel$ the relativistic parameters. Similar expression is valid for the vertical plane, with the difference that there is no dispersion.
 
 \section{Transfer maps}
 Need to mention them briefly as you refer to them at the PyHEADTAIL section.
