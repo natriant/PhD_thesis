@@ -280,11 +280,11 @@ The phase space in normalised co-ordinates is shown in Fig.~\ref{fig:phase_space
 
 The distribution of actions is an exponential distribution \textcolor{red}{How do I prove this?} which implies that its mean equals its standard deviation. This property will be used for computations in the following chapters. % Actually, this property is used in the appendix for the computation of the rms tune spread.
 
-From Eq.~\eqref{eq:action} we write:
-\begin{equation}\label{eq:Jy_exp_distr}
-    e^{-J/\epsilon} = e^{(-x^2/2\epsilon - px^2/2\epsilon)}
-\end{equation}
-From this equation it can be seen that the actions follow an exponential distribution. 
+%From Eq.~\eqref{eq:action} we write:
+%\begin{equation}\label{eq:Jy_exp_distr}
+%    e^{-J/\epsilon} = e^{(-x^2/2\epsilon - px^2/2\epsilon)}
+%\end{equation}
+%From this equation it can be seen that the actions follow an exponential distribution. 
 
 \textbf{Transvserse emittance}\\
 Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
@@ -416,7 +416,7 @@ The dispersive contribution can be added to the transfer matrix introduced in Eq
 % 1. Definition of D: https://yannis.web.cern.ch/teaching/transverse.pdf
 % 2. Definition of D prime: https://indico.cern.ch/event/847209/contributions/3558973/attachments/1932901/3201996/AccPhys_Lect7_MomEff.pdf
 
- From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. As an example, the rms vertical dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
+ From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
  
  At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
 
@@ -447,7 +447,7 @@ denotes the chromaticity of order $n$. The studies in this thesis, are limited t
 
 Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
-The chromaticity like the tune is a property of the machine lattice. % the chromaticity is one number
+similarly with the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 \textbf{Octupoles and detuning with amplitude}\\
 Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope for this thesis, however more details can be found in Ref.~\cite{Rumolo:1982422}.}.
@@ -511,32 +511,7 @@ The values of the multipole components up to seventh order obtained from this me
 
 \textbf{random multiple errros? } Like in APR.Ch.3.2.2.
 
-\section{Transfer maps}
-Need to mention them briefly as you refer to them at the PyHEADTAIL section.
-
-% Courant snyder formalism of longitudinal dynamics: https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.094001
-\section{Action angle variables}
-The action for the x-plane is:
-
-\begin{equation}\label{eq:action}
-    \Jx = \frac{1}{2}(x_n^2 +xp^2_n) 
-\end{equation}
-where 
-\begin{equation}\label{normalised_y}
-    x_n = \frac{x}{\sqrt{\beta_x}}, \ \ xp_n = \frac{\alpha_x x}{\sqrt{\beta_x}} + \sqrt{\beta_x}xp
-\end{equation}
-the normalised coordinates and $\alpha_y, \beta_y$ the twiss parameters. 
-The same applies for the y-plane. 
-
-s
-The statistical geometric emittance equals the average of the actions distribution:
-\begin{equation}\label{eq:geom_emit_actions}
-    \emitxgeom = \langle \Jx \rangle
-\end{equation}
-%\begin{equation}\label{eq:geom_emit_actions}
-%    \epsilon_x^{\mathrm{geom}} = \langle \Jx \rangle
-%\end{equation}
-
+\
 \section{Wakefields and impedances}\label{sec:wakefields_theory}
 
 he terms dipolar and quadrupolar have been chosen as the dipolar wake function acts on the test proton like a dipole magnet (the kick is the same whatever its transverse location), whereas the quadrupolar term acts like a quadrupole magnet (the kick increases linearly with the transverse offset of the test particle). Benoits thesis p.44
