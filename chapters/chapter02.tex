@@ -3,7 +3,10 @@ The definitions and notations used throughout this thesis are based on the book 
 % Details p.11 Michael schenk
 Synchrotrons are circular accelerators where the particles follow a fixed closed-loop path. In a synchrotron, electric fields accelerate the particles while magnetic fields steer and focus them. The magnetic fields are not constant but they vary according to the particles' energy, allowing acceleration and operation in very high (relativistic) energies. The LHC and SPS machines at CERN are synchrotrons like the most of the machines used for High Energy Physics experiments. Usually, in synchrotrons, the beams consist of multiple bunches, longitudinally spaced around the machine, which of course interact with each other. However, these multi-bunch interactions are not relevant to the studies presented in this thesis. Therefore, they are not addressed in the following paragraphs. 
 
-% section splitting accordin to Wolski.
+Finally, at this point it is appropriate to introduce the terms of incoherent and coherent motion. Incoherent motion is the microscopic approach where the individual motion of each particle is studied. Coherent motion is the macroscopic approach where the beam is considered as a whole and the motion of the center of mass is studied.
+% more details in: https://uspas.fnal.gov/materials/09UNM/Unit_8_Lecture_19_Limting_phenomena.pdf
+
+% The section splitting is done here according to Wolski's book.
 \section{Motion of charged particles in electromagentic fields}
 The motion of a particle with charge $q$ and velosity $\mathbf{v}=(v_x, v_y, v_z)$ moving in an electric field $\mathbf{E}$ and a magnetic field $\mathbf{B}$ is defined by the influence of the Lorentz force: 
 \begin{equation}\label{eq:Lorentz_force}
@@ -80,7 +83,7 @@ To summarize, the motion of the particles is separated in the transverse and lon
 Last, $(x, y, z)$ are expressed in meters, $(x^\prime, y^\prime)$ in radians while $\delta$ is dimensionless.
 
 \section{Single-particle beam dynamics}
-In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics.
+In this first section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics. 
 
 \textbf{Two-dimensional complex fields}\\
 As already discussed, the motion of the charged particles inside a circular accelerator is controlled by magnetic fields. In this thesis, the magnets are considered purely transverse elements. Their effect is therefore described with two-dimensional multipole fields, acting in the horizontal and vertical planes\footnote{Examples of three-dimensional treatment can be found in~\cite{wolski2014, Beth:889480}. However, the two-dimensional treatment is most often used in accelerator physics as it provides a good description for the majority of the magnetic elements.}. % Wolski Ch1.3, p.33
@@ -189,7 +192,7 @@ Another important quantity in accelerator physics is the betatron tune or just t
 \end{equation}
 where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
 
-The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
+The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tune and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
 
 \textbf{Matrix formalism}\\
 % w and psi are also solutions. now we write it in matrix notation
@@ -432,7 +435,7 @@ Additionally, the off-momentum particles receive different focusing due to gradi
 Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited in the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
-We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentume deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity for each particle, $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
+We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity for each particle (incoherent), $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
 
 %The tune shift introduced by the chromaticity is: % M. Schenk p.49
 
@@ -447,14 +450,21 @@ denotes the chromaticity of order $n$. The studies in this thesis, are limited t
 
 Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
-similarly with the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
+Similarly with the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 \textbf{Octupoles and detuning with amplitude}\\
 Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope for this thesis, however more details can be found in Ref.~\cite{Rumolo:1982422}.}.
 
 In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
-The betatron tune spread that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the normalised actions (sondre)
+The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
+\begin{equation}\label{eq:DQ_with_amplitude_horizontal}
+    \Delta Q_x (J_x, J_y) = 2(\alpha_{xx} J_x + \alpha_{xy}J_y),
+\end{equation}
+\begin{equation}\label{eq:DQ_with_amplitude_vertical}
+    \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
+\end{equation}
+where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}.
 
 \subsection{Longitudinal motion}
 In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. 
