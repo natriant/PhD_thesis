@@ -252,7 +252,7 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
         \label{fig:phase_space_ellipse}
  \end{figure}
 
- \textbf{Normalised phase space}\\
+ \textbf{Normalised phase space}\\  %Federicos thesis 2.3.1 and sondre eq. 2.21a
  Often in accelerator physics it is useful to transform the transverse phase space ellipse to a normalised phase space circle, where the motion is equivalent with the one of the harmonic oscillator. % Wiedemman p.235 
  In the normalised phase space the co-ordinates $(u, u^\prime)$ are normalised with the twiss parameters $(\alpha_u, \beta_u)$ for the particular location $s$ around the ring, as follows~\cite{Wiedemann:1083415}: % widerman p.235, eq.8.92-8.93
  \begin{equation}\label{eq:normalised_coordinates_un}
@@ -274,13 +274,17 @@ The phase space in normalised co-ordinates is shown in Fig.~\ref{fig:phase_space
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/phase_space_normalised.png}
-        \caption{Normalised phase space for a particle moving along the accelerator but for a particular position $s$. }
+        \caption{Normalised phase space for a particle moving along the accelerator but for a particular position $s$. The particle moves turn by turn in a circle of radius $\sqrt{2J_u}$.}
         \label{fig:phase_space_circle_normalised}
  \end{figure}
- 
-  %Federicos thesis 2.3.1 and sondre eq. 2.21a
- 
- 
+
+The distribution of actions is an exponential distribution \textcolor{red}{How do I prove this?} which implies that its mean equals its standard deviation. This property will be used for computations in the following chapters. % Actually, this property is used in the appendix for the computation of the rms tune spread.
+
+From Eq.~\eqref{eq:action} we write:
+\begin{equation}\label{eq:Jy_exp_distr}
+    e^{-J/\epsilon} = e^{(-x^2/2\epsilon - px^2/2\epsilon)}
+\end{equation}
+From this equation it can be seen that the actions follow an exponential distribution. 
 
 \textbf{Transvserse emittance}\\
 Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
@@ -532,13 +536,6 @@ The statistical geometric emittance equals the average of the actions distributi
 %\begin{equation}\label{eq:geom_emit_actions}
 %    \epsilon_x^{\mathrm{geom}} = \langle \Jx \rangle
 %\end{equation}
-The distribution of actions is an exponential distribution (further explanation needed?). Therefore, its mean equals its standard deviation. (this property is used in the appendix for the computation of the rms tune spread.)
-
-From Eq.~\eqref{eq:action} we write:
-\begin{equation}\label{eq:Jy_exp_distr}
-    e^{-J/\epsilon} = e^{(-x^2/2\epsilon - px^2/2\epsilon)}
-\end{equation}
-From this equation it can be seen that the actions follow an exponential distribution. 
 
 \section{Wakefields and impedances}\label{sec:wakefields_theory}
 
