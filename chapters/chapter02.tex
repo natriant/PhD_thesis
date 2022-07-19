@@ -478,19 +478,28 @@ In the longitudinal plane the acceleration and the focusing are achieved by the 
 \end{equation}
 where $E_0$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronouse particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher defines the maximum number of bunches that can be accelerated in the ring.
  
+Say for the energy they recive, maybe pahse stability see michael schenk. plot from elias metral, t=0 at zero crossing.
 
-The equations of motion for a particle passing through a system of synchronised RF cavities are:
+The equations of motion for a particle passing through a system of synchronised RF cavities are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
 \begin{equation}\label{eq:long_eq_motion_z}
     z^\prime = - \eta_p \delta,
 \end{equation}
 \begin{equation}\label{eq:long_eq_motion_delta}
     \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
 \end{equation}
-where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ the charge of a proton, $c$ the speed of light, $p_0$ the reference momentum, $C$ the circumference of the machine, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronous particle.
+where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ the charge of a proton, $c$ the speed of light, $p_0$ the reference momentum, $C$ the circumference of the machine, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronous particle. 
+
+The motion of the particles in the longitudinal plane is also called synchrotron motion.
 
 phase slip factor
 
-Similaryl, with the betatron oscillations, the particle perform synchrotron oscillations in the longitudinal phase space (energy, phase.) The frequency of the betatorn oscillations is the synchrotron tune Qs and equals..
+Say how the equations of motion are solved. symplectic integrator, drift kick drift.
+
+
+
+Similarly, with the betatron oscillations, the particle perform synchrotron oscillations in longitudinal position and in momentum, relative to teh reference particle, longitudinal phase space $(z, \delta)$. 
+
+The frequency of the betatorn oscillations is the synchrotron tune Qs and equals..
 
 
 Check stefania's thesis: p.20
