@@ -506,9 +506,14 @@ For the nominal optics configuration, the SPS machine always operates above tran
 % Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
 
 \textbf{Phase stability and synchrotron oscillations}\\
-Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability[ref]. Its principle is illustrated in Fig... for a machine operating above transition.
-Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therfore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therfore, it will be accelerated stronger than the reference particle and therfore it will need less time to complete the next revoltuion and it will approach the reference particle. The situation is opposite for a particle with $\delta<0$. 
-
+Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therfore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therfore, it will be accelerated stronger than the reference particle and therfore it will need less time to complete the next revoltuion and it will approach the reference particle. The situation is opposite for a particle with $\delta<0$. 
+% Inspired by Fig. 2.3 in the thesis of M. Schenk and Fig.5.15 in wille's book.
+\begin{figure}[!h] % 
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/phase_focusing_synchrotron_motion.png}
+        \caption{Phase stability for particles in a circular accelerator which operates above transition.}
+        \label{fig:phase_focusing}
+ \end{figure}
 
 In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly with the betatorn oscillations in the transverse plane). Turn-by-turn the particles perform oscillations around the phase of sunchronous paticle performing synchrotron oscillations. The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
 \begin{equation}\label{eq:long_eq_motion_z}
