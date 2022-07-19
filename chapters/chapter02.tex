@@ -471,7 +471,19 @@ In the longitudinal plane the motion is tangential to the reference trajectory a
 
 The time that the reference particle needs to complete one complete revolution around the machine is called revolution period, $T_\mathrm{rev}$. Its angular revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C = \beta_0 c/C$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C$ the circumference of the accelerator.
 
+In the longitudinal plane the acceleration and the focusing are achieved by the longitudinal time-dependent electric field of the main RF cavities:
+% stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
+\begin{equation}\label{eq:RF_cavity_EF}
+    E_{RF}(t) = E_{0} \sin{(\phi_{RF} t + \phi_s)},
+\end{equation}
+where $E_0$ it the amplitude of the electric field, $\phi_{RF}(t) = \omega_{RF}t$ the phase of the RF system, $\omega_{RF}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronouse particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher defines the maximum number of bunches that can be accelerated in the ring.
+ 
+
+
+
 Check stefania's thesis: p.20
+%https://cds.cern.ch/record/2745710/files/CERN-THESIS-2019-405.pdf
+% and wolski p.168
 
 In the longitudinal plane the particles recieve kicks from the main RF cavities which provide a time dependent electric field:
 
