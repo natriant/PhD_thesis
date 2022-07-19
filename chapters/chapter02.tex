@@ -25,7 +25,7 @@ The particle that follows this trajectory is called the reference particle and h
 For a proton, the reference momentum is given by: $p_0 = \gammarel m_0 v_0$, where $m_p$ is the proton rest mass.
 
 \textbf{Mangetic rigidity}\\
-At this point, it is appropriate to introduce the concept of magnetic rigidity, $B_0 \rho$, which is often used in accelerators as a normalisation factor and is a measure of how the charged particles resist bending by a dipolar magnetic field. Assuming that a proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, it would follow a circular path of radius $\rho$ which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centripetal force, as follows:
+At this point, it is appropriate to introduce the concept of magnetic rigidity, $B_0 \rho$, which is often used in accelerators as a normalisation factor and is a measure of how the charged particles resist bending by a dipolar magnetic field. Assuming that a proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_0}=(0, B_0, 0)$, it would follow a circular path of radius $\rho$ (it will be often referred to as benging radius) which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centripetal force, as follows:
 
 \begin{equation}\label{eq:Brho}
     e v_0 B_0 = \frac{\gammarel m_p v_0^2}{\rho} \Rightarrow B_0 \rho = \frac{\gamma_0 m_p v_0}{e} \Rightarrow B_0 \rho = \frac{p_0}{e},
@@ -467,61 +467,63 @@ The betatron tune spread or linear detuning that is introduced by the octupoles 
 where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the trasnverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
 
 \subsection{Longitudinal motion}
-In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. The discussion here is limited to the case where the transverse motion is neglected, which is sufficient for the studies presented in this thesis. The complete approach, which describes the particles motion in the presence of coupling between the transverse and longitudinal planes can be found in Chapter~5.2 in the book of A. Wolski in Ref.~\cite{wolski2014}.
+In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concertn transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
 
+%In the next paragraphs the basic concepts used to describe the motion in the longitudinal plane which is also called synchrotronous motion are explained. In particular, the discussion is focused on the synchronous phase, the momentum compaction and phase slip factors, the concepts of phase stability, synchrotron oscillations and synchrotron tune tune. The equations of synchrotron motion are also given.
+
+%In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the following discussion the longitudinal motion is treated independently from the transverse one. The complete approach, which describes the particles motion in the presence of coupling between the transverse and longitudinal planes can be found in Chapter~5.2 in the book of A. Wolski in Ref.~\cite{wolski2014}.
+
+\textbf{Synchronous phase}\\
 The time that the reference particle needs to complete one complete revolution around the machine is called revolution period, $T_\mathrm{rev}$. Its angular revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C = \beta_0 c/C$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C$ the circumference of the accelerator.
 
-In the longitudinal plane the acceleration and the focusing are achieved by the longitudinal time-dependent electric field of the main RF cavities:
+In the longitudinal plane the acceleration and the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
 % stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
 \begin{equation}\label{eq:RF_cavity_EF}
-    E_\mathrm{{RF}}(t) = E_{0} \sin{(\phi_\mathrm{{RF}} t + \phi_s)},
+    E_\mathrm{{RF}}(t) = E_0 \sin{(\phi_\mathrm{{RF}} t + \phi_s)},
 \end{equation}
-where $E_0$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronouse particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher defines the maximum number of bunches that can be accelerated in the ring.
- 
-Say for the energy they recive, maybe pahse stability see michael schenk. plot from elias metral, t=0 at zero crossing.
+where $E_0$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
+In a synchrotron during the energy ramp the angular frequency increases in order to follow the increasing revolution frequency.
 
-The equations of motion for a particle passing through a system of synchronised RF cavities are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
+\begin{equation}\label{eq:enerhy_gain_synchronous}
+    \Delta E_s = e V_0 \sin{(\phi_s)}, 
+\end{equation}
+where $V_0$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or loose a different amount of enerfy per turns which equals: $\Delta E_p = e V_0 \sin{(\phi)}$. 
+ 
+\textbf{Dispersion effects}\\
+As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
+\begin{equation}\label{eq:compaction_factor}
+    \alpha_p = \frac{\Delta C /C}{\delta} = \frac{1}{C} \oint _C \frac{D_x(s)}{\rho(s)} ds,
+\end{equation} % proof hannes' thesis appendix p.169: https://cds.cern.ch/record/1644761/files/CERN-THESIS-2013-257.pdf
+where $C$ the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
+
+With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also change. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
+\begin{equation}\label{eq:phase_slip_factor}
+    \eta_p = -\frac{\Delta \omega / \omega_0}{\delta} = \alpha_p - \frac{1}{\gamma^2_0} = \frac{1}{\gamma^2_\mathrm{tr}} - \frac{1}{\gamma^2_0},
+\end{equation}
+where $\gamma_0$ the Lorentz factor and $\gamma_\mathrm{tr} = 1/\sqrt{\alpha_p}$ is called the transition energy. When $\gamma_0 < \gamma_\mathrm{tr} \Rightarrow \eta_p <0$ ($\gamma_0 > \gamma_\mathrm{tr} \Rightarrow \eta_p > 0$) and the machine operates below (above) transition. For  
+For the nominal optics configuration, the SPS machine always operates above transition as $\gamma_\mathrm{tr}$ = 22.8 which is smaller than the relativistic gamma even for the injection energy ($\gamma_0$ = 27.7 at 26\,GeV).
+% Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
+
+\textbf{Phase stability and synchrotron oscillations}\\
+Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability[ref]. Its principle is illustrated in Fig... for a machine operating above transition.
+Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therfore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therfore, it will be accelerated stronger than the reference particle and therfore it will need less time to complete the next revoltuion and it will approach the reference particle. The situation is opposite for a particle with $\delta<0$. 
+
+
+In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly with the betatorn oscillations in the transverse plane). Turn-by-turn the particles perform oscillations around the phase of sunchronous paticle performing synchrotron oscillations. The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
 \begin{equation}\label{eq:long_eq_motion_z}
     z^\prime = - \eta_p \delta,
 \end{equation}
 \begin{equation}\label{eq:long_eq_motion_delta}
     \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
 \end{equation}
-where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ the charge of a proton, $c$ the speed of light, $p_0$ the reference momentum, $C$ the circumference of the machine, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the phase of the synchronous particle. 
+where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
 
-The motion of the particles in the longitudinal plane is also called synchrotron motion.
-
-phase slip factor
-
-Say how the equations of motion are solved. symplectic integrator, drift kick drift.
-
-
-
-Similarly, with the betatron oscillations, the particle perform synchrotron oscillations in longitudinal position and in momentum, relative to teh reference particle, longitudinal phase space $(z, \delta)$. 
-
-The frequency of the betatorn oscillations is the synchrotron tune Qs and equals..
-
-
-Check stefania's thesis: p.20
-%https://cds.cern.ch/record/2745710/files/CERN-THESIS-2019-405.pdf
-% and wolski p.168
-
-In the longitudinal plane the particles recieve kicks from the main RF cavities which provide a time dependent electric field:
-
-The reference particle
-
-
-Due to the kicks from these fields the particles perform synchrotron oscillations in the longitudinal plane, similarly to the transverse betatoron oscillations. 
-
-Similarly, to the motion in trasnverse plane where
-
-
-
-
-Synchrotron tune.
-Longitudinal equation of motion.
-
-How is the tracking doen in pyheadtial.
+The synchrotron tune, $Q_s$, is the number of synchrotron oscillations performed during one complete revolution around the machine and is computed as follows~\cite{wolski2014}: % Wolski Eq.(5.49) p. 170
+\begin{equation}\label{eq:Qs} 
+    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C}{c} \eta_p \cos{\phi_s}},
+\end{equation}
+where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
 
 \section{Collective effects}
 \subsection{Impedance and wakefields}\label{subsec:wakefields}
