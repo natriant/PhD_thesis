@@ -533,30 +533,29 @@ The synchrotron tune, $Q_s$, is the number of synchrotron oscillations performed
 where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
 
 \section{Collective effects}
-Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator are mechanisms that depend on the interaction of particles with each other e.g. beam-beam interactions, space sharge effects, wakefields, intra-beam scattering etc~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may leed to beam losses degradig the beam quality and affecting the performance of the accelerator. The discussion here, is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{Zimmermann:2264408}.
+Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with external electromagentic fields. Examples of collective effects are: beam-beam interactions, space charge effects, wakefields, intra-beam scattering etc~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may lead to beam losses degrading the beam quality and affecting the performance of the accelerator. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{Zimmermann:2264408}.
 %For a more complete picture, a beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Usually, this can be observed in the motion of the centroid $\langle x \rangle $
+% If you want to show an example of an instability you can find a figure in Ref.~\cite{Rumolo:1982422}}
 \subsection{Transverse beam impedance}\label{subsec:wakefields}
 - clasic figure, equations, chao, tune shift and damping time. 
 - see presentation from auth.
 
+he terms dipolar and quadrupolar have been chosen as the dipolar wake function acts on the test proton like a dipole magnet (the kick is the same whatever its transverse location), whereas the quadrupolar term acts like a quadrupole magnet (the kick increases linearly with the transverse offset of the test particle). Benoits thesis p.44
+
 %\subsection{Active feedback?}
-\section{Optics models of accelerators}
+\section{Optics models for accelerators}\label{sec:optics_model_designs}
 % or optics design
-\subsection*{MADX}
-Table with parameters for sps lattice, eg average beta function, tune etc. circumference, Q20 and Q26.
+For the study of beam dynamics, it is essential to know the detailed arrangement of the magnets (position and strength) in the lattice, which will be referred to as optics. The optics also provide information on the twiss parameters and phase advances along the ring.
 
-presentation AUTH?
+MAD-X~\cite{madx} is a code which is used extensively for the design and simulation of the accelerators at CERN. The official optics repositories of the CERN machines can be found in Ref.~\cite{cern_optics_repo}.
+
+\textbf{SPS optics}\\
+The studies presented in this thesis are performed for the nominal SPS optics for the LHC filling which are called Q26 optics as the integer part of the tune in both planes is 26. The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
 
 
-See sondre's thesis for inspiration on the structure.
-\section{General parameters of the studies}
-% Maybe this should be mentioned at the end of project objectives and thesis outline.
-% The following paragraphs are taken from the APR Ch.1.3 
 \subsection{SPS optics}\label{subsec:SPS_optics_model}
  The studies presented in this thesis were performed for the nominal SPS optics for the LHC filling which are called Q26 optics as the higher integer part of the tune in both planes is 26. 
 
- \normalsize{\textbf{SPS nominal model}\\
- The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
 
  \normalsize{\textbf{SPS non-linear model}\\
 \textcolor{red}{Move this section to chapter 6.}
@@ -585,11 +584,6 @@ The values of the multipole components up to seventh order obtained from this me
 
 
 \textbf{random multiple errros? } Like in APR.Ch.3.2.2.
-
-\
-\section{Wakefields and impedances}\label{sec:wakefields_theory}
-
-he terms dipolar and quadrupolar have been chosen as the dipolar wake function acts on the test proton like a dipole magnet (the kick is the same whatever its transverse location), whereas the quadrupolar term acts like a quadrupole magnet (the kick increases linearly with the transverse offset of the test particle). Benoits thesis p.44
 
 
 \section{Tracking simulation codes}\label{sec:simualtion_codes}
