@@ -564,7 +564,9 @@ The wakefields in time domain are described with the concept of wakefunctions, $
 \end{equation}
 where $u=(x,y)$ and $W^\mathrm{const}_u(z)$, $W^\mathrm{dip}_u(z)$, $W^\mathrm{quad}_u(z)$ are the transverse constant, dipole, and quadrupole wakefunctions respectively. Last, $ o(\Delta u_1, \Delta u_2)$ is the higher order term however only the first-order terms will be considered for the rest of the analysis. % M. Schenk p.25
 
-The constant term can change the closed orbit while the dipole and quadrupole terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipole term, whose effect only depends on the position of the source particle, is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupole term, whose effect only depends on the position of the witness particle, is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
+The dipole and quadrupole wakefunctions were named after the way they act on the witness particle. The dipole wakefunction acts like a dipole magnet: its impact is the same regardless of the transverse position of the witness particle; it depends only on the position of the source particle. The quadrupole wakefunction acts like a quadrupole magnet: its impact increases linearly with the transverse position of the witness particle (independent of the .position of the source particle). % Benoit thesis p.44
+
+The constant term can change the closed orbit while the dipole and quadrupole terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipole term is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupole term is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
 
 The effect of the wakefields on the witness particles can be modeled as the following kicks on the transverse normalised momentum~\cite{Schenk:2665819}: % Eq.(2.44) M. Schenk thesis
 \begin{equation}\label{eq:wakefield_kicks}
@@ -578,24 +580,45 @@ The beam coupling impedance is the frequency spectrum of the wakefields of a str
     W_u(z) = - \frac{i}{ 2\pi} \int_{- \infty}^{+\infty} Z_u(\omega) e^{i \omega z/c} d\omega,
 \end{equation}
 \begin{equation}\label{eq:impedance_to_wakes}
-    Z_u(\omega) = \frac{i}{ c} \int_{- \infty}^{+\infty} W_u(z)) e^{-i \omega z/c} dz,
+    Z_u(\omega) = \frac{i}{c} \int_{- \infty}^{+\infty} W_u(z) e^{-i \omega z/c} dz,
 \end{equation}
 where $u=(x,y)$, $i$ is the imaginary unit and $c$ is the speed of light.
 
+In order to study the beam dynamics effects due to wakefields, impedance models of the particle accelerators have been developed. Details on how an impedance model is built can be found in Ref.~\cite{benoit_ipac19_impedance}. The impedance model for the SPS is discussed in Chapter~\ref{Ch:suppression_impedance} while its implementation in the simulations is discussed in Section~\ref{subsec:pyheadtail}.
+
+\textbf{Complex tune shift}\\
+One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} and the perturbation theory. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
+
+It should be mentioned that the Vlasov formalism is commonly used when studying the imepdance-induced instabilities and it treats the particles motion in mode domain: the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
+
+Write equation from overleaf where you show the dependnece on the tune.
+
+Sacherer, developed the analytical formula (ref to old paper) and then write eqaution (i htink its from chao. )
+
+%When studying the imepdance-induced instabilities it is convinient to move in the mode domain: the beam motion is described by a superposition of modes. % the beam motion is described by a superposition of modes
+allows the study of the beam motion in 
+
+Sacherer, developed analytical formulas which allow the computation of the complex tune shift.
+
+The analytical formulas computi
 
 
-L is the length of the stracture that caused the wakefield.
-- sps no constant wakefields.
+The solution of the motion is achieved based on the Vlasov formalism~\cite{Vlasov:426186} and the perturbation theory. 
 
-- what are wakefields, checmatic from rumulo with circle of interaction. 
-- wakefunctions
-- impedance: fourier transfor of wakefielfs
-- classic figure. witness particle
+The study of impedance-induced instabilities is performed based on Vlasov equation and the perturbation theory.
+
+
+For the study of impedance-induced instabilities the 
+For describing the motion of the particles under the influence of impedance 
+
+based on Vlasov equation [10] and the perturbation
+theory used to solve it in mode domain
+When studying instabilities which 
 
 - clasic figure, equations, chao, tune shift and damping time. 
 - see presentation from auth.
 
-he terms dipolar and quadrupolar have been chosen as the dipolar wake function acts on the test proton like a dipole magnet (the kick is the same whatever its transverse location), whereas the quadrupolar term acts like a quadrupole magnet (the kick increases linearly with the transverse offset of the test particle). Benoits thesis p.44
+
 
 %\subsection{Active feedback?}
 \section{Optics models for accelerators}\label{sec:optics_model_designs}
