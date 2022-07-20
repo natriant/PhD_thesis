@@ -657,7 +657,7 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
 %Introduction to sixtrackib: https://indico.cern.ch/event/833895/contributions/3577803/attachments/1927226/3190636/intro_sixtracklib.pdf
 % https://inspirehep.net/files/6273430c727ace3796a92d069f651ade
 
-Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations which is developed at CERN. The motion of the particles is simulated in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the design optics model described in Section~\ref{sec:optics_model_designs}.
+Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations developed at CERN. It simulates the motion of the particles in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the detailed design optics model described in Section~\ref{sec:optics_model_designs}. The particles advance from one element to the other with transfer maps. Simulations with Sixtracklib are time efficient as the library can run on Graphical Processing Usits (GPUs). Further details on Sixtracklib implementation and usage can be found in Ref.~\cite{sixtracklib_introduction} and Ref.~\cite{Schwinzerl:2781835}. 
 
+Sixtracklib is described here in much less details than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
 
-Check a presentation from kostas.
