@@ -532,11 +532,65 @@ The synchrotron tune, $Q_s$, is the number of synchrotron oscillations performed
 \end{equation}
 where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
 
-\section{Collective effects}
-Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with external electromagentic fields. Examples of collective effects are: beam-beam interactions, space charge effects, wakefields, intra-beam scattering etc~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may lead to beam losses degrading the beam quality and affecting the performance of the accelerator. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{Zimmermann:2264408}.
+\section{Collective effects}\label{sec:collective_effects}
+Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with external electromagentic fields. Examples of collective effects are: beam-beam interactions, space charge effects, wakefields, intra-beam scattering etc~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may lead to beam losses degrading the beam quality and affecting the performance of the accelerator. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408}.
 %For a more complete picture, a beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Usually, this can be observed in the motion of the centroid $\langle x \rangle $
 % If you want to show an example of an instability you can find a figure in Ref.~\cite{Rumolo:1982422}}
-\subsection{Transverse beam impedance}\label{subsec:wakefields}
+
+\subsection{Wakefields and impedance}\label{subsec:wakefields}
+The discussion in this section is based in the discussion in Ref.~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
+
+\textbf{Wakefields}\\
+The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducted the interaction with the charged particles will result to electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
+
+For the study of the wakefields it is considered that each particle acts as a source of wakefields for the rest of the particles which are called witnesses. In the ultrarelativistic regime (which is also the regime of these studies) the wakefields from a source particle act only on the particles behind it, hence the term "wake". A source particle can also act on itself throught the generated wakefield in the subseqent turns. This is the multi-turn effect of the wakefields. In this thesis, only the multi-turn effect from the resistive wall will be considered as it is the only one that has significant impact on the dynamics.
+
+The longitudinal and transverse wakefields can be treated seperataly. In the following only the transverse compoenents will be discussed as the focus of the thesis is on the transverse beam dynamics.
+
+\textbf{Wakefunctions}\\
+Let's consider two particles ($q_1, q_2$) moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle $q_1$ is the source particle while the witness particle $q_2$ travels behind it at a constant distance $z$. $(\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
+
+\begin{figure}[!h] % 
+    \centering         
+    \includegraphics[width=0.6\textwidth]{images/Ch2/wakefield_example.png}
+        \caption{Wakefield interaction, where the source particle (blue) affects the witness particle (yellow) travelling at a distance $z$ begind it~\cite{instabilities_rumulo_li}. $(\Delta x_1, \Delta y_1)$ and $ (\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively.} 
+        \label{fig:wakefields}
+ \end{figure}
+% Figure take from: ~\cite{instabilities_rumulo_li}
+
+The wakefields in time domain are described with the concept of wakefunctions, $W_u(z)$, where $u=(x,y)$ denotes the horizontal and vertical wakefunction. The wakefunction can be expressed as a series of its multipole compoenents as follows: % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 13) 
+\begin{equation}\label{eq:wakefunctions}
+    W_u(u_1, u_2, z) = W^\mathrm{const}_u(z) + W^\mathrm{dip}_u(z)u_1 +  W^\mathrm{quad}_u(z)u_2 + o(u_1, u_2),
+\end{equation}
+where $u=(x,y)$ and $W^\mathrm{const}_u(z)$, $W^\mathrm{dip}_u(z)$, $W^\mathrm{quad}_u(z)$ are the transverse constant, dipole, and quadrupole wakefunctions respectively. Last, $ o(u_1, u_2)$ is the higher order term however only the first-order terms will be considered for the rest of the analysis. % M. Schenk p.25
+
+The constant term can change the closed orbit while the dipole and quadrupole terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipole term, whose effect only depends on the position of the source particle, is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupole term, whose effect only depends on the position of the witness particle, is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
+
+The effect of the wakefields on the witness particles can be modeled as the following kicks on the transverse normalised momentum~\cite{Schenk:2665819}:
+
+The
+effect of the transverse wakefields on the witness particles are transverse kicks, i.e. changes of their
+transverse momenta. To linear order, the kicks can be expressed as
+
+in case of top/bottom or left/right symmetry of the accelerator structure under
+consideration, the constant wakefield is zero
+
+
+
+, if the structure which results to the wakefield is symmetric the constant term of the wakefunction is zero. In the 
+
+
+
+The wakefields depend on the time and the position. In order 
+
+L is the length of the stracture that caused the wakefield.
+- sps no constant wakefields.
+
+- what are wakefields, checmatic from rumulo with circle of interaction. 
+- wakefunctions
+- impedance: fourier transfor of wakefielfs
+- classic figure. witness particle
+
 - clasic figure, equations, chao, tune shift and damping time. 
 - see presentation from auth.
 
@@ -657,7 +711,7 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
 %Introduction to sixtrackib: https://indico.cern.ch/event/833895/contributions/3577803/attachments/1927226/3190636/intro_sixtracklib.pdf
 % https://inspirehep.net/files/6273430c727ace3796a92d069f651ade
 
-Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations developed at CERN. It simulates the motion of the particles in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the detailed design optics model described in Section~\ref{sec:optics_model_designs}. The particles advance from one element to the other with transfer maps. Simulations with Sixtracklib are time efficient as the library can run on Graphical Processing Usits (GPUs). Further details on Sixtracklib implementation and usage can be found in Ref.~\cite{sixtracklib_introduction} and Ref.~\cite{Schwinzerl:2781835}. 
+Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations developed at CERN. It simulates the motion of the particles in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the detailed design optics model described in Section~\ref{sec:optics_model_designs}. The particles advance from one element to the other with transfer maps. Simulations with Sixtracklib are time efficient as the library can run on Graphical Processing Units (GPUs). Further details on Sixtracklib implementation and usage can be found in Ref.~\cite{sixtracklib_introduction} and Ref.~\cite{Schwinzerl:2781835}. 
 
-Sixtracklib is described here in much less details than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
+Sixtracklib is described here in much less detail than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
 
