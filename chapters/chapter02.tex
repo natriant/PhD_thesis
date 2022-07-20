@@ -573,9 +573,16 @@ The effect of the wakefields on the witness particles can be modeled as the foll
 where $F_u$ is the transverse force of the wakefield over the length $L$. If the structure which results to the wakefield is symmetric the constant term of the wakefunction is zero. 
 
 \textbf{Beam coupling impedance}\\
+The beam coupling impedance is the frequency spectrum of the wakefields of a stracture. The impedance can be obtained from the wakefunction through a Fourier transform and vice versa as shown below~\cite{Chao:collective}: % Eq.(2.71) and Eq.(2.72) p.69-70.
+\begin{equation}\label{eq:wakes_to_impedance}
+    W_u(z) = - \frac{i}{ 2\pi} \int_{- \infty}^{+\infty} Z_u(\omega) e^{i \omega z/c} d\omega,
+\end{equation}
+\begin{equation}\label{eq:impedance_to_wakes}
+    Z_u(\omega) = \frac{i}{ c} \int_{- \infty}^{+\infty} W_u(z)) e^{-i \omega z/c} dz,
+\end{equation}
+where $u=(x,y)$, $i$ is the imaginary unit and $c$ is the speed of light.
 
 
-The wakefields depend on the time and the position. In order 
 
 L is the length of the stracture that caused the wakefield.
 - sps no constant wakefields.
