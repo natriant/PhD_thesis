@@ -71,7 +71,7 @@ Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(
     \end{equation}
 \end{subequations}
 
-where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativistic $\beta$ as defined in the previous paragraph, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same locaiton. It can be seen, that $\delta$ is the relative momentum offset from the reference particle. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point. Last, in the ultra-relativistic regime the momentum of the particles in the $\mathbf{e_z}$ direction is much larger than the transvserse ones and almost equals the reference momentum: $p_x, p_y \ll p_z = p_0$. This is why, the $x^\prime$ and $y^\prime$ are basically the normalised momentum with the reference one, $p_0$.
+where $p_0$, $\beta_0$ is the momentum of the reference particle and the relativistic $\beta$ as defined in the previous paragraph, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same locaiton. It can be seen, that $\delta$ is the relative momentum offset from the reference particle. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle reaches earlier (later) than the center of the bunch at an arbitrary reference point. Last, in the ultra-relativistic regime the momentum of the particles in the $\mathbf{e_z}$ direction is much larger than the transvserse ones and almost equals the reference momentum: $p_x, p_y \ll p_z = p_0$. This is why the $x^\prime$ and $y^\prime$ are basically the normalised momentum with the reference one, $p_0$.
 
 %Furthermore, if the direction of motion of the particle has a small angle with the reference trajectory, the paraxial approximation is valid: $p_x, p_y \ll p_z = p_0$ which means that $x^\prime \approx p_x$ and  $y^\prime \approx p_y$. This approximation is valis for the studies presented in this thesis. \textcolor{red}{$p_0=1$? not clear to me} % ultra relativistic regime, is not mentioned at wolski's book. I wrote it for the p_ 0= 1. but i am not sure.
 % p.149 wolski and p.12 Michael schenk
@@ -95,22 +95,22 @@ The description of two-dimensional magnetic fields in accelerator physics is dis
 \begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
     B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
 \end{equation} % principle of superposition 
-where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing (chromticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $\alpha_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
+where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i \alpha_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $\alpha_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
 % Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 
 Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
 \begin{equation}\label{eq:kn}
     k_n = \frac{b_n}{B_0 \rho},
 \end{equation}
-and is expressed in untis of  $\mathrm{T/m^{n}}$. This is the convention that will be used in this thesis.
+and is expressed in units of  $\mathrm{T/m^{n}}$. This is the convention that will be used in this thesis.
 
 \subsection{Transvserse motion}
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 \subsubsection{Linear dynamics}
-Here the transverse motion of a particle moving the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now the discussion is limited only in dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
+Here the transverse motion of a particle moving the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
-As mentioned above, the particles (but the reference one) transversely  oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}:
+As mentioned above, the particles (but the reference one) transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}:
 % also sofia's thesis Eq.(2.37)
 
 \begin{equation}\label{eq:transverse_eq_x}
@@ -120,7 +120,6 @@ As mentioned above, the particles (but the reference one) transversely  oscillat
 \begin{equation}\label{eq:transverse_eq_y}
     y^{\prime \prime} = \frac{B_y}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
 \end{equation}
-
 where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
 For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation of harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named the Hill's equation~\cite{Lee:1425444}:
@@ -128,19 +127,16 @@ For on-momentum particles ($\delta = 0$) the above betatron equations of motion 
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
-
 where $u=(x,y)$ and:
-
  \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
         \frac{1}{\rho(s)}+k_1(s), & u=x \\
         -k_1(s), & u=y 
     \end{dcases}
 \end{equation}
-
 with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed that the motion in horizontal and vertical plane are independent (uncoupled).
 
-Equation~\eqref{eq:Hills_equation_1} looks like the second-order differential equation of an harmonic oscillator, but the constant $K_u$ depends on the variable $s$. For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of the Hill's equations is:
+Equation~\eqref{eq:Hills_equation_1} looks like the second-order differential equation of an harmonic oscillator, but the constant $K_u$ depends on the variable $s$. For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of Hill's equations is:
 \begin{equation}\label{eq:Hills_solution}
     u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
 \end{equation}
@@ -189,13 +185,13 @@ The betatron phase advance from Eq.~\eqref{eq:phase_function} can be re-written 
 % If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
 
 \textbf{Betatron tune}\\
-Another important quantity in accelerator physics is the betatron tune or just tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine devided by $2\pi$:
+Another important quantity in accelerator physics is the betatron tune or just tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine divided by $2\pi$:
 \begin{equation}\label{eq:betatron_tune}
     Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
 \end{equation}
-where $C$ the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
+where $C$ is the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
 
-The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tune and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
+The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude, and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tune and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
 
 \textbf{Matrix formalism}\\
 % w and psi are also solutions. now we write it in matrix notation
@@ -249,7 +245,7 @@ The action, $J_u$ is an invariant of the motion and can be written in terms of t
     J_u = \frac{1}{2} (\gamma_u(s) u^2(s) + 2 \alpha_u(s) u(s) u(s)^\prime + \beta_u(s) u^{\prime 2}(s)) = \mathrm{constant}.
 \end{equation}
 
-The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$ i.e. their individual initial conditions. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
+The trajectory of each individual particle can be plotted in phase space $(u, u^\prime)$ at a given position $s$ in the ring turn after turn. In phase space, the particle's path is an ellipse whose shape and orientation are determined by the twiss parameters at the position $s$. This ellipse, named phase space or Courant-Snyder ellipse, is illustrated in Fig.~\ref{fig:phase_space_ellipse} and it has an area of $2\pi J_u$. It is worth mentioning, that the ellipse's size is different for each particle as it depends on their individual actions, $J_u$ i.e. their individual initial conditions. The origin of the ellipse is the closed orbit which is basically the reference trajectory and is also shown in the plot.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
@@ -259,7 +255,7 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
  \end{figure}
 
  \textbf{Normalised phase space}\\  %Federicos thesis 2.3.1 and sondre eq. 2.21a
- Often in accelerator physics it is useful to transform the transverse phase space ellipse to a normalised phase space circle, where the motion is equivalent with the one of the harmonic oscillator. % Wiedemman p.235 
+ Often in accelerator physics, it is useful to transform the transverse phase space ellipse into a normalised phase space circle, where the motion is equivalent to the one of the harmonic oscillator. % Wiedemman p.235 
  In the normalised phase space the co-ordinates $(u, u^\prime)$ are normalised with the twiss parameters $(\alpha_u, \beta_u)$ for the particular location $s$ around the ring, as follows~\cite{Wiedemann:1083415}: % widerman p.235, eq.8.92-8.93
  \begin{equation}\label{eq:normalised_coordinates_un}
      u_N(\phi) = \frac{u(s)}{\sqrt{\beta_u(s)}},
@@ -268,7 +264,7 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
      u^\prime_N(\phi) = \frac{d u_N}{d \phi} = \sqrt{\beta_u(s)} u^\prime(s) + \frac{\alpha_u(s)}{\beta_u(s)}u(s),
  \end{equation}
  % The normalised transformation can also be found in Yiannis notes in the link below: https://yannis.web.cern.ch/teaching/transverse.pdf
-where $\phi = \frac{\psi_u}{Q_u}$. It can be seen that the indipendent variable in the normalised co-ordinates is the phase advance (normalised with the betatron tune), $\phi$, instead of the location $s$ along the ring. % p.12 in the following link: https://cds.cern.ch/record/409584/files/thesis-99-070_Chapter1.pdf
+where $\phi = \frac{\psi_u}{Q_u}$. It can be seen that the independent variable in the normalised co-ordinates is the phase advance (normalised with the betatron tune), $\phi$, instead of the location $s$ along the ring. % p.12 in the following link: https://cds.cern.ch/record/409584/files/thesis-99-070_Chapter1.pdf
 Both of the normalised co-ordinates, $(u_N, u_N^\prime)$ are expressed in units of $m^{1/2}$.
 
 Combining Eq.~\eqref{eq:action_definition}, Eq.~\eqref{eq:twiss_func}, Eq.~\eqref{eq:normalised_coordinates_un} and Eq.~\eqref{eq:normalised_coordinates_un_prime} the action variable can also be written as:
@@ -348,13 +344,13 @@ Figure~\ref{fig:phase_space_emittance} provides a visualisation of the concepts 
 
 It should be noted, that there are also other conventions to define the emittance such as the 90$\%$ emittance (green lines in Fig.~\ref{fig:phase_space_emittance}) or the 3-sigma emittance (yellow lines in Fig.~\ref{fig:phase_space_emittance}). However, here the term geometric emittance will refer to the rms geometric emittance.
 
-According to Liouville’s theorem~\cite{wolski2014}, considering that there are no interactions between the particles and that the energy of the beam is not changing, the geometric emittance remains constant and therefore is an invariant of bunch motion (similarly to the action $J_u$ for the single-particle motion). The geometric emittance does not remain constant during acceleration, instead the normalised emittance is defined as:
+According to Liouville’s theorem~\cite{wolski2014}, considering that there are no interactions between the particles and that the energy of the beam is not changing, the geometric emittance remains constant and therefore is an invariant of bunch motion (similarly to the action $J_u$ for the single-particle motion). The geometric emittance does not remain constant during acceleration, instead, the normalised emittance is defined as:
 \begin{equation}\label{eq:normalised_emittance}
     \epsilon_u = \beta_0 \gamma_0 \epsilon^{\mathrm{geom}}_u
 \end{equation}
 The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
 
-It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained form Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:normalised_emittance}:
+It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained from Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:normalised_emittance}:
 
 % For a Gaussian beam distribution the normalised beam emittance it applies:
 \begin{equation}\label{eq:emit_from_beam_size}
@@ -365,7 +361,7 @@ where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, at 
 
 It should be highlighted that the emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic parameters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
 
-Finally, despite Liouville’s theorem in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more details in Chapter~\ref{Ch:CC_noise_theory}).
+Finally, despite Liouville’s theorem in a real accelerator, there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more detail in Chapter~\ref{Ch:CC_noise_theory}).
 
 \textbf{Off-momentum effects - dispersion}\\
 Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. As an example, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
@@ -435,10 +431,10 @@ where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next subsubsection which focuses on non-linear beam dynamics.
 
 \subsubsection{Non-linear dynamics}
-Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited in the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
+Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited to the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
-We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) recieve a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity for each particle (incoherent), $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
+We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) receive a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity for each particle (incoherent), $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
 
 %The tune shift introduced by the chromaticity is: % M. Schenk p.49
 
@@ -451,12 +447,12 @@ where:
  \end{equation}
 denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. 
 
-Large values of chromaticity can lead to instabilites and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
+Large values of chromaticity can lead to instabilities and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
-Similarly with the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
+Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 \textbf{Octupoles and detuning with amplitude}\\
-Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope for this thesis, however more details can be found in Ref.~\cite{Rumolo:1982422}.}.
+Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}.
 
 In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
@@ -470,14 +466,14 @@ The betatron tune spread or linear detuning that is introduced by the octupoles 
 where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the trasnverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
 
 \subsection{Longitudinal motion}
-In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concertn transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
+In the longitudinal plane, the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
 
 %In the next paragraphs the basic concepts used to describe the motion in the longitudinal plane which is also called synchrotronous motion are explained. In particular, the discussion is focused on the synchronous phase, the momentum compaction and phase slip factors, the concepts of phase stability, synchrotron oscillations and synchrotron tune tune. The equations of synchrotron motion are also given.
 
 %In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the following discussion the longitudinal motion is treated independently from the transverse one. The complete approach, which describes the particles motion in the presence of coupling between the transverse and longitudinal planes can be found in Chapter~5.2 in the book of A. Wolski in Ref.~\cite{wolski2014}.
 
 \textbf{Synchronous phase}\\
-The time that the reference particle needs to complete one complete revolution around the machine is called revolution period, $T_\mathrm{rev}$. Its angular revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C = \beta_0 c/C$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C$ the circumference of the accelerator.
+The time that the reference particle needs to complete one complete revolution around the machine is called the revolution period, $T_\mathrm{rev}$. Its angular revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C = \beta_0 c/C$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C$ the circumference of the accelerator.
 
 In the longitudinal plane the acceleration and the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
 % stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
@@ -500,7 +496,7 @@ As discussed in the previous chapter, in the presence of dispersion a particle w
 \end{equation} % proof hannes' thesis appendix p.169: https://cds.cern.ch/record/1644761/files/CERN-THESIS-2013-257.pdf
 where $C$ the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
 
-With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also change. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
+With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also changes. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
 \begin{equation}\label{eq:phase_slip_factor}
     \eta_p = -\frac{\Delta \omega / \omega_0}{\delta} = \alpha_p - \frac{1}{\gamma^2_0} = \frac{1}{\gamma^2_\mathrm{tr}} - \frac{1}{\gamma^2_0},
 \end{equation}
@@ -509,7 +505,7 @@ For the nominal optics configuration, the SPS machine always operates above tran
 % Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
 
 \textbf{Phase stability and synchrotron oscillations}\\
-Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therfore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therfore, it will be accelerated stronger than the reference particle and therfore it will need less time to complete the next revoltuion and it will approach the reference particle. The situation is opposite for a particle with $\delta<0$. 
+Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therefore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therefore, it will be accelerated stronger than the reference particle and subsequently it will need less time to complete the next revolution and it will approach the reference particle. The situation is the opposite for a particle with $\delta<0$. 
 % Inspired by Fig. 2.3 in the thesis of M. Schenk and Fig.5.15 in wille's book.
 \begin{figure}[!h] % 
     \centering         
@@ -518,7 +514,7 @@ Even though the particles arrive at different times in the RF cavity, they stay 
         \label{fig:phase_focusing}
  \end{figure}
 
-In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly with the betatorn oscillations in the transverse plane). Turn-by-turn the particles perform oscillations around the phase of sunchronous paticle performing synchrotron oscillations. The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+ In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). Turn by turn the particles perform oscillations around the phase of the synchronous particle performing synchrotron oscillations. The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
 \begin{equation}\label{eq:long_eq_motion_z}
     z^\prime = - \eta_p \delta,
 \end{equation}
@@ -542,11 +538,11 @@ Up to now, the motion of the particles was studied neglecting the interaction be
 The discussion in this section is based in the discussion in Ref.~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
 
 \textbf{Wakefields}\\
-The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducted the interaction with the charged particles will result to electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
+The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducted the interaction with the charged particles will result in electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
 
-For the study of the wakefields it is considered that each particle acts as a source of wakefields for the rest of the particles which are called witnesses. In the ultrarelativistic regime (which is also the regime of these studies) the wakefields from a source particle act only on the particles behind it, hence the term "wake". A source particle can also act on itself throught the generated wakefield in the subseqent turns. This is the multi-turn effect of the wakefields. In this thesis, only the multi-turn effect from the resistive wall will be considered as it is the only one that has significant impact on the dynamics.
+For the study of the wakefields, it is considered that each particle acts as a source of wakefields for the rest of the particles which are called witnesses. In the ultrarelativistic regime (which is also the regime of these studies) the wakefields from a source particle act only on the particles behind it, hence the term "wake". A source particle can also act on itself through the generated wakefield in the subsequent turns. This is the multi-turn effect of the wakefields. In this thesis, only the multi-turn effect from the resistive wall will be considered as it is the only one that has a significant impact on the dynamics.
 
-The longitudinal and transverse wakefields can be treated seperataly. In the following only the transverse compoenents will be discussed as the focus of the thesis is on the transverse beam dynamics.
+The longitudinal and transverse wakefields can be treated separately. In the following only the transverse components will be discussed as the focus of the thesis is on the transverse beam dynamics.
 
 \textbf{Wakefunctions}\\
 Let's consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle of charge $q_1$ is the source particle while the witness particle of charge $q_2$ travels behind it at a constant distance $z$. $(\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
@@ -589,7 +585,7 @@ In order to study the beam dynamics effects due to wakefields, impedance models 
 
 \textbf{Headtail modes}\\
 Vlasov formalism~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
-Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped or excited; in the latter case they evolve to instabilities. In order for the beam to become unstable the wakefield kicks (source of energy) need to be synchronised with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
+Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
 \textbf{Sacherer Formulae and complex frequency shift}\\
@@ -602,8 +598,9 @@ The headtail modes introduce an exponential dependence on the amplitude of the b
 \end{equation}
 where $\Omega_{u,0}^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
 \begin{equation}\label{eq:growth_rate}
-    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)}.
+    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)} / T_0,
 \end{equation}
+where $T_0$ is the revolution period.
 In the above equations $u=(x,y)$ denoting the horizontal and vertical frequencies respectively.
 
 The complex frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in Ref.~\cite{Chao:collective}): % Eq.(6.207)
