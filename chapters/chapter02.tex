@@ -1,4 +1,5 @@
-The definitions and notations used throughout this thesis are based on the book of A. Wolksi in Ref.~\cite{wolski2014} unless it is stated otherwise. In this chapter, the basic concepts of accelerator beam physics that are essential for understanding the studies presented here are introduced. The focus is put on the concepts for synchrotrons with proton beams. Additionally, in the last section, the tracking simulation codes used in this work are described.
+%The definitions and notations used throughout this thesis are based on the book of A. Wolksi in Ref.~\cite{wolski2014} unless it is stated otherwise. 
+In this chapter, the basic concepts of accelerator beam physics that are essential for understanding the studies presented here are introduced. A more complete description can be found in the books of the following references:~\cite{wolski2014, Wiedemann:1083415, Lee:1425444}. The focus is put on the concepts for synchrotrons with proton beams. Additionally, in the last section, the tracking simulation codes used in this work are described.
 
 % Details p.11 Michael schenk
 Synchrotrons are circular accelerators where the particles follow a fixed closed-loop path. In a synchrotron, electric fields accelerate the particles while magnetic fields steer and focus them. The magnetic fields are not constant but they vary according to the particles' energy, allowing acceleration and operation in very high (relativistic) energies. The LHC and SPS machines at CERN are synchrotrons like the most of the machines used for High Energy Physics experiments. Usually, in synchrotrons, the beams consist of multiple bunches, longitudinally spaced around the machine, which of course interact with each other. However, these multi-bunch interactions are not relevant to the studies presented in this thesis. Therefore, they are not addressed in the following paragraphs. 
@@ -586,39 +587,86 @@ where $u=(x,y)$, $i$ is the imaginary unit and $c$ is the speed of light.
 
 In order to study the beam dynamics effects due to wakefields, impedance models of the particle accelerators have been developed. Details on how an impedance model is built can be found in Ref.~\cite{benoit_ipac19_impedance}. The impedance model for the SPS is discussed in Chapter~\ref{Ch:suppression_impedance} while its implementation in the simulations is discussed in Section~\ref{subsec:pyheadtail}.
 
-\textbf{Complex tune shift}\\
-One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} and the perturbation theory. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
+\textbf{Headtail modes}\\
+Vlasov formalism~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
+Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped or excited; in the latter case they evolve to instabilities. In order for the beam to become unstable the wakefield kicks (source of energy) need to be synchronised with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 
-It should be mentioned that the Vlasov formalism is commonly used when studying the imepdance-induced instabilities and it treats the particles motion in mode domain: the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
 
-What is called headtail modes.
+\textbf{Sacherer Formulae and complex tune shift}\\
+One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} 
+and the perturbation theory and was first derived by F.~Sacherer~\cite{Sacherer:322545, Sacherer:322645} %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
+
+The headtail modes introduce an exponential dependence on the amplitude of the bunch centroid as follows~\cite{Schenk:2665819}:
+\begin{equation}\label{eq:HeadtailModesExponentialDependence}
+    x(t) \propto e^{i(\Omega_0^{(l)}+\Delta \Omega^{(l)})t} =  e^{i(\Omega_0^{(l)}+\Delta \Omega_{re}^{(l)})t} e^{-\Delta \Omega_{im}^{(l)} t},
+\end{equation}
+where $\Omega_0^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega ^{(l)} = \Delta \Omega_{re}^{(l)} + i \Delta \Omega_{im}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{re}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{im}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{im}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{im}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
+
+\begin{equation}\label{eq:growth_rate}
+    1/\tau^{(l)}=-\Delta \Omega_{im}^{(l)}.
+\end{equation}
+ 
+
+
+%In principle, the mode representation and the particle representation of the beam motion are identical. To describe fully 1012particles, one needs 1012modes, and vice versa. The detailed methods of analysis in the two approachesare different-the particle representation usually is conveniently treated in the time domain, while in the mode representation the frequency domain is more convenient-but, in principle, they necessarilygive the same final results. (p.272, chao)
+
+
+%The total betatron phase shift between head and tail is the physical origin of the head tail instability. The head and the tail of the bunch oscillate therefore with a phase difference, which reduces to rigid-bunch oscillations only in the limit of zero chromaticity. A new (within-bunch) mode number m = ... , −1, 0, 1, ... , also called head–tail (or azimuthal) mode number, was introduced. This mode describes the number of betatron wavelengths (with sign) per synchrotron period. When computing the eigen modes of the coupled system one can see that there is also a freuqency shift. The Vlasov formalism used for the mode representation of the beam motion. 
+
 
 Write equation from overleaf where you show the dependnece on the tune.
 
 Sacherer, developed the analytical formula (ref to old paper) and then write eqaution (i htink its from chao. )
 
 %When studying the imepdance-induced instabilities it is convinient to move in the mode domain: the beam motion is described by a superposition of modes. % the beam motion is described by a superposition of modes
-allows the study of the beam motion in 
+%allows the study of the beam motion in 
 
 Sacherer, developed analytical formulas which allow the computation of the complex tune shift.
 
-The analytical formulas computi
-
-
-The solution of the motion is achieved based on the Vlasov formalism~\cite{Vlasov:426186} and the perturbation theory. 
-
-The study of impedance-induced instabilities is performed based on Vlasov equation and the perturbation theory.
-
-
-For the study of impedance-induced instabilities the 
-For describing the motion of the particles under the influence of impedance 
-
-based on Vlasov equation [10] and the perturbation
-theory used to solve it in mode domain
-When studying instabilities which 
+I think the formula is from chao's book (see jupyer lab)
+- for the dampoing time find the script where you compare it with simulation. for xavier.
 
 - clasic figure, equations, chao, tune shift and damping time. 
 - see presentation from auth.
+
+
+
+\section{Sacherer Formulae}
+
+From Michael Schenk PhD thesis (in cds). 
+
+
+
+The complex frequency shift for the azimuthial mode $l$ is found from~\cite{Sacherer:322645}
+
+\begin{equation}\label{eq:Sacherer_complexFreqShift_v1}
+    \Delta \Omega^{(l)} = \frac{1}{1+l} \frac{j}{2 \omega_\beta} \frac{e \beta}{\gamma m_0}\frac{I_0}{L} Z_{eff}, 
+\end{equation}
+
+where $I_0$ the current in one bunch length $L=4\sigma_z$ in [m], $e$ the electronic charge in [C], $m_0$ the particle rest mass in [kg], $\beta=v/c$ the relativistic $\beta$ and $\omega_\beta = Q \omega_0$ with $Q$ the betatatron tune (including the integer part)and $\omega_0$ the angular revolution frequency of the machine. $\sigma_z$ is the rms bunch length in [m]
+
+The effective impedance $Z_{eff}$ is described by:
+
+\begin{equation}\label{eq:EffectiveImpedance}
+     Z_{\perp eff}^{(l)} = \frac{\sum_{p=-\infty}^{+ \infty}Z_{\perp }^{(l)}(\omega_{p}) h_l(\omega_{p}-\omega_\xi)}{\sum_{p=-\infty}^{+ \infty}h_l(\omega_{p}-\omega_\xi)}, 
+\end{equation}
+
+with $\omega_p = (p+Q)\omega_0$ the discrete spectrum of the transverse bunch oscillations. $-\infty < p < + \infty$ for a single bunch (which is our case) or several bunches oscillating independently. $\omega_\xi=(\xi \omega_0)/(\eta \nu_b)$ the chromatic frequency, with $\eta$ the phase slip factor. Note that $\xi$ is the chromaticity defined as $\xi = d\nu_b/d\delta$ with $\delta=\Delta P/P_0$ the relative momentum error, and $Q^\prime=\xi/\nu_b$. Thus we can re-write $\omega_\xi=Q^\prime \omega_0 / \eta$. \textbf{Attention:} In the simulations $Q^\prime$ is referred as chromaticity.
+
+Last, $h_l$, is the power spectral density of a Gaussian bunch of $l$ azimuthial mode. $h_l$ is described by \cite{Chao:collective} (Chapter Eq.6.143):
+\begin{equation}\label{eq:psd_gaussianBunch_oscillateModesm}
+    h_l(\omega) = (\omega \sigma_z/c)^{2l} e^{-(\omega \sigma_z/c)^2},
+\end{equation}
+   
+where $c$ is the speed of light in [m/s].
+
+Note that in the presence of chromaticity the beam spectral is shifted through the chromatic frequency shift $\omega_\xi$.
+
+Last, we write:
+\begin{equation}
+    \Delta Q = \frac{\Delta \Omega^{(l)}}{\omega_0}
+\end{equation}
+
 
 
 
