@@ -592,20 +592,25 @@ Vlasov formalism~\cite{Vlasov:426186} is often used to describe the beam motion 
 Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped or excited; in the latter case they evolve to instabilities. In order for the beam to become unstable the wakefield kicks (source of energy) need to be synchronised with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 
 
-\textbf{Sacherer Formulae and complex tune shift}\\
+\textbf{Sacherer Formulae and complex frequency shift}\\
 One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} 
-and the perturbation theory and was first derived by F.~Sacherer~\cite{Sacherer:322545, Sacherer:322645} %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
+and the perturbation theory and was first derived by F.~Sacherer~\cite{Sacherer:322545, Sacherer:322645}. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
 
 The headtail modes introduce an exponential dependence on the amplitude of the bunch centroid as follows~\cite{Schenk:2665819}:
 \begin{equation}\label{eq:HeadtailModesExponentialDependence}
-    x(t) \propto e^{i(\Omega_0^{(l)}+\Delta \Omega^{(l)})t} =  e^{i(\Omega_0^{(l)}+\Delta \Omega_{re}^{(l)})t} e^{-\Delta \Omega_{im}^{(l)} t},
+    u(t) \propto e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_u^{(l)})t} =  e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_{u, \mathrm{{re}}}^{(l)})t} e^{-\Delta \Omega_{u, \mathrm{{im}}}^{(l)} t},
 \end{equation}
-where $\Omega_0^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega ^{(l)} = \Delta \Omega_{re}^{(l)} + i \Delta \Omega_{im}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{re}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{im}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{im}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{im}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
-
+where $\Omega_{u,0}^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
 \begin{equation}\label{eq:growth_rate}
-    1/\tau^{(l)}=-\Delta \Omega_{im}^{(l)}.
+    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)}.
 \end{equation}
- 
+In the above equations $u=(x,y)$ denoting the horizontal and vertical frequencies respectively.
+
+The complex frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in Ref.~\cite{Chao:collective}): % Eq.(6.207)
+\begin{equation}\label{eq:complext_tune_shift_modes_m}
+    \Omega^{(l)}-\omega_u-l\omega_s = -\frac{1}{4\pi}\frac{\Gamma(l+1/2)}{2^l l!}\frac{N r_0 c^2}{\gamma_0 T_0 \omega_\beta \sigma} i Z_\mathrm{eff},
+\end{equation}
+where $\omega_u$ and $\omega_s$ are the unperturbated betatron and synchrotron frequencies, $\Gamma(x)$ is the gamma function, $N$ is the number of macroparticles in the bunch, $r_0=1.535 \cdot 10^{-16}$ is the clasical radius of the proton, $c$ is the speed of light, $\gamma_0$ is the relativistic gamma, $T_0$ is the revolution period, $\sigma_z$ is the rms bunch length, $i$ is the imaginary unit and $Z_\mathrm{eff}$ is the effective impedance. It should be highlighted that Eq.~\eqref{eq:complext_tune_shift_modes_m} is in CGS (Centimetre–gram–second) system.
 
 
 %In principle, the mode representation and the particle representation of the beam motion are identical. To describe fully 1012particles, one needs 1012modes, and vice versa. The detailed methods of analysis in the two approachesare different-the particle representation usually is conveniently treated in the time domain, while in the mode representation the frequency domain is more convenient-but, in principle, they necessarilygive the same final results. (p.272, chao)
