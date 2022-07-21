@@ -640,46 +640,6 @@ where 1 $\Omega$ stands for 1 Ohm.
 %allows the study of the beam motion in 
 
 
-
-\section{Sacherer Formulae}
-
-From Michael Schenk PhD thesis (in cds). 
-
-
-
-The complex frequency shift for the azimuthial mode $l$ is found from~\cite{Sacherer:322645}
-
-\begin{equation}\label{eq:Sacherer_complexFreqShift_v1}
-    \Delta \Omega^{(l)} = \frac{1}{1+l} \frac{j}{2 \omega_\beta} \frac{e \beta}{\gamma m_0}\frac{I_0}{L} Z_{eff}, 
-\end{equation}
-
-where $I_0$ the current in one bunch length $L=4\sigma_z$ in [m], $e$ the electronic charge in [C], $m_0$ the particle rest mass in [kg], $\beta=v/c$ the relativistic $\beta$ and $\omega_\beta = Q \omega_0$ with $Q$ the betatatron tune (including the integer part)and $\omega_0$ the angular revolution frequency of the machine. $\sigma_z$ is the rms bunch length in [m]
-
-The effective impedance $Z_{eff}$ is described by:
-
-\begin{equation}\label{eq:EffectiveImpedance}
-     Z_{\perp eff}^{(l)} = \frac{\sum_{p=-\infty}^{+ \infty}Z_{\perp }^{(l)}(\omega_{p}) h_l(\omega_{p}-\omega_\xi)}{\sum_{p=-\infty}^{+ \infty}h_l(\omega_{p}-\omega_\xi)}, 
-\end{equation}
-
-with $\omega_p = (p+Q)\omega_0$ the discrete spectrum of the transverse bunch oscillations. $-\infty < p < + \infty$ for a single bunch (which is our case) or several bunches oscillating independently. $\omega_\xi=(\xi \omega_0)/(\eta \nu_b)$ the chromatic frequency, with $\eta$ the phase slip factor. Note that $\xi$ is the chromaticity defined as $\xi = d\nu_b/d\delta$ with $\delta=\Delta P/P_0$ the relative momentum error, and $Q^\prime=\xi/\nu_b$. Thus we can re-write $\omega_\xi=Q^\prime \omega_0 / \eta$. \textbf{Attention:} In the simulations $Q^\prime$ is referred as chromaticity.
-
-Last, $h_l$, is the power spectral density of a Gaussian bunch of $l$ azimuthial mode. $h_l$ is described by \cite{Chao:collective} (Chapter Eq.6.143):
-\begin{equation}\label{eq:psd_gaussianBunch_oscillateModesm}
-    h_l(\omega) = (\omega \sigma_z/c)^{2l} e^{-(\omega \sigma_z/c)^2},
-\end{equation}
-   
-where $c$ is the speed of light in [m/s].
-
-Note that in the presence of chromaticity the beam spectral is shifted through the chromatic frequency shift $\omega_\xi$.
-
-Last, we write:
-\begin{equation}
-    \Delta Q = \frac{\Delta \Omega^{(l)}}{\omega_0}
-\end{equation}
-
-
-
-
 %\subsection{Active feedback?}
 \section{Optics models for accelerators}\label{sec:optics_model_designs}
 % or optics design
