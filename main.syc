@@ -2,7 +2,7 @@
 \newcommand{\symminclude}{no}
 \newcommand{\Jxinclude}{yes}
 \newcommand{\Jyinclude}{yes}
-\newcommand{\symcinclude}{no}
+\newcommand{\symcinclude}{yes}
 \newcommand{\frevinclude}{yes}
 \newcommand{\VRFinclude}{yes}
 \newcommand{\fRFinclude}{yes}
