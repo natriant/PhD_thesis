@@ -1,5 +1,13 @@
 
 
+
+In this thesis "noise" refers to a stochastic kicks applied to the particles of the bunch changing their momentum as 
+
+
+- Lebedev
+- 
+- KEKB, (references) why are they different (philippe email exchange)
+
 2. Noise, reference to noise studies ... to kek. mention why they are different.\\
 
 
@@ -11,7 +19,7 @@ For phase noise, the emittance growth can be estimated from:
 \begin{equation}\label{eq:dey_pn}
     \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
 \end{equation}
- In these formulae, $\betaCC$ is the beta function at the location of the CC, $\VCC$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\bar{\nu}_b$ and $\bar{\nu}_s$ the mean of the betatron and synchrotron tune distribution. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD)~\cite{b_papoulis1991probability} of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands. %In SI units, $S_{\Delta A}$ and $S_{\Delta \phi}$ are measured in Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. 
+ In these formulas, $\betaCC$ is the beta function at the location of the CC, $\VCC$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\bar{\nu}_b$ and $\bar{\nu}_s$ the mean of the betatron and synchrotron tune distribution. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD)~\cite{b_papoulis1991probability} of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands. %In SI units, $S_{\Delta A}$ and $S_{\Delta \phi}$ are measured in Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. 
  $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
 \begin{align}
 C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
@@ -25,3 +33,14 @@ You need to described how they are modeled in pyheadtail.
 
 
 \section{Modelling of phase and amplitude noise in simulations}
+
+As follows from the analysis in Ref.~\cite{PhysRevSTAB.18.101001} the phase and amplitude noise kicks can be treated separately, and be modeled as the following kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
+% Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
+\begin{equation}\label{eq:amplitude_noise_kick}
+  \textbf{\textrm{Amplitude noise:}} \  u^\prime_1 =  u^\prime_0 + A \sin{\left (  \frac{2 \pi \fCC}{c \beta_0}z   \right )},
+\end{equation}
+\begin{equation}\label{eq:phase_noise_kick}
+    \textbf{\textrm{Phase noise:}} \ u^\prime_1 =  u^\prime_0 + A \cos{\left (  \frac{2 \pi \fCC}{c \beta_0}z   \right )},
+\end{equation}
+
+where $u^\prime$, with $u=(x,y)$, is the normalised transverse momentum and $z$ the longitudinal co-ordinate as defined in Eq.~\eqref{eq:particle_coordinates}, $\fCC$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. Finally, $A=\VCC /(E_b \cdot \Delta A )$ or $A=\VCC /(E_b \cdot \Delta \phi )$ the scaling factor for amplitude or phase noise respectively.
