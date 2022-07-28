@@ -1,32 +1,28 @@
 \section{Noise}\label{sec:noise_definition}
 %External noise means that it is independent of the beam itself.
-In particle accelerators, a major issue of concern is the presence of external noise. Examples of noise sources are ripples in the power converter ripples, fluctuations of the magnetic fields, ground motion, and various instruments in the accelerator structure such as the transverse damper and the Crab Cavities.
+In particle accelerators, a major issue of concern is the presence of external noise as it leads to transverse emittance growth, particle losses and limits the beam lifetime. Examples of noise sources are ripples in the power converter ripples which lead to fluctuations of the magnetic fields, ground motion, and various instruments in the accelerator structure such as the transverse damper and the Crab Cavities. % sofias's thesies introduction of chatper 5.
+%Ripples in the power supply voltage are converted into current ripples, depending on the magnet's impedance, which eventually leads to magnetic field perturbations through the magnet's transfer function (vacuum chamber, beam screen). sofia's thesis p.95
 
-From the various noise sources that are present in an accelerator, this thesis discusses the dipolar noise and the CC noise. The majority of the noise sources produced dipolar noise, which is constant along the bunch, i.e. all the particles are affected the same way. % this noise is also referred to as rigid noise 
-On the other hand the way the CC noise affects the particles depends on their longitudinal position within the bunch.
+From the various noise sources that are present in an accelerator, this thesis focuses on the dipolar noise and mainly on the CC noise. Dipolar noise is the one produced by the majority of the noise sources and is constant along the bunch, i.e. all the particles are affected the same way. % this noise is also referred to as rigid noise 
+On the other hand, the way the CC noise affects the particles depends on their longitudinal position within the bunch (more details in the following paragraphs).
 
-source and CC with mainly focusing on the secong.
-
-
-In this thesis, the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows: %The noise can be modeled as a single kick per particle per turn.  (if you use this sentence re-phrase it first).
+%Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
+Past studies~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001} have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown, that the noise can be modelled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
 \begin{equation}\label{eq:external_noise}
     u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
 \end{equation}
-where $u=(x,y)$ denoting the horizontal and vertical plane and $\Delta u^\prime$ is the change of the momentum due to the noise kick. 
+where $u=(x,y)$ denoting the horizontal and vertical plane and $\Delta u^\prime$ is the change of the momentum due to the noise in units of rad. This approach will be used in the following studies.
+% if it is dipole noise it is oftern written: Delta u = thera
 
+\section{Crab Cavity noise}\label{eq:CC_noise_intro}
 
-
-
-Most noise sources produce noise that is constant across a bunch, being proportional to the constant. This type of noise will be referred to as rigid or dipolar noise. The shape of crab cavity amplitude noise, on the
-other hand, is proportional to th
-e, which excites all particles in the bunch equally
-
-
-
-
-- Lebedev
-- 
 - KEKB, (references) why are they different (philippe email exchange)
+
+\section{Theoretical model}\label{eq:CC_emit_growth_formulas}
+
+%\section{Theoretical model for Crab Cavity noise induced-emittance growth}\label{eq:CC_emit_growth_formulas}
+
+
 
 2. Noise, reference to noise studies ... to kek. mention why they are different.\\
 
