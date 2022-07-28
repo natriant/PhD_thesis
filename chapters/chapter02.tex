@@ -439,11 +439,11 @@ We define the chromaticity as the variation of the betatron tune $Q_u$ with the 
 %The tune shift introduced by the chromaticity is: % M. Schenk p.49
 
 \begin{equation}\label{eq:chromatic_tune_shift_up_to_order_n}
-   \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{n} \delta^n, 
+   \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{(n)} \delta^n, 
 \end{equation}
 where:
 \begin{equation}\label{eq:chroma_up_to_order_m}
-    Q_u^{n} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
+    Q_u^{(n)} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
  \end{equation}
 denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. 
 
@@ -478,16 +478,16 @@ The time that the reference particle needs to complete one complete revolution a
 In the longitudinal plane the acceleration and the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
 % stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
 \begin{equation}\label{eq:RF_cavity_EF}
-    E_\mathrm{{RF}}(t) = E_0 \sin{(\phi_\mathrm{{RF}} t + \phi_s)},
+    E_\mathrm{{RF}}(t) = E_A \sin{(\phi_\mathrm{{RF}} t + \phi_s)},
 \end{equation}
-where $E_0$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
+where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
 In a synchrotron during the energy ramp the angular frequency increases in order to follow the increasing revolution frequency.
 
 Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
 \begin{equation}\label{eq:enerhy_gain_synchronous}
-    \Delta E_s = e V_0 \sin{(\phi_s)}, 
+    \Delta E_s = e V_\mathrm{RF} \sin{(\phi_s)}, 
 \end{equation}
-where $V_0$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or loose a different amount of enerfy per turns which equals: $\Delta E_p = e V_0 \sin{(\phi)}$. 
+where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or loose a different amount of enerfy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
  
 \textbf{Dispersion effects}\\
 As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
@@ -500,8 +500,7 @@ With the change of the closed orbit length due to the momentum offset the revolu
 \begin{equation}\label{eq:phase_slip_factor}
     \eta_p = -\frac{\Delta \omega / \omega_0}{\delta} = \alpha_p - \frac{1}{\gamma^2_0} = \frac{1}{\gamma^2_\mathrm{tr}} - \frac{1}{\gamma^2_0},
 \end{equation}
-where $\gamma_0$ the Lorentz factor and $\gamma_\mathrm{tr} = 1/\sqrt{\alpha_p}$ is called the transition energy. When $\gamma_0 < \gamma_\mathrm{tr} \Rightarrow \eta_p <0$ ($\gamma_0 > \gamma_\mathrm{tr} \Rightarrow \eta_p > 0$) and the machine operates below (above) transition. For  
-For the nominal optics configuration, the SPS machine always operates above transition as $\gamma_\mathrm{tr}$ = 22.8 which is smaller than the relativistic gamma even for the injection energy ($\gamma_0$ = 27.7 at 26\,GeV).
+where $\omega_0$ is the angular frequency of the reference particle, $\gamma_0$ is the Lorentz factor and $\gamma_\mathrm{tr} = 1/\sqrt{\alpha_p}$ is called the transition energy. When $\gamma_0 < \gamma_\mathrm{tr} \Rightarrow \eta_p <0$ ($\gamma_0 > \gamma_\mathrm{tr} \Rightarrow \eta_p > 0$) and the machine operates below (above) transition. For the nominal optics configuration, the SPS machine always operates above transition as $\gamma_\mathrm{tr}$ = 22.8 which is smaller than the relativistic gamma even for the injection energy ($\gamma_0$ = 27.7 at 26\,GeV).
 % Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
 
 \textbf{Phase stability and synchrotron oscillations}\\
@@ -559,11 +558,11 @@ The wakefields in time domain are described with the concept of wakefunctions, $
 \begin{equation}\label{eq:wakefunctions}
     W_u(\Delta u_1, \Delta u_2, z) = W^\mathrm{const}_u(z) + W^\mathrm{dip}_u(z)\Delta u_1 +  W^\mathrm{quad}_u(z)\Delta u_2 + o(\Delta u_1, \Delta u_2),
 \end{equation}
-where $u=(x,y)$ and $W^\mathrm{const}_u(z)$, $W^\mathrm{dip}_u(z)$, $W^\mathrm{quad}_u(z)$ are the transverse constant, dipole, and quadrupole wakefunctions respectively. Last, $ o(\Delta u_1, \Delta u_2)$ is the higher order term however only the first-order terms will be considered for the rest of the analysis. % M. Schenk p.25
+where $u=(x,y)$ and $W^\mathrm{const}_u(z)$, $W^\mathrm{dip}_u(z)$, $W^\mathrm{quad}_u(z)$ are the transverse constant, dipolar, and quadrupolar wakefunctions respectively. Last, $ o(\Delta u_1, \Delta u_2)$ is the higher order term however only the first-order terms will be considered for the rest of the analysis. % M. Schenk p.25
 
-The dipole and quadrupole wakefunctions were named after the way they act on the witness particle. The dipole wakefunction acts like a dipole magnet: its impact is the same regardless of the transverse position of the witness particle; it depends only on the position of the source particle. The quadrupole wakefunction acts like a quadrupole magnet: its impact increases linearly with the transverse position of the witness particle (independent of the .position of the source particle). % Benoit thesis p.44
+The dipolar and quadrupolar wakefunctions were named after the way they act on the witness particle. The dipolar wakefunction acts like a dipole magnet: its impact is the same regardless of the transverse position of the witness particle; it depends only on the position of the source particle. The quadrupolar wakefunction acts like a quadrupole magnet: its impact increases linearly with the transverse position of the witness particle (independent of the .position of the source particle). % Benoit thesis p.44
 
-The constant term can change the closed orbit while the dipole and quadrupole terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipole term is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupole term is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
+The constant term can change the closed orbit while the dipolar and quadrupolar terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipolar term is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupolar term is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
 
 The effect of the wakefields on the witness particles can be modeled as the following kicks on the transverse normalised momentum~\cite{Schenk:2665819}: % Eq.(2.44) M. Schenk thesis
 \begin{equation}\label{eq:wakefield_kicks}
@@ -598,9 +597,9 @@ The headtail modes introduce an exponential dependence on the amplitude of the b
 \end{equation}
 where $\Omega_{u,0}^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
 \begin{equation}\label{eq:growth_rate}
-    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)} / T_0,
+    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)} / T_\mathrm{rev},
 \end{equation}
-where $T_0$ is the revolution period.
+where $T_\mathrm{rev}$ is the revolution period.
 In the above equations $u=(x,y)$ denoting the horizontal and vertical frequencies respectively.
 
 The complex frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in Ref.~\cite{Chao:collective}): % Eq.(6.207)

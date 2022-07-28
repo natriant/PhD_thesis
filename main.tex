@@ -2,18 +2,6 @@
 \usepackage{mypackages}
 \usepackage{listofsymbols}
 
-% start attempt for new list of symbols
-\newcommand{\addsymbol}[3]{%
-  \symboldisplay{#1}{#2}\\%
-  \setelem{#3}{#1}
-}
-\newcommand{\symboldisplay}[2]{%
-  $#1$ \parbox{5in}{\dotfill #2}%
-}
-\def\setelem#1{\expandafter\gdef\csname myarray(#1)\endcsname} 
-\def\dispsymbol#1{\csname myarray(#1)\endcsname}
-
-
 
 % Create new commands for convinience
 \newcommand{\fourierxform}[1]{\hat{#1}}
