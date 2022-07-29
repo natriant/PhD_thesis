@@ -3,7 +3,6 @@
 \newcommand{\Jxinclude}{yes}
 \newcommand{\Jyinclude}{yes}
 \newcommand{\symcinclude}{yes}
-\newcommand{\frevinclude}{yes}
 \newcommand{\VRFinclude}{yes}
 \newcommand{\fRFinclude}{yes}
 \newcommand{\CCinclude}{yes}

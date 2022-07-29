@@ -3,7 +3,6 @@
 \printsymline{J_x}{J_x}{Jx}{Horizontal particle action}{xvii}
 \printsymline{J_y}{J_y}{Jy}{Vertical particle action}{xvii}
 \printsymline{c}{c}{symc}{Speed of light}{xvii}
-\printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{xvii}
 \printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{xvii}
 \printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{xvii}
 \printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{xvii}

@@ -4,7 +4,7 @@
 \newsym[Horizontal particle action]{Jx}{J_x}
 \newsym[Vertical particle action]{Jy}{J_y}
 \newsym[Speed of light]{symc}{c}
-\newsym[Revolution frequency]{frev}{f_{rev}}
+
 \newsym[Main RF voltage]{VRF}{V_{RF}}
 \newsym[Main RF frequency]{fRF}{f_{RF}}
 \newsym[Crab Cavity]{CC}{\mathrm{CC}}

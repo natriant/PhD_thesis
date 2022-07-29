@@ -19,7 +19,7 @@ where $u=(x,y)$ denoting the horizontal and vertical plane and $\Delta u^\prime$
 
 
 \section{Crab Cavity noise and emittance growth}\label{eq:CC_noise_intro}
-As already mentioned in the Introduction (Section~\ref{sec:motivation_outline}) the presence of noise in the $\CC$ low-level RF system is an issue of major concern for the HL-LHC project as it results in transverse emittance growth and subsequently in loss of luminosity. To this end, in 2015, P.~Baudrenghien and T.~Mastoridis developed a theoretical model~\cite{PhysRevSTAB.18.101001} which predicts this transverse emittance growth induced by $\CC$ noise focusing on the HL-LHC scenario. In particular, the model assumes a hadron machine, zero synchrotron radiation damping, long bunches (in the order of cm), and white RF noise (discrete spectral lines are excluded).  Additionally, constant beam energy is assumed (no acceleration) and that the $\CC$ RF zero phase is set at the center of the bunch.
+As already mentioned in the Introduction (Section~\ref{sec:motivation_outline}) the presence of noise in the $\CC$ low-level RF system is an issue of major concern for the HL-LHC project as it results in transverse emittance growth and subsequently in loss of luminosity. To this end, in 2015, P.~Baudrenghien and T.~Mastoridis developed a theoretical model~\cite{PhysRevSTAB.18.101001} which predicts this transverse emittance growth induced by $\CC$ noise focusing on the HL-LHC scenario. In particular, the model assumes a hadron machine, zero synchrotron radiation damping, long bunches (in the order of cm), and white RF noise (discrete spectral lines are excluded).  Additionally, it is assumed that the $\CC$ RF zero phase is set at the center of the bunch.
 
 \textbf{White noise}\\
 In signal analysis, white noise is a random signal with the same amplitude (intensity) at all the frequencies which results in a constant power spectral density. For the computational analysis (i.e. simulation studies), the signals are sampled at a finite number of points which are called discrete-time signals. In discrete-time, the white noise can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and finite standard deviation. More details on the continuous and discrete time analysis and the term of the power spectral density can be found in Appendix~\ref{ch:app_B}. The definition for the standard deviation of a distribution can be found in Appendix~\ref{ch:app_A}.
@@ -87,12 +87,20 @@ As already mentioned, the theoretical formalism for predicting the transverse em
 
 Taking these conditions into account, the emittance growth resulting from amplitude noise is estimated from:
 \begin{equation}\label{eq:dey_an}
-    \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! \sum_{k=-\infty}^{+\infty} S_{\Delta A}[(k \pm \bar{\nu}_b \pm \bar{\nu}_s)\frev].
+    \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \betaCC \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! \sum_{k=-\infty}^{+\infty} S_{\Delta A}[(k \pm \bar{Q} \pm \bar{\nu}_s)\frev].
 \end{equation}
 For phase noise, the emittance growth is estimated from:
 \begin{equation}\label{eq:dey_pn}
-    \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
+    \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \betaCC \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
 \end{equation}
+In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\betaCC$ is the beta function at the location of the CC, $\VCC$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\bar{\nu}_b$ and $\bar{\nu}_s$ the mean of the betatron and synchrotron tune distribution. The $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands of the betatron and synchrobetatron frequencies. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD)~\cite{b_papoulis1991probability} of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands. %In SI units, $S_{\Delta A}$ and $S_{\Delta \phi}$ are measured in Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. 
+$C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
+\begin{align}
+C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
+C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
+\end{align}
+with $\sigma_{\phi}$ the rms bunch length (in radians) with respect to the CC frequency $\fCC$, and $I_n(x)$ the modified Bessel function of the first kind. 
+
 
 
 
@@ -120,13 +128,6 @@ For phase noise, the emittance growth can be estimated from:
 \begin{equation}\label{eq:dey_pn}
     \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
 \end{equation}
- In these formulas, $\betaCC$ is the beta function at the location of the CC, $\VCC$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\bar{\nu}_b$ and $\bar{\nu}_s$ the mean of the betatron and synchrotron tune distribution. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD)~\cite{b_papoulis1991probability} of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands. %In SI units, $S_{\Delta A}$ and $S_{\Delta \phi}$ are measured in Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. 
- $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
-\begin{align}
-C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
-C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
-\end{align}
-with $\sigma_{\phi}$ the rms bunch length (in radians) with respect to the CC frequency $\fCC$, and $I_n(x)$ the modified Bessel function of the first kind. 
 
 
 You need to described how they are modeled in pyheadtail.
