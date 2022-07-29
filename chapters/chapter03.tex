@@ -1,5 +1,8 @@
-Write introduction here and explain what you discuss in each section.
-You need the frist section to introduce the dipole noise as you will apply it in the simulations.
+This section describes the theoretical formalism which predicts the transverse emittance growth in the presence of $\CC$ RF noise. First, it introduces the concept of noise in accelerator beam dynamics. The second section focuses on the $\CC$ noise both in amplitude and phase and it provides the equations with which one can estimate the noise-induced emittance growth. The last section, comments briefly on the experiments that took place in KEKB as its the only time this issue was treated in the past. 
+
+
+
+%You need the frist section to introduce the dipole noise as you will apply it in the simulations.
 \section{Noise}\label{sec:noise_definition}
 %External noise means that it is independent of the beam itself.
 In particle accelerators, a major issue of concern is the presence of external noise as it leads to transverse emittance growth, particle losses and limits the beam lifetime. Examples of noise sources are ripples in the power converter ripples which lead to fluctuations of the magnetic fields, ground motion, and various instruments in the accelerator structure such as the transverse damper and the Crab Cavities. % sofias's thesies introduction of chatper 5.
@@ -83,7 +86,7 @@ Figure~\ref{fig:amplitude_noise} and Fig.~\ref{fig:phase_noise} provide a schema
 
  Finally, it is worth mentioning, that for the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$ respectively which equals the total noise power (see Appendix~\ref{app:discrete_time_analysis} for definitions). % sampled by the beam, as also written here: https://www.osti.gov/servlets/purl/1846026 
 
-\subsection{Emittance growth formulas}\label{subsec:emit_growth_theoretical_formulas}
+\subsection{Emittance growth formulas}\label{subsec:CC_emit_growth_theoretical_formulas}
 As already mentioned, the theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in Ref.~\cite{PhysRevSTAB.18.101001}. The derivation assumes a single bunch, that the noise kicks are represented by a stochastic process, zero coupling between the horizontal and vertical plane, the beam energy is constant (no acceleration) and, $\CC$ RF zero phase is at the center of the bunch, $z=0$ and a uniform noise spectrum across the betatron tune distribution. 
 % One more assumption that I didn't write Inthe analysis presented in this work, the density function is independent of time (paper of themis and philippe p.2) i didn't write it in the assumption.
 
@@ -128,11 +131,6 @@ Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term fo
  \end{figure}
 
 
-
-
-\section{Studies in KEKB}\label{eq:CC_emit_growth_formulas}
-
-%\section{Theoretical model for Crab Cavity noise induced-emittance growth}\label{eq:CC_emit_growth_formulas}
-
-- KEKB, (references) why are they different (philippe email exchange) they are reffered here as there are the only other studies that exist for cc noise even though they are not of used. due to different particles and different nature of noise
-
+\section{Studies in KEKB}\label{eq:past_studies_KEKB}
+The $\CC$s have been tested in the past with lepton beams in KEKB in Japan (further references on their operation were given in the Introduction). %~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}.
+As expected, the sensitivity of the beam to the $\CC$ RF noise was also studied. However, there were significant differences in the conditions in the HL-LHC, LHC, and SPS. In particular, the studies in KEKB were conducted for lepton bunches (instead of hadron bunches), they were about an order of magnitude shorter than the ones of the hadron machines (no effect from amplitude noise), and there was significant damping from the synchrotron radiation and the RF noise was characterised by a single spectral line (instead of white noise). Due to these differences, the studies at KEKB are not applicable to the studies presented in this thesis. Nevertheless, these studies can be found in Ref.~ \cite{PhysRevSTAB.14.111003} and they consist the only other available experience with $\CC$ RF noise but going into further details is out of the scope of this thesis.
