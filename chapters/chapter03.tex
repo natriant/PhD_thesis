@@ -10,7 +10,7 @@ On the other hand, the way the CC noise affects the particles depends on their l
 
 %Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
 Past studies~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001} have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown, that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
-\begin{equation}\label{eq:external_noise}
+\begin{equation}\label{eq:external_noise_kicks}
     u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
 \end{equation}
 where $u=(x,y)$ denoting the horizontal and vertical plane and $\Delta u^\prime$ is the change of the momentum due to the noise in units of rad. In this thesis the term "noise" refers to the above mentioned stochastic process.
@@ -31,16 +31,29 @@ The equations and formulas from the theoretical model that are essential for the
 \subsection{Crab Cavity amplitude and phase noise}\label{subsec:AN_PN}
 The unperturbed instantaneous $\CC$ voltage euqals the one of an ideal oscillator:
 \begin{equation}\label{eq:CC_voltage_t}
-    \CCvoltage(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t \right )},
+    V_\mathrm{CC}(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t \right )},
 \end{equation}
 
 where $\CCvoltage$ is the peak amplitude of the $\CC$ voltage and $\CCfrequency$ the $\CC$ frequency. Equation~\eqref{eq:CC_voltage_t} can be re-written as a function of the longitudinal position within the bunch $z$ instead of time $z$ as follows:
 \begin{equation}\label{eq:CC_voltage_z}
-    \CCvoltage(z) = \CCvoltage \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z \right )},
+    V_\mathrm{CC}(z) = \CCvoltage \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z \right )},
 \end{equation}
-where $\beta_0$ is the relativistic parameter and $c$ is the speed of light. The above equation is obtained as $z=v \cdot t \Rightarrow t=z/v=z/(\beta_0 c)$.
+where $\beta_0$ is the relativistic parameter and $c$ is the speed of light. The above equation is obtained as: $z=v \cdot t \Rightarrow t=z/v=z/(\beta_0 c)$.
 
-As follows from the analysis in Ref.~\cite{PhysRevSTAB.18.101001} the phase and amplitude noise kicks can be treated separately, and be modeled as the following kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
+
+% source that ΔA = ΔV/V: https://www.osti.gov/servlets/purl/1846026/
+% A the phase and relative amplitude noise power spectral density  (same source)
+
+In the presence of modulations in amplitude and phase Eq.~\eqref{eq:CC_voltage_z} becomes (details in Appendix~\ref{app:Measured_noise}):
+\begin{equation}\label{eq:CC_voltage_z}
+    V_\mathrm{CC}(z) = \CCvoltage (1+\Delta A) \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z + \Delta \phi \right )},
+\end{equation}
+
+where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency z/(\beta_0 c)$, and will be referred to as phase noise in the following. $\Delta A = \Delta \CCvoltage / \CCvoltage$ is the relative deviation from the nominal amplitude $\CCvoltage$ and will be referred to as amplitude noise.
+
+
+
+As follows from the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks can be treated separately, and be modeled as the following kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
 % Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
 \begin{equation}\label{eq:amplitude_noise_kick}
   \textbf{\textrm{Amplitude noise:}} \  u^\prime_1 =  u^\prime_0 + A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
