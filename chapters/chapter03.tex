@@ -102,10 +102,30 @@ $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bun
 C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
 C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
 \end{align}
-with $\sigma_{\phi}$ the rms bunch length (in radians) with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
+with $\sigma_{\phi}$ the rms bunch length, in rad, with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
 
+Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase (right) noise. The SPS nominal bunch length used in the CC tests is shown in the orange for reference.
 
-
+% Figures created using the following script: natriant/cernbox/Project_thesis/plot_bunch_length_correction_term
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch3/CA_bunch_length_dependence.png}
+        %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch3/Cphi_bunch_length_dependence.png}
+        %\caption{Discrete Fourier transform}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Correction term for amplitude (left) and phase (right) noise over a range of bunch length values.} % bunch passage
+     \label{fig:correction_term_bunch_length}
+ \end{figure}
 
 
 
