@@ -67,16 +67,27 @@ To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and
 
 where $u^\prime$, with $u=(x,y)$, is the normalised transverse momentum and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. Finally, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for amplitude or phase noise respectively. The typicall value of $A$ that will be used in the simulations later is $10^{-8}$.
 
+% The following paragraph is inspired by what I said in the IPAC talk.
+Figure~\ref{fig:amplitude_noise} and Fig.~\ref{fig:phase_noise} provide a schematic visualisation of the amplitude and phase noise respectively along with the impact of their kicks on the particles. It can be seen that in the presence of amplitude noise the head and the tail of the bunch are kicked in opposite directions which results in intra-bunch oscillations. On the other hand, in the presence of phase noise, the particles in the bunch receive kicks that are in phase. This results in a shift of the bunch centroid which basically is a dipole or mode 0 motion.
 
-- show figures from IPAC
+\begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.8\textwidth]{images/Ch3/amplitude_noise.png}
+        \caption{Modulation in amplitude or amplitude noise (left) and its impact on the particles within the bunch (right). The blue dots represent the individual particles while the red arrows indicate the direction of the noise kicks which act on them.}
+        \label{fig:amplitude_noise}
+ \end{figure}
 
-- CC voltage signal equation 
-- amplitude and phase noise (what is the assumption to treat them seperetatly)
-
+ \begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.85\textwidth]{images/Ch3/phase_noise.png}
+        \caption{Modulation in phase or phase noise (left) and its impact on the particles within the bunch (right). The blue dots represent the individual particles while the red arrows indicate the direction of the noise kicks which act on them.}
+        \label{fig:phase_noise}
+ \end{figure}
 
 
 \subsection{Emittance growth formulas}
-
+- assumptions
+ co
 
 
 

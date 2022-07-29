@@ -1,39 +1,39 @@
-\printsymline{E_b}{E_b}{symE}{Energy}{xvi}
-\printsymline{m}{m}{symm}{Mass}{xvi}
-\printsymline{J_x}{J_x}{Jx}{Horizontal particle action}{xvi}
-\printsymline{J_y}{J_y}{Jy}{Vertical particle action}{xvi}
-\printsymline{c}{c}{symc}{Speed of light}{xvi}
-\printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{xvi}
-\printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{xvi}
-\printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{xvi}
-\printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{xvi}
-\printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{xvi}
-\printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{xvi}
-\printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{xvi}
-\printsymline{\beta_{CC}}{\beta_{CC}}{betaCC}{Beta function at the $CC$}{xvi}
-\printsymline{Q_{x}}{Q_{x}}{Qx}{Horizontal tune}{xvi}
-\printsymline{Q_{y}}{Q_{y}}{Qy}{Vertical tune}{xvi}
-\printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{xvi}
-\printsymline{\psi_{x}}{\psi_{x}}{psix}{Horizontal phase advance}{xvi}
-\printsymline{\psi_{y}}{\psi_{y}}{psiy}{Vetical phase advance}{xvi}
-\printsymline{s}{s}{s}{Location around the ring ??}{xvi}
-\printsymline{D_x}{D_x}{Dx}{Horizontal dispersion function}{xvi}
-\printsymline{D_y}{D_y}{Dy}{Vertical dispersion function}{xvi}
-\printsymline{\beta_0}{\beta_0}{betarel}{Relativistic beta}{xvi}
-\printsymline{\gamma_0}{\gamma_0}{gammarel}{Relativistic gamma (Lorenz factor)}{xvi}
-\printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{xvi}
-\printsymline{Q^\prime _{x}}{Q^\prime _{x}}{Qpx}{Horizontal first order chromaticity}{xvi}
-\printsymline{Q^\prime _{y}}{Q^\prime _{y}}{Qpy}{Vertical first order chromaticity}{xvi}
-\printsymline{\sigma_t}{\sigma_t}{sigmat}{Rms bunch length}{xvi}
-\printsymline{\epsilon^n_{x}}{\epsilon^n_{x}}{emitx}{Horizontal normalised emittance of the beam}{xvi}
-\printsymline{\epsilon^n_{y}}{\epsilon^n_{y}}{emity}{Vertical normalised emittance of the beam}{xvi}
-\printsymline{\epsilon_x^{geom}}{\epsilon_x^{geom}}{emitxgeom}{Horizontal geometric emittance of the beam}{xvi}
-\printsymline{\epsilon_y^{geom}}{\epsilon_y^{geom}}{emitygeom}{Vertical geometric emittance of the beam}{xvi}
-\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{xvi}
-\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{Dqyrms}{Betatron vertical rms tune spread}{xvi}
-\printsymline{\alpha_{xx}}{\alpha_{xx}}{axx}{Horizontal detuning coefficient}{xvi}
-\printsymline{\alpha_{yy}}{\alpha_{yy}}{ayy}{Vertical detuning coefficient}{xvi}
-\printsymline{\alpha_{xy}=\alpha _{yx}}{\alpha_{xy}=\alpha _{yx}}{axy}{Cross-detuning coefficients}{xvi}
-\printsymline{k_{LOF}}{k_{LOF}}{klof}{LHC Software Architecture (LSA) trim editor knobs for SPS Landau octupoles, LOF family}{xvi}
-\printsymline{k_{LOD}}{k_{LOD}}{klod}{LHC Software Architecture (LSA) trim editor knobs for SPS Landau octupoles, LOD family}{xvi}
-\printsymline{\xi^{n}_x}{\xi^{n}_x}{chromaxi}{Horizontal chromaticity of order n normalised to the tune}{xvi}
+\printsymline{E_b}{E_b}{symE}{Energy}{xvii}
+\printsymline{m}{m}{symm}{Mass}{xvii}
+\printsymline{J_x}{J_x}{Jx}{Horizontal particle action}{xvii}
+\printsymline{J_y}{J_y}{Jy}{Vertical particle action}{xvii}
+\printsymline{c}{c}{symc}{Speed of light}{xvii}
+\printsymline{f_{rev}}{f_{rev}}{frev}{Revolution frequency}{xvii}
+\printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{xvii}
+\printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{xvii}
+\printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{xvii}
+\printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{xvii}
+\printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{xvii}
+\printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{xvii}
+\printsymline{\beta_{CC}}{\beta_{CC}}{betaCC}{Beta function at the $CC$}{xvii}
+\printsymline{Q_{x}}{Q_{x}}{Qx}{Horizontal tune}{xvii}
+\printsymline{Q_{y}}{Q_{y}}{Qy}{Vertical tune}{xvii}
+\printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{xvii}
+\printsymline{\psi_{x}}{\psi_{x}}{psix}{Horizontal phase advance}{xvii}
+\printsymline{\psi_{y}}{\psi_{y}}{psiy}{Vetical phase advance}{xvii}
+\printsymline{s}{s}{s}{Location around the ring ??}{xvii}
+\printsymline{D_x}{D_x}{Dx}{Horizontal dispersion function}{xvii}
+\printsymline{D_y}{D_y}{Dy}{Vertical dispersion function}{xvii}
+\printsymline{\beta_0}{\beta_0}{betarel}{Relativistic beta}{xvii}
+\printsymline{\gamma_0}{\gamma_0}{gammarel}{Relativistic gamma (Lorenz factor)}{xvii}
+\printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{xvii}
+\printsymline{Q^\prime _{x}}{Q^\prime _{x}}{Qpx}{Horizontal first order chromaticity}{xvii}
+\printsymline{Q^\prime _{y}}{Q^\prime _{y}}{Qpy}{Vertical first order chromaticity}{xvii}
+\printsymline{\sigma_t}{\sigma_t}{sigmat}{Rms bunch length}{xvii}
+\printsymline{\epsilon^n_{x}}{\epsilon^n_{x}}{emitx}{Horizontal normalised emittance of the beam}{xvii}
+\printsymline{\epsilon^n_{y}}{\epsilon^n_{y}}{emity}{Vertical normalised emittance of the beam}{xvii}
+\printsymline{\epsilon_x^{geom}}{\epsilon_x^{geom}}{emitxgeom}{Horizontal geometric emittance of the beam}{xvii}
+\printsymline{\epsilon_y^{geom}}{\epsilon_y^{geom}}{emitygeom}{Vertical geometric emittance of the beam}{xvii}
+\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{x}}{Dqxrms}{Betatron horizontal rms tune spread}{xvii}
+\printsymline{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{\Delta\protect \protect \leavevmode@ifvmode \kern +.2222em\relax  \protect \protect \leavevmode@ifvmode \kern -.1667em\relax Q^{rms}_{y}}{Dqyrms}{Betatron vertical rms tune spread}{xvii}
+\printsymline{\alpha_{xx}}{\alpha_{xx}}{axx}{Horizontal detuning coefficient}{xvii}
+\printsymline{\alpha_{yy}}{\alpha_{yy}}{ayy}{Vertical detuning coefficient}{xvii}
+\printsymline{\alpha_{xy}=\alpha _{yx}}{\alpha_{xy}=\alpha _{yx}}{axy}{Cross-detuning coefficients}{xvii}
+\printsymline{k_{LOF}}{k_{LOF}}{klof}{LHC Software Architecture (LSA) trim editor knobs for SPS Landau octupoles, LOF family}{xvii}
+\printsymline{k_{LOD}}{k_{LOD}}{klod}{LHC Software Architecture (LSA) trim editor knobs for SPS Landau octupoles, LOD family}{xvii}
+\printsymline{\xi^{n}_x}{\xi^{n}_x}{chromaxi}{Horizontal chromaticity of order n normalised to the tune}{xvii}
