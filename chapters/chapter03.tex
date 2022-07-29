@@ -81,6 +81,8 @@ Figure~\ref{fig:amplitude_noise} and Fig.~\ref{fig:phase_noise} provide a schema
         \label{fig:phase_noise}
  \end{figure}
 
+ Finally, it is worth mentioning, that for the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$ respectively which equals the total noise power (see Appendix~\ref{app:discrete_time_analysis} for definitions). % sampled by the beam, as also written here: https://www.osti.gov/servlets/purl/1846026 
+
 \subsection{Emittance growth formulas}\label{subsec:emit_growth_theoretical_formulas}
 As already mentioned, the theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in Ref.~\cite{PhysRevSTAB.18.101001}. The derivation assumes a single bunch, that the noise kicks are represented by a stochastic process, zero coupling between the horizontal and vertical plane, the beam energy is constant (no acceleration) and, $\CC$ RF zero phase is at the center of the bunch, $z=0$ and a uniform noise spectrum across the betatron tune distribution. 
 % One more assumption that I didn't write Inthe analysis presented in this work, the density function is independent of time (paper of themis and philippe p.2) i didn't write it in the assumption.
@@ -105,37 +107,12 @@ with $\sigma_{\phi}$ the rms bunch length (in radians) with respect to the CC fr
 
 
 
-For the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$ respectively.
-
-- assumptions eg coupling.
 
 
 
-\section{Theoretical model}\label{eq:CC_emit_growth_formulas}
+\section{Studies in KEKB}\label{eq:CC_emit_growth_formulas}
 
 %\section{Theoretical model for Crab Cavity noise induced-emittance growth}\label{eq:CC_emit_growth_formulas}
 
 - KEKB, (references) why are they different (philippe email exchange) they are reffered here as there are the only other studies that exist for cc noise even though they are not of used. due to different particles and different nature of noise
-
-
-2. Noise, reference to noise studies ... to kek. mention why they are different.\\
-
-
-For a uniform noise spectrum across the betatron tune distribution, the emittance growth resulting from amplitude noise can be estimated from:
-\begin{equation}\label{eq:dey_an}
-    \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! \sum_{k=-\infty}^{+\infty} S_{\Delta A}[(k \pm \bar{\nu}_b \pm \bar{\nu}_s)\frev].
-\end{equation}
-For phase noise, the emittance growth can be estimated from:
-\begin{equation}\label{eq:dey_pn}
-    \frac{d\epsilon}{dt}  = \betaCC \left( \frac{e\VCC\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \bar{\nu}_b)\frev].
-\end{equation}
-
-
-You need to described how they are modeled in pyheadtail.
-% https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
-$\symc$
-$\symE$
-
-
-\section{Modelling of phase and amplitude noise in simulations}
 

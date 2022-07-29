@@ -2,14 +2,14 @@
 \newcommand{\symminclude}{no}
 \newcommand{\Jxinclude}{yes}
 \newcommand{\Jyinclude}{yes}
-\newcommand{\symcinclude}{yes}
+\newcommand{\symcinclude}{no}
 \newcommand{\VRFinclude}{yes}
 \newcommand{\fRFinclude}{yes}
 \newcommand{\CCinclude}{yes}
 \newcommand{\VCCinclude}{yes}
 \newcommand{\fCCinclude}{yes}
 \newcommand{\phiCCinclude}{yes}
-\newcommand{\betaCCinclude}{yes}
+\newcommand{\betaCCinclude}{no}
 \newcommand{\Qxinclude}{yes}
 \newcommand{\Qyinclude}{yes}
 \newcommand{\Qsinclude}{yes}
