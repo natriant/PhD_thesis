@@ -51,9 +51,12 @@ In the presence of modulations in amplitude and phase Eq.~\eqref{eq:CC_voltage_z
 
 where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency z/(\beta_0 c)$, and will be referred to as phase noise in the following. $\Delta A = \Delta \CCvoltage / \CCvoltage$ is the relative deviation from the nominal amplitude $\CCvoltage$ and will be referred to as amplitude noise.
 
+Due to the $\CC$ RF noise sources in the LHC, HL-LHC and, SPS machines, the amplitude and phase noise spectra can be considered  independent, and thus they can be treated separetatly. The technical details can be found in Ref.~[15] of the above-mentioned publication of Baudrenghien and Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
+% 1) You need to understand Ref.[15]
+% 2) Q and I demodulator --> it enables easily extracting instantaneous amplitude and phase over time. source: https://indico.cern.ch/event/781242/contributions/3251767/attachments/1780299/2896017/Powerpoint_1.pdf
+% 3) Document on the digital Q/I demodulator, that might be useful when you try to understand it. https://accelconf.web.cern.ch/p95/ARTICLES/RPQ/RPQ02.PDF
 
-
-As follows from the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks can be treated separately, and be modeled as the following kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
+To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
 % Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
 \begin{equation}\label{eq:amplitude_noise_kick}
   \textbf{\textrm{Amplitude noise:}} \  u^\prime_1 =  u^\prime_0 + A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
@@ -62,7 +65,7 @@ As follows from the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accorda
     \textbf{\textrm{Phase noise:}} \ u^\prime_1 =  u^\prime_0 + A \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
 \end{equation}
 
-where $u^\prime$, with $u=(x,y)$, is the normalised transverse momentum and $z$ the longitudinal co-ordinate as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. Finally, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for amplitude or phase noise respectively. A typicall value of $A$ that will be used in the simulations is $10^{-8}$.
+where $u^\prime$, with $u=(x,y)$, is the normalised transverse momentum and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. Finally, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for amplitude or phase noise respectively. The typicall value of $A$ that will be used in the simulations later is $10^{-8}$.
 
 
 - show figures from IPAC
