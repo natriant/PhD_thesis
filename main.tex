@@ -2,6 +2,12 @@
 \usepackage{mypackages}
 \usepackage{listofsymbols}
 
+% For being able to use \widebar. Source: https://tex.stackexchange.com/questions/16337/can-i-get-a-widebar-without-using-the-mathabx-package
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{<-> mathx10}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathAccent{\widebar}{0}{mathx}{"73}
+
 
 % Create new commands for convinience
 \newcommand{\fourierxform}[1]{\hat{#1}}

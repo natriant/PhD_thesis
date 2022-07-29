@@ -247,13 +247,14 @@ where $\phi(t)$ is the deviation from the nominal phase $2\pi f_0 t$, $\epsilon(
 
 Following the IEEE~\cite{IEEE:4797525} conventions, the amplitude and phase modulation are measured by one-sided spectral densities, $G_{yy}(f)$. From Eq.~(\ref{eq:Sxx_definition_discrete_normalized}) and Eq.~(\ref{eq:two-sided_2_single-sided}), the amount of amplitude noise can be expressed as:
 \begin{equation}\label{eq:AN_measure}
-    G_\alpha(f_k) = 2 S_A(f_k)=\frac{2}{N^2 \Delta f} \left (  \frac{\mid\fourierxform{\epsilon}(f_k)\mid}{V_0} \right ) ^2=\frac{2}{N^2\Delta f } \mid \fourierxform{\alpha}(f_k) \mid ^2,
+    G_\alpha(f_k) = 2 S_a(f_k)=\frac{2}{N^2 \Delta f} \left (  \frac{\mid\fourierxform{\epsilon}(f_k)\mid}{V_0} \right ) ^2=\frac{2}{N^2\Delta f } \mid \fourierxform{\alpha}(f_k) \mid ^2,
 \end{equation}
 and the amount of phase noise can be expressed:
 \begin{equation}\label{eq:PN_measure}
     G_\phi(f_k) = 2 S_\phi(f_k)=\frac{2}{N^2 \Delta f} \mid \fourierxform{\phi}(f_k) \mid ^2,
 \end{equation}
-where $f_k$ lies in a range of positive frequencies and $\fourierxform{\alpha}(f_k)$ and $\fourierxform{\phi}(f_k)$ are the discrete Fourier transforms of the modulation signals $\alpha(t)$ and $\phi(t)$ respectively. The units of the $G_\alpha(f_k)$ are V$^2$/Hz and the units of $G_\phi(f_k)$ are rad$^2$/Hz.
+where $f_k$ lies in a range of positive frequencies and $\fourierxform{\alpha}(f_k)$ and $\fourierxform{\phi}(f_k)$ are the discrete Fourier transforms of the modulation signals $\alpha(t)$ and $\phi(t)$ respectively. The units of the $G_\alpha(f_k)$ are 1/Hz and the units of $G_\phi(f_k)$ are rad$^2$/Hz.
+% Initially $G_\alpha(f_k)$ are $V^2$/Hz but changed to 1/Hz (which is also in accordance with the paper of themis and philippe, as it is relative to the V--> unitless) on 29 July 2022.
 
 However, instruments used in experiments do not usually display directly the single-sided spectral density $G_{yy}$. Instead, the quantity $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] is shown, with~\cite{IEEE:4797525}:
 \begin{equation}\label{eq:L_to_G}
@@ -265,7 +266,7 @@ where $f_k$ ranges from 0 over the positive part of the spectrum. It should be e
 The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used for numerical simulations. 
 %%%%%%%%%%
 \subsection{Crab cavity noise in numerical simulations}
-As follows from the discussion in section~\ref{subsec:Measure_noise}, phase and amplitude noise can be represented by discrete time series $\phi_n = \phi(n\Delta t)$ and  $\alpha = \alpha(n\Delta t)$ respectively, so that the crab cavity (CC) instantaneous voltage is given by:
+As follows from the discussion in section~\ref{subsec:Measured_noise}, phase and amplitude noise can be represented by discrete time series $\phi_n = \phi(n\Delta t)$ and  $\alpha_n = \alpha(n\Delta t)$ respectively, so that the crab cavity (CC) instantaneous voltage is given by:
 \begin{equation}\label{eq:CC_PN_AN}
     \VCC (n \Delta t) =  V_0(1+\alpha(n \Delta t)) \sin{(2\pi f_0 n \Delta t + \phi(n \Delta t)},
 \end{equation}
