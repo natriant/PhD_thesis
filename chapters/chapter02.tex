@@ -547,7 +547,7 @@ For the study of the wakefields, it is considered that each particle acts as a s
 The longitudinal and transverse wakefields can often be treated separately. In the following only the transverse components will be discussed as the focus of the thesis is on the transverse beam dynamics.
 
 \textbf{Wake functions}\\
-Consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle of charge $q_1$ is the source particle while the witness particle of charge $q_2$ travels behind it at a constant distance $z$. $(\Delta x_1, \Delta y_1)$ are the transverse offsets of charge $q_1$, and $\Delta x_2, \Delta y_2$ are the transverse offsets of charge $q_2$ from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
+Consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle of charge $q_1$ is the source particle while the witness particle of charge $q_2$ travels behind it at a constant distance $z$. $(\Delta x_1, \Delta y_1)$ are the transverse offsets of charge $q_1$, and $(\Delta x_2, \Delta y_2)$ are the transverse offsets of charge $q_2$ from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
 
 \begin{figure}[!h] % 
     \centering         
@@ -557,7 +557,7 @@ Consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic s
  \end{figure}
 % Figure take from: ~\cite{instabilities_rumulo_li}
 
-The wakefields in time domain are described with the concept of wakefunctions, $W_u(z)$, where $u=(x,y)$ denotes the horizontal and vertical wakefunction. The wakefunction can be expressed as a series of its multipole compoenents as follows: % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 13) 
+The wakefields in time domain are described with the concept of wake functions, $W_u(z)$, where $u=(x,y)$ denotes the horizontal and vertical wakefunction. The wakefunction can be expressed as a series of its multipole compoenents as follows: % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 13) 
 \begin{equation}\label{eq:wakefunctions}
     W_u(\Delta u_1, \Delta u_2, z) = W^\mathrm{const}_u(z) + W^\mathrm{dip}_u(z)\Delta u_1 +  W^\mathrm{quad}_u(z)\Delta u_2 + o(\Delta u_1, \Delta u_2),
 \end{equation}
@@ -565,16 +565,18 @@ where $u=(x,y)$ and $W^\mathrm{const}_u(z)$, $W^\mathrm{dip}_u(z)$, $W^\mathrm{q
 
 The dipolar and quadrupolar wakefunctions were named after the way they act on the witness particle. The dipolar wakefunction acts like a dipole magnet: its impact is the same regardless of the transverse position of the witness particle; it depends only on the position of the source particle. The quadrupolar wakefunction acts like a quadrupole magnet: its impact increases linearly with the transverse position of the witness particle (independent of the .position of the source particle). % Benoit thesis p.44
 
-The constant term can change the closed orbit while the dipolar and quadrupolar terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipolar term is often referred to as the driving term as it drives coherent instabilities (coherent effect). The quadrupolar term is often referred to as the detuning term as it detunes the individual particles (incoherent effect). % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
+The constant term can change the closed orbit while the dipolar and quadrupolar terms can modify the tunes~\cite{benoit_ipac19_impedance}. The dipolar term is often referred to as a driving term for coherent instabilities. The quadrupolar term is often referred to as the detuning term as it modifies the betatron frequencies of individual particles. % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 14) 
+% driving term --> coherent effects.
+% detuning term --> incoherent effects.
 
 The effect of the wakefields on the witness particles can be modeled as the following kicks on the transverse normalised momentum~\cite{Schenk:2665819}: % Eq.(2.44) M. Schenk thesis
 \begin{equation}\label{eq:wakefield_kicks}
     \Delta u_2^\prime  = \int_0^L F_u(s, z, \Delta u_1, \Delta u_2)ds = -q_1 q_2[W^\mathrm{const}_u(z) + W^\mathrm{dip}_u(z)\Delta u_1 +  W^\mathrm{quad}_u(z)\Delta u_2],
 \end{equation}
-where $F_u$ is the transverse force of the wakefield over the length $L$. If the structure which results to the wakefield is symmetric the constant term of the wakefunction is zero. 
+where $F_u$ is the transverse force of the wakefield over the length $L$. If the structure leading to the wakefield is axially symmetric, then the constant term of the wakefunction is zero. 
 
 \textbf{Beam coupling impedance}\\
-The beam coupling impedance is the frequency spectrum of the wakefields of a stracture. The impedance can be obtained from the wakefunction through a Fourier transform and vice versa as shown below~\cite{Chao:collective}: % Eq.(2.71) and Eq.(2.72) p.69-70.
+The beam coupling impedance is the frequency spectrum of the wakefields in a given component or section of the accelerator. The impedance can be obtained from the wakefunction through a Fourier transform and vice versa as shown below~\cite{Chao:collective}: % Eq.(2.71) and Eq.(2.72) p.69-70.
 \begin{equation}\label{eq:wakes_to_impedance}
     W_u(z) = - \frac{i}{ 2\pi} \int_{- \infty}^{+\infty} Z_u(\omega) e^{i \omega z/c} d\omega,
 \end{equation}
@@ -585,14 +587,13 @@ where $u=(x,y)$, $i$ is the imaginary unit and $c$ is the speed of light.
 
 In order to study the beam dynamics effects due to wakefields, impedance models of the particle accelerators have been developed. Details on how an impedance model is built can be found in Ref.~\cite{benoit_ipac19_impedance}. The impedance model for the SPS is discussed in Chapter~\ref{Ch:suppression_impedance} while its implementation in the simulations is discussed in Section~\ref{subsec:pyheadtail}.
 
-\textbf{Headtail modes}\\
-Vlasov formalism~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
+\textbf{Head-tail modes}\\
+The Vlasov equation~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
 Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
-\textbf{Sacherer Formulae and complex frequency shift}\\
-One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} 
-and the perturbation theory and was first derived by F.~Sacherer~\cite{Sacherer:322545, Sacherer:322645}. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
+\textbf{Sacherer formulae and complex frequency shift}\\
+One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} through the use of perturbation theory. Formulae expressing the results were derived by Sacherer~\cite{Sacherer:322545, Sacherer:322645}. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
 
 The headtail modes introduce an exponential dependence on the amplitude of the bunch centroid as follows~\cite{Schenk:2665819}:
 \begin{equation}\label{eq:HeadtailModesExponentialDependence}
@@ -609,26 +610,25 @@ The complex frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in
 \begin{equation}\label{eq:complext_tune_shift_modes_m}
     \Omega^{(l)}-\omega_u-l\omega_s = -\frac{1}{4\pi}\frac{\Gamma(l+1/2)}{2^l l!}\frac{N r_0 c^2}{\gamma_0 T_0 \omega_u \sigma_z} i Z_\mathrm{eff},
 \end{equation}
-where $\omega_u$ and $\omega_s$ are the unperturbated betatron and synchrotron frequencies, $\Gamma(x)$ is the gamma function, $N$ is the number of macroparticles in the bunch, $r_0=1.535 \cdot 10^{-16}$ is the clasical radius of the proton, $c$ is the speed of light, $\gamma_0$ is the relativistic gamma, $T_0$ is the revolution period, $\sigma_z$ is the rms bunch length, $i$ is the imaginary unit and $Z_\mathrm{eff}$ is the effective impedance.
+where $\omega_u$ and $\omega_s$ are the unperturbated betatron and synchrotron frequencies, $\Gamma(x)$ is the gamma function, $N$ is the number of particles in the bunch, $r_0=1.535 \cdot 10^{-16}$ is the clasical radius of the proton, $c$ is the speed of light, $\gamma_0$ is the relativistic gamma, $T_0$ is the revolution period, $\sigma_z$ is the rms bunch length, $i$ is the imaginary unit and $Z_\mathrm{eff}$ is the effective impedance.
 
 The effective impedance $Z_\mathrm{eff}$ is computed as follows:
 \begin{equation}\label{eq:effective_impedance}
     Z_{\perp \mathrm{eff}}^{(l)} = \frac{\sum_{p=-\infty}^{+ \infty}Z_{\perp }^{(l)}(\omega_{p}) h_l(\omega_{p}-\omega_\xi)}{\sum_{p=-\infty}^{+ \infty}h_l(\omega_{p}-\omega_\xi)},
 \end{equation}
-
 where $\omega_p = (p+Q_u)\omega_0$ is the discrete spectrum of the transverse bunch oscillations with $-\infty < p < + \infty$ for a single bunch (which is the case in the following studies) or several bunches oscillating independently and $\omega_\xi=(\xi \omega_u)/\eta_p) = Q^\prime \omega_0 / \eta_p$ is the chromatic angular frequency with $\eta_p$ being the phase slip factor.
 
 Last, $h_l$, is the power spectral density (definition in Appendix~\ref{ch:app_B}) of a Gaussian bunch of $l$ azimuthial mode. $h_l$ is described by: % Chao ch6 Eq.(6.143)
 \begin{equation}\label{eq:spectral_density_of_gaussian_bunch}
     h_l(\omega) = (\omega \sigma_z/c)^{2l} e^{-(\omega \sigma_z/c)^2},
 \end{equation}
-where $\sigma_z$ the rms bunch length and $c$ the speed of light.
+where $\sigma_z$ is the rms bunch length and $c$ the speed of light.
 
 It should be highlighted that all the parameters inserted in Eq.~\eqref{eq:complext_tune_shift_modes_m},  Eq.~\eqref{eq:effective_impedance} and Eq.~\eqref{eq:spectral_density_of_gaussian_bunch} should be converted in CGS(centimetre–gram–second) units. For the conversion from SI to CGS system the following relations are useful:
 \begin{equation}\label{eq:conversion_si_to_cgs}
     1 \mathrm{[\Omega]} = \frac{1}{9} \cdot 10^{-11} \mathrm{[s]/[cm]},
 \end{equation}
-where 1 $\Omega$ stands for 1 Ohm.
+where $\Omega$ (Ohm) is the SI unit of resistance.
 
 %- 1 [Ohm] = (1/9)*10**(-11) [s]/[cm]
 %- 1 [Ohm]/[m] = (1/9)*10**(-13) [s]/[cm]**2 
