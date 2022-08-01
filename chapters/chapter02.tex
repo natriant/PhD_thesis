@@ -367,11 +367,11 @@ It should be highlighted that the emittance definitions of Eq.~\eqref{eq:geometr
 Finally, despite Liouville's theorem, in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering by residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more detail in Chapter~\ref{Ch:CC_noise_theory}).
 
 \textbf{Off-momentum effects: dispersion}\\
-Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momenta of the individual particles are spread around the reference momentum $p_0$ and this is expressed with the longitudinal co-ordinate $\sigma_\delta = \sqrt{\langle \delta^2 \rangle}$. As an example, in the SPS machine, which is of interest for this thesis, $\sigma_\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
+Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momenta of the individual particles are spread around the reference momentum, $p_0$. The "spread" of momenta (or simply "momentum spread") is described by the rms momentum deviation $\sigma_\delta = \sqrt{\langle \delta^2 \rangle}$. As an example, in the SPS machine, which is of interest for this thesis, $\sigma_\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
 
-The off-momentum particles experience different forces than the reference particle when passing through the magnetic fields in an accelerator. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
+The response of the off-momentum particles to a given force, during their passage from the different magnets in an accelrator, varies with their momentum. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
 
-Particles with $\delta < 0$ ($\delta>0$) are deflected stronger (less) by the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum spread $\delta$. This dependence of the closed orbit on the momentum offset of the particle is called dispersion.
+Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) deflections from the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. The change in the closed orbit with respect to the momentum deviation is called dispersion.
 
 \begin{figure}[!h] % 
     \centering         
@@ -388,7 +388,7 @@ with the following solution:
 \begin{equation}
     x(s) = x_H(s) + D_x(s)\delta,
 \end{equation}
-where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_action_anlge} and $D_x(s)$ is the dispersion function which can be expressed as:
+where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_action_anlge} (and corresponding here to betatron oscillations around the off-momentum closed orbit) and $D_x(s)$ is the dispersion function which can be expressed as:
 \begin{equation}\label{eq:dispersion_function}
     D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)}.
 \end{equation}
@@ -423,17 +423,17 @@ The dispersive contribution can be added to the transfer matrix introduced in Eq
 
  From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
  
- At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as the steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
+ At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
 
 Finally, in the presence of dispersion the normalised beam emittance (Eq.~\eqref{eq:emit_from_beam_size}) becomes:
 \begin{equation}\label{eq:emit_from_beam_size_Du}
-    \epsilon_{u} = \frac{\sigma_u(s)^2 - \delta^2 D_u^2(s)}{\beta_u(s)} \beta_0 \gamma_0,
+    \epsilon_{u} = \frac{\sigma_u(s)^2 - \sigma^2_\delta D_u^2(s)}{\beta_u(s)} \beta_0 \gamma_0,
 \end{equation}
-where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters.
+where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\sigma_\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters.
 
-Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next subsubsection which focuses on non-linear beam dynamics.
+Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next Section~\ref{subsec:non-liner_beam_dynamics} which focuses on non-linear beam dynamics.
 
-\subsubsection{Non-linear dynamics}
+\subsubsection{Non-linear dynamics}\label{subsec:non-liner_beam_dynamics}
 Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited to the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
