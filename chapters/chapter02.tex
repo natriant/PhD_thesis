@@ -284,7 +284,7 @@ The phase space in normalised co-ordinates is shown in Fig.~\ref{fig:phase_space
         \label{fig:phase_space_circle_normalised}
  \end{figure}
 
-The distribution of actions is an exponential distribution \textcolor{red}{How do I prove this?} which implies that its mean equals its standard deviation. This property will be used for computations in the following chapters. % Actually, this property is used in the appendix for the computation of the rms tune spread.
+The distribution of actions is an exponential distribution which implies that its mean equals its standard deviation. This property will be used for computations in the following chapters. % Actually, this property is used in the appendix for the computation of the rms tune spread.
 
 %From Eq.~\eqref{eq:action} we write:
 %\begin{equation}\label{eq:Jy_exp_distr}
@@ -293,7 +293,7 @@ The distribution of actions is an exponential distribution \textcolor{red}{How d
 %From this equation it can be seen that the actions follow an exponential distribution. 
 
 \textbf{Transvserse emittance}\\
-Up to now, the twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
+Up to now, the Twiss parameters were used to describe the dynamics of single particles. However, they also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:position_action_anlge} equals to~\cite{wolski2014}:
 \begin{equation}\label{eq:statistical_average_position}
     \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \cos^2{\psi_u(s)} \rangle.
 \end{equation}
@@ -335,9 +335,9 @@ which, for $\langle u(s) \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the cov
             \end{pmatrix} 
 \end{equation}
 
-The square root of the top-left element of the Sigma matrix, $\sigma_u$, is defined as the rms beam size and is also a variable that is used extensively in accelerator physics. The definition of rms and of others of the statistical analysis can be found in Appendix~\ref{ch:app_A}.
+The square root of the top-left element of the covariance matrix, $\sigma_u$, is defined as the rms beam size and is also a variable that is used extensively in accelerator physics. The definition of rms and of others of the statistical analysis can be found in Appendix~\ref{ch:app_A}.
 
-Figure~\ref{fig:phase_space_emittance} provides a visualisation of the concepts of emittance and rms beam size. It shows the phase space of a transverse Gaussian bunch along with the histograms of the $u$ (top) and $u^\prime$ (right) variables at a particular point $s$ along the ring. Each particle follows its individual ellipse (of different sizes but with the same orientation) depending on its initial conditions. The rms beam size, $\sigma_u$, and the rms normalised momentum spread, $\sigma_{u^\prime}$, are shown in the top and right histograms of Fig.\ref{fig:phase_space_emittance} with the blue vertical lines. This corresponds to the area of the ellipse enclosed in the blue line in the phase space plot and equals the rms or geometric emittance, $\epsilon^{\mathrm{geom}}_u$ , as defined in Eq.~\eqref{eq:geometric_emittance_v2}.
+Figure~\ref{fig:phase_space_emittance} illustrates the concepts of emittance and rms beam size. It shows the phase space of a transverse Gaussian bunch along with the histograms of the $u$ (top) and $u^\prime$ (right) variables at a particular point $s$ along the ring. Each particle follows its individual ellipse (of different sizes but with the same orientation) depending on its initial conditions. The rms beam size, $\sigma_u$, and the rms normalised momentum spread, $\sigma_{u^\prime}$, are shown in the top and right histograms of Fig.\ref{fig:phase_space_emittance} with the blue vertical lines. This corresponds to the area of the ellipse enclosed in the blue line in the phase space plot and equals the rms or geometric emittance, $\epsilon^{\mathrm{geom}}_u$ , as defined in Eq.~\eqref{eq:geometric_emittance_v2}.
 
 \begin{figure}[!h] 
     \centering         
@@ -348,14 +348,13 @@ Figure~\ref{fig:phase_space_emittance} provides a visualisation of the concepts 
 
 It should be noted, that there are also other conventions to define the emittance such as the 90$\%$ emittance (green lines in Fig.~\ref{fig:phase_space_emittance}) or the 3-sigma emittance (yellow lines in Fig.~\ref{fig:phase_space_emittance}). However, here the term geometric emittance will refer to the rms geometric emittance.
 
-According to Liouville’s theorem~\cite{wolski2014}, considering that there are no interactions between the particles and that the energy of the beam is not changing, the geometric emittance remains constant and therefore is an invariant of bunch motion (similarly to the action $J_u$ for the single-particle motion). The geometric emittance does not remain constant during acceleration, instead, the normalised emittance is defined as:
+According to Liouville’s theorem~\cite{wolski2014}, assuming that there are no interactions between the particles and that the energy of the beam is not changing, the geometric emittance remains constant and therefore is an invariant of bunch motion (similarly to the action $J_u$ for the single-particle motion). The geometric emittance does not remain constant during acceleration, instead, the normalised emittance is defined as:
 \begin{equation}\label{eq:normalised_emittance}
     \epsilon_u = \beta_0 \gamma_0 \epsilon^{\mathrm{geom}}_u
 \end{equation}
-The normalised emittance is conserved during acceleration and therefore it is most often used in accelerator physics. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
+The normalised emittance is conserved during acceleration and is often used as an alternative to the geometric emittance, especially in situations where the beam undergoes acceleration or deceleration. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
 
-It is worth commenting here, that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained with a Gaussian fit of the bunch distribution, to obtain its $\sigma$. This process is explained extensively in Chapter~\ref{Ch:2018_analyisis}. For that case, the normalised emittance is obtained from the following formula which is obtained from Eq.~\eqref{eq:emittance_definition_1}, Eq.~\eqref{eq:Sigma_matrix} and Eq.~\eqref{eq:normalised_emittance}:
-
+It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known. The procedure is explained in more detail in Chapter~\ref{Ch:2018_analyisis}, but here we simply note that from Eqs.~\eqref{eq:emittance_definition_1},~\eqref{eq:Sigma_matrix} and ~\eqref{eq:normalised_emittance}, we can express the emittance as:
 % For a Gaussian beam distribution the normalised beam emittance it applies:
 \begin{equation}\label{eq:emit_from_beam_size}
     \epsilon_{u} = \frac{\sigma_u(s)^2}{\beta_u(s)} \beta_0 \gamma_0,
@@ -365,10 +364,10 @@ where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, at 
 
 It should be highlighted that the emittance definitions of Eq.~\eqref{eq:geometric_emittance_v2} (after normalisation with the relativistic parameters) and of Eq.~\eqref{eq:emit_from_beam_size} are equivalent.
 
-Finally, despite Liouville’s theorem in a real accelerator, there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering on residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more detail in Chapter~\ref{Ch:CC_noise_theory}).
+Finally, despite Liouville's theorem, in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering by residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects (discussed in more detail in Chapter~\ref{Ch:CC_noise_theory}).
 
-\textbf{Off-momentum effects - dispersion}\\
-Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momentums of the individual particles are spread around the reference one $p_0$ and this is expressed with the longitudinal co-ordinate $\delta=(p-p_0)/p_0$ defined in Eq.~\eqref{eq:particle_coordinates}. As an example, in the SPS machine, which is of interest for this thesis, $\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
+\textbf{Off-momentum effects: dispersion}\\
+Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momentum equals the reference momentum, $p_0$. In a more realistic beam, however, the momenta of the individual particles are spread around the reference momentum $p_0$ and this is expressed with the longitudinal co-ordinate $\sigma_\delta = \sqrt{\langle \delta^2 \rangle}$. As an example, in the SPS machine, which is of interest for this thesis, $\sigma_\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$.
 
 The off-momentum particles experience different forces than the reference particle when passing through the magnetic fields in an accelerator. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
 
