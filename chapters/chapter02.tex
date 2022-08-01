@@ -437,7 +437,7 @@ Additionally, the off-momentum particles receive different focusing due to gradi
 Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited to the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 \textbf{Chromaticity}\\
-We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) receive a weaker (stronger) focusing strength from the quadrupoles due to their larger magnetic rigidity. The tune shift introduced by the chromaticity for each particle (incoherent), $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
+We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) are focused more (less) strongly from the quadrupoles due to their smaller (larger) magnetic rigidity. The tune shift introduced by the chromaticity for each particle, $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
 
 %The tune shift introduced by the chromaticity is: % M. Schenk p.49
 
@@ -448,16 +448,16 @@ where:
 \begin{equation}\label{eq:chroma_up_to_order_m}
     Q_u^{(n)} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
  \end{equation}
-denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. 
+denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation.
 
 Large values of chromaticity can lead to instabilities and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 
 Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 \textbf{Octupoles and detuning with amplitude}\\
-Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}.
+Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}.
 
-In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances and they are called "Landau octupoles" as they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
+In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
 The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
 \begin{equation}\label{eq:DQ_with_amplitude_horizontal}
@@ -466,10 +466,10 @@ The betatron tune spread or linear detuning that is introduced by the octupoles 
 \begin{equation}\label{eq:DQ_with_amplitude_vertical}
     \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
 \end{equation}
-where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the trasnverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
+where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
 
 \subsection{Longitudinal motion}
-In the longitudinal plane, the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
+In the longitudinal plane, the motion is parallel to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
 
 %In the next paragraphs the basic concepts used to describe the motion in the longitudinal plane which is also called synchrotronous motion are explained. In particular, the discussion is focused on the synchronous phase, the momentum compaction and phase slip factors, the concepts of phase stability, synchrotron oscillations and synchrotron tune tune. The equations of synchrotron motion are also given.
 
@@ -481,23 +481,23 @@ The time that the reference particle needs to complete one complete revolution a
 In the longitudinal plane the acceleration and the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
 % stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
 \begin{equation}\label{eq:RF_cavity_EF}
-    E_\mathrm{{RF}}(t) = E_A \sin{(\phi_\mathrm{{RF}} t + \phi_s)},
+    E_\mathrm{{RF}}(t) = E_A \sin{(\phi_\mathrm{{RF}} + \phi_s)},
 \end{equation}
-where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic numcher (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
+where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic number (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated (or stored) in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
 In a synchrotron during the energy ramp the angular frequency increases in order to follow the increasing revolution frequency.
 
 Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
 \begin{equation}\label{eq:enerhy_gain_synchronous}
-    \Delta E_s = e V_\mathrm{RF} \sin{(\phi_s)}, 
+    \Delta E_0 = e V_\mathrm{RF} \sin{(\phi_s)}, 
 \end{equation}
-where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or loose a different amount of enerfy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
+where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or lose a different amount of energy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
  
 \textbf{Dispersion effects}\\
 As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
 \begin{equation}\label{eq:compaction_factor}
     \alpha_p = \frac{\Delta C /C}{\delta} = \frac{1}{C} \oint _C \frac{D_x(s)}{\rho(s)} ds,
 \end{equation} % proof hannes' thesis appendix p.169: https://cds.cern.ch/record/1644761/files/CERN-THESIS-2013-257.pdf
-where $C$ the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
+where $C$ is the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
 
 With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also changes. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
 \begin{equation}\label{eq:phase_slip_factor}
@@ -507,7 +507,7 @@ where $\omega_0$ is the angular frequency of the reference particle, $\gamma_0$ 
 % Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
 
 \textbf{Phase stability and synchrotron oscillations}\\
-Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therefore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therefore, it will be accelerated stronger than the reference particle and subsequently it will need less time to complete the next revolution and it will approach the reference particle. The situation is the opposite for a particle with $\delta<0$. 
+Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therefore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therefore, it will be accelerated more than the reference particle and subsequently it will need less time to complete the next revolution and, over a number of revolutions, will fall back longitudinally towards the reference particle. The situation is the opposite for a particle with $\delta<0$. 
 % Inspired by Fig. 2.3 in the thesis of M. Schenk and Fig.5.15 in wille's book.
 \begin{figure}[!h] % 
     \centering         
@@ -516,7 +516,7 @@ Even though the particles arrive at different times in the RF cavity, they stay 
         \label{fig:phase_focusing}
  \end{figure}
 
- In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). Turn by turn the particles perform oscillations around the phase of the synchronous particle performing synchrotron oscillations. The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+ In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
 \begin{equation}\label{eq:long_eq_motion_z}
     z^\prime = - \eta_p \delta,
 \end{equation}
@@ -527,27 +527,27 @@ where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a p
 
 The synchrotron tune, $Q_s$, is the number of synchrotron oscillations performed during one complete revolution around the machine and is computed as follows~\cite{wolski2014}: % Wolski Eq.(5.49) p. 170
 \begin{equation}\label{eq:Qs} 
-    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C}{c} \eta_p \cos{\phi_s}},
+    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C}{c} \eta_p \cos{\phi_s}}.
 \end{equation}
-where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
+%where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
 
 \section{Collective effects}\label{sec:collective_effects}
-Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with external electromagentic fields. Examples of collective effects are: beam-beam interactions, space charge effects, wakefields, intra-beam scattering etc~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may lead to beam losses degrading the beam quality and affecting the performance of the accelerator. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408}.
+Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with electromagnetic fields. Examples are beam-beam interactions, space charge effects, wakefields and intra-beam scattering~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may degrade beam quality, or lead to beam losses.  In either case, the performance of the accelerator can be adversely affected. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408}.
 %For a more complete picture, a beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Usually, this can be observed in the motion of the centroid $\langle x \rangle $
 % If you want to show an example of an instability you can find a figure in Ref.~\cite{Rumolo:1982422}}
 
 \subsection{Wakefields and impedance}\label{subsec:wakefields}
-The discussion in this section is based in the discussion in Ref.~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
+The discussion in this section is based in the discussion in Refs.~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
 
 \textbf{Wakefields}\\
-The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducted the interaction with the charged particles will result in electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
+The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducting the interaction with the charged particles will result in electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
 
-For the study of the wakefields, it is considered that each particle acts as a source of wakefields for the rest of the particles which are called witnesses. In the ultrarelativistic regime (which is also the regime of these studies) the wakefields from a source particle act only on the particles behind it, hence the term "wake". A source particle can also act on itself through the generated wakefield in the subsequent turns. This is the multi-turn effect of the wakefields. In this thesis, only the multi-turn effect from the resistive wall will be considered as it is the only one that has a significant impact on the dynamics.
+For the study of the wakefields, it is considered that each particle acts as a source of wakefields for the rest of the particles\footnote{In studying collective effects, the terms "source particle" and "witness particle" are sometimes used for particles generating wakefields and particles affected by the wakefields, though in reality all charges act as sources of wakefields, and are affected by them} which are called witnesses. In the ultrarelativistic regime (which is also the regime of these studies) the wakefields from a source particle act only on the particles behind it, hence the term "wake". Wakefields can also act back on the charge generating them when that charge returns to a given location in a storage ring over successive turns. This is the multi-turn effect of the wakefields. In this thesis, only the multi-turn effect from the resistive wall will be considered as it is the only one that has a significant impact on the dynamics.
 
-The longitudinal and transverse wakefields can be treated separately. In the following only the transverse components will be discussed as the focus of the thesis is on the transverse beam dynamics.
+The longitudinal and transverse wakefields can often be treated separately. In the following only the transverse components will be discussed as the focus of the thesis is on the transverse beam dynamics.
 
-\textbf{Wakefunctions}\\
-Let's consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle of charge $q_1$ is the source particle while the witness particle of charge $q_2$ travels behind it at a constant distance $z$. $(\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
+\textbf{Wake functions}\\
+Consider two particles of charge $q_1$ and $q_2$ moving with ultrarelativistic speed through a structure of length $L$ as shown in Fig.~\ref{fig:wakefields}~\cite{instabilities_rumulo_li}. The particle of charge $q_1$ is the source particle while the witness particle of charge $q_2$ travels behind it at a constant distance $z$. $(\Delta x_1, \Delta y_1)$ are the transverse offsets of charge $q_1$, and $\Delta x_2, \Delta y_2$ are the transverse offsets of charge $q_2$ from the symmetric axis of the beam pipe. From the interaction of the source particle with the structure of length $L$ a wakefield is generated. 
 
 \begin{figure}[!h] % 
     \centering         
