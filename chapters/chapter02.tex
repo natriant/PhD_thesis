@@ -308,11 +308,11 @@ Assuming that the angle and action variables are uncorrelated Eq.~\eqref{eq:stat
 \begin{equation}\label{eq:statistical_average_position_2}
     \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \rangle \langle \cos^2{\psi_u(s)} \rangle.
 \end{equation}
-Considering tha the angle variables are are uniformly distributed from 0 to $2\pi$, it is written:
+Considering tha the angle variables are are uniformly distributed from 0 to $2\pi$, it is written: % mean of a function: https://en.wikipedia.org/wiki/Mean_of_a_function
 \begin{equation}\label{eq:mean_cosine_square}
     \langle \cos^2{\psi_u(s)} \rangle = \int_{s_0}^{s_0+C} \cos^2{\psi_u(s)} ds =   \int_0^{2\pi} \cos^2{\psi_u(\phi)} d\phi = \frac{\pi}{2\pi} = \frac{1}{2}.
 \end{equation}
-where the phase advance $\phi$ is used instead of the location $s$ along the ring for convinience. % like in Eq. (2.20)
+where for the integration the phase advance $\phi$ is used instead of the location $s$ along the ring for convinience. % like in Eq. (2.20)
 
 Inserting Eq.~\eqref{eq:mean_cosine_square} in Eq.~\eqref{eq:statistical_average_position} gives:
 
@@ -332,13 +332,10 @@ is the geometric emittance of the bunch. Considering the same assumption Eq.~\eq
 \end{equation}
 
 Combining the above equations, the geometric emittance is expressed in terms of the particles' distribution as:
-
 \begin{equation}\label{eq:geometric_emittance_v2}
     \epsilon^{\mathrm{geom}}_u = \sqrt{\langle u^2(s) \rangle \langle u^{\prime 2}(s) \rangle- \langle u (s)u^{\prime}(s) \rangle ^2}
 \end{equation}
-
-which, for $\langle u(s) \rangle=0$ (Eq.~\eqref{eq:mean_u_zerp}), equals the covariance or Sigma matrix of the particles' distribution (Eq~\eqref{eq:Sigma_matrix}):
-
+which, also equals the square root of the determinant of the covariance or Sigma matrix of the particles' distribution:
 \begin{equation}\label{eq:Sigma_matrix}
     \Sigma = \begin{pmatrix}
         \langle u^2(s) \rangle & \langle u(s) u^\prime(s) \rangle \\ 
