@@ -111,22 +111,13 @@ where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention 
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 \subsubsection{Linear dynamics}
-Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
+Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron.
 
-As mentioned above, the particles (except for a nominal reference particle) transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}:
-% also sofia's thesis Eq.(2.37)
+As mentioned above, the particles transversely oscillate around the reference trajectory (except for a nominal reference particle which follows it). This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the corresponding equations of motion.
 
-\begin{equation}\label{eq:transverse_eq_x}
-    x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_0 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
-\end{equation}
+In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account. 
 
-\begin{equation}\label{eq:transverse_eq_y}
-    y^{\prime \prime} = \frac{B_y}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
-\end{equation}
-where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
-
-For on-momentum particles ($\delta = 0$) the above betatron equations of motion are simplified to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
-
+For on-momentum particles (with $\delta=0$) the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
@@ -137,7 +128,20 @@ where $u=(x,y)$ and:
         -k_1(s), & u=y 
     \end{dcases}
 \end{equation}
-with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled.
+with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
+
+%Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
+
+%As mentioned above, the particles (except for a nominal reference particle) transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described with the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
+%\begin{equation}\label{eq:transverse_eq_x}
+%    x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_0 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
+%\end{equation}
+
+%\begin{equation}\label{eq:transverse_eq_y}
+%    y^{\prime \prime} = \frac{B_y}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
+%\end{equation}
+%where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
+
 
 As already mentioned, Eq.~\eqref{eq:Hills_equation_1} resembles the equation of motion for a harmonic oscillator, but with an oscillation frequency that varies with position along the beamline (i.e. varies with s). For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of Hill's equations in this case is (using the Floquet transformation)~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_solution}
