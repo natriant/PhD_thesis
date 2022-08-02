@@ -117,7 +117,7 @@ As mentioned above, the particles transversely oscillate around the reference tr
 
 In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account. 
 
-For on-momentum particles (with $\delta=0$) the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
+For on-momentum particles (with $\delta=0$) \footnote{The equation of motion for off-momentum particles is discussed below in the paragraph "Off-momentum effects: dispersion" } the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
@@ -142,13 +142,11 @@ with $k_1(s)$ being the normalised quadrupole strength. It should be noted that 
 %\end{equation}
 %where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-
 As already mentioned, Eq.~\eqref{eq:Hills_equation_1} resembles the equation of motion for a harmonic oscillator, but with an oscillation frequency that varies with position along the beamline (i.e. varies with s). For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of Hill's equations in this case is (using the Floquet transformation)~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_solution}
     u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
 \end{equation} % Lee p. 48
 where $A$ and $\psi_{u,0}$ the integration constants and $w(s)$ and $\psi_u(s)$ are the amplitude and betatron phase functions, which are periodic functions with the same periodicity as $K_u$.
-
 
 After substituting for $u(s)$ from Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1}, we find after some calculation (see Appendix C.1) that the amplitude and phase functions fulfill the following equations: 
 %Combination slide 27-28 of yiannis notes:  https://yannis.web.cern.ch/teaching/transverse.pdf and federicos thesis (p.11): https://cds.cern.ch/record/1481835/files/CERN-THESIS-2005-082.pdf
@@ -161,6 +159,16 @@ where:
     \psi^{\prime}_u(s) = \frac{1}{w_u(s)^2} \Rightarrow \psi_u(s) = \int_{s_0}^{s} \frac{ds}{w_u(s)^2}
 \end{equation}
 The above equations are called the betatron envelope and phase equations.
+%As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~\cite{Lee:1425444}):
+
+%\begin{equation}\label{eq:Floquets_solutions}
+%    u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
+%\end{equation}
+
+%where $\alpha_u$ is a constant, and $w(s)$ and $\psi(s)$ are the amplitude and betatron phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
+%$K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), % p.250 widerman
+
+% If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
 
 \textbf{Courant-Snyder parameters}\\
 At this point it is appropriate to introduce the betatron or Twiss or Courant-Snyder:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
@@ -181,16 +189,8 @@ The betatron phase advance from Eq.~\eqref{eq:phase_function} can be re-written 
 \begin{equation}\label{eq:phase_advance_definition_with_twiss}
     \psi_u(s)= \int_{s_0}^{s} \frac{ds}{\beta_u(s)}.
 \end{equation}
-%As $K_u(s)$ is a periodic function, the two independent solutions of the second order differential Eq.~\eqref{eq:Hills_equation_1} can be expressed using the Floquet theorem~\cite{Floquet1883} as follows (see Appendix A, Sec. I.5 in Ref.~\cite{Lee:1425444}):
 
-%\begin{equation}\label{eq:Floquets_solutions}
-%    u(s) = a_u w(s)e^{i \psi_u (s)}, \ u^*(s) = a_u w(s)e^{-i \psi_u (s)},
-%\end{equation}
-
-%where $\alpha_u$ is a constant, and $w(s)$ and $\psi(s)$ are the amplitude and betatron phase functions and $u^*(s)$ is the complex conjugate of $u(s)$. 
-%$K_u(s)$ is real-valued, therefore the amplitude and phase functions fulfill the following equations: % Lee Eq.(2.38), % p.250 widerman
-
-% If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
+The advantage of the Twiss parameters over using $w_u(s)$ and $\psi_u(s)$ is that they can be also used to describe the properties of a bunch of particles while the latter describe the motion of each particle individually. This is discussed in further details in the following paragraph "Transverse emittance". %https://en.wikipedia.org/wiki/Courant%E2%80%93Snyder_parameters
 
 \textbf{Betatron tune}\\
 Another important quantity in accelerator physics is the betatron tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine divided by $2\pi$:
@@ -263,7 +263,7 @@ The trajectory of each individual particle can be plotted in phase space $(u, u^
  \end{figure}
 
  \textbf{Normalised phase space}\\  %Federicos thesis 2.3.1 and sondre eq. 2.21a
- Often in accelerator physics, it is useful to transform the transverse phase space ellipse into a normalised phase space circle, where the motion is equivalent to the one of the harmonic oscillator. % Wiedemman p.235 
+ Often in accelerator physics, it is useful to transform the transverse phase space ellipse into a normalised phase space circle. % Wiedemman p.235 
  In the normalised phase space the co-ordinates $(u, u^\prime)$ are normalised with the twiss parameters $(\alpha_u, \beta_u)$ for the particular location $s$ around the ring, as follows~\cite{Wiedemann:1083415}: % widerman p.235, eq.8.92-8.93
  \begin{equation}\label{eq:normalised_coordinates_un}
      u_N(\phi) = \frac{u(s)}{\sqrt{\beta_u(s)}},
@@ -301,11 +301,21 @@ Up to now, the Twiss parameters were used to describe the dynamics of single par
 \begin{equation}\label{eq:statistical_average_position}
     \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \cos^2{\psi_u(s)} \rangle.
 \end{equation}
-Assuming, that the angle and action variables are uncorrelated and that the angle variables are uniformly distributed: % angles uniformly distributed from (0,2pi)
-\begin{equation}\label{eq:mean_u_zerp}
-    \langle u(s) \rangle = 0,
+%\begin{equation}\label{eq:mean_u_zerp}
+ %   \langle u(s) \rangle = 0,
+%\end{equation}
+Assuming that the angle and action variables are uncorrelated Eq.~\eqref{eq:statistical_average_position} becomes:
+\begin{equation}\label{eq:statistical_average_position_2}
+    \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \rangle \langle \cos^2{\psi_u(s)} \rangle.
 \end{equation}
-and then Eq.~\eqref{eq:statistical_average_position} becomes:
+Considering tha the angle variables are are uniformly distributed from 0 to $2\pi$, it is written:
+\begin{equation}\label{eq:mean_cosine_square}
+    \langle \cos^2{\psi_u(s)} \rangle = \int_{s_0}^{s_0+C} \cos^2{\psi_u(s)} ds =   \int_0^{2\pi} \cos^2{\psi_u(\phi)} d\phi = \frac{\pi}{2\pi} = \frac{1}{2}.
+\end{equation}
+where the phase advance $\phi$ is used instead of the location $s$ along the ring for convinience. % like in Eq. (2.20)
+
+Inserting Eq.~\eqref{eq:mean_cosine_square} in Eq.~\eqref{eq:statistical_average_position} gives:
+
 \begin{equation}\label{eq:emittance_definition_1}
     \langle u^2(s) \rangle = \beta_u(s) \epsilon_u,
 \end{equation}
