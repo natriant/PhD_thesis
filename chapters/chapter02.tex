@@ -108,7 +108,8 @@ Usually, in accelerator physics the values of the multipole strengths are quoted
 \end{equation}
 where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention that will be used in this thesis.
 
-It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic regidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analyisis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.
+It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic rigidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analysis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.
+% confirmed because k1 = b1/B0ρ = 1/ρ
 
 \subsection{Transvserse motion}
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
@@ -127,21 +128,33 @@ As mentioned above, the particles transversely oscillate around the reference tr
 \end{equation}
 where $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as:
-\
+In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as~\cite{Lee:1425444}:
+\begin{equation}
+    B_y = B_0 + \frac{\partial By}{\partial x}x  =B_0 + b_2 x, \ \ B_x = \frac{\partial Bx}{\partial x}y  = b_2 y.  
+\end{equation}
+Note that the term $B_0$ doesn't appear in the horizontal magnetic field due to the fact that, as mentioned earlier, only vertical dipole fields are considered. 
 
-For on-momentum particles (with $\delta=0$) \footnote{The equation of motion for off-momentum particles is discussed below in the paragraph "Off-momentum effects: dispersion" } the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
+Exapnding Eqs.~\eqref{eq:transverse_eq_x} and~\eqref{eq:transverse_eq_y} to the first order of $x$ and $y$ respectively, setting $\delta = (p-p_0)/p_0$, and $k_2=b_2 /(B_0\rho)$ the linear equations of motion are obtained~\cite{Lee:1425444}:
+\begin{equation}\label{eq:linear_eq_of_motion_x}
+    x^{\prime \prime} + \left (  \frac{1-\delta}{\rho^2 (1+\delta)}  + \frac{k_2(s)}{1+\delta} \right )x = \frac{\delta}{\rho (1+\delta)}, 
+\end{equation}
+\begin{equation}\label{eq:linear_eq_of_motion_y}
+    y^{\prime \prime} -  \left ( \frac{k_2(s)}{1+\delta} \right ) y = 0,
+\end{equation}
+where the sign-convention is $k_2>0 \ (k_2<0)$ for focusing in the horizontal (vertical) plane. It is worth commenting that $1/\rho = B_0/(B_0 \rho) = b_1/(B_0 \rho)=k_1$ the normalised dipole strength.
+
+For on-momentum particles (with $\delta=0$) \footnote{The equation of motion for off-momentum particles is discussed in further details in the paragraph "Off-momentum effects: dispersion" later in this section.} the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
 where $u=(x,y)$ and:
  \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
-        \frac{1}{\rho(s)}+k_1(s), & u=x \\
-        -k_1(s), & u=y 
+        \frac{1}{\rho(s)}+k_2(s), & u=x \\
+        -k_2(s), & u=y 
     \end{dcases}
 \end{equation}
-with $k_1(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
+with $k_2(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
 
 %Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
