@@ -98,8 +98,9 @@ The description of two-dimensional magnetic fields in accelerator physics is dis
 \begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
     B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
 \end{equation} % principle of superposition 
-where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing), $n$=3 for sextupoles (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i a_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $a_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n-1)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
+where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing), $n$=3 for sextupoles (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i a_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $a_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
 % Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
+% skew quadrupole is a normal quadrupole rotated by 45 deg.
 
 Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
 \begin{equation}\label{eq:kn}
@@ -107,15 +108,27 @@ Usually, in accelerator physics the values of the multipole strengths are quoted
 \end{equation}
 where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention that will be used in this thesis.
 
+It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic regidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analyisis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.
+
 \subsection{Transvserse motion}
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 \subsubsection{Linear dynamics}
 Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron.
 
-As mentioned above, the particles transversely oscillate around the reference trajectory (except for a nominal reference particle which follows it). This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the corresponding equations of motion.
+As mentioned above, the particles transversely oscillate around the reference trajectory (except for a nominal reference particle which follows it). This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
 
-In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account. 
+ \begin{equation}\label{eq:transverse_eq_x}
+   x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_0 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
+ \end{equation}
+
+\begin{equation}\label{eq:transverse_eq_y}
+    y^{\prime \prime} = \frac{B_x}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
+\end{equation}
+where $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
+
+In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as:
+\
 
 For on-momentum particles (with $\delta=0$) \footnote{The equation of motion for off-momentum particles is discussed below in the paragraph "Off-momentum effects: dispersion" } the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
