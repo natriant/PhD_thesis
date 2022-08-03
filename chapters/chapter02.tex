@@ -143,18 +143,18 @@ Exapnding Eqs.~\eqref{eq:transverse_eq_x} and~\eqref{eq:transverse_eq_y} to the 
 \end{equation}
 where the sign-convention is $k_2>0 \ (k_2<0)$ for focusing in the horizontal (vertical) plane. It is worth commenting that $1/\rho = B_0/(B_0 \rho) = b_1/(B_0 \rho)=k_1$ the normalised dipole strength.
 
-For on-momentum particles (with $\delta=0$) \footnote{The equation of motion for off-momentum particles is discussed in further details in the paragraph "Off-momentum effects: dispersion" later in this section.} the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
+For on-momentum particles (with $\delta=0$) \footnote{The solution of the equation of motion for off-momentum particles is discussed in the paragraph "Off-momentum effects: dispersion" later in this section.} the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
 where $u=(x,y)$ and:
  \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
-        \frac{1}{\rho(s)}+k_2(s), & u=x \\
+        \frac{1}{\rho^2(s)}+k_2(s), & u=x \\
         -k_2(s), & u=y 
     \end{dcases}
 \end{equation}
-with $k_2(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
+with $k_2(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. %The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
 
 %Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
@@ -408,7 +408,7 @@ Up to now, the discussion was limited to on-momentum particles $\delta=0$: their
 
 The response of the off-momentum particles to a given force, during their passage from the different magnets in an accelrator, varies with their momentum. Here their motion through the dipole magnets which leads to dispersion effects is discussed. 
 
-Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) deflections from the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. The change in the closed orbit with respect to the momentum deviation is called dispersion.
+Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) deflections from the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. The change in the closed orbit with respect to the momentum deviation is called dispersion. It is evident that the dispersion introduces a coupling between the longitudinal and transverse planes.
 
 \begin{figure}[!h] % 
     \centering         
@@ -417,56 +417,48 @@ Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) deflections fr
         \label{fig:closed_orbit_Dx}
  \end{figure}
 
-The equation of motion for the off-momentum particles is:
-\begin{equation}
-    x^{\prime \prime}(s) + K_x(s)x(s) = \frac{1}{\rho(s)} \delta,
-\end{equation}
-with the following solution:
+The following discussion is focused on the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. 
+\footnote{A corresponding discussion can be done for the vertical plane to obtain the vertical dispersion but it is out of the scope of this thesis.}. The equation of motion for the off-momentum particles has already been discussed in Eq.~\eqref{eq:linear_eq_of_motion_x}. Its solution is~\cite{Lee:1425444}:
+%\begin{equation}
+%    x^{\prime \prime}(s) + K_x(s)x(s) = \frac{1}{\rho(s)} \delta,
+%\end{equation}
 \begin{equation}
     x(s) = x_H(s) + D_x(s)\delta,
 \end{equation}
 where $x_H(s)$ is the homogeneous solution shown in Eq.~\eqref{eq:position_action_anlge} (and corresponding here to betatron oscillations around the off-momentum closed orbit) and $D_x(s)$ is the dispersion function which can be expressed as:
 \begin{equation}\label{eq:dispersion_function}
-    D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)}.
+    D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)},
 \end{equation}
+where $K_x(s)= \frac{1}{\rho^2(s)}+k_2(s)$ like in Eq.~\eqref{eq:Hills_equation_2}. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
 
-%Its solution is the sum of the solutions of homogeneous (for $\delta=0$) and of the inhomogeneous ($\delta \neq 0$) equation:
-%\begin{equation}
-%    x(s) = x_H(s) + x_I(s) = x_H(s) + D_x(s)\delta,
-%\end{equation}
+The dispersion function can be repersented using the matrix formalism which therefore allows the addition of the dispersive contribution in the transfer matrix introduced in Eq.~\eqref{eq:matrix_formalism_intro}. This aspect is not discussed here, as it is not relevant for the studies in this thesis (the simulation studies consider zero dispersion function in both transverse planes). However, a detailed discussion can be found in Chapter~2 of Ref.~\cite{Lee:1425444}. %Lee p.126 Eq.(2.157), also appendix in Hannes' thesis.
 
-% which is defined as:
-%\begin{equation}\label{eq:dispersion_function}
-%   D_x(s) = \frac{x_I(s)}{\delta}
-%\end{equation}
 
-The dispersive contribution can be added to the transfer matrix introduced in Eq.~\eqref{eq:matrix_formalism_intro} as follows:
-\begin{equation}\label{eq:matrix_formalism_dispersion}
-    \begin{pmatrix}
-     x\\ 
-     x^\prime
-     \end{pmatrix}_{s_1} = M_x (s_1 |  s_0) \begin{pmatrix}
-     x\\ 
-     x^\prime
-     \end{pmatrix}_{s_0} + \delta \begin{pmatrix}
-        D_x\\ 
-        D_x^\prime
-        \end{pmatrix}_{s_0}.
- \end{equation}
+%The dispersive contribution can be added to the transfer matrix introduced in Eq.~\eqref{eq:matrix_formalism_intro} as follows:
+%\begin{equation}\label{eq:matrix_formalism_dispersion}
+%    \begin{pmatrix}
+%     x\\ 
+%     x^\prime
+%     \end{pmatrix}_{s_1} = M_x (s_1 |  s_0) \begin{pmatrix}
+%     x\\ 
+%    x^\prime
+%     \end{pmatrix}_{s_0} + \delta \begin{pmatrix}
+ %       D_x\\ 
+ %       D_x^\prime
+ %       \end{pmatrix}_{s_0}.
+ %\end{equation}
 %The transfer matrix $M$ can be re-written such as it inclyyded, alide 14 in presentation v2 below:
 
 % 1. Definition of D: https://yannis.web.cern.ch/teaching/transverse.pdf
 % 2. Definition of D prime: https://indico.cern.ch/event/847209/contributions/3558973/attachments/1932901/3201996/AccPhys_Lect7_MomEff.pdf
 
- From the discussion above, it becomes clear that the dispersion couples the longitudinal with the horizontal motion. The dispersion effects are discussed here only for the horizontal plane due to the fact that (as stated already) only vertical dipolar fields are considered. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). %/Users/nataliatriantafyllou/PhD_projects/exploring_SPS/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements
- 
- At this point, it is appropriate to mention that only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. As an example, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
-
-Finally, in the presence of dispersion the normalised beam emittance (Eq.~\eqref{eq:emit_from_beam_size}) becomes:
+The dispersion was introduced above as it affects the definition of the normalised beam emittance, which is used to compute the emittance values from experimental measurements (see Chapter~\ref{Ch:2018_analyisis}). In particular, in the presence of dispersion the normalised beam emittance (Eq.~\eqref{eq:emit_from_beam_size}) becomes:
 \begin{equation}\label{eq:emit_from_beam_size_Du}
     \epsilon_{u} = \frac{\sigma_u(s)^2 - \sigma^2_\delta D_u^2(s)}{\beta_u(s)} \beta_0 \gamma_0,
 \end{equation}
-where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\sigma_\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters.
+where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\sigma_\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters. The subsrcipt $u=(x,y)$ denotes the horizontal and vertical plane.
+The impact of the vertical dispersion is included, as only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
+
 
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next Section~\ref{subsec:non-liner_beam_dynamics} which focuses on non-linear beam dynamics.
 
