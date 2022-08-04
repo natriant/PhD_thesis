@@ -4,7 +4,11 @@ In this chapter, the basic concepts of accelerator beam physics that are essenti
 % Details p.11 Michael schenk
 Synchrotrons are circular accelerators where the particles follow a fixed closed-loop path. In a synchrotron, electric fields accelerate the particles while magnetic fields steer and focus them. The magnetic fields are not constant but they vary according to the particles' energy, allowing acceleration and operation at very high (relativistic) energies. The LHC and SPS machines at CERN are synchrotrons like many of the machines used for High Energy Physics experiments. Usually, in synchrotrons, the beams consist of multiple bunches, longitudinally spaced around the machine.  Although the bunches interact with each other, these interactions are not relevant to the studies presented later in this thesis, and will not be considered further
 
-Finally, at this point, it is appropriate to introduce the terms incoherent and coherent effects. Incoherent effects (microscopic approach) affect the individual particles affect individual particles.  Any theory or model of incoherent effects has to treat the beam as a collection of a large number of individual particles, each with its own behaviour. The incoherent effects cannot be observed by studying the motion of the center of mass (centroid) of the beam. On the contrary, the coherent effects (macroscopic) approach affects the beam as a whole and they can be observed by studying the motion of the centroid.% A) p. 24 M. Schenk
+Finally, at this point, it is appropriate to introduce the terms incoherent and coherent effects. Incoherent effects (microscopic approach) affect the individual particles affect individual particles.  Any theory or model of incoherent effects has to treat the beam as a collection of a large number of individual particles, each with its own behaviour. In contrast, coherent effects can be understood in terms of their impact on the beam as a whole, and can be modelled by representing each bunch, for example, as a single 'macroparticle', with mass and charge corresponding to the total number of particles it contains. % from A
+
+
+
+On the contrary, the coherent effects (macroscopic) approach affects the beam as a whole and they can be observed by studying the motion of the centroid.% A) p. 24 M. Schenk
 % B) More details in: https://uspas.fnal.gov/materials/09UNM/Unit_8_Lecture_19_Limting_phenomena.pdf
 
 %motion is the microscopic approach where the individual motion of each particle is studied. Coherent motion is the macroscopic approach where the beam is considered as a whole and the motion of the center of mass is studied.
@@ -128,7 +132,7 @@ As mentioned above, the particles transversely oscillate around the reference tr
 \end{equation}
 where $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as~\cite{Lee:1425444}:
+In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as~\cite{Lee:1425444}: % This linear expantion is only valid at the vincinity of the reference orbit.
 \begin{equation}
     B_y = B_0 + \frac{\partial By}{\partial x}x  =B_0 + b_2 x, \ \ B_x = \frac{\partial Bx}{\partial x}y  = b_2 y.  
 \end{equation}
@@ -457,7 +461,7 @@ The dispersion was introduced above as it affects the definition of the normalis
     \epsilon_{u} = \frac{\sigma_u(s)^2 - \sigma^2_\delta D_u^2(s)}{\beta_u(s)} \beta_0 \gamma_0,
 \end{equation}
 where $\sigma_u(s)$ is the rms beam size, $\beta_u(s)$ is the beta function, $D_u(s)$ is the dispersion fat a specific location s along the accelerator, $\sigma_\delta$ is the momentum spread and $\beta_0, \gamma_0$ the relativistic parameters. The subsrcipt $u=(x,y)$ denotes the horizontal and vertical plane.
-The impact of the vertical dispersion is included, as only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
+The impact of the vertical dispersion is included here, as only the model vertical dispersion equals zero. In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm.
 
 
 Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next Section~\ref{subsec:non-liner_beam_dynamics} which focuses on non-linear beam dynamics.
@@ -479,14 +483,15 @@ where:
  \end{equation}
 denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation.
 
-Large values of chromaticity can lead to instabilities and therefore to beam loss. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
+Large values of chromaticity can lead to instabilities and therefore to beam loss~\cite{Lee:1425444}. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
+% Lee page 159
 
 Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 \textbf{Octupoles and detuning with amplitude}\\
-Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}.
+Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis and therefore some further details are discussed in the following.
 
-In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
+
 
 The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
 \begin{equation}\label{eq:DQ_with_amplitude_horizontal}
@@ -496,6 +501,9 @@ The betatron tune spread or linear detuning that is introduced by the octupoles 
     \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
 \end{equation}
 where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
+
+
+In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
 \subsection{Longitudinal motion}
 In the longitudinal plane, the motion is parallel to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
