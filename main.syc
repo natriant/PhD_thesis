@@ -10,8 +10,6 @@
 \newcommand{\fCCinclude}{yes}
 \newcommand{\phiCCinclude}{yes}
 \newcommand{\betaCCinclude}{no}
-\newcommand{\Qxinclude}{yes}
-\newcommand{\Qyinclude}{yes}
 \newcommand{\Qsinclude}{yes}
 \newcommand{\psixinclude}{no}
 \newcommand{\psiyinclude}{no}

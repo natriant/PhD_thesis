@@ -71,7 +71,58 @@ As already discussed in Section~\ref{subsec:pyheadtail}, in order to include the
 
 % Carlo Zaninni thesis: s, it is important to have an accurate description of the wake at a distance z significantly smaller than the RMS bunch-length, which means that the impedance calculation needs to be accurate up to very high frequency (depending on the accelerator we consider, from a few GHz to the range of THz). 
 
-\subsection{Coherent tune shift with intensity and growth rate}
+\subsection{Coherent tune shift with intensity}
+One of the most common ways to test the correct implementation of the impedance model in a tracking simualtion code is to compute the coherent betatron tune as a function of intensity and benchmark it against the theoretically expected values.
+
+\textbf{Coherent betatron tune from analytical formula}\\
+The coherent tune shift due to impedance for a given value of intensity can be computed using the Sacherer formula discussed in Eq.~\eqref{eq:complext_tune_shift_modes_m}. In particular, the coherent frequency shift corresponds to the headtail mode 0. For $l=0$, Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
+\begin{equation}
+    \Omega^{(0)} - \omega_u = - \frac{\sqrt{\pi}}{4 \pi}\frac{N r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} i Z_\mathrm{eff}.
+\end{equation}
+Replacing $Q_u = \omega_u/\omega_\mathrm{rev}$, where $u=(x,y)$, in the above equation gives:
+\begin{equation}\label{eq:complex_tune_shfit_for_coherent_mode}
+    \Delta \Omega^{(0)} = - \frac{N r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z} i Z_\mathrm{eff}.
+\end{equation}
+All the parameters inserted in Eq.~\eqref{eq:complex_tune_shfit_for_coherent_mode} should be converted in CGS (centimetre–gram–second) units.
+Then the coherent betatron tune shift is computed as:
+\begin{equation}
+    \Delta Q_u = \frac{\Delta \Omega^{(0)}}{\omega_\mathrm{rev}}.
+\end{equation}
+
+\textbf{Coherent betatron tune from tracking simulations}\\
+   \label{tab:pyheadtail_simulation_parameters}
+The PyHEADTAIL simulations were performed for the parameters used in the SPS $\CC$ experiment in 2018 as shown in Table~\ref{tab:pyheadtail_simulation_parameters}.
+
+
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{PyHEADTAIL simulation parameters used to study impedance induced effects for the SPS.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
+      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
+      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
+      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9$\cdot 10^{-3}$}\\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
+      \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
+      \multicolumn{2}{l}{Rms horizontal / vertical beta function, $\beta^{\mathrm{rms}}_x / \beta^{\mathrm{rms}}_y$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:pyheadtail_simulation_parameters}
+   \end{centering}\footnotesize{$^\ast$ Model values for the Q26 optics.}
+   \end{minipage}
+\end{table}
+
+
+
+
 - growth rate of mode 0
 - shift of mode 0
 One of the properties which is also used for checking the correct implemetation of the model. which as we will say later on is relevant to the suppression mechanism is the coherent tune shift with 
@@ -81,9 +132,20 @@ One of the properties which is also used for checking the correct implemetation 
 - we figured out
 
 
-\section{Simulations setup}
+\section{Setting up emittance growth simualtions}
+The setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise was done following the steps described in Section~\ref{subsec:pyheadtail}. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}
 
-This section describes the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the listed parameters were chosen to be very close to the experimental conditions during the emittance growth measurements of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
+
+This section describes the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise. The machine and beam initialisation
+
+
+From M . schenk
+PYHEADTAIL employs the detuning implementation of the octupole magnets where
+every particle receives, instead of transverse kicks, amplitude-dependent changes to its phase advances in order to model the incoherent tune shifts
+
+
+
+. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the listed parameters were chosen to be very close to the experimental conditions during the emittance growth measurements of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
 
 
 \begin{table}[!hbt]
@@ -133,7 +195,6 @@ where $i=1...N$ with being $N$ the number of macroparticles used in the simulati
 
 
 
-
 \normalsize{\textbf{Amplitude detuning}}\\
 \normalsize{\textbf{Parameters particularly for simulations without imepdance effects}}\\
 \normalsize{\textbf{Parameters particularly for simulations with imepdance effects}}\\
@@ -152,3 +213,8 @@ Table with parameters, including macroparticles number + slices + average beta f
 
 
 \section{Characterisation of the emittance growth suppression by the impedance}
+
+\section{Suppresion mechanism}\label{sec:suppression_mechanism}
+\subsection{Past studies with beam-beam interactions}\label{subsec:past_studies_impedance_suppression_BB}
+\subsection{Intensity scans}
+\subsection{Schottky noise spectra}
