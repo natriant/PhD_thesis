@@ -86,7 +86,7 @@ Now, according to the definitions introduced in Appendix~\ref{app:statistics_def
 
 where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
 
-The actions, $\Jx$ and $\Jx$ follow an exponential distribution (see Eq.~\eqref{eq:Jy_exp_distr}). It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
+For a Gaussian distribution the actions, $\Jx$ and $\Jx$ follow an exponential distribution \footnote{The charge density function for a Gaussian beam in $u, u^\prime$, where $u=(x,y)$ is expressed in terms of the Twiss parameters as: $\rho(u, u^\prime) = e^{-(\gamma_u u^2(s)+2 \alpha_u(s)u(s)u^{\prime}(s)+\beta_u(s)u^{\prime 2(s)})/(2 \epsilon_u^{\mathrm{geom}}})= e^{-J_u/\epsilon_u^{\mathrm{geom}}}$.}. It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
 \begin{equation}\label{eq:rms_amplitute_detuning_2}
     \Dqyrms = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
 \end{equation}
