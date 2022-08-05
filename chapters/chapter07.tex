@@ -112,11 +112,11 @@ The bunch poulation of the different intensity values, was represented by $5 \ti
 
 For all the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
 
-To facilitate the observation of the coherent tune, the bunch was intialised with a static offset of 0.15$\sigma_{x,y}$\footnote{The rms transverse beam size at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields.} in both transvserse planes, such as it performes dipole oscillations around the machine. Then, it was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis and its python implementation can be found in the corresponding package in Ref.~\cite{nafflib_repository}, on the turn-by-turn centroid motion. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed cohernet tune (in the absence of impedance) which equals the $Q_{u0}$ value.
+To facilitate the observation of the coherent tune, the bunch was intialised with a static offset of 0.15$\sigma_{x,y}$ in both transvserse planes\footnote{The rms transverse beam size at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields.}, such as it performes dipole oscillations around the machine. Then, it was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis and its python implementation, NAFFlib, can be found in the corresponding package in Ref.~\cite{nafflib_repository}, on the turn-by-turn centroid motion. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed cohernet tune (in the absence of impedance) which equals the $Q_{u0}$ value.
 
 Finally, the dependence of the coherent tune on the intensity value was studied in the absence of other detuning effects (such as chromaticity or detuning with transverse amplitude, even though they mainly introduce incoherent tune shifts). % Do they also introduce some small coherent tune?
 
-The simulation was repeated for a range of bunch intensities, $N_b$, equally-spaced from 0 to $5 \cdot 10^{10}$ protons per bunch. This range was chosen to be in the vicinity of the bunch intensity of the $\CC$ experiments of 2018, where $N_b$ was $3\times 10^{10}$ protons per bunch. $N_b=0$ is not a realistic value. However, it is used here as the reference point for which the coherent betatron tune equals zero. The simulation results are plotted against the theoretically expected tune shifts in Fig\dots
+The simulation was repeated for a range of bunch intensities, $N_b$, equally-spaced from 0 to $5 \cdot 10^{10}$ protons per bunch. This range was chosen to be in the vicinity of the bunch intensity of the $\CC$ experiments of 2018, where $N_b$ was $3\times 10^{10}$ protons per bunch. $N_b=0$ is not a realistic value. However, it is used here as the reference point for which the coherent betatron tune equals zero. The simulation results are plotted against the theoretically expected tune shifts in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model}.
 
 The theoretically expected values are computed from Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l} for $l=0$ and using only the imaginary part of the imepdance. Given that $\Gamma(1/2)=\sqrt{\pi}$ and $Q_u = \omega_{u0}/\omega_\mathrm{rev}$ equation Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
 \begin{equation}\label{eq:real_tune_shfit_for_coherent_mode}
@@ -130,19 +130,28 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
 \end{equation}
 
 
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Qx_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Qy_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        %\caption{Discrete Fourier transform}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Horizontal (left) and vertical (right) coherent tunes as a function of intensity in the presence of the beam coupling SPS imepdance obtained using analytical formula (blue dashed line) and PyHEADTAIL tracking simulations (orange line). The impedance model and the wake functions used are available in the public gitlab repository of Ref.~\cite{sps_impedance_model_git}.} % bunch passage
+     \label{fig:sps_coherent_DQ_vs_intensity_original_complete_model}
+ \end{figure}
 
+ Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model do not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer.
 
-The PyHEADTAIL simulations were performed for the parameters used in the SPS $\CC$ experiment in 2018 as shown in Table~\ref{tab:pyheadtail_simulation_parameters}. The average transverse beta functions over the SPS are also listed, as they are used for the implementation of the wakefields in the simulations (see Section~\ref{subsec:pyheadtail} ).The latest transverse wakefield model (as of February 2019 in Ref~\cite{sps_impedance_model_git}) of the SPS was used.
-
-
-
-
-
-
-
-- growth rate of mode 0
-- shift of mode 0
-One of the properties which is also used for checking the correct implemetation of the model. which as we will say later on is relevant to the suppression mechanism is the coherent tune shift with 
 
 - model benchmarked but not as thorough for ... not gor single bunhces at that low intensity?
 
