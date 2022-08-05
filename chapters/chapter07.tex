@@ -76,13 +76,10 @@ As discussed in Section~\ref{subsec:wakefields} the imaginary part of the impeda
 
 Typically, in tracking simulations, the coherent tune is obtained by applying a frequency analysis technique to the oscillations of the centroid of the particle distribution (the center of mass of the bunch). Here, the analysis is limited to the coherent mode $l=0$ as it can be obtained using a simple Fast Fourier Transform (FFT) algorithm~\cite{FFT_and_applications}. Higher modes (in absolute value, i.e. $l=\pm 1, \pm 2$ etc) can be obtained with more complex algorithms such as the oned provided from the SUSSIX code~\cite{Bartolini:702438} \footnote{The SUSSIX code is applied to the complex position in phase space, $u-i p_u$, while an FFT algorithm is applied only to the transverse position $u$, where $u=(x,y)$~\cite{Salvant:1274254}.}. Nevertheless, the study of mode $l=0$ is sufficient for the purpose of the studies presented here. For simplicity in the following the term "coherent tune" will refer to the coherent tune of mode $l=0$.
 
-In this thesis, the coherent tune is computed using the NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645} which provides a refined FFT analysis and its python implementation can be found in the corresponding package in Ref.~\cite{nafflib_repository}.
-
-
 \textbf{Simulations setup}\\
-The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of one segment, with one interaction point at which the beam interacts with the wakefields. At that location, the horizontal and vertical beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). The latest transverse wakefield model (as of February 2019 in Ref~\cite{sps_impedance_model_git}) of the SPS was used.
+The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of one segment, with one interaction point at which the beam interacts with the wakefields. At that location, the horizontal and vertical beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). The latest transverse wakefield model (as of February 2019 in Ref.~\cite{sps_impedance_model_git}) of the SPS was used.
 
-For the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
+The bunch poulation of the different intensity values, was represented by $5 \times 10^5$ macroparticles and the number of slices of the longitudinal distribution was 500.
 
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
@@ -98,11 +95,14 @@ For the PyHEADTAIL simulation studies presented in this thesis, the Twiss parame
       \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
       \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
-      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9$\cdot 10^{-3}$}\\
+      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9 $\times 10^{-3}$}\\
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
       \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns}\\
       \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
       \multicolumn{2}{l}{Average horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
+      \bottomrule
+      \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$5 \times 10^5$} \\
+      \multicolumn{2}{l}{Number of longitudinal slices, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{500} \\
       \bottomrule
 	\end{tabu}
    \label{tab:pyheadtail_simulation_parameters}
@@ -110,39 +110,25 @@ For the PyHEADTAIL simulation studies presented in this thesis, the Twiss parame
    \end{minipage}
 \end{table}
 
+For all the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
 
-- How do you compute the modes.
-- Need to give intiial offset.
+To facilitate the observation of the coherent tune, the bunch was intialised with a static offset of 0.15$\sigma_{x,y}$\footnote{The rms transverse beam size at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields.} in both transvserse planes, such as it performes dipole oscillations around the machine. Then, it was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis and its python implementation can be found in the corresponding package in Ref.~\cite{nafflib_repository}, on the turn-by-turn centroid motion. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed cohernet tune (in the absence of impedance) which equals the $Q_{u0}$ value.
 
+Finally, the dependence of the coherent tune on the intensity value was studied in the absence of other detuning effects (such as chromaticity or detuning with transverse amplitude, even though they mainly introduce incoherent tune shifts). % Do they also introduce some small coherent tune?
 
+The simulation was repeated for a range of bunch intensities, $N_b$, equally-spaced from 0 to $5 \cdot 10^{10}$ protons per bunch. This range was chosen to be in the vicinity of the bunch intensity of the $\CC$ experiments of 2018, where $N_b$ was $3\times 10^{10}$ protons per bunch. $N_b=0$ is not a realistic value. However, it is used here as the reference point for which the coherent betatron tune equals zero. The simulation results are plotted against the theoretically expected tune shifts in Fig\dots
 
-In particular, the imaginary part of the impedance leads to a real coherent frequency shift (Eq.~\eqref{eq:complext_tune_shift_modes_m}) which can be observed by looking at the Fourier spectrum of the bunch centroid (the center of mass of the bunch) and by comparing it with the unperturbed tune (in the absence of impedance or of other detuning effects).
+The theoretically expected values are computed from Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l} for $l=0$ and using only the imaginary part of the imepdance. Given that $\Gamma(1/2)=\sqrt{\pi}$ and $Q_u = \omega_{u0}/\omega_\mathrm{rev}$ equation Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
+\begin{equation}\label{eq:real_tune_shfit_for_coherent_mode}
+    \Delta \Omega_u^{(0)} =  \Omega_{u0}^{(0)} - \omega_{u0} = \frac{\sqrt{\pi}}{4 \pi}\frac{N r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} Z_\mathrm{eff, im} = \frac{N r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z}Z_\mathrm{eff, im}
+\end{equation}
+All the parameters inserted in Eq.~\eqref{eq:real_tune_shfit_for_coherent_mode} should be converted in CGS (centimetre–gram–second) units.
 
-
-is to compute the coherent betatron tune as a function of intensity and benchmark it against the theoretically expected values. The rms value of the beta functions over the machine is also listed 
-
-\textbf{Coherent betatron tune from analytical formula}\\
-The coherent tune shift due to impedance for a given value of intensity can be computed using the Sacherer formula discussed in Eq.~\eqref{eq:complext_tune_shift_modes_m}. In particular, the coherent frequency shift corresponds to the headtail mode 0. For $l=0$, Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
+Then the coherent betatron tune shift is computed by inserting the result of Eq.~\eqref{eq:real_tune_shfit_for_coherent_mode} in Eq.~\eqref{eq:real_tunu_mode_l} such as 
 \begin{equation}
-    \Omega^{(0)} - \omega_u = - \frac{\sqrt{\pi}}{4 \pi}\frac{N r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} i Z_\mathrm{eff}.
-\end{equation}
-Replacing $Q_u = \omega_u/\omega_\mathrm{rev}$, where $u=(x,y)$, in the above equation gives:
-\begin{equation}\label{eq:complex_tune_shfit_for_coherent_mode}
-    \Delta \Omega^{(0)} = - \frac{N r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z} i Z_\mathrm{eff}.
-\end{equation}
-All the parameters inserted in Eq.~\eqref{eq:complex_tune_shfit_for_coherent_mode} should be converted in CGS (centimetre–gram–second) units.
-Then the coherent betatron tune shift is computed as:
-\begin{equation}
-    \Delta Q_u = \frac{\Delta \Omega^{(0)}}{\omega_\mathrm{rev}}.
+    \Delta Q_u = \frac{\Delta \Omega_u^{(0)}}{\omega_\mathrm{rev}}.
 \end{equation}
 
-\textbf{Coherent betatron tune from PyHEADTAIL simulations}\\
-   \label{tab:pyheadtail_simulation_parameters}
-The coherent tune is defined as the frequency of the transverse oscillations of the centroid.
-Typically, in tracking simulations the coherent tune can be obtained by applying an FFT algorithm on the motion of the centroid.
-
-
-The coherent tune can be obtained by tracking simulation 
 
 
 
