@@ -635,25 +635,21 @@ The Vlasov equation~\cite{Vlasov:426186} is often used to describe the beam moti
 Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as headtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The headtail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
-\textbf{Sacherer formulae and complex frequency shift}\\
+\textbf{Sacherer formulae and complex coherent frequency shift}\\
 One of the impedance induced effects, that is relevant for the studies of the thesis, is the complex tune shift. The complex tune shift can be computed analytically based on the Vlasov formalism~\cite{Vlasov:426186} through the use of perturbation theory. Formulae expressing the results were derived by Sacherer~\cite{Sacherer:322545, Sacherer:322645}. %  Source of this sentence: second column: https://cds.cern.ch/record/2674107/files/757-3481-2-PB.pdf
 
 The headtail modes introduce an exponential dependence on the amplitude of the bunch centroid as follows~\cite{Schenk:2665819}:
 \begin{equation}\label{eq:HeadtailModesExponentialDependence}
-    u(t) \propto e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_u^{(l)})t} =  e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_{u, \mathrm{{re}}}^{(l)})t} e^{-\Delta \Omega_{u, \mathrm{{im}}}^{(l)} t},
+    u(t) \propto e^{i(\Omega_{u0}^{(l)}+\Delta \Omega_u^{(l)})t} =  e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_{u, \mathrm{{re}}}^{(l)})t} e^{-\Delta \Omega_{u, \mathrm{{im}}}^{(l)} t},
 \end{equation}
-where $\Omega_{u,0}^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch). The imaginary coherent frequency shift gives the instability growth rate as follows:
-\begin{equation}\label{eq:growth_rate}
-    1/\tau^{(l)}=-\Delta \Omega_{u, \mathrm{im}}^{(l)} / T_\mathrm{rev},
-\end{equation}
-where $T_\mathrm{rev}$ is the revolution period.
-In the above equations $u=(x,y)$ denoting the horizontal and vertical frequencies respectively.
+where $\Omega_{u0}^{(l)}$ is the real-valued, unperturbed frequency of mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch).
 
-The complex frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in Ref.~\cite{Chao:collective}): % Eq.(6.207)
+
+The complex coherent frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in Ref.~\cite{Chao:collective}): % Eq.(6.207)
 \begin{equation}\label{eq:complext_tune_shift_modes_m}
-    \Omega^{(l)}-\omega_u-l\omega_s = -\frac{1}{4\pi}\frac{\Gamma(l+1/2)}{2^l l!}\frac{N_b r_0 c^2}{\gamma_0 T_\mathrm{rev} \omega_u \sigma_z} i Z_\mathrm{eff},
+    \Delta \Omega_u ^{(l)}= \Omega_{u0}^{(l)}-\omega_{u0}-l\omega_s = -\frac{1}{4\pi}\frac{\Gamma(l+1/2)}{2^l l!}\frac{N_b r_0 c^2}{\gamma_0 T_\mathrm{rev} \omega_{u0} \sigma_z} i Z_\mathrm{eff},
 \end{equation}
-where $\omega_u$ and $\omega_s$ are the unperturbated betatron and synchrotron frequencies, $\Gamma(x)$ is the gamma function, $N_b$ is the number of particles in the bunch, $r_0=1.535 \cdot 10^{-16}$ is the clasical radius of the proton, $c$ is the speed of light, $\gamma_0$ is the relativistic gamma, $T_\mathrm{rev}$ is the revolution period, $\sigma_z$ is the rms bunch length, $i$ is the imaginary unit and $Z_\mathrm{eff}$ is the effective impedance.
+where $\omega_{u0}$ and $\omega_s$ are the unperturbated betatron and synchrotron frequencies, $\Gamma(x)$ is the gamma function, $N_b$ is the number of particles in the bunch, $r_0=1.535 \cdot 10^{-16}$ is the clasical radius of the proton, $c$ is the speed of light, $\gamma_0$ is the relativistic gamma, $T_\mathrm{rev}$ is the revolution period, $\sigma_z$ is the rms bunch length, $i$ is the imaginary unit and $Z_\mathrm{eff}$ is the effective impedance.
 
 The effective impedance $Z_\mathrm{eff}$ is computed as follows:
 \begin{equation}\label{eq:effective_impedance}
@@ -673,8 +669,23 @@ It should be highlighted that all the parameters inserted in Eq.~\eqref{eq:compl
 \end{equation}
 where $\Omega$ (Ohm) is the SI unit of resistance.
 
+
 %- 1 [Ohm] = (1/9)*10**(-11) [s]/[cm]
 %- 1 [Ohm]/[m] = (1/9)*10**(-13) [s]/[cm]**2 
+
+Finally, the imaginary part of the impedance, leads to a real coherent frequency shift which can be expressed in tune untis as follows:
+\begin{equation}\label{eq:real_tunu_mode_l}
+    \Delta Q_u^{(l)} = \frac{\Delta \Omega_{u, \mathrm{{re}}}^{(l)}}{f_\mathrm{rev}},
+\end{equation}
+where $\Delta \Omega_{u, \mathrm{{re}}}^{(l)}$ the real part of the complex tune shift as defined in Eq.~\eqref{eq:complext_tune_shift_modes_m}.
+The real part of the impedance, leads to an imaginary coherent frequency shift which is also known as the growth (+ sign) or damping (- sign) rate of the mode $l$ and is given by:
+\begin{equation}\label{eq:real_tunu_mode_l}
+    1/\tau_u^{(l)} = -\frac{\Delta \Omega_{u, \mathrm{{im}}}^{(l)}}{f_\mathrm{rev}},
+\end{equation}
+where $\Delta \Omega_{u, \mathrm{{im}}}^{(l)}$ the imaginary part of the complex tune shift as defined in Eq.~\eqref{eq:complext_tune_shift_modes_m}. The $1/\tau_u^{(l)}$ is expressed in units of 1/turns. 
+
+The real coherent tune shift appears proportinal to the beam intensity. This dependence plays a crucial role in the $\CC$ studies discussed in the following.
+
 
 %In principle, the mode representation and the particle representation of the beam motion are identical. To describe fully 1012particles, one needs 1012modes, and vice versa. The detailed methods of analysis in the two approachesare different-the particle representation usually is conveniently treated in the time domain, while in the mode representation the frequency domain is more convenient-but, in principle, they necessarilygive the same final results. (p.272, chao)
 
@@ -754,6 +765,7 @@ Details on its implementation and its features can be find in Refs.~\cite{pyhead
     \item \textbf{Trasnverse impedance effects:} In PyHEADTAIL, wakefield kicks are used to implement the effect of the transverse impedance in the time domain. To improve the computational efficiency, the total impedance of the full machine is lumped at one of the interaction points along the ring and the kicks are applied to the macroparticles once per turn. Additionally, instead of computing the wakefield kicks from each particle to the rest individually, the bunch is divided into a number of slices longitudinally and the macroparticles in each slice recieve a wakefield kick generated by the preceding slices\footnote{This is valid in the ultrarelativistic scenario when no wakefield is generated in front of the bunch. The condition applies for the SPS experiments described in this thesis, performed at 270\,GeV.}~\cite{Salvant:1274254}. This is illustrated schematically in Fig.~\ref{fig:longitudinal_slicing_wakefields}. A large number of slices is required such as the wakes can be assumed constant within the slice. A high number of macroparticles is also needed in order to avoid statistical noise effects caused by undersampling~\cite{pyheadtail_manual_adrian}. For the studies presented, 500 slices are used over a range of three rms bunch lengths in both directions from the bunch center with the bunch being represented by $10^6$ macroparticles (instead of $10^5$ required for simulations without impedance effects).
     
 
+
     \begin{figure}[!ht]
         \centering
         \begin{subfigure}[t]{0.45\textwidth}
@@ -775,7 +787,7 @@ Details on its implementation and its features can be find in Refs.~\cite{pyhead
      \end{figure}
         
     The wakefield kicks are computed using a convolution of the wake function with the moments of each particle. %p.39 michael schenk thesis
-    The wake functions are available from detailed imepdance model of the machine which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
+    The wake functions are available from detailed imepdance model of the machine which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. Typically, the impedance model of an accelerator is provided normalised with the average value of the horizontal and vertical beta functions over the machine at the respective plane. Therefore the transverse beta functions at the location where the wakefield kicks are applied on the beam must equal these average values. More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
     
     \item \textbf{Data acquisition:} The updated macroparticle coordinates after each turn are available at IP0 for post-processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulations presented in this thesis. 
     

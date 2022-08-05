@@ -71,8 +71,14 @@ As already discussed in Section~\ref{subsec:pyheadtail}, in order to include the
 
 % Carlo Zaninni thesis: s, it is important to have an accurate description of the wake at a distance z significantly smaller than the RMS bunch-length, which means that the impedance calculation needs to be accurate up to very high frequency (depending on the accelerator we consider, from a few GHz to the range of THz). 
 
-\subsection{Coherent tune shift with intensity}
-One of the most common ways to test the correct implementation of the impedance model in a tracking simualtion code is to compute the coherent betatron tune as a function of intensity and benchmark it against the theoretically expected values.
+\subsection{Testing the implementation in PyHEADTAIL}
+One of the most common ways to test the correct implementation of the impedance model in a tracking simualtion code is to look at its impact on the coherent behavior of a single bunch and in particular on the coherent tune.
+
+
+In particular, the imaginary part of the impedance leads to a real coherent frequency shift (Eq.~\eqref{eq:complext_tune_shift_modes_m}) which can be observed by looking at the Fourier spectrum of the bunch centroid (the center of mass of the bunch) and by comparing it with the unperturbed tune (in the absence of impedance or of other detuning effects).
+
+
+is to compute the coherent betatron tune as a function of intensity and benchmark it against the theoretically expected values. The rms value of the beta functions over the machine is also listed 
 
 \textbf{Coherent betatron tune from analytical formula}\\
 The coherent tune shift due to impedance for a given value of intensity can be computed using the Sacherer formula discussed in Eq.~\eqref{eq:complext_tune_shift_modes_m}. In particular, the coherent frequency shift corresponds to the headtail mode 0. For $l=0$, Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
@@ -89,9 +95,17 @@ Then the coherent betatron tune shift is computed as:
     \Delta Q_u = \frac{\Delta \Omega^{(0)}}{\omega_\mathrm{rev}}.
 \end{equation}
 
-\textbf{Coherent betatron tune from tracking simulations}\\
+\textbf{Coherent betatron tune from PyHEADTAIL simulations}\\
    \label{tab:pyheadtail_simulation_parameters}
-The PyHEADTAIL simulations were performed for the parameters used in the SPS $\CC$ experiment in 2018 as shown in Table~\ref{tab:pyheadtail_simulation_parameters}.
+The coherent tune is defined as the frequency of the transverse oscillations of the centroid.
+Typically, in tracking simulations the coherent tune can be obtained by applying an FFT algorithm on the motion of the centroid.
+
+
+The coherent tune can be obtained by tracking simulation 
+
+
+
+The PyHEADTAIL simulations were performed for the parameters used in the SPS $\CC$ experiment in 2018 as shown in Table~\ref{tab:pyheadtail_simulation_parameters}. The average transverse beta functions over the SPS are also listed, as they are used for the implementation of the wakefields in the simulations (see Section~\ref{subsec:pyheadtail} ).The latest transverse wakefield model (as of February 2019 in Ref~\cite{sps_impedance_model_git}) of the SPS was used.
 
 
 \begin{table}[!hbt]
@@ -112,7 +126,7 @@ The PyHEADTAIL simulations were performed for the parameters used in the SPS $\C
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
       \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns}\\
       \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
-      \multicolumn{2}{l}{Rms horizontal / vertical beta function, $\beta^{\mathrm{rms}}_x / \beta^{\mathrm{rms}}_y$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
+      \multicolumn{2}{l}{Average horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
       \bottomrule
 	\end{tabu}
    \label{tab:pyheadtail_simulation_parameters}
