@@ -71,8 +71,35 @@ As already discussed in Section~\ref{subsec:pyheadtail}, in order to include the
 
 % Carlo Zaninni thesis: s, it is important to have an accurate description of the wake at a distance z significantly smaller than the RMS bunch-length, which means that the impedance calculation needs to be accurate up to very high frequency (depending on the accelerator we consider, from a few GHz to the range of THz). 
 
-\subsection{Testing the implementation in PyHEADTAIL}
-One of the most common ways to test the correct implementation of the impedance model in a tracking simualtion code is to look at its impact on the coherent behavior of a single bunch and in particular on the coherent tune.
+\subsection{Testing the implementation in PyHEADTAIL}\label{subsec:test_implementation_pyheatail}
+As discussed in Section~\ref{subsec:wakefields} the imaginary part of the impedance leads to a coherent tune shift which depends on the bunch intensity. One of the most common ways to test the correct implementation of the imepedance model in a tracking simualtion code is to benchmark the simulated intensity-dependent coherent tune shift with the theoretically predicted behavior (using Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l}).
+
+Typically, in tracking simualtions, the coherent tune is obtained by applying a frequency analyisi technique to the oscillations of the centroid of the particle distribution (the center of mass of the bunch). Here, the analyisis is limited to the coherent mode $l=0$ as it can be obtained using a simple Fast Fourier Transform (FFT) algorithm~\cite{FFT_and_applications}. Higher modes (in absolute value, i.e. $l=\pm 1, \pm 2$ etc) can be obtained with more complex algorithms such as the oned provided from the SUSSIX code~\cite{Bartolini:702438} \footnote{The SUSSIX code is applied to the complex position in phase space, $u-i p_u$, while an FFT algorithm is applied only to the transverse position $u$, where $u=(x,y)$~\cite{Salvant:1274254}.}. Nevertheless, the study of mode $l=0$ is sufficient for the purpose of the studies presented here. For convinience in the following the term coherent tune will refer to the coherent tune of mode $l=0$.
+
+In this thesis, the coherent tune is computed using the NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645} which provides a refined FFT analyisis and its python implementation can be found in the corresponding package in Ref.~\cite{nafflib_repository}.
+
+
+
+
+
+
+- Why only mode 0? It is sufficient for the purpose of these studies.
+- How do you compute the modes.
+- Need to give intiial offset.
+
+The coherent mode for $l$
+
+
+Here, the studies treat on the coherent mode for $l=0$ as it is the 
+
+
+ Here, the studies focus on the coherent mode for $l=0$
+
+
+
+
+
+Typically, in tracking simualtions the coherent tune can be obtained by looking at the Fourier spectrum of the motion of the bunch centroid (the center of mass of the bunch). Here, the studies are focues on the coherent mode for $l=0$ which equals the coherent betatron tune of the beam
 
 
 In particular, the imaginary part of the impedance leads to a real coherent frequency shift (Eq.~\eqref{eq:complext_tune_shift_modes_m}) which can be observed by looking at the Fourier spectrum of the bunch centroid (the center of mass of the bunch) and by comparing it with the unperturbed tune (in the absence of impedance or of other detuning effects).
