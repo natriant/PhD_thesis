@@ -79,7 +79,36 @@ Typically, in tracking simulations, the coherent tune is obtained by applying a 
 In this thesis, the coherent tune is computed using the NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645} which provides a refined FFT analysis and its python implementation can be found in the corresponding package in Ref.~\cite{nafflib_repository}.
 
 
+\textbf{Simulations setup}\\
+The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of one segment, with one interaction point at which the beam interacts with the wakefields. At that location, the horizontal and vertical beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). The latest transverse wakefield model (as of February 2019 in Ref~\cite{sps_impedance_model_git}) of the SPS was used.
 
+For the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
+
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{PyHEADTAIL simulation parameters used to study impedance induced effects for the SPS.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
+      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
+      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
+      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9$\cdot 10^{-3}$}\\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
+      \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
+      \multicolumn{2}{l}{Average horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:pyheadtail_simulation_parameters}
+   \end{centering}\footnotesize{$^\ast$ Model values for the Q26 optics.}
+   \end{minipage}
+\end{table}
 
 
 - How do you compute the modes.
@@ -120,31 +149,7 @@ The coherent tune can be obtained by tracking simulation
 The PyHEADTAIL simulations were performed for the parameters used in the SPS $\CC$ experiment in 2018 as shown in Table~\ref{tab:pyheadtail_simulation_parameters}. The average transverse beta functions over the SPS are also listed, as they are used for the implementation of the wakefields in the simulations (see Section~\ref{subsec:pyheadtail} ).The latest transverse wakefield model (as of February 2019 in Ref~\cite{sps_impedance_model_git}) of the SPS was used.
 
 
-\begin{table}[!hbt]
-	\begin{minipage}{\textwidth}
-      \begin{centering}
-   \caption{PyHEADTAIL simulation parameters used to study impedance induced effects for the SPS.}
-	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
-		&&& \\[-6mm]
-		\toprule \toprule
-		\multicolumn{2}{l}{\textbf{Parameter}} &
-		\multicolumn{2}{c}{\textbf{Value}} \\
-		\bottomrule
-      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
-      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
-      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
-      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9$\cdot 10^{-3}$}\\
-      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
-      \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns}\\
-      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
-      \multicolumn{2}{l}{Average horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\ast$ } \\
-      \bottomrule
-	\end{tabu}
-   \label{tab:pyheadtail_simulation_parameters}
-   \end{centering}\footnotesize{$^\ast$ Model values for the Q26 optics.}
-   \end{minipage}
-\end{table}
+
 
 
 
