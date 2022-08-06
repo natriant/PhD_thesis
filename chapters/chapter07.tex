@@ -66,6 +66,8 @@ As already discussed in Section~\ref{subsec:pyheadtail}, in order to include the
      \label{fig:sps_wakefunctions_model_H_V}
  \end{figure}
 
+It should be highlighted that the impedance model is not obtained from a simple Fast Fourier Transform algorithm on the wakefunctions but rather with more complex procedures described in the references provided above. Last the imepdance model is used as an input in the Sacherer formula (Eq.~\eqref{eq:complext_tune_shift_modes_m}) for analytical estimations while the wake functions are used as an input in simulation codes such as PyHEADTAIL.
+
 
 % slide 9 https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf
 
@@ -150,12 +152,14 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
      \label{fig:sps_coherent_DQ_vs_intensity_original_complete_model}
  \end{figure}
 
- Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model do not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer.
+ Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model does not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer with the impedance model. This discrepancy hadn't been observed before as this study has not been conducted for such low intensities (the usual intensity range for this type of study is in the order of $10^{11}$ protons per bunch ~\cite{Beck:2683038}) and short bunches. %p.101
+ The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or their implementation in the simualtion.
+
+ After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. This work is not further discussed here as it is out of the scope of this thesis and it was not performed by the author. 
 
 
-- model benchmarked but not as thorough for ... not gor single bunhces at that low intensity?
 
-- we figured out
+
 
 
 \section{Setting up emittance growth simualtions}
