@@ -153,21 +153,85 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
  \end{figure}
 
  Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model does not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer with the impedance model. This discrepancy hadn't been observed before as this study has not been conducted for such low intensities (the usual intensity range for this type of study is in the order of $10^{11}$ protons per bunch ~\cite{Beck:2683038}) and short bunches. %p.101
- The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or their implementation in the simualtion.
+ The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or their implementation in the simualtion. Given the fact that the studies with $\CC$s are quite sensitive on the coherent tune shift with intensity from the coupling impedance (this will be discussed in the following paragraphs of this chapter) it is crucial to identify the reason for the observed discrepancy and resolve it.
 
- After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. This work is not further discussed here as it is out of the scope of this thesis and it was not performed by the author. 
+ After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. The details of this work are not discussed here as they are out of the scope of this thesis and they were not performed by the author. The re-computed wake functions along with the rest of the components of the original model can be found in the gihub repository of Ref. . and it will be reffered to as the "updated wakefields" model.
+
+The coherent betatron tune as a function of intensity obtained using PyHEADTAIL and the updated wakefields model is plotted in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_updated_model} against the analytical predictions from Sacherer formula. In the vertical plane the results from the simualtions and the theory are in very good agreement ($~5\%$) which within the uncertainty that one can expect from the model implementation. In the horizontal plane the discrepancy is still large but the analytical computations of the wakes for resolving was not conducted. The reason for this is that these computations are time expensive and the resolving the discrepancy on the horizontal plane was not considered urgent as our studies on the emittance growth concern only the vertical plane following the SPS experiments of 2018, which were performed with a vertical $\CC$ module (that provided a deflection of the beam in the vertical plane).
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Qx_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/Qy_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        %\caption{Discrete Fourier transform}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Horizontal (left) and vertical (right) coherent tunes as a function of intensity in the presence of the beam coupling SPS imepdance obtained using analytical formula (blue dashed line) and PyHEADTAIL tracking simulations (orange line). The impedance model and the wake functions ("updated wakefields" model) used are available in the public repositories of Ref.~\cite{sps_impedance_model_git} and Ref.. respectively.} % bunch passage
+     \label{fig:sps_coherent_DQ_vs_intensity_updated_model}
+ \end{figure}
+
+ The above figure confirms the correct implementation of the updated wakefields model in PyHEADTAIL in the plane of interest (vertical) and therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
+
+\section{Emittance growth simulations setup}\label{sec:setup_simulations_emit_growth}
+The simualtions that were performed to investigate the impact of the beam coupling impedance on the $\CC$ RF noise-induced emittance growth were performed following the procedure and using the parameters that are described below. Any change in the choice of parameters, e.g. for some of the parametric studies, will be mentioned in the corresponding paragraph.
+
+The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of two segments with two interaction points. In the first one $\CC$ noise-like kicks are applied on the beam particles while in the second one the the beam interacts with the wakefields as discussed in the previous section. The updated wakefields model Ref... of the SPS was used.
+
+At the location of the $\CC$ RF noise kick the horizontal and vertical beta functions equals the values at the location of the $\CC2$ which was used in the experiments of 2018. At the location, where the wakefield kicks are applied the transverse beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). 
+
+As already discussed in the previous section, the simualtions are performed for the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
+
+The emittance growth studies were performed for intensity of $3 \times 10^{10}$ protons per bunch and for linear chromaticity of $Q^{\prime}_{x,y}=0.5$ in accordance with the 2018 experiments. The bunch population was represented by $5 \times 10^{5}$ macroparticles and the number of longitudinal slices was 500. The emittance growth was also simulated without including the wakefields. For that case the bunch population was represented by $10^{5}$ particles and no longitudinal slicing was applied.
+
+At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each particle within the bunch is updated according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and ~\eqref{eq:phase_noise_kick} for amplitude and phase noise kick respectively. The noise level is stronger than the ones of the actual $\CC$ RF system and was chosen such as it results in a reasonable growth in the simulation time of $10^5$ turns (it corresponds to $\sim$ 2.5 seconds in the SPS). This approach is valid due to the linear growth of emittance with time and the linear scaling with the noise level~\cite{PhysRevSTAB.18.101001}. The parameters used for the implementation of the $\CC$ RF noise kick in the simulations are shown in Table~\ref{tab:CC_pyheadtail_simulation_parameters}.
+
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{PyHEADTAIL simulation parameters used for the implementation of the CC RF noise kicks to study the induced emitance growth. This table is complementary of Table~\ref{tab:CC_pyheadtail_simulation_parameters}.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Horizontal / vertical beta function, $\beta_{x, \mathrm{CC}} / \beta_{y, \mathrm{CC}}$}  & \multicolumn{2}{c}{30.31\,m / 73.82\,m } \\
+      \multicolumn{2}{l}{CC frequency, $f_\mathrm{CC}$}  & \multicolumn{2}{c}{400.78\,MHz} \\
+      \multicolumn{2}{l}{Scaling factor for amplitude and phase noise, $A$}  & \multicolumn{2}{c}{$10^{-8}$} \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:CC_pyheadtail_simulation_parameters}
+   \end{centering}
+   \end{minipage}
+\end{table}
+
+\textcolor{red}{Re-write this, copy it from the IPAC21 paper.}
+Finally, as the tune spread that was present in the SPS during the emttance growth experiments of 2018 was not well characterised the emitance growth was simulated over a range of octupole-like amplitude dependent tune spread values. 
+
+and mention step 4, page 41.
+amplitude-dependent changes to its phase advances in order to model the incoherent tune shifts
+
+
+a range of octupole-like amplitude detuning.
+
+
+Instead of using an actual octupolar (non-linear) element which would result to resonance excitation
 
 
 
+where each particle recieves t
 
 
-
-\section{Setting up emittance growth simualtions}
-The setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise was done following the steps described in Section~\ref{subsec:pyheadtail}. The relevant machine and beam parameters are summarised in Table~\ref{tab:sps_pyheadtail_emit_growth_parameters}
-
-
-This section describes the setup of the PyHEADTAIL simulations that were performed to study the impact of the beam coupling impedance on the emittance growth due to $\CC$ RF noise. The machine and beam initialisation
-
+where each parti
 
 From M . schenk
 PYHEADTAIL employs the detuning implementation of the octupole magnets where
@@ -175,72 +239,18 @@ every particle receives, instead of transverse kicks, amplitude-dependent change
 
 
 
-. The optics parameters were extracted from the SPS design parameters (nominal model for Q26 optics: Section~\ref{subsec:SPS_optics_model}), excpet for the vertical alpha function at the location of the CC2, $\alpha_{y, CC2}$ which is set to zero for simplicity as its value doesn't affect the emittance evolution. \textcolor{red}{Maybe elaborate a bit more on why it doesn't affect it?}. The rest of the listed parameters were chosen to be very close to the experimental conditions during the emittance growth measurements of 2018 (discussed in Chapter~\ref{Ch:2018_analyisis}).
 
 
-\begin{table}[!hbt]
-	\begin{minipage}{\textwidth}
-      \begin{centering}
-   \caption{Relevant machine and beam parameters used to study the impact of the beam transverse impedance on the emittance evolution due to CC RF noise with the PyHEADTAIL code.}
-	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
-		&&& \\[-6mm]
-		\toprule \toprule
-		\multicolumn{2}{l}{\textbf{Parameter}} &
-		\multicolumn{2}{c}{\textbf{Value}} \\
-		\bottomrule
-      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
-      \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b} \\
-      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{1 / 1} \\
-      \multicolumn{2}{l}{Main RF voltage / frequency,  $\VRF$ / $\fRF$}  & \multicolumn{2}{c}{5.088\,MV / 200.39\,MHz} \\ %200.3945
-      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051} \\
-      \multicolumn{2}{l}{$\CC 2$ voltage / frequency, $\VCC $ / $\fCC$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
-      \multicolumn{2}{l}{Vertical beta function at $\CC 2$, $\beta_{y, CC2}$}  & \multicolumn{2}{c}{73.82\,m} \\
-      \multicolumn{2}{l}{Vertical alpha function at $\CC 2$, $\alpha_{y, CC2}$}  & \multicolumn{2}{c}{0\,m} \\
-      \multicolumn{2}{l}{Vertical dispersion at $\CC 2$, $D_{y, CC2}$}  & \multicolumn{2}{c}{0\,m} \\
-      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
-      \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.8 \,ns$^\ast$}\\
-      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m^\ast}$}\\
-      \multicolumn{2}{l}{Horizontal / Vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{2.02 $\times 10^{-5}$ / 2.17 $\times 10^{-5}$ $^\dagger$}\\
-      \bottomrule
-	\end{tabu}
-   \label{tab:sps_pyheadtail_emit_growth_parameters}
-   \end{centering} \footnotesize{$^\ast$ Initial values at the beginning of the tracking.\\$^\dagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calulcations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
-   \end{minipage}
-\end{table}
-
-\normalsize{\textbf{Crab Cavity RF noise levels}}\\
-For the simulation studies presented in this chapter, the phase and amplitude noise are modeled as random kicks on the particles' momentum according to the work of T. Mastoridis and P. Baudrenghien in Ref~\cite{PhysRevSTAB.18.101001}, as follows:
-\begin{equation}
-    \mathrm{\textbf{Phase \ noise:}} \ y^\prime_{i,1} = y^\prime_{i, 0} + A \cos{\left ( \frac{2\pi \fCC}{c \betarel}z_i \right )},
-\end{equation}
-
-\begin{equation}
-    \mathrm{\textbf{Amplitude \ noise:}} \ y^\prime_{i, 1} = y^\prime_{i, 0} + A \sin{\left ( \frac{2\pi \fCC}{c \betarel}z_i \right )},
-\end{equation}
-
-where $i=1...N$ with being $N$ the number of macroparticles used in the simulation,  $\fCC$ is the $\CC$ frequency in Hz, $c$ is the speed of light in m/s, $\betarel$ the relativistic beta and $z_i$ the longitudinal position of each particle in m. The factor $A=\VCC$
-%slide 5: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
-
-
-
-
-\normalsize{\textbf{Amplitude detuning}}\\
-\normalsize{\textbf{Parameters particularly for simulations without imepdance effects}}\\
-\normalsize{\textbf{Parameters particularly for simulations with imepdance effects}}\\
-
-
-The parameters used for the simulations were
-
-imulations used the SPS design parameters and the beam conditions as in the experiment of 2018.
-
-Table with parameters, including macroparticles number + slices + average beta funtion for convinience.
 
 
 
 
 \section{First observations of emittance growth suppression by the impedance}
 
+Show plot with the emittance evolution from the diffrent runs, in order to show that there is this spread, which is what corresponds to the error bar in the summary plots.
+
+
+The effect of chromaticity is not taken into account in the computation of the tune spread, as it depends on the preriodic synchrotron motion and thus it cancells out.
 
 \section{Characterisation of the emittance growth suppression by the impedance}
 
