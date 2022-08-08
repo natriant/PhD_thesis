@@ -133,6 +133,7 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
 \end{equation}
 
 
+ % pyheadtail_data/final_for_thesis/2018_conditions/study_0_DQ_vs_intensity/
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
@@ -160,6 +161,7 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
 
  The coherent betatron tune as a function of intensity obtained using PyHEADTAIL and the updated wakefields model is plotted in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_updated_model} against the analytical predictions from Sacherer formula. In the both transverse planes, the results from the simulations and the theory are in very good agreement ($\leq 5\%$) which is within the uncertainty that one can expect from the model implementation. 
 
+ % pyheadtail_data/final_for_thesis/2018_conditions/study_0_DQ_vs_intensity/
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
@@ -215,40 +217,11 @@ At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each parti
    \end{minipage}
 \end{table}
 
-Finally, as mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. To this end, as the machine non-linearities were not explicitly characterised during the experiment, the dependence 
+Finally, as mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. For the studies presneted in this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
+The sensitivity on the cross-term is discussed in the next chapter, again for $\alpha_{xy} = 0$ as its value does not affect the results since there is no coupling between the horizontal and vertical plane.
 
 
-on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. The horizontal detuning coefficient and the cross-term were left at zero, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
-
-
-
-
-
-Finally, as the tune spread that was present in the SPS during the emttance growth experiments of 2018 was not well characterised the emitance growth was simulated over a range of octupole-like amplitude dependent tune spread values. 
-
-and mention step 4, page 41.
-amplitude-dependent changes to its phase advances in order to model the incoherent tune shifts
-
-
-a range of octupole-like amplitude detuning.
-
-
-Instead of using an actual octupolar (non-linear) element which would result to resonance excitation
-
-
-
-where each particle recieves t
-
-
-where each parti
-
-From M . schenk
-PYHEADTAIL employs the detuning implementation of the octupole magnets where
-every particle receives, instead of transverse kicks, amplitude-dependent changes to its phase advances in order to model the incoherent tune shifts
-
-
-
-
+- Average over runs.
 
 
 
