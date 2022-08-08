@@ -114,11 +114,12 @@ The bunch poulation of the different intensity values, was represented by $5 \ti
 
 For all the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
 
-To facilitate the observation of the coherent tune, the bunch was intialised with a static offset of 0.15$\sigma_{x,y}$ in both transvserse planes\footnote{The rms transverse beam size at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields.}, such as it performes dipole oscillations around the machine. Then, it was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis and its python implementation, NAFFlib, can be found in the corresponding package in Ref.~\cite{nafflib_repository}, on the turn-by-turn centroid motion. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed cohernet tune (in the absence of impedance) which equals the $Q_{u0}$ value.
+To facilitate the observation of the coherent tune, the bunch was intialised with a static offset of 0.15$\sigma_{x,y}$ in both transverse planes\footnote{The rms transverse beam size at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields.}, such as it performs dipole oscillations around the machine. Then, it was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis, and its python implementation, NAFFlib, can be found in the corresponding package in Ref.~\cite{nafflib_repository}, on the turn-by-turn centroid motion. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed coherent tune (in the absence of impedance) which equals the $Q_{u0}$ value.
+
 
 Finally, the dependence of the coherent tune on the intensity value was studied in the absence of other detuning effects (such as chromaticity or detuning with transverse amplitude, even though they mainly introduce incoherent tune shifts). % Do they also introduce some small coherent tune?
 
-The simulation was repeated for a range of bunch intensities, $N_b$, equally-spaced from 0 to $5 \cdot 10^{10}$ protons per bunch. This range was chosen to be in the vicinity of the bunch intensity of the $\CC$ experiments of 2018, where $N_b$ was $3\times 10^{10}$ protons per bunch. $N_b=0$ is not a realistic value. However, it is used here as the reference point for which the coherent betatron tune equals zero. The simulation results are plotted against the theoretically expected tune shifts in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model}.
+The simulation was repeated for a range of bunch intensities, $N_b$, equally-spaced from 0 to $5 \times 10^{10}$ protons per bunch. This range was chosen to be in the vicinity of the bunch intensity of the $\CC$ experiments of 2018, where $N_b$ was $3\times 10^{10}$ protons per bunch. $N_b=0$ is not a realistic value. However, it is used here as the reference point for which the coherent betatron tune equals zero. The simulation results are plotted against the theoretically expected tune shifts in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model}.
 
 The theoretically expected values are computed from Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l} for $l=0$ and using only the imaginary part of the imepdance. Given that $\Gamma(1/2)=\sqrt{\pi}$ and $Q_u = \omega_{u0}/\omega_\mathrm{rev}$ equation Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
 \begin{equation}\label{eq:real_tune_shfit_for_coherent_mode}
@@ -153,24 +154,24 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
  \end{figure}
 
  Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model does not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer with the impedance model. This discrepancy hadn't been observed before as this study has not been conducted for such low intensities (the usual intensity range for this type of study is in the order of $10^{11}$ protons per bunch ~\cite{Beck:2683038}) and short bunches. %p.101
- The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or their implementation in the simualtion. Given the fact that the studies with $\CC$s are quite sensitive on the coherent tune shift with intensity from the coupling impedance (this will be discussed in the following paragraphs of this chapter) it is crucial to identify the reason for the observed discrepancy and resolve it.
+ The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or with their implementation in the simualtion. Given the fact that the studies with $\CC$s are quite sensitive on the coherent tune shift with intensity from the coupling impedance (this will be discussed in the following paragraphs of this chapter) it is crucial to identify the reason for the observed discrepancy and resolve it.
 
- After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. The details of this work are not discussed here as they are out of the scope of this thesis and they were not performed by the author. The re-computed wake functions along with the rest of the components of the original model can be found in the gihub repository of Ref. . and it will be reffered to as the "updated wakefields" model.
+ After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch.} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. The details of this work are not discussed here as they are out of the scope of this thesis and they were not performed by the author. The re-computed wake functions along with the rest of the components of the original model can be found in the gihub repository of Ref. . and it will be reffered to as the "updated wakefields" model.
 
-The coherent betatron tune as a function of intensity obtained using PyHEADTAIL and the updated wakefields model is plotted in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_updated_model} against the analytical predictions from Sacherer formula. In the vertical plane the results from the simualtions and the theory are in very good agreement ($~5\%$) which within the uncertainty that one can expect from the model implementation. In the horizontal plane the discrepancy is still large but the analytical computations of the wakes for resolving was not conducted. The reason for this is that these computations are time expensive and the resolving the discrepancy on the horizontal plane was not considered urgent as our studies on the emittance growth concern only the vertical plane following the SPS experiments of 2018, which were performed with a vertical $\CC$ module (that provided a deflection of the beam in the vertical plane).
+ The coherent betatron tune as a function of intensity obtained using PyHEADTAIL and the updated wakefields model is plotted in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_updated_model} against the analytical predictions from Sacherer formula. In the both transverse planes, the results from the simulations and the theory are in very good agreement ($\leq 5\%$) which is within the uncertainty that one can expect from the model implementation. 
 
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{images/Ch7/Qx_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        \includegraphics[width=1\textwidth]{images/Ch7/Qx_vs_intensity_complete_impedance_sps_q26model_updated_MD2018_parameters_integer.png}
         %\caption{$y=\sin(2 \pi f t),\ f=50$ Hz}
         %\label{fig:add_label_here}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{images/Ch7/Qy_vs_intensity_complete_impedance_sps_q26model_MD2018_parameters.png}
+        \includegraphics[width=1\textwidth]{images/Ch7/Qy_vs_intensity_complete_impedance_sps_q26model_updated_MD2018_parameters_integer.png}
         %\caption{Discrete Fourier transform}
         %\label{fig:add_label_here}
     \end{subfigure}
@@ -179,7 +180,7 @@ The coherent betatron tune as a function of intensity obtained using PyHEADTAIL 
      \label{fig:sps_coherent_DQ_vs_intensity_updated_model}
  \end{figure}
 
- The above figure confirms the correct implementation of the updated wakefields model in PyHEADTAIL in the plane of interest (vertical) and therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
+ The above figure confirms the correct implementation of the updated wakefields model in PyHEADTAIL and therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
 
 \section{Emittance growth simulations setup}\label{sec:setup_simulations_emit_growth}
 The simualtions that were performed to investigate the impact of the beam coupling impedance on the $\CC$ RF noise-induced emittance growth were performed following the procedure and using the parameters that are described below. Any change in the choice of parameters, e.g. for some of the parametric studies, will be mentioned in the corresponding paragraph.
@@ -192,7 +193,7 @@ As already discussed in the previous section, the simualtions are performed for 
 
 The emittance growth studies were performed for intensity of $3 \times 10^{10}$ protons per bunch and for linear chromaticity of $Q^{\prime}_{x,y}=0.5$ in accordance with the 2018 experiments. The bunch population was represented by $5 \times 10^{5}$ macroparticles and the number of longitudinal slices was 500. The emittance growth was also simulated without including the wakefields. For that case the bunch population was represented by $10^{5}$ particles and no longitudinal slicing was applied.
 
-At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each particle within the bunch is updated according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and ~\eqref{eq:phase_noise_kick} for amplitude and phase noise kick respectively. The noise level is stronger than the ones of the actual $\CC$ RF system and was chosen such as it results in a reasonable growth in the simulation time of $10^5$ turns (it corresponds to $\sim$ 2.5 seconds in the SPS). This approach is valid due to the linear growth of emittance with time and the linear scaling with the noise level~\cite{PhysRevSTAB.18.101001}. The parameters used for the implementation of the $\CC$ RF noise kick in the simulations are shown in Table~\ref{tab:CC_pyheadtail_simulation_parameters}.
+At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each particle within the bunch is updated every turn according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and ~\eqref{eq:phase_noise_kick} for amplitude and phase noise kick respectively. The noise level is stronger than the ones of the actual $\CC$ RF system and was chosen such as it results in a reasonable growth in the simulation time of $10^5$ turns (it corresponds to $\sim$ 2.5 seconds in the SPS). This approach is valid due to the linear growth of emittance with time and the linear scaling with the noise level~\cite{PhysRevSTAB.18.101001}. The parameters used for the implementation of the $\CC$ RF noise kick in the simulations are shown in Table~\ref{tab:CC_pyheadtail_simulation_parameters}.
 
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
@@ -214,7 +215,15 @@ At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each parti
    \end{minipage}
 \end{table}
 
-\textcolor{red}{Re-write this, copy it from the IPAC21 paper.}
+Finally, as mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. To this end, as the machine non-linearities were not explicitly characterised during the experiment, the dependence 
+
+
+on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. The horizontal detuning coefficient and the cross-term were left at zero, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
+
+
+
+
+
 Finally, as the tune spread that was present in the SPS during the emttance growth experiments of 2018 was not well characterised the emitance growth was simulated over a range of octupole-like amplitude dependent tune spread values. 
 
 and mention step 4, page 41.
