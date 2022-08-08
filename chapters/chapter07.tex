@@ -200,7 +200,7 @@ At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each parti
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
       \begin{centering}
-   \caption{PyHEADTAIL simulation parameters used for the implementation of the CC RF noise kicks to study the induced emitance growth. This table is complementary of Table~\ref{tab:CC_pyheadtail_simulation_parameters}.}
+   \caption{PyHEADTAIL simulation parameters used for the implementation of the CC RF noise kicks for the emittance growth studies. This table is complementary of Table~\ref{tab:CC_pyheadtail_simulation_parameters}.}
 	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
@@ -217,11 +217,24 @@ At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each parti
    \end{minipage}
 \end{table}
 
-Finally, as mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. For the studies presneted in this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
-The sensitivity on the cross-term is discussed in the next chapter, again for $\alpha_{xy} = 0$ as its value does not affect the results since there is no coupling between the horizontal and vertical plane.
+As mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. For the studies presented in the following sections of this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
+The sensitivity on the cross-term is discussed in the Chapter~\ref{Ch:experimental_CC_2022}, again for $\alpha_{xy} = 0$ as the horizontal coefficient does not affect the vertical emittance growth since there is no coupling between the two transverse planes.
+
+The simulations were performed using an initial Gaussian bunch distribution in the six-dimensional phase space. This is a good approximation for the bunches used in the experimental studies of 2018. 
+
+The geometric emittance value was computed every 100 turns (for computational efficiency) using the statistical definition which can be found in Eq.~\eqref{eq:geometric_emittance_v2}. The emittance growth rate was computed by performing a linear fit to the normalised (using Eq.~\eqref{eq:normalised_emittance}) emittance values over the simualtion turns ($N_\mathrm{turns}=10^5$). Twenty simulation runs were conducted, to reduce the uncertainty of the results. The initial distribution and the sequence of noise kicks was regenerated randomly every run. 
 
 
-- Average over runs.
+
+
+
+the sequence of noise
+kicks was regenerated randomly for 20 run
+
+
+
+
+Twenty simulation runs were conducted, to reduce the uncertainty of the results, for a white phase noise with power spectral density of $1.68 \cdot 10^{-10} \mathrm{rad^2/Hz}$. The noise power is much higher than in reality to get significant emittance growth during the course of the simulation. The emittance growth over the course of the simulation is comparable to that during a coast though. 
 
 
 
