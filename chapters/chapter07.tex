@@ -123,7 +123,7 @@ The simulation was repeated for a range of bunch intensities, $N_b$, equally-spa
 
 The theoretically expected values are computed from Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l} for $l=0$ and using only the imaginary part of the imepdance. Given that $\Gamma(1/2)=\sqrt{\pi}$ and $Q_u = \omega_{u0}/\omega_\mathrm{rev}$ equation Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
 \begin{equation}\label{eq:real_tune_shfit_for_coherent_mode}
-    \Delta \Omega_u^{(0)} =  \Omega_{u0}^{(0)} - \omega_{u0} = \frac{\sqrt{\pi}}{4 \pi}\frac{N r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} Z_\mathrm{eff, im} = \frac{N r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z}Z_\mathrm{eff, im}
+    \Delta \Omega_u^{(0)} =  \Omega_{u0}^{(0)} - \omega_{u0} = \frac{\sqrt{\pi}}{4 \pi}\frac{N_b r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} Z_\mathrm{eff, im} = \frac{N_b r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z}Z_\mathrm{eff, im}
 \end{equation}
 All the parameters inserted in Eq.~\eqref{eq:real_tune_shfit_for_coherent_mode} should be converted in CGS (centimetre–gram–second) units.
 
@@ -193,15 +193,9 @@ At the location of the $\CC$ RF noise kick the horizontal and vertical beta func
 
 As already discussed in the previous section, the simualtions are performed for the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
 
-The emittance growth studies were performed for intensity of $3 \times 10^{10}$ protons per bunch and for linear chromaticity of $Q^{\prime}_{x,y}=0.5$ in accordance with the 2018 experiments. The bunch population was represented by $5 \times 10^{5}$ macroparticles and the number of longitudinal slices was 500. The emittance growth was also simulated without including the wakefields. For that case the bunch population was represented by $10^{5}$ particles and no longitudinal slicing was applied. The studies were performed using an initial Gaussian bunch distribution in the six-dimensional phase space. This is a good approximation for the bunches used in the experimental studies of 2018. 
+The emittance growth studies were performed for intensity of $3 \times 10^{10}$ protons per bunch in accordance with the 2018 experiments. The bunch population was represented by $5 \times 10^{5}$ macroparticles and the number of longitudinal slices was 500. The emittance growth was also simulated without including the wakefields. For the latter case the bunch population was represented by $10^{5}$ particles and no longitudinal slicing was applied. The studies were performed using an initial Gaussian bunch distribution in the six-dimensional phase space. This is a good approximation for the bunches used in the experimental studies of 2018. 
 
-At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each particle within the bunch is updated every turn according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise kick respectively. 
-
-
-The scaling factor for both the amplitude and phase noise $A$, was chosen  
-
-
-The noise level is stronger than the ones of the actual $\CC$ RF system and was chosen such as it results in a reasonable growth in the simulation time of $10^5$ turns (it corresponds to $\sim$2.5 seconds in the SPS). This approach is valid due to the linear growth of emittance with time and the linear scaling with the noise level~\cite{PhysRevSTAB.18.101001}. The parameters used for the implementation of the $\CC$ RF noise kick in the simulations are shown in Table~\ref{tab:CC_pyheadtail_simulation_parameters}.
+At the location of the $\CC$ RF noise kick, the angle, $y^\prime$, of each particle within the bunch is updated every turn according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise kick respectively. The scaling factor, $A$ equals $10^{-8}$ excpet if it is stated otherwise. This noise level, which corresponds to power spectal density of $1.68 \cdot 10^{-10} \mathrm{rad^2/Hz}$ or $\mathrm{1/Hz}$ for phase and amplitude noise respectively is much stronger than the ones of the actual $\CC$ RF system and was chosen such as it results in a reasonable growth in the simulation time of $10^5$ turns (it corresponds to $\sim$2.5 seconds in the SPS). The emittance growth over the course of the simulation is comparable to that during a coast though. This approach is valid due to the linear growth of emittance with time and the linear scaling with the noise level~\cite{PhysRevSTAB.18.101001}. The parameters used for the implementation of the $\CC$ RF noise kick in the simulations are shown in Table~\ref{tab:CC_pyheadtail_simulation_parameters}.
 
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
@@ -223,35 +217,32 @@ The noise level is stronger than the ones of the actual $\CC$ RF system and was 
    \end{minipage}
 \end{table}
 
-As mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. For the studies presented in the following sections of this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
-The sensitivity on the cross-term is discussed in the Chapter~\ref{Ch:experimental_CC_2022}, again for $\alpha_{xy} = 0$ as the horizontal coefficient does not affect the vertical emittance growth since there is no coupling between the two transverse planes.
+Last, the emittance growth simulation studies were performed for non-zero linear chromaticity and for non-zero detuning with the transverse amplitude. Both effects were introduced as changes in the phase advance of the individual particles according to Eq.~\eqref{eq:change_phase_advance_detunign}. The value of the linear chromaticity, $Q^{\prime}_{x,y}=0.5$ for most of the studies according to the experimental conditions of 2018. The values of the detuning coefficients will be given in the following sections.
 
 
-The geometric emittance value was computed every 100 turns (for computational efficiency) using the statistical definition which can be found in Eq.~\eqref{eq:geometric_emittance_v2}. The emittance growth rate was computed by performing a linear fit to the normalised (using Eq.~\eqref{eq:normalised_emittance}) emittance values over the simualtion turns ($N_\mathrm{turns}=10^5$). Twenty simulation runs were conducted, to reduce the uncertainty of the results. The initial distribution and the sequence of noise kicks was regenerated randomly every run.  
-
-
-sequaence of noise kicks represents white noise spectrum which excites the
-
-with mean 1 and standard deviation of $10^{-8}$. In other words the standard deviation is the parameter $A$ of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} 
-
-
-
-
-
-
-the sequence of noise
-kicks was regenerated randomly for 20 run
-
-
-
-
-Twenty simulation runs were conducted, to reduce the uncertainty of the results, for a white phase noise with power spectral density of $1.68 \cdot 10^{-10} \mathrm{rad^2/Hz}$. The noise power is much higher than in reality to get significant emittance growth during the course of the simulation. The emittance growth over the course of the simulation is comparable to that during a coast though. 
-
-
-
-
+In the following sections, the emittance growth rates will be expressed in nm/s due to the simulation time scale and will be referred to the growth of the normalised emittance values to be in agreement with the analyisis of the measured data in Chapter~\ref{Ch:2018_analyisis}.
 
 \section{First observations of emittance growth suppression by the impedance}
+
+The first emittance growth simulations were performed for the beam and machine conditions of the 2018 experiments. The parameters are listed in Tables~\ref{tab:pyheadtail_simulation_parameters} and~\ref{tab:CC_pyheadtail_simulation_parameters} and the detailed procedure is described in Section~\ref{sec:setup_simulations_emit_growth}. To give an overview, the study was conducted for a single proton bunch, energy of 270\,GeV, bunch intensity of $3 \times 10^{10}$ protons, rms bunch length $4 \sigma_t = 1.7$\,ns and linear chromaticity of 0.5 in both transverse planes. 
+
+$\CC$ phase noise was applied as it was the dominant type in the 2018 experiment, with power spectral density of $1.68 \times 10^{-10} \mathrm{rad^2/Hz}$ \footnote{It corresponds to $A=10^{-8}$ for the scaling factor of Eq.~\eqref{eq:phase_noise_kick}}. For this noise power a growth rate of about 25\,nm/s is expected (exciting the first betatron sidebands at $\pm$7.8~\,kHz \footnote{The frequency in Hz of the first betatron sidebands is computed according to Eq.~\eqref{eq:phase_noise_kick}:  }). 
+
+
+The growth rate is computed using Eq... and also be transfomed to normalised emittance.
+
+
+As mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances.}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. For the studies presented in the following sections of this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
+The sensitivity on the cross-term is discussed in the Chapter~\ref{Ch:experimental_CC_2022}, again for $\alpha_{xy} = 0$ as the horizontal coefficient does not affect the vertical emittance growth since there is no coupling between the two transverse planes.
+
+Last, the linear chromaticity equals $Q^{\prime}_{x,y}$ in both transverse planes according to the 2018 experimental conditions and it was also introduced as a change of the phase advance of the particles according to Eq.~\eqref{eq:change_phase_advance_detunign}. Higher order chromaticities were considered negligible.
+
+
+
+
+Phase noise as it was dominant during the experiment for A = 1e-8.
+
+The geometric emittance value was computed every 100 turns (for computational efficiency) using the statistical definition which can be found in Eq.~\eqref{eq:geometric_emittance_v2}. The emittance growth rate was computed by performing a linear fit to the normalised (using Eq.~\eqref{eq:normalised_emittance}) emittance values over the simualtion turns ($N_\mathrm{turns}=10^5$). Twenty simulation runs were conducted, to reduce the uncertainty of the results. The initial bunch distribution and the sequence of the uncorrelated noise kicks were regenerated randomly for every run.  
 
 Show plot with the emittance evolution from the diffrent runs, in order to show that there is this spread, which is what corresponds to the error bar in the summary plots.
 
