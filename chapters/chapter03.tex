@@ -91,7 +91,7 @@ Figure~\ref{fig:amplitude_noise} and Fig.~\ref{fig:phase_noise} provide a schema
  Finally, it is worth mentioning, that for the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$ respectively which equals the total noise power (see Appendix~\ref{app:discrete_time_analysis} for definitions). % sampled by the beam, as also written here: https://www.osti.gov/servlets/purl/1846026 
 
 \subsection{Emittance growth formulas}\label{subsec:CC_emit_growth_theoretical_formulas}
-As already mentioned, the theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in Ref.~\cite{PhysRevSTAB.18.101001}. The derivation assumes a single bunch, that the noise kicks are represented by a stochastic process, zero coupling between the horizontal and vertical plane, the beam energy is constant (no acceleration) and, $\CC$ RF zero phase is at the center of the bunch, $z=0$ and a uniform noise spectrum across the betatron tune distribution. 
+As already mentioned, the theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in Ref.~\cite{PhysRevSTAB.18.101001}. The derivation assumes a single bunch, that the noise kicks are represented by a stochastic process, zero coupling between the horizontal and vertical plane, the beam energy is constant (no acceleration) and, $\CC$ RF zero phase is at the center of the bunch, $z=0$ and a uniform noise spectrum across the betatron tune distribution which is also symmetric in negative and positive frequencies. 
 % One more assumption that I didn't write Inthe analysis presented in this work, the density function is independent of time (paper of themis and philippe p.2) i didn't write it in the assumption.
 
 Taking these conditions into account, the emittance growth resulting from amplitude noise is estimated from:
@@ -102,8 +102,7 @@ For phase noise, the emittance growth is estimated from:
 \begin{equation}\label{eq:dey_pn}
     \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \beta_{u, \mathrm{CC}}  \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \widebar{q}_u) \frev].
 \end{equation}
-In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} and $k \geq 0$ is the sideband number. %p.6-7 In the paper of Themis and Philippe.
-It should be noted, that $q_u, q_s$ (with lower case) denote the decimal part of the betatron and synchrotron tune distribution respectively. The $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands of the betatron and synchrobetatron frequencies. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}.
+In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} where $q_u, q_s$ (with lower case) denote the decimal part of the betatron and synchrotron tunes respectively and $k \in \mathbb{Z}$ is the harmonic number of the revolution frequency. The $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands at each mulitple of the revolution frequency, $k f_\mathrm{rev}$. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}.
 $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
 \begin{align}
 C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
@@ -133,6 +132,23 @@ Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term fo
      \caption{Correction term for amplitude (left) and phase (right) noise over a range of bunch length values.} % bunch passage
      \label{fig:correction_term_bunch_length}
  \end{figure}
+
+\textbf{Comment on the use of the emittane growth formulas}\\
+Here some additional comments on the use of the Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} for predicting the emittance growth rate for both measurements and simulation studies of this thesis are made to facilitate the discussion in the following chapters.
+
+In this thesis, the emittance growth in the vertical plane is addressed. The reason is that for both experimental campaigns that took place in 2018 and 2022, the $\CC$ module that was available provided a vertical deflection on the beam. For reference, the $\CC$ module which provides horizontal deflection is planned to be available by the end of 2022. 
+
+To this end, the emittance growth induced by $\CC$ RF noise depends on the PSD value of the noise at the vertical betatron and synchrobetatron sidebands for the phase and amplitude noise case respectively (see Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). The first and second vertical betatron sidebands are observed in the following frequencies:
+\begin{equation}\label{eq:betatron_sideband_1}
+    \mathrm{k=0}: \ (0 \pm \widebar{q}_y) f_\mathrm{rev} = \pm 0.18 \times 43.38\,kHz \approx 7.8\mathrm{\,kHz}.
+\end{equation}
+\begin{equation}\label{eq:betatron_sideband_2}
+    \mathrm{k=1}: \ (1 \pm \widebar{q}_y) f_\mathrm{rev} = 1 \pm 0.18 \times 43.38\,kHz \approx 7.8\mathrm{\,kHz}.
+\end{equation}
+The first and second vertical synchrobetatron sidebands are observed in the following frequencies:
+
+
+the overlap of vertical tune distribution and the actual noise spectrum. 
 
 
 \section{Studies in KEKB}\label{eq:past_studies_KEKB}
