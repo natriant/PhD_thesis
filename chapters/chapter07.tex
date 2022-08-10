@@ -253,12 +253,29 @@ It can be seen that when the wakefield kicks are not applied on the beam the emi
 Figure~\ref{fig:MD_2018_impedance_simulations} also shows a clear suppression of the transverse emittance growth when the wakefield kicks are included. The suppression depends on the tune spread and is asymmetric for positive and negative values of the detuning coefficient. Over a realistic range of tune spread values (estimated with MAD-X~\cite{madx} including the non-linearities of SPS~\cite{Carlà:2664976, Alekou:2640326} and $Q^\prime_{x,y}$ = 0.5, and shown by the grey shaded area in Fig.~\ref{fig:MD_2018_impedance_simulations}) the suppression reaches up to a factor 4-5. This suppression is very close to that observed in the experiments and suggests that the impedance effects might explain the discrepancy between the measured and theoretically estimated emittance growth rates.
 
 
-It appears that effects from the beam coupling impedance is an important factor to be considered for such studies. The effect of the suppression of noise-induced emittance growth from the beam coupling impedance has not been observed before. To this end, a series of studies were performed to characterised this effect and understand the mechanism behind it. These studies, will be addressed in the following sections.
+It appears that effects from the beam coupling impedance is an important factor to be considered for such studies. The effect of the suppression of noise-induced emittance growth from the impedance has not been observed before. To this end, a series of studies were performed to characterised this effect and understand the mechanism behind it. These studies, will be addressed in the following sections.
 
 
-\section{Characterisation of the emittance growth suppression by the impedance}
+\section{Characterisation of the emittance growth suppression by the impedance}\label{sec:}
+
+As discussed in the previous section, PyHEADTAIL simulations showed that the transverse beam impedance (not included in the theory of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}) has a significant impact on the $\CC$ RF noise-induced emittance growth.
+
+
+
+The studies were performed following the procedure described in 
 
 \section{Suppresion mechanism}\label{sec:suppression_mechanism}
 \subsection{Past studies with beam-beam interactions}\label{subsec:past_studies_impedance_suppression_BB}
 \subsection{Intensity scans}
 \subsection{Schottky noise spectra}
+
+\section{Towards HL-LHC case}
+
+I might make a comment:
+% From 30 months progress report doctoral: cernbox/Documents/education/cern/doctoral/30months_progress_report
+Detailed studies with PyHEADTAIL showed that the emittance growth suppression can reach up to a factor of 2-4 for crab cavity phase noise when the bunch length is longer than the cavity wavelength, which was the case for the SPS experiments. However, for short bunch lengths, which will be the case in the HL-LHC, the suppression factor was found to be similar to the case of pure dipolar noise reaching a factor of 10. The scope of this project is also to characterize the impact of the crab cavities in the long-term emittance evolution in HL-LHC. Thus, the interplay of the transverse impedance and the transverse feedback system, which is planned to suppress the crab cavity noise induced emittance growth in HL-LHC, started being investigated. The first simulation results indicate that the emittance suppression from the feedback system is not affected by the impedance, due to the much faster damping time of the former.
+
+\section{Conclusions}
+% From 30 months progress report doctoral: cernbox/Documents/education/cern/doctoral/30months_progress_report
+You need to modiy it a bit.
+In a second step, simulations including the complete transverse impedance model of SPS, which was not taken into account so far, were performed with PyHEADTAIL. It was found that the transverse impedance can suppress the crab cavity noise induced emittance growth once the coherent tune, which is shifted by the impedance, moves out of the incoherent tune spectrum. It turns out that the decoherence process is slowed down and thus the noise induced emittance growth is suppressed. This mechanism, which has been observed in the past as a result of beam-beam interactions, is related to the transverse dipole oscillation of the beam. To this end the suppression is not observed for amplitude but only for phase noise induced emittance growth.
