@@ -244,7 +244,7 @@ The simulations were performed with and without the SPS impedance model to study
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
     \includegraphics[width=0.85\textwidth]{images/Ch7/deyRates_final_2018_PN_sps_270GeV_PN1e-8_400MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS.png}
-        \caption{Transverse emittance growth without (blue) and with (orange) the impedance effects.}
+        \caption{Transverse emittance growth driven by CC RF phase noise without (blue) and with (orange) the impedance effects.}
         \label{fig:MD_2018_impedance_simulations}
  \end{figure}
 
@@ -265,14 +265,16 @@ This section, discusses the results of the exploratory simulation studies which 
 The simulations were conducted following the same pattern as the case discussed in the previous section. Nevertheless, the main relevant parameters for each case will also be listed in the corresponding section.
 
 \subsection{Amplitude noise}
-The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with power spectral density of $1.68 \times 10^{-10}$ 1/Hz which corresponds to $A=10^{-8}$ for the scaling factor in Eq.~\eqref{eq:amplitude_noise_kick}. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in 
+The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with power spectral density of $1.68 \times 10^{-10}$ 1/Hz which corresponds to $A=10^{-8}$ for the scaling factor in Eq.~\eqref{eq:amplitude_noise_kick}. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in Fig.~\ref{fig:study_1_2018_paramters_AN}.
 
+\begin{figure}[!h] % at the directory of ipac22
+    \centering         
+    \includegraphics[width=0.85\textwidth]{images/Ch7/deyRates_final_2018_AN_sps_270GeV_AN1e-8_400MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS.png}
+        \caption{Transverse emittance growth driven by CC RF amplitude noise without (blue) and with (orange) the impedance effects.}
+        \label{fig:study_1_2018_paramters_AN}
+ \end{figure}
 
- 
-As the phase noise kick is similar to a dipolar noise kick but with a high order distortion it seems that the suppression form the impedance is related to the dipole motion.
-
-- Add main parameters.
-
+ It can be seen that the emittance growth rate agrees very well with the value predicted by Eq.~\eqref{eq:dey_an} and (within the reproducibility of the simulation) is independent of the tune spread value both when the wakefields are included and when they are not. In other words, the simulations demonstrate that the emittance growth driven by $\CC$ RF amplitude noise is not suppressed by impedance induced effects. As the phase noise kick is similar to a dipolar noise kick but with a high order distortion it seems that the suppression form the impedance is related to the dipole motion.
 
 
 
