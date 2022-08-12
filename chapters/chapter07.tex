@@ -185,7 +185,9 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
      \label{fig:sps_coherent_DQ_vs_intensity_updated_model}
  \end{figure}
 
- The above figure confirms the correct implementation of the updated wakefields model in PyHEADTAIL and therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
+ The above figure demonstrates that the updated wakefields model is reliable and it confirms that its implementation in PyHEADTAIL is correct. Therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
+
+ %The above figure confirms the correct implementation of the updated wakefields model in PyHEADTAIL and therefore it will be used to study the interplay of the $\CC$ noise induced emittance growth with impedance induced effects. These studies are presented in the following chapter.
 
 \section{Emittance growth simulations setup}\label{sec:setup_simulations_emit_growth}
 The simualtions that were performed to investigate the impact of the beam coupling impedance on the $\CC$ RF noise-induced emittance growth were performed following the procedure and using the parameters that are described below. Any change in the choice of parameters, e.g. for some of the parametric studies, will be mentioned in the corresponding paragraph.
@@ -273,10 +275,19 @@ The simulations discussed here were performed with and without the SPS imepdance
 
 
  \subsection{CC RF noise at 200\,MHz}\label{subsec:fcc_200MHz}
+The study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}). The main reason for this study is that in that case in the presence of phase (amplitude) noise the headtail mode 0 (1) is more dominant than in the case of RF noise at 400\,MHz. 
 
-The study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}).
+- close to hl-lhc case. where the main RF system and the cc will be at 400 MHz
 
 
+The simulations were performed with and without the SPS impedance model in the presence of both amplitude and phase noise. The power spectral density
+
+
+The noise level was scaled such as it results in emittance growth rate similar to the studies presented in section 7.3~ 25 nm/s.
+
+
+% amplitude noise: pyheadtail_data/final_for_thesis/2018_conditions/study_4_amplitude_noise_200MHz
+% phase noise: pyheadtail_data/final_for_thesis/2018_conditions/study_3_phase_noise_200MHz
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
@@ -297,20 +308,9 @@ The study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=2
      \label{fig:CC_200MHz_amplitude_phase_noise}
  \end{figure}
 
-in the presence 
 
-In that case, the headtail mode 0 is more dominant than in the case of RF noise at 400\,MHz,
-
-. The simulations were performed with and without the SPS impedance model in the presence of both amplitude and phase noise, 
-
-
-The noise level was scaled such as it results in emittance growth rate similar to what was discussed previously ~ 25 nm/s.
-
-
-
-
-
-In that case, the headtail mode 0 is more dominant than in the case of RF noise at 400\,MHz,
+One more evident that the suppression is related 
+This is the case for hl-lhc
 
 
 
@@ -320,8 +320,12 @@ In that case, the headtail mode 0 is more dominant than in the case of RF noise 
 
 In the subsection with the fcc at 200 Mhz is like in the hl=lhc case with short bunches. see 30 months progress report.
 \subsection{Pure dipolar noise kick}\label{subsec:dipole_noise}
+Based on this result, the next step is to validate that the suppression is indeed associated with the headtail mode 0.
+
+This can be achieved by applying a pure dipolar noise kick on the beam, as shown in Eq..
 
 \subsection{Sensitivity to linear chromaticity}\label{subsec:chroma_scan}
+The PyHEADTAIL results of the scan in the linar chromaticity values, $Q^{\prime}_y$ are displayed in Fig
 
 \subsection{Disentangle quadrupolar and dipolar contribution}\label{subsec:quad_vs_dipole}
 
