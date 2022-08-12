@@ -160,7 +160,7 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
  Figure~\ref{fig:sps_coherent_DQ_vs_intensity_original_complete_model} shows that the coherent tune shift from the analytical model does not agree with simulation results. In particular the wakefields implementation in the PyHEADTAIL results just to $\sim 50 \%$ and $\sim 70 \%$ of the total coherent tune shift estimated using the analytical formula of Sacherer with the impedance model. This discrepancy hadn't been observed before as this study has not been conducted for such low intensities (the usual intensity range for this type of study is in the order of $10^{11}$ protons per bunch ~\cite{Beck:2683038}) and short bunches. %p.101
  The analytical predictions from Sacherer formula have been repeatedly successfully benchmarked against beam measurements~\cite{Bartosik:1742183, sps_impedance_measurements_vs_model} which indicates that there is an issue with the model of the wakes or with their implementation in the simualtion. Given the fact that the studies with $\CC$s are quite sensitive on the coherent tune shift with intensity from the coupling impedance (this will be discussed in the following paragraphs of this chapter) it is crucial to identify the reason for the observed discrepancy and resolve it.
 
- After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch.} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. The details of this work are not discussed here as they are out of the scope of this thesis and they were not performed by the author. The re-computed wake functions along with the rest of the components of the original model can be found in the gihub repository of Ref. . and it will be reffered to as the "updated wakefields" model.
+ After several studies and discussions with the experts on the topic \footnote{In particular with Carlo Zannini, carlo.zannini@cern.ch.} it was identified that the components of the resistive wall, the kickers, and the step transitions needed to be re-computed to provide higher accuracy at the lower frequencies. The details of this work are not discussed here as they are out of the scope of this thesis and they were not performed by the author. The re-computed wake functions along with the rest of the components of the original model can be found in the gihub repository of Ref.~\cite{updated_sps_wakfields_model} and it will be reffered to as the "updated wakefields" model.
 
  The coherent betatron tune as a function of intensity obtained using PyHEADTAIL and the updated wakefields model is plotted in Fig.~\ref{fig:sps_coherent_DQ_vs_intensity_updated_model} against the analytical predictions from Sacherer formula. In the both transverse planes, the results from the simulations and the theory are in very good agreement ($\leq 5\%$) which is within the uncertainty that one can expect from the model implementation. 
 
@@ -181,7 +181,7 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
         %\label{fig:add_label_here}
     \end{subfigure}
     \hfill
-     \caption{Horizontal (left) and vertical (right) coherent tunes as a function of intensity in the presence of the beam coupling SPS imepdance obtained using analytical formula (blue dashed line) and PyHEADTAIL tracking simulations (orange line). The impedance model and the wake functions ("updated wakefields" model) used are available in the public repositories of Ref.~\cite{sps_impedance_model_git} and Ref.. respectively.} % bunch passage
+     \caption{Horizontal (left) and vertical (right) coherent tunes as a function of intensity in the presence of the beam coupling SPS imepdance obtained using analytical formula (blue dashed line) and PyHEADTAIL tracking simulations (orange line). The impedance model and the wake functions ("updated wakefields" model) used are available in the public repositories of Ref.~\cite{sps_impedance_model_git} and Ref.~\cite{updated_sps_wakfields_model} respectively.} % bunch passage
      \label{fig:sps_coherent_DQ_vs_intensity_updated_model}
  \end{figure}
 
@@ -190,7 +190,7 @@ Then the coherent betatron tune shift is computed by inserting the result of Eq.
 \section{Emittance growth simulations setup}\label{sec:setup_simulations_emit_growth}
 The simualtions that were performed to investigate the impact of the beam coupling impedance on the $\CC$ RF noise-induced emittance growth were performed following the procedure and using the parameters that are described below. Any change in the choice of parameters, e.g. for some of the parametric studies, will be mentioned in the corresponding paragraph.
 
-The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of two segments with two interaction points. In the first one $\CC$ noise-like kicks are applied on the beam particles while in the second one the the beam interacts with the wakefields as discussed in the previous section. The updated wakefields model Ref... of the SPS was used.
+The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of two segments with two interaction points. In the first one $\CC$ noise-like kicks are applied on the beam particles while in the second one the the beam interacts with the wakefields as discussed in the previous section. The updated wakefields model Ref.~\cite{updated_sps_wakfields_model} of the SPS was used.
 
 At the location of the $\CC$ RF noise kick the horizontal and vertical beta functions equals the values at the location of the $\CC2$ which was used in the experiments of 2018. At the location, where the wakefield kicks are applied the transverse beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). 
 
@@ -231,13 +231,10 @@ The first emittance growth simulations were performed for the beam and machine c
 
 $\CC$ phase noise was applied as it was the dominant type in the 2018 experiment, with power spectral density of $1.68 \times 10^{-10} \mathrm{rad^2/Hz}$ which corresponds to $A=10^{-8}$ for the scaling factor of Eq.~\eqref{eq:phase_noise_kick}. For this noise power a growth rate of about 25\,nm/s is expected (exciting the first betatron sidebands at $\pm$7.8~\,kHz, see further discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}). 
 
-
 The geometric emittance value was computed every 100 turns (for computational efficiency) using the statistical definition which can be found in Eq.~\eqref{eq:geometric_emittance_v2}. The emittance growth rate was computed by performing a linear fit to the normalised (using Eq.~\eqref{eq:normalised_emittance}) emittance values over the simualtion turns ($N_\mathrm{turns}=10^5$). Twenty simulation runs were conducted, to reduce the uncertainty of the results. The initial bunch distribution and the sequence of the uncorrelated noise kicks were regenerated randomly for every run. The mean and the standard deviation (including the uncertainty on the slope of the fit) were computed over all the trials.  
-
 
 As mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. As the machine non-linearities were not explicitly characterised during the experiment, the dependence on the octupole-like amplitude dependent tune spread was studied. Instead of using an actual octupolar (non-linear) element which would result to resonance excitation\footnote{In the real SPS machine the Landau octupoles are installed in families of focusing and defocusing in order to avoid the excitation of resonances.}, the amplitude dependent tune shift was introduced as changes to the phase advance of the particles depending on their individual action as discussed in Eq.~\eqref{eq:change_phase_advance_detunign}. More specifically, the dependence on the detuning coefficient in the vertical plane, $\alpha_{yy}$, was studied. In particular $\alpha_{yy}$ ranges from $-$20000 to 20000\,1/m . For the studies presented here and in the following sections of this chapter, the horizontal detuning coefficient and the cross-term were left at zero for simplicity, i.e.~$\alpha_{xx} = \alpha_{xy} = 0$. % for better control over the simulations. This choice is also based on the fact that their value doesn't affect the results.
 The sensitivity on the cross-term is discussed in the Chapter~\ref{Ch:experimental_CC_2022}, again for $\alpha_{xy} = 0$ as the horizontal coefficient does not affect the vertical emittance growth since there is no coupling between the two transverse planes.
-
 
 The simulations were performed with and without the SPS impedance model to study its impact on the emittance growth induced by CC noise. Figure~\ref{fig:MD_2018_impedance_simulations} shows the dependence of the growth rates on the amplitude detuning coefficient, $\alpha_{yy}$. The secondary horizontal axis shows the resulting rms tune spread computed using Eq.~\eqref{eq:rms_amplitute_detuning_3}. Incoherent tune shift from other sources, than the detuning with transverse amplitude are not included. In particular, the effect of chromaticity is not taken into account in the computation of the tune spread as it varies periodically with the synchrotron period \textcolor{red}{(does it cancel out?)} and the incoherent tune shift from the impedance is considered negligible. 
 
@@ -252,19 +249,17 @@ It can be seen that when the wakefield kicks are not applied on the beam the emi
 
 Figure~\ref{fig:MD_2018_impedance_simulations} also shows a clear suppression of the transverse emittance growth when the wakefield kicks are included. The suppression depends on the tune spread and is asymmetric for positive and negative values of the detuning coefficient. Over a realistic range of tune spread values (estimated with MAD-X~\cite{madx} including the non-linearities of SPS~\cite{Carlà:2664976, Alekou:2640326} and $Q^\prime_{x,y}$ = 0.5, and shown by the grey shaded area in Fig.~\ref{fig:MD_2018_impedance_simulations}) the suppression reaches up to a factor 4-5. This suppression is very close to that observed in the experiments and suggests that the impedance effects might explain the discrepancy between the measured and theoretically estimated emittance growth rates.
 
-
 To sum up, PyHEADTAIL simulations showed for the first time that the transverse beam impedance (which is not included in the theory of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}) has a significant impact on the emittance growth driven by $\CC$ RF noise. The effect of the suppression of noise-induced emittance growth from the impedance has not been observed before. 
 To characterise this effect and to be able to understand the mechanism behind it, a series of exploratory studies were conducted and are discussed in the following section. 
 
 
-\section{Characterisation of the emittance growth suppression by the impedance}\label{sec:}
-
+\section{Characterisation of the emittance growth suppression by the impedance}\label{sec:emittance_growth_exploratory_studies}
 
 This section, discusses the results of the exploratory simulation studies which investigate the suppression of the $\CC$ RF noise-induced emittance growth be the transverse beam coupling impedance. The goal is to characterise the effect and understand the mechanism behind it. First, the impact of the imepdance is studied in the presence of amplitude noise and in the presence of a noise kick (both in amplitude and phase) from a $\CC$ with the same frequency as the main RF system of the machine (HL-LHC scenario). Then, the effect of the impedance in the presence of a pure dipolar noise kick was simulated followed by a sensitivity study on the impact of the linear chromaticity. Finally, the impact of the dipolar and quadrupolar wakefields was disentangled. 
 
 The simulations were conducted following the same pattern as the case discussed in the previous section. Nevertheless, the main relevant parameters for each case will also be listed in the corresponding section.
 
-\subsection{Amplitude noise}
+\subsection{Amplitude noise}\label{subsec:amplitude_noise}
 The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with power spectral density of $1.68 \times 10^{-10}$ 1/Hz which corresponds to $A=10^{-8}$ for the scaling factor in Eq.~\eqref{eq:amplitude_noise_kick}. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in Fig.~\ref{fig:study_1_2018_paramters_AN}.
 
 \begin{figure}[!h] % at the directory of ipac22
@@ -274,15 +269,61 @@ The simulations discussed here were performed with and without the SPS imepdance
         \label{fig:study_1_2018_paramters_AN}
  \end{figure}
 
- It can be seen that the emittance growth rate agrees very well with the value predicted by Eq.~\eqref{eq:dey_an} and (within the reproducibility of the simulation) is independent of the tune spread value both when the wakefields are included and when they are not. In other words, the simulations demonstrate that the emittance growth driven by $\CC$ RF amplitude noise is not suppressed by impedance induced effects. As the phase noise kick is similar to a dipolar noise kick but with a high order distortion it seems that the suppression form the impedance is related to the dipole motion.
+ It can be seen that the emittance growth rate agrees very well with the value predicted by Eq.~\eqref{eq:dey_an} and (within the reproducibility of the simulation) is independent of the tune spread value both when the wakefields are included and when they are not. In other words, the simulations demonstrate that the emittance growth driven by $\CC$ RF amplitude noise (which is associated with the headtail mode 1) is not suppressed by impedance induced effects. As the phase noise kick is similar to a dipolar noise kick (headtail mode 0) but with a high order distortion it seems that the suppression form the impedance is related to the dipole motion.
+
+
+ \subsection{CC RF noise at 200\,MHz}\label{subsec:fcc_200MHz}
+
+The study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}).
+
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/deyRates_final_2018_AN_sps_270GeV_PN1e-8_200MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS_200MHz.png}
+        \caption{Amplitude noise}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Ch7/deyRates_final_2018_PN_sps_270GeV_PN1e-8_200MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS_200MHz.png}
+        \caption{Phase noise}
+        %\label{fig:add_label_here}
+    \end{subfigure}
+    \hfill
+     \caption{Transverse emittance growth driven by CC RF noise at $\CCfrequency=$200\,MHz without (blue) and with (orange) the impedance effects.} % bunch passage
+     \label{fig:CC_200MHz_amplitude_phase_noise}
+ \end{figure}
+
+in the presence 
+
+In that case, the headtail mode 0 is more dominant than in the case of RF noise at 400\,MHz,
+
+. The simulations were performed with and without the SPS impedance model in the presence of both amplitude and phase noise, 
+
+
+The noise level was scaled such as it results in emittance growth rate similar to what was discussed previously ~ 25 nm/s.
 
 
 
 
 
+In that case, the headtail mode 0 is more dominant than in the case of RF noise at 400\,MHz,
 
+
+
+
+ 
+ However, for short bunch lengths, which will be the case in the HL-LHC, the suppression factor was found to be similar to the case of pure dipolar noise reaching a factor of 10.
 
 In the subsection with the fcc at 200 Mhz is like in the hl=lhc case with short bunches. see 30 months progress report.
+\subsection{Pure dipolar noise kick}\label{subsec:dipole_noise}
+
+\subsection{Sensitivity to linear chromaticity}\label{subsec:chroma_scan}
+
+\subsection{Disentangle quadrupolar and dipolar contribution}\label{subsec:quad_vs_dipole}
 
 
 \section{Suppresion mechanism}\label{sec:suppression_mechanism}
@@ -291,6 +332,8 @@ In the subsection with the fcc at 200 Mhz is like in the hl=lhc case with short 
 \subsection{Schottky noise spectra}
 
 \section{Towards HL-LHC case}
+\subsection{Damper}
+Comment on the 200 MHz
 
 I might make a comment:
 % From 30 months progress report doctoral: cernbox/Documents/education/cern/doctoral/30months_progress_report
