@@ -330,12 +330,11 @@ In the presence of wakefield kicks (orange) a very strong suppression of the emi
 
 
 \subsection{Sensitivity to linear chromaticity}\label{subsec:chroma_scan}
-The PyHEADTAIL simulations discussed up to now, cover the case for linear chromaticity $Q^\prime_{x,y}=0.5$ which is believed to be the case for the emittance growth measurements in SPS in 2018. Here, the suppression of the noise-induced emittance growth in the presence of the SPS impedance is investigated for different values of linear chromaticity to improve the understanding of the effect. In particular, the following values were studied: $Q^\prime_{x,y}=0.0, 0.5, 1.0, 2.5, 5.0$. It can be seen, that the study is limited to small positive chromaticity values following past experimental chromaticity scans for emittance growth studies,  $Q^\prime_{x,y}< 10.0$~\cite{Antoniou:2649815, Calaga:1451286}. An additional reason for not extending the study to the negative chromaticity values is that they would lead to beam instabilities.
+The PyHEADTAIL simulations discussed up to now, cover the case for linear chromaticity $Q^\prime_{x,y}=0.5$ which is believed to be the case for the emittance growth measurements in SPS in 2018. Here, the suppression of the noise-induced emittance growth in the presence of the SPS impedance is investigated for different values of linear chromaticity to improve the understanding of the effect. In particular, five different values were studied: $Q^\prime_{x,y}=0.0, 0.5, 1.0, 2.5, 5.0$. It can be seen, that the study is limited to small positive chromaticity values following past experimental chromaticity scans for emittance growth studies,  $Q^\prime_{x,y}< 10.0$~\cite{Antoniou:2649815, Calaga:1451286}. An additional reason for not extending the study to the negative chromaticity values is that they would lead to beam instabilities.
 % Note 1: The expereimental scan of the linear chromaticity scan from 0 to 7 (rama's paper), ipac2012.
 % Note 2: if needed you can prove that the beam is unstable with the formula of Sacherer.
 
-The simulations for this subsection were performed using the setup and the parameters of Section~\ref{sec:first_obs_suppression}. This means, that the study took place in the presence of $\CC$ RF phase noise kicks at 400\,MHz, with and without including the SPS imepdance model. The results of the scan in $Q^\prime_{x,y}$ are displayed in Fig.~\ref{fig:study_6_chroma_scan} where each subfigure pictures the results for each chromaticity value independently. The corresponding values are shown in the captions. 
-
+The simulations for this subsection were performed using the setup and the parameters of Section~\ref{sec:first_obs_suppression}. This means, that the study took place in the presence of $\CC$ RF phase noise kicks at 400\,MHz, with and without including the SPS imepdance model. The results of the scan in $Q^\prime_{x,y}$ are displayed in Fig.~\ref{fig:study_6_chroma_scan} where each subfigure pictures the results for each chromaticity value independently, increasing in value from top left to bottom right. 
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
@@ -368,19 +367,14 @@ The simulations for this subsection were performed using the setup and the param
         \caption{$Q^\prime_{x,y}$=5.0}
         \label{fig:study_6_chroma_scan_Qpxy5}
     \end{subfigure}
-    \caption{FIGURE CAPTION}
+    \caption{Transverse emittance growth driven by  RF phase noise at 400\,MHz without (blue) and with (orange) the impedance effects is shown for five different value of linear chromaticity increasing from top left to bottom right.}
     \label{fig:study_6_chroma_scan}
-    \end{figure}
+\end{figure}
+
+In the absence of impedance effects (blue), the $\CC$ RF noise-induced emitttance growth rates appear independent of both the amplitude detuning coefficient and the value of linear chromaticity. This is in agreement, with the predictions of the theory developed from T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} for white noise spectrum.
 
 
-where each subfigure pictures the results for 
 
-
-The PyHEADTAIL simulation results of the scan in $Q^\prime_{x,y}$ are displayed in Fig. . 
-
-Here, the suppression of the noise induced emittance growth in the presence of the SPS impedance is investigated for different values of linear chromaticity.
-
-The PyHEADTAIL results of the scan in the linar chromaticity values, $Q^{\prime}_y$ are displayed in Fig
 
 
 Wiuthout wakefeilds no dependnece on amplitude deuting . this observations are in agreement with the ones made for subsection 1-2.
