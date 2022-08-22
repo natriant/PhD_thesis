@@ -11,14 +11,17 @@ In particle accelerators, a major issue of concern is the presence noise in a va
 %if you need to add references for losses etc, ref[3] of last ipac paper, even tough its for CC only.
 
 From the various noise sources that are present in an accelerator, this thesis focuses on the dipolar noise and mainly on the CC noise. Dipolar noise is the one produced by the majority of the noise sources and is constant along the bunch, i.e. all the particles are affected the same way. % this noise is also referred to as rigid noise 
-On the other hand, the way the CC noise affects the particles depends on their longitudinal position within the bunch (this is discussed further in the following paragraphs),
+On the other hand, the way the CC noise affects the particles depends on their longitudinal position within the bunch (this is discussed further in the following paragraphs).
 
 %Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
 Past studies~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001} have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
+%\begin{equation}\label{eq:external_noise_kicks}
+%    u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
+%\end{equation}
 \begin{equation}\label{eq:external_noise_kicks}
-    u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
+    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
 \end{equation}
-where $u=(x,y)$ denotes the transverse horizontal or vertical plane and $\Delta u^\prime$ is the change of the transverse direction of motion (in units of radians) due to the noise In this thesis the term "noise" refers to the above mentioned stochastic process.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise. Furthermore, $u=(x,y)$ denotes the transverse horizontal or vertical plane and $\Delta u^\prime = \zeta_j A$ is the change of the transverse direction of motion (in units of radians) due to the noise. $A$ characterises the noise strength and $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the kicks are uncorrelated. In this thesis the term "noise" refers to the above mentioned stochastic process.
 % This approach will be used in the following. In th
 % if it is dipole noise it is oftern written: Delta u = thera
 
