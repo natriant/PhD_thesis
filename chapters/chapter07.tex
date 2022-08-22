@@ -314,14 +314,11 @@ The PyHEADTAIL simulation results are summarised in Fig.~\ref{fig:CC_200MHz_ampl
 
 
 \subsection{Pure dipolar noise}\label{subsec:dipole_noise}
-Based on this result, the next step is to validate that the suppression is indeed associated with the headtail mode 0.
+To validate that the effect of the suppression of the noise-driven emittance growth from the beam coupling impedance is associated with the dipolar motion (headtail mode 0), the same simulations as in the previous part were conducted but instead of the longitudinally dependent noise kicks a pure dipolar noise kick was applied on the beam. The dipolar noise kick was modeled by the transformation of Eq.~\eqref{eq:external_noise_kicks} for $A=10^{-8}$ which corresponds to a power spectral density of 3.36\,$\mathrm{rad^2/Hz}$. The noise strength was scaled such as it results in $\sim$ 25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
 
-The simulations were performed with the setup described in Section~\ref{sec:first_obs_suppression}. Instead of the cosine like phase noise kick a pure dipolar noise kick was applied on the beam which was modeled by the following transformation:
+Figure~\ref{fig:study_5_dipole_noise} shows the noise-induced vertical emittance growth as a function of amplitude-dependent tune spread with and without the presence of wakefield kicks. One can see that in the absence of wakefields (blue) the behavior of the dependence of the growth rates on the amplitude detuning matches the one obtained from $\CC$ RF phase noise kicks (see Figs.~\ref{fig:study_1_2018_paramters_AN} and~\ref{fig:CC_200MHz_amplitude_phase_noise} (right)). However, now, due to the absence of any geometric distortion for $\alpha_\mathrm{yy}=0$ there is zero emittance growth as one would expect from the fact that the models that predict the emittance growth are not valid for zero tune spread.
 
-
-
-This can be achieved by applying a pure dipolar noise kick on the beam, as shown in Eq..
-
+In the presence of wakefield kicks (orange) a very strong suppression of the emittance growth is suppressed which reaches up to a factor of 10 for the small values of amplitude detuning (within the gray area which indicates the tune spread present in the SPS during the 2018 $\CC$ experiments). The fact that the suppression of the emittance growth intensifies in the presence of dipolar noise, is a way to infer the association of the phenomenon with the headtail mode 0.
 
 \begin{figure}[!h] % cernbox/=/pyheadtail_data/final_for_thesis/2018_conditions/study_5_dipole_nois
     \centering         
