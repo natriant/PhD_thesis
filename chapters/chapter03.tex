@@ -1,24 +1,24 @@
-This section describes the theoretical formalism which predicts the transverse emittance growth in the presence of $\CC$ RF noise. First, it introduces the concept of noise in accelerator beam dynamics. The second section focuses on the $\CC$ noise both in amplitude and phase and it provides the equations with which one can estimate the noise-induced emittance growth. The last section, comments briefly on the experiments that took place in KEKB as it's the only time this issue was treated in the past. 
+This section describes the theoretical formalism which predicts the transverse emittance growth in the presence of $\CC$ RF noise. First, it introduces the concept of noise in accelerator beam dynamics. The second section focuses on the $\CC$ noise both in amplitude and phase and it provides the equations with which one can estimate the noise-induced emittance growth. The last section comments briefly on the experiments that were carried out in KEKB: the work at KEKB constitutes the only experimental study of the effect of crab cavity RF noise prior to the work performed on SPS 
 
 
 
 %You need the frist section to introduce the dipole noise as you will apply it in the simulations.
 \section{Noise}\label{sec:noise_definition}
 %External noise means that it is independent of the beam itself.
-In particle accelerators, a major issue of concern is the presence of external noise as it leads to transverse emittance growth, particle losses and limits the beam lifetime. Examples of noise sources are ripples in the power converter ripples which lead to fluctuations of the magnetic fields, ground motion, and various instruments in the accelerator structure such as the transverse damper and the Crab Cavities. % sofias's thesies introduction of chatper 5.
+In particle accelerators, a major issue of concern is the presence noise in a variety of components used to control or observe the beam behaviour. Random fluctuations in the electric and magnetic fields seen by the beam can lead to emittance growth, orbit instability, and in extreme cases, particle loss. Examples of noise sources are ripples in the power converters which leads to fluctuations of the magnetic fields, ground motion, and various instruments in the accelerator structure such as the transverse damper and the Crab Cavities. % sofias's thesies introduction of chatper 5.
 %Ripples in the power supply voltage are converted into current ripples, depending on the magnet's impedance, which eventually leads to magnetic field perturbations through the magnet's transfer function (vacuum chamber, beam screen). sofia's thesis p.95
 
 %if you need to add references for losses etc, ref[3] of last ipac paper, even tough its for CC only.
 
 From the various noise sources that are present in an accelerator, this thesis focuses on the dipolar noise and mainly on the CC noise. Dipolar noise is the one produced by the majority of the noise sources and is constant along the bunch, i.e. all the particles are affected the same way. % this noise is also referred to as rigid noise 
-On the other hand, the way the CC noise affects the particles depends on their longitudinal position within the bunch (more details in the following paragraphs).
+On the other hand, the way the CC noise affects the particles depends on their longitudinal position within the bunch (this is discussed further in the following paragraphs),
 
 %Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
-Past studies~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001} have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown, that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
+Past studies~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001} have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
 \begin{equation}\label{eq:external_noise_kicks}
     u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
 \end{equation}
-where $u=(x,y)$ denoting the horizontal and vertical plane and $\Delta u^\prime$ is the change of the momentum due to the noise in units of rad. In this thesis the term "noise" refers to the above mentioned stochastic process.
+where $u=(x,y)$ denotes the transverse horizontal or vertical plane and $\Delta u^\prime$ is the change of the transverse direction of motion (in units of radians) due to the noise In this thesis the term "noise" refers to the above mentioned stochastic process.
 % This approach will be used in the following. In th
 % if it is dipole noise it is oftern written: Delta u = thera
 
