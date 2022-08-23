@@ -380,9 +380,11 @@ In the presence of impedance effects (orange), the suppression of the emittance 
 This small dependence of the shape of the suppression curve (shaped from the emittance growth rates for different values of detuning coefficient) on the linear chromaticity is not surprising as the damping or growth time of headtail mode 0, depends on it (see Eq.~\eqref{eq:imaginary_tune_mode_l}). Nevertheless, overall, it can be concluded that there is no significant sensitivity of the suppression induced by the beam coupling impedance to the linear chromaticity. 
 
 \subsection{Disentangling quadrupolar and dipolar impedance contributions}\label{subsec:quad_vs_dipole}
-The simulation described in Section~\ref{sec:first_obs_suppression} is repeated one more time here, but now the goal is to disentangle the quadrupolar (detuning) and dipolar (driving) terms of the wakefields to see which one results to the emittance growth suppression. This is easily achievable since in the SPS impedance model the quadrupolar and dipolar terms are provided separately (see Section~\ref{sec:sps_impedance_model}) and thus one can easily select which one to include or exclude from the PyHEADTAIL simulation. The linear chromaticity for this study was corrected to $Q^\prime_{x,y}$=0.5 units.
+The simulation described in Section~\ref{sec:first_obs_suppression} is repeated one more time here, with the goal being to disentangle the quadrupolar (detuning) and dipolar (driving) terms of the wakefields to see which one results to the emittance growth suppression. This is easily achievable since in the SPS impedance model the quadrupolar and dipolar terms are provided separately (see Section~\ref{sec:sps_impedance_model}) and thus one can easily select which one to include or exclude from the PyHEADTAIL simulation. The linear chromaticity for this study was corrected to $Q^\prime_{x,y}$=0.5 units.
 
-The results are summarised in Fig.~\ref{fig:study_7_dipole_vs_quadrupole}. The upper plots illustrate the individual effect of the dipolar (left) and quadrupolar (right) terms of the SPS wakefields on the noise-induced emittance growth while the bottom plot shows the combined effect of the two terms. For each case, the simulation results without including the impedance effects are also shown (blue) for reference. As always the obtained growth rates appear independent of the vertical detuning coefficient and are in very good agreement (within the errorbars) with the theoretical predictions of the model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} which doesn't take into account impedance effects.
+The results are summarised in Fig.~\ref{fig:study_7_dipole_vs_quadrupole}. The upper plots illustrate the individual effect of the dipolar (left) and quadrupolar (right) terms of the SPS wakefields on the noise-induced emittance growth while the bottom plot shows the combined effect of the two terms. For each study case, the simulation results without including the impedance effects are also shown (blue) for reference. As always, the obtained growth rates appear independent of the vertical detuning coefficient and are in very good agreement (within the errorbars) with the theoretical predictions of the model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} which doesn't take into account impedance effects.
+
+
 
 \begin{figure}[htp]
     \centering
@@ -409,8 +411,9 @@ The results are summarised in Fig.~\ref{fig:study_7_dipole_vs_quadrupole}. The u
     \label{fig:study_7_dipole_vs_quadrupole}
 \end{figure}
 
+Looking at the emittance growth rates obtained in the presence of wakefield kicks (orange), it becomes evident that the dipolar contribution (Fig.~\ref{fig:study_7_dipole}) results in a strong suppression of the emittance growth which has the same dependence on the tune spread with the simulations that include both the dipolar and quadrupolar terms. On the contrary the emittance growth remains unnafected when only the quadrupolar contribution is take into account (Fig.~\ref{fig:study_7_quad}). Thus, it is evident, that the  effect of the suppression is a result of the dipolar term of the impedance. 
 
-
+The consequence of the dipolar term, is that it leads to coherent tune shift (see Section~\ref{subsec:wakefields}). Therfore, these simulation results provide strong evidence that the observed suppression of the noise-induced emittance growth is associated with the coherent tune shift from the dipolar imepdance contribution. This suggestion and consequently the mechanism behind the observed suppresson will be further explored in the next section.
 
 \section{Suppresion mechanism}\label{sec:suppression_mechanism}
 \subsection{Past studies with beam-beam interactions}\label{subsec:past_studies_impedance_suppression_BB}
