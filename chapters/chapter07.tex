@@ -330,11 +330,11 @@ In the presence of wakefield kicks (orange) a very strong suppression of the emi
 
 
 \subsection{Sensitivity to linear chromaticity}\label{subsec:chroma_scan}
-The PyHEADTAIL simulations discussed up to now, cover the case for linear chromaticity $Q^\prime_{x,y}=0.5$ which is believed to be the case for the emittance growth measurements in SPS in 2018. Here, the suppression of the noise-induced emittance growth in the presence of the SPS impedance is investigated for different values of linear chromaticity to improve the understanding of the effect. In particular, five different values were studied: $Q^\prime_{x,y}=0.0, 0.5, 1.0, 2.5, 5.0$. It can be seen, that the study is limited to small positive chromaticity values following past experimental chromaticity scans for emittance growth studies,  $Q^\prime_{x,y}< 10.0$~\cite{Antoniou:2649815, Calaga:1451286}. An additional reason for not extending the study to the negative chromaticity values is that they would lead to beam instabilities.
+The PyHEADTAIL simulations discussed up to now, cover the case for linear chromaticity $Q^\prime_{x,y}=0.5$ which is believed to be the case for the emittance growth measurements in SPS in 2018. To understand the effect of the linear chromaticity on the suppression of the noise-induced emittance growth from the SPS impedance the same simulation as in Section~\ref{sec:first_obs_suppression} were repeated over a range of different chromaticities. In particular, five different values were studied: $Q^\prime_{x,y}=0.0, 0.5, 1.0, 2.5, 5.0$. It can be seen, that the study is limited to small positive chromaticity values following past experimental chromaticity scans for emittance growth studies,  $Q^\prime_{x,y}< 10.0$~\cite{Antoniou:2649815, Calaga:1451286}. An additional reason for not extending the study to the negative chromaticity values is that they would lead to beam instabilities.
 % Note 1: The expereimental scan of the linear chromaticity scan from 0 to 7 (rama's paper), ipac2012.
 % Note 2: if needed you can prove that the beam is unstable with the formula of Sacherer.
 
-The simulations for this subsection were performed using the setup and the parameters of Section~\ref{sec:first_obs_suppression}. This means, that the study took place in the presence of $\CC$ RF phase noise kicks at 400\,MHz, with and without including the SPS imepdance model. The results of the scan in $Q^\prime_{x,y}$ are displayed in Fig.~\ref{fig:study_6_chroma_scan} where each subfigure pictures the results for each chromaticity value independently, increasing in value from top left to bottom right. 
+As already mentioned, the simulations for this subsection were performed using the setup and the parameters of Section~\ref{sec:first_obs_suppression}. This means, that the study took place in the presence of $\CC$ RF phase noise kicks at 400\,MHz, with and without including the SPS imepdance model. The results of the scan in $Q^\prime_{x,y}$ are displayed in Fig.~\ref{fig:study_6_chroma_scan} where each subfigure pictures the results for each chromaticity value independently, increasing in value from top left to bottom right. 
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
@@ -377,9 +377,39 @@ In the presence of impedance effects (orange), the suppression of the emittance 
 
 %Last, it is observed that for increasing chromaticity value the dependence of the growth rates on the detuning coefficient appears less wiggly. Maybe is because of less tune spread, thus larger undertainty? On the other hand the dependence on the linear chromaticity shouldn't play a role.
 
-This small dependence of the shape of the suppression curve (shaped from the emittance growth rates for different values of detuning coefficient) on the linear chromaticity is not surprising as the damping or growth time of headtail mode 0, depends on it (see Eq.~\eqref{eq:imaginary_tune_mode_l}).
+This small dependence of the shape of the suppression curve (shaped from the emittance growth rates for different values of detuning coefficient) on the linear chromaticity is not surprising as the damping or growth time of headtail mode 0, depends on it (see Eq.~\eqref{eq:imaginary_tune_mode_l}). Nevertheless, overall, it can be concluded that there is no significant sensitivity of the suppression induced by the beam coupling impedance to the linear chromaticity. 
 
-\subsection{Disentangle quadrupolar and dipolar contribution}\label{subsec:quad_vs_dipole}
+\subsection{Disentangling quadrupolar and dipolar impedance contributions}\label{subsec:quad_vs_dipole}
+The simulation described in Section~\ref{sec:first_obs_suppression} is repeated one more time here, but now the goal is to disentangle the quadrupolar (detuning) and dipolar (driving) terms of the wakefields to see which one results to the emittance growth suppression. This is easily achievable since in the SPS impedance model the quadrupolar and dipolar terms are provided separately (see Section~\ref{sec:sps_impedance_model}) and thus one can easily select which one to include or exclude from the PyHEADTAIL simulation. The linear chromaticity for this study was corrected to $Q^\prime_{x,y}$=0.5 units.
+
+The results are summarised in Fig.~\ref{fig:study_7_dipole_vs_quadrupole}. The upper plots illustrate the individual effect of the dipolar (left) and quadrupolar (right) terms of the SPS wakefields on the noise-induced emittance growth while the bottom plot shows the combined effect of the two terms. For each case, the simulation results without including the impedance effects are also shown (blue) for reference. As always the obtained growth rates appear independent of the vertical detuning coefficient and are in very good agreement (within the errorbars) with the theoretical predictions of the model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} which doesn't take into account impedance effects.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch7/dipolar_impedance.png}  
+        \caption{Only dipolar (driving) impedance contribution.}
+        \label{fig:study_7_dipole}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch7/quadrupolar_impedance.png}
+        \caption{Only quadrupolar (detuning) impedance contribution.}
+        \label{fig:study_7_quad}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch7/deyRates_final_2018_PN_sps_270GeV_PN1e-8_400MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS.png}  
+        \caption{Dipolar (driving) and quadrupolar (detuning) impedance contribution.}
+        \label{fig:study_7_dipole_and_quad}
+    \end{subfigure}
+    
+    \caption{Transverse emittance growth driven by CC RF phase noise at 400\,MHz without (blue) and with (orange) the impedance effects is shown for five different values of linear chromaticity increasing from top left to bottom right.}
+    \label{fig:study_7_dipole_vs_quadrupole}
+\end{figure}
+
+
 
 
 \section{Suppresion mechanism}\label{sec:suppression_mechanism}
