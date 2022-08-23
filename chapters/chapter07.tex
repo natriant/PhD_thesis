@@ -436,31 +436,21 @@ However, in these studies, the frequency of the coherent modes was shifted by th
 \subsection{Intensity scans}
 To test the suggestion that the observed suppression of the emittance growth is a result of the separation of the coherent mode from the incoherent spectrum intensity scans were made. As discussed in the Introduction (Section~\ref{subsec:wakefields}) and illustrated in Section~\ref{subsec:test_implementation_pyheatail} the shift of the coherent tune increases (in absolute value) linearly for increasing intensity. Therefore, when simulating the emittance growth in the presence of wakefields over a range of different intensities a cut-off effect should be expected at the moment the frequency of the coherent mode is shifted outside of the incoherent spectrum.
 
+The simulation setup in PyHEADTAIL and the parameters used can be found in Section~\ref{sec:setup_simulations_emit_growth}. To have the clearest visualisation of the effect, the emittance growth was induced by a dipolar noise kick (instead of a $\CC$ phase noise kick). Furthermore, the vertical amplitude detuning coefficient was set to $\alpha_\mathrm{yy}=6000$\,1/m which corresponds to a regime of strong suppression (see Fig.~\ref{fig:study_5_dipole_noise}). Last, the linear chromaticity was corrected to zero, $Q^\prime_{x,y}$=0, such as it does not introduce any additional tune spread in order to simplify the observables.
 
 
-To confirm the suggestion that the observed suppression of the emittance growth is a result of the separation of the coherent mode from the incoherent spectrum the property of the dependence of the coherent tune shift from impedance with intensity was employed. As discussed in the Introduction (Section~\ref{subsec:wakefields}) and illustrated in Section~\ref{subsec:test_implementation_pyheatail} the shift of the coherent tune increases (in absolute value) linearly for increasing intensity. 
-
-
-To this end, a scan in the intensity was made.
-
-
-
-
-The objective of this section is to test if that the observed suppression of the emittance growth is a result of the separation of the coherent mode from the incoherent spectrum. To achieve this, the property of the dependence of the coherent tune shift from impedance with intensity will be employed. In particular, as discussed in the Introduction (Section~\ref{subsec:wakefields}) and illustrated in Section~\ref{subsec:test_implementation_pyheatail} the shift of the coherent tune increases (in absolute value) linearly for increasing intensity. 
+- Add noise strength value. 
+- range of intensity values.
 
 
 
-Thus, if the separation of the tunes indeed explaines the effect of the emittance growth suppression a cut off effect
+that the emittance growth simulations were conducted 
 
 
-If the separation of the tunes is the valid explanation of the mechanism a cut off effect should be expected 
+in the presence of a dipolar noise kick (instead of $\CC$ phase noise kick) for more clear visualisation of the effect. Additionally, the chromaticity
 
 
-the moment of the separation. 
-
-
-
-In order to verify that the observed emittance growth suppression is related to the separation of the coherent mode from the incoherent spectrum
+The PyHEADTAIL simualtions were performed using the setup discribed in Section
 
 
 \subsection{Schottky noise spectra}
