@@ -452,23 +452,36 @@ The important observation of this study is that indeed a cut-off effect appears 
 \subsection{Spectral analysis of the centroid motion}\label{subsec:spectral_analysis}
 Here, the incoherent spectrum of the bunch is investigated for different intensities in an attempt to visualise and hence confirm that the suppression mechanism is a result of the separation of the coherent mode from the incoherent spectrum. The incoherent spectrum is obtained from Fourier's analysis of the turn-by-turn centroid motion. This method can be also found in the bibliography as Schottky noise method~\cite{Caspers:1213284} and is often used for beam diagnostics as it can reveal information on important parameters such as the revolution frequency, the momentum spread, and of course the incoherent spectrum.
 
-Fig.. shows the vertical spectrum of the centroid (coherent) oscillation of a bunch simulated with PyHEADTAIL for different intensity values. The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and lon- gitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. The spectrum was obtained with a long tracking $10^6$ turns and applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}. Last, it is worth mentioning that $5 \times 10^4$ macroparticles were sufficient \footnote{In accordance with similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed tha the number of macroparticles used does not affect the quality of the results.} for this type of simualtion which reduced significantly the computational time of the simualtion. 
+ The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and longitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. The spectrum was obtained with a long tracking $10^6$ turns and by applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}.
+ 
+ The results are displayed in Fig. ... which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous subsection: ~\ref{subsec:intensity_scan_emit_growth}. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. Expressing the amplitude of the spectral components as power spectral density in units of $\mathrm{rad^2}/Q_y$ is preferable to display the amplitude of the spectral compoenents of the Fourier transform which is in arbitrary units.
 
 
-Long tracking for $10^6$ turns, number of particles
+
+The amplitude of the spectral compoenents is expressed 
 
 
-= (it was cross checked with convergence studies that it does not affect hte results.) and apply a fft algormin (naff, refrence to also before) on the motion of the centroid.
+It can be seen, that the amplitude of the spectral components is shown as power spectral 
 
-To validate the suppression mechanism, one should look at the incoherent spectrum of the bunch. 
 
-To validate the suppression mechanism, the Scho
+is expressed in terms of power spectral density 
 
-- check yuri alexahin for vocubulary.
-- show all the plots.
+
+
+ Last, the amplitude of the spectral compo
+
+ Fig.. shows the vertical spectrum of the centroid (coherent) oscillation of a bunch simulated with PyHEADTAIL for different intensity values. In other words, it shows the power spectral density of the motion of the centroid as a function of the frequency in tune units. The power spectral density of the motion of the centroid is obtained from the above mentioned fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. 
+ 
+ 
+ The power spectral density is computed from the 
+
+Last, it is worth mentioning that 
+
 
 
 The coherent betatron mode clearly emerges from the incoherent spectrum for higher intensities, at the time the emittance growth suppression starts to be visible too.
+
+- mention how do you compute the power spectral density (is shown in the appendix)
 
 \subsection{Studying the motion of the centroid - decoherence}
 
