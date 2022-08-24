@@ -84,7 +84,7 @@ Typically, in tracking simulations, the coherent tune is obtained by applying a 
 \textbf{Simulations setup}\\
 The parameters used for setting up the linear transfer map, the longitudinal tracking, and the beam initialisation are shown in Table~\ref{tab:pyheadtail_simulation_parameters} and are the ones used in the SPS $\CC$ experiment of 2018. The ring is consisted of one segment, with one interaction point at which the beam interacts with the wakefields. At that location, the horizontal and vertical beta functions equal the corresponding average beta functions over the SPS machine (see Section~\ref{subsec:pyheadtail}). The latest transverse wakefield model (as of February 2019 in Ref.~\cite{sps_impedance_model_git}) of the SPS was used.
 
-The bunch poulation of the different intensity values, was represented by $5 \times 10^5$ macroparticles and the number of slices of the longitudinal distribution was 500.
+The initial bunch was generated with Gaussian distributions in transverse and longitudinal planes. The bunch poulation of the different intensity values, was represented by $5 \times 10^5$ macroparticles and the number of slices of the longitudinal distribution was 500.
 
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
@@ -431,7 +431,7 @@ For reference, additional simulation studies for the LHC case which deal with th
 However, in these studies, the frequency of the coherent modes was shifted by the beam-beam effect \footnote{Beam-beam effects, are the ones induced by the perturbation of the two beams in a collider as they cross each other. Further details on these effects and the beam-beam interaction can be found in Ref.~\cite{Herr:1982430} but their analysis is out of the scope of this thesis.} and not by the beam coupling impedance. Adjusting the theoretical approach of Y.~Alexahin for the impedance-induced tune shift is not straightforward (see section ..). To this end, the strategy that was followed to further explore the mechanism of the emittance growth suppression by the transverse impedance was tracking simulations with PyHEADTAIL. These simualtion studies will be presented and discussed in the following subsections
 
 
-\subsection{Intensity scans}
+\subsection{Intensity scans}\label{subsec:intensity_scan_emit_growth}
 To test the hypothesis that the observed suppression of the emittance growth is a result of the separation of the coherent mode from the incoherent spectrum intensity scans were made. As discussed in the Introduction (Section~\ref{subsec:wakefields}) and illustrated in Section~\ref{subsec:test_implementation_pyheatail} the shift of the coherent tune increases (in absolute value) linearly for increasing intensity. Therefore, when simulating the emittance growth in the presence of wakefields over a range of different intensities a cut-off effect should be expected at the moment the frequency of the coherent mode is shifted outside of the incoherent spectrum.
 
 The simulation setup in PyHEADTAIL and the parameters used can be found in Section~\ref{sec:setup_simulations_emit_growth}. To have the clearest visualisation of the effect possible, the emittance growth was induced by a dipolar noise kick (instead of a $\CC$ phase noise kick). The power spectral density of the noise was set to 3.36\,$\mathrm{rad^2/Hz}$ which results to a transverse emittance growth of $\sim$25\,nm/s (see Section~\ref{subsec:dipole_noise}). Furthermore, the vertical amplitude detuning coefficient was set to $\alpha_\mathrm{yy}=6000$\,1/m which corresponds to the regime of strong suppression (see Fig.~\ref{fig:study_5_dipole_noise}). Last, the linear chromaticity was corrected to zero, $Q^\prime_{x,y}$=0, such as it does not introduce any additional tune spread and hence simplify the observables.
@@ -449,8 +449,27 @@ The simulation setup in PyHEADTAIL and the parameters used can be found in Secti
 
 The important observation of this study is that indeed a cut-off effect appears in the dependence of the simulated emittance growth on the intensity which is a strong indication that the effect of the suppression is indeed associated with the separation of the coherent mode from the incoherent spectrum. To further validate this hypothesis, follow-up simulations were performed aiming to examine the frequency spectrum of the bunch, which should reveal more information on the overlap of the coherent mode frequency and the incoherent spectrum. These simulations will be discussed in the next subsection.
 
+\subsection{Spectral analysis of the centroid motion}\label{subsec:spectral_analysis}
+Here, the incoherent spectrum of the bunch is investigated for different intensities in an attempt to visualise and hence confirm that the suppression mechanism is a result of the separation of the coherent mode from the incoherent spectrum. The incoherent spectrum is obtained from Fourier's analysis of the turn-by-turn centroid motion. This method can be also found in the bibliography as Schottky noise method~\cite{Caspers:1213284} and is often used for beam diagnostics as it can reveal information on important parameters such as the revolution frequency, the momentum spread, and of course the incoherent spectrum.
 
-\subsection{Schottky noise spectra}
+Fig.. shows the vertical spectrum of the centroid (coherent) oscillation of a bunch simulated with PyHEADTAIL for different intensity values. The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and lon- gitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. The spectrum was obtained with a long tracking $10^6$ turns and applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}. Last, it is worth mentioning that $5 \times 10^4$ macroparticles were sufficient \footnote{In accordance with similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed tha the number of macroparticles used does not affect the quality of the results.} for this type of simualtion which reduced significantly the computational time of the simualtion. 
+
+
+Long tracking for $10^6$ turns, number of particles
+
+
+= (it was cross checked with convergence studies that it does not affect hte results.) and apply a fft algormin (naff, refrence to also before) on the motion of the centroid.
+
+To validate the suppression mechanism, one should look at the incoherent spectrum of the bunch. 
+
+To validate the suppression mechanism, the Scho
+
+- check yuri alexahin for vocubulary.
+- show all the plots.
+
+
+The coherent betatron mode clearly emerges from the incoherent spectrum for higher intensities, at the time the emittance growth suppression starts to be visible too.
+
 \subsection{Studying the motion of the centroid - decoherence}
 
 PyHEADTAIL simulations of the evolution of the centroid vs emittance for difference values os amplitude detuning. 
