@@ -433,17 +433,23 @@ However, in these studies, the frequency of the coherent modes was shifted by th
 \subsection{Spectral analysis of the bunch centroid motion}\label{subsec:spectral_analysis}
 In this subsection, the incoherent spectrum of the bunch is investigated aiming to visualise and hence confirm that the suppression mechanism is a result of the separation of the coherent mode from the incoherent spectrum. The incoherent spectrum can be obtained from Fourier's analysis of the turn-by-turn centroid motion. This method can be also found in the bibliography as Schottky noise method~\cite{Caspers:1213284} and is often used for beam diagnostics as it can reveal information on important parameters such as the revolution frequency, the momentum spread, and the incoherent spectrum. In the following, the turn-by-turn position of the bunch was obtained with PyHEADTAIL tracking simulations.
 
-The simulations here, were performed for the beam and machine conditions of 2018 (listed in Tables~\ref{tab:pyheadtail_simulation_parameters} and~\ref{tab:CC_pyheadtail_simulation_parameters}) in accordance with the studies presented in Section~\ref{sec:first_obs_suppression}. However, for the spectral analysis studies no noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. This choice is justified, since the noise kicks do not have any impact on the frequency domain. Nevertheless, the six-dimensional Gaussian bunch distribution was generated with an initial vertical offset of 0.2 times the vertical beam size. The reason behind this is that due to the offset the beam will undergo betatron oscillations with higher amplitude which will facilitate the Fourier analysis. Furthermore, this type of simualtion requires longer tracking than the emittance growth studies, $10^6$ turns instead of $10^5$, for better representation in the frequency domain. Last, $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. 
+The simulations here, were performed for the beam and machine conditions of 2018 (listed in Tables~\ref{tab:pyheadtail_simulation_parameters} and~\ref{tab:CC_pyheadtail_simulation_parameters}) in accordance with the studies presented in Section~\ref{sec:first_obs_suppression} including the SPS imepdance model. However, for the spectral analysis studies no noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. This choice is justified, since the noise kicks do not have any impact on the frequency domain. Nevertheless, the six-dimensional Gaussian bunch distribution was generated with an initial vertical offset of 0.2 times the vertical beam size. The reason behind this is that due to the offset the beam will undergo betatron oscillations with higher amplitude which will facilitate the Fourier analysis. Furthermore, this type of simualtion requires longer tracking than the emittance growth studies, $10^6$ turns instead of $10^5$, for better representation in the frequency domain. Last, $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. 
 
-Below, the frequency spectrum of the bunch vertical centroid motion is studied for the following two values of the vertical detuning coefficient, $\alpha_\mathrm{yy}$ = -2000 and -20000\,1/m since they correspond to regimes of strong and zero suppression respectively (as illustrated in Fig.~\ref{fig:MD_2018_impedance_simulations}).
+Below, the spectra were obtained by applying a NAFF algorithm to the turn-by-turn data as described in Section~\ref{subsec:test_implementation_pyheatail}. Last, the amplitude of the spectral components is expressed as power spectral density in units of $\mathrm{rad^2}/Q_y$ as it is preferred over the amplitude of the spectral components of the Fourier transform which is in arbitrary units.
 
-
-
-
-suggests that the frequency spectrum of the bunch centroid motion should be studied for the following two values of detuning coe
+Below, the frequency spectrum of the bunch vertical centroid motion is studied for the following two values of the vertical detuning coefficient, $\alpha_\mathrm{yy}$ = -2000 and -20000\,1/m since they correspond to regimes of strong and zero suppression respectively (as illustrated in Fig.~\ref{fig:MD_2018_impedance_simulations}). The value $\alpha_\mathrm{yy}$ = -2000\,1/m results to tune spread similar to the one that was present in the SPS during the $\CC$ tests in 2018. The spectra are shown along with the transverse emittance growth for the corresponding amplitude detuning value as simulated for the studies in Section~\ref{sec:first_obs_suppression}.
 
 
-the frequency spectrum of the bunch centroid motion was t
+The results are summarised in Fig.
+
+
+
+
+It is evident that for the conditions of the emittance growq
+
+
+
+the emittance growth experiments in the SPS the small tune shift from the
 
 \newpage
 
@@ -461,7 +467,7 @@ Here, the incoherent spectrum of the bunch is investigated for different intensi
 
  The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and longitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. The spectrum was obtained with a long tracking $10^6$ turns and by applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}.
  
-The results are displayed in Fig.~\ref{fig:study_9_shottky_noise_intensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous subsection: ~\ref{subsec:intensity_scan_emit_growth}. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. Expressing the amplitude of the spectral components as power spectral density in units of $\mathrm{rad^2}/Q_y$ is preferable to display the amplitude of the spectral compoenents of the Fourier transform which is in arbitrary units.
+The results are displayed in Fig.~\ref{fig:study_9_shottky_noise_intensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous subsection: ~\ref{subsec:intensity_scan_emit_growth}. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. 
 
 
 
@@ -548,7 +554,13 @@ According, to Y.~Alexahin's theory
 
 \subsection{Studying the motion of the centroid - decoherence}
 % google slides presentation: https://docs.google.com/presentation/d/1ksIQEaxE5FoVOY7oTd7lwEuIt8P9K3u4lQtENXmD-T4/edit#slide=id.gb54efd84b7_0_0
-According to the studies of Y.~Alexahin (which were performed in the context of the beam-beam modes) the separation of the coherent mode from the incoherent spectrum results in a suppression of the decoherence of the dipole oscillations and thus of the dipole and/or phase-noise-induced emittance growth. In this subsection, the decoherence and the associated transverse emittance growth are simulated with PyHEADTAIL with and without the impact of the wakefields for different intensity and chromaticity values. The objective of the study is to demonstrate the above mentioned changes in the decoherence due to the coherent tune shift but introduced by the beam coupling imepdance instead of the beam-beam effects.
+According to the studies of Y.~Alexahin (which were performed in the context of the beam-beam modes) the separation of the coherent mode from the incoherent spectrum results in a suppression of the decoherence of the dipole oscillations and thus of the dipole and/or phase-noise-induced emittance growth. 
+
+
+This section is dedicated in visualising the change in the decoherence and the associated transverse emittance growth 
+
+
+In this subsection, the decoherence and the associated transverse emittance growth are simulated with PyHEADTAIL with and without the impact of the wakefields for different intensity and chromaticity values. The objective of the study is to demonstrate the above mentioned changes in the decoherence due to the coherent tune shift but introduced by the beam coupling imepdance instead of the beam-beam effects.
 
 illustrate the changes in the decoherence and thus in the emittance growth during the 
 
