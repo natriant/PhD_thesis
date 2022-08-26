@@ -14,6 +14,9 @@ The emittance growth measurements in 2022 were performed in coast at 270\,GeV fo
 
 The linear chromaticity was corrected to about zero units in both the horizontal and vertical planes. That was a result of miscommunication with the operator team of the SPS machine as the desired value was between 0.5 and 1.0. However, the analysis of the PyHEADTAIL simulations in Section~\ref{subsec:chroma_scan} showed that the sensitivity of the emittance growth suppression to the linear chromaticity values (for small positive values) is expected to be insignificant. 
 
+On the grounds that the last three (out of four) bunches used in 2018 expereimental campain were unstable, in 2022 the experiment was carried out with a single bunch. This choice allowed also to have better control on the beam conditions, avoiding possible effects from interactions within the bunches \footnote{Even though these effects should be insignificant due to the large bunch spacing. see Table~\ref{tab:machine_beam_param_2018}.}.
+
+
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
       \begin{centering}
@@ -44,25 +47,31 @@ The linear chromaticity was corrected to about zero units in both the horizontal
 
 
 \textbf{CC RF noise}\\
-The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise, however the contribution of amplitude noise to the total emittance growth was found to be insignificant (about 6$\%$ \footnote{Further details on this analyisis are reported in the Appendix...}). The noise excitaion extended from DC up to 10\,kHz and thus the noise was applied on the first betatron sideband only, at $\sim$8\,kHz.
-% I don't have the data to plot the spetra. Only screenshots in the logbook.
+The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise, however, the contribution of amplitude noise to the total emittance growth was found to be insignificant (about 6$\%$ \footnote{Further details on this analysis are reported in the Appendix...}). The noise excitaion extended from DC up to 10\,kHz and thus the noise was applied on the first betatron sideband only, at $\sim$8\,kHz.
+% I don't have the data to plot the spectra. Only screenshots in the logbook.
+
 
 \textbf{CC1 instead of CC2}\\
-In the 2022 campaign, $\CC$1 was used instead of $\CC$2 that was used in 2018. The reason behind this, is that during the phase offset scan performed for the calibration of the $\CC$ module (details on the procedure can be found in ... section in chaper 4 and  Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but treating it would have been time consuming which was not an option due to the very limited machine time of the MD. Therfore, for the measurements in 2022 $\CC$1 was used.
-% CC2 tripped: see entry of the logbook 4/5/2022, at 11:30:30 
+In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. The reason behind this is that during the phase offset scan performed for the calibration of the $\CC$ module (details on the procedure can be found in ... section in chapter 4 and  Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but treating it would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
+% CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
 \textbf{SPS Wire Scanners}\\
-The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, the following two devices were used for the measurements in the horizontal and vertical planes respectively: SPS.BWS.51637.H and SPS.BWS.41677.V. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equiped with four PMs. Each one of them provides better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions at of the respective plane in their location are: 79.29\,m and  60.75\,m. 
+The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, the following two devices were used for the measurements in the horizontal and vertical planes respectively: SPS.BWS.51637.H and SPS.BWS.41677.V. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equipped with four PMs. Each one of them provides a better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions of the respective plane at their location are 79.29\,m, and  60.75\,m. 
 % The values of the beta functions were obtained from MADX: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements/find_beta_functions_at_locations.ipynb
 
-The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mu m$. A significant effort, was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current intrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
-% Ecident for strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
+The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan, and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mu m$. A significant effort was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current instrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
+% Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
 
 
 \textbf{HT normalisation factor}\\
-Measured in 2021 but should have been the same for 2022. In 2022 there was not ime to perform the calibration again.
+From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the HT monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor measured to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
 
-coasts at 270 gev, cc1 more control iver cc2 preparatory studies 
+\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+    \centering         
+    \includegraphics[width=0.7\textwidth]{images/Ch7/HT_monitor_calibration_2022.png}
+        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in Ref.~\cite{PhysRevAccelBeams.22.112803}. This plot is a courtesy of T.~Levens.}
+        \label{fig:HT_calibration_2022_levens}
+ \end{figure}
 
 
 \subsection{Experiment preparation and procedure}
