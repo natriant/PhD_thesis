@@ -442,7 +442,7 @@ In the above-mentioned section, it was shown that in order to reproduce the real
 \begin{figure}[!h] 
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch7/sps_270GeV_PN1e-8_400MHz_QpxQpy5e-1_ayy6000_intensity_spsCCtests.png}
-        \caption{PyHEADTAIL simulations illustrating the effect of the beam intensity on the transverse emittance growth driven by CC RF phase noise in the presence of impedance effects as a function of the bunch intensity. The blue vertical line shows the intensity value during the SPS CC tests in 2018.}
+        \caption{PyHEADTAIL simulations illustrating the effect of the beam intensity on the transverse emittance growth driven by CC RF phase noise in the presence of impedance effects. The blue vertical line shows the intensity value during the SPS CC tests in 2018.}
         \label{fig:study_8_intensity_scan}
  \end{figure}
 
@@ -465,8 +465,6 @@ Here, the incoherent spectrum of the bunch is investigated for different intensi
  The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and longitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. The spectrum was obtained with a long tracking $10^6$ turns and by applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}.
  
 The results are displayed in Fig.~\ref{fig:study_9_shottky_noise_intensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous subsection: ~\ref{subsec:intensity_scan_emit_growth}. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. Expressing the amplitude of the spectral components as power spectral density in units of $\mathrm{rad^2}/Q_y$ is preferable to display the amplitude of the spectral compoenents of the Fourier transform which is in arbitrary units.
-
-
 
  \begin{figure}[htp]
     \centering
@@ -542,7 +540,29 @@ this is what is studied here.
 PyHEADTAIL simulations of the evolution of the centroid vs emittance for difference values os amplitude detuning. 
 
 \subsection{Dependence on bunch length}
+In this section, the sensitivity of the emittance growth in the presence of $\CC$ RF phase noise and impedance is studied as a function of the bunch length. The goal of this study is a) to complete the set of parametric studies presented already in this chapter and b) to identify possible limitations on observing the effect of the suppression introduced by the bunch length. The latter is very important for the second experimental campaign with $\CC$s in the SPS that took place in early 2022 and will be discussed in further detail in the following chapter.
+
+
+This parametric study was conducted for the experimental beam and machine conditions of 2018. They are also reported in Table~\ref{tab:CC_pyheadtail_simulation_parameters}. The study is repeated with and without including the effect of the wakefields. The results are summarised in Fig.~\ref{fig:study_10_bunch_length}.
+
+\begin{figure}[!h] % cernbox/=/pyheadtail_data/final_for_thesis/2018_conditions/study_5_dipole_nois
+    \centering         
+    \includegraphics[width=0.7\textwidth]{images/Ch7/deyRates_sps_PN1e-8_00MHz_270GeV_wakesOFF_vs_ON_QpxQpy5e-1_Nb5e5_ayy2000_slices500_intensity3e10_sigmaScanScanZvsTheorywithoutWakes_vs_SPS_sigmaz.png}
+        \caption{PyHEADTAIL simulations illustrating the effect of the bunch length on the transverse emittance growth driven by CC RF phase noise in the absence (blue) and in the presence (orange)of impedance effects. The analytical predicted growth rates (not including impedance effects) are also shown (black). The regime of the realistic bunch length values during the SPS CC tests of 2018 is depicted with the grey stripe.}
+        \label{fig:study_10_bunch_length}
+ \end{figure}
+
+
+
+
+
+
+
+
+the dependence of the emittance growth suppression 
 Dipole noise, or phase noise. (both?)
+
+% https://docs.google.com/presentation/d/1RZ9yE5tAIyGtRutjMaDiJG0t-a1KDnBX1sMgy__wUfM/edit#slide=id.gcbdbf59062_0_68
 
 \section{Conclusions}\label{sec:Ch7_conclusions}
 PyHEADTAIL simulations showed for the first time that the transverse beam impedance (not included in the theory nor in the numerical simulations so far) has a significant impact on the emittance growth. In particular, it was found that the transverse impedance can suppress the crab cavity noise-induced emittance growth once the coherent tune, which is shifted by the impedance, moves out of the incoherent tune spectrum. It turns out that the decoherence process is slowed down and thus the noise-induced emittance growth is suppressed. This mechanism, which has been observed in the past as a result of beam-beam interactions, is related to the transverse dipole oscillation of the beam. To this end, the suppression is not observed for amplitude but only for phase noise-induced emittance growth.
