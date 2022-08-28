@@ -540,29 +540,30 @@ this is what is studied here.
 PyHEADTAIL simulations of the evolution of the centroid vs emittance for difference values os amplitude detuning. 
 
 \subsection{Dependence on bunch length}
+% Slides for the respective studies: 
+% https://docs.google.com/presentation/d/1RZ9yE5tAIyGtRutjMaDiJG0t-a1KDnBX1sMgy__wUfM/edit#slide=id.gcbdbf59062_0_68
+
 In this section, the sensitivity of the emittance growth in the presence of $\CC$ RF phase noise and impedance is studied as a function of the bunch length. The goal of this study is a) to complete the set of parametric studies presented already in this chapter and b) to identify possible limitations on observing the effect of the suppression introduced by the bunch length. The latter is very important for the second experimental campaign with $\CC$s in the SPS that took place in early 2022 and will be discussed in further detail in the following chapter.
 
+This parametric study was conducted for the experimental beam and machine conditions of 2018 which are also reported in Tables~\ref{tab:pyheadtail_simulation_parameters} and~\ref{tab:CC_pyheadtail_simulation_parameters} and as shown in Section~\ref{sec:first_obs_suppression}. The $\CC$ RF phase noise kick that was acting on the beam had a power spectral density of 1.68\,$\mathrm{rad^2/Hz}$, which results to about 25\,nm/s. The vertical amplitude detuning coefficient was  $\alpha_\mathrm{yy}$=2000\,1/m in order to reproduce the realistic rms tune spread ($\sim 2-3 \times 10^{-4}$) that was present in SPS during the 2018 experiments (from intrinsic non-linearities). The study was performed over a range of rms bunch lengths equally spaced from 0 to 4\,ns (this refers to 4$\sigma_t$). In practice no simualtions were conducted for zero bunch length as it is not a realistic value.
 
-This parametric study was conducted for the experimental beam and machine conditions of 2018. They are also reported in Table~\ref{tab:CC_pyheadtail_simulation_parameters}. The study is repeated with and without including the effect of the wakefields. The results are summarised in Fig.~\ref{fig:study_10_bunch_length}.
+
+The study is repeated with and without including the effect of the wakefields for comparison. The PyHEADTAIL simulation results are summarised in Fig.~\ref{fig:study_10_bunch_length} along with the predictions of the theoretical model of T.~Mastoridis and P.~Baudrenghien which doesn't include the impedance effects for completeness.
 
 \begin{figure}[!h] % cernbox/=/pyheadtail_data/final_for_thesis/2018_conditions/study_5_dipole_nois
     \centering         
-    \includegraphics[width=0.7\textwidth]{images/Ch7/deyRates_sps_PN1e-8_00MHz_270GeV_wakesOFF_vs_ON_QpxQpy5e-1_Nb5e5_ayy2000_slices500_intensity3e10_sigmaScanScanZvsTheorywithoutWakes_vs_SPS_sigmaz.png}
+    \includegraphics[width=0.7\textwidth]{images/Ch7/deyRates_sps_PN1e-8_00MHz_270GeV_wakesOFF_vs_ON_QpxQpy5e-1_Nb5e5_ayy2000_slices500_intensity3e10_sigmaScanScanZvsTheorywithoutWakes_vs_SPS_sigmaz_ignore_first_point.png}
         \caption{PyHEADTAIL simulations illustrating the effect of the bunch length on the transverse emittance growth driven by CC RF phase noise in the absence (blue) and in the presence (orange)of impedance effects. The analytical predicted growth rates (not including impedance effects) are also shown (black). The regime of the realistic bunch length values during the SPS CC tests of 2018 is depicted with the grey stripe.}
         \label{fig:study_10_bunch_length}
  \end{figure}
 
+ Figure~\ref{fig:study_10_bunch_length} illustrates, as expected, that the simulation results without the wakefields (blue) are in very good agreement with the theoretical predictions (black model), within the error bars. In the presence of wakefields (orange) there is a clear sensitivity of the obtained emittance growth and thus on the suppression from the beam coupling impedance on the rms bunch length. In particular for bunch length values smaller than 1\,ns the suppression appears very strong and it is also independent from the bunch length value. For longer bunches, up to about 3.5\,ns ($\mathrm{4 \sigma_t}$) the suppression factor appears to decrease with the bunch length. For bunches longer than 3.5\,ns ($\mathrm{4 \sigma_t}$) the dependence of the obtained emittance growth on the bunch length seems to saturate. The rates are also in agreement with the theoretical model which does not include the contribution from the wakes. The behavior of the dependence, which is inversely proportional to the bunch length value is explained by the fact that the coherent tune shift from the impedance is also inversely proportional to the bunch length. In other words, for small bunches the coherent tune shift from the impedance is strong and thus the coherent mode emerges from the incoherent spectrum leading to the strong emittance growth suppression. For larger bunch lengths the shift of the coherent mode is weaker resulting in weaker suppression which eventually saturates once the coherent mode lies inside the incoherent spectrum.
+
+ Last it should be noted that for very small bunches the wake potential used for the simulations may not approximate well the wake function. This seems to be the reason that the first point of the simulation results with the wakefields seems to not follow the otherwise smooth dependence on the bunch length. This appears to be the lower bunch length limit that we can trust the simulations.
 
 
+% Maybe comment on the experiment.
 
-
-
-
-
-the dependence of the emittance growth suppression 
-Dipole noise, or phase noise. (both?)
-
-% https://docs.google.com/presentation/d/1RZ9yE5tAIyGtRutjMaDiJG0t-a1KDnBX1sMgy__wUfM/edit#slide=id.gcbdbf59062_0_68
 
 \section{Conclusions}\label{sec:Ch7_conclusions}
 PyHEADTAIL simulations showed for the first time that the transverse beam impedance (not included in the theory nor in the numerical simulations so far) has a significant impact on the emittance growth. In particular, it was found that the transverse impedance can suppress the crab cavity noise-induced emittance growth once the coherent tune, which is shifted by the impedance, moves out of the incoherent tune spectrum. It turns out that the decoherence process is slowed down and thus the noise-induced emittance growth is suppressed. This mechanism, which has been observed in the past as a result of beam-beam interactions, is related to the transverse dipole oscillation of the beam. To this end, the suppression is not observed for amplitude but only for phase noise-induced emittance growth.
