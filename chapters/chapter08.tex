@@ -59,7 +59,7 @@ In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. 
 The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, the following two devices were used for the measurements in the horizontal and vertical planes respectively: SPS.BWS.51637.H and SPS.BWS.41677.V. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equipped with four PMs. Each one of them provides a better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions of the respective plane at their location are 79.29\,m, and  60.75\,m. 
 % The values of the beta functions were obtained from MADX: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements/find_beta_functions_at_locations.ipynb
 
-The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan, and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mu m$. A significant effort was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current instrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
+The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan, and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mathrm{\mu m}$. A significant effort was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current instrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
 % Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
 
 
@@ -74,15 +74,18 @@ From the end of 2018 till the end of 2020, the CERN accelerator complex has unde
  \end{figure}
 
 
-\subsection{Experiment preparation and procedure}
+\subsection{Experiment preparation and procedure}\label{sec:cc_md_2022_preparation}
+The available machine time ($\sim$ 10 hours) for the $\CC$ experiment of 2022 was split into two parts. For the first part, the objective was to measure the emittance growth with the same noise levels and conditions as in 2018 in order a) to reproduce the observed scaling of emittance growth (see Fig.~\ref{fig:MD5_summary_plot}) and b) to benchmark the expected suppression factor from PyHEADTAIL simulations with the impedance model. This will be referred to as $\CC$ Experiment A in the following.
+
+The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following.
 
 
 
 Nevertheless, a number of steps which are described below were followed.
 
 \subsection{Calibration of CC voltage and phase offset}\label{subsec:cc_calibration_2022}
-\subsection{Results: scaling of emittance growth with noise power}
-\subsection{Results: sensitivity to amplitude-dependent tune shift} 
+\subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
+\subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
 
 \section{Experiment with beam damper as noise source}
 
@@ -92,9 +95,7 @@ Nevertheless, a number of steps which are described below were followed.
 
 \section{Strategy and preparational studies}\label{sec:strategy_md_2022}
 % MD planning: https://docs.google.com/presentation/d/13b4KAywwANL_hk0ttAmxjW8P0zLzrJpNUKiEGYtgD3w/edit#slide=id.p 
-The experiment of 2022, was consisted of emittance growth measurements at 270\,GeV in coast mode, as in 2018. The available machine time ($\sim$ 10 hours) for the $\CC$ experiment of 2022 was split in two parts. 
-
-For the first part, the objective was to measure the emittance growth with the same noise levels and conditions as in 2018 in order a) to reproduce the observed scaling of emittance growth (see Fig.~\ref{fig:MD5_summary_plot}) and b) to benchmark the expected suppression factor from PyHEADTAIL simulations  with the impedance model.
+The experiment of 2022, was consisted of emittance growth measurements at 270\,GeV in coast mode, as in 2018. 
 
 The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow to introduce controlled detuning with amplitude. A successfully reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance.
 
