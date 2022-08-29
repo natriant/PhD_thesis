@@ -59,16 +59,17 @@ In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. 
 The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, the following two devices were used for the measurements in the horizontal and vertical planes respectively: SPS.BWS.51637.H and SPS.BWS.41677.V. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equipped with four PMs. Each one of them provides a better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions of the respective plane at their location are 79.29\,m, and  60.75\,m. 
 % The values of the beta functions were obtained from MADX: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements/find_beta_functions_at_locations.ipynb
 
-The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan, and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mathrm{\mu m}$. A significant effort was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current instrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
+The OUT scan performed just 200\,ms after the IN scan. However, the measurements from the OUT scan appeared to have systematically larger fluctuation than in the IN scan, and quite frequently there was a significant difference in the emittance values obtained from the two scans which in some cases reached up to 1\,$\mathrm{\mu m}$. By looking at the profiles no reason was found to exclude or not one of the two scans. A significant effort was done with the Wire Scanner experts during the MD trying to mitigate this effect without success due to limitations on the hardware of the current instrument \textcolor{red}{Needs to be confirmed}. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements.
 % Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
 
+Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the Wire Scanner measurements. For this reason, for the low noise levels, long measurements of about 30-40 minutes were needed.
 
 \textbf{HT normalisation factor}\\
 From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the HT monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor measured to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
 
 \begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
     \centering         
-    \includegraphics[width=0.7\textwidth]{images/Ch7/HT_monitor_calibration_2022.png}
+    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
         \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in Ref.~\cite{PhysRevAccelBeams.22.112803}. This plot is a courtesy of T.~Levens .}
         \label{fig:HT_calibration_2022_levens}
  \end{figure}
@@ -81,8 +82,30 @@ The available machine time ($\sim$ 10 hours) for the $\CC$ experiment of 2022 wa
 The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following. It should be mentioned, that for this experiment the octupoles of the LOD family are employed as they mostly in the vertical plane which is the plane of interest in this studies (vertical $\CC$ module which results to vertical emittance growth).
 
 \textbf{Preparational studies with PyHEADTAIL simulations}\\
-In preparation of the $\CC$ experiments (A and B) the emittance growth in the presence of $\CC$ RF phase noise was simulated with PyHEADTAIL including the most up-to-date SPS imepdance model~\cite{updated_sps_wakfields_model} as a function of different octupole settings. 
+In preparation for the $\CC$ experiments (A and B) the emittance growth in the presence of $\CC$ RF phase noise was simulated with PyHEADTAIL including the most up-to-date SPS impedance model~\cite{updated_sps_wakfields_model} as a function of different octupole strengths, $k_{\mathrm{LOD}}$. The beam and machine parameters are the ones reported in Table~\ref{tab:machine_beam_param_2022} which correspond to the experimental conditions of 2022. The emittance growth is induced by $\CC$ RF phase noise with a power spectral density of 1.68\,$\mathrm{rad^2/Hz}$ in the first betatron sideband which results in about 25\,nm/s. It should be highlighted that this noise level is much stronger than the levels of the injected artificial noise used in the experiment, in order to have nice observables in the simulation time of just 2.5\,s. Therefore, the goal of the experiments was to reproduce the simulated suppression factor and behavior only and not the exact numbers. Last, the simulation setup and the $\CC$ RF phase noise were simulated as discussed in Chapter~\ref{Ch:suppression_impedance}. 
 
+The emittance growth was simulated over a range of $k_\mathrm{LOD}$ values equally spaced from -30\,$\mathrm{1/m^4}$ to +30\,$\mathrm{1/m^4}$. Nevertheless, in the simulations, no actual octupolar elements were used in order to avoid the excitation of resonances as discussed in Section~\ref{sec:first_obs_suppression}. Instead, following the preceding PyHEADTAIL simulations, the effect of LODs is introduced as a change in the phase advance of the individual particles depending on their individual actions and defined by the corresponding detuning coefficients. The study was performed for zero horizontal detuning coefficient, $\alpha_{\mathrm{xx}}$=0 while the values of the vertical, $\alpha_{\mathrm{yy}}$, and the cross-term, $\alpha_{\mathrm{yx}}$, coefficients were estimated using MAD-X~\cite{madx}.
+
+Figure .. illustrates the dependece of the $\CC$ RF phase noise induced emittance growth on the LOD strength, in the absence (blue) and in the presence (orange) of the wakefields. The analytical prediction of the model of T.~Mastoridis and P.~Baudrenghien is also given to facilitate the identification of the suppression factor from the impedance. 
+
+\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+   \centering         
+   \includegraphics[width=0.8\textwidth]{images/Ch8/deyRates_sps_270GeV_PN1e-8_400MHz_SPS_NewWakesAllcontributions_appendWakes_y-plane_WakesONvsOFF_QpxQpy1_6D_Nb5e5_intensity3e10Scan_vs_TuneSpreadvsExpectedSPS_octupole_current.png}
+       \caption{drgr}
+       \label{fig:pyheadtail_cc_impedance_2022_md_octupole_current}
+\end{figure}
+
+
+
+
+The color stripes
+
+the results 
+
+
+- in either side of the scan we seem to exit the suppression region. 
+- in the bare sps machine a suppression of a factor 4.
+-  no limitations from the LOD.
 
 \textbf{Steps}\\
 The experiment took place on 16th of May of year 2022 and as a given a total time window of about 10 hours (start: $\sim$ 9:15 , end $\sim$18:40). The steps taken during the MD were the following:
@@ -99,6 +122,11 @@ The details and the results of the above mentioned steps will be presented in th
 
 \subsection{Calibration of CC voltage and phase offset}\label{subsec:cc_calibration_2022}
 \subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
+
+
+
+
+Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the Wire Scanner measurements. For this reason, for the low noise levels, long measurements of about 30-40 minutes were needed.
 \subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
 
 \section{Experiment with beam damper as noise source}
@@ -122,7 +150,9 @@ Tonise oti to behavior einai auto pou thes na kaneis reproduce oxi ta exact numb
 In particular, the LOD family was used which affects primarly the vertical plane. The reason behind this, is that as in 2018, in the experiment of 2022 the DQW $\CC$ module was used which provides a vertical deflection of on the beam and hence the focus was put in the vertical plane.
 
 
-
+\subsection{extra}
+check the amplitude detuning with ampltidue
+h%ttps://docs.google.com/presentation/d/1yaGKJ20O-jVg0R3bdj62l5VzltwjBBHtphKq5HI9xrY/edit#slide=id.g104dd3ff735_0_184
 
 
 \section{Simple model of Xavier vs experimental results}
