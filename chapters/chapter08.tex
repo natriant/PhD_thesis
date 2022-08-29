@@ -69,7 +69,7 @@ From the end of 2018 till the end of 2020, the CERN accelerator complex has unde
 \begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch7/HT_monitor_calibration_2022.png}
-        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in Ref.~\cite{PhysRevAccelBeams.22.112803}. This plot is a courtesy of T.~Levens.}
+        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in Ref.~\cite{PhysRevAccelBeams.22.112803}. This plot is a courtesy of T.~Levens .}
         \label{fig:HT_calibration_2022_levens}
  \end{figure}
 
@@ -78,7 +78,11 @@ From the end of 2018 till the end of 2020, the CERN accelerator complex has unde
 \textbf{Objectives}\\
 The available machine time ($\sim$ 10 hours) for the $\CC$ experiment of 2022 was split into two parts. For the first part, the objective was to measure the emittance growth with the same noise levels and conditions as in 2018 in order a) to reproduce the observed scaling of emittance growth (see Fig.~\ref{fig:MD5_summary_plot}) and b) to benchmark the expected suppression factor from PyHEADTAIL simulations with the impedance model. This will be referred to as $\CC$ Experiment A in the following.
 
-The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following.
+The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following. It should be mentioned, that for this experiment the octupoles of the LOD family are employed as they mostly in the vertical plane which is the plane of interest in this studies (vertical $\CC$ module which results to vertical emittance growth).
+
+\textbf{Preparational studies with PyHEADTAIL simulations}\\
+In preparation of the $\CC$ experiments (A and B) the emittance growth in the presence of $\CC$ RF phase noise was simulated with PyHEADTAIL including the most up-to-date SPS imepdance model~\cite{updated_sps_wakfields_model} as a function of different octupole settings. 
+
 
 \textbf{Steps}\\
 The experiment took place on 16th of May of year 2022 and as a given a total time window of about 10 hours (start: $\sim$ 9:15 , end $\sim$18:40). The steps taken during the MD were the following:
@@ -92,8 +96,6 @@ The experiment took place on 16th of May of year 2022 and as a given a total tim
 
 
 The details and the results of the above mentioned steps will be presented in the following subsections.
-
-Nevertheless, a number of steps which are described below were followed.
 
 \subsection{Calibration of CC voltage and phase offset}\label{subsec:cc_calibration_2022}
 \subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
