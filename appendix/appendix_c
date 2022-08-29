@@ -124,7 +124,7 @@ By inserting these values of detuning coefficients and geometric emittances in E
 % compute detuning coefficients: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/match_octupoles_new_SPS_seq_after_LS2/job001_cmpt_ayy_axx_for_klod_klof.py
 % compute rms tune spread: /eos/user/n/natriant/Project_thesis/material/Ch5: Experimental studies 2018/cmpt_DQxy_rms_nominal_SPS_270GeV.ipynb
 
-\section{SPS non-linear model}
+\section{SPS non-linear model}\label{sec:SPS_non_linear_model_appendix}
 
 \textcolor{red}{Move this section to chapter 6.}
 The nominal SPS model includes only the nonlinear fields produced by the chromatic sextupoles. However, one of the most important sources of non-linearities in SPS are the odd multipole components of its main dipole magnets. For some of the studies presented in this thesis their impact on the beam dynamics must be studied and therefore they should be included in the nominal model. 
@@ -152,3 +152,40 @@ The values of the multipole components up to seventh order obtained from this me
 
 
 \textbf{random multiple errros? } Like in APR.Ch.3.2.2.
+
+
+\section{SPS octupoles calibration}\label{sec:sps_octupole_calibration}
+In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa}  for the LOF and LOD family respectively.
+
+ %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
+\begin{figure}[!h]
+    \centering         
+    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lof_callibration_curve.png}
+        \caption{Calibration curve for the LOF SPS family as obtained from LSA. $b_3$ is defined in Eq.~\eqref{eq:mult_expansion}.}
+        \label{fig:lof_calibration_lsa}
+ \end{figure}
+
+  %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
+ \begin{figure}[!h]
+    \centering         
+    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lof_callibration_curve.png}
+        \caption{Calibration curve for the LOD SPS family as obtained from LSA. $b_3$ is defined in Eq.~\eqref{eq:mult_expansion}.}
+        \label{fig:lod_calibration_lsa}
+ \end{figure}
+
+ For the studies in the area of low to moderate current (up to 300\,A) the relation between the current and the strength $b_3$ appears to be linear. In the SPS experimental campaign of 2022, the octupole current stayed below 250\,A. Therefore, focusing on the area of linear dependence is a valid approximation for the studies presented in this thesis.
+
+ Subsequently, the relation between the octupole current and strength is obtained by a linear fit on the above-discussed calibration curves which it is also shown in black color. From the fit, it occurs that:
+
+
+\begin{equation}\label{eq:I_vs_B3_relation_lof}
+    I_\mathrm{LOF} = 0.035 \times b_3 = 0.035 \times k_3 \times B \rho [A]
+\end{equation}
+\begin{equation}\label{eq:I_vs_B3_relation_lof}
+    I_\mathrm{LOD} = 0.009 \times b_3 = 0.009 \times k_3 \times B \rho   [A]
+\end{equation},
+where $b_3$ and $k_3$ are defined in Eqs.~\eqref{eq:mult_expansion} and~\eqref{eq:kn}.
+
+It is worth mentioning that LSA and MAD-X use the same units and the normalised octupole strength as defined from Eq.~\eqref{eq:kn} for $n=3$ expressed in units of $\mathrm{1/m^4}$.
+
+
