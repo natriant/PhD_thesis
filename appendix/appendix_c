@@ -169,7 +169,7 @@ In this section, the relation between the current and the strength of the focusi
   %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
  \begin{figure}[!h]
     \centering         
-    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lof_callibration_curve.png}
+    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lod_callibration_curve.png}
         \caption{Calibration curve for the LOD SPS family as obtained from LSA. $b_3$ is defined in Eq.~\eqref{eq:mult_expansion}.}
         \label{fig:lod_calibration_lsa}
  \end{figure}
@@ -182,8 +182,7 @@ In this section, the relation between the current and the strength of the focusi
 \begin{equation}\label{eq:I_vs_B3_relation_lof}
     I_\mathrm{LOF} = 0.035 \times b_3 = 0.035 \times k_\mathrm{LOF} \times B \rho [A]
 \end{equation}
-\begin{equation}\label{eq:I_vs_B3_relation_lof}
+\begin{equation}\label{eq:I_vs_B3_relation_lod}
     I_\mathrm{LOD} = 0.009 \times b_3 = 0.009 \times k_\mathrm{LOD} \times B \rho   [A]
 \end{equation},
 where $b_3$ is defined in Eqs.~\eqref{eq:mult_expansion} while $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn}. It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
-
