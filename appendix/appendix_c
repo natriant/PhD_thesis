@@ -155,6 +155,7 @@ The values of the multipole components up to seventh order obtained from this me
 
 
 \section{SPS octupoles calibration}\label{sec:sps_octupole_calibration}
+% Initial note: https://www.overleaf.com/project/612f6e14a2a0d60d2ad9bdca
 In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa}  for the LOF and LOD family respectively.
 
  %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
@@ -179,13 +180,10 @@ In this section, the relation between the current and the strength of the focusi
 
 
 \begin{equation}\label{eq:I_vs_B3_relation_lof}
-    I_\mathrm{LOF} = 0.035 \times b_3 = 0.035 \times k_3 \times B \rho [A]
+    I_\mathrm{LOF} = 0.035 \times b_3 = 0.035 \times k_\mathrm{LOF} \times B \rho [A]
 \end{equation}
 \begin{equation}\label{eq:I_vs_B3_relation_lof}
-    I_\mathrm{LOD} = 0.009 \times b_3 = 0.009 \times k_3 \times B \rho   [A]
+    I_\mathrm{LOD} = 0.009 \times b_3 = 0.009 \times k_\mathrm{LOD} \times B \rho   [A]
 \end{equation},
-where $b_3$ and $k_3$ are defined in Eqs.~\eqref{eq:mult_expansion} and~\eqref{eq:kn}.
-
-It is worth mentioning that LSA and MAD-X use the same units and the normalised octupole strength as defined from Eq.~\eqref{eq:kn} for $n=3$ expressed in units of $\mathrm{1/m^4}$.
-
+where $b_3$ is defined in Eqs.~\eqref{eq:mult_expansion} while $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn}. It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
