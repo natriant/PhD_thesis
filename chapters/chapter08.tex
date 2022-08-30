@@ -14,9 +14,7 @@ The emittance growth measurements in 2022 were performed in coast at 270\,GeV fo
 
 The linear chromaticity was corrected to about zero units in both the horizontal and vertical planes. That was a result of miscommunication with the operator team of the SPS machine as the desired value was between 0.5 and 1.0. However, the analysis of the PyHEADTAIL simulations in Section~\ref{subsec:chroma_scan} showed that the sensitivity of the emittance growth suppression to the linear chromaticity values (for small positive values) is expected to be insignificant. 
 
-On the grounds that the last three (out of four) bunches used in 2018 expereimental campain were unstable, in 2022 the experiment was carried out with a single bunch. This choice allowed also to have better control on the beam conditions, avoiding possible effects from interactions within the bunches \footnote{Even though these effects should be insignificant due to the large bunch spacing. see Table~\ref{tab:machine_beam_param_2018}.}.
-
-The intial rms bunch length was measured to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase of $\sim$5~$\%$ on average for each setting was observed. This small increase agrees to what is usually observed in the SPS in coast and will not be taken into consideration in the following analyisis. Nevertheless, the individual plots illustrating the evolution of the bunch length as measured by the ABWLM during the expereiment can be found in the Appendix..... Last, looking at the dependece of the emittance growth suppresssion by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the rms bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression optimizing the expereimental conditions to observe the imepdance effects on the noise induced emittance growth.
+On the grounds that the last three (out of four) bunches used in 2018 expereimental campain were unstable, in 2022 the experiment was carried out with a single bunch. This choice allowed also to have better control on the beam conditions, avoiding possible effects from interactions within the bunches \footnote{Even though these effects should be insignificant due to the large bunch spacing, see Table~\ref{tab:machine_beam_param_2018}.}.
 
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
@@ -37,14 +35,19 @@ The intial rms bunch length was measured to be about $4\sigma_t$ = 1.83\,ns. Dur
       \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
       \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.83 \,ns$^\ast$}\\
-      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m^\ast}$}\\
-      \multicolumn{2}{l}{Horizontal / Vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{2.02 $\times 10^{-5}$ / 2.17 $\times 10^{-5}$ $^\dagger$}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m^\dagger}$}\\
+      \multicolumn{2}{l}{Horizontal / Vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{2.02 $\times 10^{-5}$ / 2.17 $\times 10^{-5}$ $^\ddagger$}\\
       \bottomrule
 	\end{tabu}
    \label{tab:machine_beam_param_2022}
-   \end{centering} \footnotesize{$^\ast$ The value corresponds to the requested intial value at the start of each coast. Nevertheless, the intensity drop and the bunch length increase were found to be insnificant for all the coasts. \\$^\dagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calulcations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
+   \end{centering} \footnotesize{$^\ast$ This value corresponds to the average r,s measured bunch length over all the coasts of 2022.\\$^\dagger$ The value corresponds to the requested intial value at the start of each coast. Nevertheless, the intensity drop and the bunch length increase were found to be insnificant for all the coasts. \\$^\ddagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calulcations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
    \end{minipage}
 \end{table}
+% For bunch length: cernbox/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/visualise_pickle.ipynb
+
+The average rms bunch length (over all settings) was measured to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. The individual plots illustrating the evolution of the bunch length as measured by the ABWLM during the experiment can be found in the Appendix..... Last, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the rms bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression optimizing the experimental conditions to observe the impedance effects on the noise-induced emittance growth.
+
+The intnesity was set to $3 \times 10^{10}$ protons to be in agreement with the experiment of 2018. During the coasts of the 2022 experiment almost zero losses were observed. Therefore, the evolution of the intensity during the coasts will be not considered in the following.
 
 
 \textbf{CC RF noise}\\
@@ -126,32 +129,33 @@ The first step in the CC experiment was to calibrate its voltage and phase offse
 
 To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180 to + 180 degrees in steps of 30 degrees. For each step, the crabbing signal was acquired with the HT monitor and the CC voltage signal was reconstructed. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022}.
 
-
-\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/HT_monitor_phase_CC_offset_calibration
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png}
        \caption{Calibration plot for the CC1 as obtained during the experiment on 16th of May 2022, displaying the CC voltage at the center of the cavity $t=0$ for different values of the inspector phase.}
        \label{fig:Vcc_calibration_md_2022}
 \end{figure}
 
-From the beam based measurements with the HT monitor the voltage of CC1 was found to be 1.1\,MV very close to the targeted one (1\,MV). The phase offset was found to be 12.21 degrees.
+From the beam based measurements with the HT monitor the voltage of CC1 was found to be 1.1\,MV very close to the targeted one (1\,MV). The phase offset was found to be 12.21 degrees. For the rest of the experiment, inspector phase was set to the opposite of the phase offset such as the CC phase is zero.
 
 Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However, the cavity tripped systematically due to issues associated with the change of the RF phase. Treating it would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
 \subsection{Measurement of background growth rate in coast}\label{ref:measured_backgorund_growth_cc_md_202}
-After the calibration of the CC1, the coast at 270\,GeV was set up for the emittance growth measurements. 
+After the calibration of the CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background emittance growth, with no additional noise injected in the CC and the Landau octupoles switched off was measured. The background emittance growth was found to be $d\epsilon_x /dt$ = 0.81\,$\mathrm{\mu m}$ and $d\epsilon_y /dt$ = 0.84\,$\mathrm{\mu m}$ in the horizontal and vertical planes respectively.
+
+The measured background emittance growth is illustrated in Fig ... for the horizontal (blue) and vertical (red) plane.
+
+Big flacutation. --> long measuremtns.
 
 
 
+The "natural" amplitude and phase noise at 8\,kHz were measured to be -130.2\,dBc/Hz and 125.7\,dBc/Hz respectively. The theoretically~\cite{PhysRevSTAB.18.101001} expected emittance growth from those noise levels was 0.05\,$\mathrm{\mu/h}$ and 0.19\,$\mathrm{\mu/h}$ in the horizontal and vertical planes respectively from both noise types combined.
+% y-plane --> AN: 0.045 um/h, PN: 0.14 um/h
+% x-plane --> AN: 0.002 um/h, PN: 0.05 um/h
+% Directory to compute these rates: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/cmpt_emit_growth_theoretical_model
 
-First, the background emittance growth, with no additional noise injected in the CC and the Landau octupoles switched off was measured. The background emittance growth was found to be $d\epsilon_x /dt$ = 0.81\,$\mathrm{\mu m}$ and $d\epsilon_y /dt$ 0.84\,$\mathrm{\mu m}$ in the horizontal and vertical planes respectively.
-
-
-As discussed in Chapter~\ref{Ch:2018_analyisis} the emittance growth from other sources of noise (than the CC RF) should be measured.
-
-
-Amplitude and phase noise at 8\,kHz were measured to be -130.2\,dBc/Hz and 125.7\,dBc/Hz respectively. The emittance growth expected 
+The rest of the observed growth rates, is due to other sources which are not yet will identified (see discussion in Chapter~\ref{Ch:2018_analyisis}).
 
 \subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
 
