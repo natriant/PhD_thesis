@@ -30,7 +30,7 @@ On the grounds that the last three (out of four) bunches used in 2018 expereimen
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
       \multicolumn{2}{l}{Main RF voltage / frequency,  $\VRF$ / $\fRF$}  & \multicolumn{2}{c}{5\,MV / 200.39\,MHz} \\ %200.3945
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 0.0 / $\sim$ 0.0} \\
+      \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 0.0-0.5 / $\sim$ 0.0-0.5} \\
       \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051} \\
       \multicolumn{2}{l}{$\CC 1$ voltage / frequency, $\VCC$ / $\fCC$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
       \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
@@ -123,22 +123,22 @@ The details and the results of the above mentioned steps will be presented in th
 \subsection{Calibration of CC voltage and phase offset}\label{subsec:cc_calibration_2022}
 The first step in the CC experiment was to calibrate its voltage and phase offset. The calibration took place following the procedure described in Section... at 270\,GeV and it lasted for about 15 minutes (start: $\sim$ 9:40, end: $\sim$09:52).
 
-To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180 to + 180 degrees in steps of 30 degrees. For each step, the crabbing signal was acquired with the HT monitor and the CC voltage signal was reconstructed. For each acquisition, the $\CC$ voltage at the center of the bunch, $z=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.
+To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180 to + 180 degrees in steps of 30 degrees. For each step, the crabbing signal was acquired with the HT monitor and the CC voltage signal was reconstructed. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022}.
 
 
+\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png}
+       \caption{Calibration plot for the CC1 as obtained during the experiment on 16th of May 2022, displaying the CC voltage at the center of the cavity $t=0$ for different values of the inspector phase.}
+       \label{fig:Vcc_calibration_md_2022}
+\end{figure}
 
+From the beam based measurements with the HT monitor the voltage of CC1 was found to be 1.1\,MV very close to the targeted one (1\,MV). The phase offset was found to be 12.21 degrees.
 
+Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However, the cavity tripped systematically due to issues associated with the change of the RF phase. Treating it would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
+% CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
-As have been discussed in Chapter~\ref{Ch:CC_set_up} the beam based measurements with the HT monitor consitute the optimal way to calibrate the cavity.
-
-The calibation took place by varying the inspector
-
-
-phase offset from -180 
-
-
-a scan on the CC phase offset from -180 to +180 degrees in steps of 30 degrees. As discussed in Section ..... 
-
+cc2 scan attempted. CC2 tripped
 
 \subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
 
