@@ -142,18 +142,26 @@ Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
 \subsection{Measurement of background growth rate in coast}\label{ref:measured_backgorund_growth_cc_md_202}
-After the calibration of the CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background emittance growth, with no additional noise injected in the CC and the Landau octupoles switched off was measured. The background emittance growth was found to be $d\epsilon_x /dt$ = 0.81\,$\mathrm{\mu m}$ and $d\epsilon_y /dt$ = 0.84\,$\mathrm{\mu m}$ in the horizontal and vertical planes respectively.
+After the calibration of the CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background emittance growth, with no additional noise injected in the CC and the Landau octupoles switched off was measured. The background emittance growth was found to be similar in both transverse planes and in particular $d\epsilon_x /dt$ = 0.81\,$\mathrm{\mu m}$ and $d\epsilon_y /dt$ = 0.84\,$\mathrm{\mu m}$ in the horizontal and vertical planes respectively. This measured background emittance growth is illustrated in Fig~\ref{fig:cc_md_2022_background_growth_in_scan} for both the horizontal (blue) and vertical (red) planes.
 
-The measured background emittance growth is illustrated in Fig ... for the horizontal (blue) and vertical (red) plane.
+\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/online_analysis_scripts_figures/coast1
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/cc_md_2022_background_in_scan.png}
+       \caption{Horizontal (blue) and vertical (red) background emittance growth measured during the experiment with CC1 in 2022, with no injected artificial noise and with the Landau octupoles switched OFF.}
+       \label{fig:cc_md_2022_background_growth_in_scan}
+\end{figure}
+% There was no valid reason to exclude any of the points even the outliers.
 
-Big flacutation. --> long measuremtns.
+The applications used in the control room for the monitoring of the SPS machine have undergone an upgrade between the years 2018 and 2022. The latest applications which activate the Wire Scanners and automatically compute the emittance values from the profiles do not compute the respective errors. Nevertheless, the profiles' data are available and thus the errors in the emittance values can be calculated at a later post-processing stage. This post-processing showed that the errors on the emittance values (computed as shown in Chapter~\ref{Ch:2018_analyisis}) are 2-3 orders of magnitude smaller than the emittance values themselves \footnote{An example is provided in the Appendix...}. Therefore, their impact is insignificant and the uncertainties of the emittance growth rates are dominated by the fluctuation of the Wire Scanner acquisitions. To this end, they are not shown in the emittance growth plot.
 
 
+From the above figure, it is evident that there is a significant fluctuation in the emittance values in both transverse planes. By looking at the beam profiles, no evidence (e.g. corrupted profiles, abnormal tails, large errors on the gaussian fit results) was found to exclude some of the points. This fluctuation is introduced by the Wire Scanners used for the measurements. As discussed with the experts it appears to be within the limitations of the instrument for these small emittance values. In order to reduce the sensitivity of the linear fit (from which the emittance growth rates are obtained) longer measurements are required (at least 40 minutes). For larger emittance growth rates, or in other words for larger emittance values, these fluctuations are mitigated. The individual measurements from the different coasts during the experiment can be found in the Appendix...
 
-The "natural" amplitude and phase noise at 8\,kHz were measured to be -130.2\,dBc/Hz and 125.7\,dBc/Hz respectively. The theoretically~\cite{PhysRevSTAB.18.101001} expected emittance growth from those noise levels was 0.05\,$\mathrm{\mu/h}$ and 0.19\,$\mathrm{\mu/h}$ in the horizontal and vertical planes respectively from both noise types combined.
+Finally, for reference, the "natural" amplitude and phase noise at 8\,kHz were measured to be -130.2\,dBc/Hz and 125.7\,dBc/Hz respectively. The theoretically~\cite{PhysRevSTAB.18.101001} expected emittance growth from those noise levels was 0.05\,$\mathrm{\mu/h}$ and 0.19\,$\mathrm{\mu/h}$ in the horizontal and vertical planes respectively from both noise types combined.
 % y-plane --> AN: 0.045 um/h, PN: 0.14 um/h
 % x-plane --> AN: 0.002 um/h, PN: 0.05 um/h
 % Directory to compute these rates: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/cmpt_emit_growth_theoretical_model
+% Also some of the growth in the horizontal plane is expected by the IBS. How much I do not know yet.
 
 The rest of the observed growth rates, is due to other sources which are not yet will identified (see discussion in Chapter~\ref{Ch:2018_analyisis}).
 
