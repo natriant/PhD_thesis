@@ -462,60 +462,65 @@ For the spectral analysis studies presented here, the simualtions present in the
 
 The spectra that will be discussed below were obtained by applying a NAFF algorithm to the turn-by-turn data as described in Section~\ref{subsec:test_implementation_pyheatail}. Last, the amplitude of the spectral components is expressed as power spectral density in units of $\mathrm{rad^2}/Q_y$ as it is preferred over the amplitude of the spectral components of the Fourier transform which is in arbitrary units. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}.
 
-The results are displayed in Fig.~\ref{fig:study_9_shottky_noise_intensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous Subsection~\ref{subsec:intensity_scan_emit_growth}, such as the separation of the coherent tune form the incoherent spectrum is clearly visible. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. 
+The results are displayed in Fig.~\ref{fig:study_9_schottky_noise_intnensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous Subsection~\ref{subsec:intensity_scan_emit_growth}, such as the separation of the coherent tune form the incoherent spectrum is clearly visible. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The frequency of the coherent mode is shown with the vertical magenta line and it corresponds to the frequency with the highest amplitude.
 
+% cernbox: /pyheadtail_data/final_for_thesis/2018_conditions/study_9_schottky_noise_spectra/QpxQpy5e-1/
  \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch7/Qpx0.png}  
-        \caption{$Q^\prime_{x,y}$=0.0}
+        \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity0.21e10.png}  
+        %\caption{$Q^\prime_{x,y}$=0.0}
         \label{fig:study_9a}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch7/deyRates_final_2018_PN_sps_270GeV_PN1e-8_400MHz_y-plane_QpxQpy5e-1_6D_Nb5e5_intensity3e10_ayyScan_wakesON_vs_OFF_vs_TuneSpreadvsExpectedSPS.png}
-        \caption{$Q^\prime_{x,y}$=0.5}
+        \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity0.42e10.png}
+        %\caption{$Q^\prime_{x,y}$=0.5}
         \label{fig:study_9b}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch7/Qpx1.png}  
-        \caption{$Q^\prime_{x,y}$=1.0}
+        \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity0.83e10.png}  
+        %\caption{$Q^\prime_{x,y}$=1.0}
         \label{fig:study_9c}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch7/Qpx25e-1.png}  
-        \caption{$Q^\prime_{x,y}$=2.5}
+        \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity1.67e10.png}  
+        %\caption{$Q^\prime_{x,y}$=2.5}
         \label{fig:study_9d}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch7/Qpx5.png}  
-        \caption{$Q^\prime_{x,y}$=5.0}
+        \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity3.12e10.png}  
+        %\caption{$Q^\prime_{x,y}$=5.0}
         \label{fig:study_9e}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
             \centering
-            \includegraphics[width=.95\linewidth]{images/Ch7/Qpx25e-1.png}  
-            \caption{$Q^\prime_{x,y}$=2.5}
+            \includegraphics[width=.95\linewidth]{images/Ch7/psdY_intensity5.00e10.png}  
+            %\caption{$Q^\prime_{x,y}$=2.5}
             \label{fig:study_9f}
     \end{subfigure}
     \caption{Power spectral density of the vertical bunch centroid motion on a logarithmic scale in the presence of the SPS transverse impedance model, calculated over $10^6$ turns with $5 \times 10^4$ macroparticles for different values of intensity increasing from top left to bottom right.}
-    \label{fig:study_9_shottky_noise_intensity_scan}
+    \label{fig:study_9_schottky_noise_intnensity_scan}
 \end{figure}
 
+Comparing Fig.~\ref{fig:study_9_schottky_noise_intnensity_scan} with Fig.~\ref{fig:study_8_intensity_scan} it becomes evident that:
+\begin{itemize}
+    \item The two upper spectra, where the coherent mode lies inside the incoherent spectrum, reside to the regime of no emittance growth suppression.
+    \item The two middle spectra, where the coherent mode emerges from the incoherent spectrum, reside to the regime where the emittance growth suppression increases for higher intensity values.
+    \item The two bottom spectra, where the cohere mode is well separated from the incoherent spectra, reside to the regime where the dependence on the intensity saturates.
+\end{itemize}
 
-Two upper plots correspond to the regime of no suppression, midd in the cut off and intensity dependent regime, bottom saturation of dependence on intnesity.
+The above observations, confirm that the transverse impedance separates the coherent tune from the incoherent spectrum and this is the mechanism that leads to an effective suppression of the Crab Cavity phase noise induced emittance growth.
 
-The coherent betatron mode clearly emerges from the incoherent spectrum for higher intensities, at the time the emittance growth suppression starts to be visible too. However, once the coherent mode is completely seperated from the incoherent spectrum the dependence on the intensity saturates.
+According, to Y.~Alexahin's theory for beam-beam induced effects, the explanation is that only part of the energy from the noise kicks is absorbed by the incoherent spectrum and drives incoherent motion and leads to irreversible emittance growth. The rest of the energy is absorbed by the coherent mode, which is damped by the impedance (for the expereimental conditions of small positve chromaticity) without leading to emittance growth.
+% From IPAC's presentation
 
-According, to Y.~Alexahin's theory
+%- he separation of the coherent modes and the incoherent spectrum means that the interaction between the coherent mode and the incoherent motion of the single particles is reduced , source:% https://docs.google.com/presentation/d/1D4WODJEieOKkYta2Oh1h7AN2drb0ti1R-iTjDkwZo6A/edit#slide=id.gca25e861ba_0_170
 
-
-- he separation of the coherent modes and the incoherent spectrum means that the interaction between the coherent mode and the incoherent motion of the single particles is reduced , source:% https://docs.google.com/presentation/d/1D4WODJEieOKkYta2Oh1h7AN2drb0ti1R-iTjDkwZo6A/edit#slide=id.gca25e861ba_0_170
-- check the presentation for IPAC and copy the text from there.
 
 \subsection{Studying the motion of the centroid - decoherence}
 % google slides presentation: https://docs.google.com/presentation/d/1ksIQEaxE5FoVOY7oTd7lwEuIt8P9K3u4lQtENXmD-T4/edit#slide=id.gb54efd84b7_0_0
