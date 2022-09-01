@@ -55,6 +55,38 @@ The noise injected in the $\CC$ RF system was again a mixture of phase and ampli
 % I don't have the data to plot the spectra. Only screenshots in the logbook.
 
 
+
+\begin{table}[!hbt]
+	\centering
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2018. The listed values correspond to the average PSD values at the first betatron sideband, $f_b$, at $\sim$8\,kHz. The calculated effective phase noise are also listed.}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{1}{l}{} &
+		\multicolumn{3}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$ \textbf{[dBc/Hz]}} \\
+		\bottomrule
+      \multicolumn{1}{l}{} & 	\multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} & 	\multicolumn{1}{c}{\textbf{Effective phase noise}} \\
+      \midrule
+      \multicolumn{1}{l}{Setting1}  & \multicolumn{1}{c}{-122.6 $\pm 0.6$} & \multicolumn{1}{c}{-128.1 $\pm$ 0.6} & \multicolumn{1}{c}{-121.8 $\pm$ 0.5} \\
+      
+      \multicolumn{1}{l}{Setting2}  & \multicolumn{1}{c}{-101.4 $\pm$ 0.8} & \multicolumn{1}{c}{-115.2 $\pm$ 0.6} & \multicolumn{1}{c}{-101.3 $\pm$ 0.8} \\
+
+      \multicolumn{1}{l}{CSetting3}  & \multicolumn{1}{c}{-115.0 $\pm$ 0.8} & \multicolumn{1}{c}{-124.1 $\pm$ 0.5} & \multicolumn{1}{c}{-114.6 $\pm$ 0.7} \\
+
+      \multicolumn{1}{l}{Coast2-Setting2}  & \multicolumn{1}{c}{-111.4 $\pm$ 0.6} & \multicolumn{1}{c}{-115.7 $\pm$ 0.4} & \multicolumn{1}{c}{-110.2 $\pm$ 0.5} \\ 
+
+      \multicolumn{1}{l}{Coast3-Setting1}  & \multicolumn{1}{c}{-110.9 $\pm$ 0.9} & \multicolumn{1}{c}{-116.9 $\pm$ 0.4} & \multicolumn{1}{c}{-110.1 $\pm$ 0.8} \\
+
+      \multicolumn{1}{l}{Coast3-Setting2} & \multicolumn{1}{c}{-106.4 $\pm$ 0.3} & \multicolumn{1}{c}{-112.9 $\pm$ 0.6} & \multicolumn{1}{c}{-105.8 $\pm$ 0.3}\\
+
+      \multicolumn{1}{l}{Coast3-Setting3} & \multicolumn{1}{c}{-101.4 $\pm$ 0.7}  & \multicolumn{1}{c}{-106.9 $\pm$ 0.5} & \multicolumn{1}{c}{-100.6 $\pm$ 0.6} \\
+      \arrayrulecolor{black}\bottomrule
+	\end{tabu}
+   \label{tab:noise_settings_2022}
+\end{table}
+
+
+
 \textbf{CC1 instead of CC2}\\
 In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. The reason behind this is that during the phase offset scan performed for the calibration of the $\CC$ module (details on the procedure can be found in ... section in chapter 4 and  Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but treating it would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
@@ -152,7 +184,7 @@ After the calibration of the CC1, the coast at 270\,GeV was set up for the emitt
 \end{figure}
 % There was no valid reason to exclude any of the points even the outliers.
 
-The applications used in the control room for the monitoring of the SPS machine have undergone an upgrade between the years 2018 and 2022. The latest applications which activate the Wire Scanners and automatically compute the emittance values from the profiles do not compute the respective errors. Nevertheless, the profiles' data are available and thus the uncertainties of the emittance values can be calculated at a later post-processing stage. This post-processing showed that the uncertainties of the emittance values (computed as shown in Chapter~\ref{Ch:2018_analyisis}) are 2-3 orders of magnitude smaller than the emittance values themselves \footnote{An example is provided in the Appendix~\ref{sec:sps_transverse_beam_profiles}}. Therefore, their impact is insignificant and the uncertainties of the emittance growth rates are dominated by the fluctuation of the Wire Scanner acquisitions. To this end, they are not shown in the emittance growth plot nor included in the fit to facilitate the analysis.
+The applications used in the control room for the monitoring of the SPS machine have undergone an upgrade between the years 2018 and 2022. The latest applications which activate the Wire Scanners and automatically compute the emittance values from the profiles do not compute the respective errors. Nevertheless, the profiles' data are available and thus the uncertainties of the emittance values can be calculated at a later post-processing stage. This post-processing showed that the uncertainties of the emittance values (computed as shown in Chapter~\ref{Ch:2018_analyisis}) are 2-3 orders of magnitude smaller than the emittance values themselves \footnote{See Appendix~\ref{sec:sps_transverse_beam_profiles}}. Therefore, their impact is insignificant and the uncertainties of the emittance growth rates are dominated by the fluctuation of the Wire Scanner acquisitions. To this end, they are not shown in the emittance growth plot nor included in the fit to facilitate the analysis.
 
 From the above figure, it is evident that there is a significant fluctuation in the emittance values in both transverse planes. By looking at the beam profiles, no evidence (e.g. corrupted profiles, abnormal tails, large errors on the gaussian fit results) was found to exclude some of the points. This fluctuation is introduced by the Wire Scanners used for the measurements. As discussed with the experts it appears to be within the limitations of the instrument for these small emittance values. In order to reduce the sensitivity of the linear fit (from which the emittance growth rates are obtained) longer measurements are required (at least 40 minutes). For larger emittance growth rates, or in other words for larger emittance values, these fluctuations are mitigated. The individual measurements from the different coasts during the experiment can be found in the Appendix...
 
@@ -164,6 +196,8 @@ Finally, for reference, the "natural" amplitude and phase noise at 8\,kHz were m
 The rest of the observed growth rates, is due to other sources which are not yet will identified (see discussion in Chapter~\ref{Ch:2018_analyisis}).
 
 \subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
+
+The objective of the first part of the experiment was to reproduce the scaling of the emittance growth driven by CC RF noise with the noise power as observed in 2018. 
 
 The duration of the measurements varied depending on the noise level. For the weak noise levels, 
 
