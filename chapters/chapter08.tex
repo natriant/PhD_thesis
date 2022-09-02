@@ -169,7 +169,7 @@ From the beam based measurements with the HT monitor the voltage of CC1 was foun
 Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However, the cavity tripped systematically due to issues associated with the change of the RF phase. Treating it would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
-\subsection{Measurement of background growth rate in coast}\label{ref:measured_backgorund_growth_cc_md_202}
+\subsection{Measurement of background growth rate in coast}\label{subsec:measured_background_growth_cc_md_2022}
 After the calibration of the CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background emittance growth, with no additional noise injected in the CC and the Landau octupoles switched off was measured. The background emittance growth was found to be similar in both transverse planes and in particular $d\epsilon_x /dt$ = 0.81\,$\mathrm{\mu m}$ and $d\epsilon_y /dt$ = 0.84\,$\mathrm{\mu m}$ in the horizontal and vertical planes respectively. This measured background emittance growth is illustrated in Fig~\ref{fig:cc_md_2022_background_growth_in_scan} for both the horizontal (blue) and vertical (red) planes.
 
 \begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/online_analysis_scripts_figures/coast1
@@ -232,17 +232,24 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse
    \label{fig:cc_md_2022_overview_plots_noise_scan}
 \end{figure}
 
-\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_H_and_V_noise_scan.png
-   \centering         
+% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_H_and_V_noise_scan.png
+\begin{figure}[!h] 
+     \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_noise_scan.png}
        \caption{Overiview plot of the emittance growth study with noise injected in the CC1 in 2022. The measured horizontal (blue) and vertical (red) emittance growth rates are shown as a function of the different phase noise levels of applied noise.}
        \label{fig:H_V_emit_growth_noise_scan}
 \end{figure}
 
 
-
-
-
+\textbf{Summary plot}\\
+Figure~\ref{fig:V_emit_growth_background_subtracted_noise_scan} compares the measured (red) and the theoretically calculated (black) vertical emittance growth rates for the different phase noise levels. For the comparison the background growth rate measured in the vertical plane (see Section~\ref{subsec:measured_background_growth_cc_md_2022})
+% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_V_background_subtracted_noise_scan.png
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_V_background_subtracted_noise_scan.png}
+       \caption{Summary plot of the emittance growth study with different noise levels injected in the RF system of CC1 in 2022. The vertical measured growth rate (red) and the expected growths from the theoretical model~\cite{PhysRevSTAB.18.101001} (black) are shown as a function of the different levels of applied phase noise.}
+       \label{fig:V_emit_growth_background_subtracted_noise_scan}
+\end{figure}
 
 
 \subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
