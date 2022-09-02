@@ -197,8 +197,11 @@ The objective of the first part of the experiment was to reproduce the scaling o
 
 For the strong noise, less measurement time is sufficient since the growth rate obtained from the linear fit on the emittance values is not sensitive to the fluctuations due to the Wire Scanner. Additionally, for strong noise, the emittance reaches very quickly very large values, about 8-10\,$\mathrm{\mu m}$, which eventually degrades the quality of the beam.
 
-Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse emittance growth measured in the SPS in 2022 for the four different noise levels injected in the $\CC$ RF system increasing from top left to bottom right. 
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse emittance growth measured in the SPS in 2022 for the four different noise levels injected in the $\CC$ RF system increasing from top left to bottom right. It can be seen, that there is a clear emittance growth in the vertical plane which is faster for stronger noise as expected. A growth in the horizontal emittance is also observed it seems independent from the growth in the vertical. This is also confirmed in Fig.~\ref{fig:H_V_emit_growth_noise_scan} where the vertical and horizontal growth rates are plotted as a function of the four different phase noise levels. Consequently, in the following analysis of the experimental data the growth in two planes will be treated independently (unlike in 2018, see Chapter~\ref{Ch:2018_analyisis}.)\textcolor{red}{These last sentences need to be modifief after checking again the 2018 data to see if there was indeed coupling or not.}
 
+
+% Note 1, figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis
+% Note 2, scripts to plot: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/ws_measurements 
 \begin{figure}[htp]
    \centering
    \begin{subfigure}{.45\textwidth}
@@ -229,18 +232,19 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse
    \label{fig:cc_md_2022_overview_plots_noise_scan}
 \end{figure}
 
+\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_H_and_V_noise_scan.png
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_noise_scan.png}
+       \caption{Overiview plot of the emittance growth study with noise injected in the CC1 in 2022. The measured horizontal (blue) and vertical (red) emittance growth rates are shown as a function of the different phase noise levels of applied noise.}
+       \label{fig:H_V_emit_growth_noise_scan}
+\end{figure}
 
 
 
-- some growth in the horizontal as in 2018. 
-- let's see if it is coupling.
 
 
 
-for the four different noise levels injected in the $\CC$ RF system is illustrated in Fig... 
 
-
-Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the Wire Scanner measurements. For this reason, for the low noise levels, long measurements of about 30-40 minutes were needed.
 \subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
 
 \section{Experiment with beam damper as noise source}
