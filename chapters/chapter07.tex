@@ -244,6 +244,8 @@ The simulations were performed with and without the SPS impedance model to study
         \label{fig:MD_2018_impedance_simulations}
  \end{figure}
 
+It should be commented, that the big spread in the emittance growth rates over the different simulation runs in the absence of wakefields is a result of the very small tune spread value. The wakefields introduce some additional tune spread, on top of the one from the vertical detuning coefficient, which mitigates the uncertainty of the simulated growth rates
+
 To conclude, PyHEADTAIL simulations showed for the first time that the transverse beam impedance (which is not included in the theory of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}) has a significant impact on the emittance growth driven by $\CC$ RF noise. The effect of the suppression of noise-induced emittance growth from the impedance has not been observed before. 
 To characterise this effect and to be able to understand the mechanism behind it, a series of exploratory studies were conducted and are discussed in the following section. 
 
@@ -273,7 +275,6 @@ It can be seen that when the wakefield kicks are not applied on the beam the emi
 Figure~\ref{fig:MD_2018_impedance_simulations} also shows a clear suppression of the transverse emittance growth when the wakefield kicks are included. The suppression depends on the tune spread and is asymmetric for positive and negative values of the detuning coefficient. Over a realistic range of tune spread values (estimated with MAD-X~\cite{madx} including the non-linearities of SPS~\cite{Carlà:2664976, Alekou:2640326} and $Q^\prime_{x,y}$ = 0.5, and shown by the grey shaded area in Fig.~\ref{fig:MD_2018_impedance_simulations}) the suppression reaches up to a factor 4-5. This suppression is very close to that observed in the experiments and suggests that the impedance effects might explain the discrepancy between the measured and theoretically estimated emittance growth rates.
 
 
-
 \subsection{Amplitude noise}\label{subsec:amplitude_noise}
 The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with power spectral density of $1.68 \times 10^{-10}$ 1/Hz which corresponds to $A=10^{-8}$ for the scaling factor in Eq.~\eqref{eq:amplitude_noise_kick}. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in Fig.~\ref{fig:study_1_2018_paramters_AN}.
 
@@ -288,7 +289,7 @@ The simulations discussed here were performed with and without the SPS imepdance
 
 
  \subsection{CC RF noise at 200\,MHz}\label{subsec:fcc_200MHz}
-The study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}). The main reason for this study is that in that case in the presence of phase (amplitude) noise the headtail mode 0 (1) is more dominant than in the case of RF noise at 400\,MHz. Additionally, this is also similar to the HL-LHC scenario where the main RF system and the $\CC$s will operate at the same frequency ($f_\mathrm{C, }=f_\mathrm{RF, HL-LHC}$=400\,MHz).
+Now, the study was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}). The main reason for this study is that in that case in the presence of phase (amplitude) noise the headtail mode 0 (1) is more dominant than in the case of RF noise at 400\,MHz. Additionally, this is also similar to the HL-LHC scenario where the main RF system and the $\CC$s will operate at the same frequency ($f_\mathrm{C, }=f_\mathrm{RF, HL-LHC}$=400\,MHz).
 
 The simulations were performed with and without the SPS impedance model in the presence of both amplitude and phase noise with power spectral density of $1.21 \times 10^{-10} \mathrm{rad^2/Hz}$ (A=$10^{-8}\sqrt{0.72}$) and $3.06 \times 10^{-10} \mathrm{1/Hz}$ (A=$10^{-8}\sqrt{1.82}$) respectively. The noise strength was scaled such as it results in $\sim$ 25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
 
