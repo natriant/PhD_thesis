@@ -1,13 +1,10 @@
-
 During the dedicated experiment that took place in the SPS
 in 2018 with the CCs, the measured emittance
-growth was found to be a factor four (on average) lower than
+growth was found to be a factor of four (on average) lower than
 expected from the theory (see Section~\ref{sec:meas_2018_vs_theory}). The reason for this discrepancy remained unresolved for some time, as detailed follow-up studies (see Chapter~\ref{Ch:investigating_discrepancy}) investigated and excluded a number of possible explanations for the discrepancy.
 It was recently found, that the beam transverse impedance, which is not included in the theory~\cite{PhysRevSTAB.18.101001} used for the comparison with the measurements may impact the noise-induced emittance growth and explain the experimental observations. Here, the damping mechanism from the beam transverse impedance is investigated as observed in detailed PyHEADTAIL simulations.
 
-The structure of this chapter is as follows:
-
-
+The structure of this chapter is as follows: Section~\ref{sec:sps_impedance_model} provides information on the impedance model of the SPS machine and benchmarks its implementation in PyHEADTAIL against theoretical calculations. In Section~\ref{sec:setup_simulations_emit_growth} the simulation setup for the emittance growth studies is discussed and the beam and machine parameters (following the 2018 $\CC$ experiment) are listed. Section~\ref{sec:first_obs_suppression} presents simulations results which showed for the first time that the transverse beam impedance (which was not included in the theory~\cite{PhysRevSTAB.18.101001} and the simulations up to now) significantly suppresses the noise-driven emittance growth. Thereafter, multiple PyHEADTAIL simulations were carried out aiming to characterise the effect of the suppression in order to understand the mechanism behind it. These studies are presented in Section~\ref{sec:emittance_growth_exploratory_studies}. The suppression mechanism is investigated through parametric studies and with studies in the frequency domain in Section~\ref{sec:suppression_mechanism}. Finally, the main results are summarised in Section~\ref{sec:Ch7_conclusions}
 
 
 \section{SPS transverse impedance model}\label{sec:sps_impedance_model}
@@ -509,15 +506,16 @@ The results are displayed in Fig.~\ref{fig:study_9_schottky_noise_intnensity_sca
 
 Comparing Fig.~\ref{fig:study_9_schottky_noise_intnensity_scan} with Fig.~\ref{fig:study_8_intensity_scan} it becomes evident that:
 \begin{itemize}
-    \item The two upper spectra, where the coherent mode lies inside the incoherent spectrum, reside to the regime of no emittance growth suppression.
-    \item The two middle spectra, where the coherent mode emerges from the incoherent spectrum, reside to the regime where the emittance growth suppression increases for higher intensity values.
-    \item The two bottom spectra, where the cohere mode is well separated from the incoherent spectra, reside to the regime where the dependence on the intensity saturates.
+    \item The two upper spectra, where the coherent mode lies inside the incoherent spectrum, reside in the regime of no emittance growth suppression.
+    \item The two middle spectra, where the coherent mode emerges from the incoherent spectrum, reside in the regime where the emittance growth suppression increases for higher intensity values.
+    \item The two bottom spectra, where the cohere mode is well separated from the incoherent spectra, reside in the regime where the dependence on the intensity saturates.
 \end{itemize}
 
 The above observations, confirm that the transverse impedance separates the coherent tune from the incoherent spectrum and this is the mechanism that leads to an effective suppression of the Crab Cavity phase noise induced emittance growth.
 
-According, to Y.~Alexahin's theory for beam-beam induced effects, the explanation is that only part of the energy from the noise kicks is absorbed by the incoherent spectrum and drives incoherent motion and leads to irreversible emittance growth. The rest of the energy is absorbed by the coherent mode, which is damped by the impedance (for the expereimental conditions of small positve chromaticity) without leading to emittance growth.
-% From IPAC's presentation
+According, to Y.~Alexahin's theory for beam-beam induced effects, the explanation is that only part of the energy from the noise kicks is absorbed by the incoherent spectrum and drives incoherent motion and leads to irreversible emittance growth. The rest of the energy is absorbed by the coherent mode, which is damped \footnote{The damping rate of the coherent tune (mode 0) for the experimental parameters of 2018, was estimated to be 3.6 1/turns using Eq.~\eqref{eq:imaginary_tune_mode_l}} by the impedance (for the expereimental conditions of small positve chromaticity) without leading to emittance growth.
+% From IPAC's presentation.
+% Compute tune shift and damping rate from impedance: https://github.com/natriant/exploring_SPS/tree/master/tuneShift_from_transverese_impedance/theoretical%20model%20(Chao%20formula).
 
 %- he separation of the coherent modes and the incoherent spectrum means that the interaction between the coherent mode and the incoherent motion of the single particles is reduced , source:% https://docs.google.com/presentation/d/1D4WODJEieOKkYta2Oh1h7AN2drb0ti1R-iTjDkwZo6A/edit#slide=id.gca25e861ba_0_170
 
@@ -578,40 +576,3 @@ The PyHEADTAIL simulations also revealed a strong sensitivity of the suppression
 
 
 
-
-
-
-
-Below, the spectra were obtained by applying a NAFF algorithm to the turn-by-turn data as described in Section~\ref{subsec:test_implementation_pyheatail}. Last, the amplitude of the spectral components is expressed as power spectral density in units of $\mathrm{rad^2}/Q_y$ as it is preferred over the amplitude of the spectral components of the Fourier transform which is in arbitrary units.
-
-Below, the frequency spectrum of the bunch vertical centroid motion is studied for the following two values of the vertical detuning coefficient, $\alpha_\mathrm{yy}$ = -2000 and -20000\,1/m since they correspond to regimes of strong and zero suppression respectively (as illustrated in Fig.~\ref{fig:MD_2018_impedance_simulations}). The value $\alpha_\mathrm{yy}$ = -2000\,1/m results to tune spread similar to the one that was present in the SPS during the $\CC$ tests in 2018. The spectra are shown along with the transverse emittance growth for the corresponding amplitude detuning value as simulated for the studies in Section~\ref{sec:first_obs_suppression}.
-
-
-The results are summarised in Fig.
-
-
-
-
-It is evident that for the conditions of the emittance growq
-
-
-
-the emittance growth experiments in the SPS the small tune shift from the
-
-\newpage
-
-
-
-for the same set-up and parameters described
-
-
-
-To test the suppression mechanism the incoherent spectrum of the centroid motion of the bunch is obtained for  
-
-
-
-Here, the incoherent spectrum of the bunch is investigated for different intensities in an attempt to visualise and hence confirm that the suppression mechanism is a result of the separation of the coherent mode from the incoherent spectrum. 
-
- The simulation setup was done as described in Section~\ref{sec:setup_simulations_emit_growth}. No noise kick was applied on the bunch to minimise the external perturbations and obtain a clear frequency signal. The initial bunch was generated with Gaussian distributions in transverse and longitudinal planes and an initial vertical offset of 0.2 times the vertical beam size. Additionally, and for reasons that were described in Section~\ref{subsec:intensity_scan_emit_growth} the simulations took place with vertical detuning coefficient at $\alpha_\mathrm{yy}$=6000\,1/m and chromaticity corrected to zero, $Q^\prime_{x,y}$=0. $5 \times 10^4$ macroparticles were sufficient \footnote{Following similar studies in Ref.~\cite{Zorzano-Mier:446334} and exploratory studies confirmed that the number of macroparticles used does not affect the quality of the results.} for this type of simulation which reduced significantly the computational time of the simulation. The spectrum was obtained with a long tracking $10^6$ turns and by applying an FFT algorithm \footnote{In particular a NAFF algorithm (available in NAFFlib python library) is used as described in Section~\ref{subsec:test_implementation_pyheatail}.}.
- 
-The results are displayed in Fig.~\ref{fig:study_9_shottky_noise_intensity_scan} which shows the vertical spectrum of the centroid (coherent) oscillation of the bunch for different intensity values, selected from the range studied in the previous subsection: ~\ref{subsec:intensity_scan_emit_growth}. Each subplot shows the power spectral density of the motion of the centroid as a function of the frequency in tune units for a given intensity value, which increases from the top left to the bottom right. The power spectral density of the motion of the centroid is obtained from the above-mentioned Fourier transform using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}. 
