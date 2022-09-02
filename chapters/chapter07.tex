@@ -426,10 +426,9 @@ The consequence of the dipolar term is that it leads to coherent tune shift (see
 
 
 \section{Suppresion mechanism}\label{sec:suppression_mechanism}
-The goal of this section is to understand the mechanism behind the suppression of the emittance growth observed in the presence of the transverse impedance in the SPS case. 
+The goal of this section is to understand the mechanism behind the suppression of the emittance growth observed in PyHEADTAIL simulations including the transverse impedance for conditions similar to the $\CC$ experiments of 2018. 
 
-- We return to the first case, in section 7.3
-The followinf studies are organised following the observation of the dependece on the coherent tune shift.
+%The followinf studies are organised following the observation of the dependece on the coherent tune shift.
 
 \subsection{Historical considerations and motivation}\label{subsec:past_studies_impedance_suppression_BB}
 % Or: Past studies with beam-beam interactions
@@ -529,32 +528,34 @@ Comparing Fig.~\ref{fig:study_9_schottky_noise_intnensity_scan} with Fig.~\ref{f
 
 The above observations, confirm that the transverse impedance separates the coherent tune from the incoherent spectrum and this is the mechanism that leads to an effective suppression of the Crab Cavity phase noise induced emittance growth.
 
-According, to Y.~Alexahin's theory for beam-beam induced effects, the explanation is that only part of the energy from the noise kicks is absorbed by the incoherent spectrum and drives incoherent motion and leads to irreversible emittance growth. The rest of the energy is absorbed by the coherent mode, which is damped \footnote{The damping rate of the coherent tune (mode 0) for the experimental parameters of 2018, was estimated to be 3.6 1/turns using Eq.~\eqref{eq:imaginary_tune_mode_l}} by the impedance (for the expereimental conditions of small positve chromaticity) without leading to emittance growth.
+According to the studies of Y.~Alexahin~\cite{Alexahin:314169} (which were performed in the context of the beam-beam modes) the separation of the coherent mode from the incoherent spectrum results in a suppression of the decoherence of the dipole oscillations and thus of the dipole and/or phase-noise-induced emittance growth. What happens is that only part of the energy from the noise kicks is absorbed by the incoherent spectrum and drives incoherent motion and leads to irreversible emittance growth. The rest of the energy is absorbed by the coherent mode, which is damped \footnote{The damping rate of the coherent tune (mode 0) for the experimental parameters of 2018, was estimated to be 3.6 1/turns using Eq.~\eqref{eq:imaginary_tune_mode_l}} by the impedance (for the expereimental conditions of small positve chromaticity) without leading to emittance growth.
+
+%According, to Y.~Alexahin's theory for beam-beam induced effects, the explanation is 
 % From IPAC's presentation.
 % Compute tune shift and damping rate from impedance: https://github.com/natriant/exploring_SPS/tree/master/tuneShift_from_transverese_impedance/theoretical%20model%20(Chao%20formula).
 
 %- he separation of the coherent modes and the incoherent spectrum means that the interaction between the coherent mode and the incoherent motion of the single particles is reduced , source:% https://docs.google.com/presentation/d/1D4WODJEieOKkYta2Oh1h7AN2drb0ti1R-iTjDkwZo6A/edit#slide=id.gca25e861ba_0_170
 
 
-\subsection{Studying the motion of the centroid - decoherence}
+%\subsection{Studying the motion of the centroid - decoherence}
 % google slides presentation: https://docs.google.com/presentation/d/1ksIQEaxE5FoVOY7oTd7lwEuIt8P9K3u4lQtENXmD-T4/edit#slide=id.gb54efd84b7_0_0
-According to the studies of Y.~Alexahin (which were performed in the context of the beam-beam modes) the separation of the coherent mode from the incoherent spectrum results in a suppression of the decoherence of the dipole oscillations and thus of the dipole and/or phase-noise-induced emittance growth. 
+%According to the studies of Y.~Alexahin (which were performed in the context of the beam-beam modes) the separation of the coherent mode from the incoherent spectrum results in a suppression of the decoherence of the dipole oscillations and thus of the dipole and/or phase-noise-induced emittance growth. 
+
+%Study of beam response.
+
+%This section is dedicated in visualising the change in the decoherence and the associated transverse emittance growth 
+
+%In this subsection, the decoherence and the associated transverse emittance growth are simulated with PyHEADTAIL with and without the impact of the wakefields for different intensity and chromaticity values. The objective of the study is to demonstrate the above mentioned changes in the decoherence due to the coherent tune shift but introduced by the beam coupling imepdance instead of the beam-beam effects.
+
+%illustrate the changes in the decoherence and thus in the emittance growth during the 
+
+%PyHEADTAIL tracking simualtions 
 
 
-This section is dedicated in visualising the change in the decoherence and the associated transverse emittance growth 
-
-
-In this subsection, the decoherence and the associated transverse emittance growth are simulated with PyHEADTAIL with and without the impact of the wakefields for different intensity and chromaticity values. The objective of the study is to demonstrate the above mentioned changes in the decoherence due to the coherent tune shift but introduced by the beam coupling imepdance instead of the beam-beam effects.
-
-illustrate the changes in the decoherence and thus in the emittance growth during the 
-
-PyHEADTAIL tracking simualtions 
-
-
-the suppression is a results of the change in decohernce (|see how you wirte it in the ipc paper)
+%the suppression is a results of the change in decohernce (|see how you wirte it in the ipc paper)
 this is what is studied here.
 
-PyHEADTAIL simulations of the evolution of the centroid vs emittance for difference values os amplitude detuning. 
+%PyHEADTAIL simulations of the evolution of the centroid vs emittance for difference values os amplitude detuning. 
 
 \subsection{Dependence on bunch length}
 % Slides for the respective studies: 
