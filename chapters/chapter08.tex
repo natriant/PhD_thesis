@@ -252,9 +252,7 @@ Figure~\ref{fig:V_emit_growth_background_subtracted_noise_scan} compares the mea
        \label{fig:V_emit_growth_background_subtracted_noise_scan}
 \end{figure}
 
-From Fig.~\ref{fig:V_emit_growth_background_subtracted_noise_scan} it becomes evident that the theory systematically overestimates the measured growth rates. The averaged discrepancy over all noise levels, but the first one, is a factor 4: numerical values are given in Table~\ref{tab:cc_md_2022_noise_scaling}.
-
-
+From Fig.~\ref{fig:V_emit_growth_background_subtracted_noise_scan} it becomes evident that the measured emittance growth increases for higher noise levels as expected. Furthermore, it is observed that the theory systematically overestimates the measured growth rates. The averaged discrepancy over all noise levels, but the first one, is a factor 4: numerical values are given in Table~\ref{tab:cc_md_2022_noise_scaling}. In the computation of the average, the growth rates for the first noise level are not taken into account since the uncertainty of the corresponding measured growth is very big ($\sim 50\%$ of the emittance value itself).
 
 \begin{table}[!hbt]
 	\centering
@@ -279,11 +277,50 @@ From Fig.~\ref{fig:V_emit_growth_background_subtracted_noise_scan} it becomes ev
    \label{tab:cc_md_2022_noise_scaling}
 \end{table}
 
+To summarise, the first experiment of the experimental campaign with $\CC$s in 2022 has proved successful since:
+\begin{itemize}
+   \item The measured emittance growth was found to scale with the noise power as expected from the theory. 
+   \item The measured growth rates were found to be systematically lower by the analytically expected values. This observation is in accordance with the experimental observations of the 2018 campaign and validates the reproducibility of the experiment. 
+   \item The discrepancy between measured and theoretically expected values was found to be about a factor of 4, which is very close to the suppression factor of 3 which is expected from the PyHEADTAIL simulations with impedance (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current} for $k_\mathrm{LOD}=0$.)
+\end{itemize}
 
-This is in agreement with the experimental observations of 2018 (see Fig.~\ref{fig:MD5_bunch1_theory_vs_meas})
 
 
 \subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
+
+The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept expereiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited available time for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \mathrm{m^{-4}}, 10 \mathrm{m^{-4}}$ and $15 \mathrm{m^{-4}}$. The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the theoretical model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} ($\sim$ 20 $\mathrm{\mu/h}$). For each setting the bunch evolution was recorded for about 30 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch such as the initial conditions are as close as possible. The individual measurements of the transverse emittance evolution for each setting are illustrated in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}.
+
+
+\begin{figure}[htp]
+   \centering
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast6.png}  
+       \caption{$k_\mathrm{LOD}=+15 \mathrm{1/m^{4}}$}
+       \label{fig:cc_md_2022_coast6}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast7.png}  
+       \caption{$k_\mathrm{LOD}=+10 \mathrm{1/m^{4}}$}
+       \label{fig:cc_md_2022_coast7}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast8.png}  
+       \caption{$k_\mathrm{LOD}=+5 \mathrm{1/m^{4}}$}
+       \label{fig:cc_md_2022_coast8}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+           \centering
+           \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast9.png}  
+           \caption{$k_\mathrm{LOD}=-5 \mathrm{1/m^{4}}$}
+           \label{fig:cc_md_2022_coast9}
+   \end{subfigure}
+   \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the CC experiment on May 16, 2022. The different phase noise levels injected in the RF system of CC1, are displayed at the captions of each plot.}
+   \label{fig:cc_md_2022_overview_plots_klod_scan}
+\end{figure}
+
 
 \section{Experiment with beam damper as noise source}
 
