@@ -191,7 +191,7 @@ Finally, for reference, the "natural" amplitude and phase noise at 8\,kHz were m
 % Also some of the growth in the horizontal plane is expected by the IBS. How much I do not know yet.
 The rest of the observed growth rates, is due to other sources which are not yet will identified (see discussion in Chapter~\ref{Ch:2018_analyisis}).
 
-\subsection{Results of CC Experiment A: scaling of emittance growth with noise power}
+\subsection{Results of CC Experiment A: scaling of emittance growth with noise power}\label{subsec:cc_md_2022_noise_scan}
 
 The objective of the first part of the experiment was to reproduce the scaling of the emittance growth driven by CC RF noise with the noise power as observed in 2018. Four different levels of artificial noise were injected in the RF system of the $\CC$ as listed in Table~\ref{tab:noise_settings_2022} and the emittance evolution was recorded in coast every $\sim$1.5 minute. For each noise level, a new bunch was injected such as all the measurements took place with the same initial conditions. The duration of each coast varied from about 30 minutes for the low noise levels to about 20 minutes for the strong noise. The 
 
@@ -281,16 +281,16 @@ To summarise, the first experiment of the experimental campaign with $\CC$s in 2
 \begin{itemize}
    \item The measured emittance growth was found to scale with the noise power as expected from the theory. 
    \item The measured growth rates were found to be systematically lower by the analytically expected values. This observation is in accordance with the experimental observations of the 2018 campaign and validates the reproducibility of the experiment. 
-   \item The discrepancy between measured and theoretically expected values was found to be about a factor of 4, which is very close to the suppression factor of 3 which is expected from the PyHEADTAIL simulations with impedance (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current} for $k_\mathrm{LOD}=0$.)
+   \item The discrepancy between measured and theoretically expected values was found to be about a factor of 4, which is very close to the suppression factor of 3 which is expected from the PyHEADTAIL simulations with impedance (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current} for $k_\mathrm{LOD}=0$).
 \end{itemize}
 
 
 
-\subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift} 
+\subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
 
 The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept expereiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited available time for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the theoretical model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} ($\sim$ 20 $\mathrm{\mu m/h}$). For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch such as the initial conditions are as close as possible. 
 
-The individual measurements of the transverse emittance evolution for each octupole setting are illustrated in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made by examining its subfigures. First, there is a clear sensitivity of the measured evolution of the vertical emittance on the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also visualised in the summary plot of Fi...
+The individual measurements of the transverse emittance evolution for each octupole setting are illustrated in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made by examining its subfigures. First, there is a clear sensitivity of the measured evolution of the vertical emittance on the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also visualised in the summary plot of Fig.~\ref{fig:V_emit_growth_background_subtracted_octupole_scan}.
 
 % location: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis
 % script to plot: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/ws_measurements 
@@ -326,12 +326,39 @@ The individual measurements of the transverse emittance evolution for each octup
 
 \textbf{Summary plot}\\
 
+The measured emittance growth in both transverse planes is plotted as a function of the different octupole strengths used in Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}. The errorbars indicate the error of the linear fit on the emittance values. The background emittance growth observed in the SPS without any noise injected in the CC1 ($d\epsilon_x/dt$ = 0.81\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt$ = 0.84\,$\mathrm{\mu m/h}$) is subtracted from the measured values. Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which appears similar with what is expected from the simulations.  Similarly, to the first part of the experiment (see Subsection~\ref{subsec:cc_md_2022_noise_scan}) the growth in the horizontal plane seems independent from the growth in the vertical. On this ground, it is reasonable to focus the rest of the analyisis in the vertical plane. 
+
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted_no_theory.png}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings.}
+       \label{fig:H_V_emit_growth_background_subtracted_octupole_scan}
+\end{figure}
+
+
+
+Figure~\ref{fig:V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which is qualitatively close to what is expected from the simulations. However, there is some uncertainty about the level of quantitative agreement. In particular, the measured emittance growth for the large octupole strength appears already slightly higher than the analytical prediction. Further measurements are needed for more octupole settings to check the full dependence on amplitude detuning.
+% In the computation of the analytical prediction only the An is taken into accounr.
+
+
+Nevertheless, the second expereiment of the expereimental campaign with CCs in 2022 has proved also sussesful since:
+\begin{itemize}
+   \item A clear dependece of the measured emittance growth on the octupole strength was observed. Hence the main goal of the experiment was achieved.
+   \item This dependece consists the confirmation of damping mechanism from the impedance.
+   \item Without octupoles à suppression factor $\sim$4-5 which is close to what is expected from impedance.
+\end{itemize}
+
+
+
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted.png}
-       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emit- tance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$. The error bars indicate the error of the linear fit on the emittance values.}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emittance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$.}
        \label{fig:V_emit_growth_background_subtracted_octupole_scan}
 \end{figure}
+
+
 
 \textbf{Comparison of measurements with PyHEADTAIL simulations}\\
 
@@ -370,3 +397,8 @@ The Landau octupoles current might be a limtiing factor.
 
 
 If you want to describe the steps for the MD see section 3.3 David amorim.
+
+
+\section{Conclusions and outloook}
+
+IPAC?
