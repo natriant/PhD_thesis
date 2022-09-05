@@ -292,6 +292,8 @@ The second part of the experiment aimed to validate that the beam coupling imped
 
 The individual measurements of the transverse emittance evolution for each octupole setting are illustrated in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made by examining its subfigures. First, there is a clear sensitivity of the measured evolution of the vertical emittance on the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also visualised in the summary plot of Fi...
 
+% location: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis
+% script to plot: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/ws_measurements 
 \begin{figure}[htp]
    \centering
    \begin{subfigure}{.45\textwidth}
@@ -321,6 +323,17 @@ The individual measurements of the transverse emittance evolution for each octup
    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the CC experiment on May 16, 2022 driven by phase noise of -104.7\,dBc/Hz. The different octupole settings are displayed at the captions of each plot.}
    \label{fig:cc_md_2022_overview_plots_klod_scan}
 \end{figure}
+
+\textbf{Summary plot}\\
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted.png}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emit- tance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$. The error bars indicate the error of the linear fit on the emittance values.}
+       \label{fig:V_emit_growth_background_subtracted_octupole_scan}
+\end{figure}
+
+\textbf{Comparison of measurements with PyHEADTAIL simulations}\\
 
 
 \section{Experiment with beam damper as noise source}
