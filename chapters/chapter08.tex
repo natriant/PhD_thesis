@@ -353,6 +353,8 @@ The measured emittance growth in both transverse planes is now plotted as a func
 
 Similarly, to the first part of the experiment (see Subsection~\ref{subsec:cc_md_2022_noise_scan}) the growth in the horizontal plane seems independent of the growth in the vertical. Furthermore, Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which appears similar to what is expected from the simulations. Therefore, the goal of the experiment is achieved as the experimental measurements confirmed the damping mechanism of the $\CC$ RF phase induced emittance growth from the transverse impedance. 
 
+Additionally, for the measurements without powering on the octupoles, $k_\mathrm{LOD}=0$, the suppression factor is found to be $\sim$ 4-5 which is similar to what is expected from impedance.
+
 The measured vertical emittance growth for the large octupole strength appears already slightly higher than the analytical prediction. This indicates that there is some uncertainty about the level of quantitative agreement which will be discussed further in the following paragraph which provides a direct comparison of the measured data with the simulation results.
 
 % Plotting script: 2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_octupole_scan_for_thesis.ipynb
@@ -368,7 +370,9 @@ Second, preparational studies revealed that there is a high sensitivity of these
 Combining these factors, with the very limited machine time for the measurements, the fact that five data points were collected with very promising results which indicate a clear dependence on the octupoles' strength is a great success.
 
 
-\textbf{Comparison of measurements against PyHEADTAIL simulations with the SPS transverse impedance model}\\
+\textbf{Comparison of measurements against PyHEADTAIL simulations with the SPS impedance}\\
+
+Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion} provides a direct comparison of the vertical emittance growth measurements with the simulation results from PyHEADTAIL including the SPS transverse impedance model (discussed in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). For the comparison, both measured and simulated rates are normalised with the corresponding analytical prediction (using Eq.~\eqref{eq:dey_pn}). 
 
 % Plotting script: /eos/user/n/natriant/pyheadtail_data/final_for_thesis/2022_conditions/CC1/normalised_growth_vs_measurements/job0010b_plot_loadFromPickles_dey_scanOverAyy_NowakesVSwakes-octupoleSettings-Noconstraintaxy_plot_normalised.ipynb
 \begin{figure}[!h]
@@ -377,6 +381,20 @@ Combining these factors, with the very limited machine time for the measurements
        \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emittance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$.}
        \label{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion}
 \end{figure}
+
+It can be seen, that there is a very good qualitative agreement of the measurements with the simulations confirming the damping mechanism from the impedance. Regarding the degree of quantitative agreement, there is some uncertainty, as already discussed above. Nevertheless, this is not surprising due to the uncertainty factors that were presented in the previous paragraph. Further studies, simulations, and measurements will be needed to investigate the quantitative agreement. Possible factors that could explain that quantitative is not yet obtained are:
+
+\begin{itemize}
+   \item The contribution from space charge which is not yet studied and it could affect the tune spread values. This will be re-discussed in Section~\ref{sec:coast_md_damper_2022}.
+   \item The fact that in the experiment the vertical emittances reached significantly larger final emittances than the 2\,$\mathrm{\mu m}$ that were considered in the simulations. Larger emittances mean larger action which eventually leads to a much larger tune spread than it was initially computed for this study. In other words, for the experimental conditions, $k_\mathrm{+15} \ \mathrm{1/m^4}$ the resulting incoherent spectrum might be sufficient for the coherent tune to lie inside it.
+\end{itemize}
+
+\subsection{Conclusions and outllok}\label{subsec:conlusions_ch8_cc_md}
+The experimental results of the additional experimental campaign with $\CC$s in SPS that took place on May 16, the year 2022 were presented in this section. The subject of the studies was the investigation of the $\CC$ noise-induced emittance growth and in particular its suppression from the beam transverse impedance. The two main objectives were a) to reproduce the scaling of the emittance growth with noise power that was observed in 2018, and b) to confirm that the beam coupling impedance can effectively suppress the $\CC$ phase noise-induced emittance growth. For the latter, the strategy was to reproduce the strong dependence of the suppression factor on the amplitude-dependent tune shift as obtained from PyHEADTAIL simulations with the SPS impedance model.
+
+Despite the limited available machine time and the numerous uncertainties introduced by the SPS operation outside of its usual mode, the experiment was proved successful. In particular, the experiment demonstrated that the vertical emittance increased for stronger noise in agreement with the observables of 2018 and the expectations from the available analytical model of T.~Mastoridis and P.~Baudrenghien. Moreover, the measurements showed good qualitative agreement with the expected impact of impedance and amplitude detuning: they represent a proof of concept for the mechanism of emittance growth suppression from the transverse impedance. Further studies, simulations (e.g. contribution of space charge), and measurements (e.g. varying octupole strengths over a larger range, impact of linear chromaticity, and the sensitivity to transverse instabilities), will be needed to refine the experimental observations and to investigate the quantitative agreement. 
+
+
 
 
 \newpage
