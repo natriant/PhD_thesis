@@ -40,7 +40,7 @@ On the grounds that the last three (out of four) bunches used in 2018 expereimen
       \bottomrule
 	\end{tabu}
    \label{tab:machine_beam_param_2022}
-   \end{centering} \footnotesize{$^\ast$ This value corresponds to the average r,s measured bunch length over all the coasts of 2022.\\$^\dagger$ The value corresponds to the requested intial value at the start of each coast. Nevertheless, the intensity drop and the bunch length increase were found to be insnificant for all the coasts. \\$^\ddagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calulcations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
+   \end{centering} \footnotesize{$^\ast$ This value corresponds to the average rms measured bunch length over all the coasts of 2022.\\$^\dagger$ The value corresponds to the requested intial value at the start of each coast. Nevertheless, the intensity drop and the bunch length increase were found to be insnificant for all the coasts. \\$^\ddagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calulcations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
    \end{minipage}
 \end{table}
 % For bunch length: cernbox/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/visualise_pickle.ipynb
@@ -288,7 +288,7 @@ To summarise, the first experiment of the experimental campaign with $\CC$s in 2
 
 \subsection{Results of CC Experiment B: sensitivity to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
 
-The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept expereiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited available time for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the theoretical model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} ($\sim$ 20 $\mathrm{\mu m/h}$). For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch such as the initial conditions are as close as possible. 
+The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept expereiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited available time for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the theoretical model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001} ($\sim$ 20 $\mathrm{\mu m/h}$). For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bun was used such as the initial conditions are as close as possible. 
 
 The individual measurements of the transverse emittance evolution for each octupole setting are illustrated in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made by examining its subfigures. First, there is a clear sensitivity of the measured evolution of the vertical emittance on the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also visualised in the summary plot of Fig.~\ref{fig:V_emit_growth_background_subtracted_octupole_scan}.
 
@@ -389,7 +389,9 @@ It can be seen, that there is a very good qualitative agreement of the measureme
    \item The fact that in the experiment the vertical emittances reached significantly larger final emittances than the 2\,$\mathrm{\mu m}$ that were considered in the simulations. Larger emittances mean larger action which eventually leads to a much larger tune spread than it was initially computed for this study. In other words, for the experimental conditions, $k_\mathrm{+15} \ \mathrm{1/m^4}$ the resulting incoherent spectrum might be sufficient for the coherent tune to lie inside it.
 \end{itemize}
 
-\subsection{Conclusions and outllok}\label{subsec:conlusions_ch8_cc_md}
+As the objective of the experiment and this thesis, in general, are already achieved, these studies are considered complementary. Therefore, they are not performed yet nor they will be presented here, due to time restrictions for the completion of this thesis. 
+
+\subsection{Conclusions and outlook}\label{subsec:conlusions_ch8_cc_md}
 The experimental results of the additional experimental campaign with $\CC$s in SPS that took place on May 16, the year 2022 were presented in this section. The subject of the studies was the investigation of the $\CC$ noise-induced emittance growth and in particular its suppression from the beam transverse impedance. The two main objectives were a) to reproduce the scaling of the emittance growth with noise power that was observed in 2018, and b) to confirm that the beam coupling impedance can effectively suppress the $\CC$ phase noise-induced emittance growth. For the latter, the strategy was to reproduce the strong dependence of the suppression factor on the amplitude-dependent tune shift as obtained from PyHEADTAIL simulations with the SPS impedance model.
 
 Despite the limited available machine time and the numerous uncertainties introduced by the SPS operation outside of its usual mode, the experiment was proved successful. In particular, the experiment demonstrated that the vertical emittance increased for stronger noise in agreement with the observables of 2018 and the expectations from the available analytical model of T.~Mastoridis and P.~Baudrenghien. Moreover, the measurements showed good qualitative agreement with the expected impact of impedance and amplitude detuning: they represent a proof of concept for the mechanism of emittance growth suppression from the transverse impedance. Further studies, simulations (e.g. contribution of space charge), and measurements (e.g. varying octupole strengths over a larger range, impact of linear chromaticity, and the sensitivity to transverse instabilities), will be needed to refine the experimental observations and to investigate the quantitative agreement. 
@@ -397,29 +399,40 @@ Despite the limited available machine time and the numerous uncertainties introd
 
 
 
+\section{Experiment with dipole noise}\label{sec:coast_md_damper_2022}
+% Presentation with the results:  https://docs.google.com/presentation/d/1C-3FPNUrUUiOFol2bdMlTqf1ZlGVamcZXjf-b4lYlUM/edit#slide=id.g1301694a1dd_0_139
+The second proof-of-concept experiment for the damping mechanism from the transverse impedance was conducted the night after the $\CC$ experiments described in the previous section. The emittance growth was induced by the beam damper acting as a pure dipolar noise source. This simplified the experimental procedure for two main reasons. First, there were no limitations and uncertainties introduced by the $\CC$ operation. Secondly, activating the beam damper does not require the teams which operate the $\CC$s and inject artificial noise into their RF system and thus less coordination. This mitigates the restrictions on finding an available slot for this experiment which eventually was squeezed during the night shift after the measurements with $\CC$s. % cryo team not needed
+
+The strength of the damper kick was not calibrated and therefore the analytical expected emittance growth could not be computed. Nevertheless, the objective was to reproduce the strong dependence on the amplitude detuning which was presented in Fig.~\ref{fig:study_5_dipole_noise}). To this end, the same procedure with the second part of the $\CC$ experiment was followed: the emittance growth was measured in coast for constant strength of the noise excitation in the vertical plane but for different octupole settings. The beam and machine parameters are summarised in Table~\ref{tab:machine_beam_param_2022}. The only update was that the linear chromaticity was corrected to $Q^\prime_{x,y}$ = 1.3 in both transverse planes to avoid instabilities due to possible shift of chroma to negative values (see Figs.~\ref{fig:instability_BBQ_klod-15_4may2022} and~\ref{fig:instability_vertical_ws}). 
+
+The experiment lasted from about 23:50 on the 16th of May, 2022, until about 04:00 on the 17th of May, 2022. Even though the available machine time was $\sim$4 hours, only seven octupole strengths could be tested: $+25, +15, +10, +5, 0, -15, -7.5 \ \mathrm{1/m^4}$. The reason is that one of the SPS quadrupole magnets tripped around 01:00 disabling the option for operation in coast, till around 03:00 when the quadrupole magnet got back working.
+
+For each octupole setting, the bunch evolution was recorded for about 10 minutes by acquiring repeated measurements with the Wire Scanners (the same instruments were used for the $\CC$ experiment earlier that day). The short duration of the measurements was a result of the strong noise excitation which resulted to a clear linear growth of the vertical emittance which reached quickly large values. This can be seen in the individual measurements of the transverse emittance evolution for each octupole setting which are presented in the Appendix... For the measurements of each setting a fresh bunch was injected. 
+
+
+\textbf{Summary plot}\\
+% no bacgkorund growth is subtracted here. It was not measured. Sensitivity very small as we are dealing with very strong emittance growth. Impact of backgorund growth is insignificant.
+The experimental results are summarised in Figure~\ref{fig:coast_dipole_noise_damper_md_2022_measurement}. The measured horizontal and vertical emittance growth are plotted as a function of the different octupole strengths with blue and red colors respectively. The error bars indicate the error of the linear fit on the emittance values during each coast. The background emittance growth without any noise excitation from the damper was not measured and thus is not subtracted from the displayed values. However, the impact of the background growth (usually measured to be between 0.5-1$\mathrm{\mu/h}$ in both transverse planes) is insignificant for the emittance growth rates of this study ($ > 10 \ \mathrm{\mu/m}$).
+ 
+
+The emittance growth observed in the horizontal plane appears to be independent of the growth in the vertical, agreeing with the observations during the $\CC$ experiment (see Section~\ref{sec:cc_md_2022}). 
+
+In the vertical plane, there is a clear dependence of the measured emittance growth on the strength of the octupoles as expected (see Fig.~\ref{fig:study_5_dipole_noise}). To this end, this experiment has been proved also successful since the results confirm the damping mechanism of the emittance growth from dipolar noise excitation by the beam transverse impedance. However, it is not clear if the used octupole strength was sufficient to get out of the suppression region. More data points with higher octupole strength would be needed. This is planned to be tested in dedicated future experiments.
+
+Last, it is worth commenting that, unlike the $\CC$ experiment that was conducted earlier that day, no vertical instability was observed in this experiment. It appears, that correcting to $Q^\prime_{x,y}$ = 1.3 was an effective way of avoiding it.
+  
+
+% Plotting script: /eos/user/n/natriant/2022/SPS_MDs_2022/coast_md_damper_16May2022/roundA_online_analysis/create_pickle_for_octupole_scan.ipynb
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emitGrowth_H_V_dipole_noise_damper_md_measurements.png}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by dipole noise introduced with the SPS beam kicker in the vertical plane for different octupole settings.}
+       \label{fig:coast_dipole_noise_damper_md_2022_measurement}
+\end{figure}
+
+\textbf{Xavier's model vs vertical plane measuremetns}\\
+
 \newpage
-
-Figure~\ref{fig:V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which is qualitatively close to what is expected from the simulations. However, there is some uncertainty about the level of quantitative agreement. In particular, the measured emittance growth for the large octupole strength appears already slightly higher than the analytical prediction. Further measurements are needed for more octupole settings to check the full dependence on amplitude detuning.
-% In the computation of the analytical prediction only the An is taken into accounr.
-
-
-Nevertheless, the second part of the expereimental campaign with CCs in 2022 has proved also sussesful since:
-\begin{itemize}
-   \item A clear dependece of the measured emittance growth on the octupole strength was observed. Hence the main goal of the experiment was achieved.
-   \item This dependece consists the confirmation of damping mechanism from the impedance.
-   \item Without octupoles à suppression factor $\sim$4-5 which is close to what is expected from impedance.
-\end{itemize}
-
-
-
-
-
-
-
-
-\section{Experiment with beam damper as noise source}\label{sec:coast_md_damper_2022}
-
-
 
 \section{Strategy and preparational studies}\label{sec:strategy_md_2022}
 % MD planning: https://docs.google.com/presentation/d/13b4KAywwANL_hk0ttAmxjW8P0zLzrJpNUKiEGYtgD3w/edit#slide=id.p 
