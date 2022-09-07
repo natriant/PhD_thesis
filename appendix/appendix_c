@@ -207,3 +207,75 @@ The measured data points (light blue) are fitted with a four-parameter gaussian 
         \label{fig:WS_example_profiles_V_2022}
  \end{figure}
 
+ \section{Bunch length measurements in 2022}\label{sec:bunch_length_abwlm_2022}
+In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
+
+\subsection{Measurements during the experiment where the scan on the noise levels was performed}
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different levels of phase noise injected in the CC RF system increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_noise_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_02.png}  
+        \caption{-115.2\,dBc/Hz}
+        %\label{fig:cc_md_2022_coast2}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_03.png}  
+        \caption{-109.5\,dBc/Hz}
+        %\label{fig:cc_md_2022_coast3}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_04.png}  
+        \caption{-104.7\,dBc/Hz}
+        %\label{fig:cc_md_2022_coast4}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_05.png}  
+            \caption{-100.1\,dBc/Hz}
+            %\label{fig:cc_md_2022_coast5}
+    \end{subfigure}
+    \caption{Evolution of the rms bunch length during the CC experiment on May 16, 2022. The different phase noise levels injected in the RF system of CC1, are displayed at the captions of each plot.}
+    \label{fig:cc_md_2022_overview_plots_noise_scan_bunch_length}
+ \end{figure}
+ 
+
+ \subsection{Measurements during the experiment where the scan on the octupole strength was performed}
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different octupole strengths used during the $\CC$ MD increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values
+ 
+
+ \begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_06.png}  
+        \caption{$k_\mathrm{LOD}=+15 \ \mathrm{1/m^{4}}$}
+        %\label{fig:cc_md_2022_coast6}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_07.png}  
+        \caption{$k_\mathrm{LOD}=+10 \ \mathrm{1/m^{4}}$}
+        %\label{fig:cc_md_2022_coast7}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_08.png}  
+        \caption{$k_\mathrm{LOD}=+5 \ \mathrm{1/m^{4}}$}
+        %\label{fig:cc_md_2022_coast8}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_09.png}  
+            \caption{$k_\mathrm{LOD}=-5 \ \mathrm{1/m^{4}}$}
+            %\label{fig:cc_md_2022_coast9}
+    \end{subfigure}
+    \caption{Evolution of the rms bunch length during the CC experiment on May 16, 2022. The different octupole settings are displayed at the captions of each plot.}
+    \label{fig:cc_md_2022_overview_plots_klod_scan_bunch_length}
+ \end{figure}
+
+
