@@ -207,12 +207,13 @@ The measured data points (light blue) are fitted with a four-parameter gaussian 
         \label{fig:WS_example_profiles_V_2022}
  \end{figure}
 
- \section{Bunch length measurements in 2022}\label{sec:bunch_length_abwlm_2022}
+ \section{Bunch length measurements in 2022}\label{sec:bunch_length_measurements_2022}
 In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
 
 \subsection{Measurements during the experiment where the scan on the noise levels was performed}
 Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different levels of phase noise injected in the CC RF system increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_noise_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values.
 
+% Scripting plot: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
@@ -247,7 +248,7 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates t
  \subsection{Measurements during the experiment where the scan on the octupole strength was performed}
 Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different octupole strengths used during the $\CC$ MD increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values
  
-
+% Scripting plot: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
  \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
@@ -279,3 +280,35 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates t
  \end{figure}
 
 
+The average rms measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.83\,ns. 
+
+
+\section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
+The individual measurements of the transverse emittance evolution for each octupole setting during the experiment with dipole noise (see Section~\ref{sec:coast_md_damper_2022}) are illustrated in Fig.~\ref{fig:dipole_noise_md_2022_overview_plots_klod_scan}. The subplots are plotted in chronological order.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast6.png}  
+        \caption{$k_\mathrm{LOD}=+15 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast7.png}  
+        \caption{$k_\mathrm{LOD}=+10 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast8.png}  
+        \caption{$k_\mathrm{LOD}=+5 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast9.png}  
+            \caption{$k_\mathrm{LOD}=-5 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the CC experiment on May 16, 2022 driven by phase noise of -104.7\,dBc/Hz. The different octupole settings are displayed at the captions of each plot.}
+    \label{fig:dipole_noise_md_2022_overview_plots_klod_scan}
+ \end{figure}
+ 
