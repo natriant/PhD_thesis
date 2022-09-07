@@ -286,29 +286,48 @@ The average rms measured bunch length over all above coasts in 2022, was found t
 \section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
 The individual measurements of the transverse emittance evolution for each octupole setting during the experiment with dipole noise (see Section~\ref{sec:coast_md_damper_2022}) are illustrated in Fig.~\ref{fig:dipole_noise_md_2022_overview_plots_klod_scan}. The subplots are plotted in chronological order.
 
+% Notes on the MD: https://docs.google.com/document/d/1b8fRJA5DN0hczIx2_O1NQzwV8dgKYmrJCmZzmH3qBn0/edit
+% Path to figures: /eos/user/n/natriant/2022/SPS_MDs_2022/coast_md_damper_16May2022/coast_plots_for_thesis
+% Plotting script: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/coast_16May2022_damper/ws_measurements
+
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast6.png}  
+        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast1.png}  
         \caption{$k_\mathrm{LOD}=+15 \ \mathrm{1/m^{4}}$}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast7.png}  
+        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast2.png}  
         \caption{$k_\mathrm{LOD}=+10 \ \mathrm{1/m^{4}}$}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast8.png}  
+        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast3.png}  
         \caption{$k_\mathrm{LOD}=+5 \ \mathrm{1/m^{4}}$}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
             \centering
-            \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast9.png}  
-            \caption{$k_\mathrm{LOD}=-5 \ \mathrm{1/m^{4}}$}
+            \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast4.png}  
+            \caption{$k_\mathrm{LOD}=0 \ \mathrm{1/m^{4}}$}
     \end{subfigure}
-    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the CC experiment on May 16, 2022 driven by phase noise of -104.7\,dBc/Hz. The different octupole settings are displayed at the captions of each plot.}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast5.png}  
+        \caption{$k_\mathrm{LOD}=-15 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast6.png}  
+            \caption{$k_\mathrm{LOD}=-7.5 \ \mathrm{1/m^{4}}$}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast7.png}  
+        \caption{$k_\mathrm{LOD}=+25 \ \mathrm{1/m^{4}}$}
+\end{subfigure}
+    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the experiment with dipole noise on May 16-17, 2022.  The different octupole settings are displayed at the captions of each plot.}
     \label{fig:dipole_noise_md_2022_overview_plots_klod_scan}
  \end{figure}
  
