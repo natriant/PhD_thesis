@@ -114,7 +114,38 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 For the first benchmark the $\CC$ element was not implemented yet. Instead the emittance growth was simulated for the simpler case for which the $\CC$ noise which was implemented as an update of the angle, $y^\prime$ of each particle within the bunch, according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise respectively. The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is $\sim$76\,m. The scaling factor, $A$ equals $10^{-8}$ which corresponds to $1.68 \times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz for phase and amplitude noise respectively.
 
-The bunch population
+For the simulation setup, beam and machine conditions similar to the $\CC$ experiment of 2018 were used and are listed in Table~\ref{tab:sixtracklib_simulation_parameters}.
+
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{Sixtracklib simulation parameters used to benchmark the theoretical model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001}.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
+      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
+      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
+      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9 $\times 10^{-3}$}\\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
+      \multicolumn{2}{l}{Rms bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.7\,ns $^\ast$}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
+      \multicolumn{2}{l}{Average horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\dagger$ } \\
+      \bottomrule
+      \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$5 \times 10^5$} \\
+      \multicolumn{2}{l}{Number of longitudinal slices, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{500} \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:sixtracklib_simulation_parameters}
+   \end{centering}\footnotesize{$^\ast$ This value corresponds to the average rms measured bunch length of bunch 1 over all the coasts of 2018. The value for bunch 1 is used here since it was the only stable bunch in the SPS $\CC$ tests of 2018. \\ $^\dagger$ Model values for the Q26 optics.}
+   \end{minipage}
+\end{table}
+
+
 
 
 
