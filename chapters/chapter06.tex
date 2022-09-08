@@ -35,9 +35,6 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
         \label{fig:sensitivity_VCC_theory_bunch1}
  \end{figure}
 
-
-
-
 \section{Benchmarking theory against PyHEADTAIL}\label{sec:benchmark_theory_with_pyheadtail}
 
 \section{Benchmarking theory against Sixtracklib}\label{sec:benchmark_theory_with_sixtracklib}
@@ -57,11 +54,31 @@ When a particle passes through this element, it recieves the following vertical 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
     y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
 \end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $y^\prime$ is the vertical angle co-ordinate and z the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativisitc beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $y^\prime$ is the vertical angle co-ordinate and z the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
 
-The transverse kicks on the momentum for a particle that passes througfrom this element is expressed
+Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error at a different location, $s_1$, around the ring. To this end, the induced orbit shift at the location $s_1$ from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter, has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
 
-Before using this element for the emittance growth simulations its implementation in Sixtracklib is tested. In particular, the induced orbit shift from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter, has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{ sec:Vcc_calibration}.
+\begin{equation}\label{eq:CC_orbit_shift_CC_element}
+    \Delta y_{,s_11} = \frac{\sqrt{\beta_{y, s_1}}}{2 \sin(\pi \Qy)} \Delta y^\prime \sqrt{\beta_{y, s_0}} \cos(\pi \Qy - \mid \psi_{y, s_1} - \psi_{y, s_0} \mid),
+ \end{equation}
+where $\Delta y^\prime=y^\prime_{j+1}-y^\prime_{j}$, where $j$ is the number of turns for which the tracking is performed, $\Qy$ is the vertical tune, $\beta_{y, s_0}$ and $\beta_{y, s_1}$ the vertical beta function at the locations $s_0$ and $s_1$ respectively and $\mid \psi_{y, s_1} - \psi_{y, s_0} \mid)$ is the vertical phase advance in tune units between the locations $s_0$ and $s_1$.
+
+Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the orbit as computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} (blue) for the values reported in Table ... and as obtained from Sixtracklib simulations (orange). The induced orbit shift was obtained from Sixtracklib simulations after tracking 1000 particles for 500 turns in the presence of the above mentioned CC element. The simulations took place using an initial Gaussian bunch distribution in the six-dimentional phase space. The initial normalised emittances were $\epsilon_x$=2.5\, $\mathrm{\mu m}$ and $\epsilon_x=2.5 \times 10^{-6}$\, $\mathrm{\mu m}$ for the horizontal and vertical plane respectively. The distribution was chosen to be so small in the vertical plane so there is practically no initial offset which facilitates the observation of the orbit shift. % If we had offset we would need to split in longitudinal slices and take the average position of each slice.
+For this study, the start of the lattice is considered to be the horizontal rotational Wire Scanner, BWS.51995.H. This choise was arbitrary.
+
+\begin{figure}[!h]
+    \centering         
+    \includegraphics[width=0.7\textwidth]{images/Ch6/Vcc_orbit_shfit_sixtracklib_sanity_check.png}
+        \caption{Vertical emittance growth for different values of CC voltage computed using the analytical formulas Eq.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} for the experimental configuration of 2018.}
+        \label{fig:sixtracklib_CC_orbit_shift_vs_theory}
+\end{figure}
+
+
+The bunch distribution was represented by a 6-dimensional Gaussian
+
+
+For this study, the start of the lattice is considered to be the horizontal rotational Wire Scanner, BWS.51995.H. This choise was arbitrary.
+For this study the location, $s_1$ was arbitrary chosen to be
 
 
 It is concluded, that using sixtracklib the result of $\CC$ element on the orbit is as expected. % on the closed orbit
