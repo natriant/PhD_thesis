@@ -76,7 +76,7 @@ Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the 
         \label{fig:sixtracklib_CC_orbit_shift_vs_theory}
 \end{figure}
 
-
+% Optics were taken from: https://github.com/natriant/rf_multipole_sanity_checks/blob/master/pysixtrack/rf_multipole_sanity_check_pysixtrack_001.ipynb
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
    \begin{centering}
@@ -94,10 +94,14 @@ Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the 
       \multicolumn{2}{l}{Vertical betatron tune, $\Qy$} & \multicolumn{2}{c}{26.18} \\
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{26\,GeV} \\
       \multicolumn{2}{l}{rms bunch length, $\sigma_z$} & \multicolumn{2}{c}{0.22\,m} \\
+      \multicolumn{2}{l}{rms momentum spread, $\sigma_\delta$} & \multicolumn{2}{c}{1e-4} \\
+      \multicolumn{2}{l}{CC voltage, $V_\mathrm{0,CC}$} & \multicolumn{2}{c}{3\,MV} \\
+      \multicolumn{2}{l}{CC frequency, $f_\mathrm{CC}$} & \multicolumn{2}{c}{400\,MHz} \\
+      \multicolumn{2}{l}{CC phase, $\phi_\mathrm{CC}$} & \multicolumn{2}{c}{90\,deg$^{\dagger}$} \\
       \bottomrule
 	\end{tabu}
    \label{tab:SPS_CC_WS_sixtracklib}
-   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner.}
+   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner. \\$^\dagger$ It was found that in the definition of the RFMultipole the phase of the cavity is shifted by 90 degrees compared to the standard (theoretical) crab cavity kick.}
    \end{minipage}
 \end{table}
 
