@@ -56,7 +56,7 @@ When a particle passes through this element, it recieves the following vertical 
 \end{equation}
 where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $y^\prime$ is the vertical angle co-ordinate and z the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
 
-Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error at a different location, $s_1$, around the ring. To this end, the induced orbit shift at the location $s_1$ from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter, has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
+Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. This check was important as Sixtracklib is a recently developed simualtion tool and at the time these studies took place the use of the RFMultipole as a $\CC$ element was not well tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error at a different location, $s_1$, around the ring. To this end, the induced orbit shift at the location $s_1$ from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter, has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
 
 \begin{equation}\label{eq:CC_orbit_shift_CC_element}
     \Delta y_{,s_11} = \frac{\sqrt{\beta_{y, s_1}}}{2 \sin(\pi \Qy)} \Delta y^\prime \sqrt{\beta_{y, s_0}} \cos(\pi \Qy - \mid \psi_{y, s_1} - \psi_{y, s_0} \mid),
@@ -106,8 +106,6 @@ Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the 
 \end{table}
 
 For the computation of the theoretical prediction Eq.~\eqref{eq:CC_orbit_shift_CC_element} was used over a range of equally spaced $z$ co-ordinates from -0.6 to 0.6\,m ($\sim 3 \sigma_z$). The $z$ co-ordinates are taken into account indirectly through $\Delta_y$ and Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}.
-
-
 
 By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is concluded, that using sixtracklib the result of $\CC$ element on the orbit is as expected. % on the closed orbit
 
