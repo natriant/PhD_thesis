@@ -63,8 +63,8 @@ Before using this element for the emittance growth simulations its implementatio
  \end{equation}
 where $\Delta y^\prime=y^\prime_{j+1}-y^\prime_{j}$, where $j$ is the number of turns for which the tracking is performed, $\Qy$ is the vertical tune, $\beta_{y, s_0}$ and $\beta_{y, s_1}$ the vertical beta function at the locations $s_0$ and $s_1$ respectively and $\mid \psi_{y, s_1} - \psi_{y, s_0} \mid)$ is the vertical phase advance in tune units between the locations $s_0$ and $s_1$.
 
-Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the orbit as computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} (blue) for the values reported in Table~\ref{tab:SPS_CC_WS_sixtracklib} and as obtained from Sixtracklib simulations (orange). The induced orbit shift was obtained from Sixtracklib simulations after tracking 1000 particles for 500 turns in the presence of the above-mentioned CC element. The simulations took place using an initial Gaussian bunch distribution in the transverse planes. The initial normalised emittances were $\epsilon_x$=2.5\, $\mathrm{\mu m}$ and $\epsilon_x=2.5 \times 10^{-6}$\, $\mathrm{\mu m}$ for the horizontal and vertical plane respectively. The distribution was chosen to be so small in the vertical plane so there is practically no initial offset which facilitates the observation of the orbit shift. % If we had offset we would need to split in longitudinal slices and take the average position of each slice.
-In the longitudinal plane, the $z$ ($\delta$) co-oridnates of the particles were evenly spaced from -0.6 to 0.6\,m ($-10^{-4}$ to $10^{-4}$). The location $s_1$ was set at the start of the lattice which for this study it was considered to be the horizontal rotational Wire Scanner, BWS.51995.H. This choice was arbitrary. The most relevant simulation paramters are listed in Table~\ref{tab:SPS_CC_WS_sixtracklib}.
+Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the orbit as computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} (blue) for the values reported in Table~\ref{tab:SPS_CC_WS_sixtracklib} and as obtained from Sixtracklib simulations (orange). The induced orbit shift was obtained from Sixtracklib simulations after tracking 1000 particles for 500 turns in the presence of the above-mentioned CC element (which is installed at the locaiton of $\CC$1). The simulations took place using an initial Gaussian bunch distribution in the six-dimensional phase space. The initial normalised emittances were $\epsilon_x$=2.5\, $\mathrm{\mu m}$ and $\epsilon_x=2.5 \times 10^{-6}$\, $\mathrm{\mu m}$ for the horizontal and vertical plane respectively. The distribution was chosen to be so small in the vertical plane so there is practically no initial offset which facilitates the observation of the orbit shift. % If we had offset we would need to split in longitudinal slices and take the average position of each slice.
+ The location $s_1$ was set at the start of the lattice which for this study it was considered to be the horizontal rotational Wire Scanner, BWS.51995.H. This choice was arbitrary. The most relevant simulation paramters are listed in Table~\ref{tab:SPS_CC_WS_sixtracklib}.
 % Note: The induced closed orbit shown in the plot corresponds to the start of the lattice (BWSA.51995) as the particles are dumped in that location. Link to complementary slides: https://docs.google.com/presentation/d/1-w9CRX_IuH6tWqg7Mx450sDhk7hBIXyBsZ0hyumq4hw/edit#slide=id.g6d31fa0069_1_14
 
 
@@ -99,6 +99,9 @@ In the longitudinal plane, the $z$ ($\delta$) co-oridnates of the particles were
    \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element QF.10010 that is a focusing quadrupole.}
    \end{minipage}
 \end{table}
+
+In the longitudinal plane, the $z$ ($\delta$) co-oridnates of the particles were evenly spaced from -0.6 to 0.6\,m ($-10^{-4}$ to $10^{-4}$).
+
 
 
 
