@@ -41,7 +41,7 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
 This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo} which is a non-linear single-particle tracking library. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simulation tool than PyHEADTAIL as the tracking simulations use the detailed optics of the machine and therefore is considered appropriate for this study. Calculations can be performed on GPU decreasing the computational time. For all the simulations presented in this section the nominal SPS model for Q26 optics will be used~\cite{cern_optics_repo} as introduced in Section~\ref{sec:optics_model_designs} except if it is stated otherwise.
 
 
-This section is structured as follows. First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
+This section is structured as follows. First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse kicks on the angle co-ordinate due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
 
 \subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
@@ -105,10 +105,29 @@ Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the 
    \end{minipage}
 \end{table}
 
-For the computation of the theoretical prediction Eq.~\eqref{eq:CC_orbit_shift_CC_element} was used over a range of equally spaced $z$ co-ordinates from -0.6 to 0.6\,m ($\sim 3 \sigma_z$). The $z$ co-ordinates are taken into account indirectly through $\Delta_y$ and Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}.
+For the computation of the theoretical prediction Eq.~\eqref{eq:CC_orbit_shift_CC_element} was used over a range of equally spaced $z$ co-ordinates from -0.6 to 0.6\,m ($\sim 3 \sigma_z$). The $z$ co-ordinates are taken into account indirectly through $\Delta_y^\prime$ and Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}.
 
 By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is concluded, that using Sixtracklib the result of $\CC$ element on the orbit is as expected. % on the closed orbit
 
+
+\subsection{Emittance growth simulations with CC noise modeled as transverse kicks on the angle co-ordinate.}\label{subsec:sixtracklib_kicks_transverse_angle}
+
+For the first benchmark the $\CC$ element was not implemented yet. Instead the emittance growth was simulated for the simpler case for which the $\CC$ noise which was implemented as an update of the angle, $y^\prime$ of each particle within the bunch, according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise respectively. The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is $\sim$76\,m. The scaling factor, $A$ equals $10^{-8}$ which corresponds to $1.68 \times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz for phase and amplitude noise respectively.
+
+The bunch population
+
+
+
+The simulations were performed for the same machine and beam conditions with the PyHEADTAIL simulations presented in the the previous section and they are listed in Table... . The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is $\sim$76\,m. 
+
+
+Similar to the PyHEADTAIL simulations presented in the previous section, the simulations were performed for conditions very close to the experimental ones of 2018. The main relevant beam and machine paramters are listed in Table....
+
+
+as 
+
+
+Even though in Sixtracklib the emittance grot
 
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC}
 
