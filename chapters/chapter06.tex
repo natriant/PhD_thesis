@@ -41,10 +41,44 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
 \section{Benchmarking theory against PyHEADTAIL}\label{sec:benchmark_theory_with_pyheadtail}
 
 \section{Benchmarking theory against Sixtracklib}\label{sec:benchmark_theory_with_sixtracklib}
-This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo}. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simualtion tool than PyHEADTAIL as the tracking simualtions use the detailed optics of the machine and therfore is considered appropriate for this study.
+This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo} which is a non-linear single-particle tracking librart. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simualtion tool than PyHEADTAIL as the tracking simualtions use the detailed optics of the machine and therfore is considered appropriate for this study. Calculations can be performed on GPU decreasing the computational time. 
+
+
 
 This section is structured as follows. First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
 
+\subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
+% Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
+Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity like in PyHEADTAIL.
+
+In Sixtracklib the $\CC$ element is represented by an element (referred to as RFMultipole in the Sixtracklib documentation) that has the properties of an RF cavity and of a magnet of arbitrary order oscillating at a certain frequency. To simulate the vertical $\CC$ it is implemented as a (modulated) skew dipole.
+
+When a particle passes through this element, it recieves the following vertical kick on the momentum:
+\begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
+    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
+\end{equation}
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $y^\prime$ is the vertical angle co-ordinate and z the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativisitc beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
+
+The transverse kicks on the momentum for a particle that passes througfrom this element is expressed
+
+Before using this element for the emittance growth simulations its implementation in Sixtracklib is tested. In particular, the induced orbit shift from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter, has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{ sec:Vcc_calibration}.
+
+
+It is concluded, that using sixtracklib the result of $\CC$ element on the orbit is as expected. % on the closed orbit
+
+
+\subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC}
+
+
+\textbf{Validating the implementation of the CC element}\\
+
+
+
+an RFMultipole element which  has the properties of an RF-cavity and of a magnet of arbitrary order oscillating at a certain frequency. To simulate the vertical CC kick we use it as a modulating (skew) dipole.
+
+
+
+\subsection{CC noise induced emittance growth in the presence of local CC scheme}\label{subsec:local_CC}
 
 \newpage
 
