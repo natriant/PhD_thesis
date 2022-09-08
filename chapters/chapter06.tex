@@ -38,9 +38,21 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
 
 
 
+\section{Benchmarking theory against PyHEADTAIL}\label{sec:benchmark_theory_with_pyheadtail}
+
+\section{Benchmarking theory against Sixtracklib}\label{sec:benchmark_theory_with_sixtracklib}
+This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo}. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simualtion tool than PyHEADTAIL as the tracking simualtions use the detailed optics of the machine and therfore is considered appropriate for this study.
+
+This section is structured as follows. First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
 
 
 \newpage
+
+
+
+ty. The
+benchmarks prove an excellent agreement and demonstrate a solid understanding of the involved
+dynamics. The study has been published in Ref. [34].
 
 
 for the experimental configuration of 2018 
