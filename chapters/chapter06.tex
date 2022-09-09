@@ -1,5 +1,5 @@
 
-\textbf{Disclaimer:} The PyHEADTAIL and Sixtracklib simulation results that are presented in this chapter were performed at a preliminary stage of this project. In  particular they were performed before the thourough analysis of the experimental data which was described in Chapter~\ref{Ch:2018_analyisis}. To this end, the simulations were performed for beam and machine conditions similar to the ones in SPS during the tests with $\CC$s in 2018 but with some small deviations in the bunch length and the beta function on the location of the CC and the value of linear chromaticity. However, it should be highlighted, that since the objective of these studies was to benchmark the theoretical model of T.~Mastoridis and P.~Baudrenghien against different simulation codes these small numerical deviations do not affect the quality of the study. Nevertheless, the simulation studies that will be presented in Chapters~\ref{Ch:investigating_discrepancy} and~\ref{Ch:experimental_CC_2022} were undertaken with more rigorous parameters for the 2018 experiment.
+\textbf{Disclaimer:} The PyHEADTAIL and Sixtracklib simulation results that are presented in this chapter were performed at a preliminary stage of this project. In  particular they were performed before the thourough analysis of the experimental data which was described in Chapter~\ref{Ch:2018_analyisis}. To this end, the simulations were performed for beam and machine conditions similar to the ones in SPS during the tests with $\CC$s in 2018 but with some small deviations in the bunch length and the beta function on the location of the CC, the value of linear chromaticity and the synchrotron tune. However, it should be highlighted, that since the objective of these studies was to benchmark the theoretical model of T.~Mastoridis and P.~Baudrenghien against different simulation codes these small numerical deviations do not affect the quality of the study. Nevertheless, the simulation studies that will be presented in Chapters~\ref{Ch:investigating_discrepancy} and~\ref{Ch:experimental_CC_2022} were undertaken with more rigorous parameters for the 2018 experiment.
 From these plots, it becomes evident that there is an excellent agreement between the theoretically predicted vertical emittance growth and the simulation results with Sixtracklib. Ths results from Sixtracklib simulations are also in agreement with the results from PyHEADTAIL. To this end, it is concluded that taking into account the detailed optics of the SPS cannot explain the discrepancy between expected and measured emittance growth that was observed in the SPS CC tests in 2018.
 
 \section{Parametric studies based on the theoretical model}\label{sec:paramteric_studies_theory}
@@ -86,10 +86,11 @@ For the emittance growth studies to be valid the simulation time should be much 
 % from MAD-X for no b3b5b7 and QpcQPy=0--> axx=170.65, ayy = -29.70 and axy = -440.87.
 
 % the tune was also Qy=26.32 in these studies. however in the followsing subsections it was correct 26.13. there is no difference. however.
+% For the compaction factor I am not sure but it doesn't matter
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
       \begin{centering}
-   \caption{PyHEADTAIL simulation parameters used to benchmark the theoretically predicted emittane growth.}
+   \caption{Simulation parameters used to benchmark the theoretically predicted emittane growth in Chapter~\ref{Ch:investigating_discrepancy}.}
 	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
@@ -99,15 +100,15 @@ For the emittance growth studies to be valid the simulation time should be much 
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
       \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
+      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0035}\\
       \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9 $\times 10^{-3}$}\\
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
       \multicolumn{2}{l}{Rms bunch length, $\sigma_z$}  & \multicolumn{2}{c}{15.5\,cm}\\
       \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
-      \multicolumn{2}{l}{Horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\dagger$ } \\
+      \multicolumn{2}{l}{Horizontal / vertical beta function, $ \beta_{x, CC1} / \beta_{y, CC1}$}  & \multicolumn{2}{c}{29.24\,m / 76.07\,m $^\dagger$ } \\
       \bottomrule
-      \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$5 \times 10^5$} \\
-      \multicolumn{2}{l}{Number of longitudinal slices, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{500} \\
+      \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$10^5$} \\
+      \multicolumn{2}{l}{Number of turns, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{$10^5$} \\
       \bottomrule
 	\end{tabu}
    \label{tab:pyheadtail_simulation_parameters_first_tests}
