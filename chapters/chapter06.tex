@@ -152,8 +152,21 @@ For the above mentioned machine conditions the expected growth rate is expected 
 
 The bunch was tracked for $10^5$ and the normalised emittance was computed every 100 turns (for computational efficiency) using the statistical defintion defined in Eq.~\eqref{eq:geometric_emittance_v2} and then inserting the value in Eq.~\eqref{eq:normalised_emittance}. To reduce the uncertainty of the results, thirty different simulation runs were undertaken. For every run, the initial bunch distribution and the sequence of the uncorrelated noise kicks were regenerated randomly (a different seed was used in the random generator). 
 
-Figure ... illustrates the simulated emittance growth driven by phase (left) and amplitude (right) noise. For both types of noise, the theoretical predicted growth is given with the red line. The dark blue and dark orange lines show the evolution of the averaged emittance values over the thirty different runs. The shaded areas, shown with light blue and light orange colors, depict the standard deviation of the emittance values over the thirty different runs. The emittance growth rate is obtained with a linear fit to the averaged normalised emittance values over the simulation time. The resulted slope of the fit is also shown in the plot with black color. The uncertainty on the slope of the fit is displayed in the legend.
+Figure~\ref{fig:study_1_sixtracklib_normalised_momentum_kicks} illustrates the simulated emittance growth driven by phase (left) and amplitude (right) noise. For both types of noise, the theoretical predicted growth is given with the red line. The dark blue and dark orange lines show the evolution of the averaged emittance values over the thirty different runs. The shaded areas, shown with light blue and light orange colors, depict the standard deviation of the emittance values over the thirty different runs. The emittance growth rate is obtained with a linear fit to the averaged normalised emittance values over the simulation time. The resulted slope of the fit is also shown in the plot with black color. The uncertainty on the slope of the fit is displayed in the legend.
 
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_CC_PN_normalised _kicks_in_momentum.png}  
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_AN_normalised_kicks_momentum.png}
+    \end{subfigure}
+    \caption{Transverse emittance growth driven by CC RF phase noise (left) and amplitude noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modeled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise respectively.}
+    \label{fig:study_1_sixtracklib_normalised_momentum_kicks}
+\end{figure}
 
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC}
 
