@@ -44,7 +44,7 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
 % Note on HEADTAIL to PyHEADTAIL: https://www2.kek.jp/accl/legacy/seminar/file/PyHEADTAIL_PyECLOUD_2.pdf
 As mentioned in Chapter~\ref{Ch:CC_noise_theory} the available analytical model which predicts the emittance growth driven by CC RF phase and amplitude noise was benchmarked against simulation results with the HEADTAIL~\cite{PhysRevSTAB.18.101001} simulation tool. In this section, the predictions of the model are benchmarked against the PyHEADTAIL simulation tool. PyHEADTAIL is the implementation of the HEADTAIL (which was written in C/C++ language) in Python language in a way that is easier to be maintained and extended. Further details on the PyHEADTAIL were introduced in the introductory Subseection~\ref{subsec:pyheadtail}.
 
-The parameters used for setting up the linear transfer map, the longitudinal tracking, and the initialisation of the beam distribution are shown in Table.. and they are similar to the SPS CC experiments of 2018. The accelerator ring is consisted of one segment, with one interaction point, where the beam receives the noise kicks from the $\CC$ every turn. In particular, at that location, the angle variable, $y^\prime$, of each particle within the bunch is updated every turn following the description of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for modeling the phase and amplitude noise respectively. The vertical angle co-ordinate is updated to study the vertical emittance growth following the experiments of 2018 where the $\CC$ module that was used provided a vertical deflection to the bunches. Nevertheless, the beam dynamics are the same in the horizontal plane.
+The parameters used for setting up the linear transfer map, the longitudinal tracking, and the initialisation of the beam distribution are shown in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests} and they are similar to the SPS CC experiments of 2018. The accelerator ring is consisted of one segment, with one interaction point, where the beam receives the noise kicks from the $\CC$ every turn. In particular, at that location, the angle variable, $y^\prime$, of each particle within the bunch is updated every turn following the description of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for modeling the phase and amplitude noise respectively. The vertical angle co-ordinate is updated to study the vertical emittance growth following the experiments of 2018 where the $\CC$ module that was used provided a vertical deflection to the bunches. Nevertheless, the beam dynamics are the same in the horizontal plane.
 
 The simulations were performed for both phase and amplitude $\CC$ RF noise. The noise level was chosen to be much stronger than the levels used in the experiment of 2018 in order to observe a reasonable growth in the simulation time which was $10^5$ turns. For reference, this corresponds to about 2.5\,s in the SPS machine. Therefore, the simulations were performed for phase and amplitude noise with a power spectral density of 1.68 $\times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. 
 
@@ -70,7 +70,7 @@ The simualtions were performed for a single bunch. The initial bunch was generat
 % The attached files in the email can be found in /Documents/Phd_thesis_draft/Ch6 (locally on my mac).
 The bunch intensity of $3\times 10^{10}$ protons was represented by $10^5$ macroparticles. 
 
-The beta function at the location of the interaction point was chosen to be the ones at the location of $\CC$1 for both horizontal and vertical planes (values are listed in Table..). The other two Twiss parameters (alpha and dispersion function) were chosen to be zero. This is a valid assumption for the studies since these parameters have no direct impact on the noise-induced emittance growth~\cite{PhysRevSTAB.18.101001}. % It can also be seen in the equations that give the growth.
+The beta function at the location of the interaction point was chosen to be the ones at the location of $\CC$1 for both horizontal and vertical planes (values are listed in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests}). The other two Twiss parameters (alpha and dispersion function) were chosen to be zero. This is a valid assumption for the studies since these parameters have no direct impact on the noise-induced emittance growth~\cite{PhysRevSTAB.18.101001}. % It can also be seen in the equations that give the growth.
 This is also confirmed, with simulations with the Sixtracklib code which are presented in the following section. The Sixtracklib simulations use the detailed optics of the machine for the tracking. It will be shown that the emittance growth from the two simulated tools are in good agreement.
 
 % Presentation with the comment on the vertical tune distribution: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8ae11a254a_0_952
@@ -78,12 +78,42 @@ The mechanism responsible for the emittance growth in the prsesence of noise is 
 \begin{equation}\label{eq:decoherence_time}
     \tau_\mathrm{decoh} = \frac{1}{2\pi \frev \mathrm{rms}(\Delta Q_u)},
 \end{equation}
-where $u={x,y}$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\mathrm{rms}(\Delta Q_u)$ the transverse rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
+where $u=(x,y)$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\mathrm{rms}(\Delta Q_u)$ the transverse rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
 
-Therefore, it becomes clear that in order to observe some emittance growth a source of tune spread must be included in the simualtions. For the simualtions presented here detuning with transverse amplitude is introduced as described in Section~\ref{subsec:pyheadtail}. It is modeled as a change of the phase advance of each individual particle depending on its action variable and the detuning coefficents. Detuning in the both transverse planes is thus introduced for vertical detuning coefficent $\alpha_\mathrm{xx}=179.35$\,1/m, vertical detuning coefficent $\alpha_\mathrm{yy}=-30.78$\,1/m and for cross-term coefficent $\alpha_\mathrm{yx}=-441.34$\,1/m. These coefficents were computed using MAD-X~\cite{madx} for the nominal SPS lattice (introduced in Section~\ref{sec:optics_model_designs}) and for $Q^\prime{x,y=0.5}$. It should be noted that the detuning in the vertical plane is the value of intereset since the emittance evolution will be investigated in the vertical plane too. Using Eq.~\eqref{eq:rms_amplitute_detuning_3} for the above mentioned coefficents and the initial transverse actions of the bunch, it is computed that $\mathrm{rms}(\Delta Q_y)\approx 7e-6$. 
+Therefore, it becomes clear that in order to observe some emittance growth a source of tune spread must be included in the simualtions. For the simualtions presented here detuning with transverse amplitude is introduced as described in Section~\ref{subsec:pyheadtail}. It is modeled as a change of the phase advance of each individual particle depending on its action variable and the detuning coefficents. Detuning in the both transverse planes is thus introduced for vertical detuning coefficent $\alpha_\mathrm{xx}=179.35$\,1/m, vertical detuning coefficent $\alpha_\mathrm{yy}=-30.78$\,1/m and for cross-term coefficent $\alpha_\mathrm{yx}=-441.34$\,1/m. These coefficents were computed using MAD-X~\cite{madx} for the nominal SPS lattice (introduced in Section~\ref{sec:optics_model_designs}) and for $Q^\prime{x,y=0.5}$. It should be noted that the detuning in the vertical plane is the value of intereset since the emittance evolution will be investigated in the vertical plane too. Using Eq.~\eqref{eq:rms_amplitute_detuning_3} for the above mentioned coefficents and the initial transverse actions of the bunch, it is computed that $\mathrm{rms}(\Delta Q_y)\approx 7 \times 10^{-6}$. 
 
-For the emittance growth studies to be valid the simulation time should be much longer than decoherence time defined in Eq.~\eqref{eq:decoherence_time}. For the above value of rms vertical tune spread, the decoherence time is computed to be: $\tau_\mathrm{decoh} \approx 0.5$\,s. Therefore, the simualtion time of about 2.5\, is reasonable for these studies.
+For the emittance growth studies to be valid the simulation time should be much longer than decoherence time defined in Eq.~\eqref{eq:decoherence_time}. For the above value of rms vertical tune spread, the decoherence time is computed to be: $\tau_\mathrm{decoh} \approx 0.5$\,s. Therefore, the simualtion time of about 2.5\,s is reasonable for these studies.
 % from MAD-X for no b3b5b7 and QpcQPy=0--> axx=170.65, ayy = -29.70 and axy = -440.87.
+
+% the tune was also Qy=26.32 in these studies. however in the followsing subsections it was correct 26.13. there is no difference. however.
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{PyHEADTAIL simulation parameters used to benchmark the theoretically predicted emittane growth.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
+      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
+      \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051}\\
+      \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9 $\times 10^{-3}$}\\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
+      \multicolumn{2}{l}{Rms bunch length, $\sigma_z$}  & \multicolumn{2}{c}{15.5\,cm}\\
+      \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
+      \multicolumn{2}{l}{Horizontal / vertical beta function, $\langle \beta_x \rangle / \langle \beta_y \rangle$}  & \multicolumn{2}{c}{42.0941\,m / 42.0137\,m $^\dagger$ } \\
+      \bottomrule
+      \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$5 \times 10^5$} \\
+      \multicolumn{2}{l}{Number of longitudinal slices, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{500} \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:pyheadtail_simulation_parameters_first_tests}
+   \end{centering}\footnotesize{\\ $^\dagger$ Model values for the Q26 optics.}
+   \end{minipage}
+\end{table}
 
 
 
