@@ -42,7 +42,7 @@ Figure~\ref{fig:sensitivity_VCC_theory_bunch1} illustrates the computed vertical
 \section{Benchmarking theory against PyHEADTAIL}\label{sec:benchmark_theory_with_pyheadtail}
 
 % Note on HEADTAIL to PyHEADTAIL: https://www2.kek.jp/accl/legacy/seminar/file/PyHEADTAIL_PyECLOUD_2.pdf
-As mentioned in Chapter~\ref{Ch:CC_noise_theory} the available analytical model which predicts the emittance growth driven by CC RF phase and amplitude noise was benchmarked against simulation results with the HEADTAIL~\cite{PhysRevSTAB.18.101001} simulation tool. In this section, the predictions of the model are benchmarked against the PyHEADTAIL simulation tool. PyHEADTAIL is the implementation of the HEADTAIL (which was written in C/C++ language) in Python language in a way that is easier to be maintained and extended. Further details on the PyHEADTAIL were introduced in the introductory Subseection~\ref{subsec:pyheadtail}.
+As mentioned in Chapter~\ref{Ch:CC_noise_theory} the available analytical model which predicts the emittance growth driven by CC RF phase and amplitude noise was benchmarked against simulation results with the HEADTAIL~\cite{PhysRevSTAB.18.101001} simulation tool. In this section, the predictions of the model are benchmarked against the PyHEADTAIL simulation tool. PyHEADTAIL is the implementation of the HEADTAIL (which was written in C/C++ language) in Python language in a way that is easier to be maintained and extended~\cite{pyheadtail_schenk}. Further details on the PyHEADTAIL were introduced in the introductory Subseection~\ref{subsec:pyheadtail}.
 
 The parameters used for setting up the linear transfer map, the longitudinal tracking, and the initialisation of the beam distribution are shown in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests} and they are similar to the SPS CC experiments of 2018. The accelerator ring is consisted of one segment, with one interaction point, where the beam receives the noise kicks from the $\CC$ every turn. In particular, at that location, the angle variable, $y^\prime$, of each particle within the bunch is updated every turn following the description of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for modeling the phase and amplitude noise respectively. The vertical angle co-ordinate is updated to study the vertical emittance growth following the experiments of 2018 where the $\CC$ module that was used provided a vertical deflection to the bunches. Nevertheless, the beam dynamics are the same in the horizontal plane.
 
@@ -85,8 +85,9 @@ Therefore, it becomes clear that in order to observe some emittance growth a sou
 For the emittance growth studies to be valid the simulation time should be much longer than decoherence time defined in Eq.~\eqref{eq:decoherence_time}. For the above value of rms vertical tune spread, the decoherence time is computed to be: $\tau_\mathrm{decoh} \approx 0.5$\,s. Therefore, the simualtion time of about 2.5\,s is reasonable for these studies.
 % from MAD-X for no b3b5b7 and QpcQPy=0--> axx=170.65, ayy = -29.70 and axy = -440.87.
 
-% the tune was also Qy=26.32 in these studies. however in the followsing subsections it was correct 26.13. there is no difference. however.
+
 % For the compaction factor I am not sure but it doesn't matter
+% The chromaticity value was not 5e-1 for all the simulations. For some of the cases was 5e-1, for some others was 2 etc. However, it doesn't matter.
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
       \begin{centering}
@@ -98,8 +99,9 @@ For the emittance growth studies to be valid the simulation time should be much 
 		\multicolumn{2}{c}{\textbf{Value}} \\
 		\bottomrule
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
-      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,kHz} \\
+      \multicolumn{2}{l}{Machine circumference, $C_0$}  & \multicolumn{2}{c}{6911.5623\,m} \\
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      %\multicolumn{2}{l}{Horizontal / Vertical linear chromaticity, $Q^\prime_x$ / $Q^\prime_y$}  & \multicolumn{2}{c}{0.5 / 0.5} \\
       \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0035}\\
       \multicolumn{2}{l}{Momentum compaction factor, $\alpha_p$}  & \multicolumn{2}{c}{1.9 $\times 10^{-3}$}\\
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
@@ -118,6 +120,21 @@ For the emittance growth studies to be valid the simulation time should be much 
 
 
 
+% Slides where the plots were taken from: https://docs.google.com/presentation/d/1xK63pVRDlW1KIV2NE3UMlAL3VnjhegwjbkpC0ufSpjg/edit#slide=id.g72167b2e95_0_70
+% They can also be found at: https://docs.google.com/presentation/d/1WgxpGTsyy55XtOVT1ea9u3SO9EyG5EQMWuqhLyM46mM/edit#slide=id.g727b0ea384_1_7
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/pyheadtail_benchmark_amplitude_noise.png}  
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/pyheadtail_benchmark_phase_noise.png}
+    \end{subfigure}
+    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with PyHEADTAIL simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018.}
+    \label{fig:study_pyheadtail_normalised_momentum_kicks}
+\end{figure}
 
 
 
