@@ -76,9 +76,13 @@ This is also confirmed, with simulations with the Sixtracklib code which are pre
 % Presentation with the comment on the vertical tune distribution: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8ae11a254a_0_952
 The mechanism responsible for the emittance growth in the prsesence of noise is the spread of the betatron tunes~\cite{Lebedev:248620}. It is reminded that the tune spread leads to a phase mixing of the particles within the bunch causing a decoherence of the the betatron oscillations which then results to emittance growth~\cite{Lebedev:248620}. The time scale of the decoherence equals the inverse of the betatron frequencies~\cite{Lebedev:248620}: % p.151
 \begin{equation}\label{eq:decoherence_time}
-    \tau_\mathrm{decoh} = \frac{1}{2\pi \frev \mathrm{rms}Delta Q_u},
+    \tau_\mathrm{decoh} = \frac{1}{2\pi \frev \mathrm{rms}(\Delta Q_u)},
 \end{equation}
-where $u={x,y}$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\mathrm{rms}Delta Q_u$ the transverse rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
+where $u={x,y}$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\mathrm{rms}(\Delta Q_u)$ the transverse rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
+
+Therefore, it becomes clear that in order to observe some emittance growth a source of tune spread must be included in the simualtions. For the simualtions presented here detuning with transverse amplitude is introduced as described in Section~\ref{subsec:pyheadtail}. It is modeled as a change of the phase advance of each individual particle depending on its action variable and the detuning coefficents. Detuning in the vertical plane \footnote{The detuning is introduced in the vertical plane since the emittance evolution will be studied in the vertical plane too. No additional detuning is introduced in the horizontal plane for simplicity.} is thus introduced for vertical detuning coefficent $\alpha_\mathrm{yy}=-30.78$\,1/m and for cross-term coefficent $\alpha_\mathrm{yx}=-441.34$\,1/m. 
+
+As the emittance evolution will be studied in the vertical plane, detuning in the vertical plane is intro
 
 
 Last, since the emittance growth 
