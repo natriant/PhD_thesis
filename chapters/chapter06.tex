@@ -111,8 +111,8 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 
 \subsection{Emittance growth simulations with CC noise modeled as transverse kicks on the angle co-ordinate.}\label{subsec:sixtracklib_kicks_transverse_angle}
-
-For the first benchmark the $\CC$ element was not implemented yet. Instead the emittance growth was simulated for the simpler case for which the $\CC$ noise which was implemented as an update of the angle, $y^\prime$ of each particle within the bunch, according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise respectively. The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is $\sim$76\,m. The scaling factor, $A$ equals $10^{-8}$ which corresponds to $1.68 \times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz for phase and amplitude noise respectively.
+% Link to presentation with relevant slides: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8a041cb470_0_448
+For the first benchmark, the $\CC$ element was not implemented yet. Instead, the emittance growth was simulated for the simpler case for which the $\CC$ noise which was implemented as an update of the angle, $y^\prime$ of each particle within the bunch, according to the kicks of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for amplitude and phase noise respectively. The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is 76.07\,m. The scaling factor, $A$, equals $10^{-8}$ which corresponds to $1.68 \times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz for phase and amplitude noise respectively.
 
 For the simulation setup, beam and machine conditions similar to the $\CC$ experiment of 2018 were used and are listed in Table~\ref{tab:sixtracklib_simulation_parameters}.
 
@@ -135,7 +135,7 @@ For the simulation setup, beam and machine conditions similar to the $\CC$ exper
       \multicolumn{2}{l}{Horizontal / Vertical normalised emittance, $\epsilon_x$ / $\epsilon_y$ $^\ast$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m}$}\\
       \bottomrule
       \multicolumn{2}{l}{Number of macroparticles, $N_\mathrm{mp}$}  & \multicolumn{2}{c}{$1 \times 10^5$} \\
-      \multicolumn{2}{l}{Number of turns, $N_\mathrm{slices}$}  & \multicolumn{2}{c}{$1 \times 10^5$} \\
+      \multicolumn{2}{l}{Number of turns, $N_\mathrm{turns}$}  & \multicolumn{2}{c}{$1 \times 10^5$} \\
       \bottomrule
 	\end{tabu}
    \label{tab:sixtracklib_simulation_parameters}
@@ -143,20 +143,17 @@ For the simulation setup, beam and machine conditions similar to the $\CC$ exper
    \end{minipage}
 \end{table}
 
+The nominal SPS lattice of MAD-X is used: dipoles, quadrupoles, and chromatic sextupoles as discussed in Section~\ref{sec:optics_model_designs}. It can be found in the GitLab repository of Ref.~\cite{cern_optics_repo}. The initial distribution of $10^5$ particles follows a gaussian both in transverse and longitudinal planes. In reality, the distribution in the longitudinal plane is not gaussian. However, it is a very good approximation for this kind of study. \textcolor{red}{Why?}
 
 
+For the above mentioned machine conditions the expected growth rate is expected to be $\sim$ 22,nm/s and $\sim$ 24\,nm/s in the presence of phase and amplitude noise respectively. These rates were computed using Eqs.~\eqref{eq:dey_an} and~\ref{eq:dey_pn} respectively.
 
+% Actual emittance definition used in sixtracklib simulations: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_60 . It has been shown that is gives the same results with pyheadtail (don't remember the date of the corresponding slides).
 
-The simulations were performed for the same machine and beam conditions with the PyHEADTAIL simulations presented in the the previous section and they are listed in Table... . The $\CC$ RF noise kicks were applied on the beam at the location of $\CC$1 for which the vertical beta function is $\sim$76\,m. 
+The bunch was tracked for $10^5$ and the normalised emittance was computed every 100 turns (for computational efficiency) using the statistical defintion defined in Eq.~\eqref{eq:geometric_emittance_v2} and then inserting the value in Eq.~\eqref{eq:normalised_emittance}. To reduce the uncertainty of the results, thirty different simulation runs were undertaken. For every run, the initial bunch distribution and the sequence of the uncorrelated noise kicks were regenerated randomly (a different seed was used in the random generator). 
 
+Figure ... illustrates the simulated emittance growth driven by phase (left) and amplitude (right) noise. For both types of noise, the theoretical predicted growth is given with the red line. The dark blue and dark orange lines show the evolution of the averaged emittance values over the thirty different runs. The shaded areas, shown with light blue and light orange colors, depict the standard deviation of the emittance values over the thirty different runs. The emittance growth rate is obtained with a linear fit to the averaged normalised emittance values over the simulation time. The resulted slope of the fit is also shown in the plot with black color. The uncertainty on the slope of the fit is displayed in the legend.
 
-Similar to the PyHEADTAIL simulations presented in the previous section, the simulations were performed for conditions very close to the experimental ones of 2018. The main relevant beam and machine paramters are listed in Table....
-
-
-as 
-
-
-Even though in Sixtracklib the emittance grot
 
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC}
 
