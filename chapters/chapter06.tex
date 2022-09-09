@@ -46,7 +46,7 @@ As mentioned in Chapter~\ref{Ch:CC_noise_theory} the available analytical model 
 
 The parameters used for setting up the linear transfer map, the longitudinal tracking, and the initialisation of the beam distribution are shown in Table.. and they are similar to the SPS CC experiments of 2018. The accelerator ring is consisted of one segment, with one interaction point, where the beam receives the noise kicks from the $\CC$ every turn. In particular, at that location, the angle variable, $y^\prime$, of each particle within the bunch is updated every turn following the description of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for modeling the phase and amplitude noise respectively. The vertical angle co-ordinate is updated to study the vertical emittance growth following the experiments of 2018 where the $\CC$ module that was used provided a vertical deflection to the bunches. Nevertheless, the beam dynamics are the same in the horizontal plane.
 
-The simulations were performed for both phase and amplitude $\CC$ RF noise. The noise level was chosen to be much stronger than the levels used in the experiment of 2018 in order to observe a reasonable growth in the simulation time which was $10^5$ turns. For reference, this corresponds to about 2.5\,s in the SPS machine. Therefore, the simulations were performed for phase and amplitude noise with a power spectral density of 1.68 $10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. 
+The simulations were performed for both phase and amplitude $\CC$ RF noise. The noise level was chosen to be much stronger than the levels used in the experiment of 2018 in order to observe a reasonable growth in the simulation time which was $10^5$ turns. For reference, this corresponds to about 2.5\,s in the SPS machine. Therefore, the simulations were performed for phase and amplitude noise with a power spectral density of 1.68 $\times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. 
 
 The power spectra of the sequence of amplitude and phase noise kicks (discrete-time signal) are visualised in Fig.~\ref{fig:psd_cc_simulations_example}. The power spectral densities are computed using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}.
 
@@ -65,11 +65,15 @@ The power spectra of the sequence of amplitude and phase noise kicks (discrete-t
     \label{fig:psd_cc_simulations_example}
 \end{figure}
 
-The simualtions were performed for a single bunch. The initial bunch was generated with Gaussian distributions in transvserse and longitudinal planes. \footnote{The longitudinal distribution in reality is not a Gaussian but it was found that the longitudinal profile has no significant impact on the predicted emittance growth rates. These studies were performed by T.~Mastoridis and P.~Baudrenghien.} 
+The simualtions were performed for a single bunch. The initial bunch was generated with Gaussian distributions in transvserse and longitudinal planes. \footnote{The longitudinal distribution in reality is not a Gaussian but it was found that the longitudinal profile has no significant impact on the predicted emittance growth rates. These studies were performed by T.~Mastoridis and P.~Baudrenghien. \textcolor{red}{There is no reference to these studies. Just Personal communication with a pdf file with the simulation results. How should I state it?} The simualtion studies presented in this thesis used a Gaussian longitudinal distribution following the studies presented in Ref.~\cite{PhysRevSTAB.18.101001}.} 
+% Email communication on: 25Nov2020. 
+% The attached files in the email can be found in /Documents/Phd_thesis_draft/Ch6 (locally on my mac).
+The bunch intensity of $3\times 10^{10}$ protons was represented by $10^5$ macroparticles. 
+
+The beta function at the location of the interaction point was chosen to be the ones at the location of $\CC$1 for both horizontal and vertical planes (values are listed in Table..). The other two Twiss parameters (alpha and dispersion function) were chosen to be zero. This is a valid assumption for the studies since these parameters have no direct impact on the noise-induced emittance growth~\cite{PhysRevSTAB.18.101001}. % It can also be seen in the equations that give the growth.
+This is also confirmed, with simulations with the Sixtracklib code which are presented in the following section. The Sixtracklib simulations use the detailed optics of the machine for the tracking. It will be shown that the emittance growth from the two simulated tools are in good agreement.
 
 
-single bunch
-twiss parameters
 
 
 
