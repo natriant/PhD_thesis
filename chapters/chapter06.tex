@@ -46,7 +46,30 @@ As mentioned in Chapter~\ref{Ch:CC_noise_theory} the available analytical model 
 
 The parameters used for setting up the linear transfer map, the longitudinal tracking, and the initialisation of the beam distribution are shown in Table.. and they are similar to the SPS CC experiments of 2018. The accelerator ring is consisted of one segment, with one interaction point, where the beam receives the noise kicks from the $\CC$ every turn. In particular, at that location, the angle variable, $y^\prime$, of each particle within the bunch is updated every turn following the description of Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} for modeling the phase and amplitude noise respectively. The vertical angle co-ordinate is updated to study the vertical emittance growth following the experiments of 2018 where the $\CC$ module that was used provided a vertical deflection to the bunches. Nevertheless, the beam dynamics are the same in the horizontal plane.
 
-The simualtions were performed for both phase and amplitude $\CC$ RF noise. The noise level was chosen to be much stronger than the ones used in the experiment of 2018 in order to observe a reasonable growth in the simualtions time which was $10^5$ turns. For reference, this corresponds to about 2.5\,s in the SPS machine. Therefore, the simualtions were performed for phase and amplitude noise with power spectral density of 1.68 $10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eq
+The simulations were performed for both phase and amplitude $\CC$ RF noise. The noise level was chosen to be much stronger than the levels used in the experiment of 2018 in order to observe a reasonable growth in the simulation time which was $10^5$ turns. For reference, this corresponds to about 2.5\,s in the SPS machine. Therefore, the simulations were performed for phase and amplitude noise with a power spectral density of 1.68 $10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. 
+
+The power spectra of the sequence of amplitude and phase noise kicks (discrete-time signal) are visualised in Fig.~\ref{fig:psd_cc_simulations_example}. The power spectral densities are computed using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}.
+
+% Plotting scripts: /eos/user/n/natriant/Project_thesis/chapter6/plot_psd_for_simulations_noise.ipynb
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/psd_amplitude_noise_example.png}  
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/psd_phase_noise_example.png}
+    \end{subfigure}
+    \caption{Power sepctrum of the CC amplitude (left) and phase (right) noise used in the PyHEADTAIL simulations.}
+    \label{fig:psd_cc_simulations_example}
+\end{figure}
+
+The initial bunch was generated with Gaussian distributions in transvserse and longitudinal planes. 
+
+
+
+
 
 single bunch
 twiss parameters
