@@ -187,11 +187,9 @@ Another observation, is that the spread between the emittance values obtained fr
 % Comments: The difference on the phase noise plots might be the larger tune spread in the sixtracklib simulations due to the larger positive chromaticity. In general we are no sensitive to the tune spread value in the absence of wakefields. However, for such small values of the order to $10^{-6}$ there might be some sensitivity.
 
 
-\newpage
-
 \subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
-Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity like in PyHEADTAIL.
+Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity like in PyHEADTAIL. This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
 
 In Sixtracklib the $\CC$ element is represented by an element (referred to as RFMultipole in the Sixtracklib documentation) that has the properties of an RF cavity and of a magnet of arbitrary order oscillating at a certain frequency. To simulate the vertical $\CC$ it is implemented as a (modulated) skew dipole.
 
@@ -200,7 +198,6 @@ When a particle passes through this element, it recieves the following vertical 
     y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
 \end{equation}
 where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $y^\prime$ is the vertical angle co-ordinate and z the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
-
 
 Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. This check was important as Sixtracklib is a recently developed simulation tool and at the time these studies took place the use of the RFMultipole as a $\CC$ element was not well tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error at a different location, $s_1$, around the ring. To this end, the induced orbit shift at the location $s_1$ from the $\CC$ element is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
 
@@ -253,12 +250,26 @@ Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the 
 
 For the computation of the theoretical prediction Eq.~\eqref{eq:CC_orbit_shift_CC_element} was used over a range of equally spaced $z$ co-ordinates from -0.6 to 0.6\,m ($\sim 3 \sigma_z$). The $z$ co-ordinates are taken into account indirectly through $\Delta_y^\prime$ and Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}.
 
-By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is concluded, that using Sixtracklib the result of $\CC$ element on the orbit is as expected. % on the closed orbit
+By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is concluded, that using Sixtracklib the result of $\CC$ element on the orbit is as expected from the analytical calculations. % on the closed orbit
+
+\textbf{Implementing amplitude and phase noise on the real CC element}\\
+% Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
+The amplitude and phase noise in the real $\CC$ element used for the following Sixtracklib simualtions are modeled following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
+
+In particular, in the presence of amplitude and phase noise the vertical kicks on the momentum of Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} are modified as follows:
+
+\begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
+    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{(V_\mathrm{0,CC} + \zeta_j \Delta A)}{p_0 c},
+\end{equation}
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level) the deviation from the nominal amplitude $\VCC$ (amplitude noise level). Note that this definition is slightly different from Eq.~\eqref{eq:CC_voltage_z} due to the slghtly different definititions used form the Sixtracklib for RFMultipole element. The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} p_0 c \ \VCC$.
 
 
 
 
-\subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC}
+
+\subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC_sixtracklib}
+
+% Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
 
 
 
