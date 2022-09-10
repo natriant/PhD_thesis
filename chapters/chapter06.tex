@@ -141,14 +141,44 @@ The PyHEADTAIL simulations results are summarised in Fig.~\ref{fig:study_pyheadt
 
 It can be seen, that for the amplitude noise case there is excellent agreement between the theoretical prediction and the simulated growth rate. For the phase noise case, the agreement between expected and simulated emittance growth is very good. The simulated growth appears slightly lower than the theoretical predictions. However, this difference is insignificant comparing to the factor of about 4 observed between the theory and the measurements of 2018. The most possible reason for the explanation is the very small tune spread. Later simualtions with larger vertical tune spread (closer to the realistic tune spread in the SPS during the 2018 experiments (see Section~\ref{sec:first_obs_suppression})) show excellent agreement between the PyHEADTAIL results and the theoretically computed values. Nevertheless, this small difference does not affect the quality of the results of this thesis as it will be shown in the following chapters.
 
-In general, it can be concluded that the transverse emittance growth driven by $\CC$ RF noise obtained by PyHEADTAIL simualtions is in good agreement with the theoretically expected values from the model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001}.
+In general, it can be concluded that the transverse emittance growth driven by $\CC$ RF noise obtained by PyHEADTAIL simualtions is in good agreement with the theoretically expected values from the model of T.~Mastoridis and P.~Baudrenghien~\cite{PhysRevSTAB.18.101001}. In the following section the theory is benchmarked against a more complete simulation tool, Sixtracklib.
 
 
 \section{Benchmarking theory against Sixtracklib}\label{sec:benchmark_theory_with_sixtracklib}
-This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo} which is a non-linear single-particle tracking library. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simulation tool than PyHEADTAIL as the tracking simulations use the detailed optics of the machine and therefore is considered appropriate for this study. Calculations can be performed on GPU decreasing the computational time. For all the simulations presented in this section the nominal SPS model for Q26 optics will be used~\cite{cern_optics_repo} as introduced in Section~\ref{sec:optics_model_designs} except if it is stated otherwise.
+This section summarises the benchmarks that were made to validate the theoretical model~\cite{PhysRevSTAB.18.101001} against numerical simulations with Sixtracklib~\cite{sixtracklib_repo} which is a non-linear single-particle tracking library. The idea is motivated by the fact that PyHEADTAIL and theory may miss some beam dynamics that could explain the discrepancy between their results and the experimental observations of 2018. Sixtracklib is a more complete simulation tool than PyHEADTAIL as the tracking simulations use the detailed optics of the machine and therefore is considered appropriate for this study. Calculations can be performed on GPU decreasing the computational time. For the simulations presented in this section the nominal SPS model for Q26 optics will be used~\cite{cern_optics_repo} as introduced in Section~\ref{sec:optics_model_designs} except if it is stated otherwise.
 
 
-This section is structured as follows. First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse kicks on the angle co-ordinate due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
+This section is structured as follows. 
+
+%First, a direct comparison between PyHEADTAIL and Sixtracklib is provided by simulating the emittance growth for the experimental conditions of 2018. In the Sixtracklib simulations, the available $\CC$ element is used instead of modeling only the transverse kicks on the angle co-ordinate due to phase and amplitude noise in the RF system of the cavity as in PyHEADTAIL. Afterward, the sensitivity of the noise-induced emittance growth in the multipole errors of the main SPS dipoles is tested. Furthermore, the simulations are performed using the measured noise spectra of amplitude and phase noise. Last, the sensitivity of the emittance growth to a possible $\CC$ phase modulation is studied.
+
+\subsection{Emittance growth simulations with CC noise modeled as transverse kicks on the angle co-ordinate.}\label{subsec:sixtracklib_kicks_transverse_angle}
+% Link to presentation with relevant slides: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8a041cb470_0_448
+
+First the emittance growth simualtions that were presented in the previouse section, were repeated with Sixtracklib instead of PyHEADTAIL. This basically means, that the detailed optics of SPS machine are used for the tracking instead of modelling the ring as simple transfer map with one interaction point where the $\CC$  kick is applied. The nominal SPS lattice of MAD-X is used: dipoles, quadrupoles, and chromatic sextupoles as discussed in Section~\ref{sec:optics_model_designs}. It can be found in the GitLab repository of Ref.~\cite{cern_optics_repo}. The linear chromaticity was corrected to about $Q^\prime_{x,y}$=1-2. The relevant machine and beam parameters are the ones listed in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests}.
+
+The rms betatron tune spread here is slightly higher than $7 \times 10^{-6}$ that was computed in the previous section, due to the larger values of linear chromaticity. To this end, tracking for $10^{5}$ turns is reasonable also for these studies. The initial distribution of $10^5$ particles follows a gaussian both in transverse and longitudinal planes.
+
+The emittance growth was simulated in Sixtracklib in the presence of both amplitude and phase noise. The noise kicks were implementated as kicks on the vertical anlge co-ordinate of each particle following the preceeding PyHEADTAIL simulations. The noise kicks were applied on the beam at the location of $\CC$1. The power spectral density of the noise at the betatron frequency was $1.68\times 10^{-10}$ 1/Hz and $\mathrm{rad^2/Hz}$ for amplitude and phase noise respectively. This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. The power spectra are also visualised in Fig.~\ref{fig:psd_cc_simulations_example}.
+
+The emittance and emittance growth values were computed following the same procedure with the preceeding PyHEADTAIL simulations (see Section~\ref{sec:benchmark_theory_with_pyheadtail}). The results are summarised in Fig.~\ref{fig:study_1_sixtracklib_normalised_momentum_kicks}.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_CC_PN_normalised _kicks_in_momentum.png}  
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_AN_normalised_kicks_momentum.png}
+    \end{subfigure}
+    \caption{Vertical emittance growth driven by CC RF phase noise (left) and amplitude noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modeled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise respectively.}
+    \label{fig:study_1_sixtracklib_normalised_momentum_kicks}
+\end{figure}
+
+
+\newpage
 
 \subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
