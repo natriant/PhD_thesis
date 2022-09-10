@@ -162,19 +162,20 @@ The rms betatron tune spread here is slightly higher than $7 \times 10^{-6}$ tha
 
 The emittance growth was simulated in Sixtracklib in the presence of both amplitude and phase noise. The noise kicks were implementated as kicks on the vertical anlge co-ordinate of each particle following the preceeding PyHEADTAIL simulations. The noise kicks were applied on the beam at the location of $\CC$1. The power spectral density of the noise at the betatron frequency was $1.68\times 10^{-10}$ 1/Hz and $\mathrm{rad^2/Hz}$ for amplitude and phase noise respectively. This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. The power spectra are also visualised in Fig.~\ref{fig:psd_cc_simulations_example}.
 
-The emittance and emittance growth values were computed following the same procedure with the preceeding PyHEADTAIL simulations (see Section~\ref{sec:benchmark_theory_with_pyheadtail}). Figure~\ref{fig:study_1_sixtracklib_normalised_momentum_kicks} summarizes the simulated emittance growth driven by phase (left) and amplitude (right) noise. For both types of noise, the theoretical predicted growth is given with the red line. The dark blue and dark orange lines show the evolution of the averaged emittance values over the thirty different runs. The shaded areas, shown with light blue and light orange colors, depict the standard deviation of the emittance values over the thirty different runs. The emittance growth rate is obtained with a linear fit to the averaged normalised emittance values over the simulation time. The resulted slope of the fit is also shown in the plot with black color. The uncertainty on the slope of the fit is displayed in the legend.
+The emittance and emittance growth values were computed following the same procedure with the preceeding PyHEADTAIL simulations (see Section~\ref{sec:benchmark_theory_with_pyheadtail}). Figure~\ref{fig:study_1_sixtracklib_normalised_momentum_kicks} summarizes the simulated emittance growth driven by amplitude (left) and phase (right) noise. For both types of noise, the theoretical predicted growth is given with the red line. The dark blue and dark orange lines show the evolution of the averaged emittance values over the thirty different runs. The shaded areas, shown with light blue and light orange colors, depict the standard deviation of the emittance values over the thirty different runs. The emittance growth rate is obtained with a linear fit to the averaged normalised emittance values over the simulation time. The resulted slope of the fit is also shown in the plot with black color. The uncertainty on the slope of the fit is displayed in the legend.
 
+% Figures downlaoded from: https://docs.google.com/presentation/d/1-rGHtMoeLPykjgyyotreXqWFaaxChA1pvrco-sZpobw/edit#slide=id.g71f3275427_0_89
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_CC_PN_normalised _kicks_in_momentum.png}  
+        \includegraphics[width=.95\linewidth]{images/Ch6/study_1_AN_sixtracklib_kicks.png}  
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{images/Ch6/sixtracklib_study_1_AN_normalised_kicks_momentum.png}
+        \includegraphics[width=.95\linewidth]{images/Ch6/study_1_PN_sixtracklib_kicks.png}
     \end{subfigure}
-    \caption{Vertical emittance growth driven by CC RF phase noise (left) and amplitude noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modeled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise respectively.}
+    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modeled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise respectively.}
     \label{fig:study_1_sixtracklib_normalised_momentum_kicks}
 \end{figure}
 
