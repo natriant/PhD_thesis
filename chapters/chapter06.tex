@@ -402,6 +402,44 @@ Last, the same simulation is repeated in the presence of both amplitude and phas
 \subsection{CC noise induced emittance growth with the non-linear SPS model}\label{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps}
 
 
+The nominal SPS model includes only the nonlinear fields produced by the chromatic sextupoles. However, one of the most important sources of non-linearities in SPS are the odd multipole components of its main dipole magnets. In this subsection their impact on the beam dynamic is studies trying to explain the observed discrepancy between measured and predicted growth rates pbserved in the experiment of 2018. To this end the multipole components of the SPS main dipoles should be included in the nominal SPS model that was used up to now.
+
+% APR Chapter 3.1
+The multipole error of the SPS main dipoles are unfortunately not available from magnetic measurements. On this ground a non-linear optics model of the SPS has been established with beam-based measurements of the chromatic detuning over a range of momentum deviation~\cite{Carlà:2664976, Alekou:2640326}.  The optics model was obtained by assigning systematic multipole components to the main lattice magnets, in the nominal model of SPS, in order to reproduce the tune variation with themomentum deviation as it was measured in the real machine. The calculations were performed with MAD-X.
+
+The values of the multipole components up to seventh order obtained from this method are given in Table~\ref{tab:sps_mult_270GeV} where, ($b_3^A, b_3^B$) ($b_5^A, b_5^B$) and ($b_7^A, b_7^B$) stand for the sextupolar, decapolar and decatetrapolar mutipoles respectively. Note that different values have been obtained foreach of the two different kinds of SPS main dipoles (MBA and MBB) which are marked withthe indices A and B respectively.
+
+\begin{table}[ht] % table take from the APR
+    \caption{Multipole errors from SPS non-linear model, at 270\,GeV.} % title of Table
+    \centering % used for centering table
+    \begin{tabular}{c c c c} % centered columns (4 columns)
+    \hline\hline %inserts double horizontal lines
+    Multipole & Value  \\ [0.5ex] % inserts table
+    %heading
+    \hline  % inserts single horizontal line
+    $b_3^A, b_3^B$ & 8.1 $\times 10^{-4}$\,$\mathrm{m^{-2}}$, 1.1 $\times 10^{-3}$\,$\mathrm{m^{-2}}$\\ 
+    $b_5^A, b_5^B$ & 9.2\,$\mathrm{m^{-4}}$, $-$10\,$\mathrm{m^{-4}}$ \\
+    $b_7^A, b_7^B$ & 1.3 $\times 10^{5}$\,$\mathrm{m^{-6}}$, 1.4 $\times 10^{5}$\,$\mathrm{m^{-6}}$\\ [1ex] % [1ex] adds vertical space
+    \hline %inserts single line
+    \end{tabular}
+    \label{tab:sps_mult_270GeV} % is used to refer this table in the text
+\end{table}
+
+These values were assigned to the main dipoles of the SPS and the simualtions presented in Section~\ref{sec:global_CC_sixtracklib_noiseCoast3_setting3} were repeated. The simualtions were performed in the presence of the measured phase noise spectrum only which was dominant during the SPS experiments in 2018. The results are displayed in Fig\dots
+
+
+% Figures are downloaded from the prosentation in the following link: https://docs.google.com/presentation/d/1bQtHxZm6iLaqhcPVYYrcx38qx-mTMw7L5rTj3l3xAV8/edit#slide=id.ga23fa2d1cb_0_58
+
+
+
+
+%\textbf{random multiple errros? } Like in APR.Ch.3.2.2.
+
+
+
+
+
+
 \newpage
 
 
