@@ -394,7 +394,7 @@ Last, the same simulation is repeated in the presence of both amplitude and phas
 \begin{figure}[!h]
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch6/study_4_AN_PN_sxitracklib.png}
-        \caption{Vertical emittance growth driven by CC RF amplitude and phase as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. Both types of noise are applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched OFF.}
+        \caption{Vertical emittance growth driven by CC RF amplitude and phase noise as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. Both types of noise are applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched OFF.}
         \label{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra_AN_and_PN}
 \end{figure}
 
@@ -425,64 +425,29 @@ The values of the multipole components up to seventh order obtained from this me
     \label{tab:sps_mult_270GeV} % is used to refer this table in the text
 \end{table}
 
-These values were assigned to the main dipoles of the SPS and the simualtions presented in Section~\ref{sec:global_CC_sixtracklib_noiseCoast3_setting3} were repeated. The simualtions were performed in the presence of the measured phase noise spectrum only which was dominant during the SPS experiments in 2018. The results are displayed in Fig\dots
-
+These values were assigned to the main dipoles of the SPS and the simulations presented in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3} were repeated. The simulations were performed in the presence of the measured phase noise spectrum only which was dominant during the SPS experiments in 2018. The results are displayed in Fig.~\ref{fig:study_5_sixtracklib_global_cc_scheme_measured_spectra_PN_b3b5b7}. It is clear that there is a very good agreement between the theory and the simulations when the non-linear model of SPS is used.
 
 % Figures are downloaded from the prosentation in the following link: https://docs.google.com/presentation/d/1bQtHxZm6iLaqhcPVYYrcx38qx-mTMw7L5rTj3l3xAV8/edit#slide=id.ga23fa2d1cb_0_58
+% In the same presentation, one can find also santity checks that were performed for the implementation of the multiple errors.
+\begin{figure}[!h]
+    \centering         
+    \includegraphics[width=0.7\textwidth]{images/Ch6/study_5_non_linear_sps_model_sixtracklib.png}
+        \caption{Vertical emittance growth driven by CC RF phase noise as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. The non-linear model (including multipole components of the main dipole magnets) of the SPS machine was used for the tracking. Both types of noise are applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched OFF.}
+        \label{fig:study_5_sixtracklib_global_cc_scheme_measured_spectra_PN_b3b5b7}
+\end{figure}
 
+%- [ ] Further studies that could be mentioned: modulating CC phase and impact of phase offset. Only if they ask me to add them. Slides 34-35 in the following presentation: https://docs.google.com/presentation/d/1wqgJK7uDFDGoX8gyx2-JhnO8mZT51N1VH1RtNL-jhWA/edit#slide=id.ga69ead34aa_0_462
 
 
 
 %\textbf{random multiple errros? } Like in APR.Ch.3.2.2.
 
-
-
-
-
-
-\newpage
+\section{Conclusions and outlook}\label{sec:Ch6_conclusions}
 
 
 
 ty. The
 benchmarks prove an excellent agreement and demonstrate a solid understanding of the involved
 dynamics. The study has been published in Ref. [34].
-
-
-for the experimental configuration of 2018 
-
-of the existing Vlasov theory for transverse coherent beam instabilities with first-order
-chromaticity have been recapitulated in Section 2.2.3. Here, we extend this theory to account for the
-beam dynamics effects introduced by nonlinear chromaticity. The chapter contains the work published
-in Refs. [34, 76].
-
-
-
-
-\section{Benchmarking with different simulation software}
-Benchmarking of theory with pyheadtail (one turn map) and Sixtracklib (element by element tracking).
-
-
-
-
-Remember that in chapter 6 it was demonstrated that there is no visible difference on the cc rf noise induced emittance growth if the noise kicks are modeled as kicks on the moemntum or the real rf multiple + used in a global or local scheme.
-
-
-pyheadtail vs sixtracklib: %https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8ae11a254a_0_701
-
-\section{Sensitivity to the non-linearities of the main SPS dipoles}
-Simulation studies with sixtracklib
-
-\section{Simulations using the measured noise spectrum}
-Sixtracklib PyHEADTAIL and the exact machine paramters
-
-\section{Sensitvity studies}
-1. Sensitvity to how noisy is the noise spectrum
-2. On the CC voltage
-3. On the different bunch lengths. 
-
-\section{b3b5b7 multiple errors}
-Contribution of the non-linearities with sixtracklib.
-
 
 All these factors were excluded as possible sources of the discrepancy.
