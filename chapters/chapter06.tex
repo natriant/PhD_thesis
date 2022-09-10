@@ -259,23 +259,21 @@ The amplitude and phase noise in the real $\CC$ element used for the following S
 In particular, in the presence of amplitude and phase noise the vertical kicks on the momentum of Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} are modified as follows:
 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
-    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{(V_\mathrm{0,CC} + \zeta_j \Delta A)}{p_0 c},
+    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \zeta_j \Delta A)}{p_0 c},
 \end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level), and $\Delta A$ the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level). Note that this definition is slightly different from Eq.~\eqref{eq:CC_voltage_z} due to the slghtly different definititions used form the Sixtracklib for RFMultipole element. The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} \frac{p_0 c}{V_\mathrm{0,CC}} \frac{180}{\pi}$.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level), and $\Delta A$ the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level). The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} \frac{p_0 c}{V_\mathrm{0,CC}} \frac{180}{\pi}$.
 Note that $\Delta \phi$ enters Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} in units of degrees.
 These values result to power spectral densities at the betatron frequency of: $S_{\Delta_A}(f_b) = 1.68 \times 10^{-10}$\,1/Hz for amplitude noise and $S_{\Delta_\phi}(f_b) = 1.68 \times 10^{-10}$ $\mathrm{rad^2/Hz}$ for phase noise.
 Finally, $\zeta_j$ is the $j$th element of a sample drawn from a Gaussian distribution with mean 0, standard deviation 1, and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise). 
 % Example script to see the scaling for the noise:/eos/user/n/natriant/sixtracklib_data/27March2020/AN/job_002_track_sixtracklib.py
+% I am not sure if this sentence is correct. Note that this definition is slightly different from Eq.~\eqref{eq:CC_voltage_z} due to the slghtly different definititions used form the Sixtracklib for RFMultipole element. 
 
 
 
-
-
-\subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC_sixtracklib}
+\subsection{CC noise induced emittance growth in the presence of local CC scheme}\label{subsec:local_CC_sixtracklib}
 
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
-
-
+In this section, the emittance growth driven by $\CC$ RF noise is simulated with Sixtracklib in the presence of a local $\CC$ scheme. It is reminded that in the local $\CC$ scheme (see Fig.~\ref{fig:crossing_with_and_without_CCs}) two $\CC$s are used with opposite phase (to cancel out the effect of the crabbing (orbit shift discussed in the previous paragraph)).
 
 
 
