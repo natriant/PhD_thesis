@@ -312,7 +312,8 @@ The simulations show an excellent agreement between the theoretically computed a
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC_sixtracklib}
 Here, the simualtions presented above were repeated but for a global $\CC$ scheme. It is reminded that in the global $\CC$ scheme only one CC is in operation and the closed orbit shift is present during the circulation of the bunch around the machine. This scheme is the realistic case for the experiments of 2018, where for the emittance growth measurements only one $\CC$ was used.
 
-For the simulations presented here, $\CC$2 was switched OFF. $\CC$1 operated at 1\,MV, for $\phi_\mathrm{CC}$=90\,deg. The noise was applied as described in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} for the same noise levels as before. For this study, where only one $\CC$ is switched ON, its voltage is slowly increased to the chosen value of 1\,MV, so that the new closed orbit includes the full $\CC$ kick. Without this dynamic ramping, emittance blow-up is observed during the first turns in the simulation. Previous studies have shown that using a ramp of 200 turns minimizes the blow-up (discussed in the APR - 1st year). % APR p.39
+For the simulations presented here, $\CC$2 was switched OFF. $\CC$1 operated at 1\,MV, for $\phi_\mathrm{CC}$=90\,deg. The noise was applied as described in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} for the same noise levels as before. For this study, where only one $\CC$ is switched ON, its voltage is slowly increased to the chosen value of 1\,MV, so that the new closed orbit includes the full $\CC$ kick. Without this dynamic ramping, emittance blow-up is observed during the first turns in the simulation. Previous studies have shown that using a ramp of 200 turns minimizes the blow-up (discussed in the APR - 1st year). % APR p.39 
+Nevertheless, the first 200 turns, are excluded from the linear fit used to obtained the emittance growth rates. % It doesn't matter as it is just two points.
 
 Figure~\ref{fig:study_3_sixtracklib_global_cc_scheme} illustrates the simulated emittance growth driven by amplitude (left) and phase (right) noise in the presence of a global CC scheme. Once again, an excellent agreement is observed with the theoretically expected growth and also with the simulated rates for the different configurations discussed previously in this Chapter. This behavior is expected as the $\CC$ element itself without noise cause no emittance growth % APR 1st year. 
 
@@ -341,12 +342,8 @@ Here, the simulation studies presented in the previous Subsection~\ref{subsec:fi
 
 The phase and amplitude noise spectra from Coast3-Setting3 were used since they were the strongest noise levels from all the coasts. To this end, one can ensure the observation of reasonable emittance growth in our simulation time, which for this particular set of simualtions was increased to $\sim$10\,s ($5\times 10^{5}$ turns).
 
-Additionally, the simulation parameters were refined to be closer to the experimental conditions of 2018. The parameters that were updated from the values that were listed in Table~\ref{tab:CC_pyheadtail_simulation_parameters} and described Sections~\ref{sec:benchmark_theory_with_sixtracklib} are the following: $Q_s=0.0051$, rms.  
-
-
-
-In this section, the emittance growth in a global CC scheme is simulated using exmaple measured noise spectra measured during the experiment of 2018. 
-
+Additionally, the simulation parameters were refined to be closer to the experimental conditions of 2018. The parameters that were updated from the values that were listed in Table~\ref{tab:CC_pyheadtail_simulation_parameters} and described Sections~\ref{sec:benchmark_theory_with_sixtracklib} are the following: $Q_s=0.0051$ and $\sigma_z$=0.138\,m. Following the experimental configuration of 2018, $\CC$1 was switched OFF, while $\CC$2 operated at 1\,MV. The voltage was slowly ramped up to that value during the first 200 turns. For reference, the vertical beta function at the location of $\CC$2 is 73.8\,m.
+% klod=1, but I am not gonna mention it here. The detailed parameters can be found in slide 14 of the following presentation: https://docs.google.com/presentation/d/1O1Hl-Mvc99OfyI2FqIY-b0PMC2HVGsibKqRZGvy7lnU/edit#slide=id.gab6b65cbda_0_352
 
 
 
