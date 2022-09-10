@@ -436,18 +436,20 @@ These values were assigned to the main dipoles of the SPS and the simulations pr
         \label{fig:study_5_sixtracklib_global_cc_scheme_measured_spectra_PN_b3b5b7}
 \end{figure}
 
+%\textbf{random multiple errros? } Like in APR.Ch.3.2.2.
+
+
 %- [ ] Further studies that could be mentioned: modulating CC phase and impact of phase offset. Only if they ask me to add them. Slides 34-35 in the following presentation: https://docs.google.com/presentation/d/1wqgJK7uDFDGoX8gyx2-JhnO8mZT51N1VH1RtNL-jhWA/edit#slide=id.ga69ead34aa_0_462
 
 
-
-%\textbf{random multiple errros? } Like in APR.Ch.3.2.2.
-
 \section{Conclusions and outlook}\label{sec:Ch6_conclusions}
+The work presented in this chapter focused on investigating possible explanations for the discrepancy of a factor of about 4 observed between the theoretically predicted and measured emittance growth driven by $\CC$ RF noise during the experiments of 2018 in the SPS. The following points were checked:
+\begin{itemize}
+    \item Sensitivity to possible uncertainties in the measured parameters and in particular in the $\CC$ voltage and bunch length.
+    \item Benchmarking of the theory with two different simulation codes: PyHEADTAIL and Sixtracklib.
+    \item Sensitivity of the simulated emittance growth to the detailed optics and the presence of a real $\CC$ element.
+    \item Sensitivity to the measured noise spectrum. 
+    \item Sensitivity to the non-linearities of the SPS lattice.
+\end{itemize}
 
-
-
-ty. The
-benchmarks prove an excellent agreement and demonstrate a solid understanding of the involved
-dynamics. The study has been published in Ref. [34].
-
-All these factors were excluded as possible sources of the discrepancy.
+All these factors were excluded as possible sources of the discrepancy since for all of these study cases the simulated emittance growth demonstrated an excellent agreement with the theoretically predicted values. It was also confirmed that the detailed optics of the SPS, its non-linearities and the crabbing induced from a real $\CC$ element have no impact on the $\CC$ RF noise-induced emittance growth. To this end, in the next chapters, the simulations will be performed with the PyHEADTAIL simulation tool which also provides the possibility of including collective effects (such as the impedance) which were not addressed yet in the context of these studies.
