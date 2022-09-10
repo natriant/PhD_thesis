@@ -261,7 +261,11 @@ In particular, in the presence of amplitude and phase noise the vertical kicks o
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
     y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{(V_\mathrm{0,CC} + \zeta_j \Delta A)}{p_0 c},
 \end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level) the deviation from the nominal amplitude $\VCC$ (amplitude noise level). Note that this definition is slightly different from Eq.~\eqref{eq:CC_voltage_z} due to the slghtly different definititions used form the Sixtracklib for RFMultipole element. The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} p_0 c \ \VCC$.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level), and $\Delta A$ the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level). Note that this definition is slightly different from Eq.~\eqref{eq:CC_voltage_z} due to the slghtly different definititions used form the Sixtracklib for RFMultipole element. The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} \frac{p_0 c}{V_\mathrm{0,CC}} \frac{180}{\pi}$.
+Note that $\Delta \phi$ enters Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} in units of degrees.
+These values result to power spectral densities at the betatron frequency of: $S_{\Delta_A}(f_b) = 1.68 \times 10^{-10}$\,1/Hz for amplitude noise and $S_{\Delta_\phi}(f_b) = 1.68 \times 10^{-10}$ $\mathrm{rad^2/Hz}$ for phase noise.
+Finally, $\zeta_j$ is the $j$th element of a sample drawn from a Gaussian distribution with mean 0, standard deviation 1, and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise). 
+% Example script to see the scaling for the noise:/eos/user/n/natriant/sixtracklib_data/27March2020/AN/job_002_track_sixtracklib.py
 
 
 
