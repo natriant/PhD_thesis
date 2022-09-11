@@ -197,7 +197,7 @@ The objective of the first part of the experiment was to reproduce the scaling o
 
 For the strong noise, less measurement time is sufficient since the growth rate obtained from the linear fit on the emittance values is not sensitive to the fluctuations due to the Wire Scanner. Additionally, for strong noise, the emittance reaches very quickly very large values, about 8-10\,$\mathrm{\mu m}$, which eventually degrades the quality of the beam.
 
-Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse emittance growth measured in the SPS in 2022 for the four different noise levels injected in the $\CC$ RF system increasing from top left to bottom right. It can be seen, that there is a clear emittance growth in the vertical plane which is faster for stronger noise as expected. A growth in the horizontal emittance is also observed it seems independent from the growth in the vertical. This is also confirmed in Fig.~\ref{fig:H_V_emit_growth_noise_scan} where the vertical and horizontal growth rates are plotted as a function of the four different phase noise levels. Consequently, in the following analysis of the experimental data the growth in two planes will be treated independently (unlike in 2018, see Chapter~\ref{Ch:2018_analyisis}.)\textcolor{red}{These last sentences need to be modifief after checking again the 2018 data to see if there was indeed coupling or not.}
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse emittance growth measured in the SPS in 2022 for the four different noise levels injected in the $\CC$ RF system increasing from top left to bottom right. It can be seen, that there is a clear emittance growth in the vertical plane which is faster for stronger noise as expected. A growth in the horizontal emittance is also observed it seems independent from the growth in the vertical. This is also confirmed in Fig.~\ref{fig:H_V_emit_growth_noise_scan} where the vertical and horizontal growth rates are plotted as a function of the four different phase noise levels. Consequently, even though in the 2018 analysis (see Chapter~\ref{Ch:2018_analyisis}) the total emittance growth given by $d\epsilon_y/dt +d\epsilon_x/dt $ was considered to account for coupling effects, in the following of the experimental data (2022) the growth in two planes will be treated independently.
 
 
 % Note 1, figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis
@@ -431,66 +431,33 @@ Last, it is worth commenting that, unlike the $\CC$ experiment that was conducte
 \end{figure}
 
 \textbf{Underlying theory}\\
-It is worth mentioning that the simulation studies and experimental results (2018 and 2022) presented in this thesis, motivated the development of a theoretical description for the suppression of the noise-induced emittance growth from the beam transverse impedance. The theory was recently developed by the colleague X.~Buffat\footnote{Email contact: xavier.buffat@cern.ch} and it is presented in in Refs.~\cite{Buffat:2022dac} and~\cite{van_kamper_presentation_xavier_theory}. 
+It is worth mentioning that the simulation studies and experimental results (from 2018 and 2022) presented in this thesis, motivated the development of a theoretical description for the suppression of the noise-induced emittance growth from the beam transverse impedance. The theory was recently developed by the colleague X.~Buffat\footnote{Email contact: xavier.buffat@cern.ch} and it is presented in in Refs.~\cite{Buffat:2022dac} and~\cite{van_kamper_presentation_xavier_theory}. 
 
 The theory developed is a simplification of the approach of Y.~Alexahin (in the context of beam-beam interactions)~\cite{Alexahin:485304}. In particular, X.~Buffat, using the Van Kampen mode approach~\cite{VANKAMPEN1955949}, adapted Y.~Alexahin's approach for configurations featuring linear detuning and a complex tune shift from a collective force. 
 
-- it also provides an explanation for the assymetry in for negative and positive detuning coefficients observed in the pyheadtail simulations (in section 7).
+% This paragraph is modified from the conclusions in Xavier's paper.%
+It was shown that the emittance growth driven by an external noise source can be significantly reduced by a collective force. To observe the suppression a damping force is necessary. The suppression is enhanced in configurations where the real tune shift is larger than the spread of the betatron frequencies i.e. the coherent mode emerges from the incoherent spectrum~\cite{Buffat:2022dac}.
 
-it suppoers the experimental and simualtion resutls
-
-
-This paragraph discusses the underlying theory behind the suppression of the emittance growth observed in the $\CC$ experiments of 2018 and 2022. The theoretical description was recently developed by the
-colleague X.~Buffat\footnote{Email contact: xavier.buffat@cern.ch} and was motivated by the simulations and experimental results discussed in this thesis. Even though the theory was not developed by the author of this thesis, it is briefly presented here for completeness.
-
-The details of this work are presented in Refs.~\cite{Buffat:2022dac} and~\cite{van_kamper_presentation_xavier_theory}.
-
-
-
-
-Using the Van Kampen mode approach, it is shown that a
-collective force can significantly reduce the emittance growth
-due to an external source of noise. A damping force is needed
-to obtain a suppression of the emittance growth, yet a real
-frequency shift may enhance this suppression, mostly in
-configurations where the real frequency shift is larger than
-the frequency spread, leading to the emergence of a coherent
-mode.
-This beh
-
-
+This theory supports the studies presented in this thesis. It also explains the asymmetry in the dependence of the emittance growth suppression for positive and negative detuning coefficients observed in PyHEADTAIL simulations (see Chapter~\ref{Ch:suppression_impedance}). Moreover, it was used to fit the experimental data measured during the experiment with dipole noise with very promising results.
 % The figures is a screenshot from the plots of the following presentation: https://indico.cern.ch/event/1170242/contributions/4915101/attachments/2476586/4250387/2022-07-07_crabMD-expanded.pdf
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.6\textwidth]{images/Ch8/fit_van_kamper_damper_md_data_xavier.png}
-       \caption{Fit of Eq... to the measured emittance growth rates (points) during the experiment with a dipolar noise source. This figure is a courtesy of X.~Buffat.}
-       \label{fig:fit_van_kamper_xavier}
-\end{figure}
+%\begin{figure}[!h]
+%   \centering         
+%   \includegraphics[width=0.6\textwidth]{images/Ch8/fit_van_kamper_damper_md_data_xavier.png}
+%       \caption{Fit of Eq... to the measured emittance growth rates (points) during the experiment with a dipolar noise source. This figure is a courtesy of X.~Buffat.}
+%       \label{fig:fit_van_kamper_xavier}
+%\end{figure}
 
 
-
-\newpage
-
-
-\subsection{extra}
-check the  detuning with amplitude
-h%ttps://docs.google.com/presentation/d/1yaGKJ20O-jVg0R3bdj62l5VzltwjBBHtphKq5HI9xrY/edit#slide=id.g104dd3ff735_0_184
+%\subsection{extra}
+%check the  detuning with amplitude
+%https://docs.google.com/presentation/d/1yaGKJ20O-jVg0R3bdj62l5VzltwjBBHtphKq5HI9xrY/edit#slide=id.g104dd3ff735_0_184
 
 
-\section{Simple model of Xavier vs experimental results}
-for dipolar nosie
+%\section{Bunch length measurements} --> Moved in the appendix
+% https://docs.google.com/presentation/d/1cqXVwsXoorYqU9Td0qiFDBcyAn9XrNLmL_kvYOj61yU/edit#slide=id.g129fd6f84c7_1_5
 
 
-The Landau octupoles current might be a limtiing factor.
-
-
-If you want to describe the steps for the MD see section 3.3 David amorim.
-
-
-\section{Conclusions and outloook}
+\section{Conclusions and outloook}\label{sec:Ch8_conclusions}
 
 IPAC?
 
-
-\section{Bunch length measurements}
-% https://docs.google.com/presentation/d/1cqXVwsXoorYqU9Td0qiFDBcyAn9XrNLmL_kvYOj61yU/edit#slide=id.g129fd6f84c7_1_5
