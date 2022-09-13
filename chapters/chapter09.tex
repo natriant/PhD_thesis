@@ -21,10 +21,10 @@ To summarise, this PhD thesis is of fundamental importance as it demonstrates th
 The project also provides a strong starting point for future additional studies.
 Specifically, additional measurements are planned in the SPS to refine the experimental observations, by obtaining more data points on the plots of the emittance growth as a function of the detuning from octupoles. Furthermore, the interplay of the dipolar noise or Crab Cavity RF phase noise with the beam transverse impedance and the space charge needs to be evaluated to make another step towards the full understanding of the emittance growth suppression mechanism. Last, dedicated experiments are foreseen to study the emittance growth in the presence of amplitude noise which is related to headtail modes $\pm$1 which are not damped by the impedance (for the slightly positive chromaticity of the experimental configuration). Another interesting study would be to investigate the impact of linear chromaticity on the suppression factor and the possible transverse instabilities.
 
-\textbf{Implications of the results for the HL-LHC}\\
+\section{Implications of the results for the HL-LHC}
 This PhD project studied extensively the emittance growth due to noise in the Crab Cavity RF system experimentally and in simulations for one SPS machine configuration. However, the main motivation of these studies was the planned use of the Crab Cavities in the HL-LHC and the criticalness of the effect of the emittance growth suppression for the HL-LHC. To this end, it is considered appropriate to discuss here the implications of the results of this thesis to the HL-LHC project. Additionally, it will be explained why simualtion studies for the HL-LHC case were not strongly motivated.
 
-The studies in the SPS machine are very different from the HL-LHC case. Some of the main machine and beam design parameters are summarised in Table~\ref{tab:sps_vs_lhc} for the SPS and HL-LHC. Some of the most important differences (in the context of emittance growth and impedance interaction) between the two machines are the beam energy, the intensity, the bunch length, the type of the crabbing scheme, the frequency of the main RF system, and of course the presence or not of beam-beam interactions and collisions. Therefore, as stated in the Inroduction, the pure objective of the SPS studies was to validate the predictions of the available theoretical models, in terms of Crab Cavity RF noise-induced emittance growth. Then, one should be able to extrapolate the predictions to the HL-LHC case.
+The studies in the SPS machine are very different from the HL-LHC case. Some of the main machine and beam design parameters are summarised in Table~\ref{tab:sps_vs_lhc} for the SPS and HL-LHC. Some of the most important differences (in the context of emittance growth and impedance interaction) between the two machines are the beam energy, the intensity, the bunch length, the type of the crabbing scheme, the frequency of the main RF system, and of course the presence or not of beam-beam interactions and collisions. Therefore, as stated in the Inroduction, the pure objective of the SPS studies was to validate the predictions of the available theoretical models, in terms of Crab Cavity RF noise-induced emittance growth. Then, one should be able to extrapolate the predictions to the HL-LHC case. It appears that this extrapolation is not straightforward.
 
 \begin{table}[!hbt]
 	\centering
@@ -52,6 +52,12 @@ The studies in the SPS machine are very different from the HL-LHC case. Some of 
    \label{tab:sps_vs_lhc}
 \end{table}
 
+
+\textbf{Regarding the suppression mechanism from the beam coupling impedance}\\
+- BB tune spread, multiple interaction points
+-  damper is faster. simulations by xavier at the same paper.
+- Add link in comments for your study in the sps.
+
 \textbf{Necessity for alternative mitigation methods}\\
 The HL-LHC estimates~\cite{cc_noise_hl_lhc_estimates}, show that the expected emittance growth from noise present in the Crab Cavity RF system is about 15.4$\%/h$. In the presence of the transverse damper, which is also known as ADT~\cite{lhc_adt_info_presentation}, (assuming 10 turns of damping time) this emittance growth is reduced to about 5.3$\%/h$. These rates correspond to the emittance growth from both amplitude and phase noise. It becomes clear that an additional reduction of 3$\%/h$ is required to meet the target value of the HL-LHC (2$\%/h$).
 
@@ -61,20 +67,22 @@ For the above-mentioned reasons, it is clear that unfortunately the suppression 
 
 Therefore, the further reduction from $\sim 5\%/h$ to 2$\%/h$ should come from a proposed feedback system that uses transverse beam measurements. This system has already been proposed in 2019 but its necessity is highlighted in the results presented in this thesis. To provide some information, this Crab Cavity feedback system would use an already existing pickup (the same with the transverse damper, ADT) and it could act on both amplitude and phase noise.  Furthermore, the transverse damper and the feedback could be used together, to provide a more effective reduction of the emittance growth, but one should keep in mind that the result is not additive. This system is described in detail in  Ref.~\cite{Baudrenghien:2665950} and it is still under construction. \textcolor{red}{confirmation needed}. % Is it the same that Elias mention in the follwing presentation?https://indico.cern.ch/event/1197424/contributions/5035904/attachments/2507124/4308131/HLLHCCollaborationMeeting_Uppsala_19-09-2022_EM.pdf
 
-Another alternative solution would be to operate HL-LHC with slightly flat optics (with different horizontal and vertical $\beta^{\ast}$ values \footnote{$\beta^{\ast}$ is often used to refer to the beta function at an interaction point.})~\cite{elias_run4_op}. %p.18
+Another alternative solution would be to operate HL-LHC with slightly flat optics (with different horizontal and vertical $\beta^{\ast}$ values \footnote{$\beta^{\ast}$ is often used to refer to the beta function at an interaction point.})~\cite{elias_run4_op}. %p.18 
+\textcolor{red}{What is the gain from this?}
 
+To conclude, there is lot of challenging and critical work in progress to reach the required $2\%/h$ emittance growth rate from Crab Cavity RF noise.
 
+\textbf{The model of themis and philippe is challenged}\\
+- e. The expected CC phase and amplitude noise induce a transverse
+emittance growth larger than expected before  (from elias modify.)
+- We are not sure if we reached the saturaiton. 
+- maybe now the measurements overestimate the theory
+- more data in sps to validat .
 
-
-A lot of challenging and critical work is ongoing to achieve the 2%/h growth rate.
-
-
-
-- solutions reduce noise floor. other dmaper (elias metral), or flat optics.
-
-
-- add citation fort the damper. it exist in the note.
-
+\textbf{Conclusions}\\
+- simulations , tjeoreu and experimental data, agree that for the HL-lHc case the tune is inside the incoherent spectrum.
+- which is basically already studied in the presence of the damper. damper is faster. it wil be used any way. it is still not enough.
+- bigger problems on investigating the effect of the impedance on hl-lhc.
 
 \newpage
 
