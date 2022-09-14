@@ -33,22 +33,6 @@ The beams used by the LHC are produced and gradually accelerated by the injector
 
  %After that they are injected in the LHC. Hoewever, as it used to be a collider it can operate as a storage ring, it is called coast (des ti exeis grapsei.) and will be used for the studies in this thesis.
  
- \begin{figure}[htp]
-    \centering
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/introduction/MD4_cycle_16May2022_aribtrary_units_for_thesis.png}  
-        %\caption{-115.2\,dBc/Hz}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/introduction/MD4_cycle_13Oct2021_coast_aribtrary_units_for_thesis.png}  
-        %\caption{-109.5\,dBc/Hz}
-    \end{subfigure}
-    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the CC experiment on May 16, 2022. The different phase noise levels injected in the RF system of CC1, are displayed at the captions of each plot.}
-    \label{fig:example_sps_cycles}
- \end{figure}
-
 
 \section{High-Luminosity LHC project and Crab Cavities}
 %LHC is the flagship of the CERN accelerator complex and is the at the cutting edge of the accelerator and high energy physics research with almost ten thousand scientists working for and with it. In order to extend its discovery potential LHC will undergo a major upgrade in the coming years. 
@@ -147,7 +131,7 @@ As the $\CC$s have never been used with protons before, two prototype supercondu
 
 As mentioned above, one of the main concerns regarding the $\CC$ operation with protons is the emittance growth due to noise in their RF system as it leads to luminosity loss. For the HL-LHC, the target values regarding the luminosity loss and emittance growth are very tight. In particular the maximum allowed luminosity loss due to $\CC$ RF noise induced emittance growth is targeted at just 1$\%$, during a physics fill, which corresponds to an $\CC$ RF noise induced emittance growth of 2 $\mathrm{\%/h}$~\cite{MedinaMedrano:2301928, CC_lumi_limits_philippe, CC_lumi_limits_ilias}. To this end, a good understanding and characterization of the emittance growth mechanism is crucial for the HL-LHC project.
 
-It should be added here that a physics fill is the time period during which the beams are successfully injected in the LHC at the desired conditions, they are accelerated at the desired energy and they are kept in the machine for consectuive collisions. After some hours, due to beam degradation the beams are dumped and a new fill is prepared. A fill in the HL-LHC will lasts a couple of hours. 
+For reference, a physics fill is the time period during which the beams are successfully injected in the LHC at the desired conditions, they are accelerated at the desired energy and they are kept in the machine for consectuive collisions. After some hours, due to beam degradation the beams are dumped and a new fill is prepared. A fill in the HL-LHC will lasts a couple of hours. 
 
 This thesis focuses on understanding, characterising and evaluating the mechanism of $\CC$ RF noise-induced emittance growth including numerical and experimental studies. The studies presented in this thesis were conducted for the SPS machine since it has proton crabbing operational experience and allows direct comparison of predictions from models and experimental data. It should be emphasised that the CC tests in SPS constitute the first experimental beam dynamics studies with $\CC$s and proton beams. The results and the understanding obtained from this research are essential for the HL-LHC, in order to predict the long-term emittance and to define limits on the acceptable noise levels for the $\CC$s.
 %and for the design of the crab cavity HL-LHC Low-Level RF system.
@@ -155,10 +139,11 @@ This thesis focuses on understanding, characterising and evaluating the mechanis
 
 This thesis reports research that was carried out between 2018 and 2022, based at CERN and it stractured as follows:
 
-Chapter 2 presents the basics of accelerator beam dynamics focusing on the concepts that are relevant for understanding the studies presented in this thesis. \textcolor{red}{This paragraph needs to be re-written after you finish chapter 2}. In particular, definitions are given for linear optics, non-linear optics, of emittance, transfer maps, wakefields, detuning with amplitude.  Finally, the two simulation codes used in this thesis for macroparticle tracking, PYHEADTAIL and Sixtracklib, are described.
+Chapter 2 presents the basics of accelerator beam dynamics focusing on the concepts that are relevant for understanding the studies presented in this thesis. In particular, definitions are given for single-particle beam dynamics, adressing both transverse and longitudinal motion. Furthermore, the collective effects are introduced focusing on the effect of wakefields. A brief discussion on optics models for accelerators is also provided. Finally, the two simulation codes used in this thesis for macroparticle tracking, PYHEADTAIL and Sixtracklib, are described.
 % see sondre's thesis.
 
-The mechanism of noise induced emittance growth and in particular of the $\CC$ RF noise induced emittance growth is explained in Chapter 3. The modelling of the noise effects in the simulations is also discussed.  \textcolor{red}{Finalise after writing chapter 3.}
+The available theoretical model for predicting the emittance growth driven by Crab Cavity RF noise is described in Chapter 3. The modelling of the noise effects in the simulations is also discussed. Last, a short reference to the CC experiment at KEKB in Japan is also made. 
+
 
 Chapter 4 is devoted to the methodology used for the calibration of the $\CC$s. The first sections provide some general details on the $\CC$ installation and operation in the SPS. The instrument that is used as the main diagnostic is described. Finally, the post-processing of the measurements to characterise the $\CC$ voltage and phase is explained. % Two different techniques are discussed.  
 % The presented analysis is performed by the author in addition to the initial one that was carried out in 2018 in order 
