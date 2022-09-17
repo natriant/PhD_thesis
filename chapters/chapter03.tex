@@ -20,7 +20,6 @@ The thesis focuses on the problem of noise-induced emittance growth which has be
 In the studies presented in this thesis (simulations, theoretical and experimental studies), it is considered that the beam is influenced by white noise. In signal analysis, white noise is a random signal with the same amplitude (intensity) at all the frequencies which results in a uniform power spectral density. For the computational analysis (i.e. simulation studies), it is considered that the beam is influenced by the noise once per turn~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001}. To this end the white noise signal is sampled at a finite number of points which are called discrete-time signals. In discrete-time, the white noise can be considered as a sequence of uncorrelated random values taken from a Gaussian distribution with zero mean and finite standard deviation. More details on the continuous and discrete time analysis and the term of the power spectral density can be found in Appendix~\ref{ch:app_B}. The definition for the standard deviation of a distribution can be found in Appendix~\ref{ch:app_A}.
 % Comment on uniform vs constant (Andy): "uniform" might be better than "constant".  ("constant" suggests "not changing in time", whereas here, the amplitude should be the same across a wide frequency range.)
 
-%It should be highlighted, that the above mentioned model is also applicable to the SPS (where the same conditions apply), where the $\CC$s will be tested before their installation in the LHC (Section~\ref{sec:motivation_outline}). The equations and formulas from the theoretical model that are essential for the understanding of the studies are discussed below.
 
 
 \textbf{Dipole noise}\\
@@ -34,21 +33,21 @@ Past studies~\cite{Lebedev:248620, Lebedev:248622} have shown that the dipole wh
 
 %have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
 \begin{equation}\label{eq:external_noise_kicks}
-    u^\prime_{j+1} =  u^\prime_j + \zeta_j,
+    u^\prime_{j+1} =  u^\prime_j + \theta_j,
 \end{equation}
 %\begin{equation}\label{eq:external_noise_kicks}
 %    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
 %\end{equation}
 
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\zeta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution with mean 0 and standard deviation, $\sigma_\mathrm{noise}$. This way it is ensured that the noise kicks are uncorrelated.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\theta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution with mean 0 and standard deviation, $\sigma_\theta$. This way it is ensured that the noise kicks are uncorrelated.
 
-The standard deviation $\sigma_\mathrm{noise}$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\mathrm{noise}$, at any given frequency, $f_k$ as follows: 
+The standard deviation $\sigma_\mathrm{noise}$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\theta$, at any given frequency, $f_k$ as follows: 
 \begin{equation}\label{eq:psd_for_white_noise_variance_dipole}
-    S_\mathrm{noise}(f_k) = \frac{\sigma_\mathrm{noise}^2 } {\frev},
+    S_\theta(f_k) = \frac{\sigma_\theta^2 } {\frev},
  \end{equation}
 where $\frev$ is the revolution frequency of the machine.
 
-The power spectral density, $S_\mathrm{noise}(f_k)$, is expressed in terms of the square of the amplitude of the signal per unit frequency. As here the noise is applied in the angle co-ordinates the units of the power spectral density are $\mathrm{rad^2/Hz}$.
+The power spectral density, $S_\theta(f_k)$, is expressed in terms of the square of the amplitude of the signal per unit frequency. As here the noise is applied in the angle co-ordinates the units of the power spectral density are $\mathrm{rad^2/Hz}$.
 
 In this thesis, the term "noise" will refer white noise which is modeled with the above-mentioned stochastic process.
 
@@ -82,19 +81,19 @@ In the presence of modulations in amplitude and phase Eq.~\eqref{eq:CC_voltage_z
     V_\mathrm{CC}(z) = \CCvoltage (1+\Delta A) \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z + \Delta \phi \right )},
 \end{equation}
 
-where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency z/(\beta_0 c)$, and will be referred to as phase noise in the following. $\Delta A = \Delta \CCvoltage / \CCvoltage$ is the relative deviation from the nominal amplitude $\CCvoltage$ and will be referred to as amplitude noise. The units od $\Delta \phi$ is $\mathrm{rad^2}$ while $\Delta A$ has no units as it's a relative quantity.
+where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency z/(\beta_0 c)$, and will be referred to as phase noise in the following. $\Delta A = \Delta \CCvoltage / \CCvoltage$ is the relative deviation from the nominal amplitude $\CCvoltage$ and will be referred to as amplitude noise. The units of $\Delta \phi$ is radians while $\Delta A$ has no units as it defines a scaling factor applied to the amplitude, rather than stating directly the change in the amplitude.
 % Note on the above paragraph: source that ΔA = ΔV/V: https://www.osti.gov/servlets/purl/1846026/
 % The units of ΔΑ and Δφ are shown in Table II of the paper of Themis and Philippe.
 
 
-In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are independent. The validity of this hypothesis depends on the actual architecture of the LLRF responsible for the regulation of the cavity field. This is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of Baudrenghien and Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
+In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are independent. The validity of this hypothesis depends on the actual architecture of the LLRF responsible for the regulation of the cavity field. This is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
  
 %Due to the $\CC$ RF noise sources in the LHC, HL-LHC and, SPS machines, the amplitude and phase noise spectra can be considered  independent, and thus they can be treated separetatly. The technical details can be found in Ref.~[15] of the above-mentioned publication of Baudrenghien and Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
 % 1) You need to understand Ref.[15]
 % 2) Q and I demodulator --> it enables easily extracting instantaneous amplitude and phase over time. source: https://indico.cern.ch/event/781242/contributions/3251767/attachments/1780299/2896017/Powerpoint_1.pdf
 % 3) Document on the digital Q/I demodulator, that might be useful when you try to understand it. https://accelconf.web.cern.ch/p95/ARTICLES/RPQ/RPQ02.PDF
 
-To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following turn-by-turn kicks on the momentum: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
+To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following turn-by-turn kicks on the angle co-ordinate of each particle: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
 % Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
 \begin{equation}\label{eq:amplitude_noise_kick}
   \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \zeta_j A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
