@@ -39,7 +39,7 @@ Past studies~\cite{Lebedev:248620, Lebedev:248622} have shown that the dipole wh
 %    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
 %\end{equation}
 
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\theta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution with mean 0 and standard deviation, $\sigma_\theta$. This way it is ensured that the noise kicks are uncorrelated.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\theta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution (with size $N_\mathrm{turns}$ ) with mean 0 and standard deviation, $\sigma_\theta$. This way it is ensured that the noise kicks are uncorrelated.
 
 The standard deviation $\sigma_\mathrm{noise}$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\theta$, at any given frequency, $f_k$ as follows: 
 \begin{equation}\label{eq:psd_for_white_noise_variance_dipole}
@@ -96,12 +96,22 @@ In the calculation of the RF noise effects it is assumed that RF phase and ampli
 To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following turn-by-turn change of the angle co-ordinate of each particle: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
 % Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
 \begin{equation}\label{eq:amplitude_noise_kick}
-  \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \zeta_j A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
-\end{equation}
-\begin{equation}\label{eq:phase_noise_kick}
-    \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j + \zeta_j A \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
-\end{equation}
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. Moreover, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for the strength of amplitude or phase noise respectively. The typical value of $A$ that will be used in the simulations later is $10^{-8}$. Finally, $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise).
+    \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \frac{e \CCvoltage}{E_b} \Delta A_j \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
+  \end{equation}
+  \begin{equation}\label{eq:phase_noise_kick}
+      \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j +  \frac{e \CCvoltage}{E_b} \Delta \phi_j  \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
+  \end{equation}
+%\begin{equation}\label{eq:amplitude_noise_kick}
+%  \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \zeta_j A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
+%\end{equation}
+%\begin{equation}\label{eq:phase_noise_kick}
+%    \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j + \zeta_j A \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
+%\end{equation}
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the proton charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j$the elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$ , with mean 0 and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$ respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
+
+\textbf{Disclaimer}\\
+
+%Moreover, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for the strength of amplitude or phase noise respectively. The typical value of $A$ that will be used in the simulations later is $10^{-8}$. Finally, $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise).
 
 % The following paragraph is inspired by what I said in the IPAC talk.
 Figure~\ref{fig:amplitude_noise} and Fig.~\ref{fig:phase_noise} provide a schematic visualisation of the amplitude and phase noise respectively along with the impact of their kicks on the particles. It can be seen that in the presence of amplitude noise the head and the tail of the bunch are kicked in opposite directions which results in intra-bunch oscillations. On the other hand, in the presence of phase noise, the particles in the bunch receive kicks that are in phase. This results in a shift of the bunch centroid which basically is a dipole or mode 0 motion.
