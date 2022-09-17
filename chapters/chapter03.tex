@@ -109,6 +109,16 @@ To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and
 %\end{equation}
 where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the proton charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j$the elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$ , with mean 0 and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$ respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
 
+Last, the power spectral density of these noise kicks, at any given frequency, $f_k$ can be computed as follows (see discussion in Appendix~\ref{ch:app_B} and Eq.~\eqref{eq:psd_for_white_noise_variance}):
+\begin{equation}\label{eq:psd_for_white_noise_variance_AN}
+    S_{\Delta A}(f_k) = \frac{\sigma_{\Delta A}^2 } {\frev},
+ \end{equation}
+ and
+ \begin{equation}\label{eq:psd_for_white_noise_variance_PN}
+    S_{\Delta \phi}(f_k) = \frac{\sigma_{\Delta \phi}^2 } {\frev},
+ \end{equation}
+ where $\frev$ is the revolution frequency of the machine. $S_{\Delta A}(f_k)$ is the power sepctral density of the amplitude noise and is expressed in 1/Hz, while $S_{\Delta \phi}(f_k)$ is the power sepctral density of the phase noise and is expressed in $\mathrm{rad^2/Hz}$.
+
 
 %Moreover, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for the strength of amplitude or phase noise respectively. The typical value of $A$ that will be used in the simulations later is $10^{-8}$. Finally, $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise).
 
@@ -150,15 +160,17 @@ For phase noise, the emittance growth is estimated from:
 \end{equation}
 In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} where $q_u, q_s$ (with lower case) denote the fractional part of the betatron and synchrotron tunes respectively. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. In particular, $k \in \mathbb{Z}$ is the harmonic number of the revolution frequency and the $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands at each multiple of the revolution frequency, $k f_\mathrm{rev}$.%, from the betatron tune.
 
-The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}.
-$C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
+The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}. As all the studies presented in this thesis, are done with white noise the power spectral densities can be computed using Eqs.~\ref{eq:psd_for_white_noise_variance_AN} and~\ref{eq:psd_for_white_noise_variance_PN} introduced earlier.
+
+
+The terms $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
 \begin{align}
 C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
 C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
 \end{align}
 with $\sigma_{\phi}$ the rms bunch length, in rad, with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
 
-Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase (right) noise. The SPS nominal bunch length used in the CC tests is shown in the orange for reference.
+Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase (right) noise. The SPS nominal bunch length used in the CC tests is shown as an orange dot for reference.
 
 % Figures created using the following script: natriant/cernbox/Project_thesis/plot_bunch_length_correction_term
 \begin{figure}[!ht]
