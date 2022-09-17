@@ -10,9 +10,11 @@ In particle accelerators, a major issue of concern is the presence noise in a va
 
 %if you need to add references for losses etc, ref[3] of last ipac paper, even tough its for CC only.
 \textbf{Emittance growth}\\
-The thesis focuses on the problem of noise-induced emittance growth which has been studied extensively in the past. Past studies (theoretical and numerical) that are most relevant to the work presented in this thesis can be found in Refs.~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001}. In principle, if the spectrum of the noise, overlaps with the sidebands of the betatron frequencies, $(k \pm Q_u) \frev$ (where $k$ is an integer, $Q_u$ is the transverse betatron tune with $u=(x,y)$ denote the horizontal and vertical plane respectively, and $\frev$ is the revolution frequency), it drives coherent betatron oscillations. For these betatron oscillations to result in emittance growth the presence of tune spread is required. The mechanism behind the emittance growth is that the tune spread leads to a phase mixing of the particles within the bunch causing decoherence of the betatron oscillations which then results in emittance growth~\cite{Lebedev:248620}. It should be highlighted, that for all the studies presented in this thesis, the decoherence rate is fast comparing to the growth of betatron oscillations and thus the emittance growth rate is independent of the exact value of betatron tune spread~\cite{Lebedev:248620}. %Furthermore, the bare betatron tunes are far from non-linear resonances of the machine.
+The thesis focuses on the problem of noise-induced emittance growth which has been studied extensively in the past. Past studies (theoretical and numerical) that are most relevant to the work presented in this thesis can be found in Refs.~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001}. In principle, if the spectrum of the noise, overlaps with the sidebands of the betatron frequencies, $(k \pm Q_u) \frev$ (where $k$ is an integer, $Q_u$ is the transverse betatron tune with $u=(x,y)$ denote the horizontal and vertical plane respectively, and $\frev$ is the revolution frequency), it drives coherent betatron oscillations. For these betatron oscillations to result in emittance growth the presence of tune spread is required. The mechanism behind the emittance growth is that the tune spread leads to a phase mixing of the particles within the bunch causing decoherence of the betatron oscillations which then results in emittance growth~\cite{Lebedev:248620}. It should be highlighted, that for all the studies presented in this thesis, the decoherence rate is fast comparing to the growth of betatron oscillations and thus the emittance growth rate is independent of the exact value of betatron tune spread~\cite{Lebedev:248620}. Last, for machines with working points far from non-linear (high-order) betatron resonances the emittance growth is linear with time and proportional to the power spectral density of the noise spectra at the betatron frequencies, $(k \pm Q_u) \frev$, mentioned above. This scenario holds for the work of this thesis. The definition of the power spectral density can be found in Appendix~\ref{ch:app_B}. 
 % Comment 1: The last sentence is taken from the pdf of Andy part2, p.2
 % Comment 2: However, in order to provide a reference for this statemrn, conclusion p.162 in the paper of lebedev.
+
+
 
 \textbf{White noise}\\
 In the studies presented in this thesis (simulations, theoretical and experimental studies), it is considered that the beam is influenced by white noise. In signal analysis, white noise is a random signal with the same amplitude (intensity) at all the frequencies which results in a uniform power spectral density. For the computational analysis (i.e. simulation studies), the signals are sampled at a finite number of points which are called discrete-time signals. In discrete-time, the white noise can be considered as a sequence of uncorrelated random values taken from a Gaussian distribution with zero mean and finite standard deviation. More details on the continuous and discrete time analysis and the term of the power spectral density can be found in Appendix~\ref{ch:app_B}. The definition for the standard deviation of a distribution can be found in Appendix~\ref{ch:app_A}.
@@ -30,15 +32,28 @@ In this paragraph, the modeling of dipole noise is introduced as it constitues t
 %Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
 Past studies~\cite{Lebedev:248620, Lebedev:248622} have shown that the dipole white noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
 
-
 %have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
-%\begin{equation}\label{eq:external_noise_kicks}
-%    u^\prime_1 =  u^\prime_0 + \Delta u^\prime,
-%\end{equation}
 \begin{equation}\label{eq:external_noise_kicks}
-    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
+    u^\prime_{j+1} =  u^\prime_j + \zeta_j,
 \end{equation}
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise. Furthermore, $u=(x,y)$ denotes the transverse horizontal or vertical plane and $\Delta u^\prime = \zeta_j A$ is the change of the transverse direction of motion (in units of radians) due to the noise. $A$ characterises the noise strength and $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the kicks are uncorrelated. In this thesis the term "noise" refers to the above mentioned stochastic process.
+%\begin{equation}\label{eq:external_noise_kicks}
+%    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
+%\end{equation}
+
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\zeta_j$ corresponds to the noise kick, and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution with mean 0 and standard deviation, $\sigma_\mathrm{noise}$. This way it is ensured that the noise kicks are uncorrelated. In this thesis the term "noise" refers to the above mentioned stochastic process.
+
+The standard deviation $\sigma_\mathrm{noise}$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\mathrm{noise}$, at any given frequency, $f_k$ as follows: 
+\begin{equation}\label{eq:psd_for_white_noise_variance_dipole}
+    S_\mathrm{noise}(f_k) = \frac{\sigma_\mathrm{noise}^2 } {\frev},
+ \end{equation}
+where $\frev$ the revolution frequency of the machine.
+
+The power sepctral density, $S_\mathrm{noise}(f_k)$, is expressed in terms of the square of the amplitude of the signal per unit frequency. As here the noise is applied in the angle co-ordinates the units of the power spectral density are $\mathrm{rad^2/Hz}$.
+
+
+%and $\Delta u^\prime = \zeta_j A$ is the change of the transverse direction of motion (in units of radians) due to the noise. $A$ characterises the noise strength and $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the kicks are uncorrelated.
+
+
 % This approach will be used in the following. In th
 % if it is dipole noise it is oftern written: Delta u = thera
 
