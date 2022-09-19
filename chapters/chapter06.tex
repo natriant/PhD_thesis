@@ -199,9 +199,9 @@ Another observation, is that the spread between the emittance values obtained fr
 
 \subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
-Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity like in PyHEADTAIL. This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
+Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity (as was done in PyHEADTAIL). This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
 
-In Sixtracklib the $\CC$ element is represented by an element (referred to as RFMultipole in the Sixtracklib documentation) that has the properties of an RF cavity and of a magnet of arbitrary order oscillating at a certain frequency. To simulate the vertical $\CC$ it is implemented as a (modulated) skew dipole.
+In Sixtracklib the $\CC$ element is represented by an element (referred to as RFMultipole in the Sixtracklib documentation) that has the properties of a multipole magnet (oscillating at a specified frequency) superposed on an RF cavity.  To simulate the vertical $\CC$, the multipole field component corresponds to a skew dipole.
 
 When a particle passes through this element, it recieves the following vertical kick on the momentum:
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
