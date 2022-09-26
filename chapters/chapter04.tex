@@ -65,11 +65,11 @@ The main $\CC$s parameters are listed in Table~\ref{tab:SPS_CC_main}. Their loca
 \section{SPS operational setup}\label{sec:sps_cc_setup}
 For the emittance growth studies with $\CC$s two special operational configurations were set up in the SPS. Both configurations were used with a limited number of bunches (up to 4 bunches, see Chapter~\ref{Ch:2018_analyisis}). 
 
-In the first configuration, the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. This configuration was used for the calibration of the $\CC$ phase offset and for the beam based measurement of the voltage (see Section ..). Additionally, it was used for the preparation of the beam for the second operational mode which is called "coast".
+In the first configuration (see Fig.~\ref{fig:sps_cycles_cc_tests} (left)), the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. This configuration was used for the calibration of the $\CC$ phase offset and for the beam based measurement of the voltage (see Section ..). Additionally, it was used for the preparation of the beam for the second operational mode which is called "coast".
 
-As discussed in the Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). During coast the magnetic field of the main dipoles ramain also constant. This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long term emittance evolution.
+As discussed in the Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). During coast the magnetic field of the main dipoles ramain also constant. This is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests} (right), where the magnetic filed value is illustrated for a time scale equivalent to the one of the first configuration for comparison. In reality, the dipole fields remain at constant strength for longer periods (typically 30 minutes - 1 hour).  This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long term emittance evolution.
 
-The evolution of the dipole magnetic fields during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}.
+The evolution of the dipole magnetic fields during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}. The corresponding beam energy is also noted on the plots.
 
 % Path 2 figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/magnetic_cycle_before_coast_MD4/nxcals_MD4_cycle.ipynb
 \begin{figure}[htp]
@@ -86,18 +86,30 @@ The evolution of the dipole magnetic fields during the two operational configura
            %\caption{$k_\mathrm{LOD}=-5 \ \mathrm{/m^{4}}$}
            %\label{fig:cc_md_2022_coast9}
    \end{subfigure}
-   \caption{Magnetic field of the main dipoles for the two operational configurations set up in the SPS for the emittance growth studies with CCs. \textit{Left}:}
+   \caption{Magnetic field of the main dipoles and corresponding beam energy for the two operational configurations set up in the SPS for the emittance growth studies with CCs.} %\textit{Left}:  \textit{Right}:}
    \label{fig:sps_cycles_cc_tests}
 \end{figure}
+
+\section{Crab Cavity operation}\label{sec:cc_setup}
+The experimental studies presented in this thesis, were performed with the $\CC$s operating at a fixed frequency of 400.78\,MHz and at a target peak voltage of about 1\,MV. % this is for 270 GeV.
+Even though the $\CC$ modules installed in the SPS can operate at a maximum voltage of 3.4\,MV (see Table~\ref{tab:SPS_CC_main}), the experiments were performed with peak voltage of 1\,MV since for that value the stable $\CC$ operation for long periods was ensured. Further details on the hardware aspects of the $\CC$ operation in the SPS are not discussed here as they are out of the scope of this thesis.
+
+\normalsize{\textbf{Energy ramp}}\\
+SPS receives the proton beam at 26\,GeV from the PS. It was found that the ramp to 270\,GeV could not be performed with the $\CC$ switched on, since during the acceleration one of the vertical betatron sidebands was crossing the $\CC$ frequcny resulting to resonance excitation and beam loss~\cite{BE_seminar, CC_rephasing_RF}. Changing the $\CC$ frequnecy during the ramp so that it stays synchronous with the beam was not an option due to hardware limitations~\cite{CC_rephasing_RF}. % CC not fast enough.
+Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
+%while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
+
+\normalsize{\textbf{Crab Cavity - main SPS RF synchronisation}}\\
+It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at 200\,MHz needed to be synchronous with the $\CC$ operating at 400\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the crabbing signal. 
+
+
+For the studies at higher energies the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
+
 
 
 \section{Operational considerations}\label{sec:CC_operational_considerations}
 
 For the beam tests with $\CC$s in the SPS the approach regarding the energy ramp and the adjustment of the phasing with the main RF system needed to be evaluated and they are briefly discussed here.
-
-\normalsize{\textbf{Energy ramp}}\\
-SPS receives the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ on, as the beam was getting lost while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
-
 \normalsize{\textbf{Crab Cavity - main SPS RF synchronisation}}\\
 It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at 200\,MHz needed to be synchronous with the $\CC$ operating at 400\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency and phase, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency and were re-phased so that they become synchronous with the crabbing signal. For the studies at higher energies the synchronisation took place at the end of the ramp shortly after the cavity was switched on~\cite{BE_seminar}.
 
