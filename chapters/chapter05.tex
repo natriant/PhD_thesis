@@ -57,24 +57,46 @@ Therefore, it was established that the acceleration has to be performed with the
 %while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
 
 \normalsize{\textbf{Crab Cavity - main SPS RF synchronisation}}\\
-It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at $\sim$200\,MHz needed to be synchronous with the $\CC$ operating at 400.78\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the ramp shortly a few seconds after the $\CC$ was switched on~\cite{BE_seminar}. %(refer to Fig.~\ref{fig:sps_cycles_cc_tests} for the parts of the acceleration cycle). 
-
-
-
+It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at $\sim$200\,MHz needed to be synchronous with the $\CC$ operating at 400.78\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the energy ramp shortly a few seconds after the $\CC$ was switched on~\cite{BE_seminar}. %(refer to Fig.~\ref{fig:sps_cycles_cc_tests} for the parts of the acceleration cycle). 
 
 
 %\normalsize{\textbf{Machine and beam configuration}}\\
 \subsection{Machine and beam configuration}
 During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The transverse feedback system was also switched off. Unfortunately, no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. 
 
-Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV. This value was validated with the HT monitor (post-processing procedure desribed in Chapter~\ref{Ch:CC_set_up}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available which is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It is clear that the measured value of voltage amplitude, $\VCC$ = 0.99 $\pm$ 0.04\,MV , is in good agreement with the requested one. It should be noted, that due to the beam energy of 270\,GeV the crabbing is less visible than the example discussed in Chapter~\ref{Ch:CC_set_up} (see Fig.~\ref{fig:crabbing_sin_fit_MD2}) for 26\,GeV. Therefore, here the part of the signal that is used for the fit is the one for which the normalised sum signal (black dashed line) is above 0.2 (instead of 0.4 that was the condition for the case of 26\,GeV)
+Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV. This value was validated with beam-based measurements from the Head-Tail monitor~\cite{sps_headtail_monitor}. The Head-Tail monitor measures the transverse displacement within the bunch which can be used to reconstruct the $\CC$ voltage experienced by the beam. A detailed description of the post-processing procedure is provided in Appendix~\ref{ch:app_HT_monitor}.
 
+The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the experiment before the emittance growth measurements with injected RF noise in the $\CC$. The $\CC$ settings remained unchanged for the rest of the experimental procedure.
+
+The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $\VCC (t)$ is fitted with the folllowing three-parameter ($\CCvoltage$, $\phi_\mathrm{CC}$, $d$) model function which also provides the $\CC$ phase and voltage offset:
+\begin{equation}\label{eq:sin_fit_cc}
+   f(x) = \CCvoltage \sin{(2\pi \CCfrequency x + \phi_\mathrm{CC})} + d ,
+\end{equation}
+where $\VCC$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ the $\CC$ phase and $d$ the vertical voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is fixed and well known, $\CCfrequency$=400.78\,MHz. 
+
+The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$S in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the assymetry is that it is a results of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}.
+
+seems to be a result of the HT monitor pick up and cable response~\cite{Levens_WP2_HT_CC_diagnostic}. However its origin is not yet fully understood and will have to be addressed in the future.
+
+% Path to plotting script: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD5_emit_growth/plot_1example_HT_acquisition_for_thesis_5Sep2018-135033_for_thesis_sin_fit_forCh5_fixed_freq.ipynb
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq.png}
-       \caption{Demonstration of the sinusoidal fit on the HT monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
+   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis.png}
+       \caption{Demonstration of the sinusoidal fit on the Head-Tail monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
        \label{fig:crabbing_sin_fit_MD5}
 \end{figure}
+
+
+This procedure was optimised in the experimental campaign of 2022 (see chapter..)
+In order to obtain the peak voltage 
+
+shortly after the bunches are accelerated at 270 GeV but before switching to coast mode for reasons that are discussed in appendix.
+
+(post-processing procedure desribed in Appendix~\ref{ch:app_HT_monitor}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available which is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It is clear that the measured value of voltage amplitude, $\VCC$ = 0.99 $\pm$ 0.04\,MV , is in good agreement with the requested one. It should be noted, that due to the beam energy of 270\,GeV the crabbing is less visible than the example discussed in Chapter~\ref{Ch:CC_set_up} (see Fig.~\ref{fig:crabbing_sin_fit_MD2}) for 26\,GeV. Therefore, here the part of the signal that is used for the fit is the one for which the normalised sum signal (black dashed line) is above 0.2 (instead of 0.4 that was the condition for the case of 26\,GeV)
+
+
+Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV. This value was validated with the Head-Tail monitor (post-processing procedure desribed in Appendix~\ref{ch:app_HT_monitor}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available which is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It is clear that the measured value of voltage amplitude, $\VCC$ = 0.99 $\pm$ 0.04\,MV , is in good agreement with the requested one. It should be noted, that due to the beam energy of 270\,GeV the crabbing is less visible than the example discussed in Chapter~\ref{Ch:CC_set_up} (see Fig.~\ref{fig:crabbing_sin_fit_MD2}) for 26\,GeV. Therefore, here the part of the signal that is used for the fit is the one for which the normalised sum signal (black dashed line) is above 0.2 (instead of 0.4 that was the condition for the case of 26\,GeV)
+
 
 
 The main machine and beam parameters used for the emittance growth measurements in 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. % the parameters shown are the relatives one for Eq.(3.1) and (3.2) --> theoretical formulas for the emittance growht.
@@ -113,7 +135,7 @@ The main machine and beam parameters used for the emittance growth measurements 
 
 %\normalsize{\textbf{Experimental procedure}}\\
 \subsection{Experimental procedure}\label{sec:experimental_procedure_2018}
-The experiment took place on September 5, 2018, and was given a total time window of about 6 hours (start:$\sim$10:30, end:$\sim$17:00). In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into the low-level RF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). The experiment was conducted over three coasts, since a new beam was injected every time the quality of the beam was seen to be degraded e.g. very large beam size. In the following, the different noise settings will be denoted as "Coast$N$-Setting$M$", where $N$ stands for the coast number and $M$ for the different noise levels applied in each coast in chronological order. After the experiment, the measured growth rates would be compared with the theoretically expected values from the model described in Chapter~\ref{Ch:CC_noise_theory}.
+The emittance growth experiment took place on September 5, 2018, and was given a total time window of about 6 hours (start:$\sim$10:30, end:$\sim$17:00). In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into the low-level RF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). The experiment was conducted over three coasts, since a new beam was injected every time the quality of the beam was seen to be degraded e.g. very large beam size. In the following, the different noise settings will be denoted as "Coast$N$-Setting$M$", where $N$ stands for the coast number and $M$ for the different noise levels applied in each coast in chronological order. After the experiment, the measured growth rates would be compared with the theoretically expected values from the model described in Chapter~\ref{Ch:CC_noise_theory}.
 %The dedicated experiment to study the emittance growth induced by noise in the $\CC$ RF sytsem took place on September 5, 2018, and was given a total time window of about 16 hours (start:$\sim$10:30, end:$\sim$17:00).
 
 \section{Injected RF noise}\label{sec:injected_RF_noise}
