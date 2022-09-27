@@ -62,34 +62,6 @@ The main $\CC$s parameters are listed in Table~\ref{tab:SPS_CC_main}. Their loca
 
 % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
 
-\section{SPS operational setup}
-For the emittance growth studies with $\CC$s two special operational configurations were set up in the SPS. Both configurations were used with a limited number of bunches (up to 4 bunches, see Chapter~\ref{Ch:2018_analyisis}). 
-
-In the first configuration which will be referred to as "acceleration cycle", the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. The first part of the acceleration cycle, before the energy ramp up, is called "flat bottom", while its last part where the bunches remain at 270\,GeV is called "flat top". This terminology is introduced here as it will facilitate the explanation of some concepts and procedures in the following sections of this chapter. This configuration was used for the calibration of the $\CC$ phase offset and for the beam based measurement of the voltage (see Section ..). Additionally, it was used for the preparation of the beam for the second operational mode which is called "coast".
-
-As discussed in the Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). This configuration can be used right after the accelerating cycle during which the bunches reached the required energy. During coast the magnetic field of the main dipoles ramain also constant. This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long term emittance evolution.
-
-The evolution of the dipole magnetic fields (in arbitrary units) during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}. The corresponding beam energy is also noted on the plots. It is worth commenting that the magnetic field value in the coast mode (right) is plotted for a time scale that is equivalent to the one of the accelerator cycle for easier comparison and consistency. In reality, during coast the dipole fields remain at constant strength and field for longer periods (typically 30 minutes - 1 hour).  
-
-% Path 2 figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/magnetic_cycle_before_coast_MD4/nxcals_MD4_cycle.ipynb
-\begin{figure}[htp]
-   \centering
-   \begin{subfigure}{.45\textwidth}
-       \centering
-       \includegraphics[width=.95\linewidth]{images/Ch4/MD4_cycle_16May2022_aribtrary_units_for_thesis.png}  
-       %\caption{$k_\mathrm{LOD}=+15 \ \mathrm{/m^{4}}$}
-       %\label{fig:cc_md_2022_coast6}
-   \end{subfigure}
-   \begin{subfigure}{.45\textwidth}
-           \centering
-           \includegraphics[width=.95\linewidth]{images/Ch4/MD4_cycle_13Oct2021_coast_aribtrary_units_for_thesis.png}  
-           %\caption{$k_\mathrm{LOD}=-5 \ \mathrm{/m^{4}}$}
-           %\label{fig:cc_md_2022_coast9}
-   \end{subfigure}
-   \caption{Magnetic field of the main dipoles and corresponding beam energy for the two operational configurations set up in the SPS for the emittance growth studies with CCs.} %\textit{Left}:  \textit{Right}:}
-   \label{fig:sps_cycles_cc_tests}
-\end{figure}
-
 \section{Crab Cavity operation}\label{sec:cc_setup}
 The experimental studies presented in this thesis, were performed with the $\CC$s operating at a fixed frequency of 400.78\,MHz (unless it is stated otherwise) and at a target peak voltage of about 1\,MV. % this is for 270 GeV.
 Even though the $\CC$ modules installed in the SPS can operate at a maximum voltage of 3.4\,MV (see Table~\ref{tab:SPS_CC_main}), the experiments were performed with peak voltage of 1\,MV since for that value the stable $\CC$ operation for long periods was ensured. Further details on the hardware aspects of the $\CC$ operation in the SPS are not discussed here as they are out of the scope of this thesis.
