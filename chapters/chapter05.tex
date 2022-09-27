@@ -1,11 +1,9 @@
 \vspace*{-1mm}
-In Chapter~\ref{Ch:CC_noise_theory} the theoretical model for the transverse emittance growth caused by amplitude and phase noise in a $\CC$ was discussed. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In particular, the aim was to inject artificial noise in the $\CC$ RF system and compare the measured emittance growth rates with the the theoretically computed ones. In this chapter the measurement results from the SPS are presented and discussed. %The work published in Ref.~\cite{Triantafyllou:2021khx} is the basis of this chapter.
+In Chapter~\ref{Ch:CC_noise_theory} the theoretical model for the transverse emittance growth caused by amplitude and phase noise in a $\CC$ was discussed. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In particular, the aim was to inject artificial noise into the $\CC$ RF system and compare the measured emittance growth rates with the theoretically computed ones. In this chapter, the measurement results from the SPS are presented and discussed. However, since a similar experiment has not been performed before, this chapter does not present only the emittance growth measurements but rather discusses in detail the experimental conditions and available measurements of other parameters of interest such as the $\CC$ voltage, the injected noise, the bunch length, and the bunch intensity, aiming to provide a full understanding
+%The work published in Ref.~\cite{Triantafyllou:2021khx} is the basis of this chapter.
 
 
-Section~\ref{sec:CCs_sps_details} provides some information on the installation of the $\CC$s in the SPS that are essential for the studies in this thesis and elaborates on some considerations regarding their operation in the machine.
-
-
-Section~\ref{sec:exp_setup_2018} describes the machine setup and the beam configuration for the emittance growth measurements. This includes a summary of the preparatory studies conducted in the previous years. In Section~\ref{sec:injected_RF_noise} information on the noise injected in the $\CC$ RF system is provided. The measurements of transverse emittance growth are presented in Section~\ref{sec:emit_growth_meas_2018} while the complementary measurements of bunch length and intensity in Section~\ref{sec:bunch_length_intensity_meas_2018}. The conclusions of the first experimental campaign with $\CC$ noise in SPS are drawn in Section~\ref{sec:MD2018_conclusions}.
+Section~\ref{sec:CCs_sps_details} provides some information on the installation of the $\CC$s in the SPS that are essential for the studies in this thesis and elaborates on some considerations regarding their operation in the machine. Afterward, Section~\ref{sec:exp_setup_2018} describes the machine setup and the beam configuration for the emittance growth measurements. This includes a summary of the preparatory studies conducted in the previous years. In Section~\ref{sec:injected_RF_noise} information on the noise injected in the $\CC$ RF system is provided while in Section~\ref{sec:injected_RF_noise} the beam-based measurement of the Crab Cavity voltage is presented.The measurements of transverse emittance growth are presented in Section~\ref{sec:emit_growth_meas_2018} while the complementary measurements of bunch length and intensity in Section~\ref{sec:bunch_length_intensity_meas_2018}. The conclusions of the first experimental campaign with $\CC$ noise in SPS are drawn in Section~\ref{sec:MD2018_conclusions}.
 
 \section{Crab Cavities in the SPS}\label{sec:CCs_sps_details}
 For the SPS tests of 2018 two prototype $\CC$s of the Double Quarter Wave (DQW) type \footnote{The RFD type $\CC$s are expected to be ready by the end of 2022 - beginning of 2023.}, which will be referred to as $\CC$1 and $\CC2$ throught this thesis, were fabricated by CERN and were assembled in the same cryomodule.%, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}.
@@ -119,33 +117,6 @@ The main machine and beam parameters used for the emittance growth measurements 
 \end{table}
 
 
-
-\subsection{Measurement of Crab Cavity voltage}\label{subsec:CC_voltage_2018_measurement}
-As mentioned above, $\CC$2 operated at 1\,MV. Before the start of the emittance growth measurements, this value was validated with beam-based measurements from the Head-Tail monitor~\cite{sps_headtail_monitor}. The Head-Tail monitor measures the transverse displacement within the bunch which can be used to reconstruct the $\CC$ voltage experienced by the beam. A detailed description of the post-processing procedure is provided in Appendix~\ref{ch:app_HT_monitor}.
-
-The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the experiment before the emittance growth measurements with injected RF noise in the $\CC$. The $\CC$ settings remained unchanged for the rest of the experimental procedure.
-
-The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit (blue solid line in Fig.~\ref{fig:crabbing_sin_fit_MD5}) on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $V_\mathrm{CC}(t)$ is fitted with the folllowing three-parameter ($\CCvoltage$, $\phi_\mathrm{CC}$, $d$) model function which also provides the $\CC$ phase and voltage offset:
-\begin{equation}\label{eq:sin_fit_cc}
-   f(x) = \CCvoltage \sin{(2\pi \CCfrequency x + \phi_\mathrm{CC})} + d ,
-\end{equation}
-where $\CCvoltage$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ the $\CC$ phase and $d$ the vertical voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is fixed and well known, $\CCfrequency$=400.78\,MHz. 
-
-% Path to plotting script: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD5_emit_growth/plot_1example_HT_acquisition_for_thesis_5Sep2018-135033_for_thesis_sin_fit_forCh5_fixed_freq.ipynb
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis.png}
-       \caption{Demonstration of the sinusoidal fit on the Head-Tail monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
-       \label{fig:crabbing_sin_fit_MD5}
-\end{figure}
-
-
-The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
-% For this topic there is a post it.
-
-In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
-
-
 %\normalsize{\textbf{Experimental procedure}}\\
 \subsection{Experimental procedure for emittance growth measurements}\label{sec:experimental_procedure_2018}
 The emittance growth experiment took place on September 5, 2018, and was given a total time window of about 6 hours (start:$\sim$10:30, end:$\sim$17:00). In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into the low-level RF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). The experiment was conducted over three coasts, since a new beam was injected every time the quality of the beam was seen to be degraded e.g. very large beam size. In the following, the different noise settings will be denoted as "Coast$N$-Setting$M$", where $N$ stands for the coast number and $M$ for the different noise levels applied in each coast in chronological order. After the experiment, the measured growth rates would be compared with the theoretically expected values from the model described in Chapter~\ref{Ch:CC_noise_theory}.
@@ -220,6 +191,32 @@ For the calulcation of the effective phase noise the averaged bunch length for e
 	\end{tabu}
    \label{tab:noise_settings_2018}
 \end{table}
+
+\section{Measurement of Crab Cavity voltage}\label{subsec:CC_voltage_2018_measurement}
+As mentioned above, $\CC$2 operated at 1\,MV. Before the start of the emittance growth measurements, this value was validated with beam-based measurements from the Head-Tail monitor~\cite{sps_headtail_monitor}. The Head-Tail monitor measures the transverse displacement within the bunch which can be used to reconstruct the $\CC$ voltage experienced by the beam. A detailed description of the post-processing procedure is provided in Appendix~\ref{ch:app_HT_monitor}.
+
+The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the experiment before the emittance growth measurements with injected RF noise in the $\CC$. The $\CC$ settings remained unchanged for the rest of the experimental procedure.
+
+The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit (blue solid line in Fig.~\ref{fig:crabbing_sin_fit_MD5}) on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $V_\mathrm{CC}(t)$ is fitted with the folllowing three-parameter ($\CCvoltage$, $\phi_\mathrm{CC}$, $d$) model function which also provides the $\CC$ phase and voltage offset:
+\begin{equation}\label{eq:sin_fit_cc}
+   f(x) = \CCvoltage \sin{(2\pi \CCfrequency x + \phi_\mathrm{CC})} + d ,
+\end{equation}
+where $\CCvoltage$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ the $\CC$ phase and $d$ the vertical voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is fixed and well known, $\CCfrequency$=400.78\,MHz. 
+
+% Path to plotting script: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD5_emit_growth/plot_1example_HT_acquisition_for_thesis_5Sep2018-135033_for_thesis_sin_fit_forCh5_fixed_freq.ipynb
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis.png}
+       \caption{Demonstration of the sinusoidal fit on the Head-Tail monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
+       \label{fig:crabbing_sin_fit_MD5}
+\end{figure}
+
+
+The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
+% For this topic there is a post it.
+
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
+
 
 
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
