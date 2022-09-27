@@ -80,6 +80,39 @@ Even though the $\CC$ modules installed in the SPS can operate at a maximum volt
 % For studies at the injection energy of 26\,GeV this synchronisation took place shortly after the injection. 
 
 
+
+
+%\subsection{SPS operational setup in the presence of Crab Cavities}\label{sec:sps_cc_setup}
+%For the emittance growth studies with $\CC$s two special operational configurations were set up in the SPS. %Both configurations were used with a limited number of bunches (up to 4 bunches, see Chapter~\ref{Ch:2018_analyisis}). 
+
+%In the first configuration which will be referred to as the "acceleration cycle", the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that, the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. The first part of the acceleration cycle, before the energy ramp up, is called "flat bottom", while its last part where the bunches remain at 270\,GeV is called "flat top". This terminology is introduced here as it will facilitate the explanation of some concepts and procedures in the following. 
+%This configuration was used to accelerate the bunches to 270\,GeV required for the emittance growth measurements. Furthermore, it was used for the beam-based measurement of the $\CC$ voltage (see Section.. and Appendix~\ref{ch:app_HT_monitor}).
+
+%The second configuration will be referred to as "coast". As discussed in Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). This configuration succeeds the acceleration cycle during which the bunches reach the required energy. During coast, the magnetic field of the main dipoles remains also constant. This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long-term emittance evolution. 
+
+%The evolution of the dipole magnetic fields (in arbitrary units) during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}. The corresponding beam energy is also noted on the plots. It is worth commenting that the magnetic field value in the coast mode (right) is plotted for a time scale that is equivalent to the one of the accelerator cycle for easier comparison and consistency. In reality, during coast, the dipole fields remain at constant strength and field for longer periods (typically between 30 minutes and 1 hour).
+
+% Path 2 figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/magnetic_cycle_before_coast_MD4/nxcals_MD4_cycle.ipynb
+%\begin{figure}[htp]
+%   \begin{subfigure}{.45\textwidth}
+%       \centering
+%       \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_16May2022_aribtrary_units_for_thesis.png}  
+       %\caption{$k_\mathrm{LOD}=+15 \ \mathrm{/m^{4}}$}
+       %\label{fig:cc_md_2022_coast6}
+ %  \end{subfigure}
+ %  \begin{subfigure}{.45\textwidth}
+ %          \centering
+ %          \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_13Oct2021_coast_aribtrary_units_for_thesis.png}  
+           %\caption{$k_\mathrm{LOD}=-5 \ \mathrm{/m^{4}}$}
+           %\label{fig:cc_md_2022_coast9}
+%   \end{subfigure}
+ %  \caption{Magnetic field of the main dipoles and corresponding beam energy for the two operational configurations set up in the SPS for the emittance growth studies with CCs.} %\textit{Left}:  \textit{Right}:}
+ %  \label{fig:sps_cycles_cc_tests}
+%\end{figure}
+
+
+
+
 % Plotting figures in this section: /eos/user/n/natriant/2021/CC_MD_2021_summary/2018_HT_monitor
 \section{SPS Head-Tail monitor as the main diagnostic}\label{sec:HT_info}
 % info on the bandwidth of HT monitor https://indico.cern.ch/event/1044711/contributions/4389270/attachments/2264278/3844129/CCNoise_SPS_MDs.pdf
@@ -87,6 +120,7 @@ Even though the $\CC$ modules installed in the SPS can operate at a maximum volt
 The SPS is equipped with a high bandwidth pick-up of approximately 2\,GHz allowing to resolve the intra-bunch motion. This instrument is called Head-Tail (HT) monitor and was originally designed for measuring chromaticity and transverse instabilities. However, in the SPS $\CC$ tests, the HT monitor was the main diagnostic device deployed for the demonstration of the crabbing and the measurement of the $\CC$ voltage (explained in details in Section~\ref{sec:CC_voltage_meas}). Therefore its use as a crabbing diagnostic should be explained here. The methods and procedures described in this section were developed at CERN and they are described here for the completeness of the thesis.
 
  In the first part of this section some general information on the instrument along with example signals will be presented. Subsequently, the post processing of the HT signal in the presence of the $\CC$ will be discussed. Last, the calibration of the $\CC$ voltage from the HT data is described and the visualisation of the crabbing is displayed. The experimental data presented in this section were acquired, on May 30, 2018 (time-stamp: 13:51:05), at the SPS injection energy of 26\,GeV with only one $\CC$, $\CC$1, at phase $\phiCC=0$ (this means that the particle at the center of the bunch doesn't recieve any transverse deflection) for simplicity. That energy of 26\,GeV was chosen to provide a better understanding of the methods used as the orbit shift from the $\CC$ kick is stronger and thus more visible than at higher energies.
+
 
 % Post processing: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc.ipynb
 \subsection{General information}\label{subsec:HT_general_info}

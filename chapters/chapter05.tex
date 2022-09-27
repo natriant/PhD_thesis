@@ -1,40 +1,73 @@
 \vspace*{-1mm}
-In Chapter~\ref{Ch:CC_noise_theory} the theoretical model for the transverse emittance growth caused by amplitude and phase noise in a $\CC$ was discussed. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In particular, the aim was to inject artificial noise in the $\CC$ RF system and compare the measured emittance growth rates with the the theoretically computed ones. In this chapter the measurement results from the SPS are presented and discussed. The work published in Ref.~\cite{Triantafyllou:2021khx} is the basis of this chapter.
+In Chapter~\ref{Ch:CC_noise_theory} the theoretical model for the transverse emittance growth caused by amplitude and phase noise in a $\CC$ was discussed. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and confirm the analytical predictions. In particular, the aim was to inject artificial noise in the $\CC$ RF system and compare the measured emittance growth rates with the the theoretically computed ones. In this chapter the measurement results from the SPS are presented and discussed. %The work published in Ref.~\cite{Triantafyllou:2021khx} is the basis of this chapter.
+
+
+Section~\ref{sec:CCs_sps_details} provides some information on the installation of the $\CC$s in the SPS that are essential for the studies in this thesis and elaborates on some considerations regarding their operation in the machine.
 
 
 Section~\ref{sec:exp_setup_2018} describes the machine setup and the beam configuration for the emittance growth measurements. This includes a summary of the preparatory studies conducted in the previous years. In Section~\ref{sec:injected_RF_noise} information on the noise injected in the $\CC$ RF system is provided. The measurements of transverse emittance growth are presented in Section~\ref{sec:emit_growth_meas_2018} while the complementary measurements of bunch length and intensity in Section~\ref{sec:bunch_length_intensity_meas_2018}. The conclusions of the first experimental campaign with $\CC$ noise in SPS are drawn in Section~\ref{sec:MD2018_conclusions}.
 
+\section{Crab Cavities in the SPS}\label{sec:CCs_sps_details}
+For the SPS tests of 2018 two prototype $\CC$s of the Double Quarter Wave (DQW) type \footnote{The RFD type $\CC$s are expected to be ready by the end of 2022 - beginning of 2023.}, which will be referred to as $\CC$1 and $\CC2$ throught this thesis, were fabricated by CERN and were assembled in the same cryomodule.%, shown in Fig.~\ref{fig:DQW_cryomodule}~\cite{Zanoni:2017}.
+ For its installation an available space was found at the SPS Long Straight Section 6 (SPS-LSS6) zone. As this section is also used for the extraction of the beam to the LHC, the cryomodule was placed on a mobile transfer table~\cite{Calaga:2649807} which  moved the cryomodule in the beamline for the $\CC$ tests and out of it for the usual SPS operation without breaking the vaccum.
+ 
+ The main $\CC$s' parameters are listed in Table~\ref{tab:SPS_CC_main}. Their location along the SPS ring is also indicated, in case someone would like to repeat the analysis described in this thesis.
+
+ \begin{table}[!hbt]
+    \begin{minipage}{\textwidth}
+    %\centering
+    \begin{centering}
+    \caption{Crab Cavities design parameters for the SPS tests.}
+    \begin{tabu} to \textwidth {X[c,0.1m] X[c,m] X[0.5c,m] X[0.5c,m]}
+       &&& \\[-6mm]
+       \toprule \toprule
+       \multicolumn{2}{l}{\textbf{Parameter}} &
+       \multicolumn{2}{c}{\textbf{Value}} \\
+       \bottomrule
+       \multicolumn{2}{l}{} & 	\multicolumn{1}{c}{\textbf{CC1}} & \multicolumn{1}{c}{\textbf{CC2}} \\
+       \midrule
+       \multicolumn{2}{l}{crabbing plane}  & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
+       
+       \multicolumn{2}{l}{s-location$^{\ast}$}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
+ 
+       \multicolumn{2}{l}{$\CC$ voltage, $\VCC$}  & \multicolumn{1}{c}{$\leq$ 3.4\,MV} & \multicolumn{1}{c}{$\leq$ 3.4\,MV} \\
+ 
+       \multicolumn{2}{l}{$\CC$ frequency, $\fCC$}  & \multicolumn{1}{c}{400.78\,MHz} & \multicolumn{1}{c}{400.78\,MHz} \\ %400.789
+ 
+       \multicolumn{2}{l}{Horizontal / Vertical beta function, $\beta_{x, CC}$ / $\beta_{y, CC}$}  & \multicolumn{1}{c}{29.24\,m / 76.07\,m} & \multicolumn{1}{c}{30.31\,m / 73.82\,m} \\
+ 
+       \multicolumn{2}{l}{Horizontal / Vertical alpha function, $\alpha_{x, CC}$ / $\alpha_{y, CC}$} & \multicolumn{1}{c}{-0.88\,m / 1.9\,m} & \multicolumn{1}{c}{-0.91\,m / 1.86\,m} \\
+ 
+       \multicolumn{2}{l}{Horizontal / Vertical dispersion, $D_{x, CC}$ / $D_{y, CC}$} & \multicolumn{1}{c}{-0.48\,m / 0\,m}  & \multicolumn{1}{c}{-0.5\,m / 0\,m} \\
+       \arrayrulecolor{black}\bottomrule
+    \end{tabu}
+    \label{tab:SPS_CC_main}
+    \end{centering} \footnotesize{$^\ast$ The s-location is reffered to the location of the elements along the SPS ring with respect to the start of the lattice i.e. element QF.10010 which is a focusing quadrupole. The s-location is given to allow the studies to be reproduced.}
+    \end{minipage}
+ \end{table}
+ % QF.10010  is the start of the SPS lattice --> https://layout.cern.ch/reports/mad?fileType=STANDARD&machineId=2180065&versionId=34464591 (access with sshuttle)
+ % The actual start of the lattice at 0 m is: %BEGI.10010. which is a marker (not a real element).
+ 
+ % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
+ 
+ \subsection{Considerations about the Crab Cavity operation}\label{sec:cc_setup}
+The experimental studies presented in this thesis, were performed with the $\CC$s operating at a fixed frequency of 400.78\,MHz (unless it is stated otherwise) and at a target peak voltage of about 1\,MV. % this is for 270 GeV.
+Even though the $\CC$ modules installed in the SPS can operate at a maximum voltage of 3.4\,MV (see Table~\ref{tab:SPS_CC_main}), the experiments were performed with peak voltage of 1\,MV since for that value the stable $\CC$ operation for long periods was ensured. Further details on the hardware aspects of the $\CC$ operation in the SPS are not discussed here as they are out of the scope of this thesis.
+
+\normalsize{\textbf{Energy ramp}}\\
+SPS receives the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ switched on, since during the acceleration one of the vertical betatron sidebands was crossing the $\CC$ frequecny resulting to resonance excitation and beam loss~\cite{BE_seminar, CC_rephasing_RF}. Changing the $\CC$ frequnecy during the ramp so that it stays synchronous with the beam was not an option due to hardware limitations~\cite{CC_rephasing_RF}. % CC not fast enough.
+Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
+%while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
+
+\normalsize{\textbf{Crab Cavity - main SPS RF synchronisation}}\\
+In order to ensure that the beam will experience the same kick from the $\CC$ each turn the SPS main RF system operating at $\sim$200\,MHz needed to be synchronous with the $\CC$ operating at 400.78\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the crabbing signal. For studies at higher energies the synchronisation took place at the end of the energy ramp shortly a few seconds after the $\CC$ was switched on~\cite{BE_seminar}. %(refer to Fig.~\ref{fig:sps_cycles_cc_tests} for the parts of the acceleration cycle). 
+
+
+%It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn.
+
+
 \section{Experimental configuration and procedure}\label{sec:exp_setup_2018}
 This section gives an overview of the experimental setup and the procedure that was followed. First, it briefly discusses the preparatory studies that were performed during 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}, explaining the choice of the intensity and energy values for which the emittance growth measurements were conducted. Furthermore, it presents in detail the rest of the beam and machine conditions during the experiment. Last, the experimental procedure is explained.
-
-
-%\subsection{SPS operational setup in the presence of Crab Cavities}\label{sec:sps_cc_setup}
-%For the emittance growth studies with $\CC$s two special operational configurations were set up in the SPS. %Both configurations were used with a limited number of bunches (up to 4 bunches, see Chapter~\ref{Ch:2018_analyisis}). 
-
-%In the first configuration which will be referred to as the "acceleration cycle", the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that, the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. The first part of the acceleration cycle, before the energy ramp up, is called "flat bottom", while its last part where the bunches remain at 270\,GeV is called "flat top". This terminology is introduced here as it will facilitate the explanation of some concepts and procedures in the following. 
-%This configuration was used to accelerate the bunches to 270\,GeV required for the emittance growth measurements. Furthermore, it was used for the beam-based measurement of the $\CC$ voltage (see Section.. and Appendix~\ref{ch:app_HT_monitor}).
-
-%The second configuration will be referred to as "coast". As discussed in Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). This configuration succeeds the acceleration cycle during which the bunches reach the required energy. During coast, the magnetic field of the main dipoles remains also constant. This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long-term emittance evolution. 
-
-%The evolution of the dipole magnetic fields (in arbitrary units) during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}. The corresponding beam energy is also noted on the plots. It is worth commenting that the magnetic field value in the coast mode (right) is plotted for a time scale that is equivalent to the one of the accelerator cycle for easier comparison and consistency. In reality, during coast, the dipole fields remain at constant strength and field for longer periods (typically between 30 minutes and 1 hour).
-
-% Path 2 figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/magnetic_cycle_before_coast_MD4/nxcals_MD4_cycle.ipynb
-%\begin{figure}[htp]
-%   \begin{subfigure}{.45\textwidth}
-%       \centering
-%       \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_16May2022_aribtrary_units_for_thesis.png}  
-       %\caption{$k_\mathrm{LOD}=+15 \ \mathrm{/m^{4}}$}
-       %\label{fig:cc_md_2022_coast6}
- %  \end{subfigure}
- %  \begin{subfigure}{.45\textwidth}
- %          \centering
- %          \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_13Oct2021_coast_aribtrary_units_for_thesis.png}  
-           %\caption{$k_\mathrm{LOD}=-5 \ \mathrm{/m^{4}}$}
-           %\label{fig:cc_md_2022_coast9}
-%   \end{subfigure}
- %  \caption{Magnetic field of the main dipoles and corresponding beam energy for the two operational configurations set up in the SPS for the emittance growth studies with CCs.} %\textit{Left}:  \textit{Right}:}
- %  \label{fig:sps_cycles_cc_tests}
-%\end{figure}
 
 %\normalsize{\textbf{Preparatory experimental studies}}\\
 \subsection{Preparatory experimental studies}\label{sec:preparatory_studies_for_2018_MD}
@@ -47,58 +80,10 @@ Moreover, as the natural emittance growth was found to be a single bunch effect 
 
 
 
-\subsection{Considerations about the Crab Cavity operation}\label{sec:cc_setup}
-The experimental studies presented in this thesis, were performed with the $\CC$s operating at a fixed frequency of 400.78\,MHz (unless it is stated otherwise) and at a target peak voltage of about 1\,MV. % this is for 270 GeV.
-Even though the $\CC$ modules installed in the SPS can operate at a maximum voltage of 3.4\,MV (see Table~\ref{tab:SPS_CC_main}), the experiments were performed with peak voltage of 1\,MV since for that value the stable $\CC$ operation for long periods was ensured. Further details on the hardware aspects of the $\CC$ operation in the SPS are not discussed here as they are out of the scope of this thesis.
-
-\normalsize{\textbf{Energy ramp}}\\
-SPS receives the proton beam at 26\,GeV from the PS. It was found that the ramp to 270\,GeV (coast energy) could not be performed with the $\CC$ switched on, since during the acceleration one of the vertical betatron sidebands was crossing the $\CC$ frequecny resulting to resonance excitation and beam loss~\cite{BE_seminar, CC_rephasing_RF}. Changing the $\CC$ frequnecy during the ramp so that it stays synchronous with the beam was not an option due to hardware limitations~\cite{CC_rephasing_RF}. % CC not fast enough.
-Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
-%while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
-
-\normalsize{\textbf{Crab Cavity - main SPS RF synchronisation}}\\
-It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn. In other words the SPS main RF system operating at $\sim$200\,MHz needed to be synchronous with the $\CC$ operating at 400.78\,MHz. Due to the larger bandwidth of the SPS main RF system the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the crabbing signal. For the studies at 270\,GeV the synchronisation took place at the end of the energy ramp shortly a few seconds after the $\CC$ was switched on~\cite{BE_seminar}. %(refer to Fig.~\ref{fig:sps_cycles_cc_tests} for the parts of the acceleration cycle). 
-
 
 %\normalsize{\textbf{Machine and beam configuration}}\\
 \subsection{Machine and beam configuration}
-During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The transverse feedback system was also switched off. Unfortunately, no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. 
-
-Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV. This value was validated with beam-based measurements from the Head-Tail monitor~\cite{sps_headtail_monitor}. The Head-Tail monitor measures the transverse displacement within the bunch which can be used to reconstruct the $\CC$ voltage experienced by the beam. A detailed description of the post-processing procedure is provided in Appendix~\ref{ch:app_HT_monitor}.
-
-The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the experiment before the emittance growth measurements with injected RF noise in the $\CC$. The $\CC$ settings remained unchanged for the rest of the experimental procedure.
-
-The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $\VCC (t)$ is fitted with the folllowing three-parameter ($\CCvoltage$, $\phi_\mathrm{CC}$, $d$) model function which also provides the $\CC$ phase and voltage offset:
-\begin{equation}\label{eq:sin_fit_cc}
-   f(x) = \CCvoltage \sin{(2\pi \CCfrequency x + \phi_\mathrm{CC})} + d ,
-\end{equation}
-where $\VCC$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ the $\CC$ phase and $d$ the vertical voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is fixed and well known, $\CCfrequency$=400.78\,MHz. 
-
-The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
-% For this topic there is a post it.
-
-seems to be a result of the HT monitor pick up and cable response~\cite{Levens_WP2_HT_CC_diagnostic}. However its origin is not yet fully understood and will have to be addressed in the future.
-
-% Path to plotting script: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD5_emit_growth/plot_1example_HT_acquisition_for_thesis_5Sep2018-135033_for_thesis_sin_fit_forCh5_fixed_freq.ipynb
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis.png}
-       \caption{Demonstration of the sinusoidal fit on the Head-Tail monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
-       \label{fig:crabbing_sin_fit_MD5}
-\end{figure}
-
-
-This procedure was optimised in the experimental campaign of 2022 (see chapter..)
-In order to obtain the peak voltage 
-
-shortly after the bunches are accelerated at 270 GeV but before switching to coast mode for reasons that are discussed in appendix.
-
-(post-processing procedure desribed in Appendix~\ref{ch:app_HT_monitor}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available which is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It is clear that the measured value of voltage amplitude, $\VCC$ = 0.99 $\pm$ 0.04\,MV , is in good agreement with the requested one. It should be noted, that due to the beam energy of 270\,GeV the crabbing is less visible than the example discussed in Chapter~\ref{Ch:CC_set_up} (see Fig.~\ref{fig:crabbing_sin_fit_MD2}) for 26\,GeV. Therefore, here the part of the signal that is used for the fit is the one for which the normalised sum signal (black dashed line) is above 0.2 (instead of 0.4 that was the condition for the case of 26\,GeV)
-
-
-Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV. This value was validated with the Head-Tail monitor (post-processing procedure desribed in Appendix~\ref{ch:app_HT_monitor}). Unfortunately, only one beam based measurement of the $\CC$ voltage is available which is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It is clear that the measured value of voltage amplitude, $\VCC$ = 0.99 $\pm$ 0.04\,MV , is in good agreement with the requested one. It should be noted, that due to the beam energy of 270\,GeV the crabbing is less visible than the example discussed in Chapter~\ref{Ch:CC_set_up} (see Fig.~\ref{fig:crabbing_sin_fit_MD2}) for 26\,GeV. Therefore, here the part of the signal that is used for the fit is the one for which the normalised sum signal (black dashed line) is above 0.2 (instead of 0.4 that was the condition for the case of 26\,GeV)
-
-
+During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The transverse feedback system was also switched off. Unfortunately, no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. Last, only one $\CC$, $\CC 2$, was used for simplicity and it operated at 1\,MV.
 
 The main machine and beam parameters used for the emittance growth measurements in 2018 are listed in Table~\ref{tab:machine_beam_param_2018}. % the parameters shown are the relatives one for Eq.(3.1) and (3.2) --> theoretical formulas for the emittance growht.
 
@@ -134,8 +119,35 @@ The main machine and beam parameters used for the emittance growth measurements 
 \end{table}
 
 
+
+\subsection{Measurement of Crab Cavity voltage}\label{subsec:CC_voltage_2018_measurement}
+As mentioned above, $\CC$2 operated at 1\,MV. Before the start of the emittance growth measurements, this value was validated with beam-based measurements from the Head-Tail monitor~\cite{sps_headtail_monitor}. The Head-Tail monitor measures the transverse displacement within the bunch which can be used to reconstruct the $\CC$ voltage experienced by the beam. A detailed description of the post-processing procedure is provided in Appendix~\ref{ch:app_HT_monitor}.
+
+The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the experiment before the emittance growth measurements with injected RF noise in the $\CC$. The $\CC$ settings remained unchanged for the rest of the experimental procedure.
+
+The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit (blue solid line in Fig.~\ref{fig:crabbing_sin_fit_MD5}) on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $V_\mathrm{CC}(t)$ is fitted with the folllowing three-parameter ($\CCvoltage$, $\phi_\mathrm{CC}$, $d$) model function which also provides the $\CC$ phase and voltage offset:
+\begin{equation}\label{eq:sin_fit_cc}
+   f(x) = \CCvoltage \sin{(2\pi \CCfrequency x + \phi_\mathrm{CC})} + d ,
+\end{equation}
+where $\CCvoltage$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ the $\CC$ phase and $d$ the vertical voltage offset. The fit is performed for a fixed $\CC$ frequency, as the operational value is fixed and well known, $\CCfrequency$=400.78\,MHz. 
+
+% Path to plotting script: /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD5_emit_growth/plot_1example_HT_acquisition_for_thesis_5Sep2018-135033_for_thesis_sin_fit_forCh5_fixed_freq.ipynb
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis.png}
+       \caption{Demonstration of the sinusoidal fit on the Head-Tail monitor reading in order to obtain the CC parameters as described in Section~\ref{sec:CC_voltage_meas}. The fit results, are given in the yellow box. The measured voltage amplitude, $V_{CC}$, was found to be 0.99\,MV while its uncertainty, $\Delta V_{CC}$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
+       \label{fig:crabbing_sin_fit_MD5}
+\end{figure}
+
+
+The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
+% For this topic there is a post it.
+
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
+
+
 %\normalsize{\textbf{Experimental procedure}}\\
-\subsection{Experimental procedure}\label{sec:experimental_procedure_2018}
+\subsection{Experimental procedure for emittance growth measurements}\label{sec:experimental_procedure_2018}
 The emittance growth experiment took place on September 5, 2018, and was given a total time window of about 6 hours (start:$\sim$10:30, end:$\sim$17:00). In order to characterize the CC noise induced emittance growth, different levels of controlled noise were injected into the low-level RF system and the bunch evolution was recorded for about 20-40 minutes (for each noise setting). The experiment was conducted over three coasts, since a new beam was injected every time the quality of the beam was seen to be degraded e.g. very large beam size. In the following, the different noise settings will be denoted as "Coast$N$-Setting$M$", where $N$ stands for the coast number and $M$ for the different noise levels applied in each coast in chronological order. After the experiment, the measured growth rates would be compared with the theoretically expected values from the model described in Chapter~\ref{Ch:CC_noise_theory}.
 %The dedicated experiment to study the emittance growth induced by noise in the $\CC$ RF sytsem took place on September 5, 2018, and was given a total time window of about 16 hours (start:$\sim$10:30, end:$\sim$17:00).
 
