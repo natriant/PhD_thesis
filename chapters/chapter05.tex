@@ -16,6 +16,39 @@ To make sure that the SPS can be used as a testbed for the emittance growth stud
 From these studies, it was concluded that the optimal coast setup is at high energies, with low chromaticity and bunches of low intensity as it minimises the natural emittance growth~\cite{Antoniou:2649815}. The highest energy for which the SPS could operate in "coast" was 270\,GeV and thus the experiments were performed at this energy.  That limitation was introduced due to limited cooling of the magnets to transfer away the heating when operating at high energy and thus at large currents for long periods. %heating of the magnets from large current in the coils, when operating at high energy for long periods. 
 Moreover, as the natural emittance growth was found to be a single bunch effect four bunches were used. That choice was made to reduce the statistical uncertainty of the measurements but not to increase the beam intensity.
 
+
+\subsection{SPS operational setup}\label{sec:sps_cc_setup}
+For the emittance growth studies with $\CC$s two special operational configurations were set up in the SPS. %Both configurations were used with a limited number of bunches (up to 4 bunches, see Chapter~\ref{Ch:2018_analyisis}). 
+
+In the first configuration which will be referred to as "acceleration cycle", the field of the main dipole magnets ramps up so that it accelerates the bunches from the injection energy of 26\,GeV up to 270\,GeV. The bunches remain at 270\,GeV for a few seconds before being dumped. After that the field of the SPS main dipole magnets returns to the initial value and the procedure is repeated. The first part of the acceleration cycle, before the energy ramp up, is called "flat bottom", while its last part where the bunches remain at 270\,GeV is called "flat top". This terminology is introduced here as it will facilitate the explanation of some concepts and procedures in the following. 
+This configuration was used to accelerate the bunches to 270\,GeV required for the emittance growth measurements. Furthermore it was used for the beam-based measurement of the $\CC$ voltage (see Section.. and Appendix~\ref{ch:app_HT_monitor}).
+
+The second configuration will be referred to as "coast". As discussed in the Section~\ref{subsec:cern_sps}, coast is the operational mode where the bunches circulate at the machine for long periods at constant energy (maximum 270\,GeV). This configuration succeed the acceleration cycle during which the bunches reach the required energy. During coast the magnetic field of the main dipoles ramains also constant. This configuration was used for the noise-induced emittance growth measurements where the objective was to study the long term emittance evolution. 
+
+The evolution of the dipole magnetic fields (in arbitrary units) during the two operational configurations that were set in the SPS up for the $\CC$ tests is illustrated in Fig.~\ref{fig:sps_cycles_cc_tests}. The corresponding beam energy is also noted on the plots. It is worth commenting that the magnetic field value in the coast mode (right) is plotted for a time scale that is equivalent to the one of the accelerator cycle for easier comparison and consistency. In reality, during coast the dipole fields remain at constant strength and field for longer periods (typically 30 minutes - 1 hour).  
+
+% Path 2 figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/magnetic_cycle_before_coast_MD4/nxcals_MD4_cycle.ipynb
+\begin{figure}[htp]
+   \centering
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_16May2022_aribtrary_units_for_thesis.png}  
+       %\caption{$k_\mathrm{LOD}=+15 \ \mathrm{/m^{4}}$}
+       %\label{fig:cc_md_2022_coast6}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+           \centering
+           \includegraphics[width=.95\linewidth]{images/Ch5/MD4_cycle_13Oct2021_coast_aribtrary_units_for_thesis.png}  
+           %\caption{$k_\mathrm{LOD}=-5 \ \mathrm{/m^{4}}$}
+           %\label{fig:cc_md_2022_coast9}
+   \end{subfigure}
+   \caption{Magnetic field of the main dipoles and corresponding beam energy for the two operational configurations set up in the SPS for the emittance growth studies with CCs.} %\textit{Left}:  \textit{Right}:}
+   \label{fig:sps_cycles_cc_tests}
+\end{figure}
+
+
+
+
 %\normalsize{\textbf{Machine and beam configuration}}\\
 \subsection{Machine and beam configuration}
 During the experiment the Landau octupoles were switched off. Nevetherless, a residual non-linearity was present in the machine mainly due to multipole components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The transverse feedback system was also switched off. Unfortunately, no measurements of chromaticity are available from the day of the experiment. However it was ensured that the chromaticity was corrected to small positive values. 
