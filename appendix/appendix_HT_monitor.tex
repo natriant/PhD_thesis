@@ -19,7 +19,7 @@ The raw signals from the Head-Tail monitor require a specific post-processing pr
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.8\textwidth]{images/Ch4/HT_1D__20180530_135105exampleAcq_4thesis_turnsStart0_Stop6000_step100_new.png}
-       \caption{Example difference and sum signals (top and bottom plots, respectively) from the HT monitor, in time scale, with respect to the longitudinal position within the bunch over several SPS revolutions, after the basic post processing~\cite{Levens:2313358} but before the baseline correction. The different colors indicate the signals from different turns (every 100 turns). } % mention every how many turns you plot, shows an indication of how fast is the instrument.
+       \caption{Example difference and sum signals (top and bottom plots, respectively) from the Head-Tail monitor, in time scale, with respect to the longitudinal position within the bunch over several SPS revolutions, after the basic post processing~\cite{Levens:2313358} but before the baseline correction. The different colors indicate the signals from different turns (every 100 turns). } % mention every how many turns you plot, shows an indication of how fast is the instrument.
        \label{fig:HT_example_signals}
 \end{figure}
 % /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc_standard_post_processing_Ch4_3_1.ipynb
@@ -48,7 +48,7 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.65\textwidth]{images/Ch4/HT_measures_vs_reference_vs_corrected__20180530_135105_baseline_correction_new_version_CC_post_processing.png}
-       \caption{HT monitor baseline correction for the SPS CC tests. The baseline signal (blue dashed line) refers to the mean of the difference signals acquired before the CC - main RF synchronisation. The measured signal (blue solid line) corresponds to the mean of the difference signal acquired after the synchronisation. Last, the corrected signal (orange solid line) is obtained after subtracting the baseline from the measured signal.}
+       \caption{Head-Tail monitor baseline correction for the SPS CC tests. The baseline signal (blue dashed line) refers to the mean of the difference signals acquired before the CC - main RF synchronisation. The measured signal (blue solid line) corresponds to the mean of the difference signal acquired after the synchronisation. Last, the corrected signal (orange solid line) is obtained after subtracting the baseline from the measured signal.}
        \label{fig:HT_baseline_correction}
 \end{figure}
 
@@ -56,7 +56,7 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
 \begin{figure}[!h]
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch4/HT_2D__20180530_135105_before_after_sunchronisation_new_version.png}
-        \caption{HT acquistions before and after the synchronisation of the SPS main RF with the CC.}
+        \caption{Head-Tail acquistions before and after the synchronisation of the SPS main RF with the CC.}
         \label{fig:HT_baseline_correction_measurements_2D}
  \end{figure}
 
@@ -64,7 +64,7 @@ For the $\CC$ experiments a reference measurement had first to be made with the 
 %At this point, it should be mentioned that the baseline (blue dashed line in Fig.~\ref{fig:HT_baseline_correction}) appears to vary with position within the bunch. The origin for this is not yet understood and will have to be addressed in the future to fully understand .... However, here is our working assumption ...
 
 \normalsize{\textbf{Head-Tail monitor scaling}}\\
-The last step to make the HT acquisitions meaningful is to convert the measured intra bunch offset (the mean of the difference signals following phase synchronisation and baseline correction) from arbitrary units to millimeters. The scaling is achieved by dividing by the mean of the sum signals (which is a function of the position along the bunch and is calculated for each point individually over many turns) after the synchronisation and with a normalisation factor which is provided by the calibration of the HT monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the $\CC$ kick in millimeters and after the baseline correction. 
+The last step to make the Head-Tail acquisitions meaningful is to convert the measured intra bunch offset (the mean of the difference signals following phase synchronisation and baseline correction) from arbitrary units to millimeters. The scaling is achieved by dividing by the mean of the sum signals (which is a function of the position along the bunch and is calculated for each point individually over many turns) after the synchronisation and with a normalisation factor which is provided by the calibration of the Head-Tail monitor~\cite{PhysRevAccelBeams.22.112803}. The normalisation factor for the SPS was measured at 0.1052 in 2018~\cite{HT_calibration_2018}. Figure~\ref{fig:HT_baseline_correction_crabbing_mm} shows the intra-bunch offset from the $\CC$ kick in millimeters and after the baseline correction. 
 
 % /eos/user/n/natriant/2018/CC_MD_2018_summary/2018_HT_monitor/MD2_phase_scan_CC1/main_example_135105/plot_1example_HT_acquisition_for_thesis_30May2018-135105_for_thesis_sin_fit_forCh4_fixed_fcc-CC_post_processing_Ch4_3_2_and_after.ipynb
 \begin{figure}[!h]
@@ -76,13 +76,13 @@ The last step to make the HT acquisitions meaningful is to convert the measured 
 
 
  \subsection{Crab Cavity voltage reconstruction}\label{sec:Vcc_calibration}
- This section discusses the reconstruction of the $\CC$ voltage from the HT monitor signal. First, Eq.~\eqref{eq:CC_orbit_shift_Chao} was used to calculate the $\CC$ kick, $\theta$, required to reconstruct the measured intra-bunch offset. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the HT monitor location as follows:
+ This section discusses the reconstruction of the $\CC$ voltage from the HT monitor signal. First, Eq.~\eqref{eq:CC_orbit_shift_Chao} was used to calculate the $\CC$ kick, $\theta$, required to reconstruct the measured intra-bunch offset. Equation~\eqref{eq:CC_orbit_shift_Chao}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick, $\theta$, at the Head-Tail monitor location as follows:
 
 \begin{equation}\label{eq:CC_orbit_shift_Chao}
    \Delta y_{,HT} = \frac{\sqrt{\beta_{y, HT}}}{2 \sin(\pi \Qy)} \theta \sqrt{\beta_{y, CC}} \cos(\pi \Qy - \mid \psi_{y, HT} - \psi_{y, CC} \mid),
 \end{equation}
 
-where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\mid \psi_{y, HT} - \psi_{y, CC} \mid$ is the vertical phase advance (in tune units) between the $\CC$ and the HT monitor. The same applies for the horizontal plane. The subscripts HT and CC indicate quanities at the location of the HT monitor and CC respectively.
+where $\beta_y$ is the beta function, $\Qy$ is the tune, and $\mid \psi_{y, HT} - \psi_{y, CC} \mid$ is the vertical phase advance (in tune units) between the $\CC$ and the Head-Tail monitor. The same applies for the horizontal plane. The subscripts Head-Tail and CC indicate quanities at the location of the Head-Tail monitor and CC respectively.
 
 The $\CC$ voltage is then reconstructed from the $\CC$ kick which is written as $\theta = - \frac{q V_{CC}(t)}{\symE}$, where $q$ is the charge of the particle, $\symE$ the beam energy and $V_{CC}(t) = \VCC \sin(2 \pi \fCC t + \phiCC) $ is the voltage that a particle experiences while passing through the $\CC$. In the context where the HT monitor measures the signal as a function of time, $t$, the voltage in the above formula is expressed accordingly as $V_{CC}(t)$, where $t=0$ the center of the bunch.
 
@@ -95,21 +95,21 @@ The $\CC$ voltage is then reconstructed from the $\CC$ kick which is written as 
     \label{fig:VCC_from_HT_monitor_measurement}
 \end{figure}
 
-It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it to millimeters as discussed in Section~\ref{subsec:HT_post_process_CC}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the HT signals shown already in this section. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}.
+It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$, is inserted in Eq.~\eqref{eq:CC_orbit_shift_Chao} after removing the baseline and converting it to millimeters as discussed in Section~\ref{subsec:HT_post_process_CC}. Figure~\ref{fig:VCC_from_HT_monitor_measurement} illustrates the cavity voltage computed from the Head-Tail signals shown already in this section. The corresponding beam and optic parameters are listed in Table~\ref{tab:SPS_HT_CC}.
 
 % optics at CC1, CC2 and HT monitor location /eos/user/n/natriant/Project_thesis/SPS optics
 \begin{table}[!hbt]
 	\begin{minipage}{\textwidth}
    \begin{centering}
-   \caption{Parameters for computing the CC voltage from the example HT monitor measurements discussed in this chapter.}
+   \caption{Parameters for computing the CC voltage from the example Head-Tail monitor measurements discussed in this chapter.}
 	\begin{tabu} to \textwidth {X[c,m] X[0.01c,m] X[0.01c,m] X[0.01c,m]}
 		&&& \\[-6mm]
 		\toprule \toprule
 		\multicolumn{2}{l}{\textbf{Parameter}} &
 		\multicolumn{2}{c}{\textbf{Value}} \\
 		\bottomrule
-      \multicolumn{2}{l}{Beta function at the HT monitor, $\beta_{y, HT}$}& \multicolumn{2}{c}{49.19\,m} \\
-      \multicolumn{2}{l}{Phase advance to the HT monitor$^{\ast}$, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
+      \multicolumn{2}{l}{Beta function at the Head-Tail monitor, $\beta_{y, HT}$}& \multicolumn{2}{c}{49.19\,m} \\
+      \multicolumn{2}{l}{Phase advance to the Head-Tail monitor$^{\ast}$, $\psi_{y, HT}$} & \multicolumn{2}{c}{15.68 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Beta function at the $\CC$1, $\beta_{y, CC1}$}& \multicolumn{2}{c}{76.07\,m} \\
       \multicolumn{2}{l}{Phase advance to the $\CC$1$^{\ast}$, $\psi_{y, CC1}$} & \multicolumn{2}{c}{23.9 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Vertical betatron tune, $\Qy$} & \multicolumn{2}{c}{26.18} \\
@@ -122,7 +122,7 @@ It should be noted here, that the measured intra-bunch offset, $\Delta y_{, HT}$
 \end{table}
 
 \subsection{Demonstration of crabbing with proton beams}\label{subsec:crabbing_demonstration_density_plot}
-Additionally, the measurements from the HT monitor were used for reconstructing the crabbing and representating schematically the beam projection in the transverse plane. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throughout the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
+Additionally, the measurements from the Head-Tail monitor were used for reconstructing the crabbing and representating schematically the beam projection in the transverse plane. The technique for reconstructing the crabbing was developed at CERN in 2018 and was extensively used throughout the experimental campaign with $\CC$s since (together with the calibrated voltage) it gives a straightforward estimate of the applied $\CC$ kick, as illustrated in Fig.~\ref{fig:crabbing_reconstruction_HT_monitor}. 
 
 To obtain this schematic representation, which in practice is a density plot showing the effect of the $\CC$ kick on the beam, one needs to multiply the measured longitudinal profile (the mean of the sum signals acquired after phase synchronisation) with the measured intra-bunch offset, mean of the difference signals acquired after the synchronisation. An example of this is shown in Fig.~\ref{fig:HT_baseline_correction_crabbing_mm}. For the transverse plane a gaussian distribution is considered with $\sigma$ obtained from the wire scanner (addressed in more detail in the following section). The color code of Fig.~\ref{fig:crabbing_reconstruction_HT_monitor} is normalised to the maximum intensity within the bunch.
 
@@ -130,7 +130,7 @@ To obtain this schematic representation, which in practice is a density plot sho
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch4/HT_crabVoltage__20180530_135105_crabbing_only_CC_post_processing.png}
-       \caption{Demonstration of the crabbing from the HT monitor signal. CC voltage and sum signal (longitudinal line density) measured from the HT monitor (top) together with the density plot (bottom) which visualises the effect of the CC kick on the beam.}
+       \caption{Demonstration of the crabbing from the Head-Tail monitor signal. CC voltage and sum signal (longitudinal line density) measured from the Head-Tail monitor (top) together with the density plot (bottom) which visualises the effect of the CC kick on the beam.}
        \label{fig:crabbing_reconstruction_HT_monitor}
 \end{figure}
    
