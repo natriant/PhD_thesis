@@ -28,9 +28,9 @@ For the SPS tests of 2018 two prototype $\CC$s of the Double Quarter Wave (DQW) 
        
        \multicolumn{2}{l}{s-location$^{\ast}$}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
  
-       \multicolumn{2}{l}{$\CC$ voltage, $\VCC$}  & \multicolumn{1}{c}{$\leq$ 3.4\,MV} & \multicolumn{1}{c}{$\leq$ 3.4\,MV} \\
+       \multicolumn{2}{l}{$\CC$ voltage, $\CCvoltage$}  & \multicolumn{1}{c}{$\leq$ 3.4\,MV} & \multicolumn{1}{c}{$\leq$ 3.4\,MV} \\
  
-       \multicolumn{2}{l}{$\CC$ frequency, $\fCC$}  & \multicolumn{1}{c}{400.78\,MHz} & \multicolumn{1}{c}{400.78\,MHz} \\ %400.789
+       \multicolumn{2}{l}{$\CC$ frequency, $\CCvoltage$}  & \multicolumn{1}{c}{400.78\,MHz} & \multicolumn{1}{c}{400.78\,MHz} \\ %400.789
  
        \multicolumn{2}{l}{Horizontal / Vertical beta function, $\beta_{x, CC}$ / $\beta_{y, CC}$}  & \multicolumn{1}{c}{29.24\,m / 76.07\,m} & \multicolumn{1}{c}{30.31\,m / 73.82\,m} \\
  
@@ -102,7 +102,7 @@ The main machine and beam parameters used for the emittance growth measurements 
       \multicolumn{2}{l}{Horizontal / Vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
       \multicolumn{2}{l}{Horizontal / Vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 1.0 / $\sim$ 1.0} \\
       \multicolumn{2}{l}{Synchrotron tune, $\Qs$}  & \multicolumn{2}{c}{0.0051} \\
-      \multicolumn{2}{l}{$\CC 2$ voltage / frequency, $\VCC$ / $\fCC$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
+      \multicolumn{2}{l}{$\CC 2$ voltage / frequency, $\CCvoltage$ / $\CCfrequency$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
       \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
       \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{4} \\
       \multicolumn{2}{l}{Bunch spacing}  & \multicolumn{2}{c}{524\,ns} \\
@@ -223,7 +223,7 @@ where $\CCvoltage$ is the amplitude of the $\CC$ voltage, $ \phi_\mathrm{CC}$ th
 The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
 % For this topic there is a post it.
 
-In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\VCC$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
+In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $\CCvoltage$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
 
 The results of the sinusoidal fit are illustrated in the yellow box in Fig.~\ref{fig:crabbing_sin_fit_MD5}. It can be concluded, that from the beam-based measurement with the Head-Tail monitor the $\CC$ voltage amplitude was found to be $\CCvoltage$=0.98$\pm$0.04\,MV. The measured value is very close to the targetd value of 1\,MV. 
 
@@ -234,10 +234,10 @@ It is worth commenting that, the phase offset of the $\CC$ was found to be about
 The procedure of measuring the voltage amplitude from the Headt-Tail monitor reading and calibrating the phase offset was optimised and automated (such as they can be perfomed during the measurement) for the experimental campaigns that took place in the later years (see Chapter~\ref{subsec:cc_calibration_2022}). 
 
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
-This section presents the transverse emittance growth measurements with $\CC$ RF noise. It discusses first the measurement of the beam emittance with the SPS wire scanners (WS) and then it provides an overview of the emittance growth measurements for the four bunches over all the different noise settings.
+This section presents the transverse emittance growth measurements with $\CC$ RF noise. It discusses first the measurement of the beam emittance with the SPS Wire Scanners (WS) and then it provides an overview of the emittance growth measurements for the four bunches over all the different noise settings.
 
 \subsection{SPS Wire Scanners}\label{subsec:sps_ws}
-The SPS is equipped with wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
+The SPS is equipped with wire scanners (WS) to measure the transverse beam emittance. The SPS WS system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests in 2018, the emittance was measured with WS both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
 
 The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is then detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the PM current as a function of wire position over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile}.
 
