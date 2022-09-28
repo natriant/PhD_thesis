@@ -16,8 +16,6 @@
 \printsymline{s}{s}{s}{Location around the ring ??}{xxv}
 \printsymline{D_x}{D_x}{Dx}{Horizontal dispersion function}{xxv}
 \printsymline{D_y}{D_y}{Dy}{Vertical dispersion function}{xxv}
-\printsymline{\beta_0}{\beta_0}{betarel}{Relativistic beta}{xxv}
-\printsymline{\gamma_0}{\gamma_0}{gammarel}{Relativistic gamma (Lorenz factor)}{xxv}
 \printsymline{N_b}{N_b}{Nb}{Bunch intensity i.e. number of particles (here protons)}{xxv}
 \printsymline{Q^\prime _{x}}{Q^\prime _{x}}{Qpx}{Horizontal first order chromaticity}{xxv}
 \printsymline{Q^\prime _{y}}{Q^\prime _{y}}{Qpy}{Vertical first order chromaticity}{xxv}

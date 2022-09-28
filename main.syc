@@ -16,8 +16,6 @@
 \newcommand{\sinclude}{no}
 \newcommand{\Dxinclude}{no}
 \newcommand{\Dyinclude}{no}
-\newcommand{\betarelinclude}{yes}
-\newcommand{\gammarelinclude}{yes}
 \newcommand{\Nbinclude}{yes}
 \newcommand{\Qpxinclude}{yes}
 \newcommand{\Qpyinclude}{yes}
