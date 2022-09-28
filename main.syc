@@ -14,8 +14,8 @@
 \newcommand{\psixinclude}{no}
 \newcommand{\psiyinclude}{no}
 \newcommand{\sinclude}{no}
-\newcommand{\Dxinclude}{yes}
-\newcommand{\Dyinclude}{yes}
+\newcommand{\Dxinclude}{no}
+\newcommand{\Dyinclude}{no}
 \newcommand{\betarelinclude}{yes}
 \newcommand{\gammarelinclude}{yes}
 \newcommand{\Nbinclude}{yes}
