@@ -63,7 +63,10 @@ As already mentioned in the Introduction (Section~\ref{sec:motivation_outline}) 
 
 This  model is also applicable to the SPS (where the same conditions apply), where the $\CC$s will be tested before their installation in the HL-LHC (Section~\ref{sec:motivation_outline}). The equations and formulas from the theoretical model that are essential for the understanding of the studies are discussed below.
 
+\textcolor{blue}{
+Since we will refer to this theroy frequently throught the thesis we will often use the term "Mastoridis--Baudrenghien theory" for simplicity.}
  % Thus, the results from the SPS $\CC$ tests can be used for scaling to the HL-LHC case.
+
 
 \subsection{Crab Cavity amplitude and phase noise}\label{subsec:AN_PN}
 The unperturbed instantaneous $\CC$ voltage equals the one of an ideal oscillator:
@@ -86,20 +89,21 @@ where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency 
 % The units of ΔΑ and Δφ are shown in Table II of the paper of Themis and Philippe.
 
 
-In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are independent. The validity of this hypothesis depends on the actual architecture of the LLRF responsible for the regulation of the cavity field. This is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
+In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are independent. The validity of this hypothesis depends on the actual architecture of the low-level RF responsible for the regulation of the cavity field. This is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
  
 %Due to the $\CC$ RF noise sources in the LHC, HL-LHC and, SPS machines, the amplitude and phase noise spectra can be considered  independent, and thus they can be treated separetatly. The technical details can be found in Ref.~[15] of the above-mentioned publication of Baudrenghien and Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
 % 1) You need to understand Ref.[15]
 % 2) Q and I demodulator --> it enables easily extracting instantaneous amplitude and phase over time. source: https://indico.cern.ch/event/781242/contributions/3251767/attachments/1780299/2896017/Powerpoint_1.pdf
 % 3) Document on the digital Q/I demodulator, that might be useful when you try to understand it. https://accelconf.web.cern.ch/p95/ARTICLES/RPQ/RPQ02.PDF
 
-To this end, and following the analysis in Ref.~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following turn-by-turn change of the angle co-ordinate of each particle: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
+To this end, and following the analysis in~\cite{PhysRevSTAB.18.101001} and in accordance with Eq.~\eqref{eq:external_noise_kicks} the change of the trajectory of each particle within a bunch as a result of the phase and amplitude $\CC$ RF noise can be modeled as follows:
+%the phase and amplitude noise kicks on each particle within a bunch can be modeled as the following turn-by-turn change of the angle co-ordinate of each particle: % at the location of the CC; s=s_CC. Eq.7 in ref~\cite{PhysRevSTAB.18.101001} but for not normalised co-oridnates.
 % Presetnation: https://docs.google.com/presentation/d/1Jv0Es99utlZSSg25_9oplI53A5MdPDfJSjsSneRXaV8/edit#slide=id.gbb99f3cf0a_0_65
 \begin{equation}\label{eq:amplitude_noise_kick}
-    \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \frac{e \CCvoltage}{E_b} \Delta A_j \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z_j   \right )},
+    \textbf{\textrm{Amplitude noise:}} \ \Delta u^\prime_{j} =  \frac{e \CCvoltage}{E_b} \Delta A_j \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z_j   \right )},
   \end{equation}
   \begin{equation}\label{eq:phase_noise_kick}
-      \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j +  \frac{e \CCvoltage}{E_b} \Delta \phi_j  \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z_j   \right )},
+      \textbf{\textrm{Phase noise:}} \ \Delta u^\prime_{j} = +  \frac{e \CCvoltage}{E_b} \Delta \phi_j  \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z_j   \right )},
   \end{equation}
 %\begin{equation}\label{eq:amplitude_noise_kick}
 %  \textbf{\textrm{Amplitude noise:}} \  u^\prime_{j+1} =  u^\prime_j + \zeta_j A \sin{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
@@ -122,7 +126,7 @@ Last, the power spectral density of these noise kicks, at any given frequency, $
 
 %Moreover, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for the strength of amplitude or phase noise respectively. The typical value of $A$ that will be used in the simulations later is $10^{-8}$. Finally, $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise).
 
-\textbf{Disclaimer:} Equations~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} aim to represent the $\CC$ noise kicks as they are applied in the simulation codes that are used in this thesis. They do not include the optics (and in particular of the beta function) of the lattice as the original equtions in Ref.~\cite{PhysRevSTAB.18.101001} (see Eqs.~(7) and~(8)). Instead in the simulations the transformation of the $u, u^\prime$ co-ordinates due to optics is applied through the transfer maps that are used for the tracking.
+%\textbf{Disclaimer:} Equations~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick} aim to represent the $\CC$ noise kicks as they are applied in the simulation codes that are used in this thesis. They do not include the optics (and in particular of the beta function) of the lattice as the original equtions in Ref.~\cite{PhysRevSTAB.18.101001} (see Eqs.~(7) and~(8)). Instead in the simulations the transformation of the $u, u^\prime$ co-ordinates due to optics is applied through the transfer maps that are used for the tracking.
 
 
 % The following paragraph is inspired by what I said in the IPAC talk.
