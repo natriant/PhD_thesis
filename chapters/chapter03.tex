@@ -17,7 +17,7 @@ The thesis focuses on the problem of noise-induced emittance growth which has be
 
 
 \textbf{White noise}\\
-In the studies presented in this thesis (simulations, theoretical and experimental studies), it is considered that the beam is influenced by white noise. In signal analysis, white noise is a random signal with the same amplitude (intensity) at all the frequencies which results in a uniform power spectral density. For the computational analysis (i.e. simulation studies), it is considered that the beam is influenced by the noise once per turn~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001}. To this end the white noise signal is sampled at a finite number of points which are called discrete-time signals. In discrete-time, the white noise can be considered as a sequence of uncorrelated random values taken from a Gaussian distribution with zero mean and finite standard deviation. More details on the continuous and discrete time analysis and the term of the power spectral density can be found in Appendix~\ref{ch:app_B}. The definition for the standard deviation of a distribution can be found in Appendix~\ref{ch:app_A}.
+In the studies presented in this thesis (simulations, theoretical and experimental studies), it is considered that the beam is influenced by white noise. In signal analysis, white noise is a random signal with the same amplitude (intensity) at all the frequencies which results in a uniform power spectral density. For the computational analysis (i.e. simulation studies), it is considered that the beam is influenced by the noise once per turn~\cite{Lebedev:248620, Lebedev:248622, PhysRevSTAB.18.101001}. To this end the white noise signal is sampled at a finite number of points (equal the number of turns considered for the computational study) which are called discrete-time signals. In discrete-time, the white noise can be considered as a sequence of uncorrelated random values taken from a Gaussian distribution with zero mean and finite standard deviation. More details on the continuous and discrete time analysis and the term of the power spectral density can be found in Appendix~\ref{ch:app_B}. %The definition for the standard deviation of a distribution can be found in Appendix~\ref{ch:app_A}.
 % Comment on uniform vs constant (Andy): "uniform" might be better than "constant".  ("constant" suggests "not changing in time", whereas here, the amplitude should be the same across a wide frequency range.)
 
 
@@ -61,10 +61,11 @@ In this thesis, the term "noise" will refer white noise which is modeled with th
 \section{Crab Cavity noise and emittance growth}\label{sec:CC_noise_intro}
 As already mentioned in the Introduction (Section~\ref{sec:motivation_outline}) the presence of noise in the $\CC$ low-level RF system is an issue of major concern for the HL-LHC project as it results in transverse emittance growth and subsequently in loss of luminosity. To this end, in 2015, P.~Baudrenghien and T.~Mastoridis developed a theoretical model~\cite{PhysRevSTAB.18.101001} which predicts this transverse emittance growth induced by $\CC$ noise focusing on the HL-LHC scenario. In particular, the model assumes a hadron machine, zero synchrotron radiation damping, long bunches (in the order of cm), and white RF noise (discrete spectral lines are excluded). Additionally, it is assumed that the $\CC$ RF zero phase is set at the center of the bunch.
 
-This  model is also applicable to the SPS (where the same conditions apply), where the $\CC$s will be tested before their installation in the HL-LHC (Section~\ref{sec:motivation_outline}). The equations and formulas from the theoretical model that are essential for the understanding of the studies are discussed below.
+Since we will refer to theoretical model of P.~Baudrenghien and T.~Mastoridis ~\cite{PhysRevSTAB.18.101001} frequently throught the thesis we will often use the term "Mastoridis--Baudrenghien model" for simplicity.
 
-\textcolor{blue}{
-Since we will refer to this theroy frequently throught the thesis we will often use the term "Mastoridis--Baudrenghien theory" for simplicity.}
+The Mastoridis--Baudrenghien model is also applicable to the SPS (where the same conditions apply), where the $\CC$s will be tested before their installation in the HL-LHC (Section~\ref{sec:motivation_outline}). The equations and formulas from this model that are essential for the understanding of the studies are discussed below.
+
+
  % Thus, the results from the SPS $\CC$ tests can be used for scaling to the HL-LHC case.
 
 
@@ -121,7 +122,7 @@ Last, the power spectral density of these noise kicks, at any given frequency, $
  \begin{equation}\label{eq:psd_for_white_noise_variance_PN}
     S_{\Delta \phi}(f_k) = \frac{\sigma_{\Delta \phi}^2 } {\frev},
  \end{equation}
- where $\frev$ is the revolution frequency of the machine. $S_{\Delta A}(f_k)$ is the power sepctral density of the amplitude noise and is expressed in 1/Hz, while $S_{\Delta \phi}(f_k)$ is the power sepctral density of the phase noise and is expressed in $\mathrm{rad^2/Hz}$.
+ where $\frev$ is the revolution frequency of the machine. $S_{\Delta A}(f_k)$ is the power sepctral density of the amplitude noise and is expressed in Hz$^{-1}$, while $S_{\Delta \phi}(f_k)$ is the power sepctral density of the phase noise and is expressed in $\mathrm{rad^2 Hz^{-1}}$.
 
 
 %Moreover, $A=\CCvoltage /(E_b \cdot \Delta A )$ or $A=\CCvoltage /(E_b \cdot \Delta \phi )$ the scaling factor for the strength of amplitude or phase noise respectively. The typical value of $A$ that will be used in the simulations later is $10^{-8}$. Finally, $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise).
@@ -164,7 +165,8 @@ For phase noise, the emittance growth is estimated from:
 \end{equation}
 In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} where $q_u, q_s$ (with lower case) denote the fractional part of the betatron and synchrotron tunes respectively. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. In particular, $k \in \mathbb{Z}$ is the harmonic number of the revolution frequency and the $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands at each multiple of the revolution frequency, $k f_\mathrm{rev}$.%, from the betatron tune.
 
-The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}. As all the studies presented in this thesis, are done with white noise the power spectral densities can be computed using Eqs.~\ref{eq:psd_for_white_noise_variance_AN} and~\ref{eq:psd_for_white_noise_variance_PN} introduced earlier.
+The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}. %\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}. 
+As all the studies presented in this thesis, are done with white noise the power spectral densities can be computed using Eqs.~\eqref{eq:psd_for_white_noise_variance_AN} and~\eqref{eq:psd_for_white_noise_variance_PN} introduced earlier.
 
 
 The terms $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
@@ -172,7 +174,7 @@ The terms $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account f
 C_{\Delta A}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2}\sum_{l=0}^{+\infty} I_{2l+1}(\sigma_{\phi}^2),\\
 C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}^2) + 2 \sum_{l=1}^{+\infty} I_{2l}(\sigma_{\phi}^2) \right],
 \end{align}
-with $\sigma_{\phi}$ the rms bunch length, in rad, with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
+with $\sigma_{\phi}$ the rms bunch length, in radians, with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
 
 Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase (right) noise. The SPS nominal bunch length used in the CC tests is shown as an orange dot for reference.
 
@@ -200,9 +202,9 @@ Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term fo
 \textbf{Comment on the use of the emittane growth formulas}\\
 Here some additional comments on the use of the Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} for predicting the emittance growth rate for both measurements and simulation studies of this thesis are made to facilitate the discussion in the following chapters.
 
-In this thesis, the emittance growth in the vertical plane is addressed. The reason is that for both experimental campaigns that took place in 2018 and 2022, the $\CC$ module that was available provided a vertical deflection on the beam. For reference, the $\CC$ module which provides horizontal deflection is planned to be available by the end of 2022. Additionally the studies were performed for the SPS machine for which the parameters are listed in Table~\ref{tab:machine_beam_param_2018}: $q_y=0.18$, $f_\mathrm{rev}=43.38$\,kHz, and $q_s=0.0051$. 
+In this thesis, the emittance growth in the vertical plane is addressed. The reason is that for both experimental campaigns that took place in 2018 and 2022, the $\CC$ module (DQW) that was available provided a vertical deflection on the beam. For reference, the $\CC$ module which provides horizontal deflection (RFD) is planned to be available by the end of 2022. Additionally the studies were performed for the SPS machine for which the parameters are listed in Table~\ref{tab:machine_beam_param_2018}: $q_y=0.18$, $f_\mathrm{rev}=43.38$\,kHz, and $q_s=0.0051$. 
 
-To this end, the emittance growth induced by $\CC$ RF noise depends on the PSD value of the noise at the vertical betatron and synchrobetatron sidebands for the phase and amplitude noise case respectively (see Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). The upper and lower sidebands of the first and second vertical betatron sidebands are observed in the following frequencies:
+To this end, the emittance growth induced by $\CC$ RF noise depends on the power spectral density value of the noise at the vertical betatron and synchrobetatron sidebands for the phase and amplitude noise case respectively (see Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). The upper and lower sidebands of the first and second vertical betatron sidebands are observed in the following frequencies:
 \begin{equation}\label{eq:betatron_sideband_1}
     \mathrm{k=0}: \ (0 \pm \widebar{q}_y) f_\mathrm{rev} = \pm 0.18 \times 43.38\mathrm{\,kHz} \approx \pm 7.8\mathrm{\,kHz}.
 \end{equation}
@@ -232,7 +234,7 @@ The experimental studies with $\CC$s (more details in Chapter~\ref{Ch:2018_analy
 
 In the simulations, the beam particles encounter the phase or amplitude noise kicks once per turn. This means that the sampling frequency of the noise spectrum in the frequency domain equals, $f_s=f_\mathrm{rev}=43.38$\,kHz. This means, that the frequency spectrum of the noise applied in the simulations extends from $-f_s/2 \approx -22$\,kHz to $+f_s/2 \approx 22$\,kHz. \footnote{The particles will still be affected by noise above the Nyquist frequency, $\frev /2$ but up to $\frev$ (if there are any betatron and/or synchrobetatron sidebands in that range), but the noise will alias into lower frequencies. This is not the case for the studies presented in this thesis, as it becomes evident from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2}.} Further explanation can be found in Appendix~\ref{ch:app_B} and specifically in the Section~\ref{subsec:generatin_noise_kicks}. Again, from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2} it becomes clear that the noise kicks in the simulations excite only the first betatron and synchrobetatron sidebands for $k=0$ (upper and lower).
 
-To sum up, when using Eqs.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} to predict the emittance growth rate due to $\CC$ RF noise, $k=0$ will be considered.
+To sum up, when using Eqs.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} to predict the emittance growth rate due to $\CC$ RF noise in the SPS, $k=0$ will be considered.
 
 \section{Studies in KEKB}\label{eq:past_studies_KEKB}
 $\CC$s have been tested in the past with lepton beams in KEKB in Japan (further references on their operation are given in Refs.~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}). %~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}.
