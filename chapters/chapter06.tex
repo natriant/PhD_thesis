@@ -195,28 +195,26 @@ From these plots, it becomes evident that there is an excellent agreement betwee
 \textcolor{red}{The following paragrpah might need to be checked again.}
 Finally, the spread between the emittance values obtained from the different runs in Sixtracklib and PyHEADTAIL simulations is commented here. By comparing Figs.~\ref{fig:study_pyheadtail_normalised_momentum_kicks} and~\ref{fig:study_1_sixtracklib_normalised_momentum_kicks} it is evident that in the presence of phase noise (right) the spread is similar. However, in the presence of amplitude noise (left) the spread of the emittance growth between different runs is significantly smaller in Sixtracklib results compared to the PyHEADTAIL results. It should be noted, however, that the simulated emittance growth is quite small and even small differences in the two codes could lead to different behavior and might explain the different results. For example, in Sixtracklib simulations non-linear elements are included. On the contrary in PyHEADTAIL non-linear elements are not included and the amplitude detuning is introduced as a change of the phase advance of each individual particle. The precise cause for the differences in the emittance growth variation between the two codes still needs to be investigated. Nevertheless, the codes agree on the average emittance growth rate and this issue does not affect the conclusions drawn from the results presented in this thesis. 
  
-
 %Another observation, is that the spread between the emittance values obtained from the different runs in the presence of phase noise is similar for the Sixtracklib and PyHEADTAIL simulations. is much larger in the case of phase noise (left) than in the case of amplitude noise (right). The reason for this is not yet well understood. \textcolor{red}{Further comments are needed here?}Nevertheless, this does not affect the conclusions drawn from the results presented in this thesis. 
 
 %As it will be shown later the reason for the discrepancy is not relevant to the way the stochastic noise kicks are applied on the beam. 
 
-
 % Comments: The difference on the phase noise plots might be the larger tune spread in the sixtracklib simulations due to the larger positive chromaticity. In general we are no sensitive to the tune spread value in the absence of wakefields. However, for such small values of the order to $10^{-6}$ there might be some sensitivity.
-
 
 \subsection{Implementation of CC element in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
 Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity (as was done in PyHEADTAIL). This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
 
-In Sixtracklib the $\CC$ element is represented by an element (referred to as RFMultipole in the Sixtracklib documentation) that has the properties of a multipole magnet (oscillating at a specified frequency) superposed on an RF cavity.  To simulate the vertical $\CC$, the multipole field component corresponds to a skew dipole.
+In Sixtracklib the $\CC$ element is represented by an element (referred to as "RFMultipole" in the Sixtracklib documentation) that has the properties of a multipole magnet (oscillating at a specified frequency) superposed on an RF cavity.  To simulate the vertical $\CC$, the multipole field component corresponds to a skew dipole.
 
-When a particle passes through this element, it receives the following vertical kick on the momentum:
+When a particle passes through this element, the change in the vertical angle of each particle is the following:
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
-    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
+    \Delta y^\prime_{j} = \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
 \end{equation}
 where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. In Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}, $y^\prime$ is the vertical angle co-ordinate and $z$ is the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ is the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
 
-Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. This check was important as Sixtracklib is a recently developed simulation tool and at the time these studies took place the use of the RFMultipole as a $\CC$ element was not well tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error. To this end, the induced orbit shift from the $\CC$ element as detected at another location $s_1$ is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. The latter has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in Ref.~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
+Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. This check was important as Sixtracklib is a recently developed simulation tool and at the time these studies took place the use of the RFMultipole as a $\CC$ element was not well tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error. To this end, the induced orbit shift from the $\CC$ element as detected at another location $s_1$ is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. %The latter has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. 
+Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
 \begin{equation}\label{eq:CC_orbit_shift_CC_element}
     \Delta y_{,s_1} = \frac{\sqrt{\beta_{y, s_1}}}{2 \sin(\pi \Qy)} \Delta y^\prime \sqrt{\beta_{y, s_0}} \cos(\pi \Qy - \mid \psi_{y, s_1} - \psi_{y, s_0} \mid),
  \end{equation}
@@ -272,7 +270,7 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
 The amplitude and phase noise in the real $\CC$ element used for the following Sixtracklib simualtions are modeled following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
 
-In particular, in the presence of amplitude and phase noise the vertical kicks on the momentum of Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} are modified as follows:
+In particular, in the presence of amplitude and phase noise the change of the vertical angle of each particle introduced in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} is modified as follows:
 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
     y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \zeta_j \Delta A)}{p_0 c},
