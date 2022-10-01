@@ -169,7 +169,7 @@ First the emittance growth simulations that were presented in the previous secti
 
 The rms betatron tune spread here is slightly higher than $7 \times 10^{-6}$ that was computed in the previous section, due to the larger values of linear chromaticity. To this end, tracking for $10^{5}$ turns is reasonable also for these studies. The initial distribution of $10^5$ particles follows a gaussian both in transverse and longitudinal planes.
 
-The emittance growth was simulated in Sixtracklib in the presence of both amplitude and phase noise. The noise kicks were implemented as kicks on the vertical angle co-ordinate of each particle following the previous PyHEADTAIL simulations. The noise kicks were applied on the beam at the location of $\CC$1. The power spectral density of the noise at the betatron frequency was $1.68\times 10^{-10}$/Hz and $\mathrm{rad^2/Hz}$ for amplitude and phase noise respectively. This corresponds to a total noise power of $\sigma_{\Delta A}=7.3\times 10^{-6}$ and $\sigma_{\Delta \phi}=7.3\times 10^{-6}$\,$\mathrm{rad^2}$ respectively.
+The emittance growth was simulated in Sixtracklib in the presence of both amplitude and phase noise. The noise kicks were implemented as kicks on the vertical angle co-ordinate of each particle following the previous PyHEADTAIL simulations. The noise kicks were applied on the beam at the location of $\CC$1. The power spectral density of the noise at the betatron frequency was $1.68\times 10^{-10}$/Hz and $\mathrm{rad^2/Hz}$ for amplitude and phase noise respectively. This corresponds to a total noise power of $\sigma_{\Delta A}^2=7.3\times 10^{-6}$ and $\sigma_{\Delta \phi}^2=7.3\times 10^{-6}$\,$\mathrm{rad^2}$ respectively.
 
 %This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. The power spectra are the same as those shown in Fig.~\ref{fig:psd_cc_simulations_example}.
 
@@ -209,9 +209,9 @@ In Sixtracklib the $\CC$ element is represented by an element (referred to as "R
 
 When a particle passes through this element, the change in the vertical angle of each particle is the following:
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
-    \Delta y^\prime_{j} = \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC}}{p_0 c},
+    \Delta y^\prime_{j} = \cos{\left ( \phi_\mathrm{CC} \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{e V_\mathrm{0,CC}}{p_0 c},
 \end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. In Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}, $y^\prime$ is the vertical angle co-ordinate and $z$ is the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ is the $\CC$ phase in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. In Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}, $y^\prime$ is the vertical angle co-ordinate and $z$ is the longitudinal co-ordinate of each particle, $\phi_\mathrm{CC}$ is the $\CC$ phase offset in degrees, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $e$ the proton charge, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
 
 Before using this element for the emittance growth simulations its implementation in Sixtracklib was tested. This check was important as Sixtracklib is a recently developed simulation tool and at the time these studies took place the use of the RFMultipole as a $\CC$ element was not well tested. The $\CC$ element installed at a location $s_0$, acts like a single dipole field error. To this end, the induced orbit shift from the $\CC$ element as detected at another location $s_1$ is benchmarked against the theoretically expected orbit shift resulting from a single dipole field error. %The latter has already been discussed in the context of the reconstruction of $\CC$ voltage from the HT monitor in Section~\ref{sec:Vcc_calibration}. 
 Equation~\eqref{eq:CC_orbit_shift_CC_element}, which is obtained from Eq.\,(1) from chapter 4.7.1 in~\cite{Chao:1490001}, gives the vertical orbit shift (in meters) from the $\CC$ kick (at the location $s_0$), at the location $s_1$ as follows:
@@ -268,14 +268,26 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 %\textbf{Implementing amplitude and phase noise on the real CC element}\\
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
-The amplitude and phase noise in the real $\CC$ element used for the following Sixtracklib simualtions are modeled following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
+The amplitude and phase noise in the real $\CC$ element are modeled as the following change of the vertical angle of each particle (following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
 
-In particular, in the presence of amplitude and phase noise the change of the vertical angle of each particle introduced in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} is modified as follows:
+%following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
+
+%In the presence of amplitude and phase noise the change of the vertical angle of each particle passing through the real $\CC$ element which was introduced in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} is modified as follows:
+
+\begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise_v1}
+    \Delta y^\prime_{j} = \cos{\left ( (\phi_\mathrm{CC} + \Delta \phi_j \frac{180}{\pi}) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{ e( \CCvoltage + \Delta \CCvoltage_j)}{p_0 c},
+\end{equation}
+
 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
-    y^\prime_{j+1} = y^\prime_{j} + \cos{\left ( (\phi_\mathrm{CC} + \zeta_j \Delta \phi) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \zeta_j \Delta A)}{p_0 c},
+    \Delta y^\prime_{j} = \cos{\left ( (\phi_\mathrm{CC} + \Delta \phi_j \frac{180}{\pi}) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \Delta A_j)}{p_0 c},
 \end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi$ is the deviation from the nominal phase (phase noise level), and $\Delta A$ the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level). The typical values that will be used in the following simulations for amplitude and phase noise respectively are: $\Delta A$=$10^{-8}$ and $\Delta \phi = 10^{-8} \frac{p_0 c}{V_\mathrm{0,CC}} \frac{180}{\pi}$.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi_j$ is the deviation from the nominal phase (phase noise level), and $\Delta A_j$ is the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level) at the $j$th turn. 
+
+In the following simulations (except the ones presented in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3}) the parameters $\Delta \phi_j$ and $\Delta A_j$ are the $j$th elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with mean 0 and standard deviation of $\sigma_{\Delta \phi}$ and  $\sigma_{\Delta A}$ respectively. The typical values that will be used in the following simulations for phase and amplitude noise respectively are: $\sigma_{\Delta \phi}=2.7 \times 10^{-3}$\,$\mathrm{rad^2}$ and $\sigma_{\Delta A}=10^{-8}$.
+
+
+
 Note that $\Delta \phi$ enters Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} in units of degrees.
 These values result in power spectral densities at the betatron frequency of: $S_{\Delta_A}(f_b) = 1.68 \times 10^{-10}$/Hz for amplitude noise and $S_{\Delta_\phi}(f_b) = 1.68 \times 10^{-10}$ $\mathrm{rad^2/Hz}$ for phase noise.
 Finally, $\zeta_j$ is the $j$th element of a sample drawn from a Gaussian distribution with mean 0, standard deviation 1, and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise). 
