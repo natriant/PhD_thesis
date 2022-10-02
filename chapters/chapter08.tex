@@ -157,11 +157,13 @@ The experiment was carried out on 16 May 2022, from 09:15 to 18:40. The steps ta
 The details and the results of the above mentioned steps will be presented in the following subsections.
 
 \subsection{Calibration of CC phase offset and voltage measurement}\label{subsec:cc_calibration_2022}
-In the experimental campaign of 2018, it was found that there was a phase offset 
+The first step in the CC experiment in 2022 was to measure the $\CC$ voltage and calibrate the phase offset. It is reminded that in the experimental campaign of 2018, it was found that there was a phase offset between the $\CC$ inspector phase\footnote{Inspector phase is the $\CC$ phase set by the $\CC$ operators.}, $\phi_\mathrm{CC, insp}$, and the phase experience by the beam (see Section~\ref{subsec:cc_phase_offset_2018}). Even though simulation studies showed that for the long bunches used in the $\CC$ experiments the $\CC$ phase has no significant impact on the phase noise induced emittance growth~\cite{wp4_triantafyllou_2020} an automated procedure was developed for identifying and correcting this phase offset for completeness. The same procedure provides the amplitude of the $\CC$ voltage too.
 
-The first step in the CC experiment was to calibrate its voltage and phase offset. The calibration took place following the procedure described in Section... at 270\,GeV and it lasted for about 15 minutes (start: $\sim$09:40, end: $\sim$09:52).
+To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the crabbing signal was acquired with the Head-Tail monitor and the $\CC$ voltage signal was reconstructed following the same procedure described in Section~\ref{subsec:CC_voltage_2018_measurement}. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022} (blue dots). 
+The three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$) is used to fit the measured data.
 
-To provide an overview, the calibration was performed by varying the inspector \textcolor{red}{(add here cross reference to chapter 4 where the term inspector is explained)} phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the crabbing signal was acquired with the HT monitor and the CC voltage signal was reconstructed. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022}.
+%The results are fitted with the three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$).
+
 
 \begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/HT_monitor_phase_CC_offset_calibration
    \centering         
@@ -170,7 +172,16 @@ To provide an overview, the calibration was performed by varying the inspector \
        \label{fig:Vcc_calibration_md_2022}
 \end{figure}
 
-From the beam based measurements with the HT monitor the voltage of CC1 was found to be 1.1\,MV, very close to the targeted one (1\,MV). The phase offset was found to be 12.21$^\circ$. For the rest of the experiment, inspector phase was set to the opposite of the phase offset so that the CC phase is zero.
+The results of the sinusoidal fit (blue dashed line) are illustrated in the legend box in Fig.~\ref{fig:Vcc_calibration_md_2022}. Hence, it can be concluded that from the beam based measurements with the Head-Tail monitor the phase offset was found to be 12.21$^\circ$. For the rest of the experiment, the inspector phase was set to the opposite of the phase offset so that the CC phase is zero. 
+
+From the fit the amplitude voltage of CC1 was found to be (following the discussion in Section~\ref{subsec:CC_voltage_2018_measurement}): $\CCvoltage=A \pm d = 1.1 \pm 0.1$\,MV, very close to the targeted one (1\,MV). This approach of measuring the $\CC$ voltage experienced by the beam is preferred over the approach used in 2018, since now multiple Head-Tail acquisitions are taken into account in contrary with the single acquisition used in 2018.
+
+
+%since now the amplitude is obtained from a sinusoidal fit over multiple Head-Tail acquisitions while in 2018, only one acquisition was used.
+
+
+For reference, the calibration for $\CC$1 took place at 270\,GeV and it lasted for about 15 minutes (start: $\sim$09:40, end: $\sim$09:52).
+
 
 Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However, the cavity tripped systematically due to issues associated with the change of the RF phase. Fixing this issue would have been time-consuming, and was not possible due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
