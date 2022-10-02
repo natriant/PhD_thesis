@@ -268,7 +268,7 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 %\textbf{Implementing amplitude and phase noise on the real CC element}\\
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
-The amplitude and phase noise in the real $\CC$ element are modeled as the following change of the vertical angle of each particle (following the implementation of the RFMultipole in Sixtracklib introdused in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
+The amplitude and phase noise in the real $\CC$ element are modeled as the following change of the vertical angle of each particle (modyfing Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
 
 %following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
 
@@ -281,7 +281,7 @@ The amplitude and phase noise in the real $\CC$ element are modeled as the follo
 %\begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
 %    \Delta y^\prime_{j} = \cos{\left ( (\phi_\mathrm{CC} + \Delta \phi_j \frac{180}{\pi}) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \Delta A_j)}{p_0 c},
 %\end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi_j$ is the deviation from the nominal phase (phase noise level), and $\Delta \CCvoltage_j$ is the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level) at the $j$th turn. 
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi_j$ is the deviation from the nominal phase (phase noise level), and $\Delta \CCvoltage_j$ is the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level) at the $j$th turn.
 
 In the following simulations (unless it is stated otherwise) the parameters $\Delta \phi_j$ and $\Delta \CCvoltage_j$ are the $j$th elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with mean 0 and standard deviation of $\sigma_{\Delta \phi}$ and  $\sigma_{\CCvoltage}$ respectively. The typical values that will be used in the following simulations for phase and amplitude noise respectively are: $\sigma_{\Delta \phi}=2.7 \times 10^{-3}$\,$\mathrm{rad^2}$ and $\sigma_{\CCvoltage}=10^{-8}$. 
 
