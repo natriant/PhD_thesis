@@ -45,13 +45,13 @@ On the grounds that the last three (out of four) bunches used in 2018 expereimen
 \end{table}
 % For bunch length: cernbox/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/visualise_pickle.ipynb
 
-The average bunch length (over all settings) was measured to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. The individual plots illustrating the evolution of the bunch length as measured with the Wall Current Monitor (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) during the experiment are presented in Appendix~\ref{sec:bunch_length_measurements_2022}. Finally, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression. This is important as it optimizies the experimental conditions to observe the impedance effects on the noise-induced emittance growth. \textcolor{red}{The last sentence needs to be refined. See comment from Any.}
+The average bunch length (over all settings) was measured to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. The individual plots illustrating the evolution of the bunch length as measured with the Wall Current Monitor (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) during the experiment are presented in Appendix~\ref{sec:bunch_length_measurements_2022}. Finally, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression. This is important as it optimizies the experimental conditions to observe the impedance effects on the noise-induced emittance growth. \textcolor{red}{The last sentence needs to be refined. See comment from Andy.}
 
 The intensity was set to $3 \times 10^{10}$ protons to be in agreement with the experiment of 2018. During the coasts of the 2022 experiment almost zero losses were observed. Therefore, the evolution of the intensity during the coasts will be not considered in the following.
 
 
 \textbf{CC RF noise}\\
-The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise. The noise excitation extended from DC up to 10\,kHz and thus the noise was applied on the first betatron sideband only, at $\sim$8\,kHz. The PSD values at $\sim$8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
+The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise. The noise excitation extended from DC up to 10\,kHz and thus the noise was applied on the first betatron sideband only, at $\sim$8\,kHz. The power spectral density values at $\sim$8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
 
 % I don't have the data to plot the spectra. Only screenshots in the logbook.
 
@@ -60,7 +60,7 @@ The noise injected in the $\CC$ RF system was again a mixture of phase and ampli
 % Note 2: Analysis and percentages: /2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_analysis_noise_scan_for_thesis.ipynb
 \begin{table}[!hbt]
 	\centering
-   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2022 along with the analytically expected growths. The listed noise values correspond to the PSD values at the first betatron sideband, $f_b$, at $\sim$8\,kHz. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns.}
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2022 along with the analytically expected growths. The listed noise values correspond to the power spectral density values at the first betatron sideband, $f_b$, at $\sim$8\,kHz. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns.}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m]}
 		&&&& \\[-6mm]
 		\toprule \toprule
@@ -84,7 +84,7 @@ The noise injected in the $\CC$ RF system was again a mixture of phase and ampli
 
 
 \textbf{CC1 instead of CC2}\\
-In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. The reason behind this is that during the phase offset scan performed for the calibration of the $\CC$ module (details on the procedure can be found in ... section in chapter 4 and  Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but fixing this problem would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
+In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. The reason behind this is that during the $\CC$ phase scan that was performed in 2022 to calibrate the $\CC$ phase offset (see Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but fixing this problem would have been time-consuming which was not an option due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
 
 \textbf{SPS Wire Scanners}\\
@@ -93,22 +93,22 @@ The emittance values were measured with the SPS Wire Scanners according to the p
 
 As explained erlier (see Section~\ref{subsec:sps_ws}) during each measurement with the wire scanners the beam profile is acquired two times as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the experiment of 2022, the OUT scan was performed just 200\,ms after the IN scan. However, it was observed that there are significant discrepancies between the measurements from IN and OUT scan, which in some cases reached up to 1\,$\mathrm{\mu m}$. By looking at the acquired profiles no reason was found to exclude or not one of the two scans. A significant effort was done with the wire scanner experts during the emittance growth experiment trying to mitigate this effect without success due to limitations on the hardware of the current instrument. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements since they appeared to have systematically less fluctuation than in the OUT scan.
 
-It is worth commenting that this issue was not observed in the 2018 measurements. A possible explanation is that the wire scanner acquisitions of 2022 provide lower number of points to reconstruct the bunch profiles (compare Figs.~\ref{fig:WS_example_V_profile} against~\ref{fig:WS_example_profiles_V_2022}) increasing the uncertainty of the obtained emittances. The reason behind this, is that between 2018 and 2022 the wire scanners had undergone an upgrade which increased their speed while crossing the bunch. A possible solution to this issue would be to reduce the speed of the wire for the emittance growth experiments in "coast" mode. This is currently in discussion with the team responsible for the wire scanners of the SPS.
+It is worth commenting that this issue was not observed in the 2018 measurements. A possible explanation is that the wire scanner acquisitions of 2022 provide lower number of points to reconstruct the bunch profiles (compare Figs.~\ref{fig:WS_example_V_profile} against~\ref{fig:WS_example_profiles_V_2022}) increasing the uncertainty of the obtained emittances. The reason behind this, is that between 2018 and 2022 the wire scanners had undergone an upgrade which increased their speed while crossing the bunch. A possible solution to this issue would be to reduce the speed of the wire for the emittance growth experiments in coast mode. This is currently in discussion with the team responsible for the wire scanners of the SPS.
 
 % Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
 
 Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the wire scanner measurements. For this reason, for the low $\CC$ noise levels, long measurement times of about 30-40 minutes were needed.
 
 
-\textbf{Head-Tail monitor calibration}\\
-From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the HT monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
+%\textbf{Head-Tail monitor calibration}\\
+%From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
 
-\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
-    \centering         
-    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
-        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in Ref.~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
-        \label{fig:HT_calibration_2022_levens}
- \end{figure}
+%\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+%    \centering         
+%    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
+%        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
+%        \label{fig:HT_calibration_2022_levens}
+% \end{figure}
 
 
 \subsection{Experiment preparation and procedure}\label{sec:cc_md_2022_preparation}
@@ -147,7 +147,7 @@ From Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}, we make th
 The experiment was carried out on 16 May 2022, from 09:15 to 18:40. The steps taken during the experimental study were the following:
 
 \begin{enumerate}
-   \item Calibration of the voltage and phase offset of the CC.
+   \item Calibration of the $\CC$ phase offset and voltage measurement.
    \item Measurement of the background growth rate in "coast" mode: CC is switched on but with no additional noise injected in its RF system and the Landau octupoles switched OFF.
    \item Measurement of the emittance growth with the Landau octupoles switched OFF and for four different $\CC$ noise levels as in 2018 (CC Experiment A). For each noise level a new bunch was injected.
    \item Measurement of the emittance growth for a selected noise level and varying octupole strength (CC Experiment B). For each octupole setting a new bunch was injected in the SPS.
@@ -157,6 +157,8 @@ The experiment was carried out on 16 May 2022, from 09:15 to 18:40. The steps ta
 The details and the results of the above mentioned steps will be presented in the following subsections.
 
 \subsection{Calibration of CC phase offset and voltage measurement}\label{subsec:cc_calibration_2022}
+In the experimental campaign of 2018, it was found that there was a phase offset 
+
 The first step in the CC experiment was to calibrate its voltage and phase offset. The calibration took place following the procedure described in Section... at 270\,GeV and it lasted for about 15 minutes (start: $\sim$09:40, end: $\sim$09:52).
 
 To provide an overview, the calibration was performed by varying the inspector \textcolor{red}{(add here cross reference to chapter 4 where the term inspector is explained)} phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the crabbing signal was acquired with the HT monitor and the CC voltage signal was reconstructed. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022}.

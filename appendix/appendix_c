@@ -177,6 +177,17 @@ The measured data points (light blue) are fitted with a four-parameter gaussian 
         \label{fig:WS_example_profiles_V_2022}
  \end{figure}
 
+
+\section{Head-Tail monitor calibration for the 2022 analysis}\label{sec:HT_calibration_2022}
+From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
+
+\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+    \centering         
+    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
+        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
+        \label{fig:HT_calibration_2022_levens}
+ \end{figure}
+
  \section{Bunch length measurements in 2022}\label{sec:bunch_length_measurements_2022}
 In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
 
