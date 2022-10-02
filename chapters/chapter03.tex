@@ -71,11 +71,16 @@ The Mastoridis--Baudrenghien model is also applicable to the SPS (where the same
 
 \subsection{Crab Cavity amplitude and phase noise}\label{subsec:AN_PN}
 The unperturbed instantaneous $\CC$ voltage equals the one of an ideal oscillator:
+\begin{equation}\label{eq:CC_voltage_t_phase}
+    V_\mathrm{CC}(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t + \phi_\mathrm{CC} \right )},
+\end{equation}
+where $\CCvoltage$ is the peak amplitude of the $\CC$ voltage, $\CCfrequency$ the $\CC$ frequency, and $\phi_\mathrm{CC}$ the $\CC$ phase. The folllowing analyisis, will consider $\phi_\mathrm{CC}=0^\circ$ as this is the case for the most of the studies presented in this thesis unless it is stated otherwise. To this end the above equation becomes: 
+
 \begin{equation}\label{eq:CC_voltage_t}
     V_\mathrm{CC}(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t \right )},
 \end{equation}
 
-where $\CCvoltage$ is the peak amplitude of the $\CC$ voltage and $\CCfrequency$ the $\CC$ frequency. Equation~\eqref{eq:CC_voltage_t} can be re-written as a function of the longitudinal position within the bunch $z$ instead of time $z$ as follows:
+Equation~\eqref{eq:CC_voltage_t} can be re-written as a function of the longitudinal position within the bunch $z$ instead of time $z$ as follows:
 \begin{equation}\label{eq:CC_voltage_z}
     V_\mathrm{CC}(z) = \CCvoltage \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z \right )},
 \end{equation}
