@@ -240,7 +240,7 @@ The first emittance growth simulations were performed for the beam and machine c
 
 As mentioned in Chapter~\ref{Ch:2018_analyisis} the Landau octupoles were switched off during the 2018 $\CC$ experiment. Nevertheless, a residual non-linearity was present in the machine mainly due to multiple components in the dipole magnets~\cite{Carlà:2664976, Alekou:2640326}. The rms tune spread in the vertical plane from these non-linearities is computed at $\sim$2-3 $\times 10^{-4}$. In order to reproduce this tune spread value in the simualtions, the vertical amplitude detuning coefficient was set at $\alpha_{yy}$ = 2000/m. For simplicity, the horizontal and cross-term coefficient were both zero, $\alpha_{xx}=\alpha_{yx}$ = 0.
 
-$\CC$ phase noise was applied as it was the dominant type of noise in the 2018 experiment, with power spectral density of $1.68 \times 10^{-10} \mathrm{rad^2/Hz}$ which corresponds to $A=10^{-8}$ for the scaling factor of Eq.~\eqref{eq:phase_noise_kick}. For this noise power a growth rate of about 25\,nm/s is expected (exciting the first betatron sidebands at $\pm$7.8~\,kHz, see further discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}). 
+$\CC$ phase noise was applied as it was the dominant type of noise in the 2018 experiment, with power spectral density of $1.68 \times 10^{-10} \mathrm{rad^2/Hz}$ which corresponds to a total noise power of $\sigma_{\Delta \phi}=7.3\times 10^{-6}$\,$\mathrm{rad^2}$. For this noise power a growth rate of about 25\,nm/s is expected (exciting the first betatron sidebands at $\pm$7.8~\,kHz, see further discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}). 
 
 The geometric emittance value was computed every 100 turns (for computational efficiency) using the statistical definition which can be found in Eq.~\eqref{eq:geometric_emittance_v2}. The emittance growth rate was computed by performing a linear fit to the normalised 
 %(using Eq.~\eqref{eq:normalised_emittance})
@@ -288,7 +288,7 @@ Figure~\ref{fig:MD_2018_impedance_simulations} also shows a clear suppression of
 
 
 \subsection{Amplitude noise}\label{subsec:amplitude_noise}
-The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with power spectral density of $1.68 \times 10^{-10}$/Hz which corresponds to $A=10^{-8}$ for the scaling factor in Eq.~\eqref{eq:amplitude_noise_kick}. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in Fig.~\ref{fig:study_1_2018_paramters_AN}.
+The simulations discussed here were performed with and without the SPS imepdance model in the presence of $\CC$ RF amplitude noise, with total power of $\sigma_{\Delta A}^2=7.3\times 10^{-6}$ which correspnds to power spectral density of $1.68 \times 10^{-10}$/Hz. The amplitude of the amplitude noise kicks equals the one of the phase noise kicks used in the previous section. The results are shown in Fig.~\ref{fig:study_1_2018_paramters_AN}.
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
@@ -302,7 +302,7 @@ The simulations discussed here were performed with and without the SPS imepdance
 \subsection{CC RF noise at 200\,MHz}\label{subsec:fcc_200MHz}
  The study described in the previous section was repeated for $\CC$ RF noise kick at 200\,MHz, i.e. $\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}). The main reason for this study is that in that case in the presence of phase (amplitude) noise the headtail mode 0 (1) is more dominant than in the case of RF noise at 400\,MHz. Additionally, this is also similar to the HL-LHC scenario where the main RF system and the $\CC$s will operate at the same frequency ($f_\mathrm{CC}=f_\mathrm{RF, HL-LHC}$=400\,MHz).
 
-The simulations were performed with and without wakefield kicks, in the presence of both amplitude and phase noise with power spectral density of $1.21 \times 10^{-10} \mathrm{rad^2/Hz}$ (A=$10^{-8}\sqrt{0.72}$) and $3.06 \times 10^{-10} \mathrm{/Hz}$ (A=$10^{-8}\sqrt{1.82}$) respectively. The noise strength was scaled so that it results in $\sim$ 25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
+The simulations were performed with and without wakefield kicks, in the presence of both amplitude and phase noise with power spectral density of $1.21 \times 10^{-10} \mathrm{rad^2/Hz}$ ($\sigma_{\Delta A}^2=7.3 \times 10^{-6} \times 0.72$) and $3.06 \times 10^{-10} \mathrm{/Hz}$ ($\sigma_{\Delta \phi}^2=7.3 \times 10^{-6} \times 1.82$) respectively. The noise strength was scaled so that it results in $\sim$ 25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
 
 The PyHEADTAIL simulation results are summarised in Fig.~\ref{fig:CC_200MHz_amplitude_phase_noise}. The first plot (left) displays the amplitude detuning dependent emittance growth in the presence of amplitude noise while the second plot (right) shows the emittance growth in the presence of phase noise. 
 
