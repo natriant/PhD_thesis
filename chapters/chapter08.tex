@@ -526,6 +526,7 @@ The emittance growth induced by the above mentioned RF noise was measured for fi
 
 Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22} shows the measured horizontal (blue) and vertical (red) emittance growth as a function of octupole strength. The error bars show the error of the linear fir on the evolution of the emittance values during each setting. The background emittance growth measured without artificial noise injected in the CC1 is subtracted from the measured values. The black dashed horizontal line shows the theoretically predicted emittance growth from the Mastoridis--Baudrenghien model which does not include impedance induced effects.
 
+% Plotting script: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/ws_emittance_growth/analysis_for_uppsala/cc_md_12Sep22.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/summary_md_12sep22_x_vs_y_backg_subtracted.png}
@@ -539,8 +540,18 @@ Furthermore, the vertical emittance growth for $k_\mathrm{LOD}=-10$\,$\mathrm{/m
 
 Finally, it is evident tha the emittance growth in the horizontal plane increases for larger octupole strength (in absolute value). Possible sources are the residual coupling between the transverse planes and the operation of the Landau octupoles. However, the precise source of the growth in the horizontal plane is not yet identified and further dedicated measurements are needed to provide conclusive outcome on the source of the horizontal emittance growth.
 
-\textbf{Plotting along with the measurements of May 2022}\\
+\textbf{Comparison of measurements against PyHEADTAIL simualations with the SPS impedance model}\\
+Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} compares the vertical emittance growth with the simulation results from PyHEADTAIL
 In this section
+
+% plotting script: /eos/user/n/natriant/pyheadtail_data/final_for_thesis/2022_conditions/CC1/normalised_growth_vs_measurements/job0010b_plot_loadFromPickles_dey_scanOverAyy_NowakesVSwakes-octupoleSettings-Noconstraintaxy_plot_normalised.ipynb
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/deyRates_sps_270GeV_PN1e-8_400MHz_SPS_NewWakesAllcontributions_appendWakes_y-plane_WakesONvsOFF_QpxQpy1_6D_Nb5e5_intensity3e10Scan_simulations_vs_measurements_magenta_new_legend_IPAC22_May_and_September_2022_for_thesis.png}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise injected in the RF system of CC1 for different octupole settings. }
+       \label{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22}
+\end{figure}
+
 
 \subsection{Emittance growth measurements with dominant amplitude noise}
 
