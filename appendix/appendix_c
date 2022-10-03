@@ -192,7 +192,7 @@ From the end of 2018 till the end of 2020, the CERN accelerator complex has unde
 In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
 
 \subsection{Measurements during the experiment where the scan on the noise levels was performed}
-Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different levels of phase noise injected in the CC RF system increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_noise_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values.
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on May 16, 2022, for the four different levels of phase noise injected in the CC RF system increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_noise_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values.
 
 % Scripting plot: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
 \begin{figure}[htp]
@@ -221,13 +221,13 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates t
             \caption{-100.1\,dBc/Hz}
             %\label{fig:cc_md_2022_coast5}
     \end{subfigure}
-    \caption{Evolution of the rms bunch length during the CC experiment on May 16, 2022. The different phase noise levels injected in the RF system of CC1, are displayed at the captions of each plot.}
+    \caption{Evolution of the bunch length during the CC experiment on May 16, 2022. The different phase noise levels injected in the RF system of CC1, are displayed at the captions of each plot.}
     \label{fig:cc_md_2022_overview_plots_noise_scan_bunch_length}
  \end{figure}
  
 
  \subsection{Measurements during the experiment where the scan on the octupole strength was performed}
-Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on the 16th of May, 2022, for the four different octupole strengths used during the $\CC$ MD increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on May 16, 2022, for the four different octupole strengths used during the $\CC$ MD increasing from the top left to bottom right. This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. The values correspond to the mean of .. while the error bars to the standard deviation between these values
  
 % Scripting plot: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
  \begin{figure}[htp]
@@ -256,12 +256,12 @@ Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates t
             \caption{$k_\mathrm{LOD}=-5 \mathrm{/m^{4}}$}
             %\label{fig:cc_md_2022_coast9}
     \end{subfigure}
-    \caption{Evolution of the rms bunch length during the CC experiment on May 16, 2022. The different octupole settings are displayed at the captions of each plot.}
+    \caption{Evolution of the bunch length during the CC experiment on May 16, 2022. The different octupole settings are displayed at the captions of each plot.}
     \label{fig:cc_md_2022_overview_plots_klod_scan_bunch_length}
  \end{figure}
 
 
-The average rms measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.83\,ns. 
+The average measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.83\,ns. 
 
 
 \section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
@@ -360,36 +360,36 @@ The individual measurements of the transverse emittance evolution for each octup
     \begin{subfigure}{.45\textwidth}
         \centering
         \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast6.png}  
-        \caption{$k_\mathrm{LOD}=-30 \ \mathrm{/m^{4}}$}
+        \caption{$k_\mathrm{LOD}=-30 \mathrm{/m^{4}}$}
         %\label{fig:cc_md_2022_coast6}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
         \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast7.png}  
-        \caption{$k_\mathrm{LOD}=-20 \ \mathrm{1/m^{4}}$}
+        \caption{$k_\mathrm{LOD}=-20 \mathrm{/m^{4}}$}
         %\label{fig:cc_md_2022_coast7}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
         \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast8.png}  
-        \caption{$k_\mathrm{LOD}=-10 \ \mathrm{1/m^{4}}$}
+        \caption{$k_\mathrm{LOD}=-10 \mathrm{/m^{4}}$}
         %\label{fig:cc_md_2022_coast8}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
             \centering
             \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast9.png}  
-            \caption{$k_\mathrm{LOD}=+30 \ \mathrm{1/m^{4}}$}
+            \caption{$k_\mathrm{LOD}=+30 \mathrm{/m^{4}}$}
             %\label{fig:cc_md_2022_coast9}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
         \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast11.png}  
-        \caption{$k_\mathrm{LOD}=+10 \ \mathrm{1/m^{4}}$}
+        \caption{$k_\mathrm{LOD}=+10  \mathrm{/m^{4}}$}
         %\label{fig:cc_md_2022_coast9}
 \end{subfigure}
-    \caption{Evolution of the rms bunch length during the CC experiment on May 16, 2022. The different octupole settings are displayed at the captions of each plot.}
+    \caption{Evolution of the bunch length during the CC experiment on September 12, 2022. The different octupole settings are displayed at the captions of each plot.}
     \label{fig:cc_md_sep_2022_overview_plots_klod_scan_bunch_length}
  \end{figure}
 
 
-The average rms measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.77\,ns. 
+The average measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.77\,ns. 
