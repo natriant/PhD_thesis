@@ -172,7 +172,8 @@ The three-parameter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provi
        \label{fig:Vcc_calibration_md_2022}
 \end{figure}
 
-The results of the sinusoidal fit (blue dashed line) are illustrated in the legend box in Fig.~\ref{fig:Vcc_calibration_md_2022}. Hence, it can be concluded that from the beam based measurements with the Head-Tail monitor the phase offset was found to be 12.21$^\circ$. For the rest of the experiment, the inspector phase was set to the opposite of the phase offset so that the CC phase is zero. 
+The results of the sinusoidal fit (blue dashed line) are illustrated in the legend box in Fig.~\ref{fig:Vcc_calibration_md_2022}. Hence, it can be concluded that from the beam based measurements with the Head-Tail monitor the phase offset was found to be 12.21$^\circ$. For the rest of the experiment, the inspector phase was set to the opposite of the phase offset so that the phase of the $\CC$ voltage experienced by the bunch is zero. 
+
 
 From the fit the amplitude voltage of CC1 was found to be (following the discussion in Section~\ref{subsec:CC_voltage_2018_measurement}): $\CCvoltage=A \pm d = 1.1 \pm 0.1$\,MV, very close to the targeted one (1\,MV). This approach of measuring the $\CC$ voltage experienced by the beam is preferred over the approach used in 2018, since now multiple Head-Tail acquisitions are taken into account in contrary with the single acquisition used in 2018.  
 
@@ -180,7 +181,6 @@ From the fit the amplitude voltage of CC1 was found to be (following the discuss
 %since now the amplitude is obtained from a sinusoidal fit over multiple Head-Tail acquisitions while in 2018, only one acquisition was used.
 
 For reference, the calibration for $\CC$1 took place at 270\,GeV and it lasted for about 15 minutes (start: $\sim$09:40, end: $\sim$09:52).
-
 
 Between $\sim$11:39 and $\sim$11:45 the same scan for CC2 was attempted. However, the cavity tripped systematically due to issues associated with the change of the RF phase. Fixing this issue would have been time-consuming, and was not possible due to the very limited machine time of the MD. Therefore, for the measurements in 2022 $\CC$1 was used.
 % CC2 tripped: see the entry of the logbook 4/5/2022, at 11:30:30 
@@ -301,7 +301,6 @@ The results from $\CC$ Experiment A showed that:
    \item The measured growth rates were found to be systematically lower than the analytically expected values. This observation is in accordance with the experimental observations of the 2018 campaign and validates the reproducibility of the experiment. 
    \item The discrepancy between measured and theoretically expected values was found to be about a factor of 4, which is close to the suppression factor of 3 which is expected from the PyHEADTAIL simulations with impedance (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current} for $k_\mathrm{LOD}=0$).
 \end{itemize}
-
 
 
 \subsection{Results of CC Experiment B: sensitivity of emittance growth rates to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
@@ -492,7 +491,7 @@ The emittance growth measurements described in this section, were performed in c
 
 
 \subsection{Calibration of CC phase offset and voltage measurments}
-The CC calibration and the measurement of the $\CC$ voltage amplitude were performed following the procedure described in Section~\ref{subsec:cc_calibration_2022}. The results from the inspector phase scan of $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_sep2022}.
+The $\CC$ calibration and the measurement of the $\CC$ voltage amplitude were performed following the procedure described in Section~\ref{subsec:cc_calibration_2022}. The results from the inspector phase scan of $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_sep2022} (blue dots).
 
 \begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/HT_monitor/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png
    \centering         
@@ -501,6 +500,9 @@ The CC calibration and the measurement of the $\CC$ voltage amplitude were perfo
        \label{fig:Vcc_calibration_md_sep2022}
 \end{figure}
 
+The results of the sinusoidal fit of Eq.~\eqref{eq:sin_fit_cc} (blue dashed line) are given in the legend box of Fig.~\ref{fig:Vcc_calibration_md_sep2022}. From the beam-based measurements with the Head-Tail monitor the phase offset of $\CC$1 was found to be -1.54$^\circ$. For the rest of the experiment the inspector phase was set to +1.54$^\circ$ so that the phase of the $\CC$ voltage experienced by the bunch is zero. 
+
+Tha amplitude of the $\CC$1 voltage was measured to be: $\CCvoltage=A \pm d = 1.05 \pm 0.02$\,MV very close to the targeted one of 1\,MV.
 
 
 \subsection{Emittance growth measurements with strong octupoles}
