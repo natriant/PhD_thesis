@@ -60,7 +60,7 @@ The noise injected in the $\CC$ RF system was again a mixture of phase and ampli
 % Note 2: Analysis and percentages: /2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_analysis_noise_scan_for_thesis.ipynb
 \begin{table}[!hbt]
 	\centering
-   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2022 along with the analytically expected growths. The listed noise values correspond to the power spectral density values at the first betatron sideband, $f_b$, at $\sim$8\,kHz. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns.}
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the emittance growth studies of 2022 along with the analytically expected growths. The listed noise values correspond to the power spectral density values at the first betatron sideband, $f_b$, at $\sim$8\,kHz. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns and the measured amplitude of CC voltage, $V_\mathrm{CC,0}$=1.1\,MV.}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m]}
 		&&&& \\[-6mm]
 		\toprule \toprule
@@ -516,11 +516,13 @@ After the calibration of CC1, the coast at 270\,GeV was set up for the emittance
        \label{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}
 \end{figure}
 
-The background emittance growth rate was found to be faster than in May 16, 2022 (see Fig.~\ref{fig:cc_md_2022_background_growth_in_scan}). A possible explanation is that some growth in the transverse emittance could be driven by the operation of the Landau octupoles. Some detailed and careful investigation is required to identify the precise cause. However, due to the limited machine time, this issue should be addressed in future studies. Nevertheless, the background emittance growth is very small compared to the noise-induced emittance growth. Therefore, the non-precise knowledge of the background emittance growth does not affect the conclusions drawn from these studies. 
+The background emittance growth was found to be faster than in May 16, 2022 (see Fig.~\ref{fig:cc_md_2022_background_growth_in_scan}). A possible explanation is that some growth in the transverse emittance could be driven by the operation of the Landau octupoles. Some detailed and careful investigation is required to identify the precise cause. However, due to the limited machine time, this issue should be addressed in future studies. Nevertheless, the background emittance growth is very small compared to the noise-induced emittance growth. Therefore, the non-precise knowledge of the background emittance growth does not affect the conclusions drawn from these studies. 
 
 
 \subsection{Emittance growth measurements with strong octupoles}
-For the experiment artificial noise was injected in the RF system of $\CC1$
+For the experiment artificial noise was injected in the RF system of $\CC1$. The noise was a mixture of both phase and amplitude noise with the phase noise being dominant. In particular, the amplitude and phase noise level at the betatron frequency were measured at -123.3\,dBc/Hz and -103.3\,dBc/Hz (slightly stronger than the phase noise used in the May experiment) respectively. From the Mastoridis--Baudrenghien model these noise levels are expected to result to a vertical emittance growth of $0.24$\,$\mathrm{\mu m/h}$ and 28.41\,$\mathrm{\mu m/h}$ respectively. These rates are computed for $\CCvoltage=1.05$\,MV and $4\sigma_t=1.77$\,ns. It is evident that the contribution of the amplitude noise to the total emittance growth is negligible hence it will not be considered in the analyisis presented in this section.
+
+The emittance growth induced by the above mentioned RF noise was measured for five different octupole strengths, $k_\mathrm{LOD}=\pm 30, \pm 10$\,$\mathrm{/m^4}$ and $-20$\,$\mathrm{/m^4}$. The octupole strengths $| k_\mathrm{LOD} | \geq 20$ are expected to restore the emittance growth rate to the values predicted by the Mastoridis--Baudrenghien model. For each octupole strength the bunch evolution was recorded for about 15-30 minures by acquiring the emittance with repeated Wire Scanner measurements and then performing a linear fit on the emittance values. For the measurements of each setting a fresh bunch was used so that the initial conditions each time were as close as possible.
 
 
 \subsection{Emittance growth measurements with dominant amplitude noise}

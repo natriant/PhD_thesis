@@ -323,7 +323,7 @@ The individual measurements of the transverse emittance evolution for each octup
     \begin{subfigure}{.45\textwidth}
         \centering
         \includegraphics[width=.95\linewidth]{images/app_c/cc_md_12sep22_coast6.png}  
-        \caption{$k_\mathrm{LOD}=-30 \mathrm{1/m^{4}}$}
+        \caption{$k_\mathrm{LOD}=-30 \mathrm{/m^{4}}$}
     \end{subfigure}
     \begin{subfigure}{.45\textwidth}
         \centering
