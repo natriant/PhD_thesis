@@ -160,7 +160,7 @@ The details and the results of the above mentioned steps will be presented in th
 The first step in the CC experiment in 2022 was to measure the $\CC$ voltage and calibrate the phase offset. It is reminded that in the experimental campaign of 2018, it was found that there was a phase offset between the $\CC$ inspector phase\footnote{Inspector phase is the $\CC$ phase set by the $\CC$ operators.} and the phase experience by the beam (see Section~\ref{subsec:cc_phase_offset_2018}). Even though simulation studies showed that for the long bunches used in the $\CC$ experiments the $\CC$ phase has no significant impact on the phase noise induced emittance growth~\cite{wp4_triantafyllou_2020} an automated procedure was developed for identifying and correcting this phase offset for completeness. The same procedure can also provide the amplitude of the $\CC$ voltage.
 
 To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the crabbing signal was acquired with the Head-Tail monitor and the $\CC$ voltage signal was reconstructed following the same procedure described in Section~\ref{subsec:CC_voltage_2018_measurement}\footnote{It is worth mentioning here that from the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor which provides the normalisation factor that converts the measured intra bunch offset from arbitrary units to millimeters (more details in Appendix~\ref{subsec:HT_post_process_CC}) was repeated. The calibration factor for the Head-Tail monitor was measured to be 0.1037 in 2021(see Appendix~\ref{sec:HT_calibration_2022}).}. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, was plotted as a function of the corresponding inspector phase. The results of the inspector phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022} (blue dots). 
-The three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$) is used to fit the measured data.
+The three-parameter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$) is used to fit the measured data.
 
 %The results are fitted with the three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$).
 
@@ -168,7 +168,7 @@ The three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provid
 \begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/HT_monitor_phase_CC_offset_calibration
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png}
-       \caption{Calibration plot for the CC1 as obtained during the experiment on 16 May 2022, displaying the CC voltage at the center of the cavity $t=0$ for different values of the inspector phase.}
+       \caption{Calibration plot for the CC1 as obtained during the experiment on 16 May 2022, displaying the CC voltage at the center of the bunch $t=0$ for different values of the inspector phase.}
        \label{fig:Vcc_calibration_md_2022}
 \end{figure}
 
@@ -488,10 +488,19 @@ This theory supports the studies presented in this thesis. It also explains the 
 Due to the very promising results of the experiments that took place in May 2022 some additional machine time ($\sim$ 12 hours) was allocated for emittance growth measurements with $\CC$ RF noise on 12 September, 2022. The objective of this new round of measurements was to investigate the vertical emittance growth in the presence of $\CC$ RF phase noise and strong octupoles $|k_\mathrm{LOD} | > 20$\,$\mathrm{/m^4}$ for which the suppression mechanism is expected to be disabled (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}).
 
 \subsection{Experimental setup}
-The emittance growth measurements described in this section, were performed in coast mode at 270\,GeV following the same set up as in the May 2022 experiment and very similar machine and beam conditions. An overview of the paramters can be found in Table~\ref{tab:machine_beam_param_2022}. The only updated parameters were the linear chromaticity and the bunch length. In particular, the linear chromaticity was corrected to $Q^\prime_{x,y}=0.65$ in both transverse planes to ensure the coherent stability of the bunch even for large negative octupole strengths\footnote{It is reminded, that the occurance of horizontal coherent instabilities was a limiting factor in the emittance growth measurements that took place in May 2022, due to the almost zero values of linear chromaticity.}. The average bunch length (over all settings) was measured to be $4\sigma_t=1.77$\,ns. The individual plots illustrating the evolution of the bunch length for each setting during the expereiment are presented in Appendix~\ref{sec:bunch_length_measurements_sep_2022}.
+The emittance growth measurements described in this section, were performed in coast mode at 270\,GeV following the same procedure with the May 2022 experiment and very similar machine and beam conditions. An overview of the paramters can be found in Table~\ref{tab:machine_beam_param_2022}. The only updated parameters were the linear chromaticity and the bunch length. In particular, the linear chromaticity was corrected to $Q^\prime_{x,y}=0.65$ in both transverse planes to ensure the coherent stability of the bunch even for large negative octupole strengths\footnote{It is reminded, that the occurance of horizontal coherent instabilities was a limiting factor in the emittance growth measurements that took place in May 2022, due to the almost zero values of linear chromaticity.}. The average bunch length (over all settings) was measured to be $4\sigma_t=1.77$\,ns. The individual plots illustrating the evolution of the bunch length for each setting during the expereiment are presented in Appendix~\ref{sec:bunch_length_measurements_sep_2022}.
 
 
 \subsection{Calibration of CC phase offset and voltage measurments}
+The CC calibration and the measurement of the $\CC$ voltage amplitude were performed following the procedure described in Section~\ref{subsec:cc_calibration_2022}. The results from the inspector phase scan of $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_sep2022}.
+
+\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/HT_monitor/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis_sep22.png}
+       \caption{Calibration plot for the CC1 as obtained during the experiment on September 12, 2022, displaying the CC voltage at the center of the bunch $t=0$ for different values of the inspector phase.}
+       \label{fig:Vcc_calibration_md_sep2022}
+\end{figure}
+
 
 
 \subsection{Emittance growth measurements with strong octupoles}
