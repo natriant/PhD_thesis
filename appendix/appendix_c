@@ -311,7 +311,7 @@ The individual measurements of the transverse emittance evolution for each octup
     \label{fig:dipole_noise_md_2022_overview_plots_klod_scan}
  \end{figure}
  
- \section{Transverse emittance growth measurements with CC RF noise - September 12, 2022}\label{sec:emit_growth_cc_md_2022}
+ \section{Transverse emittance growth measurements with CC RF noise - September 12, 2022}\label{sec:emit_growth_cc_md_sep2022}
  The individual measurements of the transverse emittance evolution for each octupole setting during the experiment with $\CC$ RF noise that took place on September 12, 2022 (see Section~\ref{sec:cc_md_Sep2022}) are illustrated in Fig.~\ref{fig:cc_md_12sep2022_overview_plots_klod_scan}. The subplots are plotted in chronological order.
  
  The measurements were conducted with artifical noise injected in the $\CC$ RF system which was a mixture of amplitude and phase noise. The phase noise was always dominant. The amplitude and phase noise level at the betatron frequency were measured to be -123.3\,dBc/Hz and -103.3\,dBc/Hz respectively. %The measurements were done with a spectrum analyzer connected directly to the $\CC$ antena.
