@@ -155,26 +155,28 @@ Figures~\ref{fig:amplitude_noise} and~\ref{fig:phase_noise} show schematically t
         \label{fig:phase_noise}
  \end{figure}
 
- Finally, it is worth mentioning, that for the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$ respectively. The variances,  $\sigma_{\Delta A}^2$ and  $\sigma_{\Delta \phi}^2$ equal the total noise power (see Appendix~\ref{app:discrete_time_analysis} for definitions). % sampled by the beam, as also written here: https://www.osti.gov/servlets/purl/1846026 
+For the LHC, HL-LHC and SPS $\CC$s the amplitude and phase RF noise are represented by white noise spectra. In that case, they can be considered as a sequence of uncorrelated random variables taken from a Gaussian distribution with zero mean and standard deviation $\sigma_{\Delta A}$ and  $\sigma_{\Delta \phi}$, respectively. The variances,  $\sigma_{\Delta A}^2$ and  $\sigma_{\Delta \phi}^2$ equal the total noise power (see Appendix~\ref{app:discrete_time_analysis} for definitions). % sampled by the beam, as also written here: https://www.osti.gov/servlets/purl/1846026 
 
 \subsection{Emittance growth formulas}\label{subsec:CC_emit_growth_theoretical_formulas}
-As already mentioned, the theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in Ref.~\cite{PhysRevSTAB.18.101001}. The derivation assumes: single bunch crossing the crab cavity with zero phase at $z=0$; no horizontal-vertical coupling; constant energy (no acceleration). The noise kicks are represented as a stochastic process with uniform spectrum across the betatron tune distribution.
+The theoretical formalism for predicting the transverse emittance growth in the presence of $\CC$ RF amplitude and phase noise was derived in~\cite{PhysRevSTAB.18.101001}. The derivation assumes a single bunch is crossing the crab cavity and the phase of the CC is set such that the zero-crossing of the voltage coincides with the longitudinal centre of the bunch, as well as no coupling between the transverse planes and constant energy (no acceleration).
+
+The noise kicks are represented as a stochastic process with uniform spectrum across the betatron tune distribution.
 
 %a single bunch, that the noise kicks are represented by a stochastic process, zero coupling between the horizontal and vertical plane, the beam energy is constant (no acceleration) and, $\CC$ RF zero phase is at the center of the bunch, $z=0$ and a uniform noise spectrum across the betatron tune distribution which is also symmetric in negative and positive frequencies. 
 % One more assumption that I didn't write Inthe analysis presented in this work, the density function is independent of time (paper of themis and philippe p.2) i didn't write it in the assumption.
 
-Taking these conditions into account, the emittance growth resulting from amplitude noise is estimated from:
+Taking these conditions into account, the emittance growth resulting from amplitude noise is derived as~\cite{PhysRevSTAB.18.101001}:
 \begin{equation}\label{eq:dey_an}
     \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \beta_{u, \mathrm{CC}} \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! \sum_{k=-\infty}^{+\infty} S_{\Delta A}[(k \pm \widebar{q}_u \pm \widebar{q}_s)\frev].
 \end{equation}
-For phase noise, the emittance growth is estimated from:
+For phase noise, the emittance growth is derived as~\cite{PhysRevSTAB.18.101001}:
 \begin{equation}\label{eq:dey_pn}
     \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = \beta_{u, \mathrm{CC}}  \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \sum_{k=-\infty}^{+\infty} S_{\Delta \phi}[(k \pm \widebar{q}_u) \frev].
 \end{equation}
-In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} where $q_u, q_s$ (with lower case) denote the fractional part of the betatron and synchrotron tunes respectively. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. In particular, $k \in \mathbb{Z}$ is the harmonic number of the revolution frequency and the $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands at each multiple of the revolution frequency, $k f_\mathrm{rev}$.%, from the betatron tune.
+In these formulas, which are valid for both transverse planes as $u=(x,y)$, $\beta_{u, \mathrm{CC}}$ is the transverse beta function at the location of the CC, $\CCvoltage$ the CC voltage, $\frev$ the revolution frequency of the beam, $E_b$ the beam energy, and $\widebar{q}_u$ and $\widebar{q}_s$ the mean of the betatron and synchrotron tune distribution \footnote{For white noise spectra the effect of noise is independent of the actual tune distribution, hence the use of the mean quantities. The generic formulas can be found in Ref.~\cite{PhysRevSTAB.18.101001}} where $q_u, q_s$ (with lower case) denote the fractional part of the betatron and synchrotron tunes, respectively. $S_{\Delta A}$ and $S_{\Delta \phi}$ are the power spectral densities (PSD) of the noise at all the betatron and synchrobetatron (for the amplitude noise case) sidebands and they are expressed in units of Hz$^{-1}$ and rad$^2$Hz$^{-1}$, respectively. In particular, $k \in \mathbb{Z}$ is the harmonic number of the revolution frequency and the $\pm$ signs refer to the upper $(+)$ and lower $(-)$ sidebands at each multiple of the revolution frequency, $k f_\mathrm{rev}$.%, from the betatron tune.
 
 The definition of the power spectral density along with the fundamental terminology for the signal-processing can be found in Appendix~\ref{ch:app_B}. %\footnote{In the Appendix amplitude and phase noise are noted with just $\alpha$ and $\phi$, instead of $\Delta A$ and $\Delta \phi$, for simplicity.}. 
-As all the studies presented in this thesis, are done with white noise the power spectral densities can be computed using Eqs.~\eqref{eq:psd_for_white_noise_variance_AN} and~\eqref{eq:psd_for_white_noise_variance_PN} introduced earlier.
+As all the studies presented in this thesis are done with white noise, the power spectral densities can be computed using Eqs.~\eqref{eq:psd_for_white_noise_variance_AN} and~\eqref{eq:psd_for_white_noise_variance_PN}.
 
 
 The terms $C_{\Delta A}$ and $C_{\Delta \phi}$ are correction terms to account for the bunch length:
@@ -184,7 +186,7 @@ C_{\Delta \phi}(\sigma_{\phi}) = ~& e^{-\sigma_{\phi}^2} \left[I_0(\sigma_{\phi}
 \end{align}
 with $\sigma_{\phi}$ the rms bunch length, in radians, with respect to the CC frequency $\CCfrequency$, and $I_n(x)$ the modified Bessel function of the first kind. 
 
-Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase (right) noise. The SPS nominal bunch length used in the CC tests is shown as an orange dot for reference.
+Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term for different values of bunch length for amplitude (left) and phase noise  (right). The SPS nominal bunch length used in the CC tests is indicated by an orange dot for reference.
 
 % Figures created using the following script: natriant/cernbox/Project_thesis/plot_bunch_length_correction_term
 \begin{figure}[!ht]
@@ -210,7 +212,8 @@ Figure~\ref{fig:correction_term_bunch_length} illustrates the correction term fo
 \textbf{Comment on the use of the emittane growth formulas}\\
 Here some additional comments on the use of the Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} for predicting the emittance growth rate for both measurements and simulation studies of this thesis are made to facilitate the discussion in the following chapters.
 
-In this thesis, the emittance growth in the vertical plane is addressed. The reason is that for both experimental campaigns that took place in 2018 and 2022, the $\CC$ module (DQW) that was available provided a vertical deflection on the beam. For reference, the $\CC$ module which provides horizontal deflection (RFD) is planned to be available by the end of 2022. Additionally the studies were performed for the SPS machine for which the parameters are listed in Table~\ref{tab:machine_beam_param_2018}: $q_y=0.18$, $f_\mathrm{rev}=43.38$\,kHz, and $q_s=0.0051$. 
+In this thesis, the emittance growth in the vertical plane is addressed. The reason is that for both experimental campaigns that took place in 2018 and 2022, the $\CC$ module (DQW) that was available provided a vertical deflection on the beam. Additionally the studies were performed for the SPS machine for which the parameters are listed in Table~\ref{tab:machine_beam_param_2018}: $q_y=0.18$, $f_\mathrm{rev}=43.38$\,kHz, and $q_s=0.0051$. 
+% For reference, the $\CC$ module which provides horizontal deflection (RFD) is planned to be available by the end of 2022. --> not true anymore.
 
 To this end, the emittance growth induced by $\CC$ RF noise depends on the power spectral density value of the noise at the vertical betatron and synchrobetatron sidebands for the phase and amplitude noise case respectively (see Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn}). The upper and lower sidebands of the first and second vertical betatron sidebands are observed in the following frequencies:
 \begin{equation}\label{eq:betatron_sideband_1}
@@ -218,8 +221,8 @@ To this end, the emittance growth induced by $\CC$ RF noise depends on the power
 \end{equation}
 \begin{equation}\label{eq:betatron_sideband_2}
     \mathrm{k= \pm 1}: \ (\pm 1 \pm \widebar{q}_y) f_\mathrm{rev} = (\pm 1 \pm 0.18) \times 43.38\mathrm{\,kHz} \approx \begin{dcases*} 
-        \text{$-$51.2\,kHz and $-$35.6\,kHz,} & if  $k=-1$ \\ 
-        \text{51.2\,kHz and 35.6\,kHz,} & if  $k=1$  
+        \text{$-$51.2\,kHz and $-$35.6\,kHz,} & for  $k=-1$ \\ 
+        \text{51.2\,kHz and 35.6\,kHz,} & for  $k=1$  
         \end{dcases*} .
 \end{equation}
 
@@ -231,22 +234,25 @@ The upper and lower sidebands of the first and second vertical synchrobetatron s
     \begin{split}
     \mathrm{k= \pm 1}: \ (\pm 1 \pm \widebar{q}_y \pm \widebar{q}_s) f_\mathrm{rev} = (\pm 1 \pm 0.18 \pm 0.0051)\times 43.38\mathrm{\,kHz} \approx \\ 
     \approx \begin{dcases*} 
-        \text{$-$35.35, $-$35.79, $-$50.96, $-$51.40\,kHz,} & if  $k=-1$ \\ 
-        \text{35.35, 35.79, 50.96, 51.40\,kHz,} & if  $k=1$  
+        \text{$-$35.35, $-$35.79, $-$50.96, $-$51.40\,kHz,} & for  $k=-1$ \\ 
+        \text{35.35, 35.79, 50.96, 51.40\,kHz,} & for  $k=1$  
         \end{dcases*} .
     \end{split}
 \end{equation}
 
 
-The experimental studies with $\CC$s (more details in Chapter~\ref{Ch:2018_analyisis}) were conducted with an artificial noise spectrum which was up to 10\,kHz, which as it becomes clear from the Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2} is overlapping and therefore exciting only the first betatron and synchrobetatron sidebands, $k=0$ (upper and lower).
+The experimental studies with $\CC$s (more details in Chapter~\ref{Ch:2018_analyisis}) were conducted with a noise spectrum with approximately constant power spectral density up to 10\,kHz, which as it becomes clear from the Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2} is overlapping and therefore exciting only the first betatron and synchrobetatron sidebands, $k=0$ (upper and lower).
 
-In the simulations, the beam particles encounter the phase or amplitude noise kicks once per turn. This means that the sampling frequency of the noise spectrum in the frequency domain equals, $f_s=f_\mathrm{rev}=43.38$\,kHz. This means, that the frequency spectrum of the noise applied in the simulations extends from $-f_s/2 \approx -22$\,kHz to $+f_s/2 \approx 22$\,kHz. \footnote{The particles will still be affected by noise above the Nyquist frequency, $\frev /2$ but up to $\frev$ (if there are any betatron and/or synchrobetatron sidebands in that range), but the noise will alias into lower frequencies. This is not the case for the studies presented in this thesis, as it becomes evident from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2}.} Further explanation can be found in Appendix~\ref{ch:app_B} and specifically in the Section~\ref{subsec:generatin_noise_kicks}. Again, from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2} it becomes clear that the noise kicks in the simulations excite only the first betatron and synchrobetatron sidebands for $k=0$ (upper and lower).
+In the simulations, the beam particles encounter the phase or amplitude noise kicks once per turn like in the machine. This means that the sampling frequency of the noise spectrum in the frequency domain equals, $f_s=f_\mathrm{rev}=43.38$\,kHz. This means, that the frequency spectrum of the noise applied in the simulations extends from $-f_s/2 \approx -22$\,kHz to $+f_s/2 \approx 22$\,kHz. \footnote{The particles will still be affected by noise above the Nyquist frequency, $\frev /2$ but up to $\frev$ (if there are any betatron and/or synchrobetatron sidebands in that range), but the noise will alias into lower frequencies. This is not the case for the studies presented in this thesis, as it becomes evident from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2}.} Further explanation can be found in Appendix~\ref{ch:app_B} and specifically in the Section~\ref{subsec:generatin_noise_kicks}. Again, from Eqs.~\eqref{eq:betatron_sideband_1}-~\eqref{eq:synchrobetatron_sideband_2} it becomes clear that the noise kicks in the simulations excite only the first betatron and synchrobetatron sidebands for $k=0$ (upper and lower).
 
 To sum up, when using Eqs.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} to predict the emittance growth rate due to $\CC$ RF noise in the SPS, $k=0$ will be considered.
 
 \section{Studies in KEKB}\label{eq:past_studies_KEKB}
-$\CC$s have been tested in the past with lepton beams in KEKB in Japan (further references on their operation are given in~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}). %~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}.
-The tests included studies of the effects on the beam of RF noise in the $\CC$s. However, there were significant differences in KEKB, compared to SPS, LHC and HL-LHC In particular, the studies in KEKB were conducted for lepton bunches, rather than hadron bunches.  The bunch length in KEKB was smaller by an order of magnitude than in SPS or HL-LHC: this means that the effects of amplitude noise would be negligible in KEKB.  Furthermore, synchrotron radiation in lepton storage rings provides significant damping.  Finally, the RF noise in KEKB was characterised by a single spectral line, rather than white noise. Due to these differences, the studies at KEKB are not applicable to the studies presented in this thesis. These studies can be found in Ref.~\cite{PhysRevSTAB.14.111003}: they provide the only previous experience with crab cavity operation in storage rings, but because of the differences with SPS and HL-LHC, further details of the KEKB studies are beyond the scope of this thesis
+$\CC$s have been tested in the past with lepton beams at KEKB in Japan~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}). %~\cite{CC_KEKB_4440798, Funakoshi:1955812, oide:pac07-mozaki01}.
+The tests included studies of the effects of RF noise in the CC on the beam. However, there were significant differences in KEKB, compared to SPS, LHC and HL-LHC. In particular, the studies in KEKB were conducted for lepton bunches, rather than hadron bunches.  The bunch length in KEKB was smaller by an order of magnitude than in SPS or HL-LHC: this means that the effects of amplitude noise would be negligible in KEKB.  Furthermore, synchrotron radiation in lepton storage rings provides significant damping.  Finally, the RF noise in KEKB was characterised by a single spectral line, rather than white noise. Due to these differences, the studies performed at KEKB~\cite{PhysRevSTAB.14.111003} are not applicable to the studies presented in this thesis and will thus not be discussed in more detail.
+
+
+%Due to these differences, the studies at KEKB are not applicable to the studies presented in this thesis. These studies can be found in Ref.~\cite{PhysRevSTAB.14.111003}: they provide the only previous experience with crab cavity operation in storage rings, but because of the differences with SPS and HL-LHC, further details of the KEKB studies are beyond the scope of this thesis
 
 
 
