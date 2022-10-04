@@ -120,9 +120,9 @@ To this end, and following the analysis in~\cite{PhysRevSTAB.18.101001} and in a
 %\begin{equation}\label{eq:phase_noise_kick}
 %    \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j + \zeta_j A \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
 %\end{equation}
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the elementary charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j^\textrm{th}$ elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$ , with mean 0 and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$ respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the elementary charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j^\textrm{th}$ elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with zero mean and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$, respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
 
-Last, the power spectral density of these noise kicks, at any given frequency, $f_k$ can be computed as follows (see discussion in Appendix~\ref{ch:app_B} and Eq.~\eqref{eq:psd_for_white_noise_variance}):
+The power spectral density of these noise kicks, at any given frequency, $f_k$, can be computed as follows (see discussion in Appendix~\ref{ch:app_B} and Eq.~\eqref{eq:psd_for_white_noise_variance}):
 \begin{equation}\label{eq:psd_for_white_noise_variance_AN}
     S_{\Delta A}(f_k) = \frac{\sigma_{\Delta A}^2 } {\frev},
  \end{equation}
@@ -143,14 +143,14 @@ Figures~\ref{fig:amplitude_noise} and~\ref{fig:phase_noise} show schematically t
 
 \begin{figure}[!h] % at the directory of ipac22
     \centering         
-    \includegraphics[width=0.8\textwidth]{images/Ch3/amplitude_noise.png}
+    \includegraphics[width=0.8\textwidth]{images/Ch3/amplitude_noiser_merged.png}
         \caption{Modulation in amplitude or amplitude noise (left) and its impact on the particles within the bunch (right). The blue dots represent the individual particles while the red arrows indicate the direction of the noise kicks which act on them.}
         \label{fig:amplitude_noise}
  \end{figure}
 
  \begin{figure}[!h] % at the directory of ipac22
     \centering         
-    \includegraphics[width=0.85\textwidth]{images/Ch3/phase_noise.png}
+    \includegraphics[width=0.85\textwidth]{images/Ch3/phase_noise_merged.png}
         \caption{Modulation in phase or phase noise (left) and its impact on the particles within the bunch (right). The blue dots represent the individual particles while the red arrows indicate the direction of the noise kicks which act on them.}
         \label{fig:phase_noise}
  \end{figure}
