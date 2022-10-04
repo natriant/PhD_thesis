@@ -31,19 +31,19 @@ On the other hand, the way the $\CC$ noise affects the particles depends on thei
 In this paragraph, the modeling of dipole noise is introduced as it constitues the basics for understanding the more complex effects of $\CC$ noise. The details on the $\CC$ noise (which is the main focus of the work presented here) are discussed further in a dedicated section (see Section~\ref{sec:CC_noise_intro}). 
 
 %Therefore, in the following the term "noise" refers to a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows.
-Past studies~\cite{Lebedev:248620, Lebedev:248622} have shown that the dipole white noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
+Past studies~\cite{Lebedev:248620, Lebedev:248622} have shown that the dipole white noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse angle each turn as follows:
 
 %have dealt with this type of noise in the context of the induced emittance growth theoretically and in simulations. It has been shown that the noise can be modeled as a sequence of random kicks (stochastic process) that affect the particles within a bunch by changing their transverse momentum each turn as follows:
 \begin{equation}\label{eq:external_noise_kicks}
-    u^\prime_{j+1} =  u^\prime_j + \theta_j,
+    \Delta u^\prime_{j} = \theta_j,
 \end{equation}
 %\begin{equation}\label{eq:external_noise_kicks}
 %    u^\prime_{j+1} =  u^\prime_j + \Delta u^\prime_j,
 %\end{equation}
 
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $u=(x,y)$ denotes the transverse horizontal or vertical plane. The parameter $\theta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution (with size $N_\mathrm{turns}$ ) with mean 0 and standard deviation, $\sigma_\theta$. This way it is ensured that the noise kicks are uncorrelated.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam experiences the noise and $u=(x,y)$ denoting the transverse horizontal or vertical plane. The parameter $\theta_j$ corresponds to the noise kick and is the $j$th element of a set of $N_\mathrm{turns}$ samples, drawn from a Gaussian distribution (with size $N_\mathrm{turns}$ ) with mean 0 and standard deviation, $\sigma_\theta$. This way it is ensured that the noise kicks are uncorrelated.
 
-The standard deviation $\sigma_\mathrm{noise}$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\theta$, at any given frequency, $f_k$ as follows: 
+The standard deviation $\sigma_\theta$ characterises the strength of the noise. As discussed in Appendix~\ref{ch:app_B} (see Eq.~\eqref{eq:psd_for_white_noise_variance}) for a white noise spectrum, it is related to it's power spectral density, $S_\theta$, at any given frequency, $f_k$, as follows: 
 \begin{equation}\label{eq:psd_for_white_noise_variance_dipole}
     S_\theta(f_k) = \frac{\sigma_\theta^2 } {\frev},
  \end{equation}
@@ -51,7 +51,7 @@ where $\frev$ is the revolution frequency of the machine.
 
 The power spectral density, $S_\theta(f_k)$, is expressed in terms of the square of the amplitude of the signal per unit frequency. As here the noise is applied in the angle co-ordinates the units of the power spectral density are $\mathrm{rad^2/Hz}$.
 
-In this thesis, the term "noise" will refer white noise which is modeled with the above-mentioned stochastic process.
+In this thesis, the term "noise" will refer to white noise, which is modeled with the above-mentioned stochastic process.
 
 %and $\Delta u^\prime = \zeta_j A$ is the change of the transverse direction of motion (in units of radians) due to the noise. $A$ characterises the noise strength and $\zeta_j$ is the $j$th element of a drawn sample from a Gaussian distribution with mean 0, standard deviation 1 and size $N_\mathrm{turns}$, such as the kicks are uncorrelated.
 
@@ -61,7 +61,7 @@ In this thesis, the term "noise" will refer white noise which is modeled with th
 
 
 \section{Crab Cavity noise and emittance growth}\label{sec:CC_noise_intro}
-As already mentioned in the Introduction (Section~\ref{sec:motivation_outline}) the presence of noise in the $\CC$ low-level RF system is an issue of major concern for the HL-LHC project as it results in transverse emittance growth and subsequently in loss of luminosity. To this end, in 2015, P.~Baudrenghien and T.~Mastoridis developed a theoretical model~\cite{PhysRevSTAB.18.101001} which predicts this transverse emittance growth induced by $\CC$ noise focusing on the HL-LHC scenario. In particular, the model assumes a hadron machine, zero synchrotron radiation damping, long bunches (in the order of cm), and white RF noise (discrete spectral lines are excluded). Additionally, it is assumed that the $\CC$ RF zero phase is set at the center of the bunch.
+The presence of noise in the $\CC$ low-level RF system is an issue of major concern for the HL-LHC project as it results in transverse emittance growth and subsequently in loss of luminosity. To this end, in 2015, P.~Baudrenghien and T.~Mastoridis developed a theoretical model~\cite{PhysRevSTAB.18.101001} which predicts this transverse emittance growth induced by $\CC$ noise focusing in the HL-LHC scenario. In particular, the model assumes a hadron machine, zero synchrotron radiation damping, long bunches (in the order of cm), and white RF noise (discrete spectral lines are excluded). Additionally, it is assumed that the phase of the CC is set such that the zero-crossing of the voltage coincides with the longitudinal centre of the bunch.
 
 Since we will refer to theoretical model of P.~Baudrenghien and T.~Mastoridis ~\cite{PhysRevSTAB.18.101001} frequently throught the thesis we will often use the term "Mastoridis--Baudrenghien model" for simplicity.
 
@@ -72,7 +72,8 @@ The Mastoridis--Baudrenghien model is also applicable to the SPS (where the same
 
 
 \subsection{Crab Cavity amplitude and phase noise}\label{subsec:AN_PN}
-The unperturbed instantaneous $\CC$ voltage equals the one of an ideal oscillator:
+The unperturbed instantaneous $\CC$ voltage can be written as:
+%equals the one of an ideal oscillator:
 \begin{equation}\label{eq:CC_voltage_t_phase}
     V_\mathrm{CC}(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t + \phi_\mathrm{CC} \right )},
 \end{equation}
@@ -82,11 +83,11 @@ where $\CCvoltage$ is the peak amplitude of the $\CC$ voltage, $\CCfrequency$ th
     V_\mathrm{CC}(t) = \CCvoltage \sin{\left ( 2 \pi \CCfrequency t \right )},
 \end{equation}
 
-Equation~\eqref{eq:CC_voltage_t} can be re-written as a function of the longitudinal position within the bunch $z$ instead of time $z$ as follows:
+Equation~\eqref{eq:CC_voltage_t} can be re-written as a function of the longitudinal position within the bunch $z$ instead of time $t$ as follows:
 \begin{equation}\label{eq:CC_voltage_z}
     V_\mathrm{CC}(z) = \CCvoltage \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z \right )},
 \end{equation}
-where $\beta_0$ is the relativistic parameter and $c$ is the speed of light. The above equation is obtained as: $z=v \cdot t \Rightarrow t=z/v=z/(\beta_0 c)$.
+where $\beta_0$ is the relativistic parameter and $c$ is the speed of light. %The above equation is obtained as: $z=v \cdot t \Rightarrow t=z/v=z/(\beta_0 c)$.
 In the presence of modulations in amplitude and phase Eq.~\eqref{eq:CC_voltage_z} becomes (details in Appendix~\ref{app:Measured_noise}):
 \begin{equation}\label{eq:CC_voltage_z}
     V_\mathrm{CC}(z) = \CCvoltage (1+\Delta A) \sin{\left ( \frac{2\pi \CCfrequency}{\beta_0 c}z + \Delta \phi \right )},
@@ -97,7 +98,7 @@ where $\Delta \phi$ is the deviation from the nominal phase, $2\pi \CCfrequency 
 % The units of ΔΑ and Δφ are shown in Table II of the paper of Themis and Philippe.
 
 
-In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are independent. The validity of this hypothesis depends on the actual architecture of the low-level RF responsible for the regulation of the cavity field. This is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
+In the calculation of the RF noise effects it is assumed that RF phase and amplitude noises are uncorrelated. The validity of this hypothesis depends on the actual architecture of the low-level RF responsible for the regulation of the cavity field. The low-level RF system for the HL-LHC $\CC$s is presently being designed at CERN. Further details can be found in Ref.~[15] of the above-mentioned publication of P.~Baudrenghien and T.~Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them in more detail is out of the scope of this thesis.
  
 %Due to the $\CC$ RF noise sources in the LHC, HL-LHC and, SPS machines, the amplitude and phase noise spectra can be considered  independent, and thus they can be treated separetatly. The technical details can be found in Ref.~[15] of the above-mentioned publication of Baudrenghien and Mastoridis~\cite{PhysRevSTAB.18.101001}, but discussing them is out of the scope of this thesis.
 % 1) You need to understand Ref.[15]
@@ -119,7 +120,7 @@ To this end, and following the analysis in~\cite{PhysRevSTAB.18.101001} and in a
 %\begin{equation}\label{eq:phase_noise_kick}
 %    \textbf{\textrm{Phase noise:}} \ u^\prime_{j+1} =  u^\prime_j + \zeta_j A \cos{\left (  \frac{2 \pi \CCfrequency}{c \beta_0}z   \right )},
 %\end{equation}
-where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the proton charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}, $\CCfrequency$ is the $\CC$ frequency, $c$ is the speed of light and $\beta_0$ the relativistic $\beta$. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j$th elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$ , with mean 0 and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$ respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
+where $j=\{ 0,\dots N_\mathrm{turns} \}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the bunch experiences the noise and $e$ is the elementary charge. Furthermore, $u^\prime$, with $u=(x,y)$, is the angle co-ordinate and $z$ the longitudinal co-ordinate of each particle as defined in Eq.~\eqref{eq:particle_coordinates}. The parameters $\Delta A_j$ and $\Delta \phi_j$, are the $j^\textrm{th}$ elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$ , with mean 0 and standard deviation of $\sigma_{\Delta A}$ and $\sigma_{\Delta \phi}$ respectively. A typical value of $\sigma_A$ and $\sigma_\phi$ that will be used in the simulations later is $2.7 \times 10^{-3}$.  It is reminded that $\sigma_\phi$ is expressed in radians, while $\sigma_A$ has no units.
 
 Last, the power spectral density of these noise kicks, at any given frequency, $f_k$ can be computed as follows (see discussion in Appendix~\ref{ch:app_B} and Eq.~\eqref{eq:psd_for_white_noise_variance}):
 \begin{equation}\label{eq:psd_for_white_noise_variance_AN}
