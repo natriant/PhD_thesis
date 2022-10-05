@@ -125,7 +125,13 @@ The emittance growth experiment took place on September 5, 2018, and was given a
 \section{Injected RF noise}\label{sec:injected_RF_noise}
 The noise injected in the $\CC$ RF system was a mixture of amplitude and phase noise up to 10\,kHz.
 %, overlapping and primarily exciting the first betatron sideband at $\sim 7.8$\,kHz (see discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}). 
-The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. The relation between the measured noise levels and the power spectral densities in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} following the IEEE conventions~\cite{IEEE:4797525} is given by $S_{\Delta A, \Delta \phi}(f) = \mathcal{L}(f)$ (see Table A.1 in~\cite{IEEE:4797525}), with $S_{\Delta A}$ in\,Hz$^{-1}$ and $S_{\Delta \phi}$ in $\mathrm{rad^2 Hz^{-1}}$. Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment. It should be emphasised here that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed. 
+The phase noise was always dominant. The noise levels were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz]. $\mathcal{L}(f)$ follows the IEEE definitions in ~\cite{IEEE:4797525} is the standard measure for characterising instabilities in the frequency domain. It should be emphasised that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies and as a real signal is symmetric around the DC component, $f=0$\,Hz. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed.
+
+The relation between the measured noise levels and the power spectral densities in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} following the IEEE conventions~\cite{IEEE:4797525} is given by $S_{\Delta A, \Delta \phi}(f) = \mathcal{L}(f)$ (see Table A.1 in~\cite{IEEE:4797525}), with $S_{\Delta A}$ in\,Hz$^{-1}$ and $S_{\Delta \phi}$ in $\mathrm{rad^2 Hz^{-1}}$. 
+
+Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment. The spectrum analyzer E5052B~\cite{E5052B_insight},  was directly attached to the RF antenna inside the $\CC$ which monitors the amplitude and the phase of its field. To this end, the voltage induced by the passage of the bunch through the $\CC$ was visible in the measured spectra: spikes at high frequencies and in particular at harmonics of the revolution frequency.
+
+%It should be emphasised here that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed. 
 
 %\footnote{A two-sided spectrum of a real signal is symmetric around the DC component, $f=0$\,Hz. Therefore, the information contained in the negative frequencies is redundant, hence most of the instruments used in experiments to display a frequency analysis display just the positive part of the spectrum}.
 % This is a proeprty of a real signal.
@@ -151,7 +157,6 @@ The phase noise was always dominant. The noise levels were measured with a spect
     \label{fig:example_PN_and_AN_coast1_setting2}
 \end{figure}
 
-The spectrum analyzer E5052B~\cite{E5052B_insight},  was directly attached to the RF antenna inside the $\CC$ which monitors the amplitude and the phase of its field. To this end, the voltage induced by the passage of the bunch through the $\CC$ was visible in the measured spectra: spikes at high frequencies and in particular at harmonics of the revolution frequency.
 % RF pick up anterna of CC: https://www.osti.gov/servlets/purl/1542783
 
 % the bunch passes through the cc and it induces its own voltage. It is captured by the antenna as spikes in the frequency spectrum.
@@ -198,12 +203,14 @@ and
 \begin{equation}\label{eq:dey_pn_sps}
    \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = 2 \times \beta_{u, \mathrm{CC}}  \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi}) \!\! S_{\Delta \phi}.
 \end{equation}
-for amplitude and phase noise, respectively. The multiplication factors 4 and 2, shows the contribution from to the first synchrobetatron and betatron sidebands at the frequencies computed in Eqs.~\eqref{eq:synchrobetatron_sideband_1} and ~\eqref{eq:betatron_sideband_1}.
+for amplitude and phase noise, respectively. The multiplication factors 4 and 2, show the contribution from to the first synchrobetatron and betatron sidebands at the frequencies computed in Eqs.~\eqref{eq:synchrobetatron_sideband_1} and ~\eqref{eq:betatron_sideband_1}, respectively.
+
+It is reminded, that the power spectral densities $S_{\Delta A}$ and $S_{\Delta \phi}$ appear independent of the frequency since the noise spectra are considered constant up to 10\,kHz. They can be computed from the measured spectra expressed in $10\log_{10}\mathcal{L}$\,[dBc/Hz] through the relation $S_{\Delta A, \Delta \phi} = \mathcal{L}$ introduced earlier in this section.
+
 
 \subsubsection*{Power spectral density values of interest}
 As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth depends on the noise power at the betatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). Therefore, the noise power values of interest for this thesis are the ones at the first betatron $f_b = 0.18 \times \frev$ = 7.82\,kHz and at the synchrobetatron sidebands at $f_b \pm \Qs \times \frev  = f_b \pm  \sim 220$\,kHz (see discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}).
 
-It is reminded, that the power spectral densities $S_{\Delta A}$ and $S_{\Delta \phi}$ appear independent of the frequency since the noise spectra it is considered constant up to 10\,kHz.
 
 
 However, it can be clearly seen from Fig.~\ref{fig:example_PN_and_AN_coast1_setting2} that the measured noise spectra are noisy\footnote{This is not surprising since it is in the nature of the noise.}: random changes in amplitude are observed from point to point within the signal. 
