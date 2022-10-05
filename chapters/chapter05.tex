@@ -154,6 +154,44 @@ The spectrum analyzer E5052B~\cite{E5052B_insight},  was directly attached to th
 
 % the bunch passes through the cc and it induces its own voltage. It is captured by the antenna as spikes in the frequency spectrum.
 
+\subsection{Expected emittance growth from Mastoridis--Baudrenghien model}\label{subsec:expected_emitGrowth_2018}
+Here, some comments on the use of the Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} for predicting the emittance growth rate from the above described noise spectra injected in the $\CC$ RF system are made.
+
+First, the emittance growth in the vertical plane is addressed since the $\CC$ module (DQW) installed in the SPS provides a vertical deflection on the beam. As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth in the vertical plane depends on the noise power at the vertical betatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). For the SPS machine (see parameters listed in Table~\ref{tab:machine_beam_param_2018}): $q_y=0.18$, $f_\mathrm{rev}=43.38$\,kHz, and $q_s=0.0051$. 
+
+The upper and lower sidebands of the first and second vertical betatron sidebands are observed in the following frequencies:
+\begin{equation}\label{eq:betatron_sideband_1}
+    \mathrm{k=0}: \ (0 \pm q_y) f_\mathrm{rev} = \pm 0.18 \times 43.38\mathrm{\,kHz} \approx \pm 7.8\mathrm{\,kHz},
+\end{equation}
+
+\begin{equation}\label{eq:betatron_sideband_2}
+   \mathrm{k= \pm 1}: \ (\pm 1 \pm q_y) f_\mathrm{rev} = (\pm 1 \pm 0.18) \times 43.38\mathrm{\,kHz} \approx \begin{dcases*} 
+       \text{$-$51.2\,kHz and $-$35.6\,kHz,} & for  $k=-1$ \\ 
+       \text{51.2\,kHz and 35.6\,kHz,} & for  $k=1$  
+       \end{dcases*} .
+\end{equation}
+
+The upper and lower sidebands of the first and second vertical synchrobetatron sidebands are observed in the following frequencies:
+\begin{equation}\label{eq:synchrobetatron_sideband_1}
+    \mathrm{k=0}: \ (0 \pm q_y \pm q_s) f_\mathrm{rev} = (\pm 0.18 \pm 0.0051) \times 43.38\mathrm{\,kHz} \approx \pm 8.02\mathrm{\,kHz} \ \mathrm{and} \pm 7.6\mathrm{\,kHz}.
+\end{equation}
+\begin{equation}\label{eq:synchrobetatron_sideband_2}
+    \begin{split}
+    \mathrm{k= \pm 1}: \ (\pm 1 \pm q_y \pm q_s) f_\mathrm{rev} = (\pm 1 \pm 0.18 \pm 0.0051)\times 43.38\mathrm{\,kHz} \approx \\ 
+    \approx \begin{dcases*} 
+        \text{$-$35.35, $-$35.79, $-$50.96, $-$51.40\,kHz,} & for  $k=-1$ \\ 
+        \text{35.35, 35.79, 50.96, 51.40\,kHz,} & for  $k=1$  
+        \end{dcases*} .
+    \end{split}
+\end{equation}
+
+It is evident, that the noise spectra injected in the $\CC$ RF, which extends with approximately constant power spectral density up to 10\,kHz, overlaps and primarily excites only the the first betatron and synchrobetatron sidebands, for $k=0$ (upper and lower).
+
+
+
+
+
+
 \subsubsection*{Power spectral density values of interest}
 As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth depends on the noise power at the betatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). Therefore, the noise power values of interest for this thesis are the ones at the first betatron $f_b = 0.18 \times \frev$ = 7.82\,kHz and at the synchrobetatron sidebands at $f_b \pm \Qs \times \frev  = f_b \pm  \sim 220$\,kHz (see discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}).
 
