@@ -282,7 +282,7 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 %\textbf{Implementing amplitude and phase noise on the real CC element}\\
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
-The amplitude and phase noise in the real $\CC$ element are modeled as the following change of the vertical angle of each particle (modyfing Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
+The amplitude and phase noise in the $\CC$ element are modeled as the following change of the vertical angle of each particle (modyfing Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
 
 %following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
 
@@ -320,15 +320,15 @@ The parameter $\Delta \CCvoltage_j$ is related to the relative deviation from th
 In this section, the emittance growth driven by $\CC$ RF noise is simulated with Sixtracklib in the presence of a local $\CC$ scheme. As previously mentioned, in the local CC scheme (Fig.~\ref{fig:crossing_with_and_without_CCs}) two $\CC$s are used with opposite phase, to cancel out the orbit distortion.
 
 
-The benchmark with the local scheme is performed as it is closer to the case that was studies previously: where the $\CC$ RF noise is modeled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the crab cavities.
+The benchmark with the local scheme is performed as it is closer to the case that was studied previously: where the $\CC$ RF noise is modeled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the crab cavities.
 
-The simulation studies presented in Section~\ref{subsec:sixtracklib_kicks_transverse_angle} were repeated here but this time the real $\CC$ elements were implemented and switched ON. Both $\CC$1 and $\CC2$ operated at 1\,MV, for $\phi_\mathrm{CC1}$=90\,deg and  $\phi_\mathrm{CC2}$=270\,deg. Figure~\ref{fig:sixtracklib_CC1_vs_CC2_orbit_shift_vs_theory} shows that the orbit shifts from two $\CC$s operating in opposite phase cancel out as expected. The results shown are obtained from Sixtracklib simulations that were conducted following the same procedure as the equivalent study presented in Section~\ref{subsec:sixtracklig_CC_implementation} (see Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory}.)
+The simulation studies presented in Section~\ref{subsec:sixtracklib_kicks_transverse_angle} were repeated here but this time the $\CC$ elements were implemented and switched on. Both $\CC$1 and $\CC2$ operated at 1\,MV, for $\phi_\mathrm{RF-Mult, 1}$=90\,deg and  $\phi_\mathrm{RF-Mult, 2}$=270\,deg. Figure~\ref{fig:sixtracklib_CC1_vs_CC2_orbit_shift_vs_theory} shows that the orbit shifts from two $\CC$s operating in opposite phase cancel out as expected. The results shown are obtained from Sixtracklib simulations that were conducted following the same procedure as the equivalent study presented in Section~\ref{subsec:sixtracklig_CC_implementation} (see Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory}.)
 
 % Figures is downloaded from here: https://docs.google.com/presentation/d/1OhwEA0FdMNbgeGo5cjCuIFYaPMVfzjdHlG51YuUx9WQ/edit#slide=id.p
 \begin{figure}[!h]
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch6/Vcc_orbit_shift_CC1_CC2.png}
-        \caption{Vertical orbit shift at the location of the horizontal Wire Scanner (SPS.BWS.51995.H.) as obtained with Sixtracklib tracking through the nominal SPS lattice. \textit{Green:} Only CC1 operates at 1\,MV and $\phi_\mathrm{CC1}$=90\,deg. \textit{Red:} Only CC1 operates at 1\,MV and $\phi_\mathrm{CC2}$=270\,deg. \textit{Orange:} The two CCs operate at the same voltage but in opposite phase: $\phi_\mathrm{CC1}$=90\,deg and  $\phi_\mathrm{CC2}$=270\,deg. \textit{Blue:} Orbit shift calculated analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element}.}
+        \caption{Vertical orbit shift at the location of the horizontal Wire Scanner (SPS.BWS.51995.H.) as obtained with Sixtracklib tracking through the nominal SPS lattice. \textit{Green:} Only CC1 operates at 1\,MV and $\phi_\mathrm{RF-Mult, 1}$=90\,deg. \textit{Red:} Only CC2 operates at 1\,MV and $\phi_\mathrm{CC2}$=270\,deg. \textit{Orange:} The two CCs operate at the same voltage but in opposite phase: $\phi_\mathrm{RF-Mult, 1}$=90\,deg and  $\phi_\mathrm{RF-Mult, 2}$=270\,deg. \textit{Blue:} Orbit shift calculated analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element}.}
         \label{fig:sixtracklib_CC1_vs_CC2_orbit_shift_vs_theory}
 \end{figure}
 
@@ -354,11 +354,11 @@ The simulations show an excellent agreement between the theoretically computed a
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC_sixtracklib}
 Here, the simualtions presented above were repeated but for a global $\CC$ scheme. As already mentioned, in the global $\CC$ scheme only one $\CC$ is in operation and the closed orbit shift is present during the circulation of the bunch around the machine. This scheme is the realistic case for the experiments of 2018, where for the emittance growth measurements only one $\CC$ was used.
 
-For the simulations presented here, $\CC$2 was switched OFF. $\CC$1 operated at 1\,MV, for $\phi_\mathrm{CC}$=90\,deg. The noise was applied as described in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} for the same noise levels as before. For this study, where only one $\CC$ is switched ON, its voltage is slowly increased to the chosen value of 1\,MV, so that the new closed orbit includes the full $\CC$ kick. Without this dynamic ramping, emittance blow-up is observed during the first turns in the simulation. Previous studies have shown that using a ramp of 200 turns minimizes the blow-up.
+For the simulations presented here, $\CC$2 was switched off. $\CC$1 operated at 1\,MV, for $\phi_\mathrm{RF-Mult, 1}$=90\,deg. The noise was applied as described in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise} for the same noise levels as before. For this study, where only one $\CC$ is switched on, its voltage is slowly increased to the chosen value of 1\,MV, so that the new closed orbit includes the full $\CC$ kick. Without this dynamic ramping, emittance blow-up is observed during the first turns in the simulation. Previous studies have shown that using a ramp of 200 turns is sufficient to avoid emittance blow-up.
 %(discussed in the APR - 1st year). % APR p.39 
-Nevertheless, the first 200 turns, are excluded from the linear fit used to obtained the emittance growth rates. % It doesn't matter as it is just two points.
+The first 200 turns, are excluded from the linear fit used to obtained the emittance growth rates. % It doesn't matter as it is just two points.
 
-Figure~\ref{fig:study_3_sixtracklib_global_cc_scheme} illustrates the simulated emittance growth driven by amplitude (left) and phase (right) noise in the presence of a global CC scheme. Once again, an excellent agreement is observed with the theoretically expected growth and also with the simulated rates for the different configurations discussed previously in this Chapter. This behavior is expected as the $\CC$ element itself without noise causes no emittance growth % APR 1st year. 
+Figure~\ref{fig:study_3_sixtracklib_global_cc_scheme} illustrates the simulated emittance growth driven by amplitude (left) and phase (right) noise in the presence of a global CC scheme. Once again, an excellent agreement is observed with the theoretically expected growth and also with the simulated growth rates for the different configurations discussed previously in this chapter. %This behavior is expected as the $\CC$ element itself without noise causes no emittance growth % APR 1st year. 
 
 % The figure is downloaded from the following presentation: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8a041cb470_0_629 
 \begin{figure}[htp]
@@ -376,11 +376,9 @@ Figure~\ref{fig:study_3_sixtracklib_global_cc_scheme} illustrates the simulated 
 \end{figure}
 
 \subsection{CC noise induced emittance growth with the measured noise spectrum}\label{subsec:global_CC_sixtracklib_noiseCoast3_setting3}
-All the simulations discussed up to now, were performed consider a white noise spectrum where the sequence of the uncorrelated random noise kicks were taken from a Gaussian distribution. 
+All the simulations discussed up to now were performed considering a white noise spectrum where the sequence of the uncorrelated random noise kicks were taken from a Gaussian distribution. However, as discussed in Section~\ref{sec:injected_RF_noise}, measurements are available of the phase and amplitude noise that were injected in the $\CC$ RF system for the emittance growth studies in the SPS in 2018. 
 
-However, as discussed in Section~\ref{sec:injected_RF_noise}, measurements are available of the phase and amplitude noise that were injected in the $\CC$ RF system for the emittance growth studies in the SPS in 2018. 
-
-Here, the simulation studies presented in the previous Subsection~\ref{subsec:global_CC_sixtracklib} (with global CC scheme) were repeated but this time the emittance growth is simulated using the real noise spectrum. 
+Here, the simulation studies presented in the previous Subsection~\ref{subsec:global_CC_sixtracklib} (with global CC scheme) were repeated but this time the emittance growth is simulated using the measured noise spectrum. 
 
 The phase and amplitude noise spectra from Coast3-Setting3 (see Fig.~\ref{fig:example_PN_and_AN_coast3_setting3}) were used since they were the strongest noise levels from all the coasts. To this end, one can ensure the observation of reasonable emittance growth in our simulation time, which for this particular set of simulations was increased to $\sim$10\,s ($5\times 10^{5}$ turns).
 
@@ -402,11 +400,11 @@ The phase and amplitude noise spectra from Coast3-Setting3 (see Fig.~\ref{fig:ex
         %\label{fig:add_label_here}
     \end{subfigure}
     \hfill
-     \caption{Example amplitude (left) and phase (right) noise spectra measured with a spectrum analyzer E5052B~\cite{E5052B_insight} during the emittance growth studies with CCs in SPS. The noise extends up to 10\,kHz (grey dashed line) overlapping the first betatron sideband at $\sim$8\,kHz (green dashed line). The spikes at high frequencies correspond to the harmonics of the revolution frequency and are a result of the bunch crossing.} % bunch passage
+     \caption{Example amplitude (left) and phase (right) noise spectra measured with a spectrum analyzer E5052B~\cite{E5052B_insight} during the emittance growth studies with CCs in SPS. The noise extends up to about 10\,kHz (grey dashed line) overlapping the first betatron sideband at $\sim$8\,kHz (green dashed line). The spikes at high frequencies correspond to the harmonics of the revolution frequency and are a result of the bunch crossing.} % bunch passage
      \label{fig:example_PN_and_AN_coast3_setting3}
  \end{figure}
 
-Additionally, some of the simulation parameters were refined to be closer to the experimental conditions of 2018. In particular, the synchrotron tune and bunch length were set to $Q_s$ = 0.0051 and $\sigma_z$ = 0.138\,m. Following the experimental configuration of 2018, $\CC$1 was switched OFF, while $\CC$2 operated at 1\,MV (with the voltage being slowly ramped up during the first 200 turns). For reference, the vertical beta function at the location of $\CC$2 is 73.8\,m.
+Additionally, some of the simulation parameters were refined to be closer to the experimental conditions of 2018. In particular, the synchrotron tune and bunch length were set to $Q_s$ = 0.0051 and $\sigma_z$ = 0.138\,m. Following the experimental configuration of 2018, $\CC$1 was switched off, while $\CC$2 operated at 1\,MV (with the voltage being slowly ramped up during the first 200 turns). For reference, the vertical beta function at the location of $\CC$2 is 73.8\,m.
 % klod=1, but I am not gonna mention it here. The detailed parameters can be found in slide 14 of the following presentation: https://docs.google.com/presentation/d/1O1Hl-Mvc99OfyI2FqIY-b0PMC2HVGsibKqRZGvy7lnU/edit#slide=id.gab6b65cbda_0_352
 
 The measured spectra of Fig.~\ref{fig:example_PN_and_AN_coast3_setting3} were converted to a discrete time series that can be used in the numerical simulations as described in Appendix~\ref{sec:measured_spectra_to_time_series}.
@@ -425,7 +423,7 @@ In Figure~\ref{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra} the si
         \centering
         \includegraphics[width=.95\linewidth]{images/Ch6/study_4_PN_measured_spectra_sixtracklib.png}
     \end{subfigure}
-    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. The CC noise is applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched OFF.}
+    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with the Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. The CC noise is applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched off.}
     \label{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra}
 \end{figure}
 
@@ -437,7 +435,7 @@ Finally, the same simulation is repeated in the presence of both amplitude and p
 \begin{figure}[!h]
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch6/study_4_AN_PN_sxitracklib.png}
-        \caption{Vertical emittance growth driven by CC RF amplitude and phase noise as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. Both types of noise are applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched OFF.}
+        \caption{Vertical emittance growth driven by CC RF amplitude and phase noise as simulated with the Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests 2018. The measured phase and amplitude noise spectra from Coast3-Setting3 are used for the simulations. Both types of noise are applied on CC2 which operates at 1\,MV, following Eq.~\eqref{eq:CC_kick_sixtracklib_vertical_noise}, while CC1 is switched off.}
         \label{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra_AN_and_PN}
 \end{figure}
 
@@ -495,4 +493,4 @@ The work presented in this chapter focused on investigating possible explanation
     \item Sensitivity to the non-linearities of the SPS lattice.
 \end{itemize}
 
-All these factors were excluded as possible sources of the discrepancy since for all of these study cases the simulated emittance growth demonstrated an excellent agreement with the theoretically predicted values using the Mastoridis--Baudrenghien model. It was also confirmed that the detailed optics of the SPS, its non-linearities and the crabbing induced from a real $\CC$ element have no impact on the $\CC$ RF noise-induced emittance growth. To this end, in the next chapters, the simulations will be performed with the PyHEADTAIL simulation tool which also provides the possibility of including collective effects (such as the impedance) which were not addressed so far in the context of these studies.
+All these factors were excluded as possible sources of the discrepancy since for all of these study cases the simulated emittance growth demonstrated an excellent agreement with the theoretically predicted values using the Mastoridis--Baudrenghien model. It was also confirmed that the detailed optics of the SPS, its non-linearities and the crabbing induced from a real $\CC$ element have no impact on the $\CC$ RF noise-induced emittance growth. To this end, in the next chapters, the simulations will be performed with the PyHEADTAIL simulation tool which also provides the possibility of including collective effects (such as the impedance), which were not addressed so far in the context of these studies.
