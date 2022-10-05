@@ -188,9 +188,15 @@ The upper and lower sidebands of the first and second vertical synchrobetatron s
 It is evident, that the noise spectra injected in the $\CC$ RF, which extends with approximately constant power spectral density up to 10\,kHz, overlaps and primarily excites only the the first betatron and synchrobetatron sidebands, for $k=0$ (upper and lower).
 
 
-
-
-
+To this end, for the experimental conditions of 2018 Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} can be re-written as follows:
+\begin{equation}\label{eq:dey_an_sps}
+   \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = 4 \times \beta_{u, \mathrm{CC}} \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 \!\! C_{\Delta A} (\sigma_{\phi}) \!\! S_{\Delta A},
+\end{equation}
+and
+\begin{equation}\label{eq:dey_pn_sps}
+   \frac{d\epsilon^{\mathrm{geom}}_u}{dt}  = 2 \times \beta_{u, \mathrm{CC}}  \left( \frac{e\CCvoltage\frev}{2E_b}\right)^2 C_{\Delta \phi} (\sigma_{\phi})  S_{\Delta \phi}.
+\end{equation}
+for amplitude and phase noise, respectively. The multiplication factors 4 and 2, shows the contribution from to the first synchrobetatron and betatron sidebands at the frequencies computed in Eqs.~\eqref{eq:synchrobetatron_sideband_1} and ~\eqref{eq:betatron_sideband_1}.
 
 \subsubsection*{Power spectral density values of interest}
 As already discussed in Chapter~\ref{Ch:CC_noise_theory} the noise induced emittance growth depends on the noise power at the betatron and synchrobetatron sidebands for the phase and amplitude noise respectively (see Eq.~\eqref{eq:dey_pn} and Eq.~\eqref{eq:dey_an}). Therefore, the noise power values of interest for this thesis are the ones at the first betatron $f_b = 0.18 \times \frev$ = 7.82\,kHz and at the synchrobetatron sidebands at $f_b \pm \Qs \times \frev  = f_b \pm  \sim 220$\,kHz (see discussion in Section~\ref{subsec:CC_emit_growth_theoretical_formulas}).
