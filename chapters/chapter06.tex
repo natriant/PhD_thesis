@@ -59,7 +59,11 @@ In particular, the simulations were performed using a sequence of noise kicks wi
 
 %Therefore, the simulations were performed for phase and amplitude noise with a power spectral density of 1.68 $\times 10^{-10} \ \mathrm{rad^2/Hz}$ or 1/Hz (for phase and amplitude noise respectively). This corresponds to a scaling factor, $A=10^{-8}$, in Eqs.~\eqref{eq:amplitude_noise_kick} and~\eqref{eq:phase_noise_kick}. 
 
-The power spectra of the sequence of amplitude and phase noise kicks (discrete-time signal) are visualised in Fig.~\ref{fig:psd_cc_simulations_example}. The power spectral densities are computed using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}.
+In the simulations, the beam particles encounter the phase or amplitude noise kicks once per turn. This means that the sampling frequency of the noise spectrum in the frequency domain equals, $f_s$ = $\frev$ = 43.37\,kHz. This means, that the frequency spectrum of the noise applied in the simulations extends from  $-f_s/2 \approx -22$\,kHz to $+f_s/2 \approx 22$\,kHz. This is visible in the power spectra of the sequence of amplitude and phase noise kicks (discrete-time signal) which are plotted in Fig.~\ref{fig:psd_cc_simulations_example}. The power spectral densities are computed using Eq.~\eqref{eq:Sxx_definition_discrete_normalized}.  
+
+Following the discussion in Section~\ref{subsec:emit_growth_meas_2018} it is evident that the noise applied in the simulations also overlaps and excites the first betatron and synchrobetatron sidebands. Therefore, to predict the vertical emittance growth from $\CC$ RF and amplitude and phase noise according to Mastoridis--Baudrenghien model, one can use the simplified Eqs.~\eqref{eq:dey_an_sps} and~\eqref{eq:dey_pn_sps}, respectively.
+
+% we can just resolve up to 22Khz.
 
 % Plotting scripts: /eos/user/n/natriant/Project_thesis/chapter6/plot_psd_for_simulations_noise.ipynb
 \begin{figure}[htp]
