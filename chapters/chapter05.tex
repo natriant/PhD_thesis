@@ -220,7 +220,7 @@ To get a more precise value of the power sepctral density value at the first bet
 The emittance growth measurements were performed with seven different noise levels. The values of the phase and amplitude noise for each setting are listed in Table~\ref{tab:noise_settings_2018}. 
 
 \subsubsection*{Effective phase noise}
-In order to make a meaningful comparison between the different levels of noise, the concept of effective phase noise is introduced: this is the phase noise level that would lead to the same emittance growth as that from both phase and amplitude noise according to the theoretical model (Chapter~\ref{Ch:CC_noise_theory}). 
+In order to make a meaningful comparison between the different levels of noise, the concept of effective phase noise is introduced: this is the phase noise level that would lead to the same emittance growth as that from both phase and amplitude noise according to Mastoridis--Baudrenghien model.
 
 For the calulcation of the effective phase noise the averaged bunch length for each case is used (bunch length measurements at Section~\ref{sec:bunch_length_intensity_meas_2018}). The uncertainty on the effective phase noise is computed following the standard procedure of the propagation of the uncertainty (Appendix~\ref{app:uncertainty_propagation}). \textcolor{red}{Do I need to show all the calulcations?.} The calculated effective phase noise values for the experimental conditions are also listed in Table~\ref{tab:noise_settings_2018}. The values shown correspond to the results using the parameters of the first bunch. However, the difference between the values for the other bunches is very small and is also within the displayed uncertainties. The noise levels mentioned in the following analysis of the experimental data correspond to the calculated effective phase noise. 
 % Script for computing the values: /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/job001_cmpt_psd_at_fb.ipynb
@@ -314,7 +314,7 @@ The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly
 \end{figure}
 %\normalsize{\textbf{Fitting of transverse profiles}}\\
 \subsubsection*{Fitting of transverse profiles}
-Assuming gaussian beams and for $u=x,y$ being the index that respectively corresponds to the horizontal and vertical plane, the rms beam size, $\sigma_u$, is obtained following the standard procedure of least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following four-parameter ($A, k, \mu, \sigma_u$) gaussian function:
+Assuming gaussian beams and for $u=(x,y)$ being the index that respectively corresponds to the horizontal and vertical plane, the rms beam size, $\sigma_u$, is obtained following the standard procedure of least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following four-parameter ($A, k, \mu, \sigma_u$) gaussian function:
 \begin{equation}\label{eq:4p_gauss}
    f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma_u^2}},
 \end{equation}
