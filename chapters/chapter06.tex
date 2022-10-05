@@ -272,7 +272,7 @@ The orbit shift computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_elem
       \bottomrule
 	\end{tabu}
    \label{tab:SPS_CC_WS_sixtracklib}
-   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner. \\$^\dagger$ It was found that in the definition of the RFMultipole the phase of the cavity is shifted by 90 degrees compared to the standard (theoretical) crab cavity kick.}
+   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner. \\$^\dagger$ It was found that in the definition of the RF-Multipole the phase of the cavity is shifted by 90 degrees compared to the standard (theoretical) crab cavity kick.}
    \end{minipage}
 \end{table}
 
@@ -289,17 +289,17 @@ The amplitude and phase noise in the real $\CC$ element are modeled as the follo
 %In the presence of amplitude and phase noise the change of the vertical angle of each particle passing through the real $\CC$ element which was introduced in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} is modified as follows:
 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
-    \Delta y^\prime_{j} = \cos{\left ( \left (\phi_\mathrm{CC} + \Delta \phi_j \frac{180}{\pi} \right ) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{ e( \CCvoltage + \Delta \CCvoltage_j)}{p_0 c},
+    \Delta y^\prime_{j} =\frac{ e( \CCvoltage + \Delta \CCvoltage_j)}{p_0 c}  \cos{\left ( \left (\phi_\mathrm{RF-Mult} + \Delta \phi_j  \right ) - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} ,
 \end{equation}
 
 %\begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
 %    \Delta y^\prime_{j} = \cos{\left ( (\phi_\mathrm{CC} + \Delta \phi_j \frac{180}{\pi}) \frac{\pi}{180} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \frac{V_\mathrm{0,CC} (1 + \Delta A_j)}{p_0 c},
 %\end{equation}
-where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi_j$ is the deviation from the nominal phase (phase noise level), and $\Delta \CCvoltage_j$ is the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level) at the $j$th turn.
+where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. Furthermore, $\Delta \phi_j$ is the deviation from the nominal phase (phase noise level), and $\Delta \CCvoltage_j$ is the deviation from the nominal amplitude $V_\mathrm{0,CC}$ (amplitude noise level) at the $j^\mathrm{th}$ turn.
 
-In the following simulations (unless it is stated otherwise) the parameters $\Delta \phi_j$ and $\Delta \CCvoltage_j$ are the $j$th elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with mean 0 and standard deviation of $\sigma_{\Delta \phi}$ and  $\sigma_{\CCvoltage}$ respectively. The typical values that will be used in the following simulations for phase and amplitude noise respectively are: $\sigma_{\Delta \phi}=2.7 \times 10^{-3}$\,$\mathrm{rad^2}$ and $\sigma_{\CCvoltage}=10^{-8}$. 
+In the following simulations (unless it is stated otherwise) the parameters $\Delta \phi_j$ and $\Delta \CCvoltage_j$ are the $j^\mathrm{th}$ elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with mean zero and standard deviation of $\sigma_{\Delta \phi}$ and  $\sigma_{\Delta \CCvoltage}$ respectively. The typical values that will be used in the following simulations for phase and amplitude noise respectively are: $\sigma_{\Delta \phi}=2.7 \times 10^{-3}$\,$\mathrm{rad}$ and $\sigma_{\Delta \CCvoltage}=0.0027$\,MV. 
 
-The parameter $\Delta \CCvoltage_j$ is related to the relative deviation from the nominal amplutude $\Delta A_j$ of Eq.~\ref{eq:amplitude_noise_kick} as follows:  $\Delta A_j$= ($\Delta \CCvoltage_j / \CCvoltage) p_0 c$. Consiquently, one can write: $\sigma A$= ($\sigma_{\CCvoltage} / \CCvoltage) p_0 c = 2.7\times 10^{-3}$. These values result in power spectral densities at the betatron frequency of: $S_{\Delta_A}(f_b) = 1.68 \times 10^{-10}$/Hz for amplitude noise and $S_{\Delta_\phi}(f_b) = 1.68 \times 10^{-10}$ $\mathrm{rad^2/Hz}$ for phase noise (same as in the simualtions presented already in this chapter).
+The parameter $\Delta \CCvoltage_j$ is related to the relative deviation from the nominal amplutude $\Delta A_j$ of Eq.~\eqref{eq:amplitude_noise_kick} as follows:  $\Delta A_j$= ($\Delta \CCvoltage_j / \CCvoltage)c$. Consiquently, one can write: $\sigma_{\Delta A}$= ($\sigma_{\CCvoltage} / \CCvoltage) = 2.7\times 10^{-3}$. These values result in power spectral densities at the betatron frequency of: $S_{\Delta_A}(f_b) = 1.68 \times 10^{-10}$/Hz for amplitude noise and $S_{\Delta_\phi}(f_b) = 1.68 \times 10^{-10}$ $\mathrm{rad^2/Hz}$ for phase noise (same as in the simualtions presented already in this chapter).
 %Finally, $\zeta_j$ is the $j$th element of a sample drawn from a Gaussian distribution with mean 0, standard deviation 1, and size $N_\mathrm{turns}$, such as the above kicks are uncorrelated (white noise). 
 %In the following simulations (except the ones presented in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3}) the parameters $\Delta \phi_j$ and $\Delta A_j$ are the $j$th elements of a set of $N_\mathrm{turns}$ samples, drawn from Gaussian distributions of size $N_\mathrm{turns}$, with mean 0 and standard deviation of $\sigma_{\Delta \phi}$ and  $\sigma_{\Delta A}$ respectively. The typical values that will be used in the following simulations for phase and amplitude noise respectively are: $\sigma_{\Delta \phi}=2.7 \times 10^{-3}$\,$\mathrm{rad^2}$ and $\sigma_{\Delta A}=10^{-8}$.
 
