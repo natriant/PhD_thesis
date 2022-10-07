@@ -208,7 +208,8 @@ The measured data points (light blue) are fitted with a four-parameter gaussian 
 
 It can be seen that the emittance values obtained from the OUT scan appear to be more fluctuated than the values from the IN scan. In this particular example, this is enhanced in the horizontal plane (blue). It is also clearly visible for the acquisitions during the first half of the coast.
 
-
+% Path to data:/eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis/coast8
+% Relevant slides: https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit#slide=id.g148272a84c8_2_0
  \begin{figure}[htp]
     \centering
     \begin{subfigure}{.45\textwidth}
