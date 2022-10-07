@@ -44,7 +44,7 @@ Replacing $\psi^\prime_u(s)$ in th coefficient of cosine gives:
 \end{equation}
 
 \section{Detuning with amplitude}\label{app:detuning_with_amplitude}
-- The linear detuning is given by the folloiwng formula, for octupole components
+The linear detuning is given by the following formula, for octupole components
 
 The detuning with amplitude is computed by:
 \begin{equation}\label{eq:x_amplDetuning}
@@ -54,7 +54,6 @@ The detuning with amplitude is computed by:
     \Delta Q_y = 2(\ayy \Jy + \alpha_{yx} \Jx)
 \end{equation}
 where $\ayy$, $\axx$ and $\axy$ are the detuning coefficients with units [1/m] and $\Jx$, $\Jy$ the action variables.
-
 
 \normalsize{\textbf{Rms detuning with amplitude}}\\
 From the definition of variance, the variance of the vertical amplitude detuning is given by:
@@ -110,14 +109,21 @@ of the lattice. %The actions later in time, even though they are considered inde
 %    \item $X^{rms}$ is consistent with the numpy.std(X)~\cite{numpy_std} function of the Python programming language. 
 %\end{itemize}
 
+\subsection{Residual rms tune spread in the SPS}\label{subsec:sps_tune_spread_estimation}
+%\normalsize{\textbf{Rms betatron tune spread in the SPS at 270\,GeV}}\\
 
-\normalsize{\textbf{Rms betatron tune spread in the SPS at 270\,GeV}}\\
-In this thesis, the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. This is a result of the SPS multiple components in the main dipole magnets (see Section~\ref{subsec:SPS_optics_model}). However, experimental studies~\cite{Bartosik:2207443} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be reproduced in simulations by switching on the Landau octupole families with strengths $\klof=\klod=1$\,1/m$^4$.
+Here the rms tune spread in the SPS that is present in the SPS with the Landau octupoles being switched off is estimated. For the estimation only the detuning with transverse amplitude is considered.
 
-Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,1/m$^4$ the corresponding detuning coefficients are obtained with MAD-X. In particular, $\axx$ = 923.45\,1/m, $\axy$ = $-$1122.451\,1/m, $\ayy$ = 705.15\,1/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+\textcolor{red}{this needs to be chekced.}\\
+As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443, Hannes_personal_communication} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be reproduced in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
 
-The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\emitx = \emity$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:emit_geom_norm_relation} it can be seen that these values corresponds to geometric emittances of $\emitxgeom=\emitygeom$ = 6.95\,nm.
-By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 2.02 \times 10^{-5}$ and $\Dqyrms = 2.17 \times 10^{-5}$, in the horizontal and vertical planes respectively.
+
+Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,1/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+
+The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\epsilon_x = \epsilon_y$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:normalised_emittance} it can be seen that these values corresponds to geometric emittances of $\epsilon^{\mathrm{geom}}_x=\epsilon^{\mathrm{geom}}_y$ = 7.2\,nm.
+By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 1.9 \times 10^{-5}$ and $\Dqyrms = 2.1 \times 10^{-5}$, in the horizontal and vertical planes respectively.
+
+
 
 % The tune spread from space charge is stronger. However, the emittance growth studies require tune spread from detuning with amplitude. Not other sources. That's why here only the detuning with amplitude is considered.
 
