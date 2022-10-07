@@ -167,11 +167,12 @@ where $b_3$ is defined in Eqs.~\eqref{eq:mult_expansion} while $k_\mathrm{LOF}, 
 \section{Transverse beam profiles in 2022}\label{sec:sps_transverse_beam_profiles}
 Figures~\ref{fig:WS_example_profiles_H_2022} and~\ref{fig:WS_example_profiles_V_2022} show an example horizontal and vertical beam profile as obtained from the SPS.BWS.51637.H and SPS.BWS.41677.V instruments respectively during the experiment with CC1 in SPS in 2022. The data points from the IN (OUT) scan are shown with a blue (orange) color. 
 
+
 The measured data points (light blue) are fitted with a four-parameter gaussian (orange) following the procedure discussed in Section~\ref{subsec:sps_ws} to obtain the beam size. Thereafter, the emittance values and their uncertainties are computed from Eqs.~\eqref{eq:emittance_from_WS} and~\eqref{eq:emittance_from_WS_uncertainty} respectively. The results of the fit are also shown in the plots. It is evident that the calculated uncertainties are two orders of magnitude smaller than the corresponding emittance values themselves. This is the case for all acquisitions. However, not all the profiles are displayed in this thesis for practical reasons.
 
 \begin{figure}[!h]
     \centering         
-    \includegraphics[width=0.6\textwidth]{images/app_c/SPS.BWS.51637.H_IN_OUT_ 16_28_55.png}
+    \includegraphics[width=0.6\textwidth]{images/app_c/SPS.BWS.51637.H_IN_OUT_ 15_13_04.png}
         \caption{Horizontal beam profile as obtained from SPS.BWS.51637.H during the CC experiment in the SPS in 2022. The data points from the IN (OUT) scan are shown with blue (orange) color. }
         \label{fig:WS_example_profiles_H_2022}
  \end{figure}
