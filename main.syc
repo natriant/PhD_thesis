@@ -1,4 +1,3 @@
-\newcommand{\symEinclude}{yes}
 \newcommand{\symminclude}{no}
 \newcommand{\Jxinclude}{yes}
 \newcommand{\Jyinclude}{yes}
@@ -8,7 +7,7 @@
 \newcommand{\CCinclude}{yes}
 \newcommand{\VCCinclude}{yes}
 \newcommand{\fCCinclude}{yes}
-\newcommand{\phiCCinclude}{yes}
+\newcommand{\phiCCinclude}{no}
 \newcommand{\betaCCinclude}{no}
 \newcommand{\Qsinclude}{yes}
 \newcommand{\psixinclude}{no}
