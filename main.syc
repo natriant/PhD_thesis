@@ -1,7 +1,3 @@
-\newcommand{\sinclude}{no}
-\newcommand{\Dxinclude}{no}
-\newcommand{\Dyinclude}{no}
-\newcommand{\Nbinclude}{yes}
 \newcommand{\Qpxinclude}{yes}
 \newcommand{\Qpyinclude}{yes}
 \newcommand{\sigmatinclude}{yes}
