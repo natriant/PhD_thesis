@@ -308,7 +308,8 @@ The results from $\CC$ Experiment A showed that:
 
 \subsection{Results of CC Experiment B: sensitivity of emittance growth rates to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
 
-The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept experiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited time available for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$). For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch was used so that the initial conditions each time are as close as possible.
+The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept experiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited time available for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
+For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch was used so that the initial conditions each time are as close as possible.
 
 The individual measurements of the transverse emittance evolution for each octupole setting are shown in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
 
@@ -546,8 +547,8 @@ Furthermore, the vertical emittance growth for $k_\mathrm{LOD}=-10$\,$\mathrm{/m
 Finally, it is evident that the emittance growth in the horizontal plane increases for larger octupole strength (in absolute value). A possible explanation could be the operation of the Landau octupoles at very high currents. However, the precise source of the growth in the horizontal plane is not yet identified and further dedicated measurements are needed to provide conclusive outcome on the source of the horizontal emittance growth. 
 % the coupling is corrected here. no reason to use dey+dex. This does not affect the validity of the conlsuions drawn from this study.
 
-\textbf{Comparison of measurements against PyHEADTAIL simualations with the SPS impedance model}\\
-Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} compares the vertical measured emittance growth with the simulation results from PyHEADTAIL including the SPS impedance model. Both measured and simulated rates are normalised with the corresponding analytical prediction. The measured emittance growth in the vertical plane is plotted from the expereiments of May (magenta) and September (green) 2022.
+\subsection{Comparison of measurements against PyHEADTAIL simualations with the SPS impedance model}\label{subsec:comparison_with_pyheadtail_full_scan}
+Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} compares the vertical measured emittance growth with the simulation results from PyHEADTAIL including the SPS impedance model. Both measured and simulated rates are normalised with the corresponding analytical prediction. The measured emittance vertical growth is plotted from the experiments of May (magenta) and September (green) 2022.
 
 % plotting script: /eos/user/n/natriant/pyheadtail_data/final_for_thesis/2022_conditions/CC1/normalised_growth_vs_measurements/job0010b_plot_loadFromPickles_dey_scanOverAyy_NowakesVSwakes-octupoleSettings-Noconstraintaxy_plot_normalised.ipynb
 \begin{figure}[!h]
@@ -557,6 +558,19 @@ Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} compares 
        \label{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22}
 \end{figure}
 
+By plotting, 
+Qualitatively, the experimental data (both from May and September) are in agreement with the simulations as they reproduce the dependence on the amplitude dependent tune spread. 
+
+
+The simualations, however, predict slower emittance growth than what was observed in the machine for $0 <k_\mathrm{LOD} $
+
+This could be due to various reasons such as 
+
+
+It is evident, that the 
+
+The point at klod=10. agree in both measuremnts. is impressive.
+slightly higher measured --> could explained with a 10$\%$ uncertainty ont he cc measurement or a vertical offset for sources we dont understandin. as already stated the space charge impacrt dhould be studied.  25 percent off . pas mal 
 
 
 \subsection{Emittance growth measurements with dominant amplitude noise}
