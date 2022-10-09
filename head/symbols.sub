@@ -1,18 +1,4 @@
 \opensymdef
-\newsym[Mass]{symm}{m}
-\newsym[Horizontal particle action]{Jx}{J_x}
-\newsym[Vertical particle action]{Jy}{J_y}
-\newsym[Speed of light]{symc}{c}
-\newsym[Main RF voltage]{VRF}{V_{RF}}
-\newsym[Main RF frequency]{fRF}{f_{RF}}
-\newsym[Crab Cavity]{CC}{\mathrm{CC}}
-\newsym[CC voltage]{VCC}{V_{CC}}
-\newsym[$CC$ frequency]{fCC}{f_{CC}}
-\newsym[$CC$ phase]{phiCC}{\phi_{CC}}
-\newsym[Beta function at the $CC$]{betaCC}{\beta_{CC}}
-\newsym[Synchrotron tune]{Qs}{\mathrm{Q_{s}}}
-\newsym[Horizontal phase advance]{psix}{\psi_{x}}
-\newsym[Vetical phase advance]{psiy}{\psi_{y}}
 \newsym[Location around the ring ??]{s}{s}
 \newsym[Horizontal dispersion function]{Dx}{D_x}
 \newsym[Vertical dispersion function]{Dy}{D_y}

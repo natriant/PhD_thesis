@@ -1,17 +1,3 @@
-\newcommand{\symminclude}{no}
-\newcommand{\Jxinclude}{yes}
-\newcommand{\Jyinclude}{yes}
-\newcommand{\symcinclude}{no}
-\newcommand{\VRFinclude}{yes}
-\newcommand{\fRFinclude}{yes}
-\newcommand{\CCinclude}{yes}
-\newcommand{\VCCinclude}{yes}
-\newcommand{\fCCinclude}{yes}
-\newcommand{\phiCCinclude}{no}
-\newcommand{\betaCCinclude}{no}
-\newcommand{\Qsinclude}{yes}
-\newcommand{\psixinclude}{no}
-\newcommand{\psiyinclude}{no}
 \newcommand{\sinclude}{no}
 \newcommand{\Dxinclude}{no}
 \newcommand{\Dyinclude}{no}

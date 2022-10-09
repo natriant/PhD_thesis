@@ -1,17 +1,3 @@
-\printsymline{m}{m}{symm}{Mass}{xxvii}
-\printsymline{J_x}{J_x}{Jx}{Horizontal particle action}{xxvii}
-\printsymline{J_y}{J_y}{Jy}{Vertical particle action}{xxvii}
-\printsymline{c}{c}{symc}{Speed of light}{xxvii}
-\printsymline{V_{RF}}{V_{RF}}{VRF}{Main RF voltage}{xxvii}
-\printsymline{f_{RF}}{f_{RF}}{fRF}{Main RF frequency}{xxvii}
-\printsymline{\mathrm{CC}}{\mathrm{CC}}{CC}{Crab Cavity}{xxvii}
-\printsymline{V_{CC}}{V_{CC}}{VCC}{CC voltage}{xxvii}
-\printsymline{f_{CC}}{f_{CC}}{fCC}{$CC$ frequency}{xxvii}
-\printsymline{\phi_{CC}}{\phi_{CC}}{phiCC}{$CC$ phase}{xxvii}
-\printsymline{\beta_{CC}}{\beta_{CC}}{betaCC}{Beta function at the $CC$}{xxvii}
-\printsymline{\mathrm{Q_{s}}}{\mathrm{Q_{s}}}{Qs}{Synchrotron tune}{xxvii}
-\printsymline{\psi_{x}}{\psi_{x}}{psix}{Horizontal phase advance}{xxvii}
-\printsymline{\psi_{y}}{\psi_{y}}{psiy}{Vetical phase advance}{xxvii}
 \printsymline{s}{s}{s}{Location around the ring ??}{xxvii}
 \printsymline{D_x}{D_x}{Dx}{Horizontal dispersion function}{xxvii}
 \printsymline{D_y}{D_y}{Dy}{Vertical dispersion function}{xxvii}
