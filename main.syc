@@ -1,15 +1,3 @@
-\newcommand{\Qpxinclude}{yes}
-\newcommand{\Qpyinclude}{yes}
-\newcommand{\sigmatinclude}{yes}
-\newcommand{\emitxinclude}{yes}
-\newcommand{\emityinclude}{yes}
-\newcommand{\emitxgeominclude}{yes}
-\newcommand{\emitygeominclude}{yes}
-\newcommand{\Dqxrmsinclude}{yes}
-\newcommand{\Dqyrmsinclude}{yes}
-\newcommand{\axxinclude}{yes}
-\newcommand{\ayyinclude}{yes}
-\newcommand{\axyinclude}{yes}
 \newcommand{\klofinclude}{no}
 \newcommand{\klodinclude}{no}
 \newcommand{\chromaxiinclude}{no}

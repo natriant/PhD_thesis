@@ -1,16 +1,4 @@
 \opensymdef
-\newsym[Horizontal first order chromaticity]{Qpx}{Q^\prime_{x}}
-\newsym[Vertical first order chromaticity]{Qpy}{Q^\prime_{y}}
-\newsym[Rms bunch length]{sigmat}{\sigma_t}
-\newsym[Horizontal normalised emittance of the beam]{emitx}{\epsilon^n_{x}}
-\newsym[Vertical normalised emittance of the beam]{emity}{\epsilon^n_{y}}
-\newsym[Horizontal geometric emittance of the beam]{emitxgeom}{\epsilon_x^{geom}} 
-\newsym[Vertical geometric emittance of the beam]{emitygeom}{\epsilon_y^{geom}} 
-\newsym[Betatron horizontal rms tune spread]{Dqxrms}{\Delta\: \!Q^{rms}_{x}}
-\newsym[Betatron vertical rms tune spread]{Dqyrms}{\Delta\: \!Q^{rms}_{y}}
-\newsym[Horizontal detuning coefficient]{axx}{\alpha_{xx}}
-\newsym[Vertical detuning coefficient]{ayy}{\alpha_{yy}}
-\newsym[Cross-detuning coefficients]{axy}{\alpha_{xy}=\alpha_{yx}}
 \newsym[LHC Software Architecture (LSA) trim editor knobs
 for SPS Landau octupoles, LOF family]{klof}{k_{LOF}}
 \newsym[LHC Software Architecture (LSA) trim editor knobs
