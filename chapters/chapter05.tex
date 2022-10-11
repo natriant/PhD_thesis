@@ -62,8 +62,6 @@ In order to maintain the $\CC$ waveform time-aligned with the circulating bunch,
 
 
 %It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn.
-
-
 \section{Experimental configuration and procedure}\label{sec:exp_setup_2018}
 %This section gives an overview of the experimental setup and the procedure that was followed. First, it briefly discusses the preparatory studies that were performed during 2012-2017~\cite{Calaga:1451286, Alekou_CC_coast_prep_2016, Antoniou:2649815}, explaining the choice of the intensity and energy values for which the emittance growth measurements were conducted. Furthermore, it presents in detail the rest of the beam and machine conditions during the experiment. Last, the experimental procedure is explained.
 
@@ -75,8 +73,6 @@ To make sure that the SPS can be used as a testbed for the emittance growth stud
 
 From these studies, it was concluded that the natural emittance growth is smallest at high energies, with low chromaticity and with bunches of low intensity~\cite{Antoniou:2649815}. The highest energy for which the SPS could operate in coast was 270\,GeV and thus the experiments were performed at this energy.  That limitation was due to limited cooling of the magnets to transfer away the dissipated power in the resistive magnets when operating at high energy and thus at large currents for long periods. %heating of the magnets from large current in the coils, when operating at high energy for long periods. 
 Moreover, as the natural emittance growth was found to be a single bunch effect four bunches were used. That choice was made to reduce the statistical uncertainty of the measurements but not to increase the beam intensity.
-
-
 
 
 %\normalsize{\textbf{Machine and beam configuration}}\\
@@ -127,7 +123,7 @@ The phase noise was always dominant. The noise levels were measured with a spect
 
 The relation between the measured noise levels and the power spectral densities in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} following the IEEE conventions~\cite{IEEE:4797525} is given by $S_{\Delta A, \Delta \phi}(f) = \mathcal{L}(f)$ (see Table A.1 in~\cite{IEEE:4797525}), with $S_{\Delta A}$ in\,Hz$^{-1}$ and $S_{\Delta \phi}$ in $\mathrm{rad^2 Hz^{-1}}$. 
 
-Figure~\ref{fig:example_PN_and_AN_coast1_setting2} displays an example measurement of amplitude (left) and phase (right) noise acquired during the experiment. The spectrum analyzer E5052B~\cite{E5052B_insight},  was directly attached to the RF antenna inside the $\CC$ which monitors the amplitude and the phase of its field. To this end, the voltage induced by the passage of the bunch through the $\CC$ was visible in the measured spectra: spikes at high frequencies and in particular at harmonics of the revolution frequency.
+Figure~\ref{fig:example_PN_and_AN_coast1_setting2} spectra of the measured of amplitude (left) and phase (right) noise acquired during the experiment. The spectrum analyzer E5052B~\cite{E5052B_insight},  was connected to the RF antenna inside the $\CC$ which monitors the amplitude and the phase of its field. To this end, the voltage induced by the passage of the bunch through the $\CC$ was visible in the measured spectra: spikes at high frequencies and in particular at harmonics of the revolution frequency.
 
 %It should be emphasised here that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed. 
 
@@ -211,7 +207,7 @@ It is reminded, that the power spectral densities $S_{\Delta A}$ and $S_{\Delta 
 
 
 It can be clearly seen from Fig.~\ref{fig:example_PN_and_AN_coast1_setting2} that the measured noise spectra are noisy\footnote{This is not surprising since it is in the nature of the noise.}: random changes in amplitude are observed from point to point within the signal. 
-To get a more precise value of the power sepctral density value at the first betatron sideband, $f_b$, the average of the power spectral density values over a frequency range of $\pm$ 500\,Hz around it is considered while its uncertainty equals the standard deviation over that range. In the following, it is also assumed for simplicity that the noise power between the synchrobetatron sidebands and the first betaton sideband is smooth as they lie very close to each other. %This means that the power spectral density at the synchrobetatron sidebands equals the power spectral density at the first betaton sideband.
+To get a more precise value of the power sepctral density value at the first betatron sideband, $f_b$, the average of the power spectral density values over a frequency range of $\pm$ 500\,Hz around it is considered with the uncertainty obtained from the standard deviation over that range. In the following, it is also assumed for simplicity that the noise power between the synchrobetatron sidebands and the first betaton sideband is smooth as they lie very close to each other. %This means that the power spectral density at the synchrobetatron sidebands equals the power spectral density at the first betaton sideband.
 
 %is determined as the average of the power spectral density values over a frequency range of $\pm$ 500\,Hz around it, while its uncertainty is considered to be the standard deviation over that range. In the following, it is assumed for simplicity that the power spectral density at the synchrobetatron sidebands equals the power spectral density at the first betaton sideband as they lie very close to each other. %At this point, it should be mentioned that the validity of these assumptions was tested with numerical simulations which used the measured spectra (Chapter~\ref{Ch:investigating_discrepancy}).
 
@@ -261,7 +257,7 @@ As mentioned above, $\CC$2 operated at 1\,MV. Before the start of the emittance 
 The beam-based measurement of the $\CC$ voltage can only be performed right after the acceleration ramp at 270\,GeV and not during the coast mode for reasons that are explained in Appendix~\ref{ch:app_HT_monitor}. Therefore, the $\CC$ voltage was measured at the beginning of the emittance growth experiment.% before the emittance growth measurements with injected RF noise in the $\CC$. 
  The $\CC$ settings remained unchanged for the rest of the experimental procedure.
 
-The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The horizontal axis shows the longitudinal position in nanoseconds with respect the center of the bunch as it passes through the Head-Tail The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit (blue solid line in Fig.~\ref{fig:crabbing_sin_fit_MD5}) on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $V_\mathrm{CC}(t)$ is fitted with the folllowing three-parameter ($A$, $\theta$, $d$) model function which also provides the $\CC$ phase and voltage offset:
+The beam-based measurement of the $\CC$ voltage (reconstructed from the Head-Tail monitor) is displayed in Fig.~\ref{fig:crabbing_sin_fit_MD5} with red color. The horizontal axis shows the longitudinal position in nanoseconds with respect the center of the bunch as it passes through the Head-Tail monitor. The voltage amplitude, $\CCvoltage$, is obtained from a sinusoidal fit (blue solid line in Fig.~\ref{fig:crabbing_sin_fit_MD5}) on the reconstructed voltage, $V_\mathrm{CC}(t)$, from the Head-Tail monitor reading. The standard procedure of least squares fitting (see Appendix section~\ref{app:non_linear_fitting}) is followed. In particular, $V_\mathrm{CC}(t)$ is fitted with the folllowing three-parameter ($A$, $\theta$, $d$) model function which also provides the $\CC$ phase and voltage offset:
 \begin{equation}\label{eq:sin_fit_cc}
    f(x) = A \sin{(2\pi \CCfrequency x + \theta)} + d ,
 \end{equation}
@@ -273,12 +269,12 @@ where $A$ is the amplitude, $\theta$ is the phase and $d$ is the vertical offset
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch5/HT_VCC_callibration_20180905_135033_sin_fit_fixed_freq_thesis_different_parameters.png}
-       \caption{Beam-based measurement of the CC voltage as reconstructed from the Head-Tail monitor before the emittance growth measurements in 2018 (red). The sinusoidal fit on the reconstructed voltage in order to obtain the CC voltage amplitude is also shown (blue solid line). The fit results, are given in the yellow box. The measured voltage amplitude, $V_\mathrm{0, CC}$, was found to be 0.98\,MV while its uncertainty, $d$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
+       \caption{Beam-based measurement of the CC voltage as reconstructed from the Head-Tail monitor before the emittance growth measurements in 2018 (red). The sinusoidal fit on the reconstructed voltage to obtain the CC voltage amplitude is also shown (blue solid line). The fit result are given in the yellow box. The measured voltage amplitude, $V_\mathrm{0, CC}$, was found to be 0.98\,MV while its uncertainty, $d$, was measured at 0.04\,MV. The measured voltage value agrees well with the requested value of 1\,MV.}
        \label{fig:crabbing_sin_fit_MD5}
 \end{figure}
 
 
-The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero in the vertical axis (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
+The offset parameter, $d$, is added to the model function as measurements from other dedicated studies\footnote{A total of seven different dedicated experiments with $\CC$s took place in SPS in 2018 in order to address various questions on the operation of the $\CC$ with proton beams~\cite{BE_seminar}. The emittance growth experiment was the fifth in chronological order.} that took place during this first experimental campaign with $\CC$s in the SPS have shown that the reconstructed $\CC$ voltage, $V_\mathrm{CC}(t)$, is not centered around zero (see Appendix Figs.~\ref{fig:VCC_from_HT_monitor_measurement} and~\ref{fig:crabbing_reconstruction_HT_monitor}). A possible explanation for the asymmetry is that it is a result of the cable response of the Head-Tail monitor pick up~\cite{Levens_WP2_HT_CC_diagnostic}. However, its origin is not yet fully understood and will have to be addressed in the future. Furthermore, it was found that the vertical offset varied between the different dedicated studies and it outweighs the error on the voltage amplitude obtained by the sinusoidal fit. To this end, in this thesis, this vertical offset $d$, will be defined as the uncertainty of the measured voltage amplitude. 
 % For this topic there is a post it.
 
 In order to obtain results that correspond to the experimental conditions the following constraints are imposed to the fit. First the voltage amplitude, $A$, is requested to always be positive and higher than 0.7\,MV. Furthermore, the part of the signal that corresponds to the tails of the bunch is excluded from the fit in order not to degrade its quality. Consequently, only the part of the signal for which the corresponding normalised sum signal of the Head-Tail monitor\footnote{The sum signal is the longitudinal line density. Further details are provided in Appendix~\ref{ch:app_HT_monitor}} (black dashed line) is above 0.4 is used for the fit. 
@@ -294,7 +290,7 @@ However, the $\CC$ phase that was set by the $\CC$ operators during the experime
 This was not known during the measurement as the above mentioned analysis was performed at a later time and hence the phase offset could not be corrected. Nevertheless, simulation studies performed with Sixtracklib have shown that for the long bunches ($\sigma_z \sim$14\,cm) that were used in the for the tests in 2018, the phase offset of the $\CC$ has no significant impact on the phase noise\footnote{It is reminded here that for the emittance growth experiments the CC RF phase noise was always dominant.} induced emittance growth~\cite{wp4_triantafyllou_2020}. % slide 35 
 % sin(np.pi-theta) = sin(theta)
 
-The procedure of measuring the voltage amplitude from the Headt-Tail monitor reading and calibrating the phase offset was optimised and automated, so that it can be perfomed during the experiment, for the campaigns that took place in 2022 (see Chapter~\ref{subsec:cc_calibration_2022}). 
+The procedure of measuring the voltage amplitude from the Headt-Tail monitor reading and calibrating the phase offset was optimised and automated, so that it could be perfomed during the experiment, for the campaigns that took place in 2022 (see Chapter~\ref{subsec:cc_calibration_2022}). 
 
 \section{Emittance growth measurments}\label{sec:emit_growth_meas_2018}
 This section presents the transverse emittance growth measurements with $\CC$ RF noise. It discusses first the measurement of the beam emittance with the SPS Wire Scanners (WS) and then it provides an overview of the emittance growth measurements for the four bunches over all the different noise settings.
@@ -302,7 +298,7 @@ This section presents the transverse emittance growth measurements with $\CC$ RF
 \subsection{SPS Wire Scanners}\label{subsec:sps_ws}
 The SPS is equipped with wire scanners (WS) to measure the transverse beam emittance. The SPS Wire Scanner system is described in detail in Ref.~\cite{BOSSER1985475, Berrig:1972478}. For the SPS tests in 2018, the emittance was measured with Wire Scanners both for the horizontal and vertical plane (BWS.51995.H and BWS.41677.V respectively).
 
-The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is then detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the photomultiplier current as a function of wire position over multiple turns the transverse beam profile is reconstructed. An example of a vertical profile is shown in Fig.~\ref{fig:WS_example_V_profile}.
+The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly moves across the proton beam and a shower of secondary particles is generated. The signal from the secondary particles is detected by a system of scintillator and photomultiplier (PM) detectors outside of the beam pipe. By measuring the photomultiplier current as a function of wire position over multiple turns the transverse beam profile is reconstructed. 
 
 \begin{figure}[!h]
    \centering         
@@ -312,11 +308,11 @@ The working principle is shown in Fig.~\ref{fig:SPS_WS_ROT}. A thin wire rapidly
 \end{figure}
 %\normalsize{\textbf{Fitting of transverse profiles}}\\
 \subsubsection*{Fitting of transverse profiles}
-Assuming gaussian beams and for $u=(x,y)$ being the index that respectively corresponds to the horizontal and vertical plane, the rms beam size, $\sigma_u$, is obtained following the standard procedure of least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following four-parameter ($A, k, \mu, \sigma_u$) gaussian function:
+Assuming Gaussian beams and for $u=(x,y)$ being the index that corresponds to the horizontal and vertical plane respectively, the rms beam size, $\sigma_u$, is obtained following the standard procedure of least squares fitting (see Appendix~\ref{app:non_linear_fitting}). In particular, the measured beam profiles from each scan are fitted with the following four-parameter ($A, k, \mu, \sigma_u$) Gaussian function:
 \begin{equation}\label{eq:4p_gauss}
-   f(x) = k + A e^{-\frac{(x-\mu)^2}{2 \sigma_u^2}},
+   f(x) = k + Y e^{-\frac{(x-\mu)^2}{2 \sigma_u^2}},
 \end{equation}
-where $k$ is the signal offset of the PM, $A$ is the signal amplitude, $\mu$ is the mean of the gaussian distribution and $\sigma_u$ its standard deviation. The uncertainty of the measured rms beam size, $\Delta \sigma_u$, is defined as the error of the fit of the $\sigma_u$ parameter (see Appendix~\ref{app:non_linear_fitting}).
+where $k$ is the signal offset of the photomultiplier, $Y$ is the signal amplitude, $\mu$ is the mean of the gaussian distribution and $\sigma_u$ its standard deviation. The uncertainty of the measured rms beam size, $\Delta \sigma_u$, is defined as the error of the fit of the $\sigma_u$ parameter (see Appendix~\ref{app:non_linear_fitting}).
 
 %T A non-linear least square minimization is used to fit the gaussian function to the measured data and obtain the optimal values for the parameters ($A, k, \mu, \sigma_u$).he standard error of the parameters' estimates is given by the square root of the diagonal of their covariance matrix.~\cite{gaus_fit_least_squares}. The uncertainty of the measured beam size, $\Delta \sigma$, is defined as the standard error of the $\sigma$ parameter. The optimal parameters' values and their covariance matrix are computed here using the $\mathrm{scipy.curve \_ fit}$ \cite{scipy_curve_fit} function of Python programming language. 
 % Curve fitting explanation: https://www.youtube.com/watch?v=Jl-Ye38qkRc&ab_channel=BrantCarlson
@@ -326,7 +322,7 @@ An example of the beam profile measured from the SPS Wire Scanner at a specific 
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.6\textwidth]{images/Ch5/SPS.BWS.41677.V_ROT_2018-09-05 15_45_01.33500_raw_and_fit.png}
-       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
+       \caption{Vertical beam profile obtained from the BWS.41677.V instrument. The measured data points (light blue) are fitted with a four parameter Gaussian (orange) to obtain the beam size. The calculated emittance and its uncertainty are also shown.}
        \label{fig:WS_example_V_profile}
 \end{figure}
    
@@ -339,14 +335,15 @@ The formula for computing the normalised beam emittance from the beam size, $\si
 \end{equation}
 where $\sigma_u$ is the rms beam size, $\beta_{u, WS}$ the beta function at the Wire Scanner location and $\betarel, \gammarel$ the relativistic parameters. Note that $u=x,y$ is the index that respectively corresponds to the horizontal and vertical plane.
 
-Assuming that the relativistic parameters are free of error, the uncertainty of the computed emittance, $\Delta \epsilon_u$, depends on the uncertainty of the measured beam size, $\Delta \sigma_u$ and of the beta function at the location of the Wire Scanner, $\Delta \beta_{u, WS}$, as follows:
+Assuming that the relativistic parameters are well known, %free of error 
+the uncertainty of the computed emittance, $\Delta \epsilon_u$, depends on the uncertainty of the measured beam size, $\Delta \sigma_u$ and of the beta function at the location of the Wire Scanner, $\Delta \beta_{u, WS}$, as follows:
 \begin{equation}\label{eq:emittance_from_WS_uncertainty}
    \centering
    \Delta \epsilon_u = \sqrt{\left ( \frac{\partial \epsilon_u}{\partial \sigma_u}\right )^2 \Delta \sigma_u^2 + \left ( \frac{\partial \epsilon_u}{\partial \beta_{u, WS}} \right )^2 \Delta \beta_{u, WS}^2} = \epsilon_u  \sqrt{\left ( \frac{2 \Delta \sigma_u}{\sigma_u}\right )^2 + \left ( \frac{ \Delta \beta_{u, WS}}{\beta_{u, WS}} \right )^2} .
 \end{equation}
 % Propagation of uncertainty in paper: /eos/user/n/natriant/Project_thesis/material/Ch4: 1st experimental campaign in SPS/propagation_of_uncertainty_emittance.pdf
 
-For the computation of the emittance values from the $\CC$ experiment of 2018, the following points were considered. First, in the 2018 SPS operational configuration, the dispersion was small at the Wire Scanner location and thus its contribution to the beam size was considered to be negligible \footnote{BWS.51995.H location in 2018 was located at a low-dispersion region $D_x < 0.5$\,m~\cite{Roncarolo:1481835}. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is expected at the order of $\mathrm{9\times 10^{-3} \ \mu m}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible and hence it will not be considered in the following. This is also confirmed by past studies~\cite{Roncarolo:1481835}. The measured vertical dispersion has similar value with the horizontal~\cite{Hannes_personal_communication} hence its contribution in the measured vertical emittance will also not be considered in the folllowing}. Moreover, for the studies at 270\,GeV beam energy, $\betarel \gammarel$ equals 287.8 and the beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical Wire Scanner respectively. Last, the uncertainty on the beta functions at the location of the Wire Scanner, $\Delta \beta_{u, WS}$, is 5$\%$ in both planes, which represents the rms beta-beating in the SPS~\cite{SPS-beta-beating-Rogelio}.
+For the computation of the emittance values from the $\CC$ experiment of 2018, the following points were considered. First, in the 2018 SPS operational configuration, the dispersion was small at the Wire Scanner location and thus its contribution to the beam size was considered to be negligible~\footnote{BWS.51995.H location in 2018 was located at a low-dispersion region $D_x < 0.5$\,m~\cite{Roncarolo:1481835}. At 270\,GeV, the energy spread, $\delta$, is of the order of $\mathrm{10^{-4}}$. Thus, from Eq.~\eqref{eq:emit_from_beam_size} the horizontal normalised emittance from the dispersion is expected at the order of $\mathrm{9\times 10^{-3} \ \mu m}$. Comparing to the observed beam size during the CC tests of a few microns the dispersion is negligible and hence it will not be considered in the following. This is also confirmed by past studies~\cite{Roncarolo:1481835}. The measured vertical dispersion has similar value with the horizontal~\cite{Hannes_personal_communication} hence its contribution in the measured vertical emittance will also not be considered in the folllowing}. Moreover, for the studies at 270\,GeV beam energy, $\betarel \gammarel$ equals 287.8 and the beta functions were 81.5\,m and 62.96\,m at the locations of the horizontal and vertical Wire Scanner, respectively. The uncertainty on the beta functions at the location of the Wire Scanner, $\Delta \beta_{u, WS}$, is 5$\%$ in both planes, which represents the rms beta-beating in the SPS~\cite{SPS-beta-beating-Rogelio}.
 
 
 % Note 1: Computations on the paper from dispersive contribution:/eos/user/n/natriant/Project_thesis/material/Ch5: Experimental studies 2018/dispersive_contribution_at_bws_h.pdf
@@ -356,7 +353,7 @@ For the computation of the emittance values from the $\CC$ experiment of 2018, t
 % Note 5: Link to Federicos thesis: https://cds.cern.ch/record/1481835/files/CERN-THESIS-2005-082.pdf
 
 
-\textbf{Further considerations}\\
+%\textbf{Further considerations}\\
 It is worth noting here that during each measurement with the Wire Scanner the beam profile is actually acquired twice as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the 2018 measurements the emittance values obtained from IN and OUT scans, $\epsilon_\mathrm{IN} \pm \Delta \epsilon_\mathrm{IN}$ and $\epsilon_\mathrm{OUT} \pm \Delta \epsilon_\mathrm{OUT}$, were found to be very similar. In the analysis of the 2018 measurements, the average emittance from the two scans, $\epsilon_\mathrm{avg} = \langle \epsilon_\mathrm{IN}, \epsilon_\mathrm{OUT}\rangle$, is used. The uncertainty in the average, $\Delta \epsilon_\mathrm{avg, 1}$, is given by~\cite{uncertainty_in_the_mean}: 
 \begin{equation}\label{eq:uncertainty_mean_ws}
    \Delta \epsilon_\mathrm{avg, 1} = \frac{\mid \epsilon_\mathrm{IN} - \epsilon_\mathrm{OUT} \mid}{2 \sqrt{2}}.
@@ -371,7 +368,7 @@ Assuming that $\Delta \epsilon_\mathrm{avg, 1}$ and $\Delta \epsilon_\mathrm{avg
    \Delta \epsilon_\mathrm{avg} = \sqrt{\Delta \epsilon_\mathrm{avg, 1} ^2 + \Delta \epsilon_\mathrm{avg, 2} ^2}.
 \end{equation}
 
-Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in~\cite{Roncarolo:1481835}. For the rotational SPS Wire Scanners and the energy of 270\,GeV, at which the $\CC$ experiments were performed the expected emittance growth from the Wire Scanner is expected to be a few nanometeres per scan in both transverse planes~\cite{Roncarolo:1481835} which is very small with respect to the emittance values of a few micrometers. Nevertheless, a conservative number of scans were carried out, $\sim$20 scans per bunch and per plane during $\sim$1 hour, in order to minimise the contribution from this effect.
+Finally, some emittance increase is expected during each wire scan, due to multiple Coulomb scattering. This effect has been extensively studied in~\cite{Roncarolo:1481835}. For the rotational SPS Wire Scanners and the energy of 270\,GeV, at which the $\CC$ experiments were performed, the expected emittance growth from the Wire Scanner is expected to be a few nanometeres per scan in both transverse planes~\cite{Roncarolo:1481835} which is very small with respect to the emittance values of a few micrometers. Nevertheless, a conservative number of scans were carried out, $\sim$20 scans per plane during $\sim$1 hour, in order to minimise the contribution from this effect.
 % Note 1: Link to federico's thesis: https://cds.cern.ch/record/1481835/files/CERN-THESIS-2005-082.pdf
 % Note 2: Table 5.1 0.0% for 450 GeV, 0.2% per scan
 % Note 3: Also "p.70 The measurements show an emittance growth of 43.5±11.8 nm per scan, which is best approximated by prediction 3)." . I think this is for 26 GeV, for 270 GeV the blow up would be even smaller.
