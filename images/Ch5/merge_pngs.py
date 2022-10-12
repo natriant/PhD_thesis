@@ -3,7 +3,7 @@ from PIL import Image
 
 img_01 = Image.open("MD5_overview_x_no_legend_2.png")
 img_02 = Image.open("MD5_overview_y_no_legend_2.png")
-img_03 = Image.open("MD5_overview_4sigma_t.png")
+img_03 = Image.open("bunch_length.png")
 
 img_01_size = img_01.size
 img_02_size = img_02.size
