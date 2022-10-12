@@ -180,44 +180,6 @@ From the end of 2018 till the end of 2020, the CERN accelerator complex has unde
 In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
 
 
- \subsection{Measurements during the experiment where the scan on the octupole strength was performed}
-Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan_bunch_length} illustrates the evolution of the rms bunch length measured in the SPS on May 16, 2022, for the four different octupole strengths used during the $\CC$ MD increasing from the top left to bottom right. The Wall Current monitor acquires the longitudinal bunch profiles, from which the bunch length is computed, once per turn. In the figures below, each point corresponds to the average bunch lengths from the profiles over 100 turns while the error bars indicate the standard deviation between them. \textcolor{red}{Is it correct that is acquires profiles once per turn?} This figure can be considered complementary of the plots in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. 
- 
-% Scripting plot: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
- \begin{figure}[htp]
-    \centering
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_06.png}  
-        \caption{$k_\mathrm{LOD}=+15 \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast6}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_07.png}  
-        \caption{$k_\mathrm{LOD}=+10  \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast7}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_08.png}  
-        \caption{$k_\mathrm{LOD}=+5  \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast8}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-            \centering
-            \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_COAST_09.png}  
-            \caption{$k_\mathrm{LOD}=-5 \mathrm{/m^{4}}$}
-            %\label{fig:cc_md_2022_coast9}
-    \end{subfigure}
-    \caption{Evolution of the bunch length during the CC experiment on May 16, 2022. The different octupole settings are displayed at the captions of each plot.}
-    \label{fig:cc_md_2022_overview_plots_klod_scan_bunch_length}
- \end{figure}
-
-
-The average measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.83\,ns. 
-
-
 \section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
 The individual measurements of the transverse emittance evolution for each octupole setting during the experiment with dipole noise (see Section~\ref{sec:coast_md_damper_2022}) are illustrated in Fig.~\ref{fig:dipole_noise_md_2022_overview_plots_klod_scan}. The subplots are plotted in chronological order.
 
@@ -307,43 +269,3 @@ The individual measurements of the transverse emittance evolution for each octup
  \section{Bunch length measurements in September 2022}\label{sec:bunch_length_measurements_sep_2022}
  Figure~\ref{fig:cc_md_sep_2022_overview_plots_klod_scan_bunch_length} illustrates the evolution of the bunch length measured in the SPS on the September 12, 2022, for the five different octupole strengths used during the $\CC$ MD as acquired with the Wall Current Monitor. The subplots are plotted in chronological order. The Wall Current monitor acquires the longitudinal bunch profiles, from which the bunch length is computed, once per turn. In the figures below, each point corresponds to the average bunch lengths from the profiles over 100 turns while the error bars indicate the standard deviation between them. \textcolor{red}{Is it correct that is acquires profiles once per turn?}
  
- % Plotting script: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/longitudinal_profiles/plot_bunch_length_for_thesis.ipynb
- % Figures location: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/longitudinal_profiles/figures_for_thesis
- \begin{figure}[htp]
-    \centering
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast6.png}  
-        \caption{$k_\mathrm{LOD}=-30 \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast6}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast7.png}  
-        \caption{$k_\mathrm{LOD}=-20 \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast7}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast8.png}  
-        \caption{$k_\mathrm{LOD}=-10 \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast8}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-            \centering
-            \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast9.png}  
-            \caption{$k_\mathrm{LOD}=+30 \mathrm{/m^{4}}$}
-            %\label{fig:cc_md_2022_coast9}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/bunch_length_cc_md_sep_coast11.png}  
-        \caption{$k_\mathrm{LOD}=+10  \mathrm{/m^{4}}$}
-        %\label{fig:cc_md_2022_coast9}
-\end{subfigure}
-    \caption{Evolution of the bunch length during the CC experiment on September 12, 2022. The different octupole settings are displayed at the captions of each plot.}
-    \label{fig:cc_md_sep_2022_overview_plots_klod_scan_bunch_length}
- \end{figure}
-
-
-The average measured bunch length over all above coasts in 2022, was found to be, 4$\sigma_t$=1.77\,ns. 
