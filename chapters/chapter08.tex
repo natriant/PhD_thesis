@@ -334,8 +334,22 @@ The experiment was performed by injecting artificial noise in the $\CC$ RF syste
 
 \subsection{Transverse emittance growth measurements}\label{subsec:emit_growth_exp2}
 
-In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} \leq 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
-For each one of thee octupole strengths the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each octupole strength a fresh bunch was used so that the initial conditions each time are as close as possible.
+In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} \leq 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = 0$~\footnote{Actually, the emittance growth rate for $k_\mathrm{LOD}$ = 0 during Experiment I (Fig.~\ref{fig:cc_md_2022_coast4})}, $\pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
+For each one of these octupole strengths the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each octupole strength a fresh bunch was used so that the initial conditions each time are as close as possible.
+
+The detailed measurements of the transverse emittance evolution for each octupole setting can be found in the Appendix.~\ref{subsec:emittance_growth_2022_exper2}. Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows an overview of the vertical (red) and horizontal (blue) measured emittance growth rates plotted as a function of the different octupole strengths.
+
+
+% Plotting script: 2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_octupole_scan_for_thesis.ipynb
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted_modified.png}
+       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emittance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$.}
+       \label{fig:H_V_emit_growth_background_subtracted_octupole_scan}
+\end{figure}
+
+
+
 
 The individual measurements of the transverse emittance evolution for each octupole setting are shown in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
 
@@ -406,7 +420,11 @@ The details and the results of the above mentioned steps will be presented in th
 The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept experiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited time available for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
 For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch was used so that the initial conditions each time are as close as possible.
 
-The individual measurements of the transverse emittance evolution for each octupole setting are shown in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
+
+
+
+
+Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
 
 
 %\textbf{Unstable bunch for strong negative octupole strength}\\
