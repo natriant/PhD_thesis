@@ -346,23 +346,44 @@ Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows an ov
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted_modified.png}
-       \caption{Horizontal (blue) and vertical (red) emittance growth driven by CC RF noise for different octupole settings measured during Experiment II, in 2022.}
+       \caption{Overview of the horizontal (blue) and vertical (red) emittance growth driven by CC RF noise for different octupole settings measured during Experiment II, in 2022.}
        \label{fig:H_V_emit_growth_background_subtracted_octupole_scan}
 \end{figure}
 
 
-Similarly to the first part of the experiment (see Section~\ref{subsec:cc_md_2022_noise_scan}), the growth in the horizontal plane (of $\sim 2-4 \ \mathrm{\mu m/h}$) seems independent of the growth in the vertical plane. This indicates that the betatron coupling in the machine is minimised. Furthermore, Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which appears similar to that expected from the simulations (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Thererfore, the results from Experiment II support the proposed explanation (in terms of the machine impedance) for the damping of the emittance growth from $\CC$ RF noise.
+Similarly to the first part of the experiment (see Section~\ref{subsec:cc_md_2022_noise_scan}), the growth in the horizontal plane (of $\sim 2-4 \ \mathrm{\mu m/h}$) seems independent of the growth in the vertical plane. This indicates that the betatron coupling in the machine is minimised. Furthermore, Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which agrees qualitative to that expected from the simulations (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Thererfore, the results from Experiment II support the proposed explanation (in terms of the machine impedance) for the damping of the emittance growth from $\CC$ RF noise.
+
+\textbf{Horizontal instability}\\
+%\textbf{Unstable bunch for strong negative octupole strength}\\
+During Experiment II, there was an attempt to measure the emittance growth for $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$. However, the bunch was found to be unstable in the horizontal plane which resulted to loss of the beam. The instability was observed in the turn-by turn-data acquired with the base-band tune (BBQ) measurement system of SPS~\cite{Boccardi:1055568}, where the betatron oscillation amplitude appears to grow exponentially within a few seconds. This is illustrated in Fig.~\ref{fig:instability_BBQ_klod-15_4may2022}.
+
+%The instability was first visible in the horizontal beam profiles acquired with the wire scanners, where long tails start to appear in the distribution. This is illustrated in Fig.~\ref{fig:instability_vertical_ws}. The instability was also observed in the turn-by turn-data acquired with the base-band tune (BBQ) measurement system of SPS~\cite{Boccardi:1055568}, where the betatron oscillation amplitude appears to grow exponentially within a few seconds. This is illustrated in Fig.~\ref{fig:instability_BBQ_klod-15_4may2022}.
 
 
-The measured vertical emittance growth for the large octupole strength, $k_\mathrm{LOD}$=+15\,$\mathrm{m^4}$, appears to agree with the analytical prediction of Mastoridis--Baudrenghien model. However, from PyHEADTAIL simualtions with the impedance model this behavior is expected only for octupoles stronger than 20\,$\mathrm{m^4}$ in absolute value (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). This indicates that there is some uncertainty about the level of quantitative agreement: this will be discussed further in the following paragraph which provides a direct comparison of the measured data with the simulation results.
+% Screenshot from MD logbook
+%\begin{figure}[!h]
+%   \centering         
+%   \includegraphics[width=0.7\textwidth]{images/Ch8/instability_41678.V_IN_OUT_ 17_14_31.png}
+%       \caption{Example measurement of the vertical profile during the experiment with phase noise of -104.7\,dBc/Hz injected in CC1 and $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$. Due to the long tails, the Gaussian fit (solid line) does not represent well the measured points (dots connected with the dashed line).}
+%       \label{fig:instability_vertical_ws}
+%\end{figure}
 
 
 
-The individual measurements of the transverse emittance evolution for each octupole setting are shown in Fig.~\ref{fig:cc_md_2022_overview_plots_klod_scan}. Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
+% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/BBQ/figures/2022.05.16.17.49.04.430450.png
+% Plotting: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/BBQ/plotBBQ_for_thesis.py
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/2022.05.16.17.49.04.430450.png}
+       \caption{Example of the evolution of the horizontal oscillation of the bunch centroid during the CC measurements for $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$ as captured by the BBQ instrument~\cite{Boccardi:1055568}.}
+       \label{fig:instability_BBQ_klod-15_4may2022}
+\end{figure}
 
 
+The setting of almost zero linear chromaticity is the most likely explanation for this instability. As mentioned in the introduction of this chapter, the linear chromaticity was set to slightly above zero instead of 0.5-1.0 as had been requested due to miscommunication with the SPS operating team. This increased the probability of the chromaticity sliding to small negative values, which for machines like the SPS which operate above transition can result in beam instabilities~\cite{collective_effects_cas_li}.
 
-PyHEADTAIL simulations with the SPS impedance model have revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following. It should be mentioned, that for this experiment the octupoles of the LOD family are employed as they act mostly in the vertical plane which is the plane of interest in this studies (vertical $\CC$ module which results in vertical emittance growth).
+
+It is worth commenting, that the instability appeared in the horizontal plane. A possible explanation is that the $k_\mathrm{LOD}$ families used for the experiment the act mainly in the vertical plane. Hence the resulted tune spread was sufficient to stabilise the beam through the mechanism of Landau damping \footnote{Landau damping is a stabilising mechanism that is applied against beam instabilities. It is demonstrated in the transverse planes in the presence of incoherent betatron tune spread. Further details can be found in~\cite{Herr:1982428, Schenk:2665819}, however a further discussion is out of the scope of this thesis.}.
 
 \section{Experiment with CC as noise source}\label{sec:cc_md_2022}
 Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
@@ -426,40 +447,6 @@ The details and the results of the above mentioned steps will be presented in th
 
 
 
-
-Two main observations can be made. First, there is a clear sensitivity of the measured evolution of the vertical emittance to the octupole strength as expected from the PyHEADTAIL simualtions with the SPS transverse impedance model. The second observation is that a growth of $\sim 2-4 \ \mathrm{\mu m/h}$ is also observed in the horizontal plane. However, it does not seem to depend on the octupole strength. Both observations are also seen in the summary plot of Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan}.
-
-
-%\textbf{Unstable bunch for strong negative octupole strength}\\
-Following the measurements presented above, there was an attempt to measure the emittance growth for $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$. However, the bunch was found to be unstable in the horizontal plane which resulted to loss of the beam. The instability was observed in the turn-by turn-data acquired with the base-band tune (BBQ) measurement system of SPS~\cite{Boccardi:1055568}, where the betatron oscillation amplitude appears to grow exponentially within a few seconds. This is illustrated in Fig.~\ref{fig:instability_BBQ_klod-15_4may2022}.
-
-%The instability was first visible in the horizontal beam profiles acquired with the wire scanners, where long tails start to appear in the distribution. This is illustrated in Fig.~\ref{fig:instability_vertical_ws}. The instability was also observed in the turn-by turn-data acquired with the base-band tune (BBQ) measurement system of SPS~\cite{Boccardi:1055568}, where the betatron oscillation amplitude appears to grow exponentially within a few seconds. This is illustrated in Fig.~\ref{fig:instability_BBQ_klod-15_4may2022}.
-
-
-% Screenshot from MD logbook
-%\begin{figure}[!h]
-%   \centering         
-%   \includegraphics[width=0.7\textwidth]{images/Ch8/instability_41678.V_IN_OUT_ 17_14_31.png}
-%       \caption{Example measurement of the vertical profile during the experiment with phase noise of -104.7\,dBc/Hz injected in CC1 and $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$. Due to the long tails, the Gaussian fit (solid line) does not represent well the measured points (dots connected with the dashed line).}
-%       \label{fig:instability_vertical_ws}
-%\end{figure}
-
-
-
-% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/BBQ/figures/2022.05.16.17.49.04.430450.png
-% Plotting: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/BBQ/plotBBQ_for_thesis.py
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/2022.05.16.17.49.04.430450.png}
-       \caption{Example of the evolution of the horizontal oscillation of the bunch centroid during the CC measurements for $k_\mathrm{LOD}=-10 \ \mathrm{/m^4}$. This measurement is acquired with the BBQ instrument~\cite{Boccardi:1055568}.}
-       \label{fig:instability_BBQ_klod-15_4may2022}
-\end{figure}
-
-
-The setting of almost zero linear chromaticity is the most likely explanation for this instability. As mentioned in the introduction of this chapter, the linear chromaticity was set to slightly above zero instead of 0.5-1.0 as had been requested due to miscommunication with the SPS operating team. This increased the probability of the chromaticity sliding to small negative values, which for machines like the SPS which operate above transition can result in beam instabilities~\cite{collective_effects_cas_li}.
-
-
-It is worth commenting, that the instability appeared in the horizontal plane. A possible explanation is that the $k_\mathrm{LOD}$ families used for the experiment the act mainly in the vertical plane. Hence the resulted tune spread was sufficient to stabilise the beam through the mechanism of Landau damping \footnote{Landau damping is a stabilising mechanism that is applied against beam instabilities. It is demonstrated in the transverse planes in the presence of incoherent betatron tune spread. Further details can be found in~\cite{Herr:1982428, Schenk:2665819}, however a further discussion is out of the scope of this thesis.}.
 
 \textbf{Summary plot}\\
 Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows the measured emittance growth rates (in both planes) as functions of octupole strength. The error bars indicate the error of the linear fit on the emittance values during each coast. The background emittance growth observed in the SPS without any noise injected in the CC1 ($d\epsilon_x/dt$ = 0.81\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt$ = 0.84\,$\mathrm{\mu m/h}$) is subtracted from the measured values. 
