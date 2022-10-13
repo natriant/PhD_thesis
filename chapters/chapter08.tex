@@ -334,20 +334,27 @@ The experiment was performed by injecting artificial noise in the $\CC$ RF syste
 
 \subsection{Transverse emittance growth measurements}\label{subsec:emit_growth_exp2}
 
-In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} \leq 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = 0$~\footnote{Actually, the emittance growth rate for $k_\mathrm{LOD}$ = 0 during Experiment I (Fig.~\ref{fig:cc_md_2022_coast4})}, $\pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
+In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} \leq 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = 0$~\footnote{Actually, the emittance growth rate for $k_\mathrm{LOD}$ = 0 was measured during Experiment I (Fig.~\ref{fig:cc_md_2022_coast4})}, $\pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
 For each one of these octupole strengths the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each octupole strength a fresh bunch was used so that the initial conditions each time are as close as possible.
 
-The detailed measurements of the transverse emittance evolution for each octupole setting can be found in the Appendix.~\ref{subsec:emittance_growth_2022_exper2}. Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows an overview of the vertical (red) and horizontal (blue) measured emittance growth rates plotted as a function of the different octupole strengths.
 
+For reference, the transverse emittance growth measurements lasted for about 2.5\,hours (start: $\sim$15:25, end: $\sim$17:05). The detailed measurements of the transverse emittance evolution for each octupole setting can be found in the Appendix.~\ref{subsec:emittance_growth_2022_exper2}. 
+
+Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows an overview of the horizontal (blue) and vertical (red) measured emittance growth rates plotted as a function of the different octupole strengths. The error bars indicate the error of the linear fit on the emittance values during each coast. The background emittance growth observed in the SPS without any noise injected in the CC1 ($d\epsilon_x/dt$ = 0.81\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt$ = 0.84\,$\mathrm{\mu m/h}$) is subtracted from the measured values. The analytical prediction of Mastoridis--Baudrenghien model (which does not include impedance induced effects) is also shown with the horizontal black line. The analytical predicted rate of about 24\,$\mathrm{\mu m/h}$ was computed for bunch length of $4 \sigma_t$ = 1.83\,ns, energy of 270\,GeV, the measured $\CC$ voltage amplitude $\CCvoltage=1.1$\,MV, and the vertical beta function at the location of $\CC$1, 76.07\,m. The contribution from both phase and amplitude noise is included. 
 
 % Plotting script: 2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_octupole_scan_for_thesis.ipynb
 \begin{figure}[!h]
    \centering         
    \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_octupole_scan_background_growth_subtracted_modified.png}
-       \caption{Measured horizontal (blue) and vertical (red) emittance growth driven by phase noise of -104.7\,dBc/Hz injected in the RF system of CC1 for different octupole settings. The growth predicted from the analytical model without taking into account the impedance induced emittance growth suppression is $\sim$ 19\,$\mathrm{\mu m/h}$.}
+       \caption{Horizontal (blue) and vertical (red) emittance growth driven by CC RF noise for different octupole settings measured during Experiment II, in 2022.}
        \label{fig:H_V_emit_growth_background_subtracted_octupole_scan}
 \end{figure}
 
+
+Similarly to the first part of the experiment (see Section~\ref{subsec:cc_md_2022_noise_scan}), the growth in the horizontal plane (of $\sim 2-4 \ \mathrm{\mu m/h}$) seems independent of the growth in the vertical plane. This indicates that the betatron coupling in the machine is minimised. Furthermore, Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which appears similar to that expected from the simulations (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Thererfore, the results from Experiment II support the proposed explanation (in terms of the machine impedance) for the damping of the emittance growth from $\CC$ RF noise.
+
+
+The measured vertical emittance growth for the large octupole strength, $k_\mathrm{LOD}$=+15\,$\mathrm{m^4}$, appears to agree with the analytical prediction of Mastoridis--Baudrenghien model. However, from PyHEADTAIL simualtions with the impedance model this behavior is expected only for octupoles stronger than 20\,$\mathrm{m^4}$ in absolute value (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). This indicates that there is some uncertainty about the level of quantitative agreement: this will be discussed further in the following paragraph which provides a direct comparison of the measured data with the simulation results.
 
 
 
@@ -416,10 +423,6 @@ The details and the results of the above mentioned steps will be presented in th
 
 
 \subsection{Results of CC Experiment B: sensitivity of emittance growth rates to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
-
-The second part of the experiment aimed to validate that the beam coupling impedance suppresses the $\CC$ phase noise-induced emittance growth through the mechanism described in Section~\ref{sec:suppression_mechanism}. The strategy for this proof-of-concept experiment was to measure the emittance growth for one level of phase noise (-104.7\,dBc/Hz or 3.4$\times 10^{11} \ \mathrm{rad^2/Hz}$) but for different octupole settings with the goal of reproducing the behavior shown in Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}. In the limited time available for the experiment performing the full scan on the octupole settngs was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = \pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
-For each setting the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each setting a fresh bunch was used so that the initial conditions each time are as close as possible.
-
 
 
 
