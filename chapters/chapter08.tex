@@ -248,41 +248,67 @@ The intensity measurements were performed with the Beam Current Transformer (BCT
 \section{Comparison of the transverese emittance growth with the predictions of Mastoridis--Baudrenghien theory}\label{sec:cc_exp1_2022_theory_vs_measurements}
 
 %\textbf{Summary plot}\\
-Figure~\ref{fig:V_emit_growth_background_subtracted_noise_scan} compares the measured (red) and the theoretically calculated (black) vertical emittance growth rates for the different phase noise levels. For the comparison the background growth rate measured in the vertical plane (see Section~\ref{subsec:measured_background_growth_cc_md_2022}) of 0.84\,$\mathrm{\mu m /h}$ is subtracted from the measured values. The theoretically calculated values are obtained by inserting the phase and the corresponding ampitude noise levels of Table~\ref{tab:noise_settings_2022} in Eqs.~\eqref{eq:dey_an_sps} and~\eqref{eq:dey_pn_sps} and for bunch length of $4 \sigma_t$ = 1.83\,ns, energy of 270\,GeV, the measured $\CC$ voltage amplitude $\CCvoltage=1.1$\,MV, and the vertical beta function at the location of $\CC$1, 76.07\,m. The subtraction of the background has practically no impact on the high noise levels but it is significant for the small ones.
+Figure~\ref{fig:V_emit_growth_background_subtracted_noise_scan} compares the measured (red) and the theoretically calculated (black) vertical emittance growth rates for the different noise levels. For the comparison the background growth rate measured in the vertical plane (see Section~\ref{subsec:measured_background_growth_cc_md_2022}) of 0.84\,$\mathrm{\mu m /h}$ is subtracted from the measured values. The subtraction of the background has practically no impact on the high noise levels but it is significant for the small ones. The concept of effective phase noise that was used in the analysis of the 2018 experimental date is not used here. The reason is that in 2022 we know that the effect of the emittance growth suppression that we are investigating does not have the same behavior in the presence of amplitude and phase noise. To this end, the horizontal axis displays the four different phase noise values since they were dominant. However, the theoretically calculated values are obtained by inserting both the phase and the corresponding ampitude noise levels of Table~\ref{tab:noise_settings_2022} in Eqs.~\eqref{eq:dey_pn_sps} and~\eqref{eq:dey_an_sps}, respectively, and for bunch length of $4 \sigma_t$ = 1.83\,ns, energy of 270\,GeV, the measured $\CC$ voltage amplitude $\CCvoltage=1.1$\,MV, and the vertical beta function at the location of $\CC$1, 76.07\,m.
 
-% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_V_background_subtracted_noise_scan.png
+%phase noise levels. For the comparison the background growth rate measured in the vertical plane (see Section~\ref{subsec:measured_background_growth_cc_md_2022}) of 0.84\,$\mathrm{\mu m /h}$ is subtracted from the measured values. The theoretically calculated values are obtained by inserting the phase and the corresponding ampitude noise levels of Table~\ref{tab:noise_settings_2022} in Eqs.~\eqref{eq:dey_an_sps} and~\eqref{eq:dey_pn_sps} and for bunch length of $4 \sigma_t$ = 1.83\,ns, energy of 270\,GeV, the measured $\CC$ voltage amplitude $\CCvoltage=1.1$\,MV, and the vertical beta function at the location of $\CC$1, 76.07\,m. The subtraction of the background has practically no impact on the high noise levels but it is significant for the small ones.
+
+% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_V_background_subtracted_noise_scan_final.png
 \begin{figure}[!h]
    \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_V_background_subtracted_noise_scan.png}
-       \caption{Summary plot of the emittance growth study with different noise levels injected in the RF system of CC1 during the Experiment I in 2022. The vertical measured growth rate (red) and the expected growths from the Mastoridis--Baudrenghien model (black) are shown as a function of the different levels of applied phase noise. The error bars indicate the error of the linear fit on the emittance values (see Section~\ref{sec:emit_growth_meas_2018})}
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_V_background_subtracted_noise_scan_final.png}
+       \caption{Summary plot of the emittance growth study with different noise levels injected in the RF system of CC1 during the Experiment I in 2022. The vertical measured growth rate (red) and the expected growths from the Mastoridis--Baudrenghien model (black) are shown as a function of the different levels of applied phase noise. The error bars indicate the error of the linear fit on the emittance values.}
        \label{fig:V_emit_growth_background_subtracted_noise_scan}
 \end{figure}
 
 From Fig.~\ref{fig:V_emit_growth_background_subtracted_noise_scan} it becomes evident that the measured emittance growth rate increases for higher noise levels as expected. Furthermore, it is observed that the theory systematically overestimates the growth rates. The averaged discrepancy over all noise levels, but the first one, is a factor 4.5: numerical values are given in Table~\ref{tab:cc_md_2022_noise_scaling}. In the computation of the average, the growth rates for the first noise level are not taken into account since the uncertainty of the corresponding measured growth is very big ($\sim 50\%$ of the emittance value itself).
 % a factor of 4.3
 
+%\begin{table}[!hbt]
+%	\centering
+ %  \caption{Comparison between the measured and the calculated transverse emittance growth rates for the different phase noise levels during the CC experiment of 2022. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns and CC voltage, $V_\mathrm{CC,0}=1.1$\,MV. The background growth rate measured in the vertical plane of 0.84\,$\mathrm{\mu m/h}$ is subtracted from the measured values.}
+%	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] }
+%		&& \\[-6mm]
+%	   \toprule \toprule
+%		\multicolumn{1}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$} &
+ %     \multicolumn{2}{c}{\textbf{Growth rate [}$\mathbf{\boldsymbol{\mu}}$\textbf{m/h]}}  \\
+		%\bottomrule
+ %     \multicolumn{1}{c}{\textbf{[dBc/Hz]}} & \multicolumn{1}{c}{\textbf{\textbf{Measured}}} & \multicolumn{1}{c}{\textbf{Calculated}}  \\
+ %     \midrule
+%      \multicolumn{1}{c}{-115.2}  & \multicolumn{1}{c}{0.17} & \multicolumn{1}{c}{1.73} \\
+      
+ %     \multicolumn{1}{c}{-109.5}  & \multicolumn{1}{c}{1.84} & \multicolumn{1}{c}{6.42} \\
+
+  %    \multicolumn{1}{c}{-104.7}  & \multicolumn{1}{c}{3.25} & \multicolumn{1}{c}{19.38}  \\
+
+  %    \multicolumn{1}{c}{-100.1}  & \multicolumn{1}{c}{12.11} & \multicolumn{1}{c}{55.9}  \\ 
+ %     \arrayrulecolor{black}\bottomrule
+	%\end{tabu}
+ %  \label{tab:cc_md_2022_noise_scaling}
+%\end{table}
+
 \begin{table}[!hbt]
 	\centering
-   \caption{Comparison between the measured and the calculated transverse emittance growth rates for the different phase noise levels during the CC experiment of 2022. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_pn} for bunch length of $4\sigma_t$=1.83\,ns and CC voltage, $V_\mathrm{CC,0}=1.1$\,MV. The background growth rate measured in the vertical plane of 0.84\,$\mathrm{\mu m/h}$ is subtracted from the measured values.}
+   \caption{Comparison between the measured and the calculated transverse emittance growth rates for the different phase noise levels during the Experiment I in 2022. This table is complementary of Table~\ref{tab:noise_settings_2022}.}
 	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] }
 		&& \\[-6mm]
 		\toprule \toprule
-		\multicolumn{1}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$} &
+		\multicolumn{1}{c}{\textbf{Noise level}} &
       \multicolumn{2}{c}{\textbf{Growth rate [}$\mathbf{\boldsymbol{\mu}}$\textbf{m/h]}}  \\
 		%\bottomrule
-      \multicolumn{1}{c}{\textbf{[dBc/Hz]}} & \multicolumn{1}{c}{\textbf{\textbf{Measured}}} & \multicolumn{1}{c}{\textbf{Calculated}}  \\
+      \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textbf{\textbf{Measured}}} & \multicolumn{1}{c}{\textbf{Calculated}}  \\
       \midrule
-      \multicolumn{1}{c}{-115.2}  & \multicolumn{1}{c}{0.17} & \multicolumn{1}{c}{1.73} \\
+      \multicolumn{1}{c}{Level 1}  & \multicolumn{1}{c}{0.17} & \multicolumn{1}{c}{1.73} \\
       
-      \multicolumn{1}{c}{-109.5}  & \multicolumn{1}{c}{1.84} & \multicolumn{1}{c}{6.42} \\
+      \multicolumn{1}{c}{Level 2}  & \multicolumn{1}{c}{1.84} & \multicolumn{1}{c}{6.42} \\
 
-      \multicolumn{1}{c}{-104.7}  & \multicolumn{1}{c}{3.25} & \multicolumn{1}{c}{19.38}  \\
+      \multicolumn{1}{c}{Level 3}  & \multicolumn{1}{c}{3.25} & \multicolumn{1}{c}{19.38}  \\
 
-      \multicolumn{1}{c}{-100.1}  & \multicolumn{1}{c}{12.11} & \multicolumn{1}{c}{55.9}  \\ 
+      \multicolumn{1}{c}{level 4}  & \multicolumn{1}{c}{12.11} & \multicolumn{1}{c}{55.9}  \\ 
       \arrayrulecolor{black}\bottomrule
 	\end{tabu}
    \label{tab:cc_md_2022_noise_scaling}
 \end{table}
+
 
 The results from $\CC$ Experiment A showed that:
 \begin{itemize}
