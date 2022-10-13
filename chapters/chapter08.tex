@@ -3,11 +3,56 @@ As discussed in the previous chapter, PyHEADTAIL simulations including the SPS i
 
 This emittance growth suppression effect has not been observed before. To this end, another experimental campaign took place in the SPS in 2022 where the main objective was to validate experimentally the above-mentioned suggested emittance growth suppression mechanism. If successful, it would constitute the first experimental investigation and validation of this effect. Moreover, achieving a good understanding of the 2018 results is essential for developing confidence in the theoretical model and its predictions for the HL-LHC.
 
-The experimental campaign of 2022 was organised in two proof-of-concept experiments. The first experiment was carried out in the presence of phase noise in the $\CC$ RF system. The second experiment took place with a pure dipolar noise source: the beam transverse damper. This chapter reports on the preparation, the methodology, and the results of these experiments.
+The experimental campaign of 2022 was organised in five experiments which aimed to investigate in the SPS machine the effect of the imepdance on the noise-induced emittance growth. The first four experiments were carried out with artificial noise injected in the $\CC$ RF system. The fifth expereiment took place with a pure dipolar noise source: the beam transverse damper. This chapter reports on the preparation, the methodology, and the results of these experiments.
+
+%The experimental campaign of 2022 was organised in two proof-of-concept experiments. The first experiment was carried out in the presence of phase noise in the $\CC$ RF system. The second experiment took place with a pure dipolar noise source: the beam transverse damper. This chapter reports on the preparation, the methodology, and the results of these experiments.
+
+
+\section{Machine and beam configuration}\label{sec:cc_md_2022_parameters}
+The emittance growth measurements in 2022 were performed in "coast" mode at 270\,GeV following the same setup as in 2018 (see Section~\ref{sec:exp_setup_2018}) and very similar machine and beam conditions. The most relevant parameters are listed in Table~\ref{tab:machine_beam_param_2022}. The listed values of the transverse normalised emittance, of the bunch length and of the intensity correspond to the requested intial values of each coast. The measured values of these parameters will be commented in the following sections and the detailed measurements throught the experiments are available in the Appendix~\ref{ch:app_measurments_22}. 
+
+\begin{table}[!hbt]
+	\begin{minipage}{\textwidth}
+      \begin{centering}
+   \caption{Main machine and beam parameters for the emittance growth studies in SPS in 2022.}
+	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
+		&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{2}{l}{\textbf{Parameter}} &
+		\multicolumn{2}{c}{\textbf{Value}} \\
+		\bottomrule
+      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
+      \multicolumn{2}{l}{Main RF voltage / frequency,  $\VRF$ / $\fRF$}  & \multicolumn{2}{c}{5\,MV / 200.39\,MHz} \\ %200.3945
+      \multicolumn{2}{l}{Horizontal / vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
+      \multicolumn{2}{l}{Horizontal / vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{  0.0-1.0 / 0.0-1.0} \\
+      \multicolumn{2}{l}{Synchrotron tune, $Q_s$}  & \multicolumn{2}{c}{0.0051} \\
+      \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
+      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
+      \multicolumn{2}{l}{Bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.83 \,ns$^\ast$}\\
+      \multicolumn{2}{l}{Horizontal / vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m^\ast}$}\\
+      \multicolumn{2}{l}{Horizontal / vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{1.9 $\times 10^{-5}$ / 2.1 $\times 10^{-5}$ $^\ddagger$}\\
+      \bottomrule
+      \multicolumn{2}{l}{$\CC 1$ voltage / frequency, $\CCvoltage$ / $\CCfrequency$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
+      \bottomrule
+	\end{tabu}
+   \label{tab:machine_beam_param_2022}
+   \end{centering} \footnotesize{$^\ast$ These values corresponds to the requested intial values at the start of each coast.  \\$^\ddagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calculations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
+   \end{minipage}
+\end{table}
+% For bunch length: cernbox/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/visualise_pickle.ipynb
+
+\textcolor{red}{This paragraph needs to be checked.}
+The emittance growth measurements of 2018, indicated that the betatron coupling in the SPS was small but not zero. On this ground, for the experimental campaign of 2022, there was an effort to reduce the betatron coupling in the SPS. The betatron coupling correction was performed before the start of the emittance growth measurements on May 16, 2022, using the skew quadrupoles to minimse the tune signal from the horizontal (vertical) plane in the FFT measurements of the vertical (horizontal) plane.
+
+
+In the 2022 campaign, $\CC$1 was used instead of $\CC$2 which was used in 2018. The reason behind this is that during the $\CC$ phase scan that was performed in 2022 to calibrate the $\CC$ phase offset (see Section~\ref{subsec:cc_calibration_2022}) $\CC$2 tripped systematically. The issue is associated with the change of the RF phase but fixing this problem would have been time-consuming which was not an option due to the very limited machine time of the experiment. Therefore, for the emittance growth measurements in 2022 $\CC$1 was used.
+
 
 \section{Experiment with CC as noise source}\label{sec:cc_md_2022}
 Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
 % Also you can add that each point in the emittance growth studies needs about 30-40 min.
+
+
 
 \subsection{Machine and beam configuration}\label{sec:cc_md_2022_parameters}
 The emittance growth measurements in 2022 were performed in "coast" mode at 270\,GeV following the same setup as in 2018 (see Section~\ref{sec:exp_setup_2018}) and very similar machine and beam conditions. The most relevant parameters are listed in Table~\ref{tab:machine_beam_param_2022}. 
