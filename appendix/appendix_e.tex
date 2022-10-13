@@ -1,4 +1,32 @@
 \section{Reference Wire Scanner measurements}\label{sec:sps_transverse_beam_profiles}
+
+
+\textbf{SPS Wire Scanners}\\
+The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, wire scanners SPS.BWS.51637.H and SPS.BWS.41677.V were used for measurements in the horizontal and vertical planes, respectively. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equipped with four PMs. Each one of them provides a better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions of the respective plane at the locations of the wire scanners are 79.29\,m, and  60.75\,m. 
+% The values of the beta functions were obtained from MADX: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements/find_beta_functions_at_locations.ipynb 
+
+As explained earlier (see Section~\ref{subsec:sps_ws}) during each measurement with the wire scanners the beam profile is acquired two times as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the experiment of 2022, the OUT scan was performed just 200\,ms after the IN scan. However, it was observed that there are significant discrepancies between the measurements from IN and OUT scan, which in some cases reached up to 1\,$\mathrm{\mu m}$. By looking at the acquired profiles no reason was found to exclude or not one of the two scans (for reference see Fig.~\ref{fig:WS_example_profiles_H_2022}). A significant effort was done with the wire scanner experts during the emittance growth experiment trying to mitigate this effect without success due to limitations on the hardware of the current instrument. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements since they appeared to have systematically less fluctuation than in the OUT scan (see Appendix~\ref{subsec:ex_emit_growth_in_vs_out}). Finally, the acquisitions from the OUT scans were not completed correctly leading to unusable profiles.\textcolor{red}{corruputed profiles}. 
+
+It is worth commenting that this issue was not observed in the 2018 measurements. A possible explanation is that the wire scanner acquisitions of 2022 provide lower number of points to reconstruct the bunch profiles (compare Figs.~\ref{fig:WS_example_V_profile} against~\ref{fig:WS_example_profiles_V_2022}) increasing the uncertainty of the obtained emittances. The reason behind this, is that between 2018 and 2022 the wire scanners had undergone an upgrade which increased their speed while crossing the bunch. A possible solution to this issue would be to reduce the speed of the wire for the emittance growth experiments in coast mode. This is currently in discussion with the team responsible for the wire scanners of the SPS.
+
+% Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
+
+Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the wire scanner measurements. For this reason, for the low $\CC$ noise levels, long measurement times of about 30-40 minutes were needed.
+
+
+%\textbf{Head-Tail monitor calibration}\\
+%From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
+
+%\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
+%    \centering         
+%    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
+%        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
+%        \label{fig:HT_calibration_2022_levens}
+% \end{figure}
+
+
+
+
 \subsection{Example beam profiles}
 Figures~\ref{fig:WS_example_profiles_H_2022} and~\ref{fig:WS_example_profiles_V_2022} show two example horizontal and vertical beam profile as obtained from the SPS.BWS.51637.H and SPS.BWS.41677.V instruments respectively during the experiment with CC1 in SPS in 2022. The data points from the IN (OUT) scan are shown with a blue (orange) color. 
 

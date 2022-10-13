@@ -455,7 +455,7 @@ Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows an ov
        \label{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}
 \end{figure}
 
-The measured vertical emittance growth rates in the presence of strong octupoles appear to be relatively close to the emittance growth predicted by the Mastoridis--Baudrenghien model which does not include the imepdance effects. These experimental data are promising, since they agree qualitatively with the PyHEADTAIL simualtions including the SPS imepdance model which suggest that strong octupoles should be able to restore the emittance growth predicted by the Mastoridis--Baudrenghien model. However, there are quantitative discrepancies between the measurements and the analytical predictions which will be discussed further in the folllowing section.
+The measured vertical emittance growth rates in the presence of strong octupoles appear to be relatively close to the emittance growth predicted by the Mastoridis--Baudrenghien model which does not include the imepdance effects. These experimental data are promising, since they agree qualitatively with the PyHEADTAIL simualtions including the SPS imepdance model which suggest that strong octupoles should be able to restore the emittance growth predicted by the Mastoridis--Baudrenghien model. However, there are quantitative discrepancies between the measurements and the analytical predictions: this will be discussed further in the folllowing section which provides a direct comparison of the measurd data with the PyHEADTAIL simualation results and the predictions of Mastoridis--Baudrenghien model.
 
 It is worth pointing out, that the vertical emittance growth for $k_\mathrm{LOD}=-10$\,$\mathrm{/m^4}$ was measured to be larger than the rate for $k_\mathrm{LOD}=+10$\,$\mathrm{/m^4}$. This asymmetry on the emittance growth rates for positive and negative octupole strength agrees with the observables of the PyHEADTAIL simualtions which include the impedance effects (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}).
 
@@ -480,40 +480,37 @@ The intensity measurements were performed with the Beam Current Transformer (BCT
 
 % Also we investigate otuside of the suppression region. It doesn't matter.
 
-\section{Experiment with CC as noise source}\label{sec:cc_md_2022}
-Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
+\section{Comparison of experimental data with simulations and theory}\label{sec:compare_measurements_pyheadtail_theory}
+
+Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} provides a direct comparison of the vertical measured emittance growth with the simulation results from PyHEADTAIL including the SPS impedance model (discussed in Section~\ref{sec:preparatory_studies_2022_cc}). The measured emittance vertical growth is plotted from both Experiments II (magenta) and III (green) which were conducted in the SPS in May and September 2022, respectively. Both measured and simulated rates are normalised with the corresponding analytical prediction.
+
+
+It is worth noting, that in the following discussion there is some small uncertainty introduced from the fact that the simulated emittance growth was driven by $\CC$ RF phase only. On the contrary, the experimentally measured emittance growth (and the corresponding theoretical predictions) was driven by both $\CC$ RF phase and amplitude noise. As discussed in the previous sections, the phase noise was dominant however there was always some amplitude noise unavoidably injected into the CC RF system. The amplitude noise was much weaker and resulted in about 1-7$\%$ of the total emittance growth rate. The level of amplitude noise was not consistent throughout Experiments II and III, therefore introducing amplitude noise of a specific noise in the simulations does not provide a unified approach. 
+
+
+% plotting script: /eos/user/n/natriant/pyheadtail_data/final_for_thesis/2022_conditions/CC1/normalised_growth_vs_measurements/job0010b_plot_loadFromPickles_dey_scanOverAyy_NowakesVSwakes-octupoleSettings-Noconstraintaxy_plot_normalised.ipynb
+\begin{figure}[!htb]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/deyRates_sps_270GeV_PN1e-8_400MHz_SPS_NewWakesAllcontributions_appendWakes_y-plane_WakesONvsOFF_QpxQpy1_6D_Nb5e5_intensity3e10Scan_simulations_vs_measurements_magenta_new_legend_IPAC22_May_and_September_2022_for_thesis.png}
+       \caption{Measured (magenta-Experiment II, green-Experiment III) and simulated (orange) vertical emittance growth driven by phase noise injected in the RF system of CC1 for different octupole settings. Both measured and simulated rates are normalised with the corresponding prediction from the Mastoridis--Baudrenghien model.}
+       \label{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22}
+\end{figure}
+
+
+
+
+- say pyheadtail only phase nosie. why no point including amplitud noise.
+
+%\section{Experiment with CC as noise source}\label{sec:cc_md_2022}
+%Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
 % Also you can add that each point in the emittance growth studies needs about 30-40 min.
 
 
 
 
 
-\textbf{CC RF noise}\\
-The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise. The noise excitation extended from DC up to about 10\,kHz and thus the noise was applied on the first vertical betatron sideband only, at $\sim$8\,kHz. The power spectral density values at $\sim$8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
-
-
-\textbf{SPS Wire Scanners}\\
-The emittance values were measured with the SPS Wire Scanners according to the procedure discussed in Section~\ref{subsec:sps_ws}. In particular, wire scanners SPS.BWS.51637.H and SPS.BWS.41677.V were used for measurements in the horizontal and vertical planes, respectively. For both devices the data points from the second photomultiplier were used (PM2) \footnote{Each Wire Scanner device is equipped with four PMs. Each one of them provides a better resolution of the amplitude signal of the secondary particles for a different regime. The choice of PM2 for the emittance growth studies in 2022 was done "online", during the experiment, by examining the obtained beam profiles.}. The beta functions of the respective plane at the locations of the wire scanners are 79.29\,m, and  60.75\,m. 
-% The values of the beta functions were obtained from MADX: https://github.com/natriant/exploring_SPS/blob/master/madx_studies/optics_new_seq_after_LS2/output/twiss_thin_elements/find_beta_functions_at_locations.ipynb 
-
-As explained earlier (see Section~\ref{subsec:sps_ws}) during each measurement with the wire scanners the beam profile is acquired two times as the wire crosses the beam in the forward direction (IN scan) and then in the reverse direction (OUT scan). For the experiment of 2022, the OUT scan was performed just 200\,ms after the IN scan. However, it was observed that there are significant discrepancies between the measurements from IN and OUT scan, which in some cases reached up to 1\,$\mathrm{\mu m}$. By looking at the acquired profiles no reason was found to exclude or not one of the two scans (for reference see Fig.~\ref{fig:WS_example_profiles_H_2022}). A significant effort was done with the wire scanner experts during the emittance growth experiment trying to mitigate this effect without success due to limitations on the hardware of the current instrument. Therefore, it was decided that the post-process analysis would be performed taking into account only the IN scan measurements since they appeared to have systematically less fluctuation than in the OUT scan (see Appendix~\ref{subsec:ex_emit_growth_in_vs_out}). Finally, the acquisitions from the OUT scans were not completed correctly leading to unusable profiles.\textcolor{red}{corruputed profiles}. 
-
-It is worth commenting that this issue was not observed in the 2018 measurements. A possible explanation is that the wire scanner acquisitions of 2022 provide lower number of points to reconstruct the bunch profiles (compare Figs.~\ref{fig:WS_example_V_profile} against~\ref{fig:WS_example_profiles_V_2022}) increasing the uncertainty of the obtained emittances. The reason behind this, is that between 2018 and 2022 the wire scanners had undergone an upgrade which increased their speed while crossing the bunch. A possible solution to this issue would be to reduce the speed of the wire for the emittance growth experiments in coast mode. This is currently in discussion with the team responsible for the wire scanners of the SPS.
-
-% Evidence for the strong difference between IN and OUT https://docs.google.com/presentation/d/1QIaQNfqVWaI8cHGGgb5eeS7c_jdUMuxLqD_poHrOtH0/edit?usp=sharing
-
-Last, the low emittance growth rates showed a significant sensitivity to the fluctuation of the wire scanner measurements. For this reason, for the low $\CC$ noise levels, long measurement times of about 30-40 minutes were needed.
-
-
-%\textbf{Head-Tail monitor calibration}\\
-%From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
-
-%\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
-%    \centering         
-%    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
-%        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
-%        \label{fig:HT_calibration_2022_levens}
-% \end{figure}
+%\textbf{CC RF noise}\\
+%The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise. The noise excitation extended from DC up to about 10\,kHz and thus the noise was applied on the first vertical betatron sideband only, at $\sim$8\,kHz. The power spectral density values at $\sim$8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
 
 
 \subsection{Experiment preparation and procedure}\label{sec:cc_md_2022_preparation}
@@ -522,34 +519,8 @@ The available machine time ($\sim$ 10 hours) for the $\CC$ experiment of 2022 wa
 
 The objective of the second part was to investigate the effects of impedance and amplitude detuning on the emittance growth from $\CC$ phase noise. The preceding analysis of the PyHEADTAIL simulations revealed a significant sensitivity of the emittance growth suppression on amplitude-dependent tune shift (e.g. Fig.~\ref{fig:MD_2018_impedance_simulations}). This behavior can be tested experimentally in the SPS with the use of the Landau octupole families, which allow for the introduction of controlled detuning with amplitude. A successful reproduction of this behavior would provide the proof-of-concept for the emittance growth suppression mechanism from the beam transverse impedance. This will be referred to as $\CC$ Experiment B in the following. It should be mentioned, that for this experiment the octupoles of the LOD family are employed as they act mostly in the vertical plane which is the plane of interest in this studies (vertical $\CC$ module which results in vertical emittance growth).
 
-\textbf{Preparatory studies with PyHEADTAIL simulations}\\
-
-\textbf{Experimental procedure}\\
-The experiment was carried out on 16 May 2022, from 09:15 to 18:40. The steps taken during the experimental study were the following:
-
-\begin{enumerate}
-   \item Calibration of the $\CC$ phase offset and voltage measurement.
-   \item Measurement of the background growth rate in "coast" mode: CC is switched on but with no additional noise injected in its RF system and the Landau octupoles switched off.
-   \item Measurement of the emittance growth with the Landau octupoles switched off and for four different $\CC$ noise levels as in 2018 (CC Experiment A). For each noise level a new bunch was injected.
-   \item Measurement of the emittance growth for a selected noise level and varying octupole strength (CC Experiment B). For each octupole setting a new bunch was injected in the SPS.
-\end{enumerate}
 
 
-The details and the results of the above mentioned steps will be presented in the following subsections.
-
-
-\subsection{Results of CC Experiment B: sensitivity of emittance growth rates to amplitude-dependent tune shift}\label{subsec:cc_md_2022_octupole_scan}
-
-
-
-
-\textbf{Summary plot}\\
-Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows the measured emittance growth rates (in both planes) as functions of octupole strength. The error bars indicate the error of the linear fit on the emittance values during each coast. The background emittance growth observed in the SPS without any noise injected in the CC1 ($d\epsilon_x/dt$ = 0.81\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt$ = 0.84\,$\mathrm{\mu m/h}$) is subtracted from the measured values. 
-%On this ground, it is reasonable to focus the rest of the analyisis in the vertical plane. 
-
-Similarly to the first part of the experiment (see Section~\ref{subsec:cc_md_2022_noise_scan}), the growth in the horizontal plane seems independent of the growth in the vertical. Furthermore, Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} shows a clear dependence of the measured vertical emittance growth rate on the octupole strengths which appears similar to that expected from the simulations. The results from the experiment support the proposed explanation (in terms of the machine impedance) for the damping of the emittance growth from $\CC$ noise.
-
-Additionally, for the measurements with the octupoles turned off, $k_\mathrm{LOD}=0$, the suppression factor is found to be $\sim$ 4-5 which is similar to what is expected from impedance.
 
 The measured vertical emittance growth for the large octupole strength, $k_\mathrm{LOD}$=+15\,$\mathrm{m^4}$, appears to agree with the analytical prediction of Mastoridis--Baudrenghien model. However, from PyHEADTAIL simualtions with the impedance model this behavior is expected only for octupoles stronger than 20\,$\mathrm{m^4}$ in absolute value (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). This indicates that there is some uncertainty about the level of quantitative agreement: this will be discussed further in the following paragraph which provides a direct comparison of the measured data with the simulation results.
 
