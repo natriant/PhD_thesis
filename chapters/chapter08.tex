@@ -101,7 +101,7 @@ The linear chromaticity was corrected to about zero units in both the horizontal
 
 The first step before the emittance growth measurements, was to measure the $\CC$ voltage and calibrate the phase offset. It is reminded that in the experimental campaign of 2018, it was found that there was a phase offset between the set phase of the $\CC$ and the phase experience by the beam (see Section~\ref{subsec:CC_voltage_2018_measurement}). Even though simulation studies showed that for the long bunches used in the $\CC$ experiments the $\CC$ phase has no significant impact on the phase noise induced emittance growth~\cite{wp4_triantafyllou_2020} an automated procedure was developed for identifying and correcting this phase offset for completeness. The same procedure can also provide the amplitude of the $\CC$ voltage.
 
-To provide an overview, the calibration was performed by varying the inspector phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the intra-bunch offset due to the $\CC$ was acquired with the Head-Tail monitor and the $\CC$ voltage signal was reconstructed following the same procedure described in Section~\ref{subsec:CC_voltage_2018_measurement}~\footnote{It is worth mentioning here that from the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor which provides the normalisation factor that converts the measured intra bunch offset from arbitrary units to millimeters (more details in Appendix~\ref{subsec:HT_post_process_CC}) was repeated. The calibration factor for the Head-Tail monitor was measured to be 0.1037 in 2021(see Appendix~\ref{sec:HT_calibration_2022}).}. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, as it passes through the Head-Tail monitor was plotted as a function of the corresponding set value of the phase. The results of the phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022} (blue dots). 
+To provide an overview, the calibration was performed by varying the set phase of CC1 from -180$^\circ$ to +180$^\circ$ in steps of 30$^\circ$. For each step, the intra-bunch offset due to the $\CC$ was acquired with the Head-Tail monitor and the $\CC$ voltage signal was reconstructed following the same procedure described in Section~\ref{subsec:CC_voltage_2018_measurement}~\footnote{It is worth mentioning here that from the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor which provides the normalisation factor that converts the measured intra bunch offset from arbitrary units to millimeters (more details in Appendix~\ref{subsec:HT_post_process_CC}) was repeated. The calibration factor for the Head-Tail monitor was measured to be 0.1037 in 2021(see Appendix~\ref{sec:HT_calibration_2022}).}. For each acquisition, the $\CC$ voltage at the center of the bunch, $t=0$, as it passes through the Head-Tail monitor was plotted as a function of the corresponding set value of the phase. The results of the phase scan for $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_2022} (blue dots). 
 The three-parameter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$) is used to fit the measured data.
 
 %The results are fitted with the three-paramter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provides the amplitude, the phase and the vertical offset of the signal ($A, \theta, d$).
@@ -109,8 +109,8 @@ The three-parameter sinusoidal function of Eq.~\eqref{eq:sin_fit_cc} which provi
 
 \begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/HT_monitor_phase_CC_offset_calibration
    \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png}
-       \caption{Calibration plot for the CC1 as obtained during the experiment on 16 May 2022, displaying the CC voltage at the center of the bunch $t=0$ for different phase values set in the CC.}
+   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis_new_xlabel.png}
+       \caption{Calibration plot for the CC1 as obtained during the experiment on 16 May 2022, displaying the CC voltage at the center of the bunch $t=0$ for different phase values set in CC1.}
        \label{fig:Vcc_calibration_md_2022}
 \end{figure}
 
@@ -397,14 +397,65 @@ The intensity measurements were performed with the Beam Current Transformer (BCT
 
 \section{Experiment III: restoring the emittance growth rate predicted from Mastoridis--Baudrenghien model}\label{subsec:cc_md_sep_2022_octupole_scan}
 
-In Experiment III, the emittance growth driven by $\CC$ RF noise was measured for one noise level over a range of octupole (LOD family) strengths. The goal was to explore the mainly regime for $k_\mathrm{LOD} \geq 20$\,$\mathrm{/m^4}$, 
+In Experiment III, the emittance growth driven by $\CC$ RF noise was measured for one noise level over a range of octupole (LOD family) strengths. The goal was to explore the mainly regime for $k_\mathrm{LOD} \geq 20$\,$\mathrm{/m^4}$, where there should be no emittance growth suppression and the emittance growth is epxected to agree with the predictions of Mastoridis--Baudrenghien model independently of the value of amplitude-dependent tune spread (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Experiment III, took place in SPS on September 12, 2022 for very similar machine and beam conditions with Experiments I and II which can be found in Table~\ref{tab:machine_beam_param_2022}. In Experiment III, $\CC$1 was used.
+
+The linear chromaticity was corrected to $Q^\prime_{x,y}=0.65$ in both transverse planes to ensure the coherent stability of the bunch even for large negative octupole strengths\footnote{It is reminded, that the occurance of horizontal coherent instabilities was a limiting factor in the emittance growth measurements of Experiment II that took place in May 2022, due to the almost zero values of linear chromaticity.}.
+
+
+\subsection{Calibration of the Crab Cavity phase offset and voltage measurement}\label{subsec:cc_calibration_2022_exp3}
+The calibration of the $\CC$1 offset and the measurement of the voltage were performed folllowing the automated procedure described in Section~\ref{subsec:cc_calibration_2022}. The results of the phase scan are summaised in Fig.~\ref{fig:Vcc_calibration_md_sep2022} (blue dots).
+
+\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/HT_monitor/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis_sep22.png}
+       \caption{Calibration plot for the CC1 as obtained during the experiment on September 12, 2022, displaying the CC voltage at the center of the bunch $t=0$ for different values of the set phase of CC1.}
+       \label{fig:Vcc_calibration_md_sep2022}
+\end{figure}
+
+The results of the sinusoidal fit of Eq.~\eqref{eq:sin_fit_cc} (blue dashed line) are given in the legend box of Fig.~\ref{fig:Vcc_calibration_md_sep2022}. From the beam-based measurements with the Head-Tail monitor the phase offset of $\CC$1 was found to be -1.54$^\circ$. For the rest of the experiment the $\CC$ phase was set to +1.54$^\circ$ so that the phase of the voltage experienced by the bunch is zero. 
+
+Tha amplitude of the $\CC$1 voltage was measured to be: $\CCvoltage=A \pm d = 1.05 \pm 0.02$\,MV very close to the targeted one of 1\,MV.
+
+\subsection{Measurement of background growth rate in "coast" mode}
+After the calibration of CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background transverse emittance growth, with no additional noise injected in the $\CC$ RF system, was measured. This time, the background was measured with the Landau octupoles switched on, at $k_\mathrm{LOD}=+30$\,$\mathrm{/m^4}$. The background emittance growth was found to be: $d\epsilon_x/dt=2.42$\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt=1.62$\,$\mathrm{\mu m/h}$ in the horizontal and vertical planes respectively. The measured background emittance growth is plotted in Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}.
+
+%Unfortunately, there was not enough time repeat the measurement with the Landau octupoles switched off. Nevertheless, the octupoles are not expected to introduce additional tranvserse emittance growth in coast. We measured with strong octupoles to also check that the beam remain stable at large octupole strengths.
+
+\begin{figure}[!h]
+   \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/cc_md_12sep22_backg_coast3.png}
+       \caption{Horizontal (blue) and vertical (red) background emittance growth measured during the experiment with CC1 on September 12, 2022, with no artificial noise injected in the CC RF system and with $k_\mathrm{LOD}=+30$\,$\mathrm{/m^4}$.}
+       \label{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}
+\end{figure}
+
+The background emittance growth was found to be faster than in May 16, 2022 (see Fig.~\ref{fig:cc_md_2022_background_growth_in_scan}). A possible explanation is that some growth in the transverse emittance could be driven by the operation of the Landau octupoles. Some detailed and careful investigation is required to identify the precise cause. However, due to the limited machine time, this issue should be addressed in future studies. Nevertheless, the background emittance growth is very small compared to the noise-induced emittance growth. Therefore, the non-precise knowledge of the background emittance growth does not affect the conclusions drawn from these studies. 
 
 
 
-where the dependence of the emittance growth suppression on the amplitude-dependend tune spread is expected to be strong (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Experiment II took place in the SPS on May 16, 2022, right after Experiment I, for the same beam and machine conditions. The measurements of the CC voltage and of the background emittance growth were not repeated since the values measured in Experiment I are also valid for Experiment II.
+\subsection{Injected CC RF noise}\label{subsec:cc_rf_noise_exp3}
 
-The experiment was performed by injecting artificial noise in the $\CC$ RF system. In particular, the emittance growth was driven by phase noise of -104.7\,dBc/Hz and by amplitude noise of -116.0\,dBc/Hz at $\sim$8\,kHz (Level 4 in Table~\ref{tab:noise_settings_2022}). 
-% -104.7 dbc/Hz is about 3.4 * 10^{-11}.
+The experiment was performed by injecting artificial noise (similar to the one used for Experiment II) in the $\CC$ RF system. The noise was a mixture of both phase and amplitude noise with the phase noise being dominant. In particular, the amplitude and phase noise level at $\sim$8\,kHz were measured at -123.3\,dBc/Hz and -103.3\,dBc/Hz, respectively. From the Mastoridis--Baudrenghien model (which does not include impedance induced effects) these noise levels are expected to result to a vertical emittance growth of $0.24$\,$\mathrm{\mu m/h}$ and 28.41\,$\mathrm{\mu m/h}$ respectively. These rates are computed for the measured amplitude of the CC voltage, $\CCvoltage=1.05$\,MV and $4\sigma_t=1.77$\,ns (average measured bunch length over all coasts of Experiment III, see Section~\ref{subsec:bunch_length_intensity_exp3}). It is evident that the contribution of the amplitude noise to the total emittance growth is negligible hence it will not be considered in the analyisis presented in this section.
+
+
+
+The emittance growth induced by the above mentioned RF noise was measured for five different octupole strengths, $k_\mathrm{LOD}=\pm 30, \pm 10$\,$\mathrm{/m^4}$ and $-20$\,$\mathrm{/m^4}$. The octupole strengths $| k_\mathrm{LOD} | \geq 20$\,$\mathrm{/m^4}$ are expected to restore the emittance growth rate to the values predicted by the Mastoridis--Baudrenghien model. For each octupole strength the bunch evolution was recorded for about 15-30 minures by acquiring the emittance with repeated Wire Scanner measurements and then performing a linear fit on the emittance values. For the measurements of each setting a fresh bunch was used so that the initial conditions each time were as close as possible. The measurements of the emittance evolution for each octupole strength are presented in the Appendix~\ref{sec:emit_growth_cc_md_sep2022}
+
+
+
+
+
+In particular, the emittance growth was driven by phase noise of -103.3\,dBc/Hz and by amplitude noise of -123.4\,dBc/Hz at $\sim$8\,kHz. 
+
+
+
+
+
+\subsection{Bunch length and intensity measurements}\label{subsec:bunch_length_intensity_exp3}
+
+The bunch length measurements were performed with the Wall Current monitor. The bunch length evolution over each coastcan be found in Appendix~\ref{subsec:2022_exp2_bunch_length}. The average measured bunch length (over all coasts) was found to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. 
+
+
+The intensity measurements were performed with the Beam Current Transformer (BCTDC) \textcolor{red}{add reference}. The bunch intensity over each coast can be found in Appendix~\ref{subsec:2022_exp2_intensity}. The average intensity (over all coasts) was found to be about 2.9$\times 10^{10}$ protons per bunch, very close to the requested values of 3.0$\times 10^{10}$. No significant, losses were observed during the coasts, therefore the evolution of the intensity is not considered in the following.
 
 
 
@@ -591,40 +642,11 @@ The emittance growth measurements described in this section, were performed in c
 
 
 \subsection{Calibration of CC phase offset and voltage measurments}
-The $\CC$ calibration and the measurement of the $\CC$ voltage amplitude were performed following the procedure described in Section~\ref{subsec:cc_calibration_2022}. The results from the inspector phase scan of $\CC$1 are summarised in Fig.~\ref{fig:Vcc_calibration_md_sep2022} (blue dots).
 
-\begin{figure}[!h] % /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/HT_monitor/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis.png
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/Vcc_at_z_zero_vs_inspector_phase_CC1_for_thesis_sep22.png}
-       \caption{Calibration plot for the CC1 as obtained during the experiment on September 12, 2022, displaying the CC voltage at the center of the bunch $t=0$ for different values of the inspector phase.}
-       \label{fig:Vcc_calibration_md_sep2022}
-\end{figure}
-
-The results of the sinusoidal fit of Eq.~\eqref{eq:sin_fit_cc} (blue dashed line) are given in the legend box of Fig.~\ref{fig:Vcc_calibration_md_sep2022}. From the beam-based measurements with the Head-Tail monitor the phase offset of $\CC$1 was found to be -1.54$^\circ$. For the rest of the experiment the inspector phase was set to +1.54$^\circ$ so that the phase of the $\CC$ voltage experienced by the bunch is zero. 
-
-Tha amplitude of the $\CC$1 voltage was measured to be: $\CCvoltage=A \pm d = 1.05 \pm 0.02$\,MV very close to the targeted one of 1\,MV.
-
-\subsection{Measurement of background growth rate in "coast" mode}
-After the calibration of CC1, the coast at 270\,GeV was set up for the emittance growth measurements. First, the background transverse emittance growth, with no additional noise injected in the $\CC$ RF system, was measured. This time, the background was measured with the Landau octupoles switched ON, at $k_\mathrm{LOD}=+30$\,$\mathrm{/m^4}$. The background emittance growth was found to be: $d\epsilon_x/dt=2.42$\,$\mathrm{\mu m/h}$ and $d\epsilon_y/dt=1.62$\,$\mathrm{\mu m/h}$ in the horizontal and vertical planes respectively. The measured background emittance growth is plotted in Fig.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}.
-
-%Unfortunately, there was not enough time repeat the measurement with the Landau octupoles switched off. Nevertheless, the octupoles are not expected to introduce additional tranvserse emittance growth in coast. We measured with strong octupoles to also check that the beam remain stable at large octupole strengths.
-
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/cc_md_12sep22_backg_coast3.png}
-       \caption{Horizontal (blue) and vertical (red) background emittance growth measured during the experiment with CC1 on September 12, 2022, with no artificial noise injected in the CC RF system and with $k_\mathrm{LOD}=+30$\,$\mathrm{/m^4}$.}
-       \label{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22}
-\end{figure}
-
-The background emittance growth was found to be faster than in May 16, 2022 (see Fig.~\ref{fig:cc_md_2022_background_growth_in_scan}). A possible explanation is that some growth in the transverse emittance could be driven by the operation of the Landau octupoles. Some detailed and careful investigation is required to identify the precise cause. However, due to the limited machine time, this issue should be addressed in future studies. Nevertheless, the background emittance growth is very small compared to the noise-induced emittance growth. Therefore, the non-precise knowledge of the background emittance growth does not affect the conclusions drawn from these studies. 
 
 
 \subsection{Emittance growth measurements with strong octupoles}\label{subsec:cc_md_sep}
-For the experiment artificial noise was injected in the RF system of $\CC1$. The noise was a mixture of both phase and amplitude noise with the phase noise being dominant. In particular, the amplitude and phase noise level at the betatron frequency were measured at -123.3\,dBc/Hz and -103.3\,dBc/Hz (slightly stronger than the phase noise used in the May experiment) respectively. From the Mastoridis--Baudrenghien model these noise levels are expected to result to a vertical emittance growth of $0.24$\,$\mathrm{\mu m/h}$ and 28.41\,$\mathrm{\mu m/h}$ respectively. These rates are computed for $\CCvoltage=1.05$\,MV and $4\sigma_t=1.77$\,ns. It is evident that the contribution of the amplitude noise to the total emittance growth is negligible hence it will not be considered in the analyisis presented in this section.
-
-The emittance growth induced by the above mentioned RF noise was measured for five different octupole strengths, $k_\mathrm{LOD}=\pm 30, \pm 10$\,$\mathrm{/m^4}$ and $-20$\,$\mathrm{/m^4}$. The octupole strengths $| k_\mathrm{LOD} | \geq 20$\,$\mathrm{/m^4}$ are expected to restore the emittance growth rate to the values predicted by the Mastoridis--Baudrenghien model. For each octupole strength the bunch evolution was recorded for about 15-30 minures by acquiring the emittance with repeated Wire Scanner measurements and then performing a linear fit on the emittance values. For the measurements of each setting a fresh bunch was used so that the initial conditions each time were as close as possible. The measurements of the emittance evolution for each octupole strength are presented in the Appendix~\ref{sec:emit_growth_cc_md_sep2022}
-
-
+For the experiment artificial noise was injected in the RF system of $\CC1$. 
 Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22} shows the measured horizontal (blue) and vertical (red) emittance growth as a function of octupole strength. The error bars show the error of the linear fir on the evolution of the emittance values during each setting. The background emittance growth measured without artificial noise injected in the CC1 is subtracted from the measured values. The black dashed horizontal line shows the theoretically predicted emittance growth from the Mastoridis--Baudrenghien model which does not include impedance induced effects.
 
 % Plotting script: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/ws_emittance_growth/analysis_for_uppsala/cc_md_12Sep22.ipynb
