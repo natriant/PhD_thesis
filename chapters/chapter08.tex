@@ -250,7 +250,7 @@ The bunch length measurements were performed with the Wall Current monitor. The 
 
 %The individual plots illustrating the evolution of the bunch length as measured with the Wall Current Monitor (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) during the experiment are presented in Appendix~\ref{sec:bunch_length_measurements_2022}. Finally, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression.
 
-The intensity measurements were performed with the Beam Current Transformer (BCTDC) \textcolor{red}{add reference}. The bunch intensity over each coast can be found in Appendix~\ref{subsec:2022_exp1_intensity}. The average intensity (over all coasts) was found to be about 2.9$\times 10^{10}$ protons per bunch, very close to the requested values of 3.0$\times 10^{10}$. No significantl, losses were observed during the coasts, therefore the evolution of the intensity is not considered in the following.
+The intensity measurements were performed with the Beam Current Transformer (BCTDC) \textcolor{red}{add reference}. The bunch intensity over each coast can be found in Appendix~\ref{subsec:2022_exp1_intensity}. The average intensity (over all coasts) was found to be about 2.9$\times 10^{10}$ protons per bunch, very close to the requested values of 3.0$\times 10^{10}$. No significant, losses were observed during the coasts, therefore the evolution of the intensity is not considered in the following.
 
 \subsection{Comparison of the transverese emittance growth with the predictions of Mastoridis--Baudrenghien theory}\label{sec:cc_exp1_2022_theory_vs_measurements}
 
@@ -332,9 +332,10 @@ The experiment was performed by injecting artificial noise in the $\CC$ RF syste
 % -104.7 dbc/Hz is about 3.4 * 10^{-11}.
 
 
+
 \subsection{Transverse emittance growth measurements}\label{subsec:emit_growth_exp2}
 
-In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} \leq 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = 0$~\footnote{Actually, the emittance growth rate for $k_\mathrm{LOD}$ = 0 was measured during Experiment I (Fig.~\ref{fig:cc_md_2022_coast4})}, $\pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
+In the limited time available for the experiment performing the full scan on the octupole strengths for $k_\mathrm{LOD} < 20$\,$\mathrm{/m^4}$ was not feasible. Only five octupole strengths could be used, $k_\mathrm{LOD} = 0$~\footnote{Actually, the emittance growth rate for $k_\mathrm{LOD}$ = 0 was measured during Experiment I (Fig.~\ref{fig:cc_md_2022_coast4})}, $\pm 5 \ \mathrm{m^{-4}}, 10 \ \mathrm{m^{-4}}$ and $15 \ \mathrm{m^{-4}}$. %The last value of octupole strength is expected to restore the growth rate to almost the values predicted by the Mastoridis--Baudrenghien model (approximately 20 $\mathrm{\mu m/h}$).
 For each one of these octupole strengths the bunch evolution was recorded for about 20 minutes by acquiring repeated Wire Scanner measurements and then performing a linear fit. For the measurements of each octupole strength a fresh bunch was used so that the initial conditions each time are as close as possible.
 
 
@@ -384,6 +385,28 @@ The setting of almost zero linear chromaticity is the most likely explanation fo
 
 
 It is worth commenting, that the instability appeared in the horizontal plane. A possible explanation is that the $k_\mathrm{LOD}$ families used for the experiment the act mainly in the vertical plane. Hence the resulted tune spread was sufficient to stabilise the beam through the mechanism of Landau damping \footnote{Landau damping is a stabilising mechanism that is applied against beam instabilities. It is demonstrated in the transverse planes in the presence of incoherent betatron tune spread. Further details can be found in~\cite{Herr:1982428, Schenk:2665819}, however a further discussion is out of the scope of this thesis.}.
+
+
+\subsection{Bunch length and intensity measurements}\label{subsec:bunch_length_intensity_exp2}
+
+The bunch length measurements were performed with the Wall Current monitor. The bunch length evolution over each coastcan be found in Appendix~\ref{subsec:2022_exp2_bunch_length}. The average measured bunch length (over all coasts) was found to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. 
+
+
+The intensity measurements were performed with the Beam Current Transformer (BCTDC) \textcolor{red}{add reference}. The bunch intensity over each coast can be found in Appendix~\ref{subsec:2022_exp2_intensity}. The average intensity (over all coasts) was found to be about 2.9$\times 10^{10}$ protons per bunch, very close to the requested values of 3.0$\times 10^{10}$. No significant, losses were observed during the coasts, therefore the evolution of the intensity is not considered in the following.
+
+
+\section{Experiment III: restoring the emittance growth rate predicted from Mastoridis--Baudrenghien model}\label{subsec:cc_md_sep_2022_octupole_scan}
+
+In Experiment III, the emittance growth driven by $\CC$ RF noise was measured for one noise level over a range of octupole (LOD family) strengths. The goal was to explore the mainly regime for $k_\mathrm{LOD} \geq 20$\,$\mathrm{/m^4}$, 
+
+
+
+where the dependence of the emittance growth suppression on the amplitude-dependend tune spread is expected to be strong (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}). Experiment II took place in the SPS on May 16, 2022, right after Experiment I, for the same beam and machine conditions. The measurements of the CC voltage and of the background emittance growth were not repeated since the values measured in Experiment I are also valid for Experiment II.
+
+The experiment was performed by injecting artificial noise in the $\CC$ RF system. In particular, the emittance growth was driven by phase noise of -104.7\,dBc/Hz and by amplitude noise of -116.0\,dBc/Hz at $\sim$8\,kHz (Level 4 in Table~\ref{tab:noise_settings_2022}). 
+% -104.7 dbc/Hz is about 3.4 * 10^{-11}.
+
+
 
 \section{Experiment with CC as noise source}\label{sec:cc_md_2022}
 Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
