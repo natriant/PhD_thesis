@@ -86,6 +86,9 @@ From Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}, we make th
 
 For the experiment described here, the emittance growth was measured in the presence of four different noise levels (as close as possible with the ones used in 2018) with the Landau octupoles switched off. The objective was a) to reproduce the scaling of emittance growth observed in 2018 (see Fig.~\ref{fig:MD5_summary_plot}) and b) to benchmark the expected suppression factor from PyHEADTAIL simulations with the impedance model. 
 
+
+Four different levels of artificial noise were injected in the RF system of the $\CC$ as listed in Table~\ref{tab:noise_settings_2022} and the emittance evolution was recorded in coast mode every $\sim$1.5 minute. For each noise level, a new bunch was injected so that all measurements took place with the same initial conditions. The duration of each coast varied from about 30 minutes for the low noise levels to about 20 minutes for the strong noise. 
+
 The linear chromaticity was corrected to about zero units in both the horizontal and vertical planes. That was a result of miscommunication with the operator team of the SPS machine as the desired value was between 0.5 and 1.0. However, the analysis of the PyHEADTAIL simulations in Section~\ref{subsec:chroma_scan} showed no significant sensitivity of the emittance growth suppression to the linear chromaticity values (for small positive values).
 
 \subsection{Calibration of the Crab Cavity phase offset and voltage measurement}\label{subsec:cc_calibration_2022}
@@ -143,6 +146,107 @@ The rest of the observed growth rates, is due to other sources which have not so
 
 
 
+\section{Injected Crab Cavity RF noise}\label{sec:injected_cc_noise_2022}
+The noise injected in the $\CC$ RF system was a mixture of phase and amplitude noise up to 10\,kHz as in 2018 experimental campaign. Thus the noise, overlaps and primarly excites the first vertical betatron sideband only, at $\sim$~8\,kHz. The predicted transverse emittance growth from Mastoridis--Baudrenghien model can be computed using Eqs.~\eqref{eq:dey_an_sps} and~\eqref{eq:dey_an_sps} for amplitude and phase noise, respectively.
+
+The power spectral density values at $\sim$~8\,kHz of the four different levels of artificial noise measured during the experiment are listed in Table~\ref{tab:noise_settings_2022} along with the corresponding expected emittance growth rates from the Mastoridis--Baudrenghien theory. By looking at the table, it is evident that the contribution of amplitude noise to the total emittance growth was found to be small: about 7~$\%$ on average over all noise settings.
+
+
+
+%The noise excitation extended from DC up to about 10\,kHz and thus the noise was applied on the first vertical betatron sideband only, at $\sim$~8\,kHz. The power spectral density values at $\sim$~8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it is evident that the contribution of amplitude noise to the total emittance growth was found to be small: about 7~$\%$ on average over all noise settings.
+
+%By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7~$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
+
+% I don't have the data to plot the spectra. Only screenshots in the logbook.
+
+
+% Note 1: Noise level values from the logbook.
+% Note 2: Analysis and percentages: /2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/cc_md_analysis_noise_scan_for_thesis.ipynb
+\begin{table}[!hbt]
+	\centering
+   \caption{Phase and amplitude noise levels injected in the CC RF system for the Experiment I in 2022 along with the analytically expected growths. The listed noise values correspond to the power spectral density values at the first vertical betatron sideband, $f_b$, at $\sim$~8\,kHz. The analytical emittance growth rates were computed using Eq.~\eqref{eq:dey_an_sps} and~\eqref{eq:dey_pn_sps} for bunch length of $4\sigma_t$=1.83\,ns and the measured amplitude of CC voltage, $V_\mathrm{CC,0}$=1.1\,MV.}
+	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m] X[c,m] X[c,m]}
+		&&&& \\[-6mm]
+		\toprule \toprule
+		\multicolumn{1}{l}{} &
+		\multicolumn{2}{c}{$\mathbf{10\,\boldsymbol{\log}_{10} \mathcal{L}(f)}$ \textbf{[dBc/Hz]}} & \multicolumn{2}{c}{\textbf{Analytical } $\mathbf{d \boldsymbol{\epsilon}_y/dt \ [\boldsymbol{\mu} m/h]}$} \\
+		\bottomrule
+      \multicolumn{1}{l}{} & 	\multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} & \multicolumn{1}{c}{\textbf{Phase noise}} & \multicolumn{1}{c}{\textbf{Amplitude noise}} \\
+      \midrule
+      \multicolumn{1}{l}{Level 1}  & \multicolumn{1}{c}{-115.2} & \multicolumn{1}{c}{-124.6} & \multicolumn{1}{c}{1.99} & \multicolumn{1}{c}{0.2} \\
+      
+      \multicolumn{1}{l}{Level 2}  & \multicolumn{1}{c}{-109.5} & \multicolumn{1}{c}{-120.5} & \multicolumn{1}{c}{7.39} & \multicolumn{1}{c}{0.51}\\
+
+      \multicolumn{1}{l}{Level 3}  & \multicolumn{1}{c}{-104.7} & \multicolumn{1}{c}{-116.0} & \multicolumn{1}{c}{22.32} & \multicolumn{1}{c}{1.44} \\
+
+      \multicolumn{1}{l}{Level 4}  & \multicolumn{1}{c}{-100.1} & \multicolumn{1}{c}{-111.0} & \multicolumn{1}{c}{64.35} & \multicolumn{1}{c}{4.54} \\ 
+      \arrayrulecolor{black}\bottomrule
+	\end{tabu}
+   \label{tab:noise_settings_2022}
+\end{table}
+
+
+\section{Transverse emittance growth measurements}\label{sec:cc_md_2022_exp1}
+
+Four different levels of artificial noise were injected in the RF system of the $\CC$ as listed in Table~\ref{tab:noise_settings_2022} and the emittance evolution was recorded in coast mode at 270\,GeV every $\sim$1.5 minute. For each noise level, a new bunch was injected so that all measurements took place with the same initial conditions. The duration of each coast varied from about 30 minutes for the low noise levels to about 20 minutes for the strong noise. 
+
+For the strong noise, less measurement time is sufficient since the growth rate obtained from the linear fit on the emittance values is less sensitive to the fluctuations in the wire scanner measurements. Additionally, for strong noise, the emittance reaches very quickly very large values, about 8-10\,$\mathrm{\mu m}$, which eventually degrades the quality of the beam.
+
+Figure~\ref{fig:cc_md_2022_overview_plots_noise_scan} illustrates the transverse emittance growth measured during Experiment 1 in 2022 for the four different noise levels injected in the $\CC$ RF system increasing from top left to bottom right. These measurements are summarised in Fig.~\ref{fig:H_V_emit_growth_noise_scan} which gives an overview of the vertical and horizontal emittance growth rates plotted as a function of the four different phase noise levels. 
+
+There is a clear emittance growth in the vertical plane which is faster for stronger noise as expected. A growth in the horizontal emittance is also observed, but this appears to be independent of the growth in the vertical. This indicates that the use of the skew quadrupoles (discussed in Section~\ref{sec:cc_md_2022_parameters}) sufficiently minimsed the betatron coupling. Consequently, even though in the 2018 analysis the total emittance growth given by $d\epsilon_y/dt +d\epsilon_x/dt $ was considered to account for effects of betatron coupling, in the 2022 analysis the growth in the horizontal and vertical planes will be treated separately.
+
+
+% Note 1, figures: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/for_thesis
+% Note 2, scripts to plot: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/cc_md_16May2022/ws_measurements 
+\begin{figure}[htp]
+   \centering
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast2.png}  
+       \caption{-115.2\,dBc/Hz}
+       \label{fig:cc_md_2022_coast2}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast3.png}  
+       \caption{-109.5\,dBc/Hz}
+       \label{fig:cc_md_2022_coast3}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+       \centering
+       \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast4.png}  
+       \caption{-104.7\,dBc/Hz}
+       \label{fig:cc_md_2022_coast4}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+           \centering
+           \includegraphics[width=.95\linewidth]{images/Ch8/emit_vs_time_Set1_coast5.png}  
+           \caption{-100.1\,dBc/Hz}
+           \label{fig:cc_md_2022_coast5}
+   \end{subfigure}
+   \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during Experiment I on 16 May, 2022. The different phase noise levels injected in the RF system of CC1, are shown in the caption for each plot.}
+   \label{fig:cc_md_2022_overview_plots_noise_scan}
+\end{figure}
+
+% Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_16May2022/roundA_online_analysis_ws/summary_plots/for_thesis/emit_H_and_V_noise_scan.png
+\begin{figure}[!h] 
+     \centering         
+   \includegraphics[width=0.7\textwidth]{images/Ch8/emit_H_and_V_noise_scan.png}
+       \caption{Overview plot of the emittance growth study with noise injected in the CC1 in 2022. The measured horizontal (blue) and vertical (red) emittance growth rates are shown as a function of the different power levels of applied phase noise. The error bars indicate the error of the linear fit to the emittance values (see Section~\ref{sec:emit_growth_meas_2018}).}
+       \label{fig:H_V_emit_growth_noise_scan}
+\end{figure}
+
+\section{Bunch length and intensity measurements}\label{sec:bunch_length_intensity_2022}
+
+The bunch length measurements were performed with the Wall Current monitor. The bunch length evolution over each coastcan be found in Appendix~\ref{subsec:2022_exp1_bunch_length}. The average measured bunch length (over all coasts) was found to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. 
+
+%The individual plots illustrating the evolution of the bunch length as measured with the Wall Current Monitor (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) during the experiment are presented in Appendix~\ref{sec:bunch_length_measurements_2022}. Finally, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression.
+
+The intensity measurements were performed with the Beam Current Transformer (BCTDC) \textcolor{red}{add reference}. The bunch intensity over each coastcan be found in Appendix~\ref{subsec:2022_exp1_intensity}. The average intensity (over all coasts) was found to be about 2.9$\times 10^{10}$ protons per bunch, very close to the requested values of 3.0$\times 10^{10}$. No significantl, losses were observed during the coasts, therefore the evolution of the intensity is not considered in the following.
+
+\section{Comparison of the transverese emittance growth with the predictions of Mastoridis--Baudrenghien theory}\label{sec:cc_exp1_2022_theory_vs_measurements}
+
 
 \section{Experiment with CC as noise source}\label{sec:cc_md_2022}
 Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
@@ -150,42 +254,6 @@ Due to the preceding PyHEADTAIL simulations which provided strong evidence that 
 
 
 
-\subsection{Machine and beam configuration}\label{sec:cc_md_2022_parameters}
-
-
-
-\begin{table}[!hbt]
-	\begin{minipage}{\textwidth}
-      \begin{centering}
-   \caption{Main machine and beam parameters for the emittance growth studies with CCs in SPS in 2022.}
-	\begin{tabu} to \textwidth {X[c,m] X[0.5c,m] X[0.5c,m] X[0.01c,m]}
-		&&& \\[-6mm]
-		\toprule \toprule
-		\multicolumn{2}{l}{\textbf{Parameter}} &
-		\multicolumn{2}{c}{\textbf{Value}} \\
-		\bottomrule
-      \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{270\,GeV} \\
-      \multicolumn{2}{l}{Main RF voltage / frequency,  $\VRF$ / $\fRF$}  & \multicolumn{2}{c}{5\,MV / 200.39\,MHz} \\ %200.3945
-      \multicolumn{2}{l}{Horizontal / vertical betatron tune, $\Qx$ / $\Qy$}  & \multicolumn{2}{c}{26.13 / 26.18} \\
-      \multicolumn{2}{l}{Horizontal / vertical first order chromaticity, $\Qpx$ / $\Qpy$}  & \multicolumn{2}{c}{ $\sim$ 0.0-0.5 / $\sim$ 0.0-0.5} \\
-      \multicolumn{2}{l}{Synchrotron tune, $Q_s$}  & \multicolumn{2}{c}{0.0051} \\
-      \multicolumn{2}{l}{$\CC 1$ voltage / frequency, $\VCC$ / $\fCC$}  & \multicolumn{2}{c}{1\,MV / 400.78\,MHz} \\
-      \multicolumn{2}{l}{Number of protons per bunch, $\Nb$} & \multicolumn{2}{c}{3 $\times 10^{10}$ p/b$^\ast$} \\
-      \multicolumn{2}{l}{Number of bunches}  & \multicolumn{2}{c}{1} \\
-      \multicolumn{2}{l}{Bunch length, 4$\sigmat$}  & \multicolumn{2}{c}{1.83 \,ns$^\ast$}\\
-      \multicolumn{2}{l}{Horizontal / vertical normalised emittance, $\emitx$ / $\emity$}  & \multicolumn{2}{c}{2\,$\mathrm{\mu m}$ / 2\,$\mathrm{\mu m^\ast}$}\\
-      \multicolumn{2}{l}{Horizontal / vertical rms tune spread, $\Dqxrms$ / $\Dqyrms$}  & \multicolumn{2}{c}{1.9 $\times 10^{-5}$ / 2.1 $\times 10^{-5}$ $^\ddagger$}\\
-      \bottomrule
-	\end{tabu}
-   \label{tab:machine_beam_param_2022}
-   \end{centering} \footnotesize{$^\ast$ These values corresponds to the requested intial value at the start of each coast.  \\ $^\dagger$ This value corresponds to the average rms measured bunch length over all the coasts of 2022. \\$^\ddagger$ Here the rms betatron tune spread includes only the contribution from the detuning with amplitude present in the SPS machine. More details along with the calculations for the listed values can be found in Appendix~\ref{app:detuning_with_amplitude}.}
-   \end{minipage}
-\end{table}
-% For bunch length: cernbox/2022/SPS_MDs_2022/cc_md_16May2022/longitudinal_profiles/visualise_pickle.ipynb
-
-The average bunch length (over all settings) was measured to be about $4\sigma_t$ = 1.83\,ns. During the coasts, an increase in the bunch length of $\sim$5~$\%/h$ on average for each setting was observed. This small increase agrees with what is usually observed in the SPS in coast and will not be taken into consideration in the following analysis. The individual plots illustrating the evolution of the bunch length as measured with the Wall Current Monitor (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) during the experiment are presented in Appendix~\ref{sec:bunch_length_measurements_2022}. Finally, looking at the dependence of the emittance growth suppression by the impedance on the bunch length in Fig.~\ref{fig:study_10_bunch_length} it is evident that the bunch length of $4\sigma_t$ = 1.83\,ns belongs to the regime of the strong suppression.
-
-The intensity was set to $3 \times 10^{10}$ protons to be in agreement with the experiment of 2018. During the coasts of the 2022 experiment almost zero losses were observed. Therefore, the evolution of the intensity during the coasts will be not considered in the following.
 
 
 \textbf{CC RF noise}\\
