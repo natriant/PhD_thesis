@@ -500,32 +500,12 @@ Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} provides 
 
 It can be seen, that overall there is a very good qualitative agreement of the measurements with the simulations. There is a clear dependece on the measured vertical emittance growth on the octupole strengths which saturates for strong octupoles. Furthermore, for the large octupole values, the measured emittance growth is very close to the values predicted from the Mastoridis--Baudrenghien model. Thus, the experimental data support the hypothesis that the impedance leads to damping of the emittance growth rates. 
 
+Additionally, the vertical emittance growth rate measured for $k_\mathrm{LOD}$=10\,$\mathrm{/m^4}$ in Experiment II was found to be in agreement (within the error bars) with the emittance growth rate measured in Experiment III for the same octupole strength. This indicates the very good reproducibility of the measurements.
+
+Regarding the degree of quantitative agreement, there is some uncertainty mainly for $| k_\mathrm{LOD} < 20|$\,$\mathrm{/m^4}$ where the mechanism of the suppression is effective. This is not surprising due to the complex nature of the effects. A possible factor that could explain the quantitative uncertainty is the contribution from space-charge: this has not yet been studied but could affect the betatron tune spread. Space charge was not yet taken into account as its contribution is very small for the discussed experimental configurations. However, the betatron tune spread values in the regime of the studies are also very small, $10^{-6}-10^{-4}$, which suggests that the space charge might play some role. This hypothesis can be investigated in simulations in future studies even though it is computationally challenging. Another possible reason could be the fact that the simulated emittance growth was driven by $\CC$ RF phase only. On the contrary, the experimentally measured emittance growth in Experiment II (and the corresponding theoretical predictions) was driven by both $\CC$ RF phase and amplitude noise. As discussed in the previous sections, the phase noise was dominant however there was always some amplitude noise unavoidably injected into the CC RF system. The amplitude noise was much weaker and resulted in about 7$\%$ of the total emittance growth rate. The level of amplitude noise was not consistent throughout Experiments II and III, therefore introducing amplitude noise of a specific power in the simulations does not provide a unified approach. 
 
 
-
-
-
-\textcolor{red}{needs to be refined.}
-It is worth noting, that in the following discussion there is some small uncertainty introduced from the fact that the simulated emittance growth was driven by $\CC$ RF phase only. On the contrary, the experimentally measured emittance growth (and the corresponding theoretical predictions) was driven by both $\CC$ RF phase and amplitude noise. As discussed in the previous sections, the phase noise was dominant however there was always some amplitude noise unavoidably injected into the CC RF system. The amplitude noise was much weaker and resulted in about 1-7$\%$ of the total emittance growth rate. The level of amplitude noise was not consistent throughout Experiments II and III, therefore introducing amplitude noise of a specific power in the simulations does not provide a unified approach. 
-
-
-
-
-Regarding the degree of quantitative agreement, there is some uncertainty, as already discussed above. Nevertheless, this is not surprising due to the complex nature of the effects, involving many different parameters, as discussed in the previous paragraph. Further studies, simulations, and measurements will be needed to investigate the quantitative agreement. One of the possible factors that could explain that quantitative agreement is not yet obtained is the contribution from space-charge: this has not yet been studied, but could affect the tune spread. Space charge was not yet taken into account as its contribution is very small for the discussed experimental configurations. Nevertheless, the tune spread values in the regime of the studies are also very small, $10^{-6}-10^{-4}$, which suggests that the space charge might play some role. This can be investigated in simulations even though it is computationally challenging.
-
-
-
-
-%\section{Experiment with CC as noise source}\label{sec:cc_md_2022}
-%Due to the preceding PyHEADTAIL simulations which provided strong evidence that the observed discrepancy between the 2018 measurements and the theoretical predictions could be explained by the beam transverse impedance additional machine time was dedicated to emittance growth studies with $\CC$ in the SPS in 2022. The time allocated for the $\CC$ experiment was limited to about 10 hours. Taking into consideration the time needed for the setup and the $\CC$ calibration the time available for the emittance growth measurements is reduced even more. To this end, measurement repeatability is limited and the experimental procedure had to be carefully planned in advance.
-% Also you can add that each point in the emittance growth studies needs about 30-40 min.
-
-
-
-
-
-%\textbf{CC RF noise}\\
-%The noise injected in the $\CC$ RF system was again a mixture of phase and amplitude noise. The noise excitation extended from DC up to about 10\,kHz and thus the noise was applied on the first vertical betatron sideband only, at $\sim$8\,kHz. The power spectral density values at $\sim$8\,kHz of the four different levels of artificial noise that were used in the experiment are listed in Table~\ref{tab:noise_settings_2022}. By looking at the table, it becomes evident that the contribution of amplitude noise to the total emittance growth was found to be small (about 7$\%$). To this end, in the post-processing of the 2022 data, the introduction of the effective phase noise (see Section~\ref{sec:injected_RF_noise}) is not required. In the following, the measured growth rates will be displayed as a function of the measured RF phase noise only. This choice is also justified by the fact that the objective of the 2022 experimental campaign with $\CC$s is to mainly reproduce the qualitative expected bahevior from the impedance and not the exact values. This is discussed further in the next sections of this chapter.
+The quantitative agreement in the regime of strong octupoles which should restore the emittance growth as predicted from Mastoridis--Baudrenghien model is very good. Only for $k_\mathrm{LOD} =-30$\,$\mathrm{/m^4}$ the measured emittance growth is 25$\%$ faster than the analytically predicted values. A possible explanation for this could be 10$\%$ higher $\CC$ voltage experienced by the beam than the one measured during the expereiment\footnote{For $V_\mathrm{CC,0}$ =1.15\,MV an emittance growth of about 34$\mathrm{\mu m/h}$ is expected from Mastoridis--Baudrenghien model, which agrees with the measurements for $k_\mathrm{LOD} =-30$\,$\mathrm{/m^4}$.}
 
 \textbf{Comparison of measurements against PyHEADTAIL simulations with the SPS impedance}\\
 
@@ -611,24 +591,7 @@ This theory supports the studies presented in this thesis. It also explains the 
 Due to the very promising results of the experiments that took place in May 2022 some additional machine time ($\sim$ 12 hours) was allocated for emittance growth measurements with $\CC$ RF noise on 12 September, 2022. The objective of this new round of measurements was to investigate the vertical emittance growth in the presence of $\CC$ RF phase noise and strong octupoles $|k_\mathrm{LOD} | \geq 20$\,$\mathrm{/m^4}$ for which the suppression mechanism is expected to be disabled (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}).
 
 
-\subsection{Emittance growth measurements with strong octupoles}\label{subsec:cc_md_sep}
-For the experiment artificial noise was injected in the RF system of $\CC1$. 
-Figure~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan_sep22} shows the measured horizontal (blue) and vertical (red) emittance growth as a function of octupole strength. The error bars show the error of the linear fir on the evolution of the emittance values during each setting. The background emittance growth measured without artificial noise injected in the CC1 is subtracted from the measured values. The black dashed horizontal line shows the theoretically predicted emittance growth from the Mastoridis--Baudrenghien model which does not include impedance induced effects.
 
-\subsection{Comparison of measurements against PyHEADTAIL simualations with the SPS impedance model}\label{subsec:comparison_with_pyheadtail_full_scan}
-Figure~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22} compares the vertical measured emittance growth with the simulation results from PyHEADTAIL including the SPS impedance model. Both measured and simulated rates are normalised with the corresponding analytical prediction. The measured emittance vertical growth is plotted from the experiments of May (magenta) and September (green) 2022.
-
-% plotting script: /eos/user/n/natriant/pyheadtail_data/final_for_thesis/2022_conditions/CC1/normalised_growth_vs_measurements/job0010b_plot_loadFromPickles_dey_scanOverAyy_NowakesVSwakes-octupoleSettings-Noconstraintaxy_plot_normalised.ipynb
-\begin{figure}[!h]
-   \centering         
-   \includegraphics[width=0.7\textwidth]{images/Ch8/deyRates_sps_270GeV_PN1e-8_400MHz_SPS_NewWakesAllcontributions_appendWakes_y-plane_WakesONvsOFF_QpxQpy1_6D_Nb5e5_intensity3e10Scan_simulations_vs_measurements_magenta_new_legend_IPAC22_May_and_September_2022_for_thesis.png}
-       \caption{Measured (magenta-May 2022, green-September 2022) and simulated (orange) vertical emittance growth driven by phase noise injected in the RF system of CC1 for different octupole settings. Both measured and simulated rates are normalised with the corresponding prediction from the Mastoridis--Baudrenghien model.}
-       \label{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion_sep22}
-\end{figure}
-
-Qualitatively, the experimental data (both from May and September) are in agreement with the simulations as they reproduce the dependence on the amplitude dependent tune spread. There is some uncertainty on the level of quantitative agreement. This could be due to various reasons which has been addressed in Sections~\ref{subsec:cc_md_2022_octupole_scan} and~\ref{subsec:cc_md_sep}.
-
-It is worth pointing out, that the vertical emittance growth rate measured for $k_\mathrm{LOD}$=10\,$\mathrm{/m^4}$ in May was found to be in excellent agreement with the emittance growth rate measured in September for the same octupole strength. This indicates the very good reproducibility of the measurements.
 
 \subsection{Emittance growth measurements with dominant amplitude noise}
 The last 15 minutes of the available machine time were dedicated to measure the emittance growth induced by $\CC$ RF amplitude noise. 
