@@ -515,10 +515,17 @@ The quantitative agreement in the regime of strong octupoles which should restor
 In Experiment IV, the emittance growth driven primarily by CC RF amplitude noise was studied. The experiment took place on September 12, 2022, right after Experiment III, therefore the measured $\CC$ voltage amplitude and background emittance growth correspond to the values measured for Experiment III. 
 
 
-The experiment was performed by injecting artificial noise in the CC RF system. In particular, the amplitude and phase noise at 8\,kHz were measured to be -102\,dBc/Hz and -122\,dBc/Hz, respectively. According to Mastoridis--Baudrenghien model this noise levels should result to about 32.4\,$\mathrm{\mu m/h}$ and 0.38\,$\mathrm{\mu m/h}$, respectively. These values were computed using Eq.~\eqref{eq:dey_an_sps} and~~\eqref{eq:dey_pn_sps}, respectively, for $\CCvoltage$=1.05\,MV and bunch length of $4 \sigma_t$=1.77\,ns.
+The experiment was performed by injecting artificial noise in the CC RF system. In particular, the amplitude and phase noise at 8\,kHz were measured to be -102\,dBc/Hz and -122\,dBc/Hz, respectively. According to Mastoridis--Baudrenghien model this noise levels are expected to result to about 32.25\,$\mathrm{\mu m/h}$ and 0.38\,$\mathrm{\mu m/h}$, respectively. These values were computed using Eq.~\eqref{eq:dey_an_sps} and~~\eqref{eq:dey_pn_sps}, respectively, for amplitude of $\CC$ voltage, $\CCvoltage$=1.05\,MV and bunch length of $4 \sigma_t$=1.75\,ns.
 
 \subsection{Transvserse emittance growth measurements}
-The emittance evolution, was measured for $k_\mathrm{LOD}$=-30\,$\mathrm{/m^4}$, is illustrated in Fig.~\ref{fig:H_V_emit_growth_Amplitude_noise_coast12}. It can be seen that the vertical emittance growth rate, as obtained from the linear fit on the vertical emittance values (red), agrees very well with the theoretically predicted rate. This is also in agreement with the simulation results with PyHEADTAIL including the SPS impedance model (see Section~\ref{subsec:amplitude_noise}). It is reminded that in the emittance growth driven by $\CC$ RF amplitude noise is not suppressed by impedance induced effects and should be in agreement with the predictions of Mastoridis--Baudrenghien model for any value of amplitude-dependent tune spread.
+The emittance evolution, was measured for $k_\mathrm{LOD}$=-30\,$\mathrm{/m^4}$ and is illustrated in Fig.~\ref{fig:H_V_emit_growth_Amplitude_noise_coast12}. 
+
+
+The vertical emittance growth was measured to be 25.41\,$\mathrm{\mu m/h}$ (after subtracting the background growth rate of $d\epsilon_y/dt = 1.62$\,$\mathrm{\mu m/h}$). PyHEADTAIL simulations (see Section~\ref{subsec:amplitude_noise}) suggest that in the emittance growth driven by CC RF amplitude noise is not suppressed and that is in agreement with the predictions of Mastoridis--Baudrenghien model independently of the value amplitude-dependent tune spread. 
+
+Experiment IV shows that the measured rate is about 20$\%$ lower than the predictions of the Mastoridis--Baudrenghien model. \textcolor{red}{This seems to be within the uncertainty of the validity of the model as concluded in the previous section. }. However, to be conclusive, further studies with emittance growth driven by amplitude noise need to be performed in the future.
+
+%It can be seen that the vertical emittance growth rate, as obtained from the linear fit on the vertical emittance values (red), agrees very well with the theoretically predicted rate. This is also in agreement with the simulation results with PyHEADTAIL including the SPS impedance model (see Section~\ref{subsec:amplitude_noise}). It is reminded that in the emittance growth driven by $\CC$ RF amplitude noise is not suppressed by impedance induced effects and should be in agreement with the predictions of Mastoridis--Baudrenghien model for any value of amplitude-dependent tune spread.
 
 
 % Figure: /eos/user/n/natriant/2022/SPS_MDs_2022/cc_md_12Sep2022/ws_emittance_growth/figures_for_thesis/coast12
@@ -531,13 +538,40 @@ The emittance evolution, was measured for $k_\mathrm{LOD}$=-30\,$\mathrm{/m^4}$,
 
 
 
+\subsection{Bunch length and intensity measurements}\label{subsec:bunch_length_intensity_exp4}
 
+The bunch length measurements were performed with the Wall Current monitor. The bunch length evolution over each coastcan be found in Appendix~\ref{subsec:2022_exp3_bunch_length}. The average measured bunch length the coast was found to be about $4\sigma_t$ = 1.75\,ns. 
+
+The intensity measurements were performed with the Beam Current Transformer (BCTDC). The bunch intensity over each coast can be found in Appendix~\ref{subsec:2022_exp3_intensity}. The average intensityover the coast was found to be about 2.4$\times 10^{10}$ protons per bunch, which is smaller than the requested value of 3.0$\times 10^{10}$ protons per bunch. The intensity dependent effect of the emittance growth suppression is not valid in the presence of amplitude noise, hence the intensity value does not affect the conclusions drawn from the studies. Finally, no significant, losses were observed during the coast.
 
 
 \section{Experiment V: emittance growth driven by dipole noise}\label{sec:exp5_coast_md_damper_2022}
 % Presentation with the results:  https://docs.google.com/presentation/d/1C-3FPNUrUUiOFol2bdMlTqf1ZlGVamcZXjf-b4lYlUM/edit#slide=id.g1301694a1dd_0_139
-The second proof-of-concept experiment to investigate the damping mechanism from the transverse impedance was conducted the night after the $\CC$ experiments described in the previous section. The emittance growth was induced by the beam damper acting as a pure dipolar noise source. This simplified the experimental procedure for two main reasons. First, there were no limitations and uncertainties introduced by the $\CC$ operation. Secondly, activating the beam damper does not require the teams which operate the $\CC$s and inject artificial noise into their RF system and thus simplifies the organisation. This mitigates the restrictions on finding an available slot for this experiment which eventually was squeezed during the night shift after the measurements with $\CC$s. % cryo team not needed
 
+In Experiment V, the emittance growth driven by the transverser damper (acting as a pure dipolar noise soruce) was measured over a range of octupole (LOD family) strengths. The goal was to investigate the dependece of the emittance growth damping mechanism on the betatron tune spread in a setup without the uncertainties introduced by the $\CC$ operation in the SPS. %This simplified the experimental procedure for two main reasons. First, there were no limitations and uncertainties introduced by the $\CC$ operation. Secondly, activating the beam damper does not require the teams which operate the $\CC$s and inject artificial noise into their RF system and thus simplifies the organisation. This mitigates the restrictions on finding an available slot for this experiment which eventually was squeezed during the night shift after the measurements with $\CC$s. % cryo team not needed
+
+The strength of the damper kick was not calibrated and therefore the analytical expected emittance growth could not be computed. 
+
+
+Nevertheless, the objective was to reproduce the strong dependence on the amplitude detuning which was presented in Fig.~\ref{fig:study_5_dipole_noise}. To this end, the same procedure as for the second part of the $\CC$ experiment was followed: the emittance growth was measured in "coast" mode for constant strength of the noise excitation in the vertical plane but for different octupole settings. The beam and machine parameters are summarised in Table~\ref{tab:machine_beam_param_2022}. The only update was that the linear chromaticity was corrected to $Q^\prime_{x,y}$ = 1.3 in both transverse planes to avoid instabilities due to possible shift of chromaticity to negative values (see Figs.~\ref{fig:instability_BBQ_klod-15_4may2022}).% and~\ref{fig:instability_vertical_ws}). 
+
+
+
+
+
+
+To this end, the emittance growth was introduced using 
+
+, were obtained in the presence of pure dipolar noise over a range of octupole (LOD family) strengths. The goal was to investigate the dependece of the emittance growth damping mechanism  
+
+
+
+
+The second proof-of-concept experiment to investigate the damping mechanism from the transverse impedance was conducted the night after the $\CC$ experiments described in the previous section. 
+
+
+
+The emittance growth was induced by the tranvserse damper acting as a pure dipolar noise source.
 The strength of the damper kick was not calibrated and therefore the analytical expected emittance growth could not be computed. Nevertheless, the objective was to reproduce the strong dependence on the amplitude detuning which was presented in Fig.~\ref{fig:study_5_dipole_noise}. To this end, the same procedure as for the second part of the $\CC$ experiment was followed: the emittance growth was measured in "coast" mode for constant strength of the noise excitation in the vertical plane but for different octupole settings. The beam and machine parameters are summarised in Table~\ref{tab:machine_beam_param_2022}. The only update was that the linear chromaticity was corrected to $Q^\prime_{x,y}$ = 1.3 in both transverse planes to avoid instabilities due to possible shift of chromaticity to negative values (see Figs.~\ref{fig:instability_BBQ_klod-15_4may2022}).% and~\ref{fig:instability_vertical_ws}). 
 
 The experiment lasted from about 23:50 on the May 16, 2022, until about 04:00 on the May 17, 2022. Even though the available machine time was $\sim$4 hours, only seven octupole strengths could be tested: $+25, +15, +10, +5, 0, -15, -7.5 \ \mathrm{/m^4}$. The reason is that one of the SPS quadrupole magnets tripped around 01:00 disabling the option for operation in "coast" mode, till around 03:00 when the quadrupole magnet could once more be operated.
@@ -585,18 +619,6 @@ This theory supports the studies presented in this thesis. It also explains the 
 %\subsection{extra}
 %check the  detuning with amplitude
 %https://docs.google.com/presentation/d/1yaGKJ20O-jVg0R3bdj62l5VzltwjBBHtphKq5HI9xrY/edit#slide=id.g104dd3ff735_0_184
-
-
-%\section{Bunch length measurements} --> Moved in the appendix
-% https://docs.google.com/presentation/d/1cqXVwsXoorYqU9Td0qiFDBcyAn9XrNLmL_kvYOj61yU/edit#slide=id.g129fd6f84c7_1_5
-
-
-\section{Supplementary measurements with CC RF noise}\label{sec:cc_md_Sep2022}
-Due to the very promising results of the experiments that took place in May 2022 some additional machine time ($\sim$ 12 hours) was allocated for emittance growth measurements with $\CC$ RF noise on 12 September, 2022. The objective of this new round of measurements was to investigate the vertical emittance growth in the presence of $\CC$ RF phase noise and strong octupoles $|k_\mathrm{LOD} | \geq 20$\,$\mathrm{/m^4}$ for which the suppression mechanism is expected to be disabled (see Fig.~\ref{fig:pyheadtail_cc_impedance_2022_md_octupole_current}).
-
-
-
-
 
 
 
