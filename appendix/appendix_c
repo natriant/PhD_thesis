@@ -181,53 +181,7 @@ In this section, the bunch length measurements acquired during the emittance gro
 
 
 \section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
-The individual measurements of the transverse emittance evolution for each octupole setting during the experiment with dipole noise (see Section~\ref{sec:coast_md_damper_2022}) are illustrated in Fig.~\ref{fig:dipole_noise_md_2022_overview_plots_klod_scan}. The subplots are plotted in chronological order.
 
-% Notes on the MD: https://docs.google.com/document/d/1b8fRJA5DN0hczIx2_O1NQzwV8dgKYmrJCmZzmH3qBn0/edit
-% Path to figures: /eos/user/n/natriant/2022/SPS_MDs_2022/coast_md_damper_16May2022/coast_plots_for_thesis
-% Plotting script: /afs/cern.ch/work/n/natriant/public/SPS_MDs_2022/coast_16May2022_damper/ws_measurements
-
-\begin{figure}[htp]
-    \centering
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast1.png}  
-        \caption{$k_\mathrm{LOD}=+15 \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast2.png}  
-        \caption{$k_\mathrm{LOD}=+10 \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast3.png}  
-        \caption{$k_\mathrm{LOD}=+5  \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-            \centering
-            \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast4.png}  
-            \caption{$k_\mathrm{LOD}=0  \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast5.png}  
-        \caption{$k_\mathrm{LOD}=-15  \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-            \centering
-            \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast6.png}  
-            \caption{$k_\mathrm{LOD}=-7.5  \mathrm{/m^{4}}$}
-    \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{images/app_c/emit_vs_time_Set1_coast7.png}  
-        \caption{$k_\mathrm{LOD}=+25  \mathrm{/m^{4}}$}
-\end{subfigure}
-    \caption{Horizontal (blue) and vertical (red) emittance evolution of a single bunch during the experiment with dipole noise on May 16-17, 2022.  The different octupole settings are displayed at the captions of each plot.}
-    \label{fig:dipole_noise_md_2022_overview_plots_klod_scan}
- \end{figure}
- 
  
  \section{Bunch length measurements in September 2022}\label{sec:bunch_length_measurements_sep_2022}
  Figure~\ref{fig:cc_md_sep_2022_overview_plots_klod_scan_bunch_length} illustrates the evolution of the bunch length measured in the SPS on the September 12, 2022, for the five different octupole strengths used during the $\CC$ MD as acquired with the Wall Current Monitor. The subplots are plotted in chronological order. The Wall Current monitor acquires the longitudinal bunch profiles, from which the bunch length is computed, once per turn. In the figures below, each point corresponds to the average bunch lengths from the profiles over 100 turns while the error bars indicate the standard deviation between them. \textcolor{red}{Is it correct that is acquires profiles once per turn?}

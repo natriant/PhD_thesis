@@ -475,6 +475,18 @@ For reference, additional simulation studies for the LHC case which deal with th
 However, in the previous studies, the frequency of the coherent modes was shifted by the beam-beam effect\footnote{Beam-beam effects, are the ones induced by the perturbation of the two beams in a collider as they cross each other. Further details on these effects and the beam-beam interaction can be found in~\cite{Herr:1982430} but their analysis is out of the scope of this thesis.} and not by the beam coupling impedance. Adjusting the theoretical approach of~\cite{Alexahin:314169} for the impedance-induced tune shift is not straightforward (\textcolor{red}{Do i need to comment further on it?}). To this end, the strategy that was followed to further explore the mechanism of the emittance growth suppression by the transverse impedance was tracking simulations with PyHEADTAIL. These simualtion studies will be presented and discussed in the following subsections.
 
 
+\textcolor{red}{Fix this.}
+\textbf{Underlying theory}\\
+It is worth mentioning that the simulation studies and experimental results (from 2018 and 2022) presented in this thesis, motivated the development of a theoretical description for the suppression of the noise-induced emittance growth from the beam transverse impedance. The theory was recently developed by the colleague X.~Buffat~\cite{Buffat:2022dac, van_kamper_presentation_xavier_theory}. 
+
+The theory developed is a simplification of the approach of Y.~Alexahin (in the context of beam-beam interactions)~\cite{Alexahin:485304}. In particular, X.~Buffat, using the Van Kampen mode approach~\cite{VANKAMPEN1955949}, adapted Y.~Alexahin's approach for configurations featuring linear detuning and a complex tune shift from a collective force. 
+
+% This paragraph is modified from the conclusions in Xavier's paper.%
+It was shown that the emittance growth driven by an external noise source can be significantly reduced by a collective force. To observe the suppression a damping force is necessary. The suppression is enhanced in configurations where the real tune shift is larger than the spread of the betatron frequencies i.e.~the coherent mode emerges from the incoherent spectrum~\cite{Buffat:2022dac}.
+
+This theory supports the studies presented in this thesis. It also explains the asymmetry in the dependence of the emittance growth suppression for positive and negative detuning coefficients observed in PyHEADTAIL simulations (see Chapter~\ref{Ch:suppression_impedance}). Moreover, it was used to fit the experimental data measured during the experiment with dipole noise with very promising results.
+
+
 \subsection{Intensity scans}\label{subsec:intensity_scan_emit_growth}
 To test the hypothesis that the observed suppression of the emittance growth is a result of the separation of the coherent mode from the incoherent spectrum the emittance growth in the presence of $\CC$ RF phase noise and impedance is studied as a function of the bunch intensity. As discussed in the Introduction (Section~\ref{subsec:wakefields}) and illustrated in Section~\ref{subsec:test_implementation_pyheatail} the shift of the coherent tune increases (in absolute value) linearly for increasing intensity. %Therefore, when simulating the emittance growth in the presence of wakefields over a range of different intensities a cut-off effect should be expected at the point where the frequency of the coherent mode is shifted outside of the incoherent spectrum.
 
