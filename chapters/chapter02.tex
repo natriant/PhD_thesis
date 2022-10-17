@@ -13,15 +13,15 @@ Finally, at this point, it is appropriate to introduce the terms incoherent and 
 %motion is the microscopic approach where the individual motion of each particle is studied. Coherent motion is the macroscopic approach where the beam is considered as a whole and the motion of the center of mass is studied.
 
 % The section splitting is done here according to Wolski's book.
-\section{Motion of charged particles in electromagnetic fields}
-%\section{Electromagnetic fields in circular accelerators}\label{sec:EM_fields_intro}
+%\section{Motion of charged particles in electromagnetic fields}
+\section{Electromagnetic fields in circular accelerators}\label{sec:EM_fields_intro}
 
 %A circular accelerator uses electric and magnetic fields to steer and focus the beam of charged particles in a prescribed curved path, known as the "closed orbit". % since it repeats (closes on) itself after exactly one turn.
 %It might be the case that no particle actually follows the closed orbit but the accelerator  components aim to hold the particles as close as possible to that ideal closed orbit. 
+A beam of charged particles in a circular accelerator is expected to follow a prescribed curved path, known as the "reference trajectory". It is typically chosen such as it passes from the center of all the accelerator magnets. It might be the case that no particle actually follows the reference trajectory but the electric and magnetic fields in an accelerator aim to hold the particles as close as possible to that ideal path. 
 
-A circular accelerator uses electric and magnetic fields to steer and focus the beam of charged particles in a prescribed curved path, known as the "reference trajectory". % since it repeats (closes on) itself after exactly one turn.
-It might be the case that no particle actually follows the reference trajecotry but the accelerator components aim to hold the particles as close as possible to that ideal path. 
 
+%A circular accelerator uses electric and magnetic fields aiming to steer and focus the beam of charged particles in a prescribed curved path, known as the "reference trajectory". % since it repeats (closes on) itself after exactly one turn.
 
 The motion of a particle with charge $q$ and velocity $\mathbf{v}=(v_x, v_y, v_z)$ moving in an electric field $\mathbf{E}$ and a magnetic field $\mathbf{B}$ is defined by the influence of the Lorentz force~\cite{Wiedemann:1083415}: 
 \begin{equation}\label{eq:Lorentz_force}
@@ -38,12 +38,12 @@ For reference, in synchrotrons, the electric fields which are used for accelerat
 
 
 \textbf{Reference particle}\\
-The particle that follows the reference trajecotry is called the reference particle and has momentum, $p_0$, energy $E_0$ and velocity $v_0$.  This particle is often called the synchronous particle as it always passes from the center of the RF cavities (assuming constant speed and no losses). For a proton, the reference momentum is given by: $p_0$ = $\gamma_0 m_p v_0$, where $m_p$ is the proton rest mass.
+The particle that follows the reference trajectory is called the reference particle and has momentum, $p_0$, energy $E_0$, and velocity $v_0$.  This particle is often called the synchronous particle as it always passes from the center of the RF cavities (assuming constant speed and no losses). For a proton, the reference momentum is given by: $p_0$ = $\gamma_0 m_p v_0$, where $m_p$ is the proton rest mass.
 
 
 % you need a field that is perpedicular to the velocity vector to the steer the particles
 \textbf{Beam rigidity}\\
-Assuming that a reference proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_1}=(0, B_1, 0)$, it would follow a circular path of local bending radius $\rho$ which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centrifugal force, as follows~\cite{wolski2014}: % Eq.(3.45)
+Assuming that a reference proton moves only under the influence of a uniform vertical dipole field $\mathbf{B_\mathrm{dip}}=(0, B_1, 0)$, it would follow a circular path of local bending radius $\rho$ which is defined by the Lorentz force (Eq.~\eqref{eq:Lorentz_force}) being equal to the centrifugal force, as follows~\cite{wolski2014}: % Eq.(3.45)
 
 \begin{equation}\label{eq:Brho}
     e v_0 B_1 = \frac{\gammarel m_p v_0^2}{\rho} \Rightarrow B_1 \rho = \frac{\gamma_0 m_p v_0}{e} \Rightarrow B_1 \rho = \frac{p_0}{e},
@@ -78,10 +78,40 @@ The quantity $B_1 \rho$, is known as the beam rigidity and is often used in acce
 %For a proton, the reference momentum is given by: $p_0 = \gammarel m_p v_0$, where $m_p$ is the proton rest mass, and $\gamma_0 = \frac{1}{\sqrt{1-\beta_0^2}}$ is the relativistic gamma or Lorentz factor, where $\beta_0=v_0/c$ is the relativistic $\beta$ with $c$ being the speed of light. 
 
 
-\textbf{Co-ordinate system}\\
+\textbf{Mulitpole fields}\\
+Typically, in particle accelerators, the magnets are considered purely transverse elements. In that case, the magnetic fields of various magnet types can be expressed through the following multipole expansion:
+
+\begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
+    B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
+\end{equation} % principle of superposition 
+where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing), $n$=3 for sextupoles (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i a_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $a_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
+% Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
+% skew quadrupole is a normal quadrupole rotated by 45 deg.
+
+%The motion of charged particles inside a circular accelerator is controlled by magnetic fields. In this thesis, the magnets are considered purely transverse elements. Their effect is therefore described with two-dimensional multipole fields, acting in the horizontal and vertical planes\footnote{Examples of three-dimensional treatment can be found in~\cite{wolski2014, Beth:889480}. However, the two-dimensional treatment is most often used in accelerator physics as it provides a good description for the majority of the magnetic elements.}. % Wolski Ch1.3, p.33
+
+%The description of two-dimensional magnetic fields in accelerator physics is discussed using the concept of multipole expansion and is expressed as a complex quantity. The complex quantity allows to describe a two-dimensional field in $(x,y)$ space (to be compatible with the co-ordinates used for describing the particle's trajectory as discussed in the previous section). Therefore, the magnetic field around the beam is expressed as follows~\cite{wolski2014}: 
+%\begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
+%    B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
+%\end{equation} % principle of superposition 
+%where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing), $n$=3 for sextupoles (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i a_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $a_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
+% Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
+% skew quadrupole is a normal quadrupole rotated by 45 deg.
+
+Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
+\begin{equation}\label{eq:kn}
+    k_n = \frac{b_n}{B_1 \rho},
+\end{equation}
+where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention that will be used in this thesis. %By definition $b_1=B_1$.\textcolor{red}{Is the last sentence correct?}
+By definition for a pure dipole vertical field $b_1=B_1$.\textcolor{red}{Is the last sentence correct?}
+
+%It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic rigidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analysis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.\textcolor{red}{is that ok? the way i express it here?}
+% confirmed because k1 = b1/B0ρ = 1/ρ
+
+\subsection{Co-ordinate system for the motion of charged particles in electromagnetic fields}\label{subsec:coordinate_system}
 The individual particles do not follow the reference trajectory due to small deviations in their initial conditions: an example trajectory is shown in Fig.~\ref{fig:coordinate_system} with the blue line. The co-ordinate system used to describe the individual trajectories of the beam particles around the accelerator is illustrated in Fig.~\ref{fig:coordinate_system} and it is known as Frenet-Serret system.  It consists of the orthogonal co-ordinate system $\Sigma(s) = (\mathbf{e_x}, \mathbf{e_y}, \mathbf{e_z})$ whose origin moves along the reference trajectory (red line) together with the beam. 
 
-The variable $s$ denotes the distance along the reference trajectory. In accelerator physics, $s$ is usually chosen as the independent variable instead of time, $t$.  %why? p.19 https://www.bnl.gov/isd/documents/74289.pdf
+In this co-ordinate system, the variable $s$ denotes the distance along the reference trajectory. In accelerator physics, $s$ is usually chosen as the independent variable instead of time, $t$.  %why? p.19 https://www.bnl.gov/isd/documents/74289.pdf
 Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(s), z(s))$ give the horizontal, vertical, and longitudinal position of the particle with respect to the origin of the orthogonal moving system $\Sigma$. In the following paragraphs, the dependence of the co-ordinates on the position $s$ along the ring is omitted when possible to facilitate the notation (e.g. $x(s)$ will be denoted as $x$).
 
 \begin{figure}[!h] % at the directory of ipac22
@@ -109,7 +139,7 @@ Therefore, at any given location $s$ around the ring, the coordinates $(x(s), y(
     \end{equation}
 \end{subequations}
 
-where $p_0$ and $\beta_0$ are the momentum and relativistic (scaled) velocity, respectively, of the reference particle, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same location. It can be seen that $\delta$ is the relative momentum offset from the reference particle. In order to avoid a possible misconception it seems appropriate to clarify here, that the longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle arrives earlier (later) than the center of the bunch at an arbitrary reference point. Last, in the ultra-relativistic regime the momentum of the particles in the $\mathbf{e_z}$ direction is much larger than the transvserse ones and almost equals the reference momentum: $p_x, p_y \ll p_z \approx p_0$. This is why the values of $x^\prime$ and $y^\prime$ are close to $p_x/p_0$ and $p_y/p_0$, respectively.
+where $p_0$ and $\beta_0$ are the momentum and relativistic (scaled) velocity, respectively, of the reference particle, $t_0$ is the time  which the reference particle arrives at the location $s$ and $t$ is the time at which the individual particle arrives at the same location. The parameter $\delta$ is the relative momentum offset from the reference particle. The longitudinal parameter $z$ indicates the longitudinal offset from the reference particle at the center of the bunch. If $z>0$ ($z < 0$) the corresponding particle arrives earlier (later) than the center of the bunch at an arbitrary reference point. In the ultra-relativistic regime the momentum of the particles in the $\mathbf{e_z}$ direction is much larger than the transvserse ones and almost equals the reference momentum: $p_x, p_y \ll p_z \approx p_0$. This is why the values of $x^\prime$ and $y^\prime$ are close to $p_x/p_0$ and $p_y/p_0$, respectively.
 
 %Furthermore, if the direction of motion of the particle has a small angle with the reference trajectory, the paraxial approximation is valid: $p_x, p_y \ll p_z = p_0$ which means that $x^\prime \approx p_x$ and  $y^\prime \approx p_y$. This approximation is valis for the studies presented in this thesis. \textcolor{red}{$p_0=1$? not clear to me} % ultra relativistic regime, is not mentioned at wolski's book. I wrote it for the p_ 0= 1. but i am not sure.
 % p.149 wolski and p.12 Michael schenk
@@ -119,74 +149,62 @@ where $p_0$ and $\beta_0$ are the momentum and relativistic (scaled) velocity, r
 
 %Initial I have written: Furthermore, the ultra-relativistic regime, the transverse momentum/velocity of a particle is very small comparing to the longitudinal one. Therefore the paraxial approximation is used: $p_x, p_y \ll p_z = p_0 = 1$ which can be applied to simplify Eqs.~\ref{eq:particle_coordinates}. %Or see Andy's explanation for low emittance storage rings: https://cds.cern.ch/record/1982424/plots
 
-To summarize, the motion of the particles is treated separately in the transverse and longitudinal planes where it is described with the  $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. As an example the co-ordinates of the reference particle are $(x=0, x^\prime=0, y=0, y^\prime = 0, z=0, \delta=0 \ (p_z=p_0))$.
-
-Last, $(x, y, z)$ are expressed in meters, $(x^\prime, y^\prime)$ in radians while $\delta$ is dimensionless.
+To summarise, the motion of the particles is treated separately in the transverse and longitudinal planes, described by the $(x, x^\prime, y, y^\prime)$ and $(z, \delta)$ co-ordinates respectively. The co-ordinates of the reference particle are $(x=0, x^\prime=0, y=0, y^\prime = 0, z=0, \delta=0 \ (p_z=p_0))$.The $(x, y, z)$ are expressed in meters, $(x^\prime, y^\prime)$ in radians, while $\delta$ is dimensionless.
 
 
 
-
-
-
-\textbf{Two-dimensional complex fields}\\
-The motion of charged particles inside a circular accelerator is controlled by magnetic fields. In this thesis, the magnets are considered purely transverse elements. Their effect is therefore described with two-dimensional multipole fields, acting in the horizontal and vertical planes\footnote{Examples of three-dimensional treatment can be found in~\cite{wolski2014, Beth:889480}. However, the two-dimensional treatment is most often used in accelerator physics as it provides a good description for the majority of the magnetic elements.}. % Wolski Ch1.3, p.33
-
-The description of two-dimensional magnetic fields in accelerator physics is discussed using the concept of multipole expansion and is expressed as a complex quantity. The complex quantity allows to describe a two-dimensional field in $(x,y)$ space (to be compatible with the co-ordinates used for describing the particle's trajectory as discussed in the previous section). Therefore, the magnetic field around the beam is expressed as follows~\cite{wolski2014}: 
-\begin{equation}\label{eq:mult_expansion} % Andy Eq.1.29 + M Schenk Eq.2.2
-    B_y(x,y) + i B_x(x,y) = \sum_{n=1}^{\infty} C_n (x+i y)^{n-1},
-\end{equation} % principle of superposition 
-where $n$ indicates the order of the field component: $n$=1 for a dipole (steering), $n$=2 for quadrupole (focusing), $n$=3 for sextupoles (chromaticity correction), $n$=4 for octupole (error or field correction) etc. $C_n=(b_n +i a_n)$ is a complex constant which denotes the strength and orientation of the multipole field. The coefficients $b_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_y}{\partial x^{n-1}}$ and $a_n=\frac{1}{(n-1)!} \frac{\partial^{n-1}B_x}{\partial x^{n-1}}$ denote the strength of a normal and skew (normal multipole rotated by $\pi/2(n)$) multipole respectively in units of $\mathrm{T/m^{n-1}}$.
-% Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
-% skew quadrupole is a normal quadrupole rotated by 45 deg.
-
-Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
-\begin{equation}\label{eq:kn}
-    k_n = \frac{b_n}{B_1 \rho},
-\end{equation}
-where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention that will be used in this thesis. By definition $b_1=B_1$.\textcolor{red}{Is the last sentence correct?}
-
-%It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic rigidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analysis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.\textcolor{red}{is that ok? the way i express it here?}
-% confirmed because k1 = b1/B0ρ = 1/ρ
-
-
-
-
-
-\section{Single-particle beam dynamics}
+\section{Single-particle beam dynamics}\label{sec:single_particle_dynamics}
 In this section, the interactions between the particles within a bunch are neglected, hence the term single-particle beam dynamics. 
+
+%\subsection{Transverse particle motion}\label{subsec:transverse_particle_motion}
+%The motion of a relativistic particle in static electromagnetic field is defined by the Lorentz force. The Hamiltonian which describes its motion equals the total energy of the system and is written as~\cite{Lee:1425444}:% Lee Eq.(2.4)
+%\begin{equation}
+ %   H = c \sqrt{m_p^2 c^2+ (\mathbf{p}-q\mathbf{A})}+q \Phi,
+%\end{equation}
+%where 
+
+%The particle motion is described here with the Hamiltonian formalism in the co-ordinate system of Fig.~\ref{fig:coordinate_system}. The Hamiltonian which describes the motion of a relativistic particle in a static electromagnetic field depends periodically on $s$ and is given by~\cite{Lee:1425444}: %Eq.(2.14)
+
+%\begin{equation}\label{ref:Hamiltonian_general}
+ %   H = - \left ( 1 + \frac{x}{\rho} \right ) \sqrt{\left [ \frac{E}{c^2}- m^2 c^2-(p_x-eA_x)-(p_y-eA_y)^2\right]}-eA_s
+%\end{equation}
+
 
 
 \subsection{Transvserse motion}
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
-\subsubsection{Linear dynamics}
-Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron.
+%\subsubsection{Linear dynamics}
+\subsection{Equations of motion in a linear lattice}
+Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are the basic magnetic elements of a synchrotron, providing bending and focusing of the particle beam. 
 
-As mentioned above, the particles transversely oscillate around the reference trajectory (except for a nominal reference particle which follows it). This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
+As mentioned above, the particles transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
 
  \begin{equation}\label{eq:transverse_eq_x}
-   x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_0 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
+   x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_1 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
  \end{equation}
 
 \begin{equation}\label{eq:transverse_eq_y}
-    y^{\prime \prime} = \frac{B_x}{B_0 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
+    y^{\prime \prime} = \frac{B_x}{B_1 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
 \end{equation}
-where $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
+where $B_1 \rho$ and $\rho$ the magnetic rigidity and local bending radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-In the case of dipole and quadrupole fields, linear approximations to the equations of motion (equations describing the particle motion through the fields) provide good representations of the dynamics, at least in the case of the transverse motion. Hence the name linear dynamics. For the linear approximation the following assumptions are made: the transverse offset and angle of motion of the rest of the particles ($x, x^\prime, y, y^\prime$) are very small and close to the reference trajectory and only the linear terms in $x$ and $y$ of the magnetic field (described in Eq.~\eqref{eq:mult_expansion}) are taken into account, such as~\cite{Lee:1425444}: % This linear expantion is only valid at the vincinity of the reference orbit.
-\begin{equation}
-    B_y = B_0 + \frac{\partial By}{\partial x}x  =B_0 + b_2 x, \ \ B_x = \frac{\partial Bx}{\partial x}y  = b_2 y.  
-\end{equation}
-Note that the term $B_0$ doesn't appear in the horizontal magnetic field due to the fact that, as mentioned earlier, only vertical dipole fields are considered. 
+Since the amplitudes of the betatron oscillations are usually small, linear approximations in the above equations of motion provide good representations of the beam dynamics. Expanding Eqs.~\eqref{eq:eq_of_motion_horizontal_non_linear} and~\eqref{eq:eq_of_motion_vertical_non_linear} up to the first order in $x$ and $y$ we write~\cite{Lee:1425444}: % This linear expantion is only valid at the vincinity of the reference orbit.
 
-Exapnding Eqs.~\eqref{eq:transverse_eq_x} and~\eqref{eq:transverse_eq_y} to the first order of $x$ and $y$ respectively, setting $\delta = (p-p_0)/p_0$, and $k_2=b_2 /(B_0\rho)$ the linear equations of motion are obtained~\cite{Lee:1425444}:
-\begin{equation}\label{eq:linear_eq_of_motion_x}
-    x^{\prime \prime} + \left (  \frac{1-\delta}{\rho^2 (1+\delta)}  + \frac{k_2(s)}{1+\delta} \right )x = \frac{\delta}{\rho (1+\delta)}, 
+\begin{equation}\label{eq:eq_of_motion_horizontal_linear}
+    x^{\prime \prime} + \left (  \frac{1-\delta}{\rho^2 (1+\delta)}  + \frac{K_2(s)}{1+\delta} \right )x = \frac{\delta}{\rho (1+\delta)}, 
 \end{equation}
-\begin{equation}\label{eq:linear_eq_of_motion_y}
-    y^{\prime \prime} -  \left ( \frac{k_2(s)}{1+\delta} \right ) y = 0,
+\begin{equation}\label{eq:eq_of_motion_vertical_linear}
+    y^{\prime \prime} -  \left ( \frac{K_2(s)}{1+\delta} \right ) y = 0,
 \end{equation}
-where the sign-convention is $k_2>0 \ (k_2<0)$ for focusing in the horizontal (vertical) plane. It is worth commenting that $1/\rho = B_0/(B_0 \rho) = b_1/(B_0 \rho)=k_1$ the normalised dipole strength.
+where $\delta = (p-p_0)/p_0$ is the relative momentum offset from the reference particle, and $K_2=B_2 /(B_1\rho)$ is the focusing function. The sign-convention here is $K_2(s)>0$ and $(K_2(s)<0)$ for focusing in the horizontal and vertical planes, respectively.
+
+
+
+
+
+
+
 
 For on-momentum particles (with $\delta=0$) \footnote{The solution of the equation of motion for off-momentum particles is discussed in the paragraph "Off-momentum effects: dispersion" later in this section.} the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
@@ -854,3 +872,8 @@ Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies
 
 %Sixtracklib is described here in much less detail than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
 
+
+
+
+
+Sixtractlib--> the tracking is performed from element to elemetn using hte thin lense approximation.
