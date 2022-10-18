@@ -215,15 +215,35 @@ where $u=(x,y)$ and:
  It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motions of the particle in horizontal and vertical planes are independent i.e. no transverse coupling.
  . %The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
 
-For constant $K_u$ the solution of Hill's equation is~\cite{Lee:1425444}:
-\begin{equation}\label{eq:Hills_equation_2_ku_constant}
-    u = \begin{dcases}
-        c_1 \cos{(\sqrt{K_u}s)}  + c_2 \sin{(\sqrt{K_u}s)} &  K_u >0 \\
-        c_1 + c_2 s, & K_u =0 \\
-        c_1 \cosh{(\sqrt{-K_u}s)}  + c_2 \sinh{(\sqrt{-K_u}s)} &  K_u <0 
-    \end{dcases}
-\end{equation}
+ % From Emilia
+%For constant $K_u$ the solution of Hill's equation is~\cite{Lee:1425444}:
+%\begin{equation}\label{eq:Hills_equation_2_ku_constant}
+%    u(s) = \begin{dcases}
+%        C_1 \cos{(\sqrt{K_u}s)}  + C_2 \sin{(\sqrt{K_u}s)} &  K_u >0 \\
+%        C_1 \cosh{(\sqrt{|K_u|}s)}  + C_2 \sinh{(\sqrt{|K_u|}s)} &  K_u <0 
+%    \end{dcases},
+%\end{equation}
+%\begin{equation}\label{eq:Hills_equation_2_ku_constant_prime}
+%    u^\prime(s) = \begin{dcases}
+%        -\sqrt{K_u} C_1 \sin{(\sqrt{K_u}s)}  + \sqrt{K_u} C_2 \cos{(\sqrt{K_u}s)} &  K_u >0 \\
+%        \sqrt{K_u}  C_1 \sinh{(\sqrt{-K_u}s)}  + \sqrt{K_u} C_2 \cosh{(\sqrt{-K_u}s)} &  K_u <0 
+%    \end{dcases},
+%\end{equation}
+%where $C_1$ and $C_2$ constants of integration.  
 
+%Assuming the initial conditions for $s=0$: $x(0)=x_0$ and $x^\prime(0)=x^\prime_0$, the constants of integration are: $C_1=x_0$ and $C_2=x^\prime_0/\sqrt{K_u}$ and the solution becomes:
+%\begin{equation}\label{eq:Hills_equation_2_ku_constant_solution}
+%    u(s) = \begin{dcases}
+%        C_1 \cos{(\sqrt{K_u}s)}  + C_2 \sin{(\sqrt{K_u}s)} &  K_u >0 \\
+%        C_1 \cosh{(\sqrt{|K_u|}s)}  + C_2 \sinh{(\sqrt{|K_u|}s)} &  K_u <0 
+%    \end{dcases},
+%\end{equation}
+%\begin{equation}\label{eq:Hills_equation_2_ku_constant_prime_solution}
+%    u^\prime(s) = \begin{dcases}
+%        -\sqrt{K_u} C_1 \sin{(\sqrt{K_u}s)}  + \sqrt{K_u} C_2 \cos{(\sqrt{K_u}s)} &  K_u >0 \\
+%        \sqrt{K_u}  C_1 \sinh{(\sqrt{-K_u}s)}  + \sqrt{K_u} C_2 \cosh{(\sqrt{-K_u}s)} &  K_u <0 
+%    \end{dcases},
+%\end{equation}
 
 %Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
@@ -270,7 +290,8 @@ The above equations are called the betatron envelope and phase equations.
 % If you want to see how you go from Eq.(2.10) to Eq.(2.11) see also Yiannis notes (p.27-28): https://yannis.web.cern.ch/teaching/transverse.pdf
 
 \textbf{Courant-Snyder parameters}\\
-At this point it is appropriate to introduce the betatron or Twiss or Courant-Snyder:% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
+The Twiss or Courant Snyder parameters are defined as:
+% frpom Yiannis notes: https://yannis.web.cern.ch/teaching/transverse.pdf
 \begin{subequations}\label{eq:twiss_func}
     \begin{equation}
         \beta_u(s) = w_u(s)^2,
@@ -292,11 +313,11 @@ The betatron phase advance from Eq.~\eqref{eq:phase_function} can be re-written 
 The advantage of the Twiss parameters over using $w_u(s)$ and $\psi_u(s)$ is that they can be also used to describe the properties of a bunch of particles while the latter describe the motion of each particle individually. This is discussed in further details in the following paragraph "Transverse emittance". %https://en.wikipedia.org/wiki/Courant%E2%80%93Snyder_parameters
 
 \textbf{Betatron tune}\\
-Another important quantity in accelerator physics is the betatron tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine divided by $2\pi$:
+The betatron tune of the machine, $Q_u$, which is the phase advance for one complete revolution around the machine divided by $2\pi$:
 \begin{equation}\label{eq:betatron_tune}
-    Q_u = \frac{\psi_u(s+C)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_C \frac{ds}{\beta_u(s)},
+    Q_u = \frac{\psi_u(s+C_0)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_{C_0} \frac{ds}{\beta_u(s)},
 \end{equation}
-where $C$ is the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
+where $C_0$ is the circumference of the machine. As it can be seen, the tune also represents the number of betatron oscillations that a particle undergoes during one full revolution around the machine. 
 
 The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude, and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tunes and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
 
