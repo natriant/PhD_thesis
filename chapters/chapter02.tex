@@ -175,21 +175,21 @@ In this section, the interactions between the particles within a bunch are negle
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 %\subsubsection{Linear dynamics}
-\subsection{Equations of motion in a linear lattice}
+\subsubsection{Equations of motion in a linear lattice}
 Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are the basic magnetic elements of a synchrotron, providing bending and focusing of the particle beam. 
 
 As mentioned above, the particles transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
 
- \begin{equation}\label{eq:transverse_eq_x}
+ \begin{equation}\label{eq:transverse_eq_x_non_linear}
    x^{\prime \prime} - \frac{\rho+x}{\rho^2} = - \frac{B_y}{B_1 \rho} \frac{p_0}{p} \left (  1+ \frac{x}{\rho} \right )^2, 
  \end{equation}
 
-\begin{equation}\label{eq:transverse_eq_y}
+\begin{equation}\label{eq:transverse_eq_y_non_linear}
     y^{\prime \prime} = \frac{B_x}{B_1 \rho} \frac{p_0}{p}  \left (  1+ \frac{x}{\rho} \right )^2, 
 \end{equation}
 where $B_1 \rho$ and $\rho$ the magnetic rigidity and local bending radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-Since the amplitudes of the betatron oscillations are usually small, linear approximations in the above equations of motion provide good representations of the beam dynamics. Expanding Eqs.~\eqref{eq:eq_of_motion_horizontal_non_linear} and~\eqref{eq:eq_of_motion_vertical_non_linear} up to the first order in $x$ and $y$ we write~\cite{Lee:1425444}: % This linear expantion is only valid at the vincinity of the reference orbit.
+Since the amplitudes of the betatron oscillations are usually small, linear approximations in the above equations of motion provide good representations of the beam dynamics. Expanding Eqs.~\eqref{eq:transverse_eq_x_non_linear} and~\eqref{eq:transverse_eq_y_non_linear} up to the first order in $x$ and $y$ we write~\cite{Lee:1425444}: % This linear expantion is only valid at the vincinity of the reference orbit.
 
 \begin{equation}\label{eq:eq_of_motion_horizontal_linear}
     x^{\prime \prime} + \left (  \frac{1-\delta}{\rho^2 (1+\delta)}  + \frac{K_2(s)}{1+\delta} \right )x = \frac{\delta}{\rho (1+\delta)}, 
@@ -200,24 +200,30 @@ Since the amplitudes of the betatron oscillations are usually small, linear appr
 where $\delta = (p-p_0)/p_0$ is the relative momentum offset from the reference particle, and $K_2=B_2 /(B_1\rho)$ is the focusing function. The sign-convention here is $K_2(s)>0$ and $(K_2(s)<0)$ for focusing in the horizontal and vertical planes, respectively.
 
 
-
-
-
-
-
-
-For on-momentum particles (with $\delta=0$) \footnote{The solution of the equation of motion for off-momentum particles is discussed in the paragraph "Off-momentum effects: dispersion" later in this section.} the linear equations of motion are simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
+For on-momentum particles (with $\delta=0$) and neglecting effects from dipole field errors % from Hannes' thesis
+these linear equations of motion can be simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
     u^{\prime \prime}(s) + K_u(s) u(s) = 0,
 \end{equation}
 where $u=(x,y)$ and:
  \begin{equation}\label{eq:Hills_equation_2}
     K_u(s) = \begin{dcases}
-        \frac{1}{\rho^2(s)}+k_2(s), & u=x \\
-        -k_2(s), & u=y 
+        \frac{1}{\rho^2(s)}+K_2(s), & u=x \\
+        -K_2(s), & u=y 
     \end{dcases}
 \end{equation}
-with $k_2(s)$ being the normalised quadrupole strength. It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motion in the horizontal plane is independent of the motion in the vertical plane, and vice-versa, i.e. the motion is uncoupled. %The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
+ It should be noted that for Eq.~\eqref{eq:Hills_equation_1} it is assumed the motions of the particle in horizontal and vertical planes are independent i.e. no transverse coupling.
+ . %The derivation of why the Hill's equation describes the betatron oscillations for on-momentum particles can be found in~\cite{Latina_juas}. 
+
+For constant $K_u$ the solution of Hill's equation is~\cite{Lee:1425444}:
+\begin{equation}\label{eq:Hills_equation_2_ku_constant}
+    u = \begin{dcases}
+        c_1 \cos{(\sqrt{K_u}s)}  + c_2 \sin{(\sqrt{K_u}s)} &  K_u >0 \\
+        c_1 + c_2 s, & K_u =0 \\
+        c_1 \cosh{(\sqrt{-K_u}s)}  + c_2 \sinh{(\sqrt{-K_u}s)} &  K_u <0 
+    \end{dcases}
+\end{equation}
+
 
 %Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) hence the name linear dynamics\footnote{The term "linear" refers not to the fields, but to the beam dynamics (specifically, the equations describing the particle motion through the fields). In reality, dipole and quadrupole fields can also lead to "nonlinear dynamics". However, in these cases, linear approximations to the equations of motion provide good representations of the dynamics, at least in the case of the transverse motion.}. Dipoles and quadrupoles are considered the basic magnetic elements, as in the absence of magnetic errors or momentum deviations between the particles they are sufficient to create a synchrotron. 
 
@@ -231,11 +237,15 @@ with $k_2(s)$ being the normalised quadrupole strength. It should be noted that 
 %\end{equation}
 %where $s$ is the distance along the reference trajectory, $B_0 \rho$ and $\rho$ the magnetic rigidity and radius as defined in Eq.~\eqref{eq:Brho},  $B_y, B_x$ the transverse magnetic fields of Eq.~\eqref{eq:mult_expansion}, and $p_0$ the reference momentum.
 
-As already mentioned, Eq.~\eqref{eq:Hills_equation_1} resembles the equation of motion for a harmonic oscillator, but with an oscillation frequency that varies with position along the beamline (i.e. varies with s). For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the periodicity of the accelerator and real-valued. The general solution of Hill's equations in this case is (using the Floquet transformation)~\cite{Lee:1425444}:
+%As already mentioned, Eq.~\eqref{eq:Hills_equation_1} resembles the equation of motion for a harmonic oscillator, but with an oscillation frequency that varies with position along the beamline (i.e. varies with s). 
+
+%\textbf{Solution of Hill's equation in a circular accelerator}
+For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ is the circumference of the accelerator. The general solutions of Hill's equations in this case is (using the Floquet transformation)~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_solution}
     u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
 \end{equation} % Lee p. 48
 where $A$ and $\psi_{u,0}$ the integration constants and $w(s)$ and $\psi_u(s)$ are the amplitude and betatron phase functions, which are periodic functions with the same periodicity as $K_u$.
+
 
 After substituting for $u(s)$ from Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1}, we find after some calculation (see Appendix C.1) that the amplitude and phase functions fulfill the following equations: 
 %Combination slide 27-28 of yiannis notes:  https://yannis.web.cern.ch/teaching/transverse.pdf and federicos thesis (p.11): https://cds.cern.ch/record/1481835/files/CERN-THESIS-2005-082.pdf
