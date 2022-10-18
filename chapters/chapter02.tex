@@ -175,7 +175,7 @@ In this section, the interactions between the particles within a bunch are negle
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 %\subsubsection{Linear dynamics}
-\subsection{Equations of motion in a linear lattice}
+%\subsubsection{Equations of motion in a linear lattice}
 Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are the basic magnetic elements of a synchrotron, providing bending and focusing of the particle beam. 
 
 As mentioned above, the particles transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
@@ -488,16 +488,47 @@ For Gaussian beam distributions with $\langle \delta \rangle=0$, the rms beam si
 In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm. In that case, tha above analyisis is valid also for the vertical plane.
 
 
-\textbf{Dipole field errors}\\
-Linear magner imperfection
+%\textbf{Dipole field errors}\\
+%Linear magner imperfection
 
 
-\subsection{Non-linear beam dynamics}
-\textbf{Chromaticity}\\
-Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next section which focuses on non-linear beam dynamics.
+%Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is discussed in detail in the next section which focuses on non-linear beam dynamics.
+\textbf{Off-momentum effects: chromaticity}\\
+Additionally, the off-momentum particles receive different focusing due to gradient errors in the quadrupoles. This effect is known as chromaticity and is defined as the variation of the betatron tune $Q_u$ with the relative momentum deviation $\delta$. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) are focused more (less) strongly from the quadrupoles due to their smaller (larger) magnetic rigidity. The tune shift introduced by the chromaticity for each particle, $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
+
+%The tune shift introduced by the chromaticity is: % M. Schenk p.49
+
+\begin{equation}\label{eq:chromatic_tune_shift_up_to_order_n}
+   \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{(n)} \delta^n, 
+\end{equation}
+where:
+\begin{equation}\label{eq:chroma_up_to_order_m}
+    Q_u^{(n)} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
+ \end{equation}
+denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation. Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
+
+%Large values of chromaticity can lead to instabilities and therefore to beam loss~\cite{Lee:1425444}. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
+% Lee page 159
+
 
 \textbf{Octupole magnets}\\
-It is the only multipole discussed in this chapter since it plays an important role in the studies perented in this thesis.
+It is the only multipole discussed in this chapter since it plays an important role in the studies presented in the following.
+
+Octupole magnets are typically used to increase the transverse tune spread of the beam particles to avoid resonances\footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of~\cite{Wiedemann:1083415}} and instability effects\footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis.% and therefore some further details are discussed in the following.
+
+
+
+The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
+\begin{equation}\label{eq:DQ_with_amplitude_horizontal}
+    \Delta Q_x (J_x, J_y) = 2(\alpha_{xx} J_x + \alpha_{xy}J_y),
+\end{equation}
+\begin{equation}\label{eq:DQ_with_amplitude_vertical}
+    \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
+\end{equation}
+where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
+
+
+In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
 
 The transfer maps from all the multipoles can be derived from the Hamiltonians and can be found in ref . 
@@ -614,44 +645,10 @@ thin lense approximation ref
 %The transfer matrix $M$ can be re-written such as it inclyyded, alide 14 in presentation v2 below:
 
 
-\subsubsection{Non-linear dynamics}\label{subsec:non-liner_beam_dynamics}
-Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited to the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
-
-\textbf{Chromaticity}\\
-We define the chromaticity as the variation of the betatron tune $Q_u$ with the relative momentum deviation delta. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) are focused more (less) strongly from the quadrupoles due to their smaller (larger) magnetic rigidity. The tune shift introduced by the chromaticity for each particle, $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
-
-%The tune shift introduced by the chromaticity is: % M. Schenk p.49
-
-\begin{equation}\label{eq:chromatic_tune_shift_up_to_order_n}
-   \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{(n)} \delta^n, 
-\end{equation}
-where:
-\begin{equation}\label{eq:chroma_up_to_order_m}
-    Q_u^{(n)} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
- \end{equation}
-denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation.
-
-Large values of chromaticity can lead to instabilities and therefore to beam loss~\cite{Lee:1425444}. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
-% Lee page 159
-
-Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
-
-\textbf{Octupoles and detuning with amplitude}\\
-Octupole magnets are most often used to increase the transverse tune spread of the beam particles to avoid resonances \footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of Ref.~\cite{Wiedemann:1083415}} and instability effects  \footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in Ref.~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis and therefore some further details are discussed in the following.
+%\subsubsection{Non-linear dynamics}\label{subsec:non-liner_beam_dynamics}
+%Up to now, only linear elements (dipoles and quadrupoles) were considered as in theory they are sufficient to create a synchrotron. However, in a real machine non-linearities are also present due to factors such as imperfections in the magnets field and alignment, particles' momentum spread, and higher order magnets (sextupoles, octupoles, etc). Here, the preceding discussion is expanded to include the non-linear beam dynamics. The discussion is limited to the two effects that are important for the work presented in this thesis: the chromaticity and the detuning with transverse amplitude.
 
 
-
-The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
-\begin{equation}\label{eq:DQ_with_amplitude_horizontal}
-    \Delta Q_x (J_x, J_y) = 2(\alpha_{xx} J_x + \alpha_{xy}J_y),
-\end{equation}
-\begin{equation}\label{eq:DQ_with_amplitude_vertical}
-    \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
-\end{equation}
-where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
-
-
-In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
 \subsection{Longitudinal motion}
 In the longitudinal plane, the motion is parallel to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of Ref.~\cite{Wiedemann:1083415}.
