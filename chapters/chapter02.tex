@@ -175,7 +175,7 @@ In this section, the interactions between the particles within a bunch are negle
 In the transverse plane the motion is orthogonal to the reference trajectory (see Fig.~\ref{fig:coordinate_system}) and its co-ordinates are $(x, x^\prime, y, y^\prime)$. For the discussion on the transverse beam dynamics, the $(x, x^\prime)$ and $(y, y^\prime)$ co-ordinates will be both described by $(u, u^\prime)$ when possible to facilitate the notation.
 
 %\subsubsection{Linear dynamics}
-\subsubsection{Equations of motion in a linear lattice}
+\subsection{Equations of motion in a linear lattice}
 Here the transverse motion of a particle moving through the two-dimensional fields described in Eq.~\eqref{eq:mult_expansion} is discussed. For now, the discussion is limited only to dipolar and quadrupolar components ($n=1$ and $n=2$) which are the basic magnetic elements of a synchrotron, providing bending and focusing of the particle beam. 
 
 As mentioned above, the particles transversely oscillate around the reference trajectory. This motion, through an arbitrary periodic sequence of dipoles and quadrupoles, is called betatron motion and can be described by the following equations of motion~\cite{Lee:1425444}: % also sofia's thesis Eq.(2.37)
@@ -199,7 +199,7 @@ Since the amplitudes of the betatron oscillations are usually small, linear appr
 \end{equation}
 where $\delta = (p-p_0)/p_0$ is the relative momentum offset from the reference particle, and $K_2=B_2 /(B_1\rho)$ is the focusing function. The sign-convention here is $K_2(s)>0$ and $(K_2(s)<0)$ for focusing in the horizontal and vertical planes, respectively.
 
-
+\textbf{Solutions for on-momentum particles}\\
 For on-momentum particles (with $\delta=0$) and neglecting effects from dipole field errors % from Hannes' thesis
 these linear equations of motion can be simplified even more to the equation for a harmonic oscillator (but with an $s$ dependent strength $K_u(s)$), named Hill's equation~\cite{Lee:1425444}:
 \begin{equation}\label{eq:Hills_equation_1}
@@ -266,7 +266,7 @@ where $u=(x,y)$ and:
 %\end{equation} % Lee p. 48
 %where $A$ and $\psi_{u,0}$ the integration constants and $w(s)$ and $\psi_u(s)$ are the amplitude and betatron phase functions, which are periodic functions with the same periodicity as $K_u$.
 % The following from David Amorim, in p.2
-For a circular accelerator $K_u$ is periodic: $K_u(s+L)=K_u(s)$, where $L$ is the circumference of the accelerator, $C_0$ or a fraction of it. In this case, the solution of Eq.~\eqref{eq:Hills_equation_1} in this case resembles the one of a harmonic oscillator and are given by~\cite{Lee:1425444}:
+For a circular accelerator $K_u$ is periodic: $K_u(s+L)=K_u(s)$, where $L$ is the circumference of the accelerator, $C_0$ or a fraction of it. In this case, the solution of Eq.~\eqref{eq:Hills_equation_1} resembles the one of a harmonic oscillator and can be written as~\cite{Lee:1425444}:
 %  (using the Floquet transformation)~\cite{Lee:1425444}:
 \begin{equation}\label{eq:solution_eq_motion_u}
     u(s) = \sqrt{2 \beta_u(s) J_u} \cos{(\psi_u(s)+ \psi_{u,0})}.
@@ -275,7 +275,8 @@ By differentiation the divergence $u^\prime$ is written as:
 \begin{equation}\label{eq:solution_eq_motion_u_prime}
     u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s) + \psi_{u,0})}+\alpha_u(s)\cos{(\psi_u(s)+ \psi_{u,0})}),
 \end{equation} 
-where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions: $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ is a periodic function determined by the sequence of the quadrupole magnets in the accelerator and follows the periodicity of the macine. The beta function determines the maximum amplitude of the single particles' trajecotry at any given position $s$ in the ring.
+where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions: $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ is a periodic function determined by the sequence of the quadrupole magnets in the accelerator and follows the periodicity of the macine. Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes trasnverse oscillations around the reference trajectory which are often referred to as betatron oscillations. Since the $J_u$ is constant that beta function determines the maximum amplitude of the single particles' trajectory at any given position $s$ in the ring.
+% this highlights its phyiscal significance.
 % Last sentence from here: https://indico.cern.ch/event/407247/contributions/975702/attachments/1246508/1835998/Alexandra_p.pdf
 The function $\psi_u(s)$ is the betatron phase advance from the position $s=0$ to $s$ and equals:
 
@@ -283,7 +284,7 @@ The function $\psi_u(s)$ is the betatron phase advance from the position $s=0$ t
     \psi_u(s)= \int_{0}^{s} \frac{ds}{\beta_u(s)}.
 \end{equation}
 
-%\textbf{Betatron tune}\\
+\textbf{Betatron tune}\\
 The betatron tune, $Q_u$, represents the number of betatron oscillations that a particle performs one full revolution around the machine. It can be written with respect to the phase advance for one complete revolution around the machine as follows:
 
 \begin{equation}\label{eq:betatron_tune}
@@ -293,6 +294,41 @@ where $C_0$ is the circumference of the machine.
 
 The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude, and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tunes and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
 
+\textbf{Courant-Snyder ellipse}\\
+Inserting $\cos{(\psi_u(s)+ \psi_{u,0})} = u(s)/(\sqrt{\beta_u(s) J_u})$ from from Eq.~\eqref{eq:solution_eq_motion_u} to Eq.~\eqref{eq:solution_eq_motion_u_prime} it is found that:
+
+\begin{equation}\label{eq:action_definition}
+    J_u = \frac{1}{2} (\gamma_u(s) u^2(s) + 2 \alpha_u(s) u(s) u^\prime(s) + \beta_u(s) u^{\prime 2}(s)),
+\end{equation}
+where $\gamma_u(s)=\frac{1+\alpha_u(s)^2}{\beta_u(s)}$
+\textbf{Transverse emittance}\\
+
+
+\textbf{Linear transfer map}\\
+
+
+\textbf{Solution for off-momentum particles}\\
+
+
+\textbf{Dipole field errors}\\
+Linear magner imperfection
+
+
+\subsection{Non-linear beam dynamics}
+\textbf{Chromaticity}\\
+
+\textbf{Octupole magnets}\\
+It is the only multipole discussed in this chapter since it plays an important role in the studies perented in this thesis.
+
+
+The transfer maps from all the multipoles can be derived from the Hamiltonians and can be found in ref . 
+
+The motion of the particles through every component of the accelerator can be described with transfer maps, which show the change of the co-ordinates after their passage from the element. 
+
+The motion of a particle in an accelrator stducure combine the single element solutions by multiplication of the matrices
+
+
+thin lense approximation ref
 
 %\begin{equation}\label{eq:Hills_solution}
 %    u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
