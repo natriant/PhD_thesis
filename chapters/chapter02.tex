@@ -532,44 +532,42 @@ The transfer map for an octupole is:
  where $k_3L$ the integrated strength of the octupole of length $L$. Equations~\eqref{eq:transfer_map_octu_thin_x} and~\eqref{eq:transfer_map_octu_thin_y} are valid for the thin lens approximation which assumes that the length of the multipole components tends to zero. In that case, the rest of the co-ordinates ($x,y,z,\delta$) do not change as the particle passes through the magnet.
 
 
-As described in Chapter~10 of~\cite{Stoel:2693915} the term $\frac{1}{6}k_2Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particles. Assuming that the phase advance remains evenly distributed between $0$ and $2\pi$, the average additional phase advance of a particle as introduced by an octupole element can be written as~\cite{wolski2014}:
-\begin{equation}\label{eq:phase_advance_octupole}
-    \langle \Delta \psi_u \rangle = \frac{1}{8}k_3L\beta_u(s)^2 \langle J_u \rangle.
-\end{equation}
-It can be seen that a different phase advance is introduced for each particle depending on their individual action, $J_u$.
-Equation~\eqref{eq:phase_advance_octupole} translates into a change of the tune of each particle as:
+As described in Chapter~10 of~\cite{Stoel:2693915} the term $\frac{1}{6}k_2Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particle, which eventually over one turn is translated to a change in their tune given by~\cite{Stoel:2693915}:
 \begin{equation}\label{eq:tune_shit_octupoles}
-    \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 \langle J_u \rangle.
+    \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 J_u .
 \end{equation}
+It can be seen that a different change in the tune is introduced for each particle depending on their individual action, $J_u$. %The discussion in~\cite{Stoel:2693915} concerns motion in one plane and interaction with a single octupole per turn. 
+
+%Assuming that the phase advance remains evenly distributed between $0$ and $2\pi$, the average additional phase advance of a particle as introduced by an octupole element can be written as~\cite{wolski2014}:
+%\begin{equation}\label{eq:phase_advance_octupole}
+%    \langle \Delta \psi_u \rangle = \frac{1}{8}k_3L\beta_u(s)^2 \langle J_u \rangle.
+%\end{equation}
+%The phase advance of the particle remains the same.
+%It can be seen that a different phase advance is introduced for each particle depending on their individual action, $J_u$.
+%Equation~\eqref{eq:phase_advance_octupole} translates into a change of the %tune of each particle as:
+%\begin{equation}\label{eq:tune_shit_octupoles}
+%    \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 \langle J_u \rangle.
+%\end{equation}
 
 % and Eq.(1.175) in emilias thesis.
 
 
+This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis.% and therefore some further details are discussed in the following.
+ For reference, the octupole magnets are typically used to increase the transverse tune spread of the beam particles to avoid resonances\footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter~16 of~\cite{Wiedemann:1083415}} and instability effects\footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (introduced in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in~\cite{Rumolo:1982422}.}. 
 
- Octupole magnets are typically used to increase the transverse tune spread of the beam particles to avoid resonances\footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter~16 of~\cite{Wiedemann:1083415}} and instability effects\footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (introduced in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis.% and therefore some further details are discussed in the following.
 
+In the SPS and LHC rings, the octupoles are installed in families (called focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
 
-The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
+The general formula which describes the linear betatron detuning with transverse amplitude introduced by the octupole families in the accelerator ring is~\cite{Gareyte:321824}:
 \begin{equation}\label{eq:DQ_with_amplitude_horizontal}
     \Delta Q_x (J_x, J_y) = 2(\alpha_{xx} J_x + \alpha_{xy}J_y),
 \end{equation}
 \begin{equation}\label{eq:DQ_with_amplitude_vertical}
     \Delta Q_y (J_x, J_y) = 2(\alpha_{yy} J_y + \alpha_{yx}J_x),
 \end{equation}
-where $J_x, J_y$ the transverse action as introduced in Eq.~\eqref{eq:action_normalised_coordinates}, $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles strength, the beta functions at their location and the magnetic rigidity~\cite{Gareyte:321824}. This detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
 
+where $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning coefficients with units 1/m. The detuning coefficients depend on the octupoles' strength, the beta functions at their location, and the magnetic rigidity~\cite{Gareyte:321824}. Note that the detuning with the transverse action (or amplitude) is an incoherent effect as it depends on the individual action of each particle.
 
-In the SPS and LHC rings, the octupoles are installed in families (focusing and defocusing) in order to avoid the excitation of resonances. They are usually referred to as "Landau octupoles" since they are used to create a betatron tune spread that provides the mechanism of Landau damping~\cite{Herr:1982428} (to stabilise the beam).
-
-
-The transfer maps from all the multipoles can be derived from the Hamiltonians and can be found in ref . 
-
-The motion of the particles through every component of the accelerator can be described with transfer maps, which show the change of the co-ordinates after their passage from the element. 
-
-The motion of a particle in an accelrator stducure combine the single element solutions by multiplication of the matrices
-
-
-thin lense approximation ref
 
 %\begin{equation}\label{eq:Hills_solution}
 %    u(s) = A w(s) \cos{(\psi_u(s)+\psi_{u,0})},
