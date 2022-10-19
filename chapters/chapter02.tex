@@ -710,34 +710,34 @@ The frequency of the RF field needs to be synchronous with the revolution freuqe
 %\end{equation}
 %where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle
 
-The RF cavities provide a change in the energy deviation of the individual particles as a function of their longitudinal position $z$ within the bunch ($z=0$ the location of the synchronous particle and $z>0$ the head of the buunch).
-
-The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator in the ultra-relativistic regime can be expressed as~\cite{wolski2014}:
+The RF cavities provide a change in the energy deviation of the individual particles as a function of their longitudinal position $z$ within the bunch ($z=0$ the location of the synchronous particle and $z>0$ the head of the buunch). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator in the ultra-relativistic regime can be expressed as~\cite{wolski2014}:
 \begin{equation}\label{eq:long_eq_motion_z}
     z^\prime = \frac{dz}{ds} = - \eta_p \delta,
 \end{equation}
 \begin{equation}\label{eq:long_eq_motion_delta}
-    \delta^\prime = \frac{d\delta}{ds} = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
+    \delta^\prime = \frac{d\delta}{ds} = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ).
 \end{equation}
-where $V_\mathrm{RF}$ $\phi_{RF}s$ is the phase of the synchronous particle and 
 
-Note that for particles with small momentum deviation, $\delta$ at the ultra-relativistic regime we can use the approximation that the energy deviation, $\delta_E =\frac{E-E_0}{E_0} \approx \delta$~\cite{wolski2014}. % A. Wolski p.(5.40)
+Equation~\eqref{eq:long_eq_motion_z} assumes that we can average the change of the $z$ co-ordinate over the circumference of the machine. This approximation is valid for slow synchrotron motion compared to the revolution period and for small oscillation amplitude compared to the RF wavelength\cite{wolski2014}. % p.171 below Eq.(5.51)
 
-
-
-
-\textbf{Harmonic number}\\
-The RF cavities in a storage ring aim to compensate for energy losses allowing the beam to circulate in the reference trajectory. The frequency of the RF field needs to be synchronous with the revolution freuqency, such as the synchronous particle arrives with the same phase at the cavity again after one turn. Therefore the frequency of the RF field is a multiple of the revolution frequency: $\omega_\mathrm{RF}=h 2\pi f_\mathrm{rev}$. The parameter $h$ (number of RF cycles per revolution) is called the harmonic number and defines the number of stable synchronous particle locations in the ring~\cite{Tecker:2674860}.
+Equation~\eqref{eq:long_eq_motion_delta} assumes that the energy deviation, $\delta_E =\frac{E-E_0}{E_0} \approx \delta$. This approximation is valid for particle with small momentum deviation and for machines operating at the ultrarelativistic regime~\cite{wolski2014}. % A. Wolski p.(5.40)
 
 
+The parameter $\eta_p$ is called phase split factor and describes the relative change in the revolution frequency of a particle with respect to its momentum spread and can be written as:
+\begin{equation}\label{eq:phase_slip_def}
+    \eta_p \equiv \frac{\Delta f/f_\mathrm{rev}}{\delta},
+\end{equation}
+where $\Delta f$ is the change of the revolution frequency of each individual particle. The physical implementations of the phase slip factor are not described here since thay are out of the scope of this thesis. However further details can be found in~\cite{wolski2014}.  % change of the effect in the dipoles --> transverse coupling.
+% p.163
+%This means that particles with different momentum deviation have different revolution frequencies. 
 
-
-
+% Dispersion and phase slip factor:https://people.nscl.msu.edu/~haoy/teaching/AP_course_materials/off_momentum_orbit/off_momentum_orbit.html
 
 \textbf{Synchrotron oscillations}\\
-For the off-momentum particles, the RF cavities provide a change in their energy deviation, $\delta$, as a function of their longitudinal position $z$ within the bunch ($z=0$ the location of the synchronous particle and $z>0$ the head of the buunch).
 % A. Wolski non-linear dynamics CAS 2018 Budapers.
-The off-momentum particles will perform oscillations around a stable location in the longitudinal plane. They are also known as synchrotron oscillations and are typically order of magnitudes slower than the betatron oscillations. The set of particles that oscillate around the same stable point will be referred to as "bunch". Note that the harmonic number $h$ defines the maximum number of bunches that can be stored in the ring.
+Following the above described equations of motion, the off-momentum particles will perform oscillations around a stable location in the longitudinal plane.  They are also known as synchrotron oscillations and are typically order of magnitudes slower than the betatron oscillations. For example, a complete synchrotron oscillation may take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn).
+
+The possible stable locations around which the synchrotron oscillations are performed are defined by the harmonic number $h$. The set of particles that oscillate around the same stable point will be referred to as "bunch". Note that the harmonic number $h$ defines the maximum number of bunches that can be stored in the ring.
 
 %In the longitudinal the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
 % stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
@@ -750,78 +750,65 @@ The off-momentum particles will perform oscillations around a stable location in
 \textbf{Synchrotron tune}\\
 The synchrotron tune, $Q_s$, is defined as the number of synchrotron oscillations performed during one complete revolution around the machine and is computed as follows~\cite{wolski2014}: % Wolski Eq.(5.49) p. 170
 \begin{equation}\label{eq:Qs} 
-    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C_0}{c} \eta_p \cos{\phi_s}},
+    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C_0}{c} \eta_p \cos{\phi_s}}.
 \end{equation}
-where $V_\mathrm{RF}$ is the voltage of the RF cavities and $\phi_s$ the phase that the synchronous particle arrive at them. 
+%where $V_\mathrm{RF}$ is the voltage of the RF cavities and $\phi_s$ the phase that the synchronous particle arrive at them. 
 %where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
-The parameter $\eta_p$ is called phase split factor and describes the relative change in the revolution frequency of a particle with respect to momentum for particles with zero momentum.
-
-how the revolution period of each particle changes with respect to its energy spread.
+%The parameter $\eta_p$ is called phase split factor and describes the relative change in the revolution frequency of a particle with respect to momentum for particles with zero momentum.
 
 
 
-
- For circular accelerators operating at ultra-relativistic regimes %above transition. transition p.63 Andy wolski
-the process involved in the synchrotron oscillations is the following. The reference particle, $\delta=0$, always passes from the center of the RF cavities at the 
-
-e is orders of magnitude slower and is
-usually weakly coupled to the dynamics in transverse planes
-
-
-e. The machines of
-interest in this thesis are operated above transition
-
-Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
-\begin{equation}\label{eq:enerhy_gain_synchronous}
-    \Delta E_0 = e V_\mathrm{RF} \sin{(\phi_s)}, 
-\end{equation}
-where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or lose a different amount of energy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
+%Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
+%\begin{equation}\label{eq:enerhy_gain_synchronous}
+%    \Delta E_0 = e V_\mathrm{RF} \sin{(\phi_s)}, 
+%\end{equation}
+%where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or lose a different amount of energy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
  
 
 
 
 
-In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
-\begin{equation}\label{eq:long_eq_motion_z}
-    z^\prime = - \eta_p \delta,
-\end{equation}
-\begin{equation}\label{eq:long_eq_motion_delta}
-    \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
-\end{equation}
-where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
+%In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+%\begin{equation}\label{eq:long_eq_motion_z}
+%    z^\prime = - \eta_p \delta,
+%\end{equation}
+%\begin{equation}\label{eq:long_eq_motion_delta}
+%    \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
+%\end{equation}
+%where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
 
-\textbf{Dispersion effects}\\
-As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
-\begin{equation}\label{eq:compaction_factor}
-    \alpha_p = \frac{\Delta C /C}{\delta} = \frac{1}{C} \oint _C \frac{D_x(s)}{\rho(s)} ds,
-\end{equation} % proof hannes' thesis appendix p.169: https://cds.cern.ch/record/1644761/files/CERN-THESIS-2013-257.pdf
-where $C$ is the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
+%\textbf{Dispersion effects}\\
+%As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
+%\begin{equation}\label{eq:compaction_factor}
+%    \alpha_p = \frac{\Delta C /C}{\delta} = \frac{1}{C} \oint _C \frac{D_x(s)}{\rho(s)} ds,
+%\end{equation} % proof hannes' thesis appendix p.169: https://cds.cern.ch/record/1644761/files/CERN-THESIS-2013-257.pdf
+%where $C$ is the circumference of the accelerator and $D_x(s)$ and $\rho(s)$ are the horizontal dispersion and bending radius respectively at a given point $s$.
 
-With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also changes. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
-\begin{equation}\label{eq:phase_slip_factor}
-    \eta_p = -\frac{\Delta \omega / \omega_0}{\delta} = \alpha_p - \frac{1}{\gamma^2_0} = \frac{1}{\gamma^2_\mathrm{tr}} - \frac{1}{\gamma^2_0},
-\end{equation}
-where $\omega_0$ is the angular frequency of the reference particle, $\gamma_0$ is the Lorentz factor and $\gamma_\mathrm{tr} = 1/\sqrt{\alpha_p}$ is called the transition energy. When $\gamma_0 < \gamma_\mathrm{tr} \Rightarrow \eta_p <0$ ($\gamma_0 > \gamma_\mathrm{tr} \Rightarrow \eta_p > 0$) and the machine operates below (above) transition. For the nominal optics configuration, the SPS machine always operates above transition as $\gamma_\mathrm{tr}$ = 22.8 which is smaller than the relativistic gamma even for the injection energy ($\gamma_0$ = 27.7 at 26\,GeV).
+%With the change of the closed orbit length due to the momentum offset the revolution frequency of the particles also changes. The change of the angular frequency depending on the momentum offset is described with the phase slip factor:
+%\begin{equation}\label{eq:phase_slip_factor}
+ %   \eta_p = -\frac{\Delta \omega / \omega_0}{\delta} = \alpha_p - \frac{1}{\gamma^2_0} = \frac{1}{\gamma^2_\mathrm{tr}} - \frac{1}{\gamma^2_0},
+%\end{equation}
+%where $\omega_0$ is the angular frequency of the reference particle, $\gamma_0$ is the Lorentz factor and $\gamma_\mathrm{tr} = 1/\sqrt{\alpha_p}$ is called the transition energy. When $\gamma_0 < \gamma_\mathrm{tr} \Rightarrow \eta_p <0$ ($\gamma_0 > \gamma_\mathrm{tr} \Rightarrow \eta_p > 0$) and the machine operates below (above) transition. For the nominal optics configuration, the SPS machine always operates above transition as $\gamma_\mathrm{tr}$ = 22.8 which is smaller than the relativistic gamma even for the injection energy ($\gamma_0$ = 27.7 at 26\,GeV).
 % Source for transition energy value: https://accelconf.web.cern.ch/ipac2011/papers/mops012.pdf
 
-\textbf{Phase stability and synchrotron oscillations}\\
-Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therefore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therefore, it will be accelerated more than the reference particle and subsequently it will need less time to complete the next revolution and, over a number of revolutions, will fall back longitudinally towards the reference particle. The situation is the opposite for a particle with $\delta<0$. 
+%\textbf{Phase stability and synchrotron oscillations}\\
+%Even though the particles arrive at different times in the RF cavity, they stay in the vicinity of the reference particle thanks to the effect of longitudinal or phase focusing, which is explained by the concept of phase stability~\cite{McMillan:1945zz, Veksler_1, Veksler_2}. Its principle is illustrated in Fig.~\ref{fig:phase_focusing} for a machine operating above transition. Above transition a particle with $\delta<0$ will follow a shorter closed orbit (than the reference trajectory) and therefore it will arrive at the RF cavity slightly earlier, than the reference particle and hence it will see a larger voltage. Therefore, it will be accelerated more than the reference particle and subsequently it will need less time to complete the next revolution and, over a number of revolutions, will fall back longitudinally towards the reference particle. The situation is the opposite for a particle with $\delta<0$. 
 % Inspired by Fig. 2.3 in the thesis of M. Schenk and Fig.5.15 in wille's book.
-\begin{figure}[!h] % 
-    \centering         
-    \includegraphics[width=0.6\textwidth]{images/Ch2/phase_focusing_synchrotron_motion.png}
-        \caption{Phase stability for particles in a circular accelerator which operates above transition.}
-        \label{fig:phase_focusing}
- \end{figure}
+%\begin{figure}[!h] % 
+%    \centering         
+%    \includegraphics[width=0.6\textwidth]{images/Ch2/phase_focusing_synchrotron_motion.png}
+%        \caption{Phase stability for particles in a circular accelerator which operates above transition.}
+%        \label{fig:phase_focusing}
+% \end{figure}
 
- In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
-\begin{equation}\label{eq:long_eq_motion_z}
-    z^\prime = - \eta_p \delta,
-\end{equation}
-\begin{equation}\label{eq:long_eq_motion_delta}
-    \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
-\end{equation}
-where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
+ %In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+%\begin{equation}\label{eq:long_eq_motion_z}
+%    z^\prime = - \eta_p \delta,
+%\end{equation}
+%\begin{equation}\label{eq:long_eq_motion_delta}
+%    \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
+%\end{equation}
+%where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
 
 
 \section{Collective effects}\label{sec:collective_effects}
@@ -830,7 +817,7 @@ Up to now, the motion of the particles was studied neglecting the interaction be
 % If you want to show an example of an instability you can find a figure in Ref.~\cite{Rumolo:1982422}}
 
 \subsection{Wakefields and impedance}\label{subsec:wakefields}
-The discussion in this section is based in the discussion in Refs.~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
+The discussion in this section is based in the discussion in~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
 
 \textbf{Wakefields}\\
 The charged particles within a beam interact electromagnetically with their surroundings in the beam pipe such as the resistive vacuum pipe walls, the RF cavities, etc. If these structures are not smooth (presence of discontinuities) or not perfectly conducting the interaction with the charged particles will result in electromagnetic perturbations called wakefields. Studying the effects of the wakefields is crucial as they act back on the beam affecting the beam dynamics.
