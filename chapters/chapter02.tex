@@ -493,7 +493,7 @@ For Gaussian beam distributions with $\langle \delta \rangle=0$, the rms beam si
     \sigma_u(s) = \sqrt{\beta_u(s) \epsilon^{\mathrm{geom}}_u + D_x(s)^2\sigma_\delta^2}.
 \end{equation}
 
-In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm. In that case, tha above analyisis is valid also for the vertical plane.
+In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm. Note that the above analyisis is valid also for the vertical plane.
 
 
 %\textbf{Dipole field errors}\\
@@ -680,21 +680,96 @@ where $\alpha_{xx}, \alpha_{yy}$ and $\alpha_{xy}=\alpha_{yx}$ are the detuning 
 
 
 \subsection{Longitudinal motion}
-In the longitudinal plane, the motion is parallel to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, only the basic concepts that are required for the explanation of the equations of motion are discussed, as the studies in this thesis mostly concern transverse beam dynamics. However, a complete discussion can be found in Chapter 9 of~\cite{Wiedemann:1083415} and in~\cite{wolski2014}.
+In the longitudinal plane, the motion is parallel to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the next paragraphs, the discussion is limited to the longitudinal motion in a synchrotron storage ring operating at the ultra-relativistic regime (like the machines of interest in this thesis) and only to the concepts that are needed for understanding the studies. The discussion in this section is more limited than for the transverse motion since the work presented in the thesis mostly concern transverse beam dynamics. A complete discussion can be found in Chapter 9 of~\cite{Wiedemann:1083415} and in~\cite{wolski2014}.
+% it is also called synchrotrom motion
 
 %In the next paragraphs the basic concepts used to describe the motion in the longitudinal plane which is also called synchrotronous motion are explained. In particular, the discussion is focused on the synchronous phase, the momentum compaction and phase slip factors, the concepts of phase stability, synchrotron oscillations and synchrotron tune tune. The equations of synchrotron motion are also given.
 
 %In the longitudinal plane the motion is tangential to the reference trajectory and is described by the co-ordinates $(z, \delta)$. In the following discussion the longitudinal motion is treated independently from the transverse one. The complete approach, which describes the particles motion in the presence of coupling between the transverse and longitudinal planes can be found in Chapter~5.2 in the book of A. Wolski in Ref.~\cite{wolski2014}.
-\textbf{General}\\
-The time that the reference particle needs to complete one complete revolution around the machine is called the revolution period, $T_\mathrm{rev}$. Its angular revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C = \beta_0 c/C$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C$ the circumference of the accelerator.
 
-In the longitudinal plane the acceleration and the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
-% stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
+\textbf{Revolution period and frequency}\\
+The time that the reference or synchronous particle needs to complete one complete revolution around the accelerator is called the revolution period, $T_\mathrm{rev}$. The revolution frequency is $\omega_\mathrm{rev} = 2\pi /T_\mathrm{rev}$ in rad/s or $f_\mathrm{rev}=1/T_\mathrm{rev} =  v_0/C_0 = \beta_0 c/C_0$ in Hz, where $v_0$ the speed of the reference particle, $\beta_0$ the relativistic beta, $c$ the speed of light and $C_0$ the circumference of the accelerator.
+
+%\textbf{Transfer map}\\
+\textbf{Equations of motion}\\ % is this a transfer map?
+% The RF cavities in a storage ring aim to compensate for energy losses allowing the beam to circulate in the reference trajectory.
+
+In a synchrotron storage ring, the motion in the longitudinal plane is controlled by the RF cavities. They provide a longitudinal electric field which can be described by:
 \begin{equation}\label{eq:RF_cavity_EF}
-    E_\mathrm{{RF}}(t) = E_A \sin{(\phi_\mathrm{{RF}} + \phi_s)},
+    E_\mathrm{{RF}}(z) = E_A \sin{(2\pi f_\mathrm{RF}z + \phi_s)},
 \end{equation}
-where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic number (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated (or stored) in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
-In a synchrotron during the energy ramp the angular frequency increases in order to follow the increasing revolution frequency.
+where $E_A$ it the amplitude of the electric field, $f_\mathrm{RF}$ the frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle.
+
+The frequency of the RF field needs to be synchronous with the revolution freuqency, such as the synchronous particle arrives with the same phase at the cavity again after one turn. Therefore the frequency of the RF field is a multiple of the revolution frequency: $\omega_\mathrm{RF}=h 2\pi f_\mathrm{rev}$. The parameter $h$ (number of RF cycles per revolution) is called the harmonic number and defines the number of stable synchronous particle locations in the ring~\cite{Tecker:2674860}.
+
+
+%In the longitudinal the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
+% stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
+%\begin{equation}\label{eq:RF_cavity_EF}
+%    E_\mathrm{{RF}}(z) = E_A \sin{(2\pi f_\mathrm{RF}z + \phi_s)},
+%\end{equation}
+%where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle
+
+The RF cavities provide a change in the energy deviation of the individual particles as a function of their longitudinal position $z$ within the bunch ($z=0$ the location of the synchronous particle and $z>0$ the head of the buunch).
+
+The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator in the ultra-relativistic regime can be expressed as~\cite{wolski2014}:
+\begin{equation}\label{eq:long_eq_motion_z}
+    z^\prime = \frac{dz}{ds} = - \eta_p \delta,
+\end{equation}
+\begin{equation}\label{eq:long_eq_motion_delta}
+    \delta^\prime = \frac{d\delta}{ds} = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
+\end{equation}
+where $V_\mathrm{RF}$ $\phi_{RF}s$ is the phase of the synchronous particle and 
+
+Note that for particles with small momentum deviation, $\delta$ at the ultra-relativistic regime we can use the approximation that the energy deviation, $\delta_E =\frac{E-E_0}{E_0} \approx \delta$~\cite{wolski2014}. % A. Wolski p.(5.40)
+
+
+
+
+\textbf{Harmonic number}\\
+The RF cavities in a storage ring aim to compensate for energy losses allowing the beam to circulate in the reference trajectory. The frequency of the RF field needs to be synchronous with the revolution freuqency, such as the synchronous particle arrives with the same phase at the cavity again after one turn. Therefore the frequency of the RF field is a multiple of the revolution frequency: $\omega_\mathrm{RF}=h 2\pi f_\mathrm{rev}$. The parameter $h$ (number of RF cycles per revolution) is called the harmonic number and defines the number of stable synchronous particle locations in the ring~\cite{Tecker:2674860}.
+
+
+
+
+
+
+\textbf{Synchrotron oscillations}\\
+For the off-momentum particles, the RF cavities provide a change in their energy deviation, $\delta$, as a function of their longitudinal position $z$ within the bunch ($z=0$ the location of the synchronous particle and $z>0$ the head of the buunch).
+% A. Wolski non-linear dynamics CAS 2018 Budapers.
+The off-momentum particles will perform oscillations around a stable location in the longitudinal plane. They are also known as synchrotron oscillations and are typically order of magnitudes slower than the betatron oscillations. The set of particles that oscillate around the same stable point will be referred to as "bunch". Note that the harmonic number $h$ defines the maximum number of bunches that can be stored in the ring.
+
+%In the longitudinal the focusing (in phase) of particles are achieved by the longitudinal time-dependent electric field of the main RF cavities:
+% stefania's thesis p.20 and M. schenk thesis p.20 Eq.2.29
+%\begin{equation}\label{eq:RF_cavity_EF}
+%    E_\mathrm{{RF}}(z) = E_A \sin{(2\pi f_\mathrm{RF}z + \phi_s)},
+%\end{equation}
+%where $E_A$ it the amplitude of the electric field, $\phi_\mathrm{{RF}}(t) = \omega_\mathrm{{RF}}t$ the phase of the RF system, $\omega_\mathrm{{RF}}$ the angular frequency of the RF system and $\phi_s$ is the phase of the synchronous or reference particle. The angular frequency needs to be an integer mulitple of the revolution frequency: $ \omega_\mathrm{RF} = h \omega_\mathrm{rev}$, where $h$ is called the harmonic number. The harmonic number (number of RF cycles per revolution) defines the maximum number of bunches that can be accelerated (or stored) in the ring. % the maximum number of sunchronous particles (around them the off momentum particles (rest of the bunch),
+%In a synchrotron during the energy ramp the angular frequency increases in order to follow the increasing revolution frequency.
+
+\textbf{Synchrotron tune}\\
+The synchrotron tune, $Q_s$, is defined as the number of synchrotron oscillations performed during one complete revolution around the machine and is computed as follows~\cite{wolski2014}: % Wolski Eq.(5.49) p. 170
+\begin{equation}\label{eq:Qs} 
+    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C_0}{c} \eta_p \cos{\phi_s}},
+\end{equation}
+where $V_\mathrm{RF}$ is the voltage of the RF cavities and $\phi_s$ the phase that the synchronous particle arrive at them. 
+%where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
+The parameter $\eta_p$ is called phase split factor and describes the relative change in the revolution frequency of a particle with respect to momentum for particles with zero momentum.
+
+how the revolution period of each particle changes with respect to its energy spread.
+
+
+
+
+ For circular accelerators operating at ultra-relativistic regimes %above transition. transition p.63 Andy wolski
+the process involved in the synchrotron oscillations is the following. The reference particle, $\delta=0$, always passes from the center of the RF cavities at the 
+
+e is orders of magnitude slower and is
+usually weakly coupled to the dynamics in transverse planes
+
+
+e. The machines of
+interest in this thesis are operated above transition
 
 Assuming that the synchronous or reference particle arrives at the RF cavity at phase $\phi_s$ every turn, the energy gain equals:
 \begin{equation}\label{eq:enerhy_gain_synchronous}
@@ -703,10 +778,17 @@ Assuming that the synchronous or reference particle arrives at the RF cavity at 
 where $V_\mathrm{RF}$ the amplitude of the RF cavity voltage. The rest of the particles will arrive at the RF cavity at phases $\phi = \phi_s \pm \delta \phi$ and they will gain or lose a different amount of energy per turns which equals: $\Delta E_p = e V_\mathrm{RF} \sin{(\phi)}$. 
  
 
-\textbf{Transfer map}\\
 
-\textbf{Synchrotron tune}\\
 
+
+In particular, the non-synchronous particles oscillate around the phase of the synchronous particle performing synchrotron oscillations (similarly to the betatron oscillations in the transverse plane). It is worth mentioning, that a complete synchrotron oscillation can take many ($\sim$100) turns, in contrast to the betatron oscillations (of which there are usually many complete oscillations per turn). The equations of motion for a particle passing through a system of synchronised RF cavities located around the accelerator are~\cite{wolski2014}: % wolski p. 173 Eq.(5.53) and (5.54)
+\begin{equation}\label{eq:long_eq_motion_z}
+    z^\prime = - \eta_p \delta,
+\end{equation}
+\begin{equation}\label{eq:long_eq_motion_delta}
+    \delta^\prime = - \frac{qV_\mathrm{RF}}{c p_0 C} \left ( \sin{\phi_s} - \sin{\left ( \phi_s - \frac{\omega_\mathrm{RF} z}{c} \right)} \right ),
+\end{equation}
+where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
 
 \textbf{Dispersion effects}\\
 As discussed in the previous chapter, in the presence of dispersion a particle with a momentum offset, $\delta$, from the reference particle will have a different closed orbit of different length (see Fig.~\ref{fig:closed_orbit_Dx}). This change of the orbit length with respect to the momentum offset of each particle is described with the momentum compaction factor~\cite{emetral_juas_2018}: %p.20
@@ -741,11 +823,6 @@ Even though the particles arrive at different times in the RF cavity, they stay 
 \end{equation}
 where $z^\prime = dz/ds$, $\delta^\prime = d\delta/ds$, $e$ is the charge of a proton, $c$ is the speed of light, $p_0$ is the reference momentum, $C$ is the circumference of the machine, $\omega_\mathrm{RF}$ is the angular frequency of the RF system, $\phi_s$ is the phase of the synchronous particle and $\eta_p$ is the phase slip factor.
 
-The synchrotron tune, $Q_s$, is the number of synchrotron oscillations performed during one complete revolution around the machine and is computed as follows~\cite{wolski2014}: % Wolski Eq.(5.49) p. 170
-\begin{equation}\label{eq:Qs} 
-    Q_s = \frac{1}{2\pi}\sqrt{-\frac{e V_\mathrm{RF}}{c p_0} \frac{\omega_\mathrm{RF} C}{c} \eta_p \cos{\phi_s}}.
-\end{equation}
-%where $e$ the proton charge, $V_\mathrm{RF}$ the amplitude of the RF cavity voltage, $c$ the speed of light, $p_0$ the reference momentum, $\omega_\mathrm{RF}$ the angular frequency of the RF system and $\phi_s$ the synchronous phase.
 
 \section{Collective effects}\label{sec:collective_effects}
 Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with electromagnetic fields. Examples are beam-beam interactions, space charge effects, wakefields and intra-beam scattering~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities \footnote{A beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in Ref.~\cite{Rumolo:1982422}} which then may degrade beam quality, or lead to beam losses.  In either case, the performance of the accelerator can be adversely affected. The discussion here is limited in the description of the wakefields and the impedance they are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408}.
