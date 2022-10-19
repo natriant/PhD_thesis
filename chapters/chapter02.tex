@@ -407,8 +407,16 @@ where $\sigma_u$ the transverse rms beam size.
 Despite Liouville's theorem, in a real accelerator there are various phenomena that change the emittance such as~\cite{Buon:216507}: scattering by residual gas, intra-beam scattering, beam-beam scattering, stochastic or electron cooling, synchrotron radiation emission, filamentation due to non-linearities of the machine, space charge and noise effects. The studies in this thesis focus on the emittance growth due to noise effects .
  
 
-\textbf{Linear transfer map}\\
-The Twiss parameters can also be used to describe the linear transport of a particle in the accelerator from the position $s_0$ to the $s_1$ using a matrix formalism as follows~\cite{Lee:1425444}: %Eq.(2.42) lee
+\textbf{Transfer maps and linear transfer matrix}\\
+% information and introduciton to maps:https://www.researchgate.net/publication/50819226_Direct_measurement_of_resonance_driving_terms_in_the_super_proton_synchrotron_SPS_of_cern_using_beam_position_monitors
+The motion of the particles through a circular accelerator components can be represented by transfer maps. A transfer map is a set of functions that yields the final set of phase space coordinates as a function of the inital one.
+The transfer maps can be found from the equations of motion which are obtained from Hamilton's equations. For each component, the Hamiltonian that describes its full dynamics is used. Further details on this approach can be found in~\cite{wolski2014}. % p.282 wolski 
+% between them drifts.
+%Furthermore, the work presented in this thesis uses the thin lens approximation which assumes that the length of all the magnetic components tends to zero.
+% drift kick drift.
+
+% useufull andy's presnetation: /Users/nataliatriantafyllou/Downloads/NonlinearDynamics1_-_Handouts.pdf
+The transfer maps of the linear magnetic elements, such as dipoles and quadrupoles can be written in terms of matrices. The Twiss parameters can be used to describe the linear transport of a particle in the accelerator from the position $s_0$ to the $s_1$ using the matrix formalism as follows~\cite{Lee:1425444}: %Eq.(2.42) lee
 % w and psi are also solutions. now we write it in matrix notation
 %Knowing the lattice (element per element structure of the accelerator) the solutions $w_u(s)$ and $\psi_u(s)$ of the Hill's equation can also be described using a matrix formalism as follow
 
@@ -512,10 +520,33 @@ denotes the chromaticity of order $n$. The studies in this thesis, are limited t
 
 
 \textbf{Octupole magnets}\\
-It is the only multipole discussed in this chapter since it plays an important role in the studies presented in the following.
+It is the only multipole discussed in this chapter since it plays an important role in the studies of the thesis.
 
-Octupole magnets are typically used to increase the transverse tune spread of the beam particles to avoid resonances\footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter 16 of~\cite{Wiedemann:1083415}} and instability effects\footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (which will be discussed in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis.% and therefore some further details are discussed in the following.
+The transfer map for an octupole is:
+\begin{equation}\label{eq:transfer_map_octu_thin_x}
+   \Delta x^\prime = \frac{1}{6}{k_3L}(x^3-3xy^2),
+\end{equation}
+\begin{equation}\label{eq:transfer_map_octu_thin_y}
+    \Delta y^\prime= \frac{1}{6}{k_3L}(y^3-3yx^2),
+ \end{equation}
+ where $k_3L$ the integrated strength of the octupole of length $L$. Equations~\eqref{eq:transfer_map_octu_thin_x} and~\eqref{eq:transfer_map_octu_thin_y} are valid for the thin lens approximation which assumes that the length of the multipole components tends to zero. In that case, the rest of the co-ordinates ($x,y,z,\delta$) do not change as the particle passes through the magnet.
 
+
+As described in Chapter~10 of~\cite{Stoel:2693915} the term $\frac{1}{6}k_2Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particles. Assuming that the phase advance remains evenly distributed between $0$ and $2\pi$, the average additional phase advance of a particle as introduced by an octupole element can be written as~\cite{wolski2014}:
+\begin{equation}\label{eq:phase_advance_octupole}
+    \langle \Delta \psi_u \rangle = \frac{1}{8}k_3L\beta_u(s)^2 \langle J_u \rangle.
+\end{equation}
+It can be seen that a different phase advance is introduced for each particle depending on their individual action, $J_u$.
+Equation~\eqref{eq:phase_advance_octupole} translates into a change of the tune of each particle as:
+\begin{equation}\label{eq:tune_shit_octupoles}
+    \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 \langle J_u \rangle.
+\end{equation}
+
+% and Eq.(1.175) in emilias thesis.
+
+
+
+ Octupole magnets are typically used to increase the transverse tune spread of the beam particles to avoid resonances\footnote{Resonances in circular accelerators are a result of perturbation terms in the equation of motion once the perturbation frequency matches the frequency of the particles' oscillatory motion. The topic of resonances is out of the scope of this thesis, however, more details can be found in Chapter~16 of~\cite{Wiedemann:1083415}} and instability effects\footnote{Beam instabilities in an accelerator are a result of the interplay of the wakefields (introduced in Section~\ref{subsec:wakefields}) and a perturbation (e.g. noise) on equations of motion of the beam particles. Similar to the resonances their detailed study is out of the scope of this thesis, however, more details can be found in~\cite{Rumolo:1982422}.}. This property, of providing incoherent betatron tune spread in a controlled way is used extensively in this thesis.% and therefore some further details are discussed in the following.
 
 
 The betatron tune spread or linear detuning that is introduced by the octupoles is action-dependent in both transverse planes. In terms of the action variable it is written as follows: % Michael schenk p.
