@@ -1008,7 +1008,7 @@ Below the main steps for setting up a simulation are listed: % according to the 
     The machine parameters, such as the circumference, the betatron and synchrotron tunes, the Twiss and the dispersion values at the interaction points are defined. It should be noted that PyHEADTAIL uses smooth \mbox{approximation}: the strength $K_u$ in Hill's equation is considered constant. This means that the beta functions $\beta_u$ are constant at each segment. In that case the betatron oscillation wavelength is $2\pi \beta_u$ and the betatron tune is $Q_u=\frac{C_0}{2\pi \beta_u}$. The phase advance for each segment is $\Delta \psi_u=Q_u \frac{L}{C_0}$ where $L$ is the length of the segment and $C_0$ the machine circumference. which means that only a few segments are defined per turn. Note that only a few segments are defined per turn which results in a rough optics model.
     
     % which results to a very  rough optics model.
-    \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate representation of the bunch, unless it is stated otherwise. There are various distributions available. In this thesis the simulations are performed using a Gaussian distribution in transverse and longitudinal planes.
+    \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate representation of the bunch, unless it is stated otherwise. There are various distributions available. In this thesis the simulations are performed using a Gaussian distribution in both transverse and longitudinal planes.
     \item \textbf{Transverse tracking}: In the transverse plane, the macroparticles are transported from one interaction point to another 
     (e.g. grom IP0 to IP1) following the matrix formalism of Eq.~\eqref{eq:matrix_formalism_intro}. The linear transfer matrices, $M$, introduced in Eq.~\eqref{eq:linear_transfer_matrix} take into account the optics parameters at the beginning and the end of the corresponding segment.
     %In the transverse plane, the macroparticles are transported from one interaction point to another 
@@ -1031,16 +1031,17 @@ Below the main steps for setting up a simulation are listed: % according to the 
    %                 \end{pmatrix} 
    % \end{equation}
     %where $\alpha_{x, \mathrm{IP0/IP1}}$ and $\beta{x, \mathrm{IP0/IP1}}$ are the optics paramters at the interaction points IP0 and IP1 respectively and $\Delta \mu_{x, \mathrm{IP0 \to IP1 }}$ the phase advance from IP0 to IP1. As smooth approximation is used, the phase advance equals: 
-    The phase advance, for each segment equals:
-    \begin{equation}\label{eq:phase_advance_smooth_approximation}
-        \Delta \psi_{u, \mathrm{IP0 \to IP1 }} = Q_u \frac{L}{C},
-    \end{equation}
-    where $Q_u$ is the transverse betatron tune, $C$ the machine circumference and $L$ the length of the corresponding segment. It should be noted that if no detuning source is added (see next step) the matrix $M$ is the same for all particles.
+    %The phase advance, for each segment equals:
+    %\begin{equation}\label{eq:phase_advance_smooth_approximation}
+    %    \Delta \psi_{u, \mathrm{IP0 \to IP1 }} = Q_u \frac{L}{C},
+    %\end{equation}
+    %where $Q_u$ is the transverse betatron tune, $C$ the machine circumference and $L$ the length of the corresponding segment. 
+    It should be noted that if no detuning source is added (see next step) the matrix $M$ is the same for all particles.
     \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle as follows (example for the horizontal plane):
     \begin{equation}\label{eq:change_phase_advance_detunign}
         \Delta \psi_{x, i \mathrm{IP0 \to IP1 }} = \Delta \psi_{x, \mathrm{IP0 \to IP1 }} + (\xi^{1}_x \delta_i + \alpha_{xx}J_{x, i} + \alpha_{xy}J_{y,i}) \frac{\Delta \psi_{x, \mathrm{IP0 \to IP1 }}}{2\pi Q_x}, 
     \end{equation}
-    where $i=1, ..., N$ with $N$ being the number of macroparticles, $\Delta \psi_{x, \mathrm{IP0 \to IP1 }}$ is the phase advance for all macroparticles defined in the previous step, $\xi_x^{1}$ the horizontal chromaticity of first order (see Eq.~\eqref{eq:chroma_up_to_order_m} for $n=1$) normalised to the betatron tune, $\alpha_{xx}$ and $\alpha_{xy}$ are the detuning coefficients, while $J_x$ and $J_y$ are the horizontal and vertical actions of the macroparticle. Therefore, in the presence of detuning the elements of the $M$ matrix (introduced in Eq.~\eqref{eq:linear_transfer_matrix}) are different for every particle.
+    where $i=1, ..., N_\mathrm{mp}$ with $N_\mathrm{mp}$ being the number of macroparticles, $\Delta \psi_{x, \mathrm{IP0 \to IP1 }}$ is the phase advance for all macroparticles defined in the previous step, $\xi_x^{1}$ the horizontal chromaticity of first order (see Eq.~\eqref{eq:chroma_up_to_order_m} for $n=1$) normalised to the betatron tune, $\alpha_{xx}$ and $\alpha_{xy}$ are the detuning coefficients, while $J_x$ and $J_y$ are the horizontal and vertical actions of the macroparticle. Therefore, in the presence of detuning the elements of the $M$ matrix (introduced in Eq.~\eqref{eq:linear_transfer_matrix}) are different for every particle.
 
     \item \textbf{Longitudinal tracking:}  %In PyHEADTAIL the longitudinal particle dynamics are described with the longitudinal equations of motion introduced in Eq.~\eqref{eq:long_eq_motion_z} and ~\eqref{eq:long_eq_motion_delta}
     The longitudinal coordinates are advanced once per turn after solving numerically the equations of motion introduced in Eq.~\eqref{eq:long_eq_motion_z} and Eq.~\eqref{eq:long_eq_motion_delta}. The motion can be linear or not (non-linear RF system). The studies presented in this thesis use the linear longitudinal tracking.
@@ -1070,9 +1071,15 @@ Below the main steps for setting up a simulation are listed: % according to the 
          \caption{Longitudinal bunch slicing for the implementation of wakefield kicks in PyHEADTAIL. Without the slicing technique (left) the wake kicks on the red macroparticle are generated from all the green macroparticles resulting in computationally expensive simulations. Instead, when the bunch is sliced longitudinally (right) the wake kicks on the macroparticles in the red slice $i$ are generated by the macroparticles in the green slices $j$, decreasing significantly the computation time. The figures are courtesy of M. Schenk~\cite{pyheadtail_schenk}} % bunch passage
          \label{fig:longitudinal_slicing_wakefields}
      \end{figure}
-        
-    The wakefield kicks are computed using a convolution of the wake function with the moments of each particle. %p.39 michael schenk thesis
-    The wake functions are available from detailed imepdance model of the machine which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. Typically, the impedance model of an accelerator is provided normalised with the average value of the horizontal and vertical beta functions over the machine at the respective plane. Therefore the transverse beta functions at the location where the wakefield kicks are applied on the beam must equal these average values. More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
+       
+    Every turn, the change on the $u^\prime$ co-ordinate, $u=(x,y)$, of all the macroparticles in slice $j$ by the effect of the wakefields generated by all slices $i$ is modeled as follows~\cite{pyheadtail_manual_adrian}:
+    \begin{equation}\label{eq:wakefield_kick_pyheadtail}
+        \Delta_u^\prime = - \frac{q^2}{p_0 c}\sum_{k=j+1}^{N_\mathrm{sl}}N_k W_u(k(z_i-z_j))\langle u_k \rangle,
+    \end{equation}
+    where $N_\mathrm{sl}$ is the number of longitudinal slices, $N_k$ and $\langle u_k \rangle$ the number of macroparticles ad the center of mass in $u$ plane in the $k^\mathrm{th}$ slice.
+    
+    
+    The wake functions are available from detailed imepdance model of the machine which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. Typically, the impedance model of an accelerator is provided normalised with the average value of the horizontal and vertical beta functions over the machine at the respective plane. Therefore the transverse beta functions at the location where the wakefield kicks are applied on the beam must equal these average values.% More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
     
     \item \textbf{Data acquisition:} The updated macroparticle coordinates after each turn are available at IP0 for post-processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulations presented in this thesis. 
     
@@ -1087,7 +1094,8 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
 \begin{figure}[!h]
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/accelerator_model_graph_pyheadtail.png}
-        \caption{Graphical representation of the accelerator model and tracking procedure in PyHEADTAIL (inspired by the graphs in Refs.~\cite{pyheadtail_schenk, inproceedings_ibs_pyheadtail}). In this example the ring is split in four segments seperated by the interaction points (IPs). Wakefield and multipole kicks are applied to the macroparticles in IP2 and IP4. The macroparticles are transported between the IPs by a linear transfer map (which can include detuning effects) in the transverse plane.  The longitudinal coordinates are updated once per turn.}
+        \caption{Graphical representation of the accelerator model and tracking procedure in PyHEADTAIL %(inspired by the graphs in Refs.~\cite{pyheadtail_schenk, inproceedings_ibs_pyheadtail}).
+        In this example the ring is split in four segments seperated by the interaction points (IPs). Wakefield and multipole kicks are applied to the macroparticles in IP2 and IP4. The macroparticles are transported between the IPs by a linear transfer map (which can include detuning effects) in the transverse plane.  The longitudinal coordinates are updated once per turn.}
         \label{fig:pyheadtail_accelerator_model}
  \end{figure}
 
@@ -1096,7 +1104,10 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
 %Introduction to sixtrackib: https://indico.cern.ch/event/833895/contributions/3577803/attachments/1927226/3190636/intro_sixtracklib.pdf
 % https://inspirehep.net/files/6273430c727ace3796a92d069f651ade
 
-Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations developed at CERN. It simulates the motion of the particles in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the detailed design optics model described in Section~\ref{sec:optics_model_designs}. The particles advance from one element to the other with transfer maps. Simulations with Sixtracklib are time efficient as the library can run on Graphical Processing Units (GPUs). Further details on Sixtracklib implementation and usage can be found in Ref.~\cite{sixtracklib_introduction} and Ref.~\cite{Schwinzerl:2781835}. 
+Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged particle simulations developed at CERN. It simulates the motion of the particles in the six-dimensional (6D) phase space. The individual trajectories are computed taking into account the interactions with all the magnetic elements in the machine using the detailed design optics model described in Section~\ref{sec:optics_model_designs}. The particles advance from one element to the other with transfer maps which are obtained from the Hamiltonians that describe each element e.g. drift, dipoles, quadrupolar, high-order multipoles, RF cavities etc. Note that thin lens approximation is used. Simulations with Sixtracklib are time efficient as the library can run on Graphical Processing Units (GPUs). Further details on Sixtracklib implementation and usage can be found in~\cite{sixtracklib_introduction} and~\cite{Schwinzerl:2781835}. 
+
+
+
 
 Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies presented here, and was not modified or extended in any way where it was used, we do not give further description here, but refer the reader to the references mentioned above.
 
@@ -1106,4 +1117,4 @@ Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies
 
 
 
-Sixtractlib--> the tracking is performed from element to elemetn using hte thin lense approximation.
+%Sixtractlib--> the tracking is performed from element to elemetn using hte thin lense approximation.
