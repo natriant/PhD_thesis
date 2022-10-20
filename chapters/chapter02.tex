@@ -901,8 +901,8 @@ The head-tail modes can be described with the mode indeces $m$ and $l$ which den
  
 In this thesis the terms "mode" or "head-tail mode" will refer to the azimuthal modes\footnote{The modes' radial structure in the longitudinal plane is described by their radial modes~\cite{Chao:collective}. They are not considered nor discussed here as they are out of they are beyond the scope of the work presented in this thesis.} 
 
-As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0, $l=0$, the bunch moves transversely as a rigid unit. or the head-tail mode 1, $l=1$ the bunch oscillates transversely but the head and the tail of the bunch move with $\pi$ out of phase with each other. %if you can rephrase it.
-
+As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0, $l=0$, the bunch moves transversely as a rigid unit. or the head-tail mode 1, $l=1$ the bunch oscillates transversely but the head and the tail of the bunch move 180$^\circ$ out of phase. %if you can rephrase it.
+% from presentation: https://www.slideserve.com/mostyn/axel-2013-introduction-to-particle-accelerators-powerpoint-ppt-presentation
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
 \textbf{Sacherer formulae and complex coherent frequency shift}\\
@@ -974,28 +974,40 @@ The real coherent tune shift introduced by the beam transverse impedance plays a
 % or optics design
 For the study of beam dynamics, it is essential to know the detailed arrangement of the magnets (position and strength) in the lattice, which will be referred to as optics. The optics also provide information on the twiss parameters and phase advances along the ring.
 
-MAD-X~\cite{madx} is a code which is used extensively for the design and simulation of the accelerators at CERN. The official optics repositories of the CERN machines can be found in Ref.~\cite{cern_optics_repo}.
+MAD-X~\cite{madx} is a code which is used extensively for the design and simulation of the accelerators at CERN. The official optics repositories of the CERN machines can be found in~\cite{cern_optics_repo}.
 
 \textbf{SPS optics}\\
 The studies presented in this thesis are performed for the nominal SPS optics for the LHC filling which are called Q26 optics as the integer part of the tune in both planes is 26. The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
-\normalsize{\textbf{} % fixed with duck tape
+\normalsize{\textbf{} % fixed with duck tape, DO NOT REMOVE THIS LINE. error in compiling.
 
 
 
 \section{Tracking simulation codes}\label{sec:simualtion_codes}
-In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are macroparticle tracking libraries that simulate the particle motion in the six-dimensional (6D) phase space $(x, x^\prime, y, y^\prime, z, \delta)$. The first code (PyHEADTAIL) performs tracking between interaction points around a circular accelerator at which the paticles receive kicks from magnetic elements or from collective effects. The second code (Sixtracklib), uses the detailed optics model of the machine for the tracking. In both cases, the tracking is performed with the use of transfer matrices.
+In this section the two tracking simulation codes used in this thesis to study the noise-induced emittance growth are presented. Both codes are macroparticle tracking libraries that simulate the particle motion in the six-dimensional (6D) phase space $(x, x^\prime, y, y^\prime, z, \delta)$. 
+
+
+%The first code (PyHEADTAIL) performs tracking between interaction points around a circular accelerator at which the paticles receive kicks from magnetic elements or from collective effects. The second code (Sixtracklib), uses the detailed optics model of the machine for the tracking and the tracking is per
+
+%In both cases, the tracking is performed with the use of transfer matrices.
 % sympectic intgration. drift-kick approach
 
 \subsection{PyHEADTAIL}\label{subsec:pyheadtail}
 
 PyHEADTAIL~\cite{pyheadtail_repository} is an open-source 6D macroparticle tracking code, developed at CERN, which was originally designed to study collective effects in circular machines and to be easily extensible with custom elements. 
 % https://indico.cern.ch/event/930271/contributions/3910265/attachments/2066139/3467770/30June2020_Simulations_emit_growthCC_RFnoise.pdf  
-Details on its implementation and its features can be find in Refs.~\cite{pyheadtail_manual_adrian, pyheadtail_schenk}. Below the main steps of a simulation are listed: % according to the interest of this thesis.
+Details on its implementation and its features can be find in~\cite{pyheadtail_manual_adrian, pyheadtail_schenk}. In principle, the tracking is performed between interaction points around a circular accelerator at which the paticles receive kicks from magnetic elements or from collective effects. 
+
+
+Below the main steps for setting up a simulation are listed: % according to the interest of this thesis.
 
 % Thesis david: https://cds.cern.ch/record/2707064/files/CERN-THESIS-2019-272.pdf (p.45) and for the transverse matrix.
 
 \begin{enumerate}
-    \item \textbf{Machine initialisation:} The accelerator ring is split into a number of segments of equal length, after each of which there is an interaction point\footnote{It should be clarified that this is not an "interaction point" in the sense of collision between counter-circulating beams.} (IP). At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. The machine parameters, such as the circumference, the betatron and synchrotron tunes and the optics at the interaction points are defined. It should be noted that PyHEADTAIL uses smooth \mbox{approximation} which means that only a few segments are defined per turn. % which results to a very  rough optics model.
+    \item \textbf{Machine initialisation:} The accelerator ring is split into a number of segments of equal length, after each of which there is an interaction point\footnote{It should be clarified that this is not an "interaction point" in the sense of collision between counter-circulating beams.} (IP). At the interaction points the macroparticles experience kicks from various accelerator components (feedback system, multipoles etc) or from collective effects such as the wakefields. 
+    
+    The machine parameters, such as the circumference, the betatron and synchrotron tunes, the Twiss and the dispersion values at the interaction points are defined. It should be noted that PyHEADTAIL uses smooth \mbox{approximation}: the strength $K_u$ in Hill's equation is considered constant. This means that the beta functions $\beta_u$ are constant at each segment. In that case the betatron oscillation wavelength is $2\pi \beta_u$ and the betatron tune is $Q_u=\frac{C_0}{2\pi \beta_u}$. The phase advance for each segment is $\Delta \psi_u=Q_u \frac{L}{C_0}$ where $L$ is the length of the segment and $C_0$ the machine circumference. which means that only a few segments are defined per turn. Note that only a few segments are defined per turn which results in a rough optics model.
+    
+    % which results to a very  rough optics model.
     \item \textbf{Bunch initialisation:}  A particle bunch is represented by a collection of macroparticles, each of which represents a clustered collection of physical particles. Each macroparticle is described by four transverse $(x, x^\prime, y, y^\prime)$ and two longitudinal coordinates $(z, \delta)$, a mass and an electric charge. For the studies presented in this thesis $10^{5}$ macroparticles are sufficient for an accurate representation of the bunch, unless it is stated otherwise. There are various distributions available. In this thesis the simulations are performed using a Gaussian distribution in transverse and longitudinal planes.
     \item \textbf{Transverse tracking}: In the transverse plane, the macroparticles are transported from one interaction point to another 
     (e.g. grom IP0 to IP1) following the matrix formalism of Eq.~\eqref{eq:matrix_formalism_intro}. The linear transfer matrices, $M$, introduced in Eq.~\eqref{eq:linear_transfer_matrix} take into account the optics parameters at the beginning and the end of the corresponding segment.
