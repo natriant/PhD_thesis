@@ -1,4 +1,4 @@
-Particle accelerators were first developed in the early 20th century as a tool for high-energy physics research. By accelerating the particles to high energy, they allow us to investigate the subatomic structure of the world and to study the properties of the elementary particles and the fundamental forces. Through the years significant technological progress has been achieved resulting in higher energies and greatly enhanced performance of the machines. Additionally, various types of accelerators have been developed (cyclotrons, linacs, synchrotrons, etc) using different types of particles (hadrons or leptons), and their use was also expanded in other fields such as medicine and industrial research. 
+Particle accelerators were first developed in the early 20$^\mathrm{th}$ century as a tool for high-energy physics research. By accelerating the particles to high energy, they allow us to investigate the subatomic structure of the world and to study the properties of the elementary particles and the fundamental forces. Through the years significant technological progress has been achieved resulting in higher energies and greatly enhanced performance of the machines. Additionally, various types of accelerators have been developed (cyclotrons, linacs, synchrotrons, etc) using different types of particles (hadrons or leptons), and their use was also expanded in other fields such as medicine and industrial research. 
 % Brief history of particle accelerators: https://cds.cern.ch/record/261062/files/p1_2.pdf
 % Summary for accelerators: https://www.energy.gov/articles/how-particle-accelerators-work#:~:text=There%20are%20two%20primary%20roles,charged%20particles%20for%20medical%20treatment.
 
@@ -26,37 +26,38 @@ The beams used by the LHC are produced and gradually accelerated by the injector
 
  \subsection{The CERN Super Proton Synchrotron}\label{subsec:cern_sps}
  % sps history: https://be-dep-op-sps.web.cern.ch/history
- The research described in this thesis was conducted at the Super Proton Synchrotron (SPS) and some additional information about this machine is provided here. The SPS (shown with light blue color in Fig.~\ref{fig:cern_accelerator_complex}) was first commissioned in 1967 and has a circumference of 6.9\,km. It used to operate as a proton-antiproton collider ($\mathrm{Sp\bar{p}S}$) and later on as an injector for the Large Electron Positron collider (LEP) while it also provided beams for fixed-target experiments (e.g. in the North Area). Even though the SPS can accelerate various particle types (protons, antiprotons, electrons, and heavy ions) the following information will concern its operation with proton beams which is the topic of the research presented in this thesis.
+ The research described in this thesis was conducted at the Super Proton Synchrotron (SPS) and some additional information about this machine is provided here. The SPS (shown with light blue color in Fig.~\ref{fig:cern_accelerator_complex}) was first commissioned in 1967 and has a circumference of 6.9\,km. The SPS was originally built to provide beams for the fixed target experiments.  It also used to operate as a proton-antiproton collider ($\mathrm{Sp\bar{p}S}$) and later on as an injector for the Large Electron Positron collider (LEP).% while it also provided beams for fixed-target experiments (e.g. in the North Area).
+ Even though the SPS can accelerate various particle types (protons, antiprotons, electrons, and heavy ions) the following information will concern its operation with proton beams which is the topic of the research presented in this thesis.
 
  Currently, the SPS is the second biggest accelerator at CERN and it can accelerate protons up to 450\,GeV. Due to its past use as a collider, it can also operate as a storage ring. This operational mode is called "coast" and was used for the majority of the experimental studies presented in this thesis. During coast, the bunches circulate in the machine for long periods at constant energy. The highest energy at which SPS can operate in coast is 270\,GeV due to limited cooling of the magnets to transfer away the heat when operating at high energy and consequently at large currents for long periods.
 
  %After that they are injected in the LHC. Hoewever, as it used to be a collider it can operate as a storage ring, it is called coast (des ti exeis grapsei.) and will be used for the studies in this thesis.
  
 
-\section{High-Luminosity LHC project and Crab Cavities}
+\section{The High-Luminosity LHC project and Crab Cavities}
 %LHC is the flagship of the CERN accelerator complex and is the at the cutting edge of the accelerator and high energy physics research with almost ten thousand scientists working for and with it. In order to extend its discovery potential LHC will undergo a major upgrade in the coming years. 
 % Hl-lhc book: p.2 hl-lhc is the top priority of the european strategy of particle physics. 
-High-Luminosity LHC (HL-LHC)~\cite{HL_LHC_yellow_report, Brning2015} is the upgrade of the LHC machine which will extend its potential for discoveries. In particular, it aims to increase the instantaneous luminosity by a factor of 5 beyond the current operational values and the integrated luminosity by a factor of 10. 
+The High-Luminosity LHC project (HL-LHC)~\cite{HL_LHC_yellow_report, Brning2015} is the upgrade of the LHC machine, which will extend its potential for discoveries. In particular, it aims to increase the instantaneous luminosity by a factor of 5 beyond the current operational values and the integrated luminosity by a factor of 10. 
 
-The luminosity, along with the energy, is a key parameter defining the performance of a collider as is a measure of the collision rate. The instantaneous luminosity is expressed as~\cite{luminosity}:
+The luminosity, along with the energy, is a key parameter defining the performance of a collider as it is a measure of the collision rate. The instantaneous luminosity is obtained as~\cite{luminosity}:
 
 \begin{equation}\label{eq:luminosity_inst}
-    \mathcal{L} = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+(\frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\theta_c}{2})^2}},
+    L = \frac{n_b f_\mathrm{rev}N_1 N_2}{4 \pi \sigma_x \sigma_y} \frac{1}{\sqrt{1+\left ( \frac{\sigma_z}{\sigma_\mathrm{xing}} \frac{\theta_c}{2} \right )^2}},
 \end{equation}
 
-where $f_{\mathrm{rev}}$ is the revolution frequency of the machine (the number of times per second a particle performs a turn in the accelerator, definition; in Chapter~\ref{Ch:theory}), $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the number of particles per bunch, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\theta_c$ is the full crossing angle between the colliding beams. % Andy's comment: use "number of particles per bunch" instead of "bunch intensity" which is slightly ambiguous.
- The crossing angle, is often introduced between the bunches in a collider to reduce parasitic collisions and get rid of the remnants after the collision. For reference, in the LHC, the crossing angle has order of magnitude $10^{-4}$ radians. % hundreds of micro radians, see sofia's thesis Table 4.4 for example. https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
+where $f_{\mathrm{rev}}$ is the revolution frequency (the number of times per second a particle performs a turn in the accelerator), $n_b$ is the number of colliding bunch pairs, $N_{1,2}$ is the number of particles per bunch, $\sigma_{x,y}$ is the transverse beam size at the interaction point, $\sigma_z$ the rms bunch length of the colliding bunches, $\sigma_{\mathrm{xing}}$ the transverse beam size in the crossing plane and $\theta_c$ is the full crossing angle between the colliding beams. % Andy's comment: use "number of particles per bunch" instead of "bunch intensity" which is slightly ambiguous.
+ The crossing angle, is often introduced between the bunches in a collider to reduce parasitic collisions and get rid of the remnants after the collision. For reference, in the LHC, the crossing angle is on the order of magnitude $10^{-4}$ radians. % hundreds of micro radians, see sofia's thesis Table 4.4 for example. https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 
 The integrated luminosity is the one that ultimately defines the performance of the machine as it provides the total number of recorderd events. It depends both on the instantaneous luminosity and on the machine availability. The integrated luminosity, is expressed as~\cite{HL_LHC_yellow_report}:
 \begin{equation}\label{eq:integrated_luminosity}
-    \mathcal{L}_I \equiv \int_{\Delta t} \mathcal{L} dt,
+    L_\mathrm{int} \equiv \int_{\Delta t} L dt,
 \end{equation}
 
-where $\mathcal{L}$ is the instantaneous luminosity as defined in Eq.~\eqref{eq:luminosity_inst}.
+where $L$ is the instantaneous luminosity as defined in Eq.~\eqref{eq:luminosity_inst}.
 % for more details and specific values check sofias thesis.
 % and: https://accelconf.web.cern.ch/ipac2015/papers/thxb2.pdf
 
-HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{34} \ \mathrm{cm^{-2} s^{-1}}$ and an increase on the integrated luminosity from 300 $\mathrm{fb^{-1}}$ to 3000 $\mathrm{fb^{-1}}$ over its lifetime of 10-12 years and considering 160 days of operation per year~\cite{Brunning_Rossi}. % 160 days. p.. 80 in the reference
+HL-LHC aims to achive instantaneous luminosity of $L \sim 5 \cdot 10^{34} \ \mathrm{cm^{-2} s^{-1}}$ and an increase on the integrated luminosity from 300 $\mathrm{fb^{-1}}$ to 3000 $\mathrm{fb^{-1}}$ over its lifetime of 10-12 years and considering 160 days of operation per year~\cite{Brunning_Rossi}. % 160 days. p.. 80 in the reference
 % The integrated luminosity for both lhc and hl-lhc is over 10-12 years.
 
 % 160 days of physics events per year:https://cds.cern.ch/record/2031207/files/198-201_Fessia.pdf
@@ -65,7 +66,7 @@ HL-LHC aims to achive instantaneous luminosity of $\mathcal{L} \sim 5 \cdot 10^{
 
 %\normalsize{\textbf{Crab Cavities}}\\
 \subsection{Crab cavities}\label{subsec:CC_intro}
-To achieve its luminosity goals, HL-LHC will employ numerous innovative technologies. Crab cavity technology (will be denoted as $\CC$ in this thesis)~\cite{Calaga:2673544} is one of the key componenets of the project as it will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
+To achieve its luminosity goals, the HL-LHC will employ numerous innovative technologies. The Crab Cavity technology (will be denoted as $\CC$ in this thesis)~\cite{Calaga:2673544} is one of the key componenets of the project as it will be employed to restore the luminosity reduction caused by the crossing angle, $\theta_c$ (see Eq.~\eqref{eq:luminosity_inst}).
 
 A crab cavity is an RF cavity which provides a transverse, sinusoidal like, kick to the particles depending on their longitudinal position within the bunch. A graphical visualisation of the kick is shown in Fig.~\ref{fig:cc_simple_kick}. It can be seen that the head (leading part) and the tail (trailing part) of the bunch receive opposite deflection while the particles at the center remain unaffected.
 
@@ -76,12 +77,12 @@ A crab cavity is an RF cavity which provides a transverse, sinusoidal like, kick
         \label{fig:cc_simple_kick}
  \end{figure}
 
-The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, two $\CC$s will be installed on each ring and on each side of the interaction points (eight in total). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. The reason why two $\CC$s are needed in each ring on each side of the IP is discussed in the following paragraphs (local vs global scheme).
+The $\CC$s will be installed in the two main interaction points of LHC, ATLAS and CMS. According to the plan, $\CC$s will be installed on each ring and on each side of the interaction points (eight in total). This is displayed in Fig.~\ref{fig:LHC_layout_CCs} with the red (ATLAS) and orange (CMS) markers. The reason why $\CC$s are needed on each side of the IP is discussed in the following paragraphs (local vs global scheme).
 
 \begin{figure}[!h] % made at diagrams.net saved at google docs
     \centering         
     \includegraphics[width=0.8\textwidth]{images/introduction/LHC_layout_CCs.png}
-        \caption{Layout of the LHC and the SPS. The CC location for the HL-LHC configuration is marked. Two CCs (one per ring) will be installed on each side of ATLAS (red) and CMS (orange). Two protoype CCs were also installed in the SPS (magenta) in 2018, to be tested before their installation in LHC. The layout can be found in Ref.~\cite{LHC_SPS_layout} and was modified inspired by Ref.~\cite{LHC_SPS_layout_v2}.}
+        \caption{Layout of the LHC and the SPS. The CC location for the HL-LHC configuration is marked. Two CCs (one per ring) will be installed on each side of ATLAS (red) and CMS (orange). Two protoype CCs were also installed in the SPS (magenta) in 2018, to be tested before their installation in LHC. The layout can be found in~\cite{LHC_SPS_layout}.}% and was modified inspired by Ref.~\cite{LHC_SPS_layout_v2}.}
         \label{fig:LHC_layout_CCs}
  \end{figure}
 
