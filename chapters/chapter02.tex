@@ -96,12 +96,12 @@ where $n$ indicates the order of the field component: $n$=1 for a dipole (steeri
 % Equations for coefficients, sofia's thesis Eq.(2.29) p. 23: https://cds.cern.ch/record/2743602/files/CERN-THESIS-2020-169.pdf
 % skew quadrupole is a normal quadrupole rotated by 45 deg.
 
-Usually, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
+Often, in accelerator physics the values of the multipole strengths are quoted normalised to the magnetic rigidity as defined in Eq.~\eqref{eq:Brho} and are denoted by:
 \begin{equation}\label{eq:kn}
     k_n = \frac{b_n}{B_1 \rho},
 \end{equation}
 where $k_n$ is expressed in units of  $\mathrm{m^{-n}}$. This is the convention that will be used in this thesis. %By definition $b_1=B_1$.\textcolor{red}{Is the last sentence correct?}
-By definition for a pure dipole vertical field $b_1=B_1$.\textcolor{red}{Is the last sentence correct?}
+By definition for a pure dipole vertical field $b_1=B_1$.\textcolor{red}{Is the last statement correct?}
 
 %It should be clarified here, that the notations of $B_0$ and $b_1$ are equivalent. However, in accelerator physics the magnetic rigidity is denoted as $B_0 \rho$ as a convention due to its derivation at the early stages of the analysis (see Eq.\eqref{eq:Brho}). This notation will be used throughout this thesis.\textcolor{red}{is that ok? the way i express it here?}
 % confirmed because k1 = b1/B0ρ = 1/ρ
@@ -267,28 +267,25 @@ where $u=(x,y)$ and:
 For a circular accelerator $K_u$ is periodic: $K_u(s+L)=K_u(s)$, where $L$ is the circumference of the accelerator, $C_0$ or a fraction of it. In this case, the solution of Eq.~\eqref{eq:Hills_equation_1} resembles the one of a harmonic oscillator and can be written as~\cite{Lee:1425444}:
 %  (using the Floquet transformation)~\cite{Lee:1425444}:
 \begin{equation}\label{eq:solution_eq_motion_u}
-    u(s) = \sqrt{2 \beta_u(s) J_u} \cos{(\psi_u(s)+ \psi_{u,0})}.
+    u(s) = \sqrt{2 \beta_u(s) J_u} \cos{(\psi_u(s)+ \psi_{u,0})},
 \end{equation} 
-By differentiation the divergence $u^\prime$ is written as:
 \begin{equation}\label{eq:solution_eq_motion_u_prime}
     u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s) + \psi_{u,0})}+\alpha_u(s)\cos{(\psi_u(s)+ \psi_{u,0})}),
 \end{equation} 
-where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions: $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ is a periodic function determined by the sequence of the quadrupole magnets in the accelerator and follows the periodicity of the macine. Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes trasnverse oscillations around the reference trajectory which are often referred to as betatron oscillations. Since the $J_u$ is constant that beta function determines the maximum amplitude of the single particles' trajectory at any given position $s$ in the ring.
+where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions: $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ is a periodic function determined by the sequence of the quadrupole magnets in the accelerator and follows the periodicity of the macine. Note that divergence $u^\prime$ is obtained by differentiation of the parameter $u$. Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes trasnverse oscillations around the reference trajectory which are often referred to as betatron oscillations. Since the $J_u$ is constant that beta function determines the maximum amplitude of the single particles' trajectory at any given position $s$ in the ring.
 % this highlights its phyiscal significance.
 % Last sentence from here: https://indico.cern.ch/event/407247/contributions/975702/attachments/1246508/1835998/Alexandra_p.pdf
 The function $\psi_u(s)$ is the betatron phase advance from the position $s=0$ to $s$ and equals:
-
 \begin{equation}\label{eq:phase_advance_definition_with_twiss}
     \psi_u(s)= \int_{0}^{s} \frac{ds}{\beta_u(s)}.
 \end{equation}
 
 \textbf{Betatron tune}\\
-The betatron tune, $Q_u$, represents the number of betatron oscillations that a particle performs one full revolution around the machine. It can be written with respect to the phase advance for one complete revolution around the machine as follows:
-
+The phase advance for one complete revolution around the machine divided by $2\pi$ defines the betatron tune, $Q_u$:
 \begin{equation}\label{eq:betatron_tune}
     Q_u = \frac{\psi_u(s+C_0)-\psi_u(s)}{2\pi} = \frac{1}{2\pi} \oint_{C_0} \frac{ds}{\beta_u(s)},
 \end{equation}
-where $C_0$ is the circumference of the machine. 
+where $C_0$ is the circumference of the machine. The betatron tune represents the number of betatron oscillations that a particle performs during one full revolution around the machine.
 
 The tune of the individual particles may vary due to effects such as the chromaticity, the detuning with their transverse amplitude, and collective forces (e.g. impedance) that will be discussed in the following paragraphs. The horizontal and vertical tune of the reference particle will be referred to as the bare tunes and define what is called the working point of the machine, $(Q_{x0}, Q_{y0})$. 
 
@@ -363,11 +360,11 @@ Up to now, the Twiss parameters were used to describe the dynamics of single par
  %            \end{pmatrix} 
  %\end{equation}
  
-For a Gaussian distribution with $\langle x \rangle=0$, Eq.~\eqref{eq:emittance_definition_1} becomes~\cite{wolski2014}: 
+For a Gaussian distribution with $\langle u \rangle=0$, Eq.~\eqref{eq:emittance_definition_1} becomes~\cite{wolski2014}: 
 \begin{equation}\label{eq:emittance_beam_size}
     \sigma_u(s) = \sqrt{\beta_u(s) \epsilon^{\mathrm{geom}}_u},
 \end{equation}
-where $\sigma_u$ the transverse rms beam size.
+where $\sigma_u$ is the transverse rms beam size.
 
 
 
@@ -408,7 +405,7 @@ Despite Liouville's theorem, in a real accelerator there are various phenomena t
 \textbf{Transfer maps and linear transfer matrix}\\
 % information and introduciton to maps:https://www.researchgate.net/publication/50819226_Direct_measurement_of_resonance_driving_terms_in_the_super_proton_synchrotron_SPS_of_cern_using_beam_position_monitors
 The motion of the particles through a circular accelerator components can be represented by transfer maps. A transfer map is a set of functions that yields the final set of phase space coordinates as a function of the inital one.
-The transfer maps can be found from the equations of motion which are obtained from Hamilton's equations. For each component, the Hamiltonian that describes its full dynamics is used. Further details on this approach can be found in~\cite{wolski2014}. % p.282 wolski 
+The transfer maps can be found from the equations of motion which can be obtained from Hamilton's equations. For each component, the Hamiltonian that describes its full dynamics is used. Further details on this approach can be found in~\cite{wolski2014}. % p.282 wolski 
 % between them drifts.
 %Furthermore, the work presented in this thesis uses the thin lens approximation which assumes that the length of all the magnetic components tends to zero.
 % drift kick drift.
@@ -463,7 +460,7 @@ The parameters $D_x(s)$ is the dispersion function which can be expressed as:
 \begin{equation}\label{eq:dispersion_function}
     D^{\prime \prime}_x(s) + K_x(s)D_x(s) = \frac{1}{\rho(s)},
 \end{equation}
-where $K_x(s)= \frac{1}{\rho^2(s)}+k_2(s)$ like in Eq.~\eqref{eq:Hills_equation_2}. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). Here the discussion is limited to the horizontal plane since typically only vertical dipolar fields are considered\footnote{A corresponding discussion can be done for the vertical plane to obtain the vertical dispersion but it is out of the scope of this thesis.}.
+where $K_x(s)= \frac{1}{\rho^2(s)}+k_2(s)$ like in Eq.~\eqref{eq:Hills_equation_2}. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). Here the discussion is limited to the horizontal plane since typically only vertical dipolar fields are considered in a synchrotron\footnote{A corresponding discussion can be done for the vertical plane to obtain the vertical dispersion but it is out of the scope of this thesis.}.
 
 Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. 
 
@@ -522,15 +519,15 @@ The octuopole is the only multipole discussed in this chapter since it plays an 
 
 The transfer map for an octupole is:
 \begin{equation}\label{eq:transfer_map_octu_thin_x}
-   \Delta x^\prime = \frac{1}{6}{k_3L}(x^3-3xy^2),
+   \Delta x^\prime = -\frac{1}{6}{k_3L}(x^3-3xy^2),
 \end{equation}
 \begin{equation}\label{eq:transfer_map_octu_thin_y}
-    \Delta y^\prime= \frac{1}{6}{k_3L}(y^3-3yx^2),
+    \Delta y^\prime= -\frac{1}{6}{k_3L}(y^3-3yx^2),
  \end{equation}
  where $k_3L$ the integrated strength of the octupole of length $L$. Equations~\eqref{eq:transfer_map_octu_thin_x} and~\eqref{eq:transfer_map_octu_thin_y} are valid for the thin lens approximation which assumes that the length of the multipole components tends to zero. In that case, the rest of the co-ordinates ($x,y,z,\delta$) do not change as the particle passes through the magnet.
 
 
-As described in Chapter~10 of~\cite{Stoel:2693915} the term $\frac{1}{6}k_2Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particle, which eventually over one turn is translated to a change in their tune given by~\cite{Stoel:2693915}:
+As described in Chapter~10 of~\cite{Stoel:2693915} the term $-\frac{1}{6}k_2Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particle, which eventually over one turn is translated to a change in their tune given by~\cite{Stoel:2693915}:
 \begin{equation}\label{eq:tune_shit_octupoles}
     \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 J_u .
 \end{equation}
@@ -691,7 +688,6 @@ The time that the reference or synchronous particle needs to complete one comple
 %\textbf{Transfer map}\\
 \textbf{Equations of motion}\\ % is this a transfer map?
 % The RF cavities in a storage ring aim to compensate for energy losses allowing the beam to circulate in the reference trajectory.
-
 In a synchrotron storage ring, the motion in the longitudinal plane is controlled by the RF cavities. They provide a longitudinal electric field which can be described by:
 \begin{equation}\label{eq:RF_cavity_EF}
     E_\mathrm{{RF}}(z) = E_A \sin{(2\pi f_\mathrm{RF}z + \phi_s)},
@@ -886,10 +882,11 @@ In order to study the beam dynamics effects due to wakefields, impedance models 
 % Link to chao's book:https://www.slac.stanford.edu/~achao/wileybook.html
 \textbf{Head-tail modes}\\
 The Vlasov equation~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
-Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as hea-dtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The hea-dtail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
+Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as hea-dtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The head-tail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
+% in general the modes are a result of the coupling of betatron and synchroton motion--> is that right?
 
 % From https://cas.web.cern.ch/sites/default/files/lectures/-27%20March%202022/Chavannes4_Instabilities.pdf
-The head-tail modes can be described with the mode indeces $m$ and $l$ which denote the tranverse and the longitudinal (or azimuthal) mode numbers. In the following modes with $m=1$ will be considered and they are often referred to as transvserse modes~\cite{Chao:collective}. Figure~\ref{fig:azimuthal_mode} shows a graphical representation of the azimuthal modes for $m=1$.
+The head-tail modes can be described with the mode indeces $m$ and $l$ which denote the tranverse and the longitudinal (or azimuthal) mode numbers~\cite{Chao:collective}. In the following modes with $m=1$ will be considered and they are often referred to as transvserse modes~\cite{Chao:collective}. Figure~\ref{fig:azimuthal_mode} shows a graphical representation of the azimuthal modes for $m=1$.
 
 \begin{figure}[!h] % 
     \centering         
@@ -899,9 +896,9 @@ The head-tail modes can be described with the mode indeces $m$ and $l$ which den
  \end{figure}
  %This image is valid for low beam intensities.
  
-In this thesis the terms "mode" or "head-tail mode" will refer to the azimuthal modes\footnote{The modes' radial structure in the longitudinal plane is described by their radial modes~\cite{Chao:collective}. They are not considered nor discussed here as they are out of they are beyond the scope of the work presented in this thesis.} 
+In this thesis the terms "mode" or "head-tail mode" will refer to the azimuthal modes\footnote{The modes' radial structure in the longitudinal plane is described by their radial modes~\cite{Chao:collective}. They are not considered nor discussed here as they are out of they are beyond the scope of the work presented in this thesis.}. 
 
-As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0, $l=0$, the bunch moves transversely as a rigid unit. or the head-tail mode 1, $l=1$ the bunch oscillates transversely but the head and the tail of the bunch move 180$^\circ$ out of phase. %if you can rephrase it.
+As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0 ($l=0$), the bunch moves transversely as a rigid unit. or the head-tail mode 1 ($l=1$), the bunch oscillates transversely but the head and the tail of the bunch move 180$^\circ$ out of phase. %if you can rephrase it.
 % from presentation: https://www.slideserve.com/mostyn/axel-2013-introduction-to-particle-accelerators-powerpoint-ppt-presentation
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
@@ -1072,9 +1069,9 @@ Below the main steps for setting up a simulation are listed: % according to the 
          \label{fig:longitudinal_slicing_wakefields}
      \end{figure}
        
-    Every turn, the change on the $u^\prime$ co-ordinate, $u=(x,y)$, of all the macroparticles in slice $j$ by the effect of the wakefields generated by all slices $i$ is modeled as follows~\cite{pyheadtail_manual_adrian}:
+    Every turn, the change on the $u^\prime$ co-ordinate, where $u=(x,y)$, of all the macroparticles in slice $j$ by the effect of the wakefields generated by all slices $i$ is modeled as follows~\cite{pyheadtail_manual_adrian}:
     \begin{equation}\label{eq:wakefield_kick_pyheadtail}
-        \Delta_u^\prime = - \frac{q^2}{p_0 c}\sum_{k=j+1}^{N_\mathrm{sl}}N_k W_u(k(z_i-z_j))\langle u_k \rangle,
+        \Delta_{u,j}^\prime = - \frac{q^2}{p_0 c}\sum_{k=j+1}^{N_\mathrm{sl}}N_k W_u(k(z_i-z_j))\langle u_k \rangle,
     \end{equation}
     where $N_\mathrm{sl}$ is the number of longitudinal slices, $N_k$ and $\langle u_k \rangle$ the number of macroparticles ad the center of mass in $u$ plane in the $k^\mathrm{th}$ slice.
     
@@ -1109,7 +1106,7 @@ Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged p
 
 
 
-Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies presented here, and was not modified or extended in any way where it was used, we do not give further description here, but refer the reader to the references mentioned above.
+Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies of this thesis, we do not give further description here, but refer the reader to the references mentioned above.
 
 %Sixtracklib is described here in much less detail than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
 
