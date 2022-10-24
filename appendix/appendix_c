@@ -1,59 +1,58 @@
 
-\section{Solutions of betatron equations}\label{app:betatron_equations_solutions}
+%\section{Solutions of betatron equations}\label{app:betatron_equations_solutions}
 
-The calculations here are performed according to the discsussion in Ref.~\cite{Roncarolo:1481835} and Ref.~\cite{yannis_teaching}.
+%The calculations here are performed according to the discsussion in Ref.~\cite{Roncarolo:1481835} and Ref.~\cite{yannis_teaching}.
 
-By inserting Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1} it results to: % from federicos thesis
-\begin{equation}\label{eq:betatron_1}
-    u^\prime = A w^\prime(s)\cos{(\psi_u(s)+\psi_{u,0})} + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}]\psi^\prime(s)
-\end{equation}
-which becomes:
-\begin{equation}\label{eq:betatron_2}
-    \begin{split}
-    u^{\prime \prime}(s)= A w^{\prime \prime} \cos{(\psi_u(s)+\psi_{u,0})} + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
-    + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
-    + A w(s)[-\cos{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime 2}(s) + \\
-    + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime \prime}(s) + \\
-    + A \{ \cos{(\psi_u(s)+\psi_{u,0})} [w^{\prime \prime} - w(s)\psi_u^{\prime \prime}(s)] + \\
-    - \sin{(\psi_u(s)+\psi_{u,0})} [2w^\prime(s)\psi^\prime(s)+w(s) \psi_u^{\prime \prime}(s)] \}
-    \end{split}
-\end{equation}
-Now, inserting $u(s)$ and $u^{\prime \prime}(s)$ in Eq.~\eqref{eq:Hills_solution} gives:
-\begin{equation}\label{eq:betatron_3}
-    \begin{split}
-   u^{\prime \prime}(s)+K_u(s)u(s)=  [w^{\prime \prime}(s)w(s) \psi_u^{\prime 2(s)} + K(s)w(s)]\cos{(\psi_u(s)+\psi_{u,0})}+\\
-   ~ - [2w^{\prime(s)}\psi_u^{\prime}+w(s)\psi_u^{\prime \prime}(s)] \sin{(\psi_u(s)+\psi_{u,0})} = 0.
-    \end{split}
-\end{equation}
+%By inserting Eq.~\eqref{eq:Hills_solution} in Eq.~\eqref{eq:Hills_equation_1} it results to: % from federicos thesis
+%\begin{equation}\label{eq:betatron_1}
+%    u^\prime = A w^\prime(s)\cos{(\psi_u(s)+\psi_{u,0})} + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}]\psi^\prime(s)
+%\end{equation}
+%which becomes:
+%begin{equation}\label{eq:betatron_2}
+%    \begin{split}
+%    u^{\prime \prime}(s)= A w^{\prime \prime} \cos{(\psi_u(s)+\psi_{u,0})} + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
+ %   + A w^\prime(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^\prime(s) + \\
+ %   + A w(s)[-\cos{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime 2}(s) + \\
+ %   + A w(s)[-\sin{(\psi_u(s)+\psi_{u,0})}] \psi_u^{\prime \prime}(s) + \\
+ %   + A \{ \cos{(\psi_u(s)+\psi_{u,0})} [w^{\prime \prime} - w(s)\psi_u^{\prime \prime}(s)] + \\
+ %   - \sin{(\psi_u(s)+\psi_{u,0})} [2w^\prime(s)\psi^\prime(s)+w(s) \psi_u^{\prime \prime}(s)] \}
+ %   \end{split}
+%\end{equation}
+%Now, inserting $u(s)$ and $u^{\prime \prime}(s)$ in Eq.~\eqref{eq:Hills_solution} gives:
+%\begin{equation}\label{eq:betatron_3}
+%    \begin{split}
+%   u^{\prime \prime}(s)+K_u(s)u(s)=  [w^{\prime \prime}(s)w(s) \psi_u^{\prime 2(s)} + K(s)w(s)]\cos{(\psi_u(s)+\psi_{u,0})}+\\
+%   ~ - [2w^{\prime(s)}\psi_u^{\prime}+w(s)\psi_u^{\prime \prime}(s)] \sin{(\psi_u(s)+\psi_{u,0})} = 0.
+%    \end{split}
+%\end{equation}
 
-In the above equation, for the functions $w(s)$ and $\psi_u(s)$ to not depend in a particular motion they must not vary with $\psi_{u,0}$~\cite{Roncarolo:1481835}. To fulfill this requirement the coefficients of sine and cosine must vanish individually. 
+%In the above equation, for the functions $w(s)$ and $\psi_u(s)$ to not depend in a particular motion they must not vary with $\psi_{u,0}$~\cite{Roncarolo:1481835}. To fulfill this requirement the coefficients of sine and cosine must vanish individually. 
 
-Multiplying with $w(s)$ the coefficient of sine gives:
-\begin{equation}\label{eq:betatron_4}
-    2w(s)w^\prime(s)\psi_u^\prime(s) + w^2(s)
-\psi^{\prime \prime}_u(s) = [w^2(s)\psi^\prime_u(s)]^\prime = 0,
-\end{equation}
-which by integration is written as:
-\begin{equation}\label{eq:betatron_5}
-    \psi_u(s) = \oint_C \frac{ds}{w^2(s)}
-\end{equation}
+%Multiplying with $w(s)$ the coefficient of sine gives:
+%\begin{equation}\label{eq:betatron_4}
+%    2w(s)w^\prime(s)\psi_u^\prime(s) + w^2(s)
+%\psi^{\prime \prime}_u(s) = [w^2(s)\psi^\prime_u(s)]^\prime = 0,
+%\end{equation}
+%which by integration is written as:
+%\begin{equation}\label{eq:betatron_5}
+%    \psi_u(s) = \oint_C \frac{ds}{w^2(s)}
+%\end{equation}
 
-Replacing $\psi^\prime_u(s)$ in th coefficient of cosine gives:
-\begin{equation}\label{eq:betatron_6}
-   w^3(s)(w^{\prime \prime}(s)+K_u(s)w(s)) = 1.
-\end{equation}
+%Replacing $\psi^\prime_u(s)$ in th coefficient of cosine gives:
+%\begin{equation}\label{eq:betatron_6}
+%   w^3(s)(w^{\prime \prime}(s)+K_u(s)w(s)) = 1.
+%\end{equation}
 
 \section{Detuning with amplitude}\label{app:detuning_with_amplitude}
-The linear detuning is given by the following formula, for octupole components
 
-The detuning with amplitude is computed by:
+The linear betatron detuning with transverse amplitude introduced by the octupole families in an accelerator ring can be described by Eq.~\eqref{eq:tune_shit_octupoles}:
 \begin{equation}\label{eq:x_amplDetuning}
-    \Delta Q_x = 2(\axx \Jx + \alpha_{xy} \Jy)
+    \Delta Q_x (J_x, J_y) = 2(\axx \Jx + \alpha_{xy} \Jy)
 \end{equation}
 \begin{equation}\label{eq:y_amplDetuning}
-    \Delta Q_y = 2(\ayy \Jy + \alpha_{yx} \Jx)
+    \Delta Q_y(J_x, J_y) = 2(\ayy \Jy + \alpha_{yx} \Jx)
 \end{equation}
-where $\ayy$, $\axx$ and $\axy$ are the detuning coefficients with units [1/m] and $\Jx$, $\Jy$ the action variables.
+where $\ayy$, $\axx$ and $\axy=\alpha_{xy}$ are the detuning coefficients with units [1/m] and $\Jx$, $\Jy$ are the action variables.
 
 \normalsize{\textbf{Rms detuning with amplitude}}\\
 From the definition of variance, the variance of the vertical amplitude detuning is given by:
@@ -66,7 +65,7 @@ From the definition of variance, the variance of the vertical amplitude detuning
          =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + 2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - 2\alpha_{yy} \alpha_{yx} \langle J_y \rangle \langle J_x \rangle - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
          =&~2^2\left [ \alpha_{yy}^2 \langle J_y^2 \rangle + \cancel{2\alpha_{yy}\alpha_{yx} \langle J_yJ_x \rangle} + \alpha_{yx}^2 \langle J_x^2 \rangle -\alpha_{yy}^2  \langle J_y \rangle^2 - \cancel{2\alpha_{yy} \alpha_{yx} \langle J_y J_x \rangle} - \alpha_{yx} ^2 \langle J_x \rangle^2 \right ]\\
          =&~2^2\left [ \alpha_{yy}^2(\langle J_y^2\rangle - \langle J_y \rangle^2 ) + \alpha_{yx}^2(\langle J_x^2\rangle - \langle J_x \rangle^2 ) \right ]\\
-         =&~2^2\left [ \alpha_{yy}^2 Var(J_y) + \alpha_{yx}^2 Var(J_x) \right ]
+         =&~2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2  \mathrm{Var}(J_x) \right ]
     \end{split}
 \end{equation}
 
@@ -85,12 +84,12 @@ Now, according to the definitions introduced in Appendix~\ref{app:statistics_def
 
 where $\sigma_{\Jy}$ and $\sigma_{\Jy}$ stand for the standard deviation of the action variables $\Jy$ and $\Jx$ respectively
 
-For a Gaussian distribution the actions, $\Jx$ and $\Jx$ follow an exponential distribution \footnote{The charge density function for a Gaussian beam in $u, u^\prime$, where $u=(x,y)$ is expressed in terms of the Twiss parameters as: $\rho(u, u^\prime) = e^{-(\gamma_u u^2(s)+2 \alpha_u(s)u(s)u^{\prime}(s)+\beta_u(s)u^{\prime 2(s)})/(2 \epsilon_u^{\mathrm{geom}}})= e^{-J_u/\epsilon_u^{\mathrm{geom}}}$.}. It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
+For a Gaussian distribution the actions, $\Jx$ and $\Jx$ follow an exponential distribution\footnote{The charge density function for a Gaussian beam in $u, u^\prime$, where $u=(x,y)$ is expressed in terms of the Twiss parameters as: $\rho(u, u^\prime) = e^{-(\gamma_u u^2(s)+2 \alpha_u(s)u(s)u^{\prime}(s)+\beta_u(s)u^{\prime 2(s)})/(2 \epsilon_u^{\mathrm{geom}}})= e^{-J_u/\epsilon_u^{\mathrm{geom}}}$.}. It is known that for an exponential distribution the mean equals the standard deviation. Therefore, Eq.~\ref{eq:rms_amplitude_detuning_1} can be written as follows:
 \begin{equation}\label{eq:rms_amplitute_detuning_2}
     \Dqyrms = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
 \end{equation}
 
-Following Eq.~\eqref{eq:geom_emit_actions}, the rms tune spread from amplitude detuning can be also written as:
+Following Eq.~\eqref{eq:geom_emittance_action}, the rms tune spread from amplitude detuning can be also written as:
 \begin{equation}\label{eq:rms_amplitute_detuning_3}
     \Dqyrms = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
 \end{equation}
