@@ -89,18 +89,18 @@ For a Gaussian distribution the actions, $\Jx$ and $\Jx$ follow an exponential d
     \Dqyrms = 2 \sqrt{\left [\alpha_{yy} \langle \Jy \rangle \right ]^2 + \left [ \alpha_{yx} \langle \Jx \rangle \right ]^2 }.
 \end{equation}
 
-Following Eq.~\eqref{eq:geom_emittance_action}, the rms tune spread from amplitude detuning can be also written as:
+Following Eq.~\eqref{eq:geom_emittance_action}, the rms betatron tune spread from amplitude detuning can be also written as:
 \begin{equation}\label{eq:rms_amplitute_detuning_3}
     \Dqyrms = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
 \end{equation}
 
-Equivalently, the horizontal rms tune spread from amplitude detuning is given by:
+Equivalently, the horizontal rms tune spread from amplitude detuning can be computed by:
 \begin{equation}\label{eq:rms_amplitute_detuning_3_x}
     \Dqxrms = 2 \sqrt{(\alpha_{xx} \emitxgeom )^2 + ( \alpha_{yx} \emitygeom)^2 }.
 \end{equation}
 
 
-\textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are actually independent. The actions later in time, are coupled due to the non-linear
+\textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are independent. The actions later in time, they might be coupled due to the non-linear
 of the lattice. %The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
 %\textbf{Note 2:}
 %\begin{itemize}
@@ -113,7 +113,6 @@ of the lattice. %The actions later in time, even though they are considered inde
 
 Here the rms tune spread in the SPS that is present in the SPS with the Landau octupoles being switched off is estimated. For the estimation only the detuning with transverse amplitude is considered.
 
-\textcolor{red}{this needs to be chekced.}\\
 As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443, Hannes_personal_communication} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be reproduced in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
 
 
@@ -131,57 +130,54 @@ By inserting these values of detuning coefficients and geometric emittances in E
 
 \section{SPS octupoles calibration}\label{sec:sps_octupole_calibration}
 % Initial note: https://www.overleaf.com/project/612f6e14a2a0d60d2ad9bdca
-In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa}  for the LOF and LOD family respectively.
+In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves (current, $\mathrm{I_w}$, as a function of the strength, $b_w$, mulitplied with the octuple length $\mathrm{L_w}$, where $w=$(LOD, LOF) ) are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa} for the LOF and LOD families, respectively. The parameter, $b_w$, is defined in Eq.~\eqref{eq:mult_expansion} for $n=3$. In LSA the lengths of the octupole magnets are found to be: $\mathrm{L_{LOF}}$=0.705\,m and  $\mathrm{L_{LOD}}$=0.677\,m.
 
  %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
 \begin{figure}[!h]
     \centering         
-    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lof_callibration_curve.png}
-        \caption{Calibration curve for the LOF SPS family as obtained from LSA. $b_3$ is defined in Eq.~\eqref{eq:mult_expansion}.}
+    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lof_callibration_curve_for_thesis.png}
+        \caption{Calibration curve for the LOF SPS family as obtained from LSA.}
         \label{fig:lof_calibration_lsa}
  \end{figure}
 
   %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
  \begin{figure}[!h]
     \centering         
-    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lod_callibration_curve.png}
-        \caption{Calibration curve for the LOD SPS family as obtained from LSA. $b_3$ is defined in Eq.~\eqref{eq:mult_expansion}.}
+    \includegraphics[width=0.8\textwidth]{images/app_c/SPS_lod_callibration_curve_for_thesis.png}
+        \caption{Calibration curve for the LOD SPS family as obtained from LSA.}
         \label{fig:lod_calibration_lsa}
  \end{figure}
 
- For the studies in the area of low to moderate current (up to 300\,A) the relation between the current and the strength $b_3$ appears to be linear. In the SPS experimental campaign of 2022, the octupole current stayed below 250\,A. Therefore, focusing on the area of linear dependence is a valid approximation for the studies presented in this thesis.
+ For the studies in the area of low to moderate current (up to 300\,A) the relation between the current and the strength $b_w$ appears to be linear. For the SPS experimental campaign of 2022, the octupoles operated in this regime. Therefore, focusing on the area of linear dependence is a valid approximation for the studies presented in this thesis.
 
  Subsequently, the relation between the octupole current and strength is obtained by a linear fit on the above-discussed calibration curves which it is also shown in black color. From the fit, it occurs that:
+ 
+ 
 
-
-\begin{equation}\label{eq:I_vs_B3_relation_lof}
-    I_\mathrm{LOF} = 0.035 \times b_3 = 0.035 \times k_\mathrm{LOF} \times B \rho [A]
+ \begin{equation}\label{eq:I_vs_B3_relation_lof}
+    \mathrm{I_{LOF}} = 0.049 \times b_\mathrm{LOF} \times 0.705 = 0.035 \times k_\mathrm{LOF} \times B_1 \mathrm{[A]}
 \end{equation}
 \begin{equation}\label{eq:I_vs_B3_relation_lod}
-    I_\mathrm{LOD} = 0.009 \times b_3 = 0.009 \times k_\mathrm{LOD} \times B \rho   [A]
+    I_\mathrm{LOD} = 0.014 \times b_\mathrm{LOF} \times 0.677 = 0.009 \times k_\mathrm{LOD} \times B_1 \rho   \mathrm{[A]}
 \end{equation},
-where $b_3$ is defined in Eqs.~\eqref{eq:mult_expansion} while $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn}. It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
 
+where $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn} and $B_1 \rho$ the magnetic rigidity. %It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
 
 \section{Head-Tail monitor calibration for the 2022 analysis}\label{sec:HT_calibration_2022}
-From the end of 2018 till the end of 2020, the CERN accelerator complex has undergone its second long shutdown in order to complete its scheduled upgrade program. Therefore, the calibration of the Head-Tail monitor was repeated to provide the normalisation factor required for the scaling of its reading (see Section~\ref{subsec:HT_post_process_CC}). The calibration factor was found to be 0.1037 in November 2021, as shown in Fig.~\ref{fig:HT_calibration_2022_levens} (slope value).
+
+\textcolor{red}{This should be moved in HT monitor appendix.}
+
+To give the measured intra-bunch offset (during the SPS CC tests) in units of millimeters, the Head-Tail monitor response is calibrated by performing orbit bumps (around the reference orbit) and measuring the normalised position\footnote{It is calculated as the difference signal divided by sum signal.} of the bunch in the vertical plane (plane of interest). More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. 
+
+
+The calibration of the Head-Tail monitor response that took place in November 2021, is shown in Fig.~\ref{fig:HT_calibration_2022_levens}. After applying a linear fit to the measured data, it was found that a normalised position of 0.1037 corresponds to 1\,mm.
+
 
 \begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
     \centering         
     \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
-        \caption{The calibration was performed by T.~Levens by performing orbit bumps (around the reference orbit) and measuring the normalised position of the bunch in the vertical plane (plane of interest). The normalised position is obtained as the difference of the signal divided by the sum. More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. This plot is courtesy of T.~Levens .}
+        \caption{Calibration of Head-Tail monitor from November 2021. This plot is courtesy of T.~Levens.}
         \label{fig:HT_calibration_2022_levens}
  \end{figure}
-
- \section{Bunch length measurements in May 2022}\label{sec:bunch_length_measurements_2022}
-In this section, the bunch length measurements acquired during the emittance growth experiments with $\CC$ noise in 2022 are presented. The measurements took place with the Wall Current Monitor instrument (introduced in Section~\ref{sec:ABWLM_WallCurrentMonitor}) and the responsible person for the acquisitions was N.~Bruchon \footnote{Email contact: niky.bruchon@cern.ch}.
-
-
-\section{Transverse emittance growth measurements with dipole noise in 2022}\label{sec:emit_growth_damper_md_2022}
-
- 
- \section{Bunch length measurements in September 2022}\label{sec:bunch_length_measurements_sep_2022}
- Figure~\ref{fig:cc_md_sep_2022_overview_plots_klod_scan_bunch_length} illustrates the evolution of the bunch length measured in the SPS on the September 12, 2022, for the five different octupole strengths used during the $\CC$ MD as acquired with the Wall Current Monitor. The subplots are plotted in chronological order. The Wall Current monitor acquires the longitudinal bunch profiles, from which the bunch length is computed, once per turn. In the figures below, each point corresponds to the average bunch lengths from the profiles over 100 turns while the error bars indicate the standard deviation between them. \textcolor{red}{Is it correct that is acquires profiles once per turn?}
- 
