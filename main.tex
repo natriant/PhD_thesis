@@ -1,6 +1,9 @@
 \documentclass[12pt,twoside]{report} %  twoside: printing on both sides of the page
+
+\usepackage[utf8]{inputenc}
 \usepackage{mypackages}
 \usepackage{listofsymbols}
+\usepackage{glossaries}
 
 % For being able to use \widebar. Source: https://tex.stackexchange.com/questions/16337/can-i-get-a-widebar-without-using-the-mathabx-package
 \DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
@@ -61,10 +64,14 @@
 \setcounter{tocdepth}{5} % These lines are needed for subsubsection to appear
 \setcounter{secnumdepth}{5}
 
-\makeglossary
+%\makeglossary
 \makenomenclature
 \setlength{\nomlabelwidth}{3.5cm} % adjust the width between symbols and notation
 \renewcommand{\nomname}{List of Symbols}
+
+\makeglossaries
+%\loadglsentries{foo}
+\usepackage{foo}
 
 
 \begin{document}
@@ -84,6 +91,7 @@
 \input{head/acknowledgments}
 % Abstract
 \input{head/abstract}
+
 
 \tableofcontents
 
@@ -142,7 +150,6 @@
 \input{chapters/chapter09}
 
 % The end matter
-\printglossaries
 \appendix
 \chapter{Definitions and  methods of statistical analysis}\label{ch:app_A}
 \input{appendix/appendix}
@@ -157,6 +164,10 @@
 
 \chapter{Glossary and defintions}
 \input{appendix/glossary}
+
+\clearpage
+\printglossaries
+
 
 \backmatter
 \printbibliography
