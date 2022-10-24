@@ -299,10 +299,14 @@ In other words, the power spectral density at a given frequency, $f_k$, for a wh
 
 \section{Applying a measured noise spectrum in numerical simulations}\label{sec:measured_spectra_to_time_series}
 
+The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used in numerical simulations. 
 
-The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series in numerical simulations. 
 
-The discrete time series are representated here by $\alpha_n = \alpha(n\Delta t)$ and  $\phi_n = \phi(n\Delta t)$ for amplitude and phase noise, respectively, where  $n \in \left [1, N_\mathrm{turns}-1 \right ]$ and $N_\mathrm{turns}$ is the number of turns in the simulation. Since, as discussed in Chapter~\ref{Ch:investigating_discrepancy}, in the simulations the beam encounters the phase or amplitude noise kicks once per turn, the sampling frequency of the noise spectra $f_s$ equals the revolution frequency. For, the SPS $f_s=\frev=43/73$ \,kHz. Hence, the sampling interval should be $\Delta t=1/f_s = 1/\frev \approx$ 23 $\mathrm{\mu s}$.  
+
+\subsection{Crab cavity noise in numerical simulations}
+As discussed in Chapter~\ref{Ch:CC_noise_theory} the phase and amplitude noise are modeled as sequences of noise kicks which are applied to the CC voltage every turn.
+
+These discrete time series will be representated by $\alpha_n = \alpha(n\Delta t)$ and  $\phi_n = \phi(n\Delta t)$ for amplitude and phase noise, respectively, where  $n \in \left [1, N_\mathrm{turns}-1 \right ]$ and $N_\mathrm{turns}$ is the number of turns in the simulation. Since in the simulations the beam encounters the phase or amplitude noise kicks once per turn, the sampling frequency of the noise spectra $f_s$ equals the revolution frequency (see discussion in Chapter~\ref{Ch:investigating_discrepancy}). For, the SPS $f_s=\frev=43/73$ \,kHz. Hence, the sampling interval should be $\Delta t=1/f_s = 1/\frev \approx$ 23 $\mathrm{\mu s}$.  
 
 
 %, representated by 
