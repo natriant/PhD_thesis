@@ -39,7 +39,7 @@ The additional campaign that took place in the SPS in 2022, set out test the hyp
 
 %However, quantitative agreement between theory (taking the impedance into account) and experimental results has not yet been demonstrated. Possible additional factors, such as space charge, have been identified and further studies, including simulations and measurements, are foreseen to investigate the quantitative agreement. An additional experiment in the SPS with emittance growth driven by a pure dipolar source (beam transverse damper), supported the results from the Crab Cavity experiment since it also successfully reproduced the dependence of the suppression on the amplitude-dependent tune shift. This improves the confidence in the current understanding of the experimental results with Crab Cavities.
 
-To summarise, this thesis presents the first experimental beam dynamic studies with Crab Cavities and proton beams. Additionally, it constitutes the first investigation and experimental validation of the suppression mechanism of the Crab Cavity RF phase noise or dipolar noise-induced emittance growth by the beam transverse impedance. The studies provided a significant step forward in the understanding of the mechanism of the transverse emittance growth driven by noise in the Crab Cavity RF systems which directly impacts the HL-LHC performance. This project gained confidence in the validity of the Mastoridis--Baudrenghien model which is used for defining limits on the acceptable noise levels for the HL-LHC Crab Cavities.
+To conclude, this thesis presents the first experimental beam dynamic studies with Crab Cavities and proton beams. Additionally, it constitutes the first investigation and experimental validation of the suppression mechanism of the Crab Cavity RF phase noise or dipolar noise-induced emittance growth by the beam transverse impedance. The studies provided a significant step forward in the understanding of the mechanism of the transverse emittance growth driven by noise in the Crab Cavity RF systems which directly impacts the HL-LHC performance. This project gained confidence in the validity of the Mastoridis--Baudrenghien model which is used for defining limits on the acceptable noise levels for the HL-LHC Crab Cavities.
 
 
 %To summarise, this thesis addressed issues of significant importance for HL-LHC as it demonstrates the first experimental beam dynamic studies with Crab Cavities and proton beams. Additionally, it constitutes the first investigation and experimental validation of the suppression mechanism of the Crab Cavity RF phase noise or dipolar noise-induced emittance growth by the beam transverse impedance. The studies provided a significant step forward in the understanding of the mechanism of the transverse emittance growth driven by noise in the Crab Cavity RF systems which directly impacts the HL-LHC performance. The project also confirmed that the relevant beam dynamic effects are sufficiently well understood and that the Mastoridis--Baudrenghien model 
@@ -52,44 +52,56 @@ To summarise, this thesis presents the first experimental beam dynamic studies w
 %The project also provides a strong starting point for future additional studies. Specifically, additional measurements are planned in the SPS to refine the experimental observations, by obtaining more data points showing emittance growth rate as a function of amplitude-dependent tune shift. Furthermore, the interplay of the dipolar noise or Crab Cavity RF phase noise with the beam transverse impedance and the space charge needs to be checked to make another step towards the full understanding of the emittance growth suppression mechanism. Finally, dedicated experiments are foreseen to study the emittance growth in the presence of amplitude noise which is related to head-tail modes $\pm$1 which are not damped by the impedance (for the slightly positive chromaticity of the experimental configuration). Another interesting study would be to investigate the impact of linear chromaticity on the suppression factor and the possible transverse instabilities.
 
 \section{Implications for HL-LHC}
-The studies reported in this thesis investigated the emittance growth due to noise in the Crab Cavity RF system experimentally and in simulations for one SPS machine configuration. However, the main motivation of these studies was the planned use of the Crab Cavities in the HL-LHC and the importance of the effect of the emittance growth suppression for the HL-LHC. To this end, it is considered appropriate to discuss here the implications of the results of this thesis to the HL-LHC project. It is also explained why simulation studies for the HL-LHC case were not strongly motivated in the context of this thesis.
+The studies reported in this thesis investigated the emittance growth due to noise in the Crab Cavity RF system experimentally and in simulations for the SPS machine configuration. However, the main motivation of these studies was the planned use of the Crab Cavities in the HL-LHC. To this end, it is appropriate to discuss here the implications of the results of this thesis for the HL-LHC project. 
 
-The studies in the SPS machine are different from the HL-LHC case. Some of the main machine and beam design parameters are summarised in Table~\ref{tab:sps_vs_lhc} for the SPS and HL-LHC. Some of the most important differences (in the context of emittance growth and impedance interaction) between the two machines are the beam energy, the intensity, the bunch length, the type of the crabbing scheme, the frequency of the main RF system, and of course the presence or not of beam-beam interactions and collisions. Therefore, as stated in the Inroduction, the pure objective of the SPS studies was to validate the predictions of the Mastoridis--Baudrenghien model, in terms of Crab Cavity RF noise-induced emittance growth. Then, one should be able to extrapolate the theoretical predictions to the HL-LHC case. 
+
+%It is also explained why simulation studies for the HL-LHC case were not strongly motivated in the context of this thesis.
+
+%The studies reported in this thesis investigated the emittance growth due to noise in the Crab Cavity RF system experimentally and in simulations for one SPS machine configuration. However, the main motivation of these studies was the planned use of the Crab Cavities in the HL-LHC and the importance of the effect of the emittance growth suppression for the HL-LHC. To this end, it is considered appropriate to discuss here the implications of the results of this thesis to the HL-LHC project. It is also explained why simulation studies for the HL-LHC case were not strongly motivated in the context of this thesis.
+
+%The studies in the SPS machine are different from the HL-LHC case. Some of the main machine and beam design parameters are summarised in Table~\ref{tab:sps_vs_lhc} for the SPS and HL-LHC. Some of the most important differences (in the context of emittance growth and impedance interaction) between the two machines are the beam energy, the intensity, the bunch length, the type of the crabbing scheme, the frequency of the main RF system, and of course the presence or not of beam-beam interactions and collisions. Therefore, as stated in the Inroduction, the pure objective of the SPS studies was to validate the predictions of the Mastoridis--Baudrenghien model, in terms of Crab Cavity RF noise-induced emittance growth. Then, one should be able to extrapolate the theoretical predictions to the HL-LHC case. 
 %  It appears that the results obtained in the SPS cannot be directly applied, in a straightforward way, to HL-LHC. 
-\begin{table}[!hbt]
-	\centering
-   \caption{Overview of the design parameters for the SPS and HL-LHC~\cite{HL_LHC_yellow_report}. The listed values for the SPS correspond to its operation as a storage ring for studying the long-term emittance evolution. The listed values for HL-LHC case are for beams at collision energy.}
-	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m]}
-		&& \\[-6mm]
-		\toprule \toprule
-      \multicolumn{1}{l}{\textbf{Parameter}} &\multicolumn{1}{c}{\textbf{SPS}} & \multicolumn{1}{c}{\textbf{HL-LHC}}\\
-      \midrule
-      \multicolumn{1}{l}{Circumference, $C_0$}  & \multicolumn{1}{c}{6.9\,km} & \multicolumn{1}{c}{26.7\,km}  \\
+%\begin{table}[!hbt]
+%	\centering
+ %  \caption{Overview of the design parameters for the SPS and HL-LHC~\cite{HL_LHC_yellow_report}. The listed values for the SPS correspond to its operation as a storage ring for studying the long-term emittance evolution. The listed values for HL-LHC case are for beams at collision energy.}
+%	\begin{tabu} to \textwidth { X[c,m] X[c,m] X[c,m]}
+%		&& \\[-6mm]
+%		\toprule \toprule
+ %     \multicolumn{1}{l}{\textbf{Parameter}} &\multicolumn{1}{c}{\textbf{SPS}} & \multicolumn{1}{c}{\textbf{HL-LHC}}\\
+%      \midrule
+%      \multicolumn{1}{l}{Circumference, $C_0$}  & \multicolumn{1}{c}{6.9\,km} & \multicolumn{1}{c}{26.7\,km}  \\
       
-      \multicolumn{1}{l}{Beam energy, $E_b$}  & \multicolumn{1}{c}{270\,GeV} & \multicolumn{1}{c}{7\,TeV (per beam)} \\
+%      \multicolumn{1}{l}{Beam energy, $E_b$}  & \multicolumn{1}{c}{270\,GeV} & \multicolumn{1}{c}{7\,TeV (per beam)} \\
 
-      \multicolumn{1}{l}{Rms bunch length, $\sigma_z$}  & \multicolumn{1}{c}{12-16\,cm} & \multicolumn{1}{c}{7.55\,cm}  \\
-      \multicolumn{1}{l}{Frequency of main RF system, $f_\mathrm{RF}$}  & \multicolumn{1}{c}{400\,MHz} & \multicolumn{1}{c}{200\,MHz}  \\
+ %     \multicolumn{1}{l}{Rms bunch length, $\sigma_z$}  & \multicolumn{1}{c}{12-16\,cm} & \multicolumn{1}{c}{7.55\,cm}  \\
+  %    \multicolumn{1}{l}{Frequency of main RF system, $f_\mathrm{RF}$}  & \multicolumn{1}{c}{400\,MHz} & \multicolumn{1}{c}{200\,MHz}  \\
 
-      \multicolumn{1}{l}{Number of bunches}  & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2808 (per ring)} \\ 
-      \multicolumn{1}{l}{Intensity, $N_b$}  & \multicolumn{1}{c}{$3 \times 10^{10}$ protons/bunch} & \multicolumn{1}{c}{$2.2 \times 10^{11}$ protons/bunch}\\
-      \multicolumn{1}{l}{Crab Cavity scheme} & \multicolumn{1}{c}{Global} & \multicolumn{1}{c}{Local} \\
-      \multicolumn{1}{l}{Beam-beam interaction} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} \\
-      \multicolumn{1}{l}{Interaction points} & \multicolumn{1}{c}{No}  & \multicolumn{1}{c}{Yes} \\
-      \multicolumn{1}{l}{Crossing angle} & \multicolumn{1}{c}{No}  & \multicolumn{1}{c}{Yes} \\
-      \arrayrulecolor{black}\bottomrule
-	\end{tabu}
-   \label{tab:sps_vs_lhc}
-\end{table}
+ %     \multicolumn{1}{l}{Number of bunches}  & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2808 (per ring)} \\ 
+ %     \multicolumn{1}{l}{Intensity, $N_b$}  & \multicolumn{1}{c}{$3 \times 10^{10}$ protons/bunch} & \multicolumn{1}{c}{$2.2 \times 10^{11}$ protons/bunch}\\
+  %    \multicolumn{1}{l}{Crab Cavity scheme} & \multicolumn{1}{c}{Global} & \multicolumn{1}{c}{Local} \\
+   %   \multicolumn{1}{l}{Beam-beam interaction} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} \\
+   %   \multicolumn{1}{l}{Interaction points} & \multicolumn{1}{c}{No}  & \multicolumn{1}{c}{Yes} \\
+   %   \multicolumn{1}{l}{Crossing angle} & \multicolumn{1}{c}{No}  & \multicolumn{1}{c}{Yes} \\
+   %   \arrayrulecolor{black}\bottomrule
+	%\end{tabu}
+   %\label{tab:sps_vs_lhc}
+%\end{table}
 
 
 \textbf{Regarding the suppression mechanism from the beam coupling impedance}\\
-Past studies for the LHC and HL-LHC operational conditions which feature complex bunch train structures, multiple interaction points with asymmetric phase advance, and chromaticity have shown that the coherent modes (dominated by the beam-beam interactions) are expected to lie inside the incoherent spectrum~\cite{Pieloni:1259906, Buffat:2712068}.
+The mechanism of the emittance growth suppression from impedance (or beam-beam effects) due to the separation of the coherent modes from the incoherent spectrum does not appear for the HL-LHC operational configuration for the folllowing two reasons:
+\begin{itemize}
+   \item Past studies for the LHC and HL-LHC operational conditions which feature complex bunch train structures, multiple interaction points with asymmetric phase advance, and non-zero chromaticity have shown that the coherent modes (dominated by the beam-beam interactions) are expected to lie inside the incoherent spectrum~\cite{Pieloni:1259906, Buffat:2712068}.
+   \item Furthermore, in the HL-LHC operational scenarios, the transverse feedback (which is also known as ADT~\cite{lhc_adt_info_presentation}) is switched on. Briefly, the ADT measures the bunch-by-bunch beam position every turn and tries to maintain zero centroid oscillations. For the foreseen gain values of this device, the damping time is much faster than the damping time from impedance in the potential (though unlikely) case where the coherent modes would emerge from the incoherent spectrum. This is supported by simulation results, which include noise (not from Crab Cavity), beam-beam interactions, wakefields, and the transverse feedback~\cite{Buffat:2712068}.
+\end{itemize}
 
-Furthermore, in the HL-LHC operational scenarios, the main source for suppressing emittance growth is the transverse feedback (which is also known as ADT~\cite{lhc_adt_info_presentation}). For the foreseen gain values for this device, the damping time is much faster than the damping time from impedance in the potential (though unlikely) case where the coherent modes would emerge from the incoherent spectrum. This is supported by simulation results, which include noise, beam-beam interactions, wakefields, and the transverse feedback~\cite{Buffat:2712068}. % The plots are not shown. Xavier has run the simulations but the results are discussed at the bottom of  p.5
-To this end, it is concluded that the mechanism of the emittance growth suppression from impedance (or beam-beam effects) due to the separation of the coherent modes from the incoherent spectrum does not appear for the HL-LHC operational configuration. 
 
-The experimental observation of the effect of the suppression from the impedance in the SPS was feasible due to its operation with very small incoherent betatron tune spread. The possibility of applying this mechanism in other machines with similar conditions could be investigated. % pathological case.
+
+
+%Furthermore, in the HL-LHC operational scenarios, the main source for suppressing emittance growth is the transverse feedback (which is also known as ADT~\cite{lhc_adt_info_presentation}). For the foreseen gain values for this device, the damping time is much faster than the damping time from impedance in the potential (though unlikely) case where the coherent modes would emerge from the incoherent spectrum. This is supported by simulation results, which include noise, beam-beam interactions, wakefields, and the transverse feedback~\cite{Buffat:2712068}. % The plots are not shown. Xavier has run the simulations but the results are discussed at the bottom of  p.5
+%To this end, it is concluded that the mechanism of the emittance growth suppression from impedance (or beam-beam effects) due to the separation of the coherent modes from the incoherent spectrum does not appear for the HL-LHC operational configuration. 
+
+%The experimental observation of the effect of the suppression from the impedance in the SPS was feasible due to its operation with very small incoherent betatron tune spread. The possibility of applying this mechanism in other machines with similar conditions could be investigated. % pathological case.
 
 
 %To this end, two conclusions are made: 
@@ -104,7 +116,13 @@ The experimental observation of the effect of the suppression from the impedance
 
 %However, the results presented in this thesis, and in particular the experimental results of 2022, with Crab Cavity RF phase noise (see Figs.~\ref{fig:cc_md_2022_overview_plots_klod_scan} and~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion}) challenge the predictions of the analytical models for emittance growth driven by Crab Cavity RF noise. As shown in Figs.~\ref{fig:H_V_emit_growth_background_subtracted_octupole_scan} and~\ref{fig:cc_md_2022_measurement_vs_pyheadtail_simualtion} the measured Crab Cavity RF noise emittance growth might be larger than predicted. The data points acquired during the 2022 measurements are not sufficient to conclude on this issue since it is not clear yet if the saturation of the suppression mechanism (which is expected for strong octupole settings) was reached. This is planned to be addressed in the foreseen experiments with Crab Cavities in SPS. This is highlighting the need for an effective transverse feedback system which is discussed in the next paragraph.
 
-\textbf{Mitigation of emittance growth driven by Crab Cavity RF noise in the HL-LHC}\\
+
+\textbf{Regarding the validity of the Mastoridis--Baudrenghien model}\\
+
+
+\textbf{Plans for mitigating the emittance growth driven by Crab Cavity RF noise in the HL-LHC}\\
+
+
 During the past years, numerous studies have been performed in order to predict and mitigate the emittance growth from noise in the RF system of the HL-LHC Crab Cavities. The main points are discussed here for the completeness of the thesis.
 %The results presented in this thesis, and in particular the experimental results of 2022, with Crab Cavity RF phase noise gained confidence on the predictions of the Mastoridis--Baudrenghien model which are used for the HL-LHC estimates. These HL-LHC estimates~\cite{cc_noise_hl_lhc_estimates}, show that the expected emittance growth from noise present in the Crab Cavity RF system is about 15.4$\%/h$. In the presence of the transverse damper, which is also known as ADT~\cite{lhc_adt_info_presentation}, (assuming damping time of 10 turns) this emittance growth is reduced to about 5.3$\%$/h. These rates correspond to the emittance growth from both amplitude and phase noise. 
 
