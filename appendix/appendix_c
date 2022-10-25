@@ -91,16 +91,16 @@ For a Gaussian distribution the actions, $\Jx$ and $\Jx$ follow an exponential d
 
 Following Eq.~\eqref{eq:geom_emittance_action}, the rms betatron tune spread from amplitude detuning can be also written as:
 \begin{equation}\label{eq:rms_amplitute_detuning_3}
-    \Dqyrms = 2 \sqrt{(\alpha_{yy} \emitygeom )^2 + ( \alpha_{yx} \emitxgeom)^2 }.
+    \Dqyrms = 2 \sqrt{(\alpha_{yy}  \epsilon^{\mathrm{geom}}_y )^2 + ( \alpha_{yx}  \epsilon^{\mathrm{geom}}_x)^2 }.
 \end{equation}
 
 Equivalently, the horizontal rms tune spread from amplitude detuning can be computed by:
 \begin{equation}\label{eq:rms_amplitute_detuning_3_x}
-    \Dqxrms = 2 \sqrt{(\alpha_{xx} \emitxgeom )^2 + ( \alpha_{yx} \emitygeom)^2 }.
+    \Dqxrms = 2 \sqrt{(\alpha_{xx}  \epsilon^{\mathrm{geom}}_x )^2 + ( \alpha_{yx}  \epsilon^{\mathrm{geom}}_y)^2 }.
 \end{equation}
 
 
-\textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are independent. The actions later in time, they might be coupled due to the non-linear
+%textbf{Disclaimer:} In the analysis presented above, the actions $\Jx$ and $\Jy$ refer to the initial distribution, for which they are independent. The actions later in time, they might be coupled due to the non-linear
 of the lattice. %The actions later in time, even though they are considered independent in the analysis, are coupled due the non-linearities of the lattice.
 %\textbf{Note 2:}
 %\begin{itemize}
@@ -113,10 +113,10 @@ of the lattice. %The actions later in time, even though they are considered inde
 
 Here the rms tune spread in the SPS that is present in the SPS with the Landau octupoles being switched off is estimated. For the estimation only the detuning with transverse amplitude is considered.
 
-As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443, Hannes_personal_communication} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be reproduced in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
+As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443, Hannes_personal_communication} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be approximated in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
 
 
-Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,1/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
 
 The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\epsilon_x = \epsilon_y$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:normalised_emittance} it can be seen that these values corresponds to geometric emittances of $\epsilon^{\mathrm{geom}}_x=\epsilon^{\mathrm{geom}}_y$ = 7.2\,nm.
 By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 1.9 \times 10^{-5}$ and $\Dqyrms = 2.1 \times 10^{-5}$, in the horizontal and vertical planes respectively.
@@ -130,7 +130,7 @@ By inserting these values of detuning coefficients and geometric emittances in E
 
 \section{SPS octupoles calibration}\label{sec:sps_octupole_calibration}
 % Initial note: https://www.overleaf.com/project/612f6e14a2a0d60d2ad9bdca
-In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves (current, $\mathrm{I_w}$, as a function of the strength, $b_w$, mulitplied with the octuple length $\mathrm{L_w}$, where $w=$(LOD, LOF) ) are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa} for the LOF and LOD families, respectively. The parameter, $b_w$, is defined in Eq.~\eqref{eq:mult_expansion} for $n=3$. In LSA the lengths of the octupole magnets are found to be: $\mathrm{L_{LOF}}$=0.705\,m and  $\mathrm{L_{LOD}}$=0.677\,m.
+In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves (current, $\mathrm{I_w}$, as a function of the strength, $b_w$, mulitplied with the octuple length $\mathrm{L_w}$, where $w=$(LOD, LOF) ) are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa} for the LOF and LOD families, respectively. The parameter, $b_w$, is defined in Eq.~\eqref{eq:mult_expansion} for $n=3$. The lengths of the octupole magnets are: $\mathrm{L_{LOF}}$=0.705\,m and  $\mathrm{L_{LOD}}$=0.677\,m.
 
  %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
 \begin{figure}[!h]
@@ -155,29 +155,12 @@ In this section, the relation between the current and the strength of the focusi
  
 
  \begin{equation}\label{eq:I_vs_B3_relation_lof}
-    \mathrm{I_{LOF}} = 0.049 \times b_\mathrm{LOF} \times 0.705 = 0.035 \times k_\mathrm{LOF} \times B_1 \mathrm{[A]}
+    \mathrm{I_{LOF}} = 0.049 \times b_\mathrm{LOF} \times 0.705 = 0.035 \times k_\mathrm{LOF} \times B_1 \rho \mathrm{[A]}
 \end{equation}
 \begin{equation}\label{eq:I_vs_B3_relation_lod}
-    I_\mathrm{LOD} = 0.014 \times b_\mathrm{LOF} \times 0.677 = 0.009 \times k_\mathrm{LOD} \times B_1 \rho   \mathrm{[A]}
+    \mathrm{I_{LOD}} = 0.014 \times b_\mathrm{LOF} \times 0.677 = 0.009 \times k_\mathrm{LOD} \times B_1 \rho   \mathrm{[A]}
 \end{equation},
 
 
 where $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn} and $B_1 \rho$ the magnetic rigidity. %It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
-
-\section{Head-Tail monitor calibration for the 2022 analysis}\label{sec:HT_calibration_2022}
-
-\textcolor{red}{This should be moved in HT monitor appendix.}
-
-To give the measured intra-bunch offset (during the SPS CC tests) in units of millimeters, the Head-Tail monitor response is calibrated by performing orbit bumps (around the reference orbit) and measuring the normalised position\footnote{It is calculated as the difference signal divided by sum signal.} of the bunch in the vertical plane (plane of interest). More details on the calibration procedure are given in~\cite{PhysRevAccelBeams.22.112803}. 
-
-
-The calibration of the Head-Tail monitor response that took place in November 2021, is shown in Fig.~\ref{fig:HT_calibration_2022_levens}. After applying a linear fit to the measured data, it was found that a normalised position of 0.1037 corresponds to 1\,mm.
-
-
-\begin{figure}[!h] % Email communication with T. Levens on 8 November 2021.
-    \centering         
-    \includegraphics[width=0.7\textwidth]{images/Ch8/HT_monitor_calibration_2022.png}
-        \caption{Calibration of Head-Tail monitor from November 2021. This plot is courtesy of T.~Levens.}
-        \label{fig:HT_calibration_2022_levens}
- \end{figure}
