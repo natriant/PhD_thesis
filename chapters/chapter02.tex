@@ -819,7 +819,7 @@ The synchrotron tune, $Q_s$, is defined as the number of synchrotron oscillation
 
 
 \section{Collective effects: Wakefields}\label{sec:collective_effects}
-Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other or with electromagnetic fields. Examples are beam-beam interactions, space charge effects, wakefields and intra-beam scattering~\cite{Zimmermann:2264408}. The collective effects usually become crucial for high-intensity beams as they can lead to instabilities\footnote{For example a beam is unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in~\cite{Rumolo:1982422}} which then may degrade beam quality, or lead to beam losses.  In either case, the performance of the accelerator can be adversely affected. The discussion here is limited in the description of the wakefields which are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408, Chao:collective}.
+Up to now, the motion of the particles was studied neglecting the interaction between them within the bunch. Collective effects in an accelerator desribe the phenomena in which the motion of the particles depends on their interaction with each other through electromagnetic fields. Examples are beam-beam interactions, space charge effects, wakefields and intra-beam scattering~\cite{Zimmermann:2264408}. The collective effects usually become critical for high-intensity beams as they can lead to instabilities\footnote{For example a beam is unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Further details on the beam instabilities can be found in~\cite{Rumolo:1982422}} which then may degrade beam quality, or lead to beam losses.  In either case, the performance of the accelerator can be adversely affected. The discussion here is limited to the description of the wakefields which are relevant for the studies presented in this thesis. A complete overview of the collective effects can be found in~\cite{wolski2014, Zimmermann:2264408, Chao:collective}.
 %For a more complete picture, a beam is called unstable when one of its co-ordinates $(x, x^\prime, y, y^\prime, z, \delta)$ undergoes exponential growth. Usually, this can be observed in the motion of the centroid $\langle x \rangle $
 % If you want to show an example of an instability you can find a figure in Ref.~\cite{Rumolo:1982422}}
 
@@ -827,7 +827,7 @@ Up to now, the motion of the particles was studied neglecting the interaction be
 %The discussion in this section is based in the discussion in~\cite{wolski2014, Rumolo:1982422, instabilities_rumulo_li, benoit_ipac19_impedance, Chao:collective}.
 
 
-For the following discusion, it is appropriate to introduce the terms incoherent and coherent effects. Incoherent effects (microscopic approach) affect the individual particles affect individual particles.  Any theory or model of incoherent effects has to treat the beam as a collection of a large number of individual particles, each with its own behaviour. In contrast, coherent effects can be understood in terms of their impact on the beam as a whole, and can be modelled by representing each bunch, for example, as a single "macroparticle", with mass and charge corresponding to the total number of particles it contains. % from Andy's corrections
+For the following discussion, it is appropriate to introduce the terms incoherent and coherent effects. Incoherent effects (microscopic approach) affect the individual particles. Any theory or model of incoherent effects has to treat the beam as a collection of a large number of individual particles, each with its own behaviour. In contrast, coherent effects can be understood in terms of their impact on the beam as a whole.%, and can be modelled by representing each bunch, for example, as a single "macroparticle", with mass and charge corresponding to the total number of particles it contains. % from Andy's corrections
 
 
 \textbf{Wakefields}\\
@@ -844,12 +844,12 @@ Consider two particles of charge $q_1$ and $q_2$ moving with ultra-relativistic 
 \begin{figure}[!h] % 
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/wakefield_example.png}
-        \caption{Wakefield interaction, where the source particle (blue) affects the witness particle (yellow) travelling at a distance $z$ begind it~\cite{instabilities_rumulo_li}. $(\Delta x_1, \Delta y_1)$ and $ (\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively.} 
+        \caption{Wakefield interaction, where the source particle (blue) affects the witness particle (yellow) travelling at a distance $z$ behind it~\cite{instabilities_rumulo_li}. $(\Delta x_1, \Delta y_1)$ and $ (\Delta x_2, \Delta y_2)$ are the transverse offsets of the source and witness particles respectively.} 
         \label{fig:wakefields}
  \end{figure}
 % Figure take from: ~\cite{instabilities_rumulo_li}
 
-The wakefields in time domain are described with the concept of wake functions, $W_u(z)$, where $u=(x,y)$ denotes the horizontal and vertical wakefunction. The wakefunction can be expressed as a series of its multipole compoenents as follows: % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 13) 
+The wakefields in time domain are described with the concept of wakefunctions, $W_u(z)$, where $u=(x,y)$ denotes the horizontal and vertical plane, respectively. The wakefunction can be expressed as a series of its multipole components as follows: % https://accelconf.web.cern.ch/ipac2019/talks/weypls1_talk.pdf (slide 13) 
 \begin{equation}\label{eq:wakefunctions}
     W_u(\Delta u_1, \Delta u_2, z) = W^\mathrm{const}_u(z) + W^\mathrm{dip}_u(z)\Delta u_1 +  W^\mathrm{quad}_u(z)\Delta u_2 + o(\Delta u_1, \Delta u_2),
 \end{equation}
@@ -895,23 +895,23 @@ In order to study the beam dynamics effects due to wakefields, impedance models 
 % Link to chao's book:https://www.slac.stanford.edu/~achao/wileybook.html
 \textbf{Head-tail modes}\\
 The Vlasov equation~\cite{Vlasov:426186} is often used to describe the beam motion in the presence of wakefields as it allows its mode representation (in frequency domain): the beam motion is described by a superposition of modes. %--> source: https://cds.cern.ch/record/859658/files/ab-2005-041.pdf
-Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as hea-dtail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The head-tail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
+Solving the Vlasov equations for the coupled system between the particle motion (synchrotron and betatron) and wakefield kicks the eigenmodes and eigenfrequencies are obtained. These modes are often referred to as head-tail modes as they are related to the betatron phase shift between the head and tail of the bunch in a synchrotron. The head-tail modes can either be stable, damped, or excited; in the latter case, they evolve into instabilities. For the beam to become unstable the wakefield kicks (source of energy) need to be synchronized with the bunch motion (e.g. with chromaticity)~\cite{instabilities_rumulo_li}.
 % in general the modes are a result of the coupling of betatron and synchroton motion--> is that right?
 
 % From https://cas.web.cern.ch/sites/default/files/lectures/-27%20March%202022/Chavannes4_Instabilities.pdf
-The head-tail modes can be described with the mode indeces $m$ and $l$ which denote the tranverse and the longitudinal (or azimuthal) mode numbers~\cite{Chao:collective}. In the following modes with $m=1$ will be considered and they are often referred to as transvserse modes~\cite{Chao:collective}. Figure~\ref{fig:azimuthal_mode} shows a graphical representation of the azimuthal modes for $m=1$.
+The head-tail modes can be described with the mode indices $m$ and $l$ which denote the transverse and the longitudinal (or azimuthal) mode numbers~\cite{Chao:collective}. In the following modes with $m=1$ will be considered and they are often referred to as transvserse modes~\cite{Chao:collective}. Figure~\ref{fig:azimuthal_mode} shows a graphical representation of the azimuthal modes for $m=1$.
 
 \begin{figure}[!h] % 
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/transverse_mode_l.png}
-        \caption{Graphical representation of the lowest azimuthal modes in the longitudinal beam structure, for $m=1$~\cite{Chao:collective} as the bunch oscillates transversely. } 
+        \caption{Graphical representation of the lowest azimuthal modes in the longitudinal beam structure, for $m=1$ as the bunch oscillates transversely~\cite{Chao:collective}. } 
         \label{fig:azimuthal_mode}
  \end{figure}
  %This image is valid for low beam intensities.
  
 In this thesis the terms "mode" or "head-tail mode" will refer to the azimuthal modes\footnote{The modes' radial structure in the longitudinal plane is described by their radial modes~\cite{Chao:collective}. They are not considered nor discussed here as they are out of they are beyond the scope of the work presented in this thesis.}. 
 
-As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0 ($l=0$), the bunch moves transversely as a rigid unit. or the head-tail mode 1 ($l=1$), the bunch oscillates transversely but the head and the tail of the bunch move 180$^\circ$ out of phase. %if you can rephrase it.
+As shown in Fig.~\ref{fig:azimuthal_mode} for the head-tail mode 0 ($l=0$), the bunch moves transversely as a rigid unit or the head-tail mode 1 ($l=1$), the bunch oscillates transversely but the head and the tail of the bunch move 180$^\circ$ out of phase. %if you can rephrase it.
 % from presentation: https://www.slideserve.com/mostyn/axel-2013-introduction-to-particle-accelerators-powerpoint-ppt-presentation
 
 % All the equations are taken from: https://github.com/natriant/exploring_SPS
@@ -922,7 +922,7 @@ The headtail modes introduce an exponential dependence on the amplitude of the b
 \begin{equation}\label{eq:HeadtailModesExponentialDependence}
     u(t) \propto e^{i(\Omega_{u0}^{(l)}+\Delta \Omega_u^{(l)})t} =  e^{i(\Omega_{u,0}^{(l)}+\Delta \Omega_{u, \mathrm{{re}}}^{(l)})t} e^{-\Delta \Omega_{u, \mathrm{{im}}}^{(l)} t},
 \end{equation}
-where $\Omega_{u0}^{(l)}$ is the real-valued, unperturbed frequency of the head-tail mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch).
+where $\Omega_{u0}^{(l)}$ is the real-valued, unperturbed frequency of the head-tail mode $l$, and $\Delta \Omega_u ^{(l)} = \Delta \Omega_{u, \mathrm{re}}^{(l)} + i \Delta \Omega_{u, \mathrm{im}}^{(l)}$ is the complex coherent frequency shift introduced by the beam impedance. From Eq.~\eqref{eq:HeadtailModesExponentialDependence} it can be seen that the real part $\Delta \Omega_{u, \mathrm{re}}^{(l)}$ modifies the oscillation frequency. The second term $e^{-\Delta \Omega_{u, \mathrm{im}}^{(l)}t}$ illustrates that the amplitude of the motion grows for $\Delta \Omega_{u, \mathrm{im}}^{(l)}<0$ (unstable bunch) and is damped for $\Delta \Omega_{u, \mathrm{im}}^{(l)}>0$ (stable bunch).
 
 
 The complex coherent frequency shift for the mode $l$ for a bunched beam is (Chapter 6 in.~\cite{Chao:collective}): % Eq.(6.207)
@@ -957,7 +957,7 @@ where $\Omega$ (Ohm) is the SI unit of resistance.
 %- 1 [Ohm] = (1/9)*10**(-11) [s]/[cm]
 %- 1 [Ohm]/[m] = (1/9)*10**(-13) [s]/[cm]**2 
 
-Finally, the imaginary part of the impedance, leads to a real coherent frequency shift which can be expressed in tune untis as follows~\cite{PhysRevAccelBeams.23.124402}:
+Finally, the imaginary part of the impedance, leads to a real coherent frequency shift which can be expressed in tune units as follows~\cite{PhysRevAccelBeams.23.124402}:
 \begin{equation}\label{eq:real_tunu_mode_l}
     \Delta Q_u^{(l)} = \frac{\Delta \Omega_{u, \mathrm{{re}}}^{(l)}}{\omega_\mathrm{rev}},
 \end{equation}
@@ -966,7 +966,7 @@ The real part of the impedance, leads to an imaginary coherent frequency shift w
 \begin{equation}\label{eq:imaginary_tune_mode_l}
     1/\tau_u^{(l)} = -\frac{\Delta \Omega_{u, \mathrm{{im}}}^{(l)}}{T_\mathrm{rev}},
 \end{equation}
-where $\Delta \Omega_{u, \mathrm{{im}}}^{(l)}$ the imaginary part of the complex tune shift as defined in Eq.~\eqref{eq:complext_tune_shift_modes_m}. The $1/\tau_u^{(l)}$ is expressed in units of 1/turns. 
+where $\Delta \Omega_{u, \mathrm{{im}}}^{(l)}$ the imaginary part of the complex tune shift as defined in Eq.~\eqref{eq:complext_tune_shift_modes_m}. %The $1/\tau_u^{(l)}$ is expressed in units of 1/turns. 
 
 The real coherent tune shift introduced by the beam transverse impedance plays a crucial role in the studies with Crab Cavities discussed in the following.
 
@@ -987,7 +987,7 @@ For the study of beam dynamics, it is essential to know the detailed arrangement
 MAD-X~\cite{madx} is a code which is used extensively for the design and simulation of the accelerators at CERN. The official optics repositories of the CERN machines can be found in~\cite{cern_optics_repo}.
 
 \textbf{SPS optics}\\
-The studies presented in this thesis are performed for the nominal SPS optics for the LHC filling which are called Q26 optics as the integer part of the tune in both planes is 26. The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
+The studies presented in this thesis are performed for the SPS optics called Q26 optics (as the integer part of the tune in both planes is 26). The model for the Q26 optics can be found in the official CERN repository~\cite{SPS_optics_repo} and will be referred to as the nominal SPS model in this thesis. The values of the optics parameters in what follows correspond to the model values unless stated otherwise.
 \normalsize{\textbf{} % fixed with duck tape, DO NOT REMOVE THIS LINE. error in compiling.
 
 
@@ -1049,16 +1049,16 @@ Below the main steps for setting up a simulation are listed: % according to the 
     It should be noted that if no detuning source is added (see next step) the matrix $M$ is the same for all particles.
     \item \textbf{Chromaticity and detuning with transverse amplitude:} The chromaticity (up to higher orders) and amplitude detuning are implemented as a change of the phase advance of each individual particle as follows (example for the horizontal plane):
     \begin{equation}\label{eq:change_phase_advance_detunign}
-        \Delta \psi_{x, i \mathrm{IP0 \to IP1 }} = \Delta \psi_{x, \mathrm{IP0 \to IP1 }} + (\xi^{1}_x \delta_i + \alpha_{xx}J_{x, i} + \alpha_{xy}J_{y,i}) \frac{\Delta \psi_{x, \mathrm{IP0 \to IP1 }}}{2\pi Q_x}, 
+        \Delta \psi_{x, i \mathrm{IP0 \to IP1 }} = \Delta \psi_{x, \mathrm{IP0 \to IP1 }} + (\xi_x \delta_i + \alpha_{xx}J_{x, i} + \alpha_{xy}J_{y,i}) \frac{\Delta \psi_{x, \mathrm{IP0 \to IP1 }}}{2\pi Q_x}, 
     \end{equation}
-    where $i=1, ..., N_\mathrm{mp}$ with $N_\mathrm{mp}$ being the number of macroparticles, $\Delta \psi_{x, \mathrm{IP0 \to IP1 }}$ is the phase advance for all macroparticles defined in the previous step, $\xi_x^{1}$ the horizontal chromaticity of first order (see Eq.~\eqref{eq:chroma_up_to_order_m} for $n=1$) normalised to the betatron tune, $\alpha_{xx}$ and $\alpha_{xy}$ are the detuning coefficients, while $J_x$ and $J_y$ are the horizontal and vertical actions of the macroparticle. Therefore, in the presence of detuning the elements of the $M$ matrix (introduced in Eq.~\eqref{eq:linear_transfer_matrix}) are different for every particle.
+    where $i=1, ..., N_\mathrm{mp}$ with $N_\mathrm{mp}$ being the number of macroparticles, $\Delta \psi_{x, \mathrm{IP0 \to IP1 }}$ is the phase advance for all macroparticles defined in the previous step, $\xi=Q_x^\prime/Q_x$ the relative horizontal chromaticity of first order () $\alpha_{xx}$ and $\alpha_{xy}$ are the detuning coefficients, while $J_x$ and $J_y$ are the horizontal and vertical actions of the macroparticle. Therefore, in the presence of detuning the elements of the $M$ matrix (introduced in Eq.~\eqref{eq:linear_transfer_matrix}) are different for every particle.
 
     \item \textbf{Longitudinal tracking:}  %In PyHEADTAIL the longitudinal particle dynamics are described with the longitudinal equations of motion introduced in Eq.~\eqref{eq:long_eq_motion_z} and ~\eqref{eq:long_eq_motion_delta}
-    The longitudinal coordinates are advanced once per turn after solving numerically the equations of motion introduced in Eq.~\eqref{eq:long_eq_motion_z} and Eq.~\eqref{eq:long_eq_motion_delta}. The motion can be linear or not (non-linear RF system). The studies presented in this thesis use the linear longitudinal tracking.
+    The longitudinal coordinates are updated once per turn after solving numerically the equations of motion introduced in Eq.~\eqref{eq:long_eq_motion_z} and Eq.~\eqref{eq:long_eq_motion_delta}. The motion can be linear or not (non-linear RF system). The studies presented in this thesis use the linear longitudinal tracking.
     %  The solutions of the above equation is obtained numerically~\cite{pyheadtail_schenk}. 
     % "numerically", slide 37: https://www2.kek.jp/accl/legacy/seminar/file/PyHEADTAIL_PyECLOUD_2.pdf . Symplectic integration E. Forst and W. herr
 
-    \item \textbf{Trasnverse impedance effects:} In PyHEADTAIL, wakefield kicks are used to implement the effect of the transverse impedance in the time domain. To improve the computational efficiency, the total impedance of the full machine is lumped at one of the interaction points along the ring and the kicks are applied to the macroparticles once per turn. Additionally, instead of computing the wakefield kicks from each particle to the rest individually, the bunch is divided into a number of slices longitudinally and the macroparticles in each slice recieve a wakefield kick generated by the preceding slices\footnote{This is valid in the ultrarelativistic scenario when no wakefield is generated in front of the bunch. The condition applies for the SPS experiments described in this thesis, performed at 270\,GeV.}~\cite{Salvant:1274254}. This is illustrated schematically in Fig.~\ref{fig:longitudinal_slicing_wakefields}. A large number of slices is required such as the wakes can be assumed constant within the slice. A high number of macroparticles is also needed in order to avoid statistical noise effects caused by undersampling~\cite{pyheadtail_manual_adrian}. For the studies presented, 500 slices are used over a range of three rms bunch lengths in both directions from the bunch center with the bunch being represented by $10^6$ macroparticles (instead of $10^5$ required for simulations without impedance effects).
+    \item \textbf{Transverse impedance effects:} In PyHEADTAIL, wakefield kicks are used to implement the effect of the transverse impedance in the time domain. To improve the computational efficiency, the total impedance of the full machine is lumped at one of the interaction points along the ring and the kicks are applied to the macroparticles once per turn. Additionally, instead of computing the wakefield kicks from each particle to the rest individually, the bunch is divided into a number of slices longitudinally and the macroparticles in each slice recieve a wakefield kick generated by the preceding slices\footnote{This is valid in the ultrarelativistic scenario when no wakefield is generated in front of the bunch. The condition applies for the SPS experiments described in this thesis, performed at 270\,GeV.}~\cite{Salvant:1274254}. This is illustrated schematically in Fig.~\ref{fig:longitudinal_slicing_wakefields}. A large number of slices is required such as the wakes can be assumed constant within the slice. A high number of macroparticles is also needed in order to avoid statistical noise effects caused by undersampling~\cite{pyheadtail_manual_adrian}. For the studies presented, 500 slices are used over a range of three rms bunch lengths in both directions from the bunch center with the bunch being represented by $10^6$ macroparticles (instead of $10^5$ required for simulations without impedance effects).
     
 
 
@@ -1089,7 +1089,7 @@ Below the main steps for setting up a simulation are listed: % according to the 
     where $N_\mathrm{sl}$ is the number of longitudinal slices, $N_k$ and $\langle u_k \rangle$ the number of macroparticles ad the center of mass in $u$ plane in the $k^\mathrm{th}$ slice.
     
     
-    The wake functions are available from detailed imepdance model of the machine which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. Typically, the impedance model of an accelerator is provided normalised with the average value of the horizontal and vertical beta functions over the machine at the respective plane. Therefore the transverse beta functions at the location where the wakefield kicks are applied on the beam must equal these average values.% More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
+    The wake functions are available from the detailed imepdance model of the machine, which are obtained from a combination of theoretical computations and electromagnetic simulations and can be imported in PyHEADTAIL in form of tables. Typically, the impedance model of an accelerator is provided normalised with the average value of the horizontal and vertical beta functions over the machine at the respective plane. Therefore the transverse beta functions at the location where the wakefield kicks are applied on the beam must equal these average values.% More details on the SPS impedance model are provided in Section~\ref{sec:sps_impedance_model}.
     
     \item \textbf{Data acquisition:} The updated macroparticle coordinates after each turn are available at IP0 for post-processing. Typically, $10^{5}$ turns are required for the noise-induced emittance growth simulations presented in this thesis. 
     
@@ -1105,7 +1105,7 @@ Figure~\ref{fig:pyheadtail_accelerator_model} shows a graphic representation of 
     \centering         
     \includegraphics[width=0.6\textwidth]{images/Ch2/accelerator_model_graph_pyheadtail.png}
         \caption{Graphical representation of the accelerator model and tracking procedure in PyHEADTAIL %(inspired by the graphs in Refs.~\cite{pyheadtail_schenk, inproceedings_ibs_pyheadtail}).
-        In this example the ring is split in four segments seperated by the interaction points (IPs). Wakefield and multipole kicks are applied to the macroparticles in IP2 and IP4. The macroparticles are transported between the IPs by a linear transfer map (which can include detuning effects) in the transverse plane.  The longitudinal coordinates are updated once per turn.}
+        In this example the ring is split in four segments seperated by the interaction points (IPs). Wakefield and multipole kicks are applied to the macroparticles in IP2 and IP3. The macroparticles are transported between the IPs by a linear transfer map (which can include detuning effects) in the transverse plane.  The longitudinal coordinates are updated once per turn.}
         \label{fig:pyheadtail_accelerator_model}
  \end{figure}
 
@@ -1119,7 +1119,7 @@ Sixtracklib~\cite{sixtracklib_repo} is a library for performing single charged p
 
 
 
-Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies of this thesis, we do not give further description here, but refer the reader to the references mentioned above.
+Since Sixtracklib code was not used as extensively as PyHEADTAIL for the studies of this thesis, no further description is provided here, but the reader is referred to the references mentioned above.
 
 %Sixtracklib is described here in much less detail than PyHEADTAIL as its used less extensively for the studies in this thesis and additionally because the author didn't build and customize the machine and the beam dynamics effects like in PyHEADTAIL.
 
