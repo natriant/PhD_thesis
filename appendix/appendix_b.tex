@@ -380,8 +380,7 @@ In detail, the steps are as follows:
 
     It is clear that $\fourierxform{\phi}_n(f_k)$ has both positive and negative frequencies and the magnitude is symmetric in $f_k$.
     
-    \item Finally, apply the inverse Fourier transform, Eq.~(\ref{eq:iDFT_definiton}), to $\fourierxform{\phi}_n(f_k)$. The  output  is  a  random  discrete  time  series of $N$ values sampled every $\Delta t = 1/f_s=1/f_{rev}$. In other words, $\phi_n$ forms the sequence of noise kicks that will act on the particles in the beam on each turn in the simulations.
-
+    \item Finally, apply the inverse Fourier transform, Eq.~(\ref{eq:iDFT_definiton}), to $\fourierxform{\phi}_n(f_k)$. The  output is a  random  discrete  time  series, $\phi(n\Delta t)$ of $N$ values sampled every $\Delta t = 1/f_s=1/f_\mathrm{rev}$. In other words, $\phi_n$ forms the sequence of noise kicks that will act on the particles in the beam on each turn in the simulations.
 \end{enumerate} 
 
 %Path to plotting script: cernbox/Project_thesis/scripts_for_simple_figures_plot/measured_psd_to_time_series
@@ -417,14 +416,14 @@ In detail, the steps are as follows:
     \end{subfigure}
     \hfill
     \centering
-    \begin{subfigure}[t]{0.42\textwidth}
+    %\begin{subfigure}[t]{0.42\textwidth}
         %\hspace{3.5cm} % manually move the figure to the center. But caption doesn't move
-        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_yn_fft.png}
-        \caption{Amplitudes of the spectral components of the Fourier transform. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
-        }
-        \label{fig:coast1_setting2_e}
-    \end{subfigure}
-    \hfill
+     %   \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_yn_fft.png}
+      %  \caption{Amplitudes of the spectral components of the Fourier transform. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
+     %   }
+     %   \label{fig:coast1_setting2_e}
+    %\end{subfigure}
+    %\hfill
     %\begin{subfigure}[b]{0.45\textwidth}
     %    \centering
     %    \includegraphics[width=1\textwidth]{coast1_setting2_generated_phase_noise_kicks.png}
