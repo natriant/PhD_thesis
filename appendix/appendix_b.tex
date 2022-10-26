@@ -1,7 +1,7 @@
 % overleaf document: measured noise spectrum2 simulations with some small modifications. Also use passive voice instead of "we". 
 %% plots are produced: cernbox/Project_thesis/scripts_for_simple_figures_plots (also at /eos/user/n/natriant/2018/CC_MD_2018_summary/measured_psd/job000). and for Fig.6 /eos/user/n/natriant/pyheadtail_data/9July2021. 
 
-This appenidx discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
+This appendix discusses the basic terminology of signal processing and gives the definitions which are used in this thesis. The focus is on Fourier transform and the power spectral density. First the most general mathematical definitions which concern signals continuous in time and with infinite time duration are discussed. Secondly, the definitions are given for signals sampled at a finite number of points, which are considered for the measurements and for the computational analysis. Furthermore, the quantities that are used most often for noise power spectrum measurements and their relationship to the mathematical definitions of the power spectral density are discussed. Finally, the way of applying a measured noise spectrum in numerical simulations is described.
 
 \section{Continuous-time analysis}\label{app:continuous_time_analysis}
 \subsubsection*{Fourier transform} %\hfill \break
@@ -115,7 +115,7 @@ The components of the discrete Fourier transform are calculated at frequencies $
      \label{fig:signal_and_DFT_example}
 \end{figure}
 
-When using this convension the Fourier tranfrom components outisde of the above mentioned frequency range are considered zero. Note that the zero frequency, $f_k=0$, corresponds to $n=0$. The positive frequencies, $0  < f_k < + f_s/2$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-f_s/2  < f_k < 0$ correspond to values $-f_s/2 < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - f_s/2$ and $+f_s/2$.
+When using this convention the Fourier tranfrom components outisde of the above mentioned frequency range are considered to be zero. Note that the zero frequency, $f_k=0$, corresponds to $n=0$. The positive frequencies, $0  < f_k < + f_s/2$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-f_s/2  < f_k < 0$ correspond to values $-f_s/2 < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - f_s/2$ and $+f_s/2$.
 
 %The positive frequencies, $0  < f_k < + \frac{N-1}{2T_\mathrm{total}}$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-\frac{N-1}{2T_\mathrm{total}}  < f_k < 0$ correspond to values $(N-1)/2 < f_k < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - \frac{N-1}{2T_\mathrm{total}}$ and + $\frac{N-1}{2T_\mathrm{total}}$
 
@@ -142,7 +142,7 @@ where $f_k \in \left[-f_s/2, + f_s/2 \right]$. $C_\mathrm{PSD}$ is a normalisati
 \begin{equation}\label{eq:Sxx_definition_discrete_normalized}
     S_{yy}(f_k) = \frac{1}{N^2 \Delta f} \mid \fourierxform{y}_k(f_k) \mid ^2,
 \end{equation}
-where  $\Delta f = 1/T_\mathrm{total}$ the frequency resolution and $N$ the number of samples.
+where  $\Delta f = 1/T_\mathrm{total}$ is the frequency resolution and $N$ the number of samples.
     
 \begin{figure}[!ht]
     \centering         
@@ -177,9 +177,9 @@ The power spectral density is expressed in terms of the square of the amplitude 
 %\end{figure}
 
 \subsubsection*{Normalisation factor for the power spectral density of a discrete-time signal}\label{appendix_dft_normalisation}
-This paragraph, discusses the choice of the normalisation factor $C_\mathrm{PSD}=1/(N^2 \Delta f)$ for the power spectral density of a discrete-time signal defined in Eq.~\eqref{eq:Sxx_definition_discrete_not_normalised}.
+This paragraph discusses the choice of the normalisation factor $C_\mathrm{PSD}=1/(N^2 \Delta f)$ for the power spectral density of a discrete-time signal defined in Eq.~\eqref{eq:Sxx_definition_discrete_not_normalised}.
 
-The discussion concerns noise signals with mean zero which is the case for the noise spectra considered in the thesis. In particular the mean of the white noise spectra used in the simulation studies is zero by definition. The mean of the measured noise signal corresponds to the DC componenet which for the spectra discussed in this thesis was also considered at 0\,Hz.
+The discussion concerns noise signals with mean zero, which is the case for the noise spectra considered in the thesis. In particular the mean of the white noise spectra used in the simulation studies is zero by definition. The mean of the measured noise signal corresponds to the DC componenet which for the spectra discussed in this thesis was also considered at 0\,Hz.
 
 %. This is justified since this conditions is valid
 
@@ -363,7 +363,7 @@ In other words, the power spectral density at a given frequency, $f_k$, for a wh
 
 \section{Applying a measured noise spectrum in numerical simulations}\label{sec:measured_spectra_to_time_series}
 
-This section discusses the steps required to convert a measured noise spectrum to a discrete-time series i.e. a sequence of noise kicks, that can be used in tracking simulations. For the discussion, an example phase noise spectrum measured during the $\CC$ tests in SPS in 2018 is discussed (see Fig.~\ref{fig:coast1_setting2_a}). Note that the steps are the same for an amplitude noise spectrum. The procedure involves converting the measured noise power to the power spectral density and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. 
+This section discusses the steps required to convert a measured noise spectrum to a discrete-time series, i.e. a sequence of noise kicks, that can be used in tracking simulations. For the discussion, an example phase noise spectrum measured during the $\CC$ tests in SPS in 2018 is used (see Fig.~\ref{fig:coast1_setting2_a}). Note that the steps are the same for an amplitude noise spectrum. The procedure involves converting the measured noise power to the power spectral density and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. 
 
 In detail, the steps are as follows:
 
@@ -375,7 +375,9 @@ In detail, the steps are as follows:
     \item Re-sample the noise spectrum. The measured noise power values are equally spaced in frequency on a logarithmic scale. A linear interpolation is needed so that they are equally spaced on a linear scale, every $\Delta f = f_s/N$. As discussed in Section~\ref{sec:benchmark_theory_with_pyheadtail}, since the beam encounters the noise once per turn, the sampling frequency of the noise spectrum in the simulations equals the revolution frequency, $f_s=f_\mathrm{rev}(=43.38$ kHz for the SPS). Note that the frequency spectrum of the noise in the simulations and hence the linear interpolation extends up to $f_s/2$ as illustrated in Fig.~\ref{fig:coast1_setting2_c}. In our simulations, $N=10^5$ turns are used. The result is shown in Fig.~\ref{fig:coast1_setting2_c}.
     %\item Create the positive spectral components of the two-sided power spectrum, $S_\phi$, using Eq.~(\ref{eq:two-sided_2_single-sided}) for $f_k>0$. The result is shown in Fig.~\ref{fig:coast1_setting2_d}.
     \item Compute the amplitude of the spectral components of the Fourier transform, $\left | \fourierxform{\phi}_n(f_k) \right | $ according to Eq.~(\ref{eq:Sxx_definition_discrete_normalized}). %It should be noted, however, that this computation is done only for the positive part of the spectrum. Fig.~\ref{fig:coast1_setting2_e} depicts the result of this computation. 
-    \item Generate the phase information for each positive spectral component. By definition the power spectral density does not contain any information about the phase of the frequency components. Therefore, one should generate this information by giving a random phase $\theta(f_k)$ obtained from uniform distribution between 0 and $2\pi$.
+    \item Generate the phase information for each positive spectral component. By definition the power spectral density does not contain any information about the phase of the frequency components. Therefore, a random phase,  $\theta(f_k)$, obtained from a uniform distribution between 0 and $2\pi$ is generated for each frequency. 
+        
+    %one should generate this information by giving a random phase $\theta(f_k)$ obtained from uniform distribution between 0 and $2\pi$.
     \item Construct a one-sided frequency domain signal, $\fourierxform{\phi}_n^\mathrm{os}(f_k) =\left| \fourierxform{\phi}_n(f_k) \right| e^{\imagunit \theta(f_k)}$.  Once again this computation is done only for the positive spectral components, with $f_k \in \left[\Delta f,+\frac{f_s}{2} \right ]$.
     \item Construct the two-sided Fourier transform spectrum. First, create the negative components of the Fourier transform by taking the complex conjugate of the positive components. Furthermore, the information for the zero frequency component (DC) is missing from the measured spectrum, since this extends from  1 kHz to 10 MHz. In order to do the conversion correctly, the zero frequency term is set to 0, so that $\fourierxform{y}_n(0)=0$. The two-sided Fourier transform is then given by:
     
@@ -469,7 +471,7 @@ Another way to validate the method for producing a sequence of noise kicks from 
 
 In the simulations, which were performed with PyHEADTAIL, the beam was tracked for $10^5$ turns which corresponds to about 2.5\,s in the SPS. A kick representing the effect of the crab cavities was applied on each turn following Eq.~\eqref{eq:phase_noise_kick}. The noise kicks that the beam encounters every turn at the CC location were generated from the phase and amplitude noise spectra of from Coast1-Setting2 of 2018 (Fig.~\ref{fig:example_PN_and_AN_coast1_setting2}). 
 
-It should be noted, however, that the sequence of noise kicks includes a random factor through the set of random phases $\theta(f_k)$. To reduce the uncertainty in the results, multiple simulation runs were conducted. The set of random phases was regenerated randomly for each of 10 runs with a different seed each time. For each run, the initial bunch distribution was also regenerated randomly 3 times. The mean and the standard deviation of the emittance values obtained from the tracking were computed over all trials. The emittance growth rate was computed by performing a linear fit to the mean of the emittance values.
+It should be noted, however, that the sequence of noise kicks includes a random factor through the set of random phases $\theta(f_k)$. To reduce the uncertainty in the results, multiple simulation runs were conducted. The set of random phases was regenerated randomly for each of 10 runs with a different seed each time. For each run, the initial bunch distribution was also regenerated randomly 3 times. The mean and the standard deviation of the emittance values obtained from the tracking were computed over all runs. The emittance growth rate was computed by performing a linear fit to the mean of the emittance values.
 
 Figures~\ref{fig:emitGrowth_AN} and~\ref{fig:emitGrowth_PN} show the emittance growth for the case of amplitude noise and phase noise respectively. The emittance evolution in the presence of both types of noise is also illustrated in Fig.~\ref{fig:emitGrowth_AN_and_PN}. The simulated emittance growth rates show very good agreement with the predictions from the analytical model. The results again support the validity of the method for generating a sequence of noise kicks from a measured noise power spectrum, described in this section.
 

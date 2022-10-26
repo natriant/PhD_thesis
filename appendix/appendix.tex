@@ -40,7 +40,7 @@ For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  
     \mathrm{Var}(x) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle)^2.
 \end{equation}
 % compatible with numpy.var, tested at: /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
-Alternatively, the variance can be expressed in a simpler way as follows (see Ref.~\cite{lvp.b313005720130101} p.24-25):
+Alternatively, the variance can be expressed in a simpler way as follows (see p.24-25 in~\cite{lvp.b313005720130101}):
 \begin{equation}\label{eq:var_def_2}
     \mathrm{Var}(x) = \langle x^2 \rangle - \langle x \rangle^2.
 \end{equation}
@@ -106,7 +106,7 @@ Suppose that we have $N$ data points ($x_i, y_i \pm \Delta y_i $), where $ \Delt
     \chi^2 = \sum_{i=1}^{N}\frac{[y_{i}-f(x_{i},\alpha, \beta)]^2}{\Delta y_i^2}
 \end{equation}
 
-\normalsize{\textbf{Error of the fit}}\\
+\normalsize{\textbf{Uncertainty of the fit}}\\
 The standard deviation of the fit results, $\sigma_\alpha, \sigma_\beta$, is estimated by the square root of the diagonal of their covariant matrix:
 \begin{equation}\label{eq:cov_matrix_fit_results}
     \begin{pmatrix}
