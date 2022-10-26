@@ -359,15 +359,12 @@ This section discusses the steps required to convert a measured noise spectra to
 In detail, the steps are as follows:
 
 \begin{enumerate}
-    \item  Convert the measured noise power $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] to the power spectral density, $S_{\Delta \phi}(f_k)$, recalling that $S_{\Delta \phi}(f_k) = \mathcal{L}(f_k)$ (see Section~\ref{sec:injected_RF_noise}). For now the analysis is limited to $f_k \in [1, 10^{3}]$\,kHz. Note, that both $\mathcal{L}(f_k)$ and $S_{\Delta \phi}(f_k)$ have both negative and positive components and are symmetric around the DC component, $f_k=0$\,Hz (see Section~\ref{sec:injected_RF_noise}).
-    
-   
+    \item  Convert the measured noise power $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] to the power spectral density, $S_{\Delta \phi}(f_k)$, recalling that $S_{\Delta \phi}(f_k) = \mathcal{L}(f_k)$ (see Section~\ref{sec:injected_RF_noise}). This is shown in Fig.~\ref{fig:coast1_setting2_b}. For now the analysis is limited to $f_k \in [1, 10^{3}]$\,kHz. Note, that both $\mathcal{L}(f_k)$ and $S_{\Delta \phi}(f_k)$ have both negative and positive components and are symmetric around the DC component, $f_k=0$\,Hz (see Section~\ref{sec:injected_RF_noise}).
 
-    
     %$G_\phi(f_k)$\,[$\mathrm{rad^2}$/Hz] using Eq.~(\ref{eq:L_to_G}) (Fig.~\ref{fig:coast1_setting2_b}).
-    \item Re-sample the noise spectrum. The measured noise power values are equally spaced in frequency on a logarithmic scale. A linear interpolation is needed such that they are equally spaced on a linear scale, every $\Delta f = f_s/N$. As already mentioned, since the beam encounters the crab cavities once each turn, $f_s=f_{rev}(=43.38$ kHz for the SPS). To this end, the linear interpolation extends up to $f_s/2$ as illustrated in Fig.~\ref{fig:coast1_setting2_c}. In our simulations, $N=10^5$ turns are used.
-    \item Create the positive spectral components of the two-sided power spectrum, $S_\phi$, using Eq.~(\ref{eq:two-sided_2_single-sided}) for $f_k>0$. The result is shown in Fig.~\ref{fig:coast1_setting2_d}.
-    \item Compute the amplitude of the spectral components of the Fourier transform, $\left | \fourierxform{\phi}_n(f_k) \right | $ according to Eq.~(\ref{eq:Sxx_definition_discrete_normalized}). It should be noted, however, that this computation is done only for the positive part of the spectrum. Fig.~\ref{fig:coast1_setting2_e} depicts the result of this computation. 
+    \item Re-sample the noise spectrum. The measured noise power values are equally spaced in frequency on a logarithmic scale. A linear interpolation is needed such that they are equally spaced on a linear scale, every $\Delta f = f_s/N$. As discussed in Section~\ref{sec:benchmark_theory_with_pyheadtail} since the beam encounters the noise once per turn, the sampling frequency of the noise spectrum in the simulations equals the revolution frequency, $f_s=f_\mathrm{rev}(=43.38$ kHz for the SPS). Note that the frequency spectrum of the noise in the simulations and hence the linear interpolation extends up to $f_s/2$ as illustrated in Fig.~\ref{fig:coast1_setting2_c}. In our simulations, $N=10^5$ turns are used. The result is shown in Fig.~\ref{fig:coast1_setting2_c}.
+    %\item Create the positive spectral components of the two-sided power spectrum, $S_\phi$, using Eq.~(\ref{eq:two-sided_2_single-sided}) for $f_k>0$. The result is shown in Fig.~\ref{fig:coast1_setting2_d}.
+    \item Compute the amplitude of the spectral components of the Fourier transform, $\left | \fourierxform{\phi}_n(f_k) \right | $ according to Eq.~(\ref{eq:Sxx_definition_discrete_normalized}). %It should be noted, however, that this computation is done only for the positive part of the spectrum. Fig.~\ref{fig:coast1_setting2_e} depicts the result of this computation. 
     \item Generate the phase information for each positive spectral component. By definition the power spectral density does not contain any information about the phase of the frequency components. Therefore, one should generate this information by giving a random phase $\theta(f_k)$ obtained from uniform distribution between 0 and $2\pi$.
     \item Construct a one-sided frequency domain signal, $\fourierxform{\phi}_n^\mathrm{os}(f_k) =\left| \fourierxform{\phi}_n(f_k) \right| e^{\imagunit \theta(f_k)}$.  Once again this computation is done only for the positive spectral components, with $f_k \in \left[\Delta f,+\frac{f_s}{2} \right ]$.
     \item Construct the two-sided Fourier transform spectrum. First, create the negative components of the Fourier transform by taking the complex conjugate of the positive components. Furthermore, the information for the zero frequency component (DC) is missing from the measured spectrum, since this extends from  1 kHz to 10 MHz. In order to do the conversion correctly, the zero frequency term is set to 0, so that $\fourierxform{y}_n(0)=0$. The two-sided Fourier transform is then given by:
@@ -406,7 +403,7 @@ In detail, the steps are as follows:
     \hfill
     \begin{subfigure}[t]{0.42\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_linear_interpolation.png}
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_v3.png}
         \caption{Linear interpolation of the measured noise spectrum. %sampled every $\Delta f = f_{rev}/N$. Here $f_{rev}$=43.45 [kHz] and N=$10^5$ turns are used.}
         }
         \label{fig:coast1_setting2_c}
@@ -414,8 +411,8 @@ In detail, the steps are as follows:
     \hfill
     \begin{subfigure}[t]{0.42\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting2_Gyy_2_Syy.png}
-        \caption{Positive spectral components of the two-sided power spectrum $S_\phi$.}
+        \includegraphics[width=1\textwidth]{./images/app_B/coast1_setting3_v4.png}
+        \caption{Amplitudes of the spectral components of the Fourier transform.}
         \label{fig:coast1_setting2_d}
     \end{subfigure}
     \hfill
