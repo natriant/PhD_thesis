@@ -57,7 +57,7 @@ Figure~\ref{fig:sampling_of_continuous_signal} shows a part of a continuous sign
 
 \begin{figure}[!ht]
      \centering         
-     \includegraphics[width=0.5\textwidth]{./images/app_B/approximation_of_signal_by_sampling_v2.png}
+     \includegraphics[width=0.6\textwidth]{./images/app_B/approximation_of_continuous_to_discrete_signal.png}
          \caption{Sampling of the continuous signal $y(t)$ at a finite number of points $N$. The sampled signal is the discrete-time signal $y(n\Delta t)$ with $\Delta t$ the sampling interval and  $n$ an integer such that $n \in \left[0,N-1 \right ]$.}
          \label{fig:sampling_of_continuous_signal}
 \end{figure}
@@ -223,7 +223,7 @@ Hence, the normalisation factor in Eq.~\eqref{eq:Sxx_definition_discrete_not_nor
 \textbf{Computation of power spectral density for white noise signals}\\
 At this point it is worth elaborating on the computation of the power spectral density, in the context of the noise effects in a synchrotron that are studied in this thesis.
 
-In Chapter~\ref{Ch:CC_noise_theory} it was discussed that the noise effects are modeled as kicks which update the angle co-ordinates of the particles and which are applied to them once per turn and thus they consist of a discrete-time signal. The power spectral density of that noise signal is given by Eq.~\eqref{eq:autocorrelation_zero_lag_discrete}.  Now, given the fact that in an accelerator the particles receive the noise kicks once per turn, the sampling frequency, $f_s$ equals the revolution frequency of the machine, $\frev$. This means that the frequency resolution, $\Delta f$, can be written as $\Delta f = f_s/N = \frev/N$, where $N$ is the number of samples (or size) in the noise signal. 
+In Chapter~\ref{Ch:CC_noise_theory} it was discussed that the noise effects are modeled as kicks which update the angle co-ordinates of the particles and which are applied to them once per turn and thus they consist of a discrete-time signal. The power spectral density of that noise signal is given by Eq.~\eqref{eq:autocorrelation_zero_lag_discrete}.  Now, given the fact that in an accelerator the particles receive the noise kicks once per turn, the sampling frequency, $f_s$ equals the revolution frequency, $\frev$. This means that the frequency resolution, $\Delta f$, can be written as $\Delta f = f_s/N = \frev/N$, where $N$ is the number of samples (or size) in the noise signal. 
 
 Furthermore, the studies consider white noise, which is a random signal with the same amplitude (intensity) at all the frequencies which results in a uniform power spectral density. The white noise can be treated in the discrete-time domain as a sequence of uncorrelated random variables taken from a Gaussian distribution with mean zero and finite standard deviation, $\sigma_\mathrm{white}$.  Since by definition the power spectral density (for white noise signal) is the same in every frequency, Eq.~\eqref{eq:autocorrelation_zero_lag_discrete} is re-written as:
 \begin{equation}\label{eq:psd_for_white_noise_variance_v0}
