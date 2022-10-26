@@ -297,9 +297,11 @@ In other words, the power spectral density at a given frequency, $f_k$, for a wh
 %\end{equation}
 %where $f_k$ ranges from 0 over the positive part of the spectrum. It should be emphasised that here $\mathcal{L}$ is two-sided, as defined in~\cite{IEEE:4797525}, though it is considered that the instrument displays only the positive frequencies.
 
-\section{Applying a measured noise spectrum in numerical simulations}\label{sec:measured_spectra_to_time_series}
+%\section{Applying a measured noise spectrum in numerical simulations}\label{sec:measured_spectra_to_time_series}
 
-The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used in numerical simulations. Recall, that the phase and amplitude noise are modeled in the tracking simulations as sequences of noise kicks which change the transverse angle co-ordinate of the particles each turn (see  Eqs.~\eqref{eq:amplitude_noise_kick},~\eqref{eq:phase_noise_kick} and~\eqref{eq:CC_kick_sixtracklib_vertical_noise}).
+%This section discusses the steps required to convert a measured noise spectra to a discrete-time series i.e. a sequence of noise kicks, that can be used in tracking simulations. 
+
+%The goal of this section is to describe how one can convert the measured noise spectrum from a spectrum analyzer to a discrete time series that can be used in numerical simulations. % Recall, that the phase and amplitude noise are modeled in the tracking simulations as sequences of noise kicks which change the transverse angle co-ordinate of the particles each turn (see  Eqs.~\eqref{eq:amplitude_noise_kick},~\eqref{eq:phase_noise_kick} and~\eqref{eq:CC_kick_sixtracklib_vertical_noise}).
 
 
 
@@ -340,20 +342,27 @@ The goal of this section is to describe how one can convert the measured noise s
 %In numerical simulations, $N$ is taken to be equal to the number of turns in the simulation. The total time simulated is $T=N \Delta t$, where $\Delta t$ is the sampling interval. Since the phase and amplitude noise are sequences of noise kicks which are applied to the CC voltage every turn, $\Delta t$ is equal to the time needed for one turn around the machine. For the SPS, with a revolution frequency $\frev = $43.38 kHz, $\Delta t=1/f_s = 1/\frev \approx$ 23 $\mathrm{\mu s}$. 
 %%%%%%%%%%%
 
-\subsection{Measured noise spectrum}
+%\subsection{Measured noise spectrum}
 
-As discussed in Section~\ref{sec:injected_RF_noise}, the noise spectra discussed in this thesis, were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz], where $\mathcal{L}(f)$ follows the IEEE definitions in~\cite{IEEE:4797525}. Recall that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies and as a real signal is symmetric around the DC component, $f=0$\,Hz. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed (see Fig.~\ref{fig:coast1_setting2_a}).
+%As discussed in Section~\ref{sec:injected_RF_noise}, the noise spectra discussed in this thesis, were measured with a spectrum analyzer E5052B~\cite{E5052B_insight} and are expressed as $10\log_{10}\mathcal{L}(f)$\,[dBc/Hz], where $\mathcal{L}(f)$ follows the IEEE definitions in~\cite{IEEE:4797525}. Recall that $\mathcal{L}(f)$ as defined in~\cite{IEEE:4797525} is two-sided, which means that it has both positive and negative frequencies and as a real signal is symmetric around the DC component, $f=0$\,Hz. However, since the spectrum analyser E5052B displays the logarithmic quantity $10\log_{10}\mathcal{L}(f)$ only the positive frequencies are displayed (see Fig.~\ref{fig:coast1_setting2_a}).
 
-The relation between the measured noise levels and the power spectral densities in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} following the IEEE conventions~\cite{IEEE:4797525} is given by $S_{\Delta A, \Delta \phi}(f) = \mathcal{L}(f)$ (see Table A.1 in~\cite{IEEE:4797525}), with $S_{\Delta A}$ in\,Hz$^{-1}$ and $S_{\Delta \phi}$ in $\mathrm{rad^2 Hz^{-1}}$. 
+%The relation between the measured noise levels and the power spectral densities in Eq.~\eqref{eq:dey_an} and Eq.~\eqref{eq:dey_pn} following the IEEE conventions~\cite{IEEE:4797525} is given by $S_{\Delta A, \Delta \phi}(f) = \mathcal{L}(f)$ (see Table A.1 in~\cite{IEEE:4797525}), with $S_{\Delta A}$ in\,Hz$^{-1}$ and $S_{\Delta \phi}$ in $\mathrm{rad^2 Hz^{-1}}$. 
 
 
-\subsection{Generating time series}\label{subsec:generatin_noise_kicks}
+%\subsection{Generating time series}\label{subsec:generatin_noise_kicks}
 %In the following, the steps required to generate the discrete time series $\alpha_n$ and $\phi_n$ from the measured noise spectrum are discussed. The procedure involves converting the measured noise power to the two-sided power spectral density $S_\phi(f_k)$ and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. In detail, the steps are as follows:
-In the following the steps required to generate the discrete-time series from an example phase noise spectra measured during the $\CC$ tests in SPS in 2018 are discussed (see Fig.~\ref{fig:coast1_setting2_a}). Note that the steps are the same for an amplitude noise spectra. The procedure involves converting the measured noise power to the power spectral density and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. In detail, the steps are as follows:
 
+\section{Applying a measured noise spectrum in numerical simulations}\label{sec:measured_spectra_to_time_series}
+
+This section discusses the steps required to convert a measured noise spectra to a discrete-time series i.e. a sequence of noise kicks, that can be used in tracking simulations. For the discussion an example phase noise spectra measured during the $\CC$ tests in SPS in 2018 are discussed (see Fig.~\ref{fig:coast1_setting2_a}). Note that the steps are the same for an amplitude noise spectra. The procedure involves converting the measured noise power to the power spectral density and then using the inverse Fourier transform to produce the discrete-time series of noise kicks. 
+
+In detail, the steps are as follows:
 
 \begin{enumerate}
-    \item Convert the measured noise power $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] to $S_{\Delta A, \Delta \phi}(f_k)$, recalling that 
+    \item  Convert the measured noise power $10\log_{10}\mathcal{L}(f_k)$\,[dBc/Hz] to the power spectral density, $S_{\Delta \phi}(f_k)$, recalling that $S_{\Delta \phi}(f_k) = \mathcal{L}(f_k)$ (see Section~\ref{sec:injected_RF_noise}). For now the analysis is limited to $f_k \in [1, 10^{3}]$\,kHz. Note, that both $\mathcal{L}(f_k)$ and $S_{\Delta \phi}(f_k)$ have both negative and positive components and are symmetric around the DC component, $f_k=0$\,Hz (see Section~\ref{sec:injected_RF_noise}).
+    
+   
+
     
     %$G_\phi(f_k)$\,[$\mathrm{rad^2}$/Hz] using Eq.~(\ref{eq:L_to_G}) (Fig.~\ref{fig:coast1_setting2_b}).
     \item Re-sample the noise spectrum. The measured noise power values are equally spaced in frequency on a logarithmic scale. A linear interpolation is needed such that they are equally spaced on a linear scale, every $\Delta f = f_s/N$. As already mentioned, since the beam encounters the crab cavities once each turn, $f_s=f_{rev}(=43.38$ kHz for the SPS). To this end, the linear interpolation extends up to $f_s/2$ as illustrated in Fig.~\ref{fig:coast1_setting2_c}. In our simulations, $N=10^5$ turns are used.
@@ -390,7 +399,7 @@ In the following the steps required to generate the discrete-time series from an
     \hfill
     \begin{subfigure}[t]{0.42\textwidth}
         \centering
-        \includegraphics[width=1 \textwidth]{./images/app_B/coast1_setting2_Gyy.png}
+        \includegraphics[width=1 \textwidth]{./images/app_B/coast1_setting2_v2.png}
         \caption{Measured phase noise spectrum in  units rad$^2$/Hz.}
         \label{fig:coast1_setting2_b}
     \end{subfigure}
