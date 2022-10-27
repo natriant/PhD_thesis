@@ -281,7 +281,7 @@ For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ i
     u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s) + \psi_{u,0})}+\alpha_u(s)\cos{(\psi_u(s)+ \psi_{u,0})}),
 \end{equation} 
 where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions, $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ are periodic function determined by the sequence of the quadrupole magnets in the accelerator and follow the periodicity of the machine. %Note that divergence $u^\prime$ is obtained by differentiation of the parameter $u$. 
-Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes trasnverse oscillations around the reference trajectory, which are referred to as betatron oscillations. Since the $J_u$ is constant, the beta function determines the maximum amplitude of the single particle trajectory at any given position $s$ in the ring.
+Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes transverse oscillations around the reference trajectory, which are referred to as betatron oscillations. Since the $J_u$ is constant, the beta function determines the maximum amplitude of the single particle trajectory at any given position $s$ in the ring.
 % this highlights its phyiscal significance.
 % Last sentence from here: https://indico.cern.ch/event/407247/contributions/975702/attachments/1246508/1835998/Alexandra_p.pdf
 The function $\psi_u(s)$ is the betatron phase advance from the position $s=0$ to $s$ and equals:
@@ -327,17 +327,17 @@ Up to now, the Twiss parameters were used to describe the dynamics of single par
  %\begin{equation}\label{eq:mean_u_zerp}
   %   \langle u(s) \rangle = 0,
  %\end{equation}
- Assuming that the angle and action variables are uncorrelated Eq.~\eqref{eq:statistical_average_position} becomes:
+ Assuming that the angle and action variables are uncorrelated Eq.~\eqref{eq:statistical_average_position} becomes~\cite{wolski2014}:
  \begin{equation}\label{eq:statistical_average_position_2}
      \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \rangle \langle \cos^2{\psi_u(s)} \rangle.
  \end{equation}
- Considering that the angle variables are uniformly distributed from 0 to $2\pi$: % mean of a function: https://en.wikipedia.org/wiki/Mean_of_a_function
+ Considering that the angle variables are uniformly distributed from 0 to $2\pi$~\cite{wolski2014}: % mean of a function: https://en.wikipedia.org/wiki/Mean_of_a_function
  \begin{equation}\label{eq:mean_cosine_square}
      \langle \cos^2{\psi_u(s)} \rangle = \int_{s_0}^{s_0+C_0} \cos^2{\psi_u(s)} ds =   \int_0^{2\pi} \cos^2{\psi_u(\phi)} d\phi = \frac{\pi}{2\pi} = \frac{1}{2},
  \end{equation}
  where for the integration the phase advance $\phi$ is used instead of the location $s$ along the ring for convenience. % like in Eq. (2.20)
  
- Inserting Eq.~\eqref{eq:mean_cosine_square} in Eq.~\eqref{eq:statistical_average_position} gives:
+ Inserting Eq.~\eqref{eq:mean_cosine_square} in Eq.~\eqref{eq:statistical_average_position} gives~\cite{wolski2014}:
  
  \begin{equation}\label{eq:emittance_definition_1} %Eq(4.97) wolski
      \langle u^2(s) \rangle = \beta_u(s)  \epsilon^{\mathrm{geom}}_u,
@@ -346,7 +346,7 @@ Up to now, the Twiss parameters were used to describe the dynamics of single par
  \begin{equation}\label{eq:geom_emittance_action}
      \epsilon^{\mathrm{geom}}_u=\langle J_u \rangle
  \end{equation}
- is the geometric emittance of the bunch. Assuming again that the action and angle variables are uncorrelated and that the latter are uniformly distributed from 0 to $2\pi$, Eq.~\eqref{eq:solution_eq_motion_u} and Eq.~\eqref{eq:solution_eq_motion_u_prime} results to:
+ is the geometric emittance of the bunch. Assuming again that the action and angle variables are uncorrelated and that the latter are uniformly distributed from 0 to $2\pi$, Eq.~\eqref{eq:solution_eq_motion_u} and Eq.~\eqref{eq:solution_eq_motion_u_prime} results to~\cite{wolski2014}:
  \begin{equation}\label{eq:u_uprime_eq_1}
      \langle u(s) u^\prime(s) \rangle = - \alpha_u(s) \epsilon^{\mathrm{geom}}_u,
  \end{equation}
@@ -396,7 +396,7 @@ where $\sigma_u$ is the transverse rms beam size.
  \end{equation}
 is conserved during acceleration and is often used as an alternative to the geometric emittance, especially in situations where the beam undergoes acceleration or deceleration. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
  
- It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known following Eq.~\eqref{eq:emittance_beam_size}. These two methods of computing the emittance are considered equivalent for the stdudies presented in this thesis.
+ It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known following Eq.~\eqref{eq:emittance_beam_size}. These two methods of computing the emittance are considered equivalent for the studies presented in this thesis.
  
  %. The procedure is explained in more detail in Chapter~\ref{Ch:2018_analyisis}, but here we simply note that from Eqs.~\eqref{eq:emittance_definition_1},~\eqref{eq:Sigma_matrix} and ~\eqref{eq:normalised_emittance}, we can express the emittance as:
  % For a Gaussian beam distribution the normalised beam emittance it applies:
@@ -413,7 +413,7 @@ Despite Liouville's theorem, in a real accelerator there are various phenomena t
 
 \textbf{Transfer maps and linear transfer matrix}\\
 % information and introduciton to maps:https://www.researchgate.net/publication/50819226_Direct_measurement_of_resonance_driving_terms_in_the_super_proton_synchrotron_SPS_of_cern_using_beam_position_monitors
-The motion of the particles through accelerator components can be represented by transfer maps. A transfer map is a set of functions that yields the final set of phase space coordinates as a function of the inital one.
+The motion of the particles through accelerator components can be represented by transfer maps. A transfer map is a set of functions that yields the final set of phase space coordinates as a function of the initial one.
 The transfer maps can be found from the equations of motion, which can be obtained from Hamilton's equations. For each component, the Hamiltonian that describes its full dynamics is used. Further details on this approach can be found in~\cite{wolski2014}. % p.282 wolski 
 % between them drifts.
 %Furthermore, the work presented in this thesis uses the thin lens approximation which assumes that the length of all the magnetic components tends to zero.
@@ -454,7 +454,7 @@ where $u=(x,y)$. The linear transfer matrix from the position $s_0$ to the $s_1$
             \end{pmatrix},
     \end{split}
 \end{equation}
-where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Twiss parameters at the location $s_i$, where $i=(0,1)$. Tansfer matrices provide a very convenient approach to accelerator beam dynamics, and will be used extensively throughout this thesis to study the motion of the particles in the accelerator lattice.
+where $\Delta \psi_u = \psi_u(s_1)-\psi_u(s_0)$ is the betatron phase advance between the two locations while $\alpha_u(s_i)$ and $\beta_u(s_i)$ are the Twiss parameters at the location $s_i$, where $i=(0,1)$. Transfer matrices provide a very convenient approach to accelerator beam dynamics, and will be used extensively throughout this thesis to study the motion of the particles in the accelerator lattice.
 
 \textbf{Off-momentum effects: dispersion}\\
 Up to now, the discussion was limited to on-momentum particles $\delta=0$: their momenta equals the reference momentum, $p_0$. In a real beam, however, the momenta of the individual particles are spread around the reference momentum, $p_0$. The "momentum spread" is described by the rms momentum deviation, $\sigma_\delta$. For reference, for the studies in the SPS machine presented in this thesis, $\sigma_\delta$ is in the order of magnitude of $10^{-4}$ to $10^{-3}$. Particles with $\delta < 0$ ($\delta>0$) are deflected stronger (less) by the dipole magnets than the reference particle due to lower (higher) magnetic rigidity.
@@ -472,7 +472,7 @@ The parameter $D_x(s)$ is the dispersion function which can be expressed as:
 \end{equation}
 where $K_x(s)= \frac{1}{\rho^2(s)}+k_2(s)$ like in Eq.~\eqref{eq:Hills_equation_2}. As an example, the rms horizontal dispersion of the SPS machine is about 1.8\,m (model value). The dispersion introduces a coupling between the longitudinal and transverse planes. Here the discussion is limited to the horizontal plane since typically only vertical dipolar fields are considered in a synchrotron\footnote{A corresponding discussion can be done for the vertical plane to obtain the vertical dispersion but it is out of the scope of this thesis.}.
 
-Particles with non-zero $\delta < 0$ travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. 
+Particles with non-zero $\delta$ travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. 
 
 
 %Particles with $\delta < 0$ ($\delta>0$) undergo larger (smaller) deflections from the dipole magnets than the reference particle due to lower (higher) magnetic rigidity. Therefore, they travel along the accelerator performing betatron oscillations not around the reference trajectory but around a different closed orbit as illustrated in Fig.~\ref{fig:closed_orbit_Dx} which depends on their momentum deviation, $\delta$. The change in the closed orbit with respect to the momentum deviation is called dispersion. It is evident that the dispersion introduces a coupling between the longitudinal and transverse planes.
@@ -499,7 +499,7 @@ For Gaussian beam distributions with $\langle \delta \rangle=0$, the rms beam si
     \sigma_x(s) = \sqrt{\beta_x(s) \epsilon^{\mathrm{geom}}_x+ D_x(s)^2\sigma_\delta^2}.
 \end{equation}
 
-In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm. Note that the above analyisis is valid also for the vertical plane.
+In a real machine, vertical dispersion can be introduced by sources such as steering errors of the dipole or quadrupole magnets~\cite{Wolski_uspas}. For reference, the rms vertical dispersion in the SPS machine is measured to be about 10\,cm. Note that the above analysis is valid also for the vertical plane.
 
 
 %\textbf{Dipole field errors}\\
@@ -511,7 +511,6 @@ In a real machine, vertical dispersion can be introduced by sources such as stee
 Additionally, off-momentum particles receive different focusing in the quadrupoles. This effect is known as chromaticity and is defined as the variation of the betatron tune $Q_u$ with the relative momentum deviation $\delta$. This is a result of the fact that particles with $\delta < 0$ ($\delta > 0$) are focused more (less) strongly from the quadrupoles due to their smaller (larger) magnetic rigidity. The tune shift introduced by the chromaticity for each particle, $ \Delta Q_u (\delta)= Q_u - Q_{u0}$, is: % M. Schenk p.49
 
 %The tune shift introduced by the chromaticity is: % M. Schenk p.49
-
 \begin{equation}\label{eq:chromatic_tune_shift_up_to_order_n}
    \Delta Q_u (\delta) = \sum_{n=1}^m \frac{1}{n!} Q_u^{(n)} \delta^n, 
 \end{equation}
