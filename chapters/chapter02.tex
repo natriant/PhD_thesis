@@ -518,31 +518,38 @@ where:
 \begin{equation}\label{eq:chroma_up_to_order_m}
     Q_u^{(n)} = \left. \frac{\partial ^n Q_u}{\partial \delta^n} \right|_{\delta=0}, n \in \mathbb{N},
  \end{equation}
-denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation. Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
+denotes the chromaticity of order $n$. The studies in this thesis, are limited to the chromaticity at the first order in $\delta$ $(n=1)$ which is often called linear chromaticity. For the linear chromaticity the parameter $Q_u^\prime$ is also often used. Note that the betatron tune shift of Eq.~\eqref{eq:chromatic_tune_shift_up_to_order_n} is referred to as an "incoherent" tune shift, since each particle is affected differently, depending on its individual momentum deviation. Similarly to the tune, the chromaticity is a property of the machine lattice. % the chromaticity is one number
 
 %Large values of chromaticity can lead to instabilities and therefore to beam loss~\cite{Lee:1425444}. Sextupole magnets are typically used to control the natural chromaticity of a machine and achieve the desired values for its operation.
 % Lee page 159
 
-The chromaticity can be controlled by the sextupoles
-
+%The chromaticity caused by the linear elements in the lattice is called natural chromaticity and is defined as~\cite{wolski2014}:
+The linear chromaticity can be controlled with the use of sextupole familes which are typically placed in high dispersion regions as follows~\cite{wolski2014}:%eq.(8.72) and (8.73)
+\begin{equation}
+    Q_x^\prime = -\frac{1}{4\pi}\int_{s_0}^{s_0+C_0}\beta_x(k_1+D_x k_2)ds,
+\end{equation}
+and
+\begin{equation}
+    Q_y^\prime = \frac{1}{4\pi}\int_{s_0}^{s_0+C_0}\beta_y(k_1+D_x k_2)ds,
+\end{equation}
+for the horizontal and vertical planes, respectively.
 
 \textbf{Octupole magnets}\\
 The octupole plays an important role in the studies of the thesis.
-
 The transfer map for an octupole is:
 \begin{equation}\label{eq:transfer_map_octu_thin_x}
-   \Delta x^\prime = -\frac{1}{6}{k_3L}(x^3-3xy^2),
+   \Delta x^\prime = -\frac{1}{6}{k_3L_3}(x^3-3xy^2),
 \end{equation}
 \begin{equation}\label{eq:transfer_map_octu_thin_y}
-    \Delta y^\prime= -\frac{1}{6}{k_3L}(y^3-3yx^2),
+    \Delta y^\prime= -\frac{1}{6}{k_3L_3}(y^3-3yx^2),
  \end{equation}
- where $k_3L$ is the integrated strength of the octupole of length $L$. Equations~\eqref{eq:transfer_map_octu_thin_x} and~\eqref{eq:transfer_map_octu_thin_y} are valid for the thin lens approximation. %which assumes that the length of the multipole components tends to zero. 
+ where $k_3L$ is the integrated strength of the octupole of length $L_3$. Equations~\eqref{eq:transfer_map_octu_thin_x} and~\eqref{eq:transfer_map_octu_thin_y} are valid for the thin lens approximation. %which assumes that the length of the multipole components tends to zero. 
  In that case, the rest of the co-ordinates ($x,y,z,\delta$) do not change as the particle passes through the magnet.
 
 
-As described in Chapter~10 of~\cite{Stoel:2693915} the term $-\frac{1}{6}k_3Lu^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particle, which eventually over one turn is translated to a change in their tune given by~\cite{Stoel:2693915}:
+As described in Chapter~10 of~\cite{Stoel:2693915} the term $-\frac{1}{6}k_3L_3u^3$, with $u=(x,y)$, introduces an additional phase advance in the motion of each particle, which eventually over one turn is translated to a change in their tune given by~\cite{Stoel:2693915}:
 \begin{equation}\label{eq:tune_shit_octupoles}
-    \Delta Q_u  = \frac{1}{16 \pi} k_3L\beta_u(s)^2 J_u .
+    \Delta Q_u  = \frac{1}{16 \pi} k_3L_3\beta_u(s)^2 J_u.
 \end{equation}
 It can be seen that a different change in the tune is introduced for each particle depending on their individual action, $J_u$. Note, that the above change of the tune is a result of a single octupole around the machine at a location $s$ and beta function $\beta_u(s)$. %The discussion in~\cite{Stoel:2693915} concerns motion in one plane and interaction with a single octupole per turn. 
 
@@ -940,7 +947,7 @@ The effective impedance expresses the effect of the impedance defined in Eq.~\eq
 \begin{equation}\label{eq:effective_impedance}
     Z_{\perp \mathrm{eff}}^{(l)} = \frac{\sum_{p=-\infty}^{+ \infty}Z_{\perp }^{(l)}(\omega_{p}) h_l(\omega_{p}-\omega_\xi)}{\sum_{p=-\infty}^{+ \infty}h_l(\omega_{p}-\omega_\xi)},
 \end{equation}
-where $\omega_p = (p+Q_u)\omega_0$ is the discrete spectrum of the transverse bunch oscillations with $-\infty < p < + \infty$ for a single bunch (which is the case in the following studies) or several bunches oscillating independently and $\omega_\xi=(\xi \omega_u)/\eta_p) = Q^\prime \omega_0 / \eta_p$ is the chromatic angular frequency with $\eta_p$ being the phase slip factor.
+where $\omega_p = (p+Q_u)\omega_0$ is the discrete spectrum of the transverse bunch oscillations with $-\infty < p < + \infty$ for a single bunch (which is the case in the following studies) or several bunches oscillating independently and $\omega_\xi=(\xi \omega_u)/\eta_p) = Q_u^\prime \omega_0 / \eta_p$ is the chromatic angular frequency with $\eta_p$ being the phase slip factor.
 % physical significance of effective impedance: chao p.319
 
 Last, $h_l$, is the power spectral density (definition in Appendix~\ref{ch:app_B}) of a Gaussian bunch of $l$ azimuthial mode. $h_l$ is described by: % Chao ch6 Eq.(6.143)
