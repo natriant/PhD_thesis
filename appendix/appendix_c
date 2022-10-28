@@ -78,7 +78,7 @@ Now, according to the definitions introduced in Appendix~\ref{app:statistics_def
     \Dqyrms =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
     =&~\sqrt{2^2\left [ \alpha_{yy}^2 \mathrm{Var}(J_y) + \alpha_{yx}^2 \mathrm{Var}(J_x) \right ]}\\
     =&~2 \sqrt{\alpha_{yy}^2 (\sigma_{J_y})^2 + \alpha_{yx}^2 (\sigma_{J_x})^2 }\\
-    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2 }
+    =&~2 \sqrt{\left [\alpha_{yy} (\sigma_{J_y})\right ]^2 + \left [ \alpha_{yx} (\sigma_{J_x}) \right ]^2,}
     \end{split}
 \end{equation}
 
@@ -111,16 +111,14 @@ of the lattice. %The actions later in time, even though they are considered inde
 \subsection{Residual rms tune spread in the SPS}\label{subsec:sps_tune_spread_estimation}
 %\normalsize{\textbf{Rms betatron tune spread in the SPS at 270\,GeV}}\\
 
-Here the rms tune spread in the SPS that is present in the SPS with the Landau octupoles being switched off is estimated. For the estimation only the detuning with transverse amplitude is considered.
+Here the rms tune spread in the SPS that is present in the SPS with the Landau octupoles being switched off is estimated. For the estimation, only the detuning with transverse amplitude is considered.
 
-As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443, Hannes_personal_communication} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be approximated in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
+As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_non_linear_sps} a non-linear model of the SPS was developed through beam-based measurements including the contributions from the chromatic sextupoles and the SPS multipole components in the main dipoles~\cite{Carlà:2664976, Alekou:2640326}. However, further experimental studies\cite{Bartosik:2207443} indicated stronger amplitude detuning than predicted from these multiple components. The measured amplitude detuning can be approximated in simulations by switching on the Landau octupole families with strengths $k_\mathrm{LOF}=k_\mathrm{LOD}=1$\,/m$^4$.
 
-
-Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole familes at 1\,/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
+Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole families at 1\,/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
 
 The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\epsilon_x = \epsilon_y$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:normalised_emittance} it can be seen that these values corresponds to geometric emittances of $\epsilon^{\mathrm{geom}}_x=\epsilon^{\mathrm{geom}}_y$ = 7.2\,nm.
 By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 1.9 \times 10^{-5}$ and $\Dqyrms = 2.1 \times 10^{-5}$, in the horizontal and vertical planes respectively.
-
 
 
 % The tune spread from space charge is stronger. However, the emittance growth studies require tune spread from detuning with amplitude. Not other sources. That's why here only the detuning with amplitude is considered.
@@ -130,7 +128,7 @@ By inserting these values of detuning coefficients and geometric emittances in E
 
 \section{SPS octupoles calibration}\label{sec:sps_octupole_calibration}
 % Initial note: https://www.overleaf.com/project/612f6e14a2a0d60d2ad9bdca
-In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves (current, $\mathrm{I_w}$, as a function of the strength, $b_w$, mulitplied with the octuple length $\mathrm{L_w}$, where $w=$(LOD, LOF) ) are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa} for the LOF and LOD families, respectively. The parameter, $b_w$, is defined in Eq.~\eqref{eq:mult_expansion} for $n=3$. The lengths of the octupole magnets are: $\mathrm{L_{LOF}}$=0.705\,m and  $\mathrm{L_{LOD}}$=0.677\,m.
+In this section, the relation between the current and the strength of the focusing (LOF) and defocusing (LOD) SPS octupoles is described. First, the calibration curves (current, $\mathrm{I_w}$, as a function of the strength, $b_w$, multiplied with the octuple length $\mathrm{L_w}$, where $w=$(LOD, LOF) ) are extracted for both octupole families from the LHC Software Architecture (LSA)~\cite{Kruk_lhcsoftware}. They are shown in Figs.~\ref{fig:lof_calibration_lsa} and~\ref{fig:lod_calibration_lsa} for the LOF and LOD families, respectively. The parameter, $b_w$, is defined in Eq.~\eqref{eq:mult_expansion} for $n=3$. The lengths of the octupole magnets are: $\mathrm{L_{LOF}}$=0.705\,m and  $\mathrm{L_{LOD}}$=0.677\,m.
 
  %https://github.com/natriant/exploring_SPS/tree/master/SPS%20Landau%20octupoles/callibration%20curves
 \begin{figure}[!h]
@@ -162,5 +160,5 @@ In this section, the relation between the current and the strength of the focusi
 \end{equation},
 
 
-where $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ defintion of Eq.~\eqref{eq:kn} and $B_1 \rho$ the magnetic rigidity. %It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
+where $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ definition of Eq.~\eqref{eq:kn} and $B_1 \rho$ the magnetic rigidity. %It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
