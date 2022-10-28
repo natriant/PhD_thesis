@@ -168,7 +168,7 @@ This section summarises the results of validating the Mastoridis--Baudrenghien t
 \subsection{Emittance growth simulations with CC noise modeled as transverse kicks on the angle co-ordinate.}\label{subsec:sixtracklib_kicks_transverse_angle}
 % Link to presentation with relevant slides: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8a041cb470_0_448
 
-The emittance growth simulations presented in the previous section were repeated with Sixtracklib instead of PyHEADTAIL. This basically means that the detailed optics of the SPS machine elements including non-linear elements are used for the tracking instead of modeling the ring as a simple transfer map with one interaction point where the $\CC$  kick is applied. The nominal SPS lattice of MAD-X is used: dipoles, quadrupoles, and chromatic sextupoles as discussed in Section~\ref{sec:optics_model_designs}. It can be found in the GitLab repository of~\cite{cern_optics_repo}. The linear chromaticity was adjusted to be in the range $1 < Q^\prime_{x,y} < 2$. The relevant machine and beam parameters are listed in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests}.
+The emittance growth simulations presented in the previous section were repeated with Sixtracklib instead of PyHEADTAIL. This basically means that the detailed optics of the SPS machine elements including non-linear elements are used for the tracking instead of modelling the ring as a simple transfer map with one interaction point where the $\CC$  kick is applied. The nominal SPS lattice of MAD-X is used: dipoles, quadrupoles, and chromatic sextupoles as discussed in Section~\ref{sec:optics_model_designs}. It can be found in the GitLab repository of~\cite{cern_optics_repo}. The linear chromaticity was adjusted to be in the range $1 < Q^\prime_{x,y} < 2$. The relevant machine and beam parameters are listed in Table~\ref{tab:pyheadtail_simulation_parameters_first_tests}.
 
 The rms betatron tune spread here is slightly higher than $7 \times 10^{-6}$ that was computed in the previous section, due to the larger values of linear chromaticity. To this end, tracking for $10^{5}$ turns is reasonable also for these studies. The initial distribution of $10^5$ particles follows a gaussian both in transverse and longitudinal planes.
 
@@ -189,7 +189,7 @@ The emittance and emittance growth values were computed with the same procedure 
         \centering
         \includegraphics[width=.95\linewidth]{images/Ch6/study_1_PN_sixtracklib_kicks.png}
     \end{subfigure}
-    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modeled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise, respectively.}
+    \caption{Vertical emittance growth driven by CC RF amplitude noise (left) and phase noise (right) as simulated with Sixtracklib simulation tool for a configuration close to the experimental conditions of the SPS CC tests in 2018. The CC noise is modelled as uncorrelated kicks on the angle variables of the particle every turn following Eqs.~\eqref{eq:phase_noise_kick} and.~\eqref{eq:amplitude_noise_kick} for phase and amplitude noise, respectively.}
     \label{fig:study_1_sixtracklib_normalised_momentum_kicks}
 \end{figure}
 
@@ -205,7 +205,7 @@ Finally, the spread between the emittance values obtained from the different run
 
 \subsection{Implementation of Crab Cavity in Sixtracklib}\label{subsec:sixtracklig_CC_implementation}
 % Link to corresponding presentation:https://docs.google.com/presentation/d/15038dO7vsEUYxzCsYtQXYlpRIwtVGkA8esGtvKHwBwM/edit#slide=id.g6da2141836_0_5
-Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modeling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity (as was done in PyHEADTAIL). This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
+Sixtracklib provides the possibility to perform tracking simulations in the presence of an actual $\CC$ element on which noise can be added, instead of modelling only the transverse momentum kicks due to phase and amplitude noise in the RF system of the cavity (as was done in PyHEADTAIL). This provides the opportunity to study the $\CC$ RF noise-induced emittance growth in a more realistic scenario and therefore it will be used for the rest of the simulations presented in this chapter.
 
 In Sixtracklib the $\CC$ is represented by the "RF-Multipole" element~\cite{sixtracklib_repo} that has the properties of a multipole magnet oscillating at a specified frequency. To simulate the vertical $\CC$, the multipole field component corresponds to a skew RF dipole.
 
@@ -287,7 +287,7 @@ By looking at Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} it is conclude
 
 %\textbf{Implementing amplitude and phase noise on the real CC element}\\
 % Slides for this paragraph: https://docs.google.com/presentation/d/1rcSwhZBLZi0Js9jeFiVSLzR6HxhzljYkLLrBMahdqus/edit#slide=id.g6e85dffc41_2_143
-The amplitude and phase noise in the $\CC$ element are modeled as the following change of the vertical angle of each particle (modifying Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
+The amplitude and phase noise in the $\CC$ element are modelled as the following change of the vertical angle of each particle (modifying Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}):
 
 %following the discussion in Chapter~\ref{Ch:CC_noise_theory} (see Eq.~\eqref{eq:CC_voltage_z}).
 
@@ -325,7 +325,7 @@ The parameter $\Delta \CCvoltage_j$ is related to the relative deviation from th
 In this section, the emittance growth driven by $\CC$ RF noise is simulated with Sixtracklib in the presence of a local $\CC$ scheme. As previously mentioned, in the local CC scheme (Fig.~\ref{fig:crossing_with_and_without_CCs}) two $\CC$s are used with opposite phases, to cancel out the orbit distortion.
 
 
-The benchmark with the local scheme is performed as it is closer to the case that was studied previously: where the $\CC$ RF noise is modeled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the crab cavities.
+The benchmark with the local scheme is performed as it is closer to the case that was studied previously: where the $\CC$ RF noise is modelled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the crab cavities.
 
 The simulation studies presented in Section~\ref{subsec:sixtracklib_kicks_transverse_angle} were repeated here but this time the $\CC$s (represented by the RF-Multipole) were implemented and switched on. Both $\CC$1 and $\CC2$ operated at 1\,MV, for $\phi_\mathrm{RF-Mult, 1}$=90\,deg and  $\phi_\mathrm{RF-Mult, 2}$=270\,deg. Figure~\ref{fig:sixtracklib_CC1_vs_CC2_orbit_shift_vs_theory} shows that the orbit shifts from two $\CC$s operating in opposite phase cancel out as expected. The results shown are obtained from Sixtracklib simulations that were conducted following the same procedure as the equivalent study presented in Section~\ref{subsec:sixtracklig_CC_implementation} (see Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory}.)
 
@@ -354,7 +354,7 @@ For the emittance growth simulations, the noise was applied only in $\CC$1. The 
     \label{fig:study_2_sixtracklib_local_cc_scheme}
 \end{figure}
 
-The simulations show an excellent agreement between the theoretically computed and simulated growth rates for both noise types. They also demonstrate that the modeling of the noise as kicks on the angle co-ordinate provides equivalent results to "real" noise which is applied through the $\CC$ (represented by the RF-Multipole) of Sixtracklib.
+The simulations show an excellent agreement between the theoretically computed and simulated growth rates for both noise types. They also demonstrate that the modelling of the noise as kicks on the angle co-ordinate provides equivalent results to "real" noise which is applied through the $\CC$ (represented by the RF-Multipole) of Sixtracklib.
 
 \subsection{CC noise induced emittance growth in the presence of global CC scheme}\label{subsec:global_CC_sixtracklib}
 Here, the simulations presented above were repeated but for a global $\CC$ scheme. As already mentioned, in the global $\CC$ scheme only one $\CC$ (represented by the RF-Multipole element) is in operation and the closed orbit shift is present during the circulation of the bunch around the machine. This scheme is the realistic case for the experiments of 2018, where for the emittance growth measurements only one $\CC$ was used.
