@@ -63,7 +63,7 @@ Figure~\ref{fig:sampling_of_continuous_signal} shows a part of a continuous sign
 \end{figure}
 
 \subsubsection*{Discrete Fourier transform} %\hfill \break %\label{subsec:DFT}
-Let us consider a discrete-time signal, $y_n$, which is sampled at $N$ consecutive samples, $y_n = y(n \Delta t)$, with $n \in \left[0,N-1 \right ]$ such that $\Delta t$ is the sampling interval. The following discussion considers that $N$ is an odd integer. The Fourier transform for a discrete time signal, also known as discrete Fourier transform, is given by~\cite{a_numerical_recipies}:%Chapter 12, Eq.(12.1.7)
+Let us consider a discrete-time signal, $y_n$, which is sampled at $N$ consecutive samples, $y_n = y(n \Delta t)$, with $n \in \left[0,N-1 \right ]$ such that $\Delta t$ is the sampling interval. The following discussion considers that $N$ is an odd integer. The Fourier transform for a discrete-time signal, also known as discrete Fourier transform, is given by~\cite{a_numerical_recipies}:%Chapter 12, Eq.(12.1.7)
 % Link to reference: https://faculty.washington.edu/seattle/brain-physics/FFT/numerical-recipes.pdf
 % Also check the abover eference for aliasing p.500 and 501
 \begin{equation}\label{eq:DFT_definiton}
@@ -115,7 +115,7 @@ The components of the discrete Fourier transform are calculated at frequencies $
      \label{fig:signal_and_DFT_example}
 \end{figure}
 
-When using this convention the Fourier tranfrom components outisde of the above mentioned frequency range are considered to be zero. Note that the zero frequency, $f_k=0$, corresponds to $n=0$. The positive frequencies, $0  < f_k < + f_s/2$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-f_s/2  < f_k < 0$ correspond to values $-f_s/2 < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - f_s/2$ and $+f_s/2$.
+When using this convention the Fourier transform components outside of the above-mentioned frequency range are considered to be zero. Note that the zero frequency, $f_k=0$, corresponds to $n=0$. The positive frequencies, $0  < f_k < + f_s/2$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-f_s/2  < f_k < 0$ correspond to values $-f_s/2 < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - f_s/2$ and $+f_s/2$.
 
 %The positive frequencies, $0  < f_k < + \frac{N-1}{2T_\mathrm{total}}$ correspond to values $1 < n < (N-1)/2$ and the negative frequencies,  $-\frac{N-1}{2T_\mathrm{total}}  < f_k < 0$ correspond to values $(N-1)/2 < f_k < 0$. The value n = $(N-1)/2$ corresponds to both $f_k = - \frac{N-1}{2T_\mathrm{total}}$ and + $\frac{N-1}{2T_\mathrm{total}}$
 
