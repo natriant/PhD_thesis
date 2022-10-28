@@ -9,7 +9,7 @@ For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the arithmetic mean o
 \end{equation}
 % compatible with numpy.mean --> /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
 
-Below, two properties of the arithmetic mean are discussed as they are used in this thesis.
+Below, two properties of the arithmetic mean are shown since they are used in this thesis.
 \begin{itemize}
     \item The mean of the sum of two variables $x$ and $y$ is equal to the sum of their means, ie:
     \begin{equation}\label{eq:mean_of_sum_property}
@@ -55,7 +55,7 @@ or as follows from Eq.~\eqref{eq:var_def_2}:
     \sigma_x = \sqrt{\langle x^2 \rangle - \langle x \rangle^2}.
 \end{equation}
 % compatible with numpy.std, tested at /eos/user/n/natriant/Project_thesis/material/Appendix/test_numpy_definitions.ipynb
-The spread in a data set is usually expressed with the standard deviation instead of the variance, as the standard deviation has the same units with the variable $x$.
+The spread in a data set is usually expressed with the standard deviation instead of the variance, as the standard deviation has the same units as the variable $x$.
 
 %When the mean of the data set is zero the standard deviation equals the root mean square.
 
@@ -64,7 +64,7 @@ The spread in a data set is usually expressed with the standard deviation instea
 
 
 \subsection{Data sets with more than one variables - Covariance}
-In the case that each element of the data set consists of a pair of variables, $\{(x_1, y_1),$ $(x_2, y_2), (x_2, y_2), ...(x_N, y_N)\}$ the covarinace expresses the extend to which $x$ and $y$ tend to vary together. The covariance between $x$ and $y$ is defined as:
+In the case that each element of the data set consists of a pair of variables, $\{(x_1, y_1),$ $(x_2, y_2), (x_2, y_2), ...(x_N, y_N)\}$ the covariance expresses the extend to which $x$ and $y$ tend to vary together. The covariance between $x$ and $y$ is defined as:
 \begin{equation}\label{eq:cov_def}
     \mathrm{Cov}(x, y) = \frac{1}{N} \sum_{i=1}^{N} (x_i-\langle x \rangle) (y_i-\langle y \rangle).
 \end{equation}
@@ -83,22 +83,22 @@ The covariance as defined above is only calculated between two variables. To exp
         \end{pmatrix}  = \begin{pmatrix}
             \sigma_x^2 & \mathrm{Cov}(x,y) \\ 
             \mathrm{Cov}(y,x) & \sigma_y^2 
-            \end{pmatrix}
+            \end{pmatrix},
 \end{equation}
 
-as the covariance between the same variables equals to the variance (Eq.~\eqref{eq:std_var_cov_relationship}).
+since the covariance between the same variables equals to the variance (Eq.~\eqref{eq:std_var_cov_relationship}).
 
 If the data set is a distribution the covariance matrix is a parameter of the distribution.
 
 
 \section{Least squares fitting}\label{app:non_linear_fitting}
-In sciences, many quantities can not be measured directly but can be inferred from measured data by fitting a model function to them. Common model functions are the Gaussian, polynomial, or sinusoidal. The fitting procedure followed in this thesis is called "least squares" and is described below based on~\cite{least_square_minimisation}.
+In sciences, many quantities can not be measured directly but can be inferred from measured data by fitting a model function to them. Common model functions are the Gaussian, polynomial, or sinusoidal. The fitting procedure followed in this thesis is called "least squares" and is described below, based on~\cite{least_square_minimisation}.
 
 Suppose that we have $N$ data points ($x_{i}, y_{i}$) and that $y=f(x,\alpha, \beta)$ is the model function that describes the relationship between the points. The objective of the fit is to determine the optimal parameters $\alpha, \beta$ such as the model function describes best the data points. This is done by minimising the $\chi^2$ statistics with respect to $\alpha$ and $\beta$:
 \begin{equation}\label{eq:chi_square}
     \chi^2 = \sum_{i=1}^{N}[y_{i}-f(x_{i},\alpha, \beta)]^2,
 \end{equation}
-where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the expected value from the model. In other words, $\chi^2$ is a measure of deviation between the measurement and the expected result, and thus its minimisation results in the best fit i.e.\ to the optimal parameters $\alpha, \beta$.
+where $y_{i}$ is the observed value and $f(x_{i},\alpha, \beta)$ the expected value from the model. In other words, $\chi^2$ is a measure of deviation between the measurement and the expected result, and thus its minimisation results in the best fit i.e.~to the optimal parameters $\alpha, \beta$.
 
 \normalsize{\textbf{Weighted least squares fitting}}\\
 Suppose that we have $N$ data points ($x_i, y_i \pm \Delta y_i $), where $ \Delta y_i$ is the uncertaintyof $y_i$ y, and that $y=f(x,\alpha, \beta)$ is the model function that describes the relationship between the points. To define the optimal parameters $\alpha, \beta$ taking into account the imapct of the uncertainty $\Delta y_i$, Eq.~\eqref{eq:chi_square} is written as:
@@ -119,7 +119,7 @@ In this thesis, the uncertainties of the fit results, $\Delta \alpha, \Delta \be
 The values of the optimal parameters and their covariance matrix are computed in this thesis using the $\mathrm{scipy.curve \_ fit}$~\cite{scipy_curve_fit} function of the Python programming language.
 
 \section{Propagation of uncertainty}\label{app:uncertainty_propagation}
-Suppose that $y$ is related to $N$ independent variables $\{x_1, x_2, ..., x_N\}$ with the folloiwng function:
+Suppose that $y$ is related to $N$ independent variables $\{x_1, x_2, ..., x_N\}$ with the following function:
 \begin{equation}
     y=f(x_1, x_2, .. x_N).
 \end{equation}
