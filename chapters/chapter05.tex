@@ -1,4 +1,4 @@
-\vspace*{-1mm}
+%\vspace*{-1mm}
 In Chapter~\ref{Ch:CC_noise_theory} the theoretical model (Mastoridis--Baudrenghien model) for the transverse emittance growth caused by amplitude and phase noise in a $\CC$ was discussed. On September 5, 2018, a dedicated experiment was conducted in the SPS to benchmark this model against experimental data and check the analytical predictions. In particular, the aim was to inject artificial noise into the $\CC$ RF system and compare the measured emittance growth rates with the theoretically computed ones. In this chapter, the measurement results from the SPS are presented and discussed. However, since a similar experiment has not been performed before, this chapter does not present only the emittance growth measurements. It also discusses in detail the experimental conditions and the available measurements of other parameters of interest such as the $\CC$ voltage, the RF noise spectra, the bunch length, and the bunch intensity, aiming to provide a complete overview.
 %The work published in Ref.~\cite{Triantafyllou:2021khx} is the basis of this chapter.
 
@@ -24,7 +24,7 @@ For its installation, an available space was found at the SPS Long Straight Sect
        \bottomrule
        \multicolumn{2}{l}{} & 	\multicolumn{1}{c}{\textbf{CC1}} & \multicolumn{1}{c}{\textbf{CC2}} \\
        \midrule
-       \multicolumn{2}{l}{crabbing plane}  & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
+       \multicolumn{2}{l}{Crabbing plane}  & \multicolumn{1}{c}{vertical} & \multicolumn{1}{c}{vertical} \\
        
        \multicolumn{2}{l}{s-location$^{\ast}$}  & \multicolumn{1}{c}{6312.72\,m} & \multicolumn{1}{c}{6313.32\,m} \\
  
@@ -32,11 +32,11 @@ For its installation, an available space was found at the SPS Long Straight Sect
  
        \multicolumn{2}{l}{$\CC$ frequency, $\CCvoltage$}  & \multicolumn{1}{c}{400.78\,MHz} & \multicolumn{1}{c}{400.78\,MHz} \\ %400.789
  
-       \multicolumn{2}{l}{Horizontal / vertical beta function, $\beta_{x, CC}$ / $\beta_{y, CC}$}  & \multicolumn{1}{c}{29.24\,m / 76.07\,m} & \multicolumn{1}{c}{30.31\,m / 73.82\,m} \\
+       \multicolumn{2}{l}{Horizontal / vertical beta function, $\beta_{x, \mathrm{CC}}$ / $\beta_{y, \mathrm{CC}}$}  & \multicolumn{1}{c}{29.24\,m / 76.07\,m} & \multicolumn{1}{c}{30.31\,m / 73.82\,m} \\
  
-       \multicolumn{2}{l}{Horizontal / vertical alpha function, $\alpha_{x, CC}$ / $\alpha_{y, CC}$} & \multicolumn{1}{c}{-0.88/ 1.9} & \multicolumn{1}{c}{-0.91 / 1.86} \\
+       \multicolumn{2}{l}{Horizontal / vertical alpha function, $\alpha_{x, \mathrm{CC}}$ / $\alpha_{y, \mathrm{CC}}$} & \multicolumn{1}{c}{-0.88/ 1.9} & \multicolumn{1}{c}{-0.91 / 1.86} \\
  
-       \multicolumn{2}{l}{Horizontal / vertical dispersion, $D_{x, CC}$ / $D_{y, CC}$} & \multicolumn{1}{c}{-0.48\,m / 0\,m}  & \multicolumn{1}{c}{-0.5\,m / 0\,m} \\
+       \multicolumn{2}{l}{Horizontal / vertical dispersion, $D_{x, \mathrm{CC}}$ / $D_{y, \mathrm{CC}}$} & \multicolumn{1}{c}{-0.48\,m / 0\,m}  & \multicolumn{1}{c}{-0.5\,m / 0\,m} \\
        \arrayrulecolor{black}\bottomrule
     \end{tabu}
     \label{tab:SPS_CC_main}
@@ -49,17 +49,17 @@ For its installation, an available space was found at the SPS Long Straight Sect
  % Optics parameters for CC and diagnostics in 2018: https://cernbox.cern.ch/index.php/apps/files/?dir=/__myshares/SPS_MDs_2018%20(id%3A271128)/SPSMeasurementTools&#editor
  
 \subsection{Considerations about the Crab Cavity operation}\label{sec:cc_setup}
+\vspace{-0.5em} % hardcoded
 The experimental studies presented in this thesis were performed with the $\CC$s operating at a fixed frequency of 400.78\,MHz (unless it is stated otherwise) and at a target peak voltage of about 1\,MV. % this is for 270 GeV.
 Even though the $\CC$ modules installed in the SPS can operate at a maximum voltage of 3.4\,MV (see Table~\ref{tab:SPS_CC_main}), the experiments were performed with a peak voltage of 1\,MV since for that value the stable $\CC$ operation for long periods was ensured. Further details on the hardware aspects of the $\CC$ operation in the SPS are not discussed here as they are out of the scope of this thesis.
 
-\normalsize{\textbf{Energy ramp}}\\
+\textbf{Energy ramp}\\
 SPS receives the proton beam at 26\,GeV from the PS. It was found that the ramp to higher energies could not be performed with the $\CC$ switched on, since during the acceleration one of the vertical betatron sidebands was crossing the $\CC$ frequency resulting in resonance excitation and beam loss~\cite{BE_seminar, CC_rephasing_RF}. Changing the $\CC$ frequency during the ramp so that it stays synchronous with the beam was not an option due to hardware limitations~\cite{CC_rephasing_RF}. % CC not fast enough.
 Therefore, the acceleration had to be performed with the $\CC$ switched off and its voltage set up only after the energy of interest has been reached. %It is worth noting that this approach will also be used in the HL-LHC.
 %while crossing one of the vertical betatron sidebands due to resonant excitation~\cite{BE_seminar, CC_rephasing_RF}. Therefore, it was established that the acceleration has to be performed with the $\CC$ switched off and its voltage must be set up only after the energy of interest has been achieved. It is worth noting that this approach will also be used in the HL-LHC.
 
-\normalsize{\textbf{Synchronization between main SPS RF and Crab Cavity}}\\
+\textbf{Synchronization between main SPS RF and Crab Cavity}\\
 In order to maintain the $\CC$ waveform time-aligned with the circulating bunch, the $\CC$ operating at 400.78\,MHz needs to be synchronized with the main SPS RF system operating at around 200\,MHz. Due to the larger bandwidth of the SPS main RF system, the $\CC$ was used as a master. Therefore the $\CC$ was operating at a fixed frequency, while the main accelerating cavities were adjusted to the exact half of the $\CC$ frequency so that they become synchronous with the $\CC$ waveform. For studies at higher energies, the synchronisation took place at the end of the energy ramp shortly a few seconds after the $\CC$ was switched on~\cite{BE_seminar}. %(refer to Fig.~\ref{fig:sps_cycles_cc_tests} for the parts of the acceleration cycle). 
-
 
 %It was important to ensure that during the "coast" the beam will experience the same kick from the $\CC$ each turn.
 \section{Experimental configuration and procedure}\label{sec:exp_setup_2018}
