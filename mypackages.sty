@@ -85,7 +85,8 @@
 \urlstyle{same}
 
 
-\usepackage[parfill]{parskip} % new paragraph, skip intend
+%\usepackage[parfill]{parskip} % new paragraph, skip intend
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
 
 \usepackage{tabularx, booktabs} % extra features for tabular environment
 \usepackage{tabu} % customizing tabu (for multicolumns)
@@ -100,11 +101,12 @@
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\huge\bfseries}
 
 
 % The following lines align the titles of sections and subsection to the left
 \makeatletter
+\titleformat*{\chapter}{\huge\bfseries\raggedright}
 \titleformat*{\section}{\Large\bfseries\raggedright}
 \titleformat*{\subsection}{\large\bfseries\raggedright}
 \makeatother
