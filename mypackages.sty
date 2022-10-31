@@ -6,7 +6,6 @@
 \graphicspath{ {images/} }
 \usepackage{hyperref}
 \usepackage{fourier} %type style
-\usepackage{lipsum} 
 \usepackage{amsmath}  % improve math presentation
 \usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
 \usepackage{enumitem} % remove space between items
@@ -20,6 +19,12 @@
 %-------------------------------
 \usepackage{mathtools} % for dcases --> to introduce mutliple cases in a function
 
+% For bibliography
+\usepackage[backend=biber, style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+
+
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
 \fancyhf{}
@@ -31,11 +36,46 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
+\fancypagestyle{simple_v2}{
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\thepage}
+  %\renewcommand{\headrulewidth}{0pt}
 
+  \fancyhead[LE]{\textbf{\nouppercase{\leftmark }}}
+  \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+}
+
+
+\fancypagestyle{main}{
+  \fancyhf{}
+  \fancyhead[LE]{\textbf{\nouppercase{\thechapter. \leftmark }}}
+  \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+  \fancyfoot[LE,RO]{\thepage}
+
+}
+
+\fancypagestyle{back}{
+  \fancyhf{}
+  \fancyhead[LE]{\textbf{\nouppercase{\leftmark }}}
+  \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+  \fancyfoot[LE,RO]{\thepage}
+
+}
+
+\fancypagestyle{front}{
+  \fancyhf{}
+  \fancyhead[LE]{\textbf{\nouppercase{ \thechapter \leftmark }}}
+  \fancyhead[RO]{\textbf{\nouppercase{\thechapter  \rightmark}}}
+  \fancyfoot[LE,RO]{\thepage}
+
+
+}
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}} % remove the word "chapter" from header
 \setlength{\headheight}{15pt} 
-\fancyhead[LE]{\textbf{\nouppercase{\thechapter. \leftmark }}}
+%\fancyhead[LE]{\textbf{\nouppercase{\thechapter. \leftmark }}}
+\setlength{\headheight}{15pt} 
+\fancyhead[LE]{\textbf{\nouppercase{ \leftmark }}}
 \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
 \fancyfoot[LE,RO]{\thepage}
 
@@ -43,9 +83,6 @@
 \usepackage{etoolbox}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
-% For bibliography
-\usepackage[backend=biber, style=numeric,sorting=none]{biblatex}
-\addbibresource{references.bib}
 
 
 %-----------------------
@@ -57,14 +94,17 @@
 
 \newcommand\frontmatter{%
     \cleardoublepage
+    \thispagestyle{main}
   \pagenumbering{roman}}
 
 \newcommand\mainmatter{%
     \cleardoublepage
+    \pagestyle{main}
   \pagenumbering{arabic}}
 
 
 \newcommand\backmatter{%
+  \pagestyle{back}
   \if@openright
     \cleardoublepage
   \else

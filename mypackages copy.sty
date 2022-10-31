@@ -1,0 +1,166 @@
+\ProvidesPackage{mypackages}
+
+\usepackage[a4paper,inner=40mm, outer=25mm, top=25mm,bottom=25mm]{geometry} % according to Liverpool guidelines par.9 https://www.liverpool.ac.uk/media/livacuk/tqsd/code-of-practice-on-assessment/annex-7.1-PGR-CoP.pdf
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{hyperref}
+\usepackage{fourier} %type style
+\usepackage{lipsum} 
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage{enumitem} % remove space between items
+
+\usepackage{nomencl} % for list of symbols
+
+
+%\usepackage[symbols,nogroupskip,sort=none]{glossaries-extra}
+%-------------------------------
+% Header and Footer
+%-------------------------------
+\usepackage{mathtools} % for dcases --> to introduce mutliple cases in a function
+
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\fancypagestyle{simple}{
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\fancypagestyle{simple_v2}{
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+
+  \fancyhead[LE]{\textbf{\nouppercase{\leftmark }}}
+  \fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+}
+
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % remove the word "chapter" from header
+\setlength{\headheight}{15pt} 
+\fancyhead[LE]{\textbf{\nouppercase{\thechapter. \leftmark }}}
+\fancyhead[RO]{\textbf{\nouppercase{\rightmark}}}
+\fancyfoot[LE,RO]{\thepage}
+
+% The following lines allow the use of the above-defined LE, RO in the first page of the chapter
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% For bibliography
+\usepackage[backend=biber, style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+
+%-----------------------
+% Make frontmatter, mainmatter and backmatter for report document. https://tex.stackexchange.com/questions/154646/is-there-an-easy-way-to-get-the-frontmatter-mainmatter-and-backmatter-in-a-l
+% -----------------------
+
+
+\makeatletter
+
+\newcommand\frontmatter{%
+    \cleardoublepage
+    %\thispagestyle{simple_v2}
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+    \pagestyle{fancy}
+  \pagenumbering{arabic}}
+
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+   }
+\makeatother
+
+% Redefine \cleardouble page (for the blank pages)
+\makeatletter
+\renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}%
+\thispagestyle{empty}%
+\newpage%
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+\makeatother
+    
+
+% Line spacing 1.5, accordint ot the UoL guidlines
+\renewcommand{\baselinestretch}{1.5} % need to be changed to 1.5
+
+% hyperlinks
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0},
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black}
+\urlstyle{same}
+
+
+%\usepackage[parfill]{parskip} % new paragraph, skip intend
+\usepackage[skip=12pt, indent=0pt]{parskip}
+
+\usepackage{tabularx, booktabs} % extra features for tabular environment
+\usepackage{tabu} % customizing tabu (for multicolumns)
+\usepackage[table]{xcolor} % midrule color
+\usepackage{booktabs} % midrule color
+
+% Chapter - title settings
+
+%\newcommand\YUGE{\fontsize{40}{40}\selectfont}
+
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\huge\bfseries}
+
+
+
+% The following lines align the titles of sections and subsection to the left
+\makeatletter
+\titleformat*{\chapter}{\huge\bfseries\raggedright}
+\titleformat*{\section}{\Large\bfseries\raggedright}
+\titleformat*{\subsection}{\large\bfseries\raggedright}
+\makeatother
+
+% Define spacing before and after Sections and Subsections
+% Source: https://tex.stackexchange.com/questions/108684/spacing-before-and-after-section-titles
+%%\titlespacing*{\chapter}
+%{0pt}{2.3ex plus 1ex minus .2ex}{2.3ex plus .1ex}
+%\titlespacing*{\section}
+%{0pt}{2.3ex plus 1ex minus .2ex}{2.3ex plus .1ex}
+%\titlespacing*{\subsection}
+%{0pt}{2.3ex plus 1ex minus .2ex}{2.3ex plus .1ex}
+%\titlespacing*{\subsubsection}
+%{0pt}{2.3ex plus 1ex minus .2ex}{2.3ex plus .1ex}
+
+%\titlespacing{\chapter}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+%\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+%\titlespacing{\subsection}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+%\titlespacing{\subsubsection}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+\titlespacing{\chapter}{0pt}{0pt}{14pt}
+\titlespacing{\section}{0pt}{14pt}{14pt}
+\titlespacing{\subsection}{0pt}{14pt}{14pt}
+\titlespacing{\subsubsection}{0pt}{14pt}{14pt}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{csquotes} % for quotes
+\usepackage[section,numberedsection=autolabel]{glossaries}
+
+\usepackage{cancel} % enable different four modes of striking through
+\usepackage{verbatim} % for commenting out multiple lines
+\usepackage{rotating}

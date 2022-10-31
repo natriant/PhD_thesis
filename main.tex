@@ -3,7 +3,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mypackages}
 \usepackage{listofsymbols}
-\usepackage{glossaries}
+
+
+
+
 
 % For being able to use \widebar. Source: https://tex.stackexchange.com/questions/16337/can-i-get-a-widebar-without-using-the-mathabx-package
 \DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
@@ -72,11 +75,12 @@
 
 \fancypagestyle{mystyle_acronyms}{%
     \lhead{\textbf{List of Acronyms}}
+    \rhead{}
 }
 
 
 \begin{document}
-\frontmatter
+
 % The front matter
 \title{
 {Studies of the emittance growth due to noise in the Crab Cavity RF systems}\\
@@ -88,16 +92,19 @@
 \maketitle
 \newpage
 
+\frontmatter
 %Aknowledgments
 \input{head/acknowledgments}
 % Abstract
 \input{head/abstract}
 
 
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\frontmatter
+\frontmatter
 \tableofcontents
 
 \listoffigures
-
 \addcontentsline{toc}{chapter}{List of figures}
 \listoftables
 \addcontentsline{toc}{chapter}{List of tables}
@@ -110,6 +117,7 @@
 
 \newpage
 
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 \input{symbols.tex}
 \printnomenclature
 \addcontentsline{toc}{chapter}{List of symbols}
@@ -149,7 +157,7 @@
 \chapter{Simulation studies: Emittance growth suppression mechanism from the beam transverse impedance}\label{Ch:suppression_impedances}\label{Ch:suppression_impedance}
 \input{chapters/chapter07}
 
-\chapter{Experimental studies from 2022: investigation of the effect of impedance on noise induced emittance growth}\label{Ch:experimental_CC_2022}
+\chapter{Experimental studies from 2022: investigation of the effect of impedance on noise-induced emittance growth}\label{Ch:experimental_CC_2022}
 \input{chapters/chapter08}
 
 \chapter{Conclusions}\label{Ch:conclusions}
@@ -172,7 +180,11 @@
 
 
 \backmatter
+%\pagestyle{simple}
+
 \printbibliography
+%\pagestyle{simple_v2}
 \addcontentsline{toc}{chapter}{Bibliography}
+
 
 \end{document}
