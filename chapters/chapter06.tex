@@ -10,13 +10,13 @@ The PyHEADTAIL and Sixtracklib simulation results that are presented in this cha
 \section{Parametric studies based on the theoretical model}\label{sec:paramteric_studies_theory}
 % Link to presentations: https://docs.google.com/presentation/d/1wqgJK7uDFDGoX8gyx2-JhnO8mZT51N1VH1RtNL-jhWA/edit#slide=id.ga69ead34aa_0_419
 
-The basics of the existing theoretical model which describes the emittance growth in the presence of amplitude and phase noise in $\CC$s in a storage ring have been introduced in Chapter~\ref{Ch:CC_noise_theory}. In this section, this theory is used to study the sensitivity of the noise-induced emittance growth on the $\CC$ voltage and rms bunch length. The objective of the study is to investigate if the uncertainty in the measurements of these two variables could explain the observed discrepancy of a factor $\sim$4 between measured emittance growth and the analytically predicted values (see Section~\ref{sec:meas_2018_vs_theory}).
+The basics of the existing theoretical model (Mastoridis--Baudrenghien model) which describes the emittance growth in the presence of amplitude and phase noise in $\CC$s in a storage ring have been introduced in Chapter~\ref{Ch:CC_noise_theory}. In this section, the Mastoridis--Baudrenghien model is used to study the sensitivity of the noise-induced emittance growth on the $\CC$ voltage and rms bunch length. The objective of the study is to investigate if the uncertainty in the measurements of these two variables could explain the observed discrepancy of a factor $\sim$4 between measured emittance growth and the analytically predicted values (see Section~\ref{sec:meas_2018_vs_theory}).
 % The study is limited in these two parameters as they are the only measured ones that could introduce some incertainty in the Eqs. of phase and amplitude noise. In reality there is also some uncertaninty on the noise levels themselves but is not treated here. Nevertheless, extended studies on the noise spectrum are presented later in this section.
 
 The parametric studies in this section were performed for parameters similar to the experimental configuration of 2018: beam energy of 270\,GeV, vertical beta function of 73\,m (at the location of $\CC$2), and phase and amplitude noise of -111.4 and -115.7\,dBc/Hz respectively (Coast2-Setting2). The phase and amplitude noise are considered here independently, instead of the effective phase noise, due to the different dependence of the correction term (see Fig.~\ref{fig:correction_term_bunch_length}).
 
 \subsection{Sensitivity to bunch length}\label{subsec:bunch_length_dependence}
-Using Eqs.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} with the above mentioned parameters and CC voltage, $\CC$
+Using Eqs.~\eqref{eq:dey_an} and~\eqref{eq:dey_pn} with the above mentioned parameters and CC voltage, $\CCvoltage$
 =1\,MV the normalised vertical emittance growth is computed as a function of different values of bunch length over a range from 0.001\,ns to 2.5\,ns (expressed in $4\sigma_t$). The results are illustrated in Fig.~\ref{fig:sensitivity_bunch_length_theory_bunch1}. 
 
 A clear dependence of the vertical emittance growth on the bunch length is observed. However, there is only a strong dependence for bunch lengths within a certain range. In the regime of the measured bunch length during the $\CC$ experiment for bunch 1 ($\sim$1.6\,ns-\,2.0\,ns) the sensitivity to the bunch length is very small and cannot explain the factor of about 4 that was observed between measurements and theoretical predictions in SPS $\CC$ tests in 2018.
@@ -92,11 +92,11 @@ This is also confirmed, with simulations with the Sixtracklib code which are pre
 % Presentation with the comment on the vertical tune distribution: https://docs.google.com/presentation/d/1rBVKGd9aBZTslaAHf48FdJkNPRyXtMF_T9XpEBlLE4c/edit#slide=id.g8ae11a254a_0_952
 The mechanism responsible for the emittance growth in the presence of noise is the spread of the betatron tunes~\cite{Lebedev:248620}. As explained earlier (in Section~\ref{sec:noise_definition}) the tune spread leads to a phase mixing of the particles within the bunch causing a decoherence of the betatron oscillations which then results in emittance growth~\cite{Lebedev:248620}. The time scale of the decoherence equals the inverse of the betatron frequencies~\cite{Lebedev:248620}: % p.151
 \begin{equation}\label{eq:decoherence_time}
-    \tau_\mathrm{decoh} = \frac{1}{2\pi \frev \mathrm{rms}(\Delta Q_u)},
+    \tau_\mathrm{decoh} = \frac{1}{2\pi \frev \Delta Q^\mathrm{rms}_u},
 \end{equation}
-where $u=(x,y)$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\mathrm{rms}(\Delta Q_u)$ the rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
+where $u=(x,y)$ indicates the horizontal or vertical plane, $\frev$ the revolution frequency, and $\Delta Q^\mathrm{rms}_u$ the rms betatron tune spread. The latter can be computed by Eqs.~\eqref{eq:rms_amplitute_detuning_3} and~\eqref{eq:rms_amplitute_detuning_3_x} for the vertical and horizontal planes respectively.
 
-Therefore, it becomes clear that in order to observe some emittance growth a source of tune spread must be included in the simulations. For the simulations presented here detuning with transverse amplitude is introduced as described in Section~\ref{subsec:pyheadtail}, by applying a change of the phase advance of each individual particle depending on its action variable and the detuning coefficients. Detuning in both transverse planes is thus introduced for horizontal detuning coefficient $\alpha_{xx}=179.35$/m, vertical detuning coefficient $\alpha_{yy}=-30.78$/m and for cross-term coefficient $\alpha_{yx}=-441.34$/m. These coefficients were computed using MAD-X~\cite{madx} for the nominal SPS lattice (introduced in Section~\ref{sec:optics_model_designs}) and for $Q^\prime_{x,y}=0.5$. It should be noted that the detuning in the vertical plane is the value of interest since the emittance evolution will be investigated in the vertical plane. Using Eq.~\eqref{eq:rms_amplitute_detuning_3} for the above mentioned coefficients and the initial transverse actions of the bunch yields $\mathrm{rms}(\Delta Q_y)\approx 7 \times 10^{-6}$. 
+Therefore, it becomes clear that in order to observe some emittance growth a source of tune spread must be included in the simulations. For the simulations presented here detuning with transverse amplitude is introduced as described in Section~\ref{subsec:pyheadtail}, by applying a change of the phase advance of each individual particle depending on its action variable and the detuning coefficients. Detuning in both transverse planes is thus introduced for horizontal detuning coefficient $\alpha_{xx}=179.35$/m, vertical detuning coefficient $\alpha_{yy}=-30.78$/m and for cross-term coefficient $\alpha_{yx}=-441.34$/m. These coefficients were computed using MAD-X~\cite{madx} for the nominal SPS lattice (introduced in Section~\ref{sec:optics_model_designs}) and for $Q^\prime_{x,y}=0.5$. It should be noted that the detuning in the vertical plane is the value of interest since the emittance evolution will be investigated in the vertical plane. Using Eq.~\eqref{eq:rms_amplitute_detuning_3} for the above mentioned coefficients and the initial transverse actions of the bunch yields $\Delta Q^\mathrm{rms}_y\approx 7 \times 10^{-6}$. 
 
 For the emittance growth studies to be valid the simulation time should be much longer than the decoherence time defined in Eq.~\eqref{eq:decoherence_time}. For the above value of rms vertical tune spread, the decoherence time is computed to be $\tau_\mathrm{decoh} \approx 0.5$\,s. Therefore, the simulation time of about 2.5\,s is reasonable for these studies.
 % from MAD-X for no b3b5b7 and QpcQPy=0--> axx=170.65, ayy = -29.70 and axy = -440.87.
@@ -213,7 +213,7 @@ In Sixtracklib the $\CC$ is represented by the "RF-Multipole" element~\cite{sixt
 
 When a particle passes through this element, the change in the vertical angle of each particle is the following:
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical}
-    \Delta y^\prime_{j} =  \frac{e V_\mathrm{0,CC}}{p_0 c} \cos{\left ( \phi_\mathrm{RF-Mult} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )},
+    \Delta y^\prime_{j} =  \frac{e V_\mathrm{0,CC}}{p_0 c} \cos{\left ( \phi_\mathrm{RF-Mult} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z}{\beta_0} \right )},
 \end{equation}
 where $j={0, ...., N_\mathrm{turns}}$ denotes the turn number with $N_\mathrm{turns}$ being the total number of turns that the beam passes through the element. In Eq.~\eqref{eq:CC_kick_sixtracklib_vertical}, $y^\prime$ is the vertical angle co-ordinate and $z$ is the longitudinal co-ordinate of each particle, $\phi_\mathrm{RF-Mult}$ is the phase of the RF-Multipole, $f_\mathrm{CC}$ is the $\CC$ frequency, $c$ is the speed of light, $e$ the elementary charge, $\beta_0$ is the relativistic beta, $V_\mathrm{0,CC}$ is the amplitude of the $\CC$ voltage and $p_0$ the reference momentum.
 
@@ -228,7 +228,7 @@ The theoretically expected orbit shift can be computed with Eq.~\eqref{eq:CC_orb
 which after inserting, $\Delta y^\prime$ from Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} for any turn becomes:
 
 \begin{equation}\label{eq:CC_orbit_shift_CC_element}
-    \Delta y_{,s_1} = \frac{\sqrt{\beta_{y, s_1} \beta_{y, s_0} }}{2 \sin(\pi \Qy)} \left ( \frac{e V_\mathrm{0,CC}}{p_0 c} \cos{\left ( \phi_\mathrm{RF-Mult} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} \right ) \cos(\pi \Qy - \mid \psi_{y, s_1} - \psi_{y, s_0} \mid),
+    \Delta y_{,s_1} = \frac{\sqrt{\beta_{y, s_1} \beta_{y, s_0} }}{2 \sin(\pi \Qy)} \left ( \frac{e V_\mathrm{0,CC}}{p_0 c} \cos{\left ( \phi_\mathrm{RF-Mult} - \frac{2\pi f_\mathrm{CC}}{c} \frac{z}{\beta_0} \right )} \right ) \cos(\pi \Qy - \mid \psi_{y, s_1} - \psi_{y, s_0} \mid),
 \end{equation}
 where $\Qy$ is the vertical tune, $\beta_{y, s_0}$ and $\beta_{y, s_1}$ are the vertical beta function at the locations $s_0$ and $s_1$ respectively and $\mid \psi_{y, s_1} - \psi_{y, s_0} \mid$ is the vertical phase advance in radians between the locations $s_0$ and $s_1$.
 
@@ -236,7 +236,7 @@ where $\Qy$ is the vertical tune, $\beta_{y, s_0}$ and $\beta_{y, s_1}$ are the 
 Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} plots the vertical co-ordinate at the location $s_1$ (orange) after tracking 1000 particles for 500 turns with Sixtracklib in the presence in the presence of the above-mentioned $\CC$ element (which is installed at the location of $\CC$1, location $s_0$). The locations $s_1$ is the start of the lattice, which for this study it was considered to be the horizontal rotational Wire Scanner, BWS.51995.H. %This choice was arbitrary. 
 The simulations took place using an initial Gaussian bunch distribution in the six-dimensional phase space. The initial normalised emittances were $\epsilon_x$=2.5\, $\mathrm{\mu m}$ and $\epsilon_y=2.5 \times 10^{-6}$\, $\mathrm{\mu m}$ for the horizontal and vertical plane respectively. The distribution was chosen to be so small in the vertical plane so there is practically no initial offset which facilitates the observation of the orbit shift. The most relevant parameters are listed in  Table~\ref{tab:SPS_CC_WS_sixtracklib}. 
 
-The orbit shift computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} is also plotted in Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} (blue) for same parameters used in the simulation. The orbit shift was computed over a range of equally spaced $z$ co-ordinates from -0.6 to 0.6\,m ($\sim 3 \sigma_z$ of the initial distribution used in the simulations). 
+The orbit shift computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} is also plotted in Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} (blue) for same parameters used in the simulation. The orbit shift was computed over a range of equally spaced $z$ co-ordinates from $-0.6$ to 0.6\,m ($\sim 3 \sigma_z$ of the initial distribution used in the simulations). 
 
 
 %Figure~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory} compares the shift of the orbit as computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_element} (blue) and as obtained from Sixtracklib simulations (orange) for the values reported in Table~\ref{tab:SPS_CC_WS_sixtracklib}. The induced orbit shift from Sixtracklib simulations was obtained after tracking 1000 particles for 500 turns in the presence of the above-mentioned CC element (which is installed at the location of $\CC$1). The simulations took place using an initial Gaussian bunch distribution in the six-dimensional phase space. The initial normalised emittances were $\epsilon_x$=2.5\, $\mathrm{\mu m}$ and $\epsilon_y=2.5 \times 10^{-6}$\, $\mathrm{\mu m}$ for the horizontal and vertical plane respectively. The distribution was chosen to be so small in the vertical plane so there is practically no initial offset which facilitates the observation of the orbit shift. % If we had offset we would need to split in longitudinal slices and take the average position of each slice.
@@ -264,13 +264,13 @@ The orbit shift computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_elem
 		\multicolumn{2}{c}{\textbf{Value}} \\
 		\bottomrule
       \multicolumn{2}{l}{Beta function at the Wire Scanner, $\beta_{y, s_1}$}& \multicolumn{2}{c}{27.47\,m} \\
-      \multicolumn{2}{l}{Phase advance to the Wire Scanner$^{\ast}$, $\psi_{y, HT}$} & \multicolumn{2}{c}{0} \\
+      \multicolumn{2}{l}{Phase advance to the Wire Scanner$^{\ast}$, $\psi_{y, s_1}$} & \multicolumn{2}{c}{0} \\
       \multicolumn{2}{l}{Beta function at the $\CC$1, $\beta_{y, CC1}$}& \multicolumn{2}{c}{76.07\,m} \\
       \multicolumn{2}{l}{Phase advance to the $\CC$1$^{\ast}$, $\psi_{y, CC1}$} & \multicolumn{2}{c}{4.05 $\times$ 2$\mathrm{\pi}$} \\
       \multicolumn{2}{l}{Vertical betatron tune, $\Qy$} & \multicolumn{2}{c}{26.18} \\
       \multicolumn{2}{l}{Beam energy, $\symE$} & \multicolumn{2}{c}{26\,GeV} \\
-      \multicolumn{2}{l}{rms bunch length, $\sigma_z$} & \multicolumn{2}{c}{0.22\,m} \\
-      \multicolumn{2}{l}{rms momentum spread, $\sigma_\delta$} & \multicolumn{2}{c}{1e-4} \\
+      \multicolumn{2}{l}{Rms bunch length, $\sigma_z$} & \multicolumn{2}{c}{0.22\,m} \\
+      \multicolumn{2}{l}{Rms momentum spread, $\sigma_\delta$} & \multicolumn{2}{c}{1e-4} \\
       \multicolumn{2}{l}{CC voltage, $V_\mathrm{0,CC}$} & \multicolumn{2}{c}{3\,MV} \\
       \multicolumn{2}{l}{CC frequency, $f_\mathrm{CC}$} & \multicolumn{2}{c}{400\,MHz} \\
       \multicolumn{2}{l}{RF-Multipole phase, $\phi_\mathrm{RF-Mult}$} & \multicolumn{2}{c}{90\,deg$^{\dagger}$} \\
@@ -294,7 +294,7 @@ The amplitude and phase noise in the $\CC$ element are modelled as the following
 %In the presence of amplitude and phase noise the change of the vertical angle of each particle passing through the real $\CC$ element which was introduced in Eq.~\eqref{eq:CC_kick_sixtracklib_vertical} is modified as follows:
 
 \begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
-    \Delta y^\prime_{j} =\frac{ e( \CCvoltage + \Delta \CCvoltage_j)}{p_0 c}  \cos{\left ( \left (\phi_\mathrm{RF-Mult} + \Delta \phi_j  \right ) - \frac{2\pi f_\mathrm{CC}}{c} \frac{z \beta_0}{\beta^2} \right )} ,
+    \Delta y^\prime_{j} =\frac{ e( \CCvoltage + \Delta \CCvoltage_j)}{p_0 c}  \cos{\left ( \left (\phi_\mathrm{RF-Mult} + \Delta \phi_j  \right ) - \frac{2\pi f_\mathrm{CC}}{c} \frac{z}{\beta_0} \right )} ,
 \end{equation}
 
 %\begin{equation}\label{eq:CC_kick_sixtracklib_vertical_noise}
@@ -432,7 +432,7 @@ In Fig.~\ref{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra} the simu
     \label{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra}
 \end{figure}
 
-By looking at the plots, it is evident that there is significantly less variation in the emittance growth rates over the different runs. This is due to the fact that as discussed in Appendix~\ref{sec:measured_spectra_to_time_series}, in the time series generated by the measured spectra the random factor is included in the set of random phases which leads to much less deviation in the values than the sequence of white noise kicks where the random factor is in their amplitude. To this end, the simulation here is repeated for just 10 different runs to reduce the uncertainty.
+By looking at the plots, it is evident that there is significantly less variation in the emittance growth rates over the different runs. This is due to the fact that, as discussed in Appendix~\ref{sec:measured_spectra_to_time_series}, in the time series generated by the measured spectra the random factor is included in the set of random phases which leads to much less deviation in the values than the sequence of white noise kicks where the random factor is in their amplitude. To this end, the simulation here is repeated for just 10 different runs to reduce the uncertainty.
 
 Finally, the same simulation is repeated in the presence of both amplitude and phase noise together. The results are shown in Fig.~\ref{fig:study_4_sixtracklib_global_cc_scheme_measured_spectra_AN_and_PN} where it is clear that the agreement with the analytically predicted rates is very good. 
 
