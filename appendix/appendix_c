@@ -1,4 +1,4 @@
-
+\thispagestyle{simple} % formatting the first page of each chapter
 %\section{Solutions of betatron equations}\label{app:betatron_equations_solutions}
 
 %The calculations here are performed according to the discsussion in Ref.~\cite{Roncarolo:1481835} and Ref.~\cite{yannis_teaching}.
@@ -153,12 +153,11 @@ In this section, the relation between the current and the strength of the focusi
  
 
  \begin{equation}\label{eq:I_vs_B3_relation_lof}
-    \mathrm{I_{LOF}} = 0.049 \times b_\mathrm{LOF} \times 0.705 = 0.035 \times k_\mathrm{LOF} \times B_1 \rho \mathrm{[A]}
+    \mathrm{I_{LOF}} = 0.049 \times b_\mathrm{LOF} \times 0.705 = 0.035 \times k_\mathrm{LOF} \times B_1 \rho \mathrm{[A]},
 \end{equation}
 \begin{equation}\label{eq:I_vs_B3_relation_lod}
-    \mathrm{I_{LOD}} = 0.014 \times b_\mathrm{LOF} \times 0.677 = 0.009 \times k_\mathrm{LOD} \times B_1 \rho   \mathrm{[A]}
-\end{equation},
-
+    \mathrm{I_{LOD}} = 0.014 \times b_\mathrm{LOF} \times 0.677 = 0.009 \times k_\mathrm{LOD} \times B_1 \rho   \mathrm{[A]},
+\end{equation}
 
 where $k_\mathrm{LOF}, k_\mathrm{LOD}$ correspond to the $k_3$ definition of Eq.~\eqref{eq:kn} and $B_1 \rho$ the magnetic rigidity. %It is worth mentioning that the definitions for $b_3$ and $k_3$ are the same for  LSA and MAD-X which also use the same units in general.
 
