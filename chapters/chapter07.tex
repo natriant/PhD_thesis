@@ -9,7 +9,7 @@ The structure of this chapter is as follows: Section~\ref{sec:sps_impedance_mode
 
 \section{SPS transverse impedance model}\label{sec:sps_impedance_model}
 The PyHEADTAIL studies presented in this chapter are performed including the detailed transverse impedance model of the SPS machine~\cite{sps_impedance_model_git}. This model has been developed through a combination of theoretical computations and electromagnetic simulations and was benchmarked with beam-based measurements~\cite{Salvant:1274254, Zannini:1561199, Salvant:1271349, Zannini:2141779}. 
-It includes the contributions from all the individual elements in the SPS lattice, i.e.~the resistive wall, the indirect space charge, the kickers, the RF cavities (200\,MHz and 800\,MHz), the step transitions, and the horizontal and vertical beam position monitors~\cite{Zannini:2141779}. As discussed in  Section~\ref{subsec:pyheadtail}, the model needs to represent the global impedance of the full machine. Thus, the total impedance is obtained by summing up the impedance of each element weighted with the beta function at its location and dividing the sum by the value of the beta function at which the wakefield kick is applied in the simulations, which is chosen to be the average beta function around the machine. For the Q26 optics, the average horizontal and vertical beta functions are 42.09\,m, and 42.01\,m, respectively.
+It includes the contributions from all the individual elements in the SPS lattice, i.e.~the resistive wall, the indirect space charge, the kickers, the RF cavities (200\,MHz and 800\,MHz), the step transitions, and the horizontal and vertical Beam Position Monitors~\cite{Zannini:2141779}. As discussed in  Section~\ref{subsec:pyheadtail}, the model needs to represent the global impedance of the full machine. Thus, the total impedance is obtained by summing up the impedance of each element weighted with the beta function at its location and dividing the sum by the value of the beta function at which the wakefield kick is applied in the simulations, which is chosen to be the average beta function around the machine. For the Q26 optics, the average horizontal and vertical beta functions are 42.09\,m, and 42.01\,m, respectively.
 %https://indico.cern.ch/event/299470/contributions/686509/attachments/564150/777102/LIUSPS_transverse_imp_5.pdf
 % The Wall contribution included both the resistive wall and the indirect SC.
 Figure~\ref{fig:sps_impedance_model_H_V} shows the complete transverse impedance model of the SPS machine with the dipolar (blue) and quadrupolar (orange) terms plotted separately. 
@@ -31,7 +31,7 @@ Figure~\ref{fig:sps_impedance_model_H_V} shows the complete transverse impedance
         %\label{fig:add_label_here}
     \end{subfigure}
     \hfill
-     \caption{Horizontal (left) and vertical (right) impedance model of the SPS. The contributions from the wall, the kickers and the step transitions are visible at the low frequencies (up to $\sim$ 0.4\,GHz). The impedance of the RF cavities and the beam position monitors (BPMs) correspond to the peaks observed between $\sim$0.4-1\,GHz.}
+     \caption{Horizontal (left) and vertical (right) impedance model of the SPS. The contributions from the wall, the kickers and the step transitions are visible at the low frequencies (up to $\sim$ 0.4\,GHz). The impedance of the RF cavities and the Beam Position Monitors (BPMs) correspond to the peaks observed between $\sim$0.4-1\,GHz.}
      
      %The model is available in the public GitLab repository of Ref.~\cite{sps_impedance_model_git}.} % bunch passage
      \label{fig:sps_impedance_model_H_V}
@@ -117,12 +117,13 @@ The initial bunch was generated with Gaussian distributions in transverse and lo
    \label{tab:pyheadtail_simulation_parameters}
    \end{centering}\footnotesize{$^\ast$ This value corresponds to the average measured bunch length of bunch 1 over all the coasts of 2018. The value for bunch 1 is used here since it was the only stable bunch in the SPS $\CC$ tests of 2018. \\ $^\dagger$ Model values for the Q26 optics.}
    \end{minipage}
+   \vspace{-4mm}
 \end{table}
 % 4 sigma_t = 1.7 in: cernbox/2018/CC_MD_2018_summary/ABWLM/bunch_length_pickle_file
 
 For all the PyHEADTAIL simulation studies presented in this thesis, the Twiss parameter $\alpha_u(s)$ and the dispersion function $D_u(s)$ equal zero. This is a valid assumption for the studies as these parameters have no direct impact on the effects under investigation.
 
-To facilitate the observation of the coherent tune, the bunch was initialised with a static offset of 0.15$\sigma_{x,y}$ in both transverse planes, so that it performs dipole oscillations around the machine. The parameter $\sigma_{x,y}$ is the rms transverse beam size (see Eq.~\eqref{eq:emittance_beam_size}) at the only interaction point along the ring i.e. at the location where the beam interacts with the wakefields. It was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis on the turn-by-turn centroid motion.  The Python implementation, NAFFlib, can be found in~\cite{nafflib_repository}. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed coherent tune (in the absence of impedance) which equals the $Q_{u0}$ value.
+To facilitate the observation of the coherent tune, the bunch was initialised with a static offset of 0.15$\sigma_{x,y}$ in both transverse planes, so that it performs dipole oscillations around the machine. The parameter $\sigma_{x,y}$ is the rms transverse beam size (see Eq.~\eqref{eq:emittance_beam_size}) at the only interaction point along the ring i.e.~at the location where the beam interacts with the wakefields. It was tracked for 600 turns and the coherent tune was computed using a NAFF algorithm~\cite{LASKAR1990266, Kostoglou:2289645}, which provides a refined FFT analysis on the turn-by-turn centroid motion.  The Python implementation, NAFFlib, can be found in~\cite{nafflib_repository}. The coherent tune shift was computed by subtracting the obtained tune value from the unperturbed coherent tune (in the absence of impedance) which equals the $Q_{u0}$ value.
 
 Last, the dependence of the coherent tune on the bunch intensity value was studied in the absence of other detuning effects (such as chromaticity or detuning with transverse amplitude). % Do they also introduce some small coherent tune?
 % , even though they mainly introduce incoherent tune shifts)
@@ -131,7 +132,7 @@ The simulation was repeated for a range of bunch intensities, $N_b$, equally spa
 
 The theoretically expected values are computed from Eqs.~\eqref{eq:complext_tune_shift_modes_m} and ~\eqref{eq:real_tunu_mode_l} for $l=0$ and using only the imaginary part of the imepdance. Given that $\Gamma(1/2)=\sqrt{\pi}$ and $Q_u = \omega_{u0}/\omega_\mathrm{rev}$ equation Eq.~\eqref{eq:complext_tune_shift_modes_m} becomes:
 \begin{equation}\label{eq:real_tune_shfit_for_coherent_mode}
-    \Delta \Omega_u^{(0)} =  \Omega_{u0}^{(0)} - \omega_{u0} = \frac{\sqrt{\pi}}{4 \pi}\frac{N_b r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_u \sigma_z} Z_\mathrm{eff, im} = \frac{N_b r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z}Z_\mathrm{eff, im}
+    \Delta \Omega_u^{(0)} =  \Omega_{u0}^{(0)} - \omega_{u0} = \frac{\sqrt{\pi}}{4 \pi}\frac{N_b r_0 c^2}{\gamma_0 \frac{2\pi}{\omega_\mathrm{rev}}\omega_{u0} \sigma_z} Z_\mathrm{eff, im} = \frac{N_b r_0 c^2}{8 \pi^{3/2} \gamma_0 Q_u \sigma z}Z_\mathrm{eff, im}
 \end{equation}
 All the parameters inserted in Eq.~\eqref{eq:real_tune_shfit_for_coherent_mode} need to be converted into cgs (centimetre–gram–second) units. The coherent betatron tune shift is computed by inserting the result of Eq.~\eqref{eq:real_tune_shfit_for_coherent_mode} in Eq.~\eqref{eq:real_tunu_mode_l} such that: 
 \begin{equation}
@@ -260,7 +261,7 @@ The simulations were performed with and without wakefield kicks, to study the im
 
 It is worth noting that the large spread in the emittance growth rates over the different simulation runs in the absence of wakefields is a result of the very small tune spread. The wakefields introduce some additional tune spread, on top of the one from the vertical tune shift with amplitude, which reduces the uncertainty of the simulated growth rates.\textcolor{red}{Add here how much is the incoherent tune spread from the impedance, after the simulation is done.}
 
-To conclude, PyHEADTAIL simulations showed for the first time that the transverse beam impedance (which is not included in the theory~\cite{PhysRevSTAB.18.101001}) has a significant impact on the emittance growth driven by $\CC$ RF noise. The effect of the suppression of noise-induced emittance growth from the impedance has not been observed before. 
+To conclude, PyHEADTAIL simulations showed for the first time that the transverse beam impedance (which is not included in the Mastoridis--Baudrenghien model) has a significant impact on the emittance growth driven by $\CC$ RF noise. The effect of the suppression of noise-induced emittance growth from the impedance has not been observed before. 
 To characterise this effect and to be able to understand the mechanism behind it, a series of exploratory studies were conducted and are discussed in the following section. 
 
 
@@ -310,7 +311,7 @@ The simulations discussed here were performed with and without the SPS impedance
  The difference in the PyHEADTAIL simulations between the $\CC$ RF phase and amplitude noise could be explained by the fact that the phase noise (which is similar to a dipolar noise kick but with a high order distortion) is associated with the head-tail mode 0, while the amplitude noise is associated with the head-tail mode 1. The hypothesis, that the emittance growth suppression from impedance induced effects is related to head-tail mode 0 will be discussed in detail in the following sections and was also tested experimentally in 2022.
 
 
-\subsection{CC RF noise at 200\,MHz}\label{subsec:fcc_200MHz}
+\subsection{CC operating at 200\,MHz}\label{subsec:fcc_200MHz}
 In the HL-LHC the main RF system and the $\CC$s will operate at the same frequency ($f_\mathrm{CC}=f_\mathrm{RF-LHC}$=400\,MHz). To replicate, this scenario in the SPS, the sensitivity on the amplitude-dependent tune spread was simulated assuming a $\CC$ frequency of 200 MHz, i.e.~$\CCfrequency=200$\,MHz, which equals the frequency of the main accelerating RF system of the SPS (see Table~\ref{tab:machine_beam_param_2018}). 
 
 The simulations were performed with and without wakefield kicks, in the presence of both amplitude and phase noise with power spectral density of $1.21 \times 10^{-10} \mathrm{rad^2/Hz}$ ($\sigma_{\Delta A}^2=7.3 \times 10^{-6} \times 0.72$) and $3.06 \times 10^{-10} \mathrm{/Hz}$ ($\sigma_{\Delta \phi}^2=7.3 \times 10^{-6} \times 1.82$) respectively. The noise strength was scaled so that it results in $\sim$ 25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
@@ -366,7 +367,7 @@ The PyHEADTAIL simulation results are summarised in Fig.~\ref{fig:CC_200MHz_ampl
 
 
 \subsection{Pure dipolar noise}\label{subsec:dipole_noise}
-To validate that the effect of the suppression of the noise-driven emittance growth from the beam coupling impedance is associated with the dipolar motion (head-tail mode 0), the same simulations as in the previous section were conducted but instead of the longitudinally dependent noise kicks a pure dipolar noise kick was applied on the beam. The dipolar noise kick was modelled by the transformation of Eq.~\eqref{eq:external_noise_kicks} for $\sigma_\theta^2=7.3\times 10^{-6} \times 2$ which corresponds to a power spectral density of 3.36$\times 10^{-10}$\,$\mathrm{rad^2/Hz}$. The noise strength was scaled so that it results in $\sim$~25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
+To validate that the effect of the suppression of the noise-driven emittance growth from the beam coupling impedance is associated with the dipolar motion (head-tail mode 0), the same simulations as in the previous section were conducted but instead of the longitudinally dependent noise kicks a pure dipolar noise kick was applied on the beam. The dipolar noise kick was modelled by the transformation of Eq.~\eqref{eq:external_noise_kicks} for $\sigma_\theta^2=7.3\times 10^{-6} \times 2$ which corresponds to a power spectral density of 3.36$\times 10^{-10}$\,$\mathrm{rad^2/Hz}$. The noise strength was scaled so that it results in $\sim$25 nm/s to be comparable with the initial studies presented in Section~\ref{sec:first_obs_suppression}.
 
 Figure~\ref{fig:study_5_dipole_noise} shows the noise-induced vertical emittance growth as a function of amplitude-dependent tune spread with and without the presence of wakefield kicks. In the absence of wakefields (blue) the emittance growth appears independent of the tune spread, while for $\alpha_\mathrm{yy}=0$ no emittance growth is observed. This is expected, since for zero betatron tune spread there is no decoherence and thus no emittance growth.
  
@@ -526,7 +527,7 @@ In Section~\ref{sec:first_obs_suppression}, it was shown that in order to reprod
         \label{fig:study_8_intensity_scan}
  \end{figure}
 
- The study was conducted over a range of bunch intensities from 0 to $5 \times 10^{10}$ protons per bunch. This range was chosen to be similar to the $\CC$ experiments in SPS in 2018, where the initial intensity for each coast was $3 \times 10^{10}$ - $3.5 \times 10^{10}$ protons per bunch. The initial intensity was measured with the Fast Beam Current Transformer (FBCT) and the Beam Current Transformer (in particular with the device SPS.BCTDC.41435) which are installed in SPS. Both devices have the same working principle but different bandwidths. They measure the beam-induced current in their ferrite core and transform it to the number of protons per beam. Further details on their working principle and operation can be found in~\cite{Jones:1982418, Jakob:624188}.
+ The study was conducted over a range of bunch intensities from 0 to $5 \times 10^{10}$ protons per bunch. This range was chosen to be similar to the $\CC$ experiments in SPS in 2018, where the initial intensity for each coast was $3 \times 10^{10}$-$3.5 \times 10^{10}$ protons per bunch. The initial intensity was measured with the Fast Beam Current Transformer (FBCT) and the Beam Current Transformer (in particular with the device SPS.BCTDC.41435) which are installed in SPS. Both devices have the same working principle but different bandwidths. They measure the beam-induced current in their ferrite core and transform it to the number of protons per beam. Further details on their working principle and operation can be found in~\cite{Jones:1982418, Jakob:624188}.
  % Also link from Hannes here: https://accelconf.web.cern.ch/ibic2016/papers/weal02.pdf
  % Also nice explantion about BCT in Federico's thesis: https://lphe.epfl.ch/publications/theses/these.fr.pdf
  % No simulations were conducted for zero intensity as it is not a realistic value.
