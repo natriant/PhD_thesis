@@ -1,3 +1,5 @@
 \cleardoublepage
 \chapter*{Declaration}
+
+\thispagestyle{simple} % formatting the first page of each chapter
 This thesis is primarily my own work. The work done by other people is clearly identified and referenced as appropriate in the main body of the thesis. 
