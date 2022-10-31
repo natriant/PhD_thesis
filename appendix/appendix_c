@@ -69,10 +69,10 @@ From the definition of variance, the variance of the vertical amplitude detuning
     \end{split}
 \end{equation}
 
-In the development of Eq.~\ref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
+In the development of Eq.~\eqref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
 
 
-Now, according to the definitions introduced in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is written:
+Now, according to the discsussion in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is defined here as:
 \begin{equation}\label{eq:rms_amplitude_detuning_1}
     \begin{split}
     \Dqyrms =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\

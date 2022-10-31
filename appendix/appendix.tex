@@ -28,12 +28,18 @@ Another notation for the arithmetic mean that is often found in bibliography is,
 \normalsize{\textbf{Root mean square}}\\
 In the classical definition in mathematics, the root mean square (rms) is an alternative to the arithmetic mean and is defined as:
 \begin{equation}\label{eq:rms_def}
-    x^{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}=\sqrt{\langle x^2 \rangle}.
+    x^\mathrm{rms} = \sqrt{\frac{x_1^2+x_2^2+x_3^2+...+x_N^2}{N}}=\sqrt{\langle x^2 \rangle}.
 \end{equation}
 %In other words it is the square root of the arithmetic mean of the squares of the data set values. It is common in physics and in sciences in general to used the rms value instead of the arithmetic mean when it comes to distributions or when the random variables have both positive and negative values.
 %\begin{itemize}
 %\item \textbf{Disclaimer:} It is common in physics and in sciences in general for the term rms to correspond to what is actually defined as standard deviation (see definition in Appendix~\ref{app:meas_spread}). This convention, is also followed in this thesis.
 %\end{itemize}
+
+Often in physics and engineering the term rms is used as a synonym for the standard deviation when one refers to the rms from a given baseline~\cite{rms_std}.
+% source: https://mathworld.wolfram.com/Root-Mean-Square.html
+
+
+
 \subsection{Measuring the spread}\label{app:meas_spread}
 \normalsize{\textbf{Variance}}\\
 For a data set of $N$ data $\{ x_1, x_2, x_3, ..., x_N \}$ the variance of $x$  expresses how much it can vary from the mean value, $\langle x \rangle$. The variance, $\mathrm{Var}(x)$, is defined as:
