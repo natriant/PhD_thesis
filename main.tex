@@ -73,8 +73,18 @@
 \renewcommand{\nomname}{List of Symbols}
 
 
-\fancypagestyle{mystyle_acronyms}{%
+\fancypagestyle{mystyle_acronyms_1}{%
     \lhead{\textbf{List of Acronyms}}
+    \rhead{}
+}
+
+\fancypagestyle{mystyle_acronyms_2}{%
+    \rhead{\textbf{List of Acronyms}}
+    \lhead{}
+}
+
+\fancypagestyle{conclusions}{%
+    \lhead{\textbf{8. Conclusions}}
     \rhead{}
 }
 
@@ -117,17 +127,19 @@
 
 \newpage
 
-\addtocontents{toc}{\protect\thispagestyle{empty}}
 \input{symbols.tex}
+
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
 \printnomenclature
 \addcontentsline{toc}{chapter}{List of symbols}
+\thispagestyle{empty}
 %\lhead{\leftmark}
 
 
 \newpage
 
 \input{glossary.tex}
-\thispagestyle{mystyle_acronyms}
+\thispagestyle{mystyle_acronyms_2}
 
 \mainmatter
 
@@ -185,6 +197,6 @@
 \printbibliography
 %\pagestyle{simple_v2}
 \addcontentsline{toc}{chapter}{Bibliography}
-
+%\Blinddocument
 
 \end{document}
