@@ -280,7 +280,8 @@ For a circular accelerator $K_u$ is periodic: $K_u(s+C_0)=K_u(s)$, where $C_0$ i
     u^\prime(s) = - \sqrt{\frac{2 J_u}{\beta_u(s)}} (\sin{(\psi_u(s) + \psi_{u,0})}+\alpha_u(s)\cos{(\psi_u(s)+ \psi_{u,0})}),
 \end{equation} 
 where $J_u$ and $\psi_{u,0}$ are the constants of integration and are determined by the chosen initial conditions, $\alpha_u(s)=-\frac{1}{2} \beta^\prime_u(s)$ and $\beta_u(s)$ are periodic function determined by the sequence of the quadrupole magnets in the accelerator and follow the periodicity of the machine. %Note that divergence $u^\prime$ is obtained by differentiation of the parameter $u$. 
-Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle undergoes transverse oscillations around the reference trajectory, which are referred to as betatron oscillations. Since the $J_u$ is constant, the beta function determines the maximum amplitude of the single particle trajectory at any given position $s$ in the ring.
+Equation~\eqref{eq:solution_eq_motion_u} shows that a stable particle\footnote{The condition for a particle motion to be stable is expressed quantitatively in terms of the transfer matrix as: $|\mathrm{Tr} M_u| \leq 2$, where $M_u$ is the transfer matrix as defined in Eq.~\eqref{eq:matrix_formalism_intro} for one periodic section of the machine lattice, assuming zero coupling~\cite{wolski2014}.}% this is how MAD-X computes the tune.
+undergoes transverse oscillations around the reference trajectory, which are referred to as betatron oscillations. Since the $J_u$ is constant, the beta function determines the maximum amplitude of the single particle trajectory at any given position $s$ in the ring.
 % this highlights its phyiscal significance.
 % Last sentence from here: https://indico.cern.ch/event/407247/contributions/975702/attachments/1246508/1835998/Alexandra_p.pdf
 The function $\psi_u(s)$ is the betatron phase advance from the position $s=0$ to $s$ and equals:
@@ -319,6 +320,11 @@ The trajectory of each individual particle turn after turn follows the phase spa
 
  \textbf{Transvserse emittance}\\
  %The concept of the beam tranverse impedance is discussed here in detail since it is one of the main parameters of interst of this project. 
+ %Up to now, the Twiss parameters were used to describe the dynamics of single particles. However, they can also describe the distribution of the particles within a bunch. The statistical average of the actions $J_u$ over all particles within a bunch at a given point $s$ along the reference trajectory is the geometric emittance of the bunch:
+ %\begin{equation}\label{eq:geom_emittance_action}
+ %   \epsilon^{\mathrm{geom}}_u=\langle J_u \rangle.
+%\%end{equation}
+%By inserting 
 Up to now, the Twiss parameters were used to describe the dynamics of single particles. However, they can also describe the distribution of the particles within a bunch. The statistical average of $u^2$ over all particles at a given point $s$ along the reference trajectory, from Eq.~\eqref{eq:solution_eq_motion_u} equals to~\cite{wolski2014}:
  \begin{equation}\label{eq:statistical_average_position}
      \langle u^2(s) \rangle = 2 \beta_u(s) \langle J_u \cos^2{\psi_u(s)} \rangle.
@@ -354,7 +360,7 @@ Up to now, the Twiss parameters were used to describe the dynamics of single par
  \end{equation}
  
  Combining the above equations, the geometric emittance is expressed in terms of the particles' distribution as~\cite{wolski2014}:
- \begin{equation}\label{eq:geometric_emittance_v2}
+ \begin{equation}\label{eq:geometric_emittance_v2_co_zero}
      \epsilon^{\mathrm{geom}}_u = \sqrt{\langle u^2(s) \rangle \langle u^{\prime 2}(s) \rangle- \langle u (s)u^{\prime}(s) \rangle ^2}
  \end{equation}
  %which, also equals the square root of the determinant of the covariance or %Sigma matrix of the particles' distribution:
@@ -372,9 +378,26 @@ For a Gaussian distribution with $\langle u \rangle=0$, Eq.~\eqref{eq:emittance_
 \begin{equation}\label{eq:emittance_beam_size}
     \sigma_u(s) = \sqrt{\beta_u(s) \epsilon^{\mathrm{geom}}_u},
 \end{equation}
-where $\sigma_u$ is the transverse rms beam size.
+where $\sigma_u$ is the transverse rms beam size. Note that Eq.~\eqref{eq:emittance_beam_size} is also valid for a distribution with $\langle u \rangle \neq 0$. The $\epsilon^{\mathrm{geom}}_u$ is often called the rms emittance since it is the contour that encloses one standard deviation of the particles' distribution in phase space.
+
+An alternative definition of the rms emittance is introduced below based purely on the beam distribution, and in particular on the covariance matrix (see Eq.~\eqref{eq:Sigma_matrix}) of its second order moments:
+\begin{equation}\label{eq:geometric_emittance_v2_sigma_matrix}
+    \Sigma = \begin{pmatrix}
+        \mathrm{Cov}(u,u) & \mathrm{Cov}(u,u^\prime)  \\ 
+         \mathrm{Cov}(u,u^\prime) & \mathrm{Cov}(u^\prime,u^\prime)
+        \end{pmatrix} = \begin{pmatrix}
+            \sigma^2_u & \mathrm{Cov}(u,u^\prime)  \\ 
+             \mathrm{Cov}(u,u^\prime) & \sigma^2_{u^\prime}
+            \end{pmatrix},
+\end{equation}
+where $ \mathrm{Cov}(u,u^\prime)$ the covariance between the position $u$ and the angle $u^\prime$ as defined in Eq.~\eqref{eq:cov_def}, $\sigma_u$ and $\sigma_u^\prime$ the standard deviation of $u$ and $u^\prime$ respectively. The rms emittance is the determinant of the matrix of Eq.~\eqref{eq:geometric_emittance_v2_sigma_matrix}:
+\begin{equation}\label{eq:geometric_emittance_v2}
+    \epsilon^{\mathrm{geom}}_u = \sqrt{\mathrm{det \Sigma}}.
+\end{equation}
 
 
+It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known following Eq.~\eqref{eq:emittance_beam_size}. These two methods of computing the emittance are considered equivalent for the studies presented in this thesis.
+ 
 
  %The square root of the top-left element of the covariance matrix, $\sigma_u$, is defined as the rms transverse beam size. %The definition of rms and of others of the statistical analysis can be found in Appendix~\ref{ch:app_A}.
  
@@ -395,7 +418,7 @@ where $\sigma_u$ is the transverse rms beam size.
  \end{equation}
 is conserved during acceleration and is often used as an alternative to the geometric emittance, especially in situations where the beam undergoes acceleration or deceleration. It is highlighted here, that throughout this thesis the term "emittance" will refer to the rms normalised emittance.
  
- It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known following Eq.~\eqref{eq:emittance_beam_size}. These two methods of computing the emittance are considered equivalent for the studies presented in this thesis.
+ %It is worth noting that for the simulation studies presented in this thesis, the emittance is computed using the statistical definition introduced in Eq.~\eqref{eq:geometric_emittance_v2}. In the experimental studies, the emittance is obtained from the rms beam size at a point in the beamline where the beta function is known following Eq.~\eqref{eq:emittance_beam_size}. These two methods of computing the emittance are considered equivalent for the studies presented in this thesis.
  
  %. The procedure is explained in more detail in Chapter~\ref{Ch:2018_analyisis}, but here we simply note that from Eqs.~\eqref{eq:emittance_definition_1},~\eqref{eq:Sigma_matrix} and ~\eqref{eq:normalised_emittance}, we can express the emittance as:
  % For a Gaussian beam distribution the normalised beam emittance it applies:
