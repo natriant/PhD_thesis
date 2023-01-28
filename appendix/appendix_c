@@ -72,7 +72,7 @@ From the definition of variance, the variance of the vertical amplitude detuning
 In the development of Eq.~\eqref{eq:var_amplDetuning} the properties of the mean discussed in Eq.~\eqref{eq:mean_of_sum_property} and~\eqref{eq:mean_of_product_property} are used.
 
 
-Now, according to the discsussion in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is defined here as:
+Now, according to the discussion in Appendix~\ref{app:statistics_definitions}, the root mean square (rms) for the vertical amplitude detuning is defined here as:
 \begin{equation}\label{eq:rms_amplitude_detuning_1}
     \begin{split}
     \Dqyrms =&~\sigma_{\Delta Q_y}=\sqrt{\mathrm{Var}(\Delta Q_y)}\\
@@ -117,7 +117,7 @@ As discussed in Section~\ref{subsec:global_CC_sixtracklib_noiseCoast3_setting3_n
 
 Using the values of the multipoles listed in Table~\ref{tab:sps_mult_270GeV} and setting the strength of both octupole families at 1\,/m$^4$ the corresponding detuning coefficients are obtained with MAD-X~\cite{madx}. In particular, $\axx$ = 923.45\,/m, $\axy$ = $-$1122.451\,/m, $\ayy$ = 705.15\,/m. It should be noted that these values are obtained for zero linear chromaticity in both transverse planes.
 
-The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\epsilon_x = \epsilon_y$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:normalised_emittance} it can be seen that these values corresponds to geometric emittances of $\epsilon^{\mathrm{geom}}_x=\epsilon^{\mathrm{geom}}_y$ = 7.2\,nm.
+The tune spread is computed for the requested initial emittances for the emittance growth measurements of 2018 and 2021, $\epsilon_x = \epsilon_y$ = 2\,$\mathrm{\mu m}$. Using Eq.~\eqref{eq:normalised_emittance} it can be seen that these values correspond to geometric emittances of $\epsilon^{\mathrm{geom}}_x=\epsilon^{\mathrm{geom}}_y$ = 7.2\,nm.
 By inserting these values of detuning coefficients and geometric emittances in Eq.~\eqref{eq:rms_amplitute_detuning_3_x} and Eq.~\eqref{eq:rms_amplitute_detuning_3} the rms tune spread is found to be, $\Dqxrms = 1.9 \times 10^{-5}$ and $\Dqyrms = 2.1 \times 10^{-5}$, in the horizontal and vertical planes respectively.
 
 
