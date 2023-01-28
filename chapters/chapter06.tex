@@ -278,7 +278,7 @@ The orbit shift computed analytically using Eq.~\eqref{eq:CC_orbit_shift_CC_elem
       \bottomrule
 	\end{tabu}
    \label{tab:SPS_CC_WS_sixtracklib}
-   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner. \\$^\dagger$ It was found that in the definition of the RF-Multipole the phase of the cavity is shifted by 90 degrees compared to the standard (theoretical) crab cavity kick.}
+   \end{centering} \footnotesize{$^\ast$ The phase advances are measured from the start of the lattice which is considered the element SPS.BWS.51995.H that is the horizontal rotational Wire Scanner. \\$^\dagger$ It was found that in the definition of the RF-Multipole the phase of the cavity is shifted by 90 degrees compared to the standard (theoretical) CC kick.}
    \end{minipage}
 \end{table}
 
@@ -326,7 +326,7 @@ The parameter $\Delta \CCvoltage_j$ is related to the relative deviation from th
 In this section, the emittance growth driven by $\CC$ RF noise is simulated with Sixtracklib in the presence of a local $\CC$ scheme. As previously mentioned, in the local CC scheme (Fig.~\ref{fig:crossing_with_and_without_CCs}) two $\CC$s are used with opposite phases, to cancel out the orbit distortion.
 
 
-The benchmark with the local scheme is performed as it is closer to the case that was studied previously: where the $\CC$ RF noise is modelled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the crab cavities.
+The benchmark with the local scheme is performed as it is closer to the case that was studied previously: where the $\CC$ RF noise is modelled as noise kicks in the transverse angle co-ordinate of the individual particles. Both configurations avoid introducing any orbit distortion from the $\CC$s.
 
 The simulation studies presented in Section~\ref{subsec:sixtracklib_kicks_transverse_angle} were repeated here but this time the $\CC$s (represented by the RF-Multipole) were implemented and switched on. Both $\CC$1 and $\CC2$ operated at 1\,MV, for $\phi_\mathrm{RF-Mult, 1}$=90\,deg and  $\phi_\mathrm{RF-Mult, 2}$=270\,deg. Figure~\ref{fig:sixtracklib_CC1_vs_CC2_orbit_shift_vs_theory} shows that the orbit shifts from two $\CC$s operating in opposite phase cancel out as expected. The results shown are obtained from Sixtracklib simulations that were conducted following the same procedure as the equivalent study presented in Section~\ref{subsec:sixtracklig_CC_implementation} (see Fig.~\ref{fig:sixtracklib_CC_orbit_shift_vs_theory}.)
 
