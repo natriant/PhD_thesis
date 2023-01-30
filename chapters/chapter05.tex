@@ -439,6 +439,7 @@ The color code corresponds to the four different bunches. The blue dashed vertic
 %   \caption{Evolution of the beam in transverse and longitudinal planes during the CC noise-induced emittance growth experiment. Top: Horizontal emittance growth measured with the SPS Wire Scanners. Middle: Vertical emittance growth measured with the SPS Wire Scanner. Bottom: Bunch length evolution measured with the ABWLM (small markers) and the Wall Current Monitor (bigger markers).}
 %   \label{fig:MD5_overview_x_y_sigma_t}
 %\end{sidewaysfigure}
+% Script for plotting: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/job001b_abwlm_bunch_length_analysis_plot_overview_with_wall_current_monitor.ipynb
 \begin{figure}[h!]
    \centering
    \includegraphics[width=1.0\textwidth]{images/Ch5/bunch_length_MD2018_abwlm_wcm.png}
@@ -502,14 +503,20 @@ The oscillations of the relative bunch position (bottom) of the bunches 2,3 and 
 \subsection{Intensity measurements}\label{subsec:intensity_2018_meas}
 The bunch-by-bunch intensity measurements that were performed along the experiment with artificial noise injected in the $\CC$ RF system are displayed in Fig.~\ref{fig:MD5_overview_intensity}. In particular, the intensity values normalised with the initial value are shown for each bunch. The four different bunches are indicated with the four different colors. The acquisitions from both the ABWLM and the Wall Current Monitor are illustrated with the small and bigger markers, respectively.
 
-The following observations can be made. First, there is a very good agreement between the measurements from the ABLWM and the Wall Current Monitor. Second, losses of $\sim$2-4\,$\%$/h, computed from the ABLWM acquisitions, are observed for bunch 1 (blue) in all the three coasts. This rate is even smaller than observed in the SPS in coast studies without external noise ($\sim$10\,$\%$/h)~\cite{Alekou_CC_coast_prep_2016}. Last, more significant losses are observed for the longitudinally unstable bunches (bunch 2,3, and 4). However, this is not of concern as the last three bunches will not be included in the following analysis.
-
-\begin{sidewaysfigure}
+\begin{figure}[h!]
    \centering
    \includegraphics[width=1.0\textwidth]{images/Ch5/MD5_overview_intensity_with_wall_current_monitor.png}
    \caption{Intensity evolution as measured with ABLWM (smaller markers) and with the Wall Current Monitor (bigger markers) during the experiment with CC noise in 2018.}
    \label{fig:MD5_overview_intensity}
-\end{sidewaysfigure}
+\end{figure}
+
+The following observations can be made. First, there is a very good agreement between the measurements from the ABLWM and the Wall Current Monitor. Second, losses of $\sim$2-4\,$\%$/h, computed from the ABLWM acquisitions, are observed for bunch 1 (blue) in all the three coasts. This rate is even smaller than observed in the SPS in coast studies without external noise ($\sim$10\,$\%$/h)~\cite{Alekou_CC_coast_prep_2016}. Last, more significant losses are observed for the longitudinally unstable bunches (bunch 2,3, and 4). However, this is not of concern as the last three bunches will not be included in the following analysis.
+%\begin{sidewaysfigure}
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{images/Ch5/MD5_overview_intensity_with_wall_current_monitor.png}
+%   \caption{Intensity evolution as measured with ABLWM (smaller markers) and with the Wall Current Monitor (bigger markers) during the experiment with CC noise in 2018.}
+%   \label{fig:MD5_overview_intensity}
+%\end{sidewaysfigure}
 % Scripts: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/job004_abwlm_bunch_intensity_analysis_plot_overview_with_wall_current_monitor.ipynb
 % ABWLM data: /eos/user/n/natriant/2018/CC_MD_2018_summary/ABWLM/output/abwlm_bunch_intensity.pkl
 % Wall Current Monitor data: /eos/user/n/natriant/2018/CC_MD_2018_summary/Wall_Current_Monitor/pickled_data_from_2018
